@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './NavBar.module.css'
 import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
+	const [navView, setNavView] = useState(false)
+
+	const handleNavView = () => {
+		setNavView(!navView)
+	}
+
 	return (
 		<nav className={styles.nav}>
-			<button className={styles.nav_btn}>
+			<button className={styles.nav_btn} onClick={handleNavView}>
 				<div className={styles.line}></div>
 				<div className={styles.line}></div>
 				<div className={styles.line}></div>
 			</button>
-			<div className={styles.nav_links}>
+			<div className={navView ? styles.nav_links_no_view : styles.nav_links_view}>
 				<ul className={styles.list_links}>
 					<NavLink to='/'>
 						<li className={styles.link}>Home</li>
