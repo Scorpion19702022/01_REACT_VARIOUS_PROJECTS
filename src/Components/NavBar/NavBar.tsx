@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './NavBar.module.css'
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
 	return (
@@ -11,9 +12,15 @@ const NavBar = () => {
 			</button>
 			<div className={styles.nav_links}>
 				<ul className={styles.list_links}>
-					<li className={styles.link}>Home</li>
-					<li className={styles.link}>Task 01</li>
-					<li className={styles.link}>Task 02</li>
+					<NavLink to='/'>
+						<li className={styles.link}>Home</li>
+					</NavLink>
+					<NavLink to='./Task01'>
+						<li className={styles.link}>Task 01</li>
+					</NavLink>
+					<NavLink to='./Task02'>
+						<li className={styles.link}>Task 02</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>
