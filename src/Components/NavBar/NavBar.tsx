@@ -19,13 +19,19 @@ const NavBar = () => {
 			<div className={navView ? styles.nav_links_no_view : styles.nav_links_view}>
 				<ul className={styles.list_links}>
 					<NavLink to='/'>
-						<li className={styles.link}>Home</li>
+						<li className={styles.link} onClick={handleNavView}>
+							Home
+						</li>
 					</NavLink>
 					<NavLink to='./Task01'>
-						<li className={styles.link}>Task 01</li>
+						<li className={styles.link} onClick={handleNavView}>
+							Task 01
+						</li>
 					</NavLink>
 					<NavLink to='./Task02'>
-						<li className={styles.link}>Task 02</li>
+						<li className={styles.link} onClick={handleNavView}>
+							Task 02
+						</li>
 					</NavLink>
 				</ul>
 			</div>
