@@ -6,9 +6,9 @@ const NavBar = () => {
 	return (
 		<nav className={styles.nav}>
 			<button className={styles.nav_btn}>
-				<div className={styles.linen}></div>
-				<div className={styles.linen}></div>
-				<div className={styles.linen}></div>
+				<div className={styles.line}></div>
+				<div className={styles.line}></div>
+				<div className={styles.line}></div>
 			</button>
 			<div className={styles.nav_links}>
 				<ul className={styles.list_links}>
