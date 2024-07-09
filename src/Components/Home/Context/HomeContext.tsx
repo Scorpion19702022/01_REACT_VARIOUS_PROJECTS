@@ -29,7 +29,10 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 	const [isActivePL, setIsActivePL] = useState<boolean>(true)
 	const [isActiveEN, setIsActiveEN] = useState<boolean>(false)
 
-	const viewText = () => {}
+	const viewText = () => {
+		setIsActivePL(!isActivePL)
+		setIsActiveEN(!isActiveEN)
+	}
 
 	return (
 		<HomeContext.Provider value={{ textPL, textEN, isActivePL, isActiveEN, viewText }}>{children}</HomeContext.Provider>
