@@ -30,7 +30,13 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 	const [isActiveEN, setIsActiveEN] = useState<boolean>(false)
 
 	const addedText = () => {
-		console.log('klik')
+		setIsActivePL(!isActivePL)
+		setIsActiveEN(!isActiveEN)
+		if (isActivePL && !isActiveEN) {
+			setTextPL('Polski tekst')
+		} else if (!isActivePL && isActiveEN) {
+			setTextEN('text English')
+		}
 	}
 
 	return (

@@ -15,7 +15,7 @@ const HomeContent = () => {
 				<button className={styles.btn_en}>English</button>
 			</div>
 			<div className={styles.box_content}>
-				<p className={styles.text}></p>
+				<p className={styles.text}>{isActivePL ? textPL : textEN}</p>
 			</div>
 		</section>
 	)
