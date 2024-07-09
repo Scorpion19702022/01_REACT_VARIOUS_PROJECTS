@@ -104,18 +104,25 @@
 }
 
 .list_links {
-	text-decoration: none;
+	/* text-decoration: none; */
 	list-style-type: none;
 }
 
 .link {
-	margin-bottom: 0.8em;
-	font-size: 1.4em;
+	margin-bottom: 0.6em;
+	padding-bottom: 0.1em;
+	transition: all 2s ease-in-out;
 }
 
 a {
+	font-size: 1.2em;
+	margin-bottom: 4em;
 	color: var(--color-blue04);
 	text-decoration: none;
+}
+.link:hover {
+	color: var(--color-blue02);
+	border-bottom: 0.04em solid var(--color-blue02);
 }
 
 @media (min-width: 767.98px) {
