@@ -30,8 +30,7 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 	const [isActiveEN, setIsActiveEN] = useState<boolean>(false)
 
 	const viewText = () => {
-		setIsActivePL(!isActivePL)
-		setIsActiveEN(!isActiveEN)
+		console.log('klik')
 	}
 
 	return (
