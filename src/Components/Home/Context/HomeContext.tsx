@@ -5,7 +5,7 @@ type InstalStateType = {
 	textEN: string
 	isActivePL: boolean
 	isActiveEN: boolean
-	viewText: () => void
+	addedText: () => void
 }
 
 type HomeProviderType = {
@@ -17,7 +17,7 @@ const InitialState: InstalStateType = {
 	textEN: '',
 	isActivePL: true,
 	isActiveEN: false,
-	viewText: () => {},
+	addedText: () => {},
 }
 
 const HomeContext = createContext(InitialState)
@@ -29,12 +29,14 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 	const [isActivePL, setIsActivePL] = useState<boolean>(true)
 	const [isActiveEN, setIsActiveEN] = useState<boolean>(false)
 
-	const viewText = () => {
+	const addedText = () => {
 		console.log('klik')
 	}
 
 	return (
-		<HomeContext.Provider value={{ textPL, textEN, isActivePL, isActiveEN, viewText }}>{children}</HomeContext.Provider>
+		<HomeContext.Provider value={{ textPL, textEN, isActivePL, isActiveEN, addedText }}>
+			{children}
+		</HomeContext.Provider>
 	)
 }
 
