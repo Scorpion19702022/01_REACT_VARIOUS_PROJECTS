@@ -132,7 +132,7 @@ a {
 		justify-content: center;
 		top: 0;
 		right: 0;
-		width: 5%;
+		width: 8%;
 		height: 100vh;
 		transform: translateX(0%);
 		border-right: 0.04em solid var(--color-blue04);

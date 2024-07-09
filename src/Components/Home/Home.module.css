@@ -19,5 +19,15 @@
 .wrapper {
 	width: 100%;
 	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background-color: var(--color-dark06);
+}
+
+@media (min-width: 767.98px) {
+	.wrapper {
+		padding-left: 10em;
+	}
 }
