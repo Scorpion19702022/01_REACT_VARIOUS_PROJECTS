@@ -64,6 +64,19 @@
 	transition: all 0.3s ease-in-out;
 }
 
+.box_content {
+	width: 60%;
+	padding: 1.4em;
+	border: 0.04em solid var(--color-blue04);
+	text-align: center;
+	box-shadow: 0.4em 0.4em 0.6em var(--color-blue04);
+}
+
+.text {
+	color: var(--color-blue02);
+	font-size: 1.4em;
+}
+
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;
