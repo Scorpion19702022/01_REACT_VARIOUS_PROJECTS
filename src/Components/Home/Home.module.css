@@ -17,6 +17,7 @@
 }
 
 .wrapper {
+	padding: 2em;
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -24,6 +25,43 @@
 	justify-content: center;
 	align-items: center;
 	background-color: var(--color-dark06);
+}
+
+.box_btns {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2em;
+}
+
+.btn_pl,
+.btn_en {
+	width: 20%;
+	padding: 0.4em;
+	margin: 0em 0.4em;
+	background: none;
+	border: 0.04em solid var(--color-blue05);
+	color: var(--color-blue02);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn_pl:hover,
+.btn_en:hover {
+	background-color: var(--color-blue03);
+	color: var(--color-blue07);
+}
+
+.btn_pl_active,
+.btn_en_active {
+	width: 20%;
+	padding: 0.4em;
+	margin: 0em 0.4em;
+	background-color: var(--color-blue06);
+	border: 0.04em solid var(--color-blue06);
+	color: var(--color-blue01);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 767.98px) {
