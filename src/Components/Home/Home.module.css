@@ -3,7 +3,7 @@
 	--color-dark02: #c4c4c2;
 	--color-dark03: #898a86;
 	--color-dark04: #62625e;
-	--color-dark05: #3b3c36;
+	--color-dark05: #2f302b;
 	--color-dark06: #2f302b;
 	--color-dark07: #1d1e1b;
 	--color-dark08: #050605;
@@ -24,7 +24,15 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--color-dark06);
+	background-color: rgba(29, 30, 27, 1);
+	background-image: radial-gradient(
+		circle,
+		rgba(29, 30, 27, 1) 0%,
+		rgba(47, 48, 43, 1) 25%,
+		rgba(29, 30, 27, 1) 50%,
+		rgba(47, 48, 43, 1) 75%,
+		rgba(29, 30, 27, 1) 100%
+	);
 }
 
 .box_btns {
@@ -66,7 +74,10 @@
 
 .box_content {
 	width: 60%;
+	height: 400px;
 	padding: 1.4em;
+	display: flex;
+	align-items: center;
 	border: 0.04em solid var(--color-blue04);
 	text-align: center;
 	box-shadow: 0.4em 0.4em 0.6em var(--color-blue04);
@@ -118,6 +129,7 @@
 
 	.box_content {
 		width: 50%;
+		height: 300px;
 		padding: 1.4em;
 		border: 0.04em solid var(--color-blue04);
 		text-align: center;
