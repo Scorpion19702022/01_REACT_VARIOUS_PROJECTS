@@ -5,7 +5,7 @@ type InstalStateType = {
 	textEN: string
 	isActivePL: boolean
 	isActiveEN: boolean
-	addedText: () => void
+	addedText: (kind: string) => void
 }
 
 type HomeProviderType = {
@@ -15,9 +15,9 @@ type HomeProviderType = {
 const InitialState: InstalStateType = {
 	textPL: '',
 	textEN: '',
-	isActivePL: true,
+	isActivePL: false,
 	isActiveEN: false,
-	addedText: () => {},
+	addedText: (kind: string) => {},
 }
 
 const HomeContext = createContext(InitialState)
@@ -26,16 +26,20 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 	const [textPL, setTextPL] = useState<string>('')
 	const [textEN, setTextEN] = useState<string>('')
 
-	const [isActivePL, setIsActivePL] = useState<boolean>(true)
+	const [isActivePL, setIsActivePL] = useState<boolean>(false)
 	const [isActiveEN, setIsActiveEN] = useState<boolean>(false)
 
-	const addedText = () => {
+	const addedText = (kind: string) => {
 		setIsActivePL(!isActivePL)
 		setIsActiveEN(!isActiveEN)
-		if (isActivePL && !isActiveEN) {
+		if (isActivePL && kind === textPL) {
 			setTextPL('Polski tekst')
-		} else if (!isActivePL && isActiveEN) {
+			setTextEN('')
+			setIsActiveEN(false)
+		} else if (isActiveEN && kind === textEN) {
+			setTextPL('')
 			setTextEN('text English')
+			setIsActivePL(false)
 		}
 	}
 

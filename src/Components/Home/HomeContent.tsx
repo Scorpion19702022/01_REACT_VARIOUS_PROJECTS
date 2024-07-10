@@ -9,13 +9,16 @@ const HomeContent = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_btns}>
-				<button className={styles.btn_pl} onClick={addedText}>
+				<button className={styles.btn_pl} onClick={() => addedText(textPL)}>
 					Polski
 				</button>
-				<button className={styles.btn_en}>English</button>
+				<button className={styles.btn_en} onClick={() => addedText(textEN)}>
+					English
+				</button>
 			</div>
 			<div className={styles.box_content}>
-				<p className={styles.text}>{isActivePL ? textPL : textEN}</p>
+				<p className={styles.text}>{!isActivePL ? textPL : null}</p>
+				<p className={styles.text}>{!isActiveEN ? textEN : null}</p>
 			</div>
 		</section>
 	)
