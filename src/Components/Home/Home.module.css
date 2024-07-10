@@ -81,4 +81,51 @@
 	.wrapper {
 		padding-left: 10em;
 	}
+
+	.box_btns {
+		margin-bottom: 3em;
+	}
+
+	.btn_pl,
+	.btn_en {
+		width: 15%;
+		padding: 0.8em;
+		margin: 0em 0.4em;
+		background: none;
+		border: 0.04em solid var(--color-blue05);
+		color: var(--color-blue02);
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.btn_pl:hover,
+	.btn_en:hover {
+		background-color: var(--color-blue03);
+		color: var(--color-blue07);
+	}
+
+	.btn_pl_active,
+	.btn_en_active {
+		width: 15%;
+		padding: 0.8em;
+		margin: 0em 0.4em;
+		background-color: var(--color-blue06);
+		border: 0.04em solid var(--color-blue06);
+		color: var(--color-blue01);
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.box_content {
+		width: 50%;
+		padding: 1.4em;
+		border: 0.04em solid var(--color-blue04);
+		text-align: center;
+		box-shadow: 0.4em 0.4em 0.6em var(--color-blue04);
+	}
+
+	.text {
+		color: var(--color-blue02);
+		font-size: 1.6em;
+	}
 }

@@ -44,7 +44,7 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 			setIsActiveEN(true)
 			setTextPL('')
 			setTextEN(
-				'Hi. In this project I would like to present various works with React.js using Context and TypeScript. Here you will find weather applications, advanced ToDoList, degree converter and others. The designs are responsive, resolution for mobile devices up to 768 pixels and for desktop. Feel free to browse.'
+				'Hi. In this project I would like to present various works with React.js using Context and TypeScript. Here you will find weather applications, advanced ToDoList, degree converter and others. The designs are responsive, resolution for mobile devices up to 768 pixels and for desktop. I invite you to browse.'
 			)
 		}
 	}
