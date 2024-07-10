@@ -37,62 +37,6 @@
 	z-index: 1;
 }
 
-.box_back_one {
-	position: absolute;
-	top: 15%;
-	right: 5%;
-	width: 300px;
-	height: 300px;
-	filter: blur(0.7em);
-	opacity: 0.6;
-	border-radius: 50%;
-	box-shadow: 0.8em 0.8em 0em var(--color-dark04);
-	background-color: var(--color-dark05);
-	z-index: -1;
-}
-
-.box_back_two {
-	position: absolute;
-	bottom: 15%;
-	left: 8%;
-	width: 400px;
-	height: 400px;
-	filter: blur(0.7em);
-	opacity: 0.8;
-	border-radius: 50%;
-	box-shadow: 0.8em 0.8em 0em var(--color-dark04);
-	background-color: var(--color-dark05);
-	z-index: -1;
-}
-
-.box_back_three {
-	position: absolute;
-	bottom: 5%;
-	right: 20%;
-	width: 200px;
-	height: 200px;
-	filter: blur(0.7em);
-	opacity: 0.4;
-	border-radius: 50%;
-	box-shadow: 0.8em 0.8em 0em var(--color-dark04);
-	background-color: var(--color-dark05);
-	z-index: -1;
-}
-
-.box_back_four {
-	position: absolute;
-	top: 5%;
-	left: 15%;
-	width: 200px;
-	height: 200px;
-	filter: blur(0.7em);
-	opacity: 0.6;
-	border-radius: 50%;
-	box-shadow: 0.8em 0.8em 0em var(--color-dark04);
-	background-color: var(--color-dark05);
-	z-index: -1;
-}
-
 .box_btns {
 	width: 100%;
 	display: flex;
