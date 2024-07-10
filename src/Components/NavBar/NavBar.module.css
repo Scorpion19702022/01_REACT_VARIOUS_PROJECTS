@@ -19,7 +19,7 @@
 .nav {
 	position: relative;
 	background: none;
-	/* z-index: 10; */
+	z-index: 10;
 }
 
 .nav_btn {
