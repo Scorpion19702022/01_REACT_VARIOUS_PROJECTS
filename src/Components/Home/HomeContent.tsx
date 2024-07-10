@@ -8,7 +8,10 @@ const HomeContent = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<div className={styles.box_back}></div>
+			<div className={styles.box_back_one}></div>
+			<div className={styles.box_back_two}></div>
+			<div className={styles.box_back_three}></div>
+			<div className={styles.box_back_four}></div>
 			<div className={styles.box_btns}>
 				<button className={isActivePL ? styles.btn_pl_active : styles.btn_pl} onClick={() => addedText(textPL)}>
 					Polski
