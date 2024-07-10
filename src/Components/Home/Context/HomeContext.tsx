@@ -24,7 +24,7 @@ const HomeContext = createContext(InitialState)
 
 export const HomeProvider = ({ children }: HomeProviderType) => {
 	const [textPL, setTextPL] = useState<string>(
-		'Czesc. W tym projekcie chcialbym przedstawic rozne prace z React.js z uzyciem Context i TypeScript. Znajdziesz tu Aplikacje pogodowa, zaawansowana ToDoList, konwenter stopni i inne. Projekty sa responsywne, rozdzielczosc na urzadzenia mobilne do 768 pikseli i na desktop. Zapraszam do przegladania.'
+		'Czesc. W tym projekcie chciałbym przedstawić różne prace z React.js z użyciem Context i TypeScript. Znajdziesz tu Aplikacje pogodową, zaawansowaną ToDoList, konwenter stopni i inne. Projekty są responsywne, rozdzielczość na urządzenia mobilne do 768 pikseli i na desktop. Zapraszam do przeglądania.'
 	)
 	const [textEN, setTextEN] = useState<string>('')
 
@@ -36,7 +36,7 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 			setIsActivePL(true)
 			setIsActiveEN(false)
 			setTextPL(
-				'Czesc. W tym projekcie chcialbym przedstawic rozne prace z React.js z uzyciem Context i TypeScript. Znajdziesz tu Aplikacje pogodowa, zaawansowana ToDoList, konwenter stopni i inne. Projekty sa responsywne, rozdzielczosc na urzadzenia mobilne do 768 pikseli i na desktop. Zapraszam do przegladania.'
+				'Czesc. W tym projekcie chciałbym przedstawić różne prace z React.js z użyciem Context i TypeScript. Znajdziesz tu Aplikacje pogodową, zaawansowaną ToDoList, konwenter stopni i inne. Projekty są responsywne, rozdzielczość na urządzenia mobilne do 768 pikseli i na desktop. Zapraszam do przeglądania.'
 			)
 			setTextEN('')
 		} else if (kind === textEN) {
