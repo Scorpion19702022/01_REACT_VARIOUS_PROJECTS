@@ -1,16 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import styles from './NavWorld.module.css'
+
 const NavWorld = () => {
 	return (
-		<div>
+		<nav className={styles.nav_btns}>
+			<Link to='/WeatherApp'>
+				<button></button>
+			</Link>
 			<Link to='/WeatherApp/Poland'>
-				<h4>POLAND</h4>
+				<button></button>
 			</Link>
 			<Link to='/WeatherApp/Europe'>
-				<h4>EUROPA</h4>
+				<button></button>
 			</Link>
-		</div>
+		</nav>
 	)
 }
 
