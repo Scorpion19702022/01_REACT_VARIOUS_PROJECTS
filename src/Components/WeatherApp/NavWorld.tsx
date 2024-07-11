@@ -31,13 +31,16 @@ const NavWorld = () => {
 	return (
 		<nav className={styles.nav_btns}>
 			<Link to='/WeatherApp'>
-				<button className={isActiveMain === true ? styles.btn : styles.btn_active} onClick={() => handleActive('main')}>
+				<button
+					className={isActiveMain === true ? styles.btn_no_active : styles.btn_active}
+					onClick={() => handleActive('main')}
+				>
 					Main Page
 				</button>
 			</Link>
 			<Link to='/WeatherApp/Poland'>
 				<button
-					className={isActivePoland === true ? styles.btn : styles.btn_active}
+					className={isActivePoland === true ? styles.btns_no_active : styles.btn_active}
 					onClick={() => handleActive('poland')}
 				>
 					Polska
@@ -45,7 +48,7 @@ const NavWorld = () => {
 			</Link>
 			<Link to='/WeatherApp/Europe'>
 				<button
-					className={isActiveEurope === true ? styles.btn : styles.btn_active}
+					className={isActiveEurope === true ? styles.btn_no_active : styles.btn_active}
 					onClick={() => handleActive('europe')}
 				>
 					Europa
