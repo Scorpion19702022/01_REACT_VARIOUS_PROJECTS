@@ -1,9 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavWorld = () => {
 	return (
 		<div>
-			<h4>POLAND</h4>
+			<Link to='./Poland'>
+				<h4>POLAND</h4>
+			</Link>
+			<Link to='./Europe'>
+				<h4>EUROPA</h4>
+			</Link>
 		</div>
 	)
 }
