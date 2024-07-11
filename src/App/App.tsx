@@ -4,6 +4,8 @@ import NavBar from '../Components/NavBar/NavBar'
 import Home from '../Components/Home/Home'
 import Task02 from '../Components/Task02/Task02'
 import WeatherApp from '../Components/WeatherApp/WeatherApp'
+import Poland from '../Components/WeatherApp/Pages/Poland'
+import Europe from '../Components/WeatherApp/Pages/Europe'
 
 function App() {
 	return (
@@ -13,6 +15,8 @@ function App() {
 				<Routes>
 					<Route path='/' Component={Home} />
 					<Route path='/WeatherApp' Component={WeatherApp} />
+					<Route path='/WeatherApp/Poland' Component={Poland} />
+					<Route path='/WeatherApp/Europe' Component={Europe} />
 					<Route path='/Task02' Component={Task02} />
 				</Routes>
 			</section>
