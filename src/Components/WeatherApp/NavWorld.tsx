@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import styles from './NavWorld.module.css'
 
 const NavWorld = () => {
-	const [isActiveMain, setIsActiveMain] = useState<boolean>(true)
+	const [isActiveMain, setIsActiveMain] = useState<boolean>(false)
 	const [isActivePoland, setIsActivePoland] = useState<boolean>(false)
 	const [isActiveEurope, setIsActiveEurope] = useState<boolean>(false)
 
@@ -19,10 +19,10 @@ const NavWorld = () => {
 			setIsActiveEurope(false)
 		} else if (event === 'europe') {
 			setIsActiveMain(false)
-			setIsActivePoland(!isActiveEurope)
-			setIsActiveEurope(true)
+			setIsActivePoland(false)
+			setIsActiveEurope(!isActiveEurope)
 		} else {
-			setIsActiveMain(true)
+			setIsActiveMain(false)
 			setIsActivePoland(false)
 			setIsActiveEurope(false)
 		}
@@ -30,30 +30,27 @@ const NavWorld = () => {
 
 	return (
 		<nav className={styles.nav_btns}>
-			<Link to='/WeatherApp'>
-				<button
-					className={isActiveMain === true ? styles.btn_no_active : styles.btn_active}
-					onClick={() => handleActive('main')}
-				>
-					Main Page
-				</button>
-			</Link>
-			<Link to='/WeatherApp/Poland'>
-				<button
-					className={isActivePoland === true ? styles.btns_no_active : styles.btn_active}
-					onClick={() => handleActive('poland')}
-				>
-					Polska
-				</button>
-			</Link>
-			<Link to='/WeatherApp/Europe'>
-				<button
-					className={isActiveEurope === true ? styles.btn_no_active : styles.btn_active}
-					onClick={() => handleActive('europe')}
-				>
-					Europa
-				</button>
-			</Link>
+			<button className={!isActiveMain ? styles.btn_no_active : styles.btn_active} onClick={() => handleActive('main')}>
+				<NavLink to='/WeatherApp'>
+					<p className={styles.into_btn}>Main</p>
+				</NavLink>
+			</button>
+			<button
+				className={!isActivePoland ? styles.btn_no_active : styles.btn_active}
+				onClick={() => handleActive('poland')}
+			>
+				<NavLink to='/WeatherApp/Poland'>
+					<p className={styles.into_btn}>Poland</p>
+				</NavLink>
+			</button>
+			<button
+				className={!isActiveEurope ? styles.btn_no_active : styles.btn_active}
+				onClick={() => handleActive('europe')}
+			>
+				<NavLink to='/WeatherApp/Europe'>
+					<p className={styles.into_btn}>Europe</p>
+				</NavLink>
+			</button>
 		</nav>
 	)
 }

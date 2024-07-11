@@ -20,18 +20,16 @@
 .nav_btns {
 	width: 100%;
 	display: flex;
-	padding: 2em;
-	justify-content: space-between;
 }
 
 .btn_no_active {
-	width: 50%;
+	width: 30%;
 	padding: 0.8em;
 	background-color: var(--color-darkred03);
 }
 
 .btn_active {
-	width: 50%;
+	width: 30%;
 	padding: 0.8em;
 	background-color: var(--color-darkred06);
 }
