@@ -10,6 +10,8 @@ const NavWorld = () => {
 		setActiveButton(button)
 	}
 
+	console.log(activeButton)
+
 	return (
 		<nav className={styles.nav_btns}>
 			<button
