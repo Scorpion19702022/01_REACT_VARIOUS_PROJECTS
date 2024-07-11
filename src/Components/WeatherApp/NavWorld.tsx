@@ -10,14 +10,14 @@ const NavWorld = () => {
 
 	useEffect(() => {
 		if (isActiveMain) {
-			setIsActivePoland(true)
-			setIsActiveEurope(true)
+			setIsActivePoland(false)
+			setIsActiveEurope(false)
 		} else if (isActivePoland) {
-			setIsActiveMain(true)
-			setIsActiveEurope(true)
+			setIsActiveMain(false)
+			setIsActiveEurope(false)
 		} else if (isActiveEurope) {
-			setIsActivePoland(true)
-			setIsActiveEurope(true)
+			setIsActivePoland(false)
+			setIsActiveEurope(false)
 		} else {
 			setIsActiveMain(false)
 			setIsActivePoland(false)
@@ -26,20 +26,24 @@ const NavWorld = () => {
 	}, [isActiveMain, isActivePoland, isActiveEurope])
 
 	const handleActive = (event: string) => {
-		if (event === 'main') {
-			setIsActiveMain(!isActiveMain)
-			// setIsActivePoland(false)
-			// setIsActiveEurope(false)
-		} else if (event === 'poland') {
-			// setIsActiveMain(false)
-			setIsActivePoland(!isActivePoland)
-			// setIsActiveEurope(false)
-		} else if (event === 'europe') {
-			// setIsActiveMain(false)
-			// setIsActivePoland(false)
-			setIsActiveEurope(!isActiveEurope)
+		setIsActiveMain(!isActiveMain)
+		setIsActivePoland(!isActivePoland)
+		setIsActiveEurope(!isActiveEurope)
+		if (event === 'main' && isActiveMain) {
+			setIsActiveMain(true)
+			setIsActivePoland(false)
+			setIsActiveEurope(false)
+		} else if (event === 'poland' && isActivePoland) {
+			setIsActiveMain(false)
+			setIsActivePoland(true)
+			setIsActiveEurope(false)
+		} else if (event === 'europe' && isActiveEurope) {
+			setIsActiveMain(false)
+			setIsActivePoland(false)
+			setIsActiveEurope(true)
 		}
 	}
+	console.log(`glowna ${isActiveMain}`)
 
 	return (
 		<nav className={styles.nav_btns}>
@@ -49,7 +53,7 @@ const NavWorld = () => {
 				</Link>
 			</button>
 			<button
-				className={!isActivePoland ? styles.btn_no_active : styles.btn_active}
+				className={isActivePoland ? styles.btn_no_active : styles.btn_active}
 				onClick={() => handleActive('poland')}
 			>
 				<Link to='/WeatherApp/Poland'>
@@ -57,7 +61,7 @@ const NavWorld = () => {
 				</Link>
 			</button>
 			<button
-				className={!isActiveEurope ? styles.btn_no_active : styles.btn_active}
+				className={isActiveEurope ? styles.btn_no_active : styles.btn_active}
 				onClick={() => handleActive('europe')}
 			>
 				<Link to='/WeatherApp/Europe'>
