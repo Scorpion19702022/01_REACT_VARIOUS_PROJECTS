@@ -3,6 +3,14 @@ import NavWorld from './NavWorld'
 import styles from './WeatherApp.module.css'
 
 import Unknown from './assets/unknown.png'
+// import Sun from './assets/sun.png'
+// import Cloud from './assets/cloud.png'
+// import Rain from './assets/rain.png'
+// import Thunder from './assets/thunderstorm.png'
+// import Drizzle from './assets/drizzle.png'
+// import Fog from './assets/fog.png'
+// import Ice from './assets/ice.png'
+// import Snow from './assets/snow.png'
 
 const WeatherApp = () => {
 	return (
