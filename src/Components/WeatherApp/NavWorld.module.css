@@ -16,3 +16,22 @@
 	--color-darkred07: #2c0000;
 	--color-darkred08: #1d0000;
 }
+
+.nav_btns {
+	width: 100%;
+	display: flex;
+	padding: 2em;
+	justify-content: space-between;
+}
+
+.btn {
+	/* width: 30%; */
+	padding: 0.8em;
+	background-color: var(--color-darkred03);
+}
+
+.btn_active {
+	/* width: 30%; */
+	padding: 0.8em;
+	background-color: var(--color-darkred06);
+}
