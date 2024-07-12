@@ -1,28 +1,52 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import styles from './NavWorld.module.css'
 
 const NavWorld = () => {
-	const [activeButtonMain, setActiveButtonMain] = useState<string>('main')
+	const [activeButtonMain, setActiveButtonMain] = useState<string>('')
 	const [activeButtonPoland, setActiveButtonPoland] = useState<string>('')
 	const [activeButtonEurope, setActiveButtonEurope] = useState<string>('')
+
+	useEffect(() => {
+		if (activeButtonMain === 'main') {
+			// setActiveButtonMain('main')
+			setActiveButtonPoland('')
+			setActiveButtonEurope('')
+		} else if (activeButtonPoland === 'poland') {
+			setActiveButtonMain('')
+			// setActiveButtonPoland('poland')
+			setActiveButtonEurope('')
+		} else if (activeButtonEurope === 'europe') {
+			setActiveButtonMain('')
+			setActiveButtonPoland('')
+			// setActiveButtonEurope('europe')
+		}
+	}, [activeButtonMain, activeButtonPoland, activeButtonEurope])
 
 	const handleActive = (button: string) => {
 		if (button === 'main') {
 			setActiveButtonMain('main')
-			setActiveButtonPoland('')
-			setActiveButtonEurope('')
+			// setActiveButtonPoland('')
+			// setActiveButtonEurope('')
 		} else if (button === 'poland') {
-			setActiveButtonMain('')
+			// setActiveButtonMain('')
 			setActiveButtonPoland('poland')
-			setActiveButtonEurope('')
+			// setActiveButtonEurope('')
 		} else if (button === 'europe') {
+			// setActiveButtonMain('')
+			// setActiveButtonPoland('')
+			setActiveButtonEurope('europe')
+		} else {
 			setActiveButtonMain('')
 			setActiveButtonPoland('')
-			setActiveButtonEurope('europe')
+			setActiveButtonEurope('')
 		}
 	}
+
+	console.log(activeButtonMain)
+	console.log(activeButtonPoland)
+	console.log(activeButtonEurope)
 
 	return (
 		<nav className={styles.nav_btns}>
