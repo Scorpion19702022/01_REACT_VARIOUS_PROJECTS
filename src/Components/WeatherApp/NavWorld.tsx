@@ -4,10 +4,19 @@ import { Link } from 'react-router-dom'
 import styles from './NavWorld.module.css'
 
 const NavWorld = () => {
-	const [activeButton, setActiveButton] = useState<string>('main')
+	const [activeButton, setActiveButton] = useState<string>('')
 
 	const handleActive = (button: string) => {
 		setActiveButton(button)
+		if (button === 'main') {
+			setActiveButton('main')
+		} else if (button === 'poland') {
+			setActiveButton('poland')
+		} else if (button === 'europe') {
+			setActiveButton('europe')
+		} else {
+			setActiveButton('main')
+		}
 	}
 
 	console.log(activeButton)
