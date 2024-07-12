@@ -3,14 +3,14 @@ import NavWorld from './NavWorld'
 import styles from './WeatherApp.module.css'
 
 import Unknown from './assets/unknown.png'
-// import Sun from './assets/sun.png'
-// import Cloud from './assets/cloud.png'
-// import Rain from './assets/rain.png'
-// import Thunder from './assets/thunderstorm.png'
-// import Drizzle from './assets/drizzle.png'
-// import Fog from './assets/fog.png'
-// import Ice from './assets/ice.png'
-// import Snow from './assets/snow.png'
+import Sun from './assets/sun.png'
+import Cloud from './assets/cloud.png'
+import Rain from './assets/rain.png'
+import Thunder from './assets/thunderstorm.png'
+import Drizzle from './assets/drizzle.png'
+import Fog from './assets/fog.png'
+import Ice from './assets/ice.png'
+import Snow from './assets/snow.png'
 
 const WeatherApp = () => {
 	return (
@@ -25,8 +25,42 @@ const WeatherApp = () => {
 						miastach w regionie. Jeżeli długo przebywasz na stronie pogoda będzie aktualizowana co 20 minut
 					</p>
 				</div>
-				<div className={styles.box_legend}>
+				<div className={styles.main_legend}>
 					<h4 className={styles.legend_heading}>Legenda:</h4>
+					<div className={styles.legend}>
+						<div className={styles.info_legend}>
+							<img className={styles.legend_img} src={Sun} alt='sun' />
+							<span className={styles.legend_info}>- słonecznie</span>
+						</div>
+						<div className={styles.info_legend}>
+							<img className={styles.legend_img} src={Sun} alt='sun' />
+							<span className={styles.legend_info}>- słonecznie</span>
+						</div>
+						<div className={styles.info_legend}>
+							<img className={styles.legend_img} src={Sun} alt='sun' />
+							<span className={styles.legend_info}>- słonecznie</span>
+						</div>
+						<div className={styles.info_legend}>
+							<img className={styles.legend_img} src={Sun} alt='sun' />
+							<span className={styles.legend_info}>- słonecznie</span>
+						</div>
+						<div className={styles.info_legend}>
+							<img className={styles.legend_img} src={Sun} alt='sun' />
+							<span className={styles.legend_info}>- słonecznie</span>
+						</div>
+						<div className={styles.info_legend}>
+							<img className={styles.legend_img} src={Sun} alt='sun' />
+							<span className={styles.legend_info}>- słonecznie</span>
+						</div>
+						<div className={styles.info_legend}>
+							<img className={styles.legend_img} src={Sun} alt='sun' />
+							<span className={styles.legend_info}>- słonecznie</span>
+						</div>
+						<div className={styles.info_legend}>
+							<img className={styles.legend_img} src={Sun} alt='sun' />
+							<span className={styles.legend_info}>- słonecznie</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>

@@ -35,6 +35,7 @@
 
 .box_main {
 	width: 100%;
+	height: 50%;
 	padding: 2em;
 	display: flex;
 	justify-content: space-between;
@@ -42,12 +43,13 @@
 
 .main_info {
 	width: 47%;
-	height: 60%;
+	height: 100%;
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	border-right: 0.04em solid var(--color-darkred04);
 }
 
 .main_img {
@@ -59,6 +61,50 @@
 .main_text {
 	text-align: center;
 	color: var(--color-darkred01);
+}
+
+.main_legend {
+	width: 47%;
+	height: 100%;
+	padding-right: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.legend_heading {
+	font-size: 1.8em;
+	color: var(--color-darkred02);
+	margin-bottom: 1em;
+	padding-bottom: 0.4em;
+	border-bottom: 0.04em dotted var(--color-darkred04);
+}
+
+.legend {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.info_legend {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 0.8em;
+	border-bottom: 0.04em dotted var(--color-darkred04);
+}
+
+.legend_img {
+	width: 15%;
+	object-fit: cover;
+}
+
+.legend_info {
+	color: var(--color-darkred02);
+	font-size: 1.2em;
 }
 
 @media (min-width: 767.98px) {
