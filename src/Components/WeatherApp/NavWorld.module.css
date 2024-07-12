@@ -22,14 +22,14 @@
 	display: flex;
 }
 
-.btn_no_active {
-	width: 30%;
-	padding: 0.8em;
-	background-color: var(--color-darkred03);
-}
-
 .btn_active {
 	width: 30%;
 	padding: 0.8em;
 	background-color: var(--color-darkred06);
+}
+
+.btn_no_active {
+	width: 30%;
+	padding: 0.8em;
+	background-color: var(--color-darkred03);
 }
