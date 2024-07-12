@@ -7,7 +7,7 @@ const NavWorld = () => {
 	const location = useLocation()
 
 	return (
-		<nav className={styles.nav_btns}>
+		<nav className={styles.nav_links}>
 			<Link to='/WeatherApp' className={location.pathname === '/WeatherApp' ? styles.btn_active : styles.btn_no_active}>
 				<p className={styles.into_btn}>Main</p>
 			</Link>

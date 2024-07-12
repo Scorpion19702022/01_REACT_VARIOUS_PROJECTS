@@ -17,21 +17,45 @@
 	--color-darkred08: #1d0000;
 }
 
-.nav_btns {
+.nav_links {
 	width: 100%;
 	display: flex;
+	justify-content: center;
+	margin: 4em 0em 1em 0em;
 }
 
 .btn_active {
-	width: 30%;
-	padding: 0.8em;
+	width: 20%;
+	padding: 0.4em;
 	text-align: center;
-	background-color: var(--color-darkred06);
+	margin: 0em 1em;
+	background-color: var(--color-darkred05);
+	border: 0.04em solid var(--color-darkred03);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn_active:hover {
+	background-color: var(--color-dark08);
+	border: 0.04em solid var(--color-dark05);
 }
 
 .btn_no_active {
-	width: 30%;
-	padding: 0.8em;
+	width: 20%;
+	padding: 0.4em;
 	text-align: center;
-	background-color: var(--color-darkred03);
+	margin: 0em 1em;
+	background-color: var(--color-darkred04);
+	border: 0.04em solid var(--color-darkred03);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn_no_active:hover {
+	background-color: var(--color-dark08);
+	border: 0.04em solid var(--color-dark05);
+}
+
+.into_btn {
+	color: var(--color-darkred01);
 }
