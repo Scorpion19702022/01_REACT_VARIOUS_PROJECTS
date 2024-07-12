@@ -16,15 +16,19 @@ const WeatherApp = () => {
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
-			<div className={styles.box_main_info}>
-				<h1 className={styles.heading}>Co zobaczysz na stronach?</h1>
-				<img src={Unknown} alt='some_weather' />
-				<p>
-					Po wybraniu pastwa/kontynentu przeniesiesz się na stronę i uzyskasz informację o stanie pogody w głównych
-					miastach w regionie. Jeżeli długo przebywasz na stronie pogoda będzie aktualizowana co 20 minut
-				</p>
+			<h1 className={styles.heading}>Co zobaczysz na stronach?</h1>
+			<div className={styles.box_main}>
+				<div className={styles.main_info}>
+					<img className={styles.main_img} src={Unknown} alt='some_weather' />
+					<p className={styles.main_text}>
+						Po wybraniu państwa/kontynentu przeniesiesz się na stronę i uzyskasz informację o stanie pogody w głównych
+						miastach w regionie. Jeżeli długo przebywasz na stronie pogoda będzie aktualizowana co 20 minut
+					</p>
+				</div>
+				<div className={styles.box_legend}>
+					<h4 className={styles.legend_heading}>Legenda:</h4>
+				</div>
 			</div>
-			<div className={styles.box_legend}></div>
 		</section>
 	)
 }
