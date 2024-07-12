@@ -33,32 +33,38 @@ const WeatherApp = () => {
 							<span className={styles.legend_info}>- słonecznie</span>
 						</div>
 						<div className={styles.info_legend}>
-							<img className={styles.legend_img} src={Sun} alt='sun' />
-							<span className={styles.legend_info}>- słonecznie</span>
+							<img className={styles.legend_img} src={Cloud} alt='cloud' />
+							<span className={styles.legend_info}>- pochmurnie</span>
 						</div>
 						<div className={styles.info_legend}>
-							<img className={styles.legend_img} src={Sun} alt='sun' />
-							<span className={styles.legend_info}>- słonecznie</span>
+							<img className={styles.legend_img} src={Drizzle} alt='drizzle' />
+							<span className={styles.legend_info}>- mżysto</span>
 						</div>
 						<div className={styles.info_legend}>
-							<img className={styles.legend_img} src={Sun} alt='sun' />
-							<span className={styles.legend_info}>- słonecznie</span>
+							<img className={styles.legend_img} src={Rain} alt='rain' />
+							<span className={styles.legend_info}>- deszczowo</span>
 						</div>
 						<div className={styles.info_legend}>
-							<img className={styles.legend_img} src={Sun} alt='sun' />
-							<span className={styles.legend_info}>- słonecznie</span>
+							<img className={styles.legend_img} src={Thunder} alt='thunder' />
+							<span className={styles.legend_info}>- burza</span>
 						</div>
 						<div className={styles.info_legend}>
-							<img className={styles.legend_img} src={Sun} alt='sun' />
-							<span className={styles.legend_info}>- słonecznie</span>
+							<img className={styles.legend_img} src={Snow} alt='snow' />
+							<span className={styles.legend_info}>- śnieg</span>
 						</div>
 						<div className={styles.info_legend}>
-							<img className={styles.legend_img} src={Sun} alt='sun' />
-							<span className={styles.legend_info}>- słonecznie</span>
+							<img className={styles.legend_img} src={Fog} alt='fog' />
+							<span className={styles.legend_info}>- mgliście</span>
 						</div>
 						<div className={styles.info_legend}>
-							<img className={styles.legend_img} src={Sun} alt='sun' />
-							<span className={styles.legend_info}>- słonecznie</span>
+							<img className={styles.legend_img} src={Ice} alt='ice' />
+							<span className={styles.legend_info}>- gołoledź</span>
+						</div>
+						<div className={styles.legend_other_info}>
+							<p className={styles.other_info}>
+								W kolejnych informacjach pojawią się stan pogody, temperatura w ℃, siła wiatru w km/h oraz ciśnienie w
+								hPa
+							</p>
 						</div>
 					</div>
 				</div>
