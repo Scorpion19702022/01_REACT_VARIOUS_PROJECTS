@@ -25,11 +25,13 @@
 .btn_active {
 	width: 30%;
 	padding: 0.8em;
+	text-align: center;
 	background-color: var(--color-darkred06);
 }
 
 .btn_no_active {
 	width: 30%;
 	padding: 0.8em;
+	text-align: center;
 	background-color: var(--color-darkred03);
 }
