@@ -21,7 +21,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	margin: 6em 0em 1em 0em;
+	margin: 4em 0em 1em 0em;
 }
 
 .btn_active {
@@ -58,4 +58,10 @@
 
 .into_btn {
 	color: var(--color-darkred01);
+}
+
+@media (min-width: 767.98px) {
+	.nav_links {
+		margin: 2em 0em 1em 0em;
+	}
 }
