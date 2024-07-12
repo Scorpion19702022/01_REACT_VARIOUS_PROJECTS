@@ -4,27 +4,30 @@ import { Link } from 'react-router-dom'
 import styles from './NavWorld.module.css'
 
 const NavWorld = () => {
-	const [activeButton, setActiveButton] = useState<string>('')
+	const [activeButtonMain, setActiveButtonMain] = useState<string>('main')
+	const [activeButtonPoland, setActiveButtonPoland] = useState<string>('')
+	const [activeButtonEurope, setActiveButtonEurope] = useState<string>('')
 
 	const handleActive = (button: string) => {
-		setActiveButton(button)
 		if (button === 'main') {
-			setActiveButton('main')
+			setActiveButtonMain('main')
+			setActiveButtonPoland('')
+			setActiveButtonEurope('')
 		} else if (button === 'poland') {
-			setActiveButton('poland')
+			setActiveButtonMain('')
+			setActiveButtonPoland('poland')
+			setActiveButtonEurope('')
 		} else if (button === 'europe') {
-			setActiveButton('europe')
-		} else {
-			setActiveButton('main')
+			setActiveButtonMain('')
+			setActiveButtonPoland('')
+			setActiveButtonEurope('europe')
 		}
 	}
-
-	console.log(activeButton)
 
 	return (
 		<nav className={styles.nav_btns}>
 			<button
-				className={activeButton === 'main' ? styles.btn_active : styles.btn_no_active}
+				className={activeButtonMain === 'main' ? styles.btn_active : styles.btn_no_active}
 				onClick={() => handleActive('main')}
 			>
 				<Link to='/WeatherApp'>
@@ -32,7 +35,7 @@ const NavWorld = () => {
 				</Link>
 			</button>
 			<button
-				className={activeButton === 'poland' ? styles.btn_active : styles.btn_no_active}
+				className={activeButtonPoland === 'poland' ? styles.btn_active : styles.btn_no_active}
 				onClick={() => handleActive('poland')}
 			>
 				<Link to='/WeatherApp/Poland'>
@@ -40,7 +43,7 @@ const NavWorld = () => {
 				</Link>
 			</button>
 			<button
-				className={activeButton === 'europe' ? styles.btn_active : styles.btn_no_active}
+				className={activeButtonEurope === 'europe' ? styles.btn_active : styles.btn_no_active}
 				onClick={() => handleActive('europe')}
 			>
 				<Link to='/WeatherApp/Europe'>
