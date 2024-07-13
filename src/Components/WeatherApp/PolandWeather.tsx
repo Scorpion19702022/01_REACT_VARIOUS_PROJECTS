@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import NavWorld from './NavWorld'
 
 import PolandMap from './assets/polandMAP.png'
 
 import styles from './PolandWeather.module.css'
+import PolandContext from './Context/PolandContext'
 
 const PolandWeather = () => {
+	const {} = useContext(PolandContext)
+
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />

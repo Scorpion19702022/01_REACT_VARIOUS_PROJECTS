@@ -1,11 +1,12 @@
 import React from 'react'
 import PolandWeather from '../PolandWeather'
+import { PolandProvider } from '../Context/PolandContext'
 
 const Poland = () => {
 	return (
-		<div>
+		<PolandProvider>
 			<PolandWeather />
-		</div>
+		</PolandProvider>
 	)
 }
 
