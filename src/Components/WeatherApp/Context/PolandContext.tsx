@@ -51,14 +51,14 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 	const API_UNITS_POLAND = '&units=metric'
 
-	const time = setTimeout(() => {
-		setRefresh(refresh - 1)
-	}, 100000)
+	// const time = window.setTimeout(() => {
+	// 	setRefresh(refresh - 1)
+	// }, 600000)
 
-	if (refresh === 0) {
-		clearTimeout(time)
-		setRefresh(10)
-	}
+	// if (refresh === 0) {
+	// 	clearTimeout(time)
+	// 	setRefresh(10)
+	// }
 
 	// === SZCZECIN ===
 
@@ -90,12 +90,12 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 		cityPol01()
 
-		setInterval(() => {
-			cityPol01()
-		}, 100000)
+		// window.setInterval(() => {
+		// 	cityPol01()
+		// }, 600000)
 	}, [])
 
-	console.log(tempPol01)
+	// console.log(tempPol01)
 	// ======
 
 	return (

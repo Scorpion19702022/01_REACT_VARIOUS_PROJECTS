@@ -36,15 +36,18 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	opacity: 0.3;
 }
 
 .heading {
 	position: absolute;
-	top: 10%;
-	left: 10%;
-	padding: 1em;
-	background-color: var(--color-darkred02);
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0.4em;
+	color: var(--color-dark01);
+	border-radius: 6px;
+	border: 0.04em solid var(--color-dark01);
+	background-color: var(--color-darkred08);
 }
 
 .box_map {
@@ -54,6 +57,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	opacity: 0.3;
 }
 
 .img_poland_map {
