@@ -23,19 +23,19 @@
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
 	align-items: center;
 	background-color: var(--color-darkred08);
 }
 
 .heading {
+	margin-top: 2em;
 	font-size: 2em;
 	color: var(--color-darkred02);
 }
 
 .box_main {
 	width: 100%;
-	height: 60%;
+	height: 70%;
 	padding: 2em;
 	display: flex;
 	justify-content: space-between;
@@ -44,11 +44,11 @@
 .main_info {
 	width: 47%;
 	height: 100%;
-	padding: 1em;
+	padding-right: 1em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
 	border-right: 0.04em solid var(--color-darkred04);
 }
 
@@ -70,7 +70,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-end;
 }
 
 .legend_heading {

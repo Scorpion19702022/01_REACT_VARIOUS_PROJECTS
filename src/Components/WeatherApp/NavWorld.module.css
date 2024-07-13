@@ -26,7 +26,7 @@
 
 .btn_active {
 	width: 20%;
-	padding: 0.4em;
+	padding: 0.2em;
 	text-align: center;
 	margin: 0em 1em;
 	background-color: var(--color-darkred05);
@@ -42,7 +42,7 @@
 
 .btn_no_active {
 	width: 20%;
-	padding: 0.4em;
+	padding: 0.2em;
 	text-align: center;
 	margin: 0em 1em;
 	background-color: var(--color-darkred04);
@@ -58,6 +58,7 @@
 
 .into_btn {
 	color: var(--color-darkred01);
+	font-size: 0.8em;
 }
 
 @media (min-width: 767.98px) {

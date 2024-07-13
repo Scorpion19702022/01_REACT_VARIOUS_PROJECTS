@@ -91,18 +91,6 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.nav_links_view {
-	position: fixed;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	transform: translateX(0%);
-	background-color: var(--color-dark08);
-	transition: all 0.3s ease-in-out;
-}
-
 .list_links {
 	width: 100%;
 	height: 100vh;
