@@ -76,7 +76,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 	const URL_POLAND_01 = API_LINK_POLAND + cityPol01 + API_KEY_POLAND + API_UNITS_POLAND
 
 	useEffect(() => {
-		const cityPol01 = async () => {
+		const cityPol01 = async (e: any) => {
 			try {
 				const response = await fetch(URL_POLAND_01)
 				const data = await response.json()
@@ -96,12 +96,13 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				setTempPol01('ERROR')
 				setTempPol01('ERROR')
 			}
+			e.preventDefault()
 		}
 
-		cityPol01()
+		cityPol01(null)
 
 		window.setInterval(() => {
-			cityPol01()
+			cityPol01(null)
 		}, 600000)
 	}, [])
 
