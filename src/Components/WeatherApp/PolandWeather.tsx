@@ -7,6 +7,7 @@ const PolandWeather = () => {
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
+			<div className={styles.box_content}></div>
 		</section>
 	)
 }

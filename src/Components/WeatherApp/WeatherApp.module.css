@@ -27,7 +27,17 @@
 	background-color: var(--color-darkred08);
 }
 
+.box_info {
+	width: 100%;
+	height: 100%;
+	margin-top: 20%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .heading {
+	height: 10%;
 	margin-top: 2em;
 	font-size: 2em;
 	color: var(--color-darkred02);
@@ -48,8 +58,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: flex-end;
-	border-right: 0.04em solid var(--color-darkred04);
+	/* justify-content: flex-end; */
 }
 
 .main_img {
@@ -70,7 +79,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: space-between;
 }
 
 .legend_heading {
@@ -121,6 +130,15 @@
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;
+	}
+
+	.heading {
+		margin-bottom: 1em;
+	}
+
+	.box_info {
+		margin-top: 10em;
+		height: 60%;
 	}
 
 	.main_text {

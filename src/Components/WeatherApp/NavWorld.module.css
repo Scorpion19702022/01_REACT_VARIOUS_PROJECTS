@@ -18,10 +18,12 @@
 }
 
 .nav_links {
+	position: fixed;
+	top: 8%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	margin: 4em 0em 1em 0em;
+	/* margin: 4em 0em 1em 0em; */
 }
 
 .btn_active {
@@ -61,8 +63,8 @@
 	font-size: 0.8em;
 }
 
-@media (min-width: 767.98px) {
+/* @media (min-width: 767.98px) {
 	.nav_links {
 		margin: 2em 0em 1em 0em;
 	}
-}
+} */
