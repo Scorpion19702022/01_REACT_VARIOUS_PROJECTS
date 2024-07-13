@@ -7,7 +7,7 @@ import styles from './PolandWeather.module.css'
 import PolandContext from './Context/PolandContext'
 
 const PolandWeather = () => {
-	const {} = useContext(PolandContext)
+	const { cityPol01 } = useContext(PolandContext)
 
 	return (
 		<section className={styles.wrapper}>
