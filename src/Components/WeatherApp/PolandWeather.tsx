@@ -7,7 +7,13 @@ import styles from './PolandWeather.module.css'
 import PolandContext from './Context/PolandContext'
 
 const PolandWeather = () => {
-	const { refresh } = useContext(PolandContext)
+	const { refresh, cityPol01, imgPol01, tempPol01, windPol01, pressurePol01 } = useContext(PolandContext)
+
+	const CityPolStetin = (
+		<div>
+			<p>Jest</p>
+		</div>
+	)
 
 	return (
 		<section className={styles.wrapper}>
@@ -17,7 +23,7 @@ const PolandWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_poland_map} src={PolandMap} alt='poland_map' />
 				</div>
-				<div className={styles.box_cities}></div>
+				<div className={styles.box_cities}>{CityPolStetin}</div>
 			</div>
 		</section>
 	)
