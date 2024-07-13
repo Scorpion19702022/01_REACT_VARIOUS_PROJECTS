@@ -23,6 +23,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	z-index: 10;
 	/* margin: 4em 0em 1em 0em; */
 }
 
@@ -63,8 +64,11 @@
 	font-size: 0.8em;
 }
 
-/* @media (min-width: 767.98px) {
-	.nav_links {
-		margin: 2em 0em 1em 0em;
+@media (min-width: 767.98px) {
+	.wrapper {
+		padding-left: 10em;
 	}
-} */
+	.nav_links {
+		top: 5%;
+	}
+}
