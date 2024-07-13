@@ -7,12 +7,13 @@ import styles from './PolandWeather.module.css'
 import PolandContext from './Context/PolandContext'
 
 const PolandWeather = () => {
-	const { cityPol01 } = useContext(PolandContext)
+	const { refresh } = useContext(PolandContext)
 
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
 			<div className={styles.box_content}>
+				<h4 className={styles.heading}>Aktualizacja pogody za {refresh} minut</h4>
 				<div className={styles.box_map}>
 					<img className={styles.img_poland_map} src={PolandMap} alt='poland_map' />
 				</div>

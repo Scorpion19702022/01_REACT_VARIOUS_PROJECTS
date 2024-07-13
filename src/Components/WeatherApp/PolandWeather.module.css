@@ -29,6 +29,7 @@
 }
 
 .box_content {
+	position: relative;
 	width: 100%;
 	height: 100vh;
 	padding: 2em;
@@ -36,6 +37,14 @@
 	flex-direction: column;
 	justify-content: center;
 	opacity: 0.3;
+}
+
+.heading {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	padding: 1em;
+	background-color: var(--color-darkred02);
 }
 
 .box_map {
