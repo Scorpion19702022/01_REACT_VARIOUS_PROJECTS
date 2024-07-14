@@ -434,7 +434,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol03(Fog)
 		} else if (idWeatherPol03 === 800) {
 			setImgPol03(Sun)
-		} else if (idWeatherPol03 >= 801 && idWeatherPol03 <= 804) {
+		} else if (idWeatherPol03 === 801) {
+			setImgPol03(FewClouds)
+		} else if (idWeatherPol03 > 801 && idWeatherPol03 <= 804) {
 			setImgPol03(Cloud)
 		} else {
 			setImgPol03(Un)
@@ -493,7 +495,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol04(Fog)
 		} else if (idWeatherPol04 === 800) {
 			setImgPol04(Sun)
-		} else if (idWeatherPol04 >= 801 && idWeatherPol04 <= 804) {
+		} else if (idWeatherPol04 === 801) {
+			setImgPol04(FewClouds)
+		} else if (idWeatherPol04 > 801 && idWeatherPol04 <= 804) {
 			setImgPol04(Cloud)
 		} else {
 			setImgPol04(Un)
@@ -552,7 +556,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol05(Fog)
 		} else if (idWeatherPol05 === 800) {
 			setImgPol05(Sun)
-		} else if (idWeatherPol05 >= 801 && idWeatherPol05 <= 804) {
+		} else if (idWeatherPol05 === 801) {
+			setImgPol05(FewClouds)
+		} else if (idWeatherPol05 > 801 && idWeatherPol05 <= 804) {
 			setImgPol05(Cloud)
 		} else {
 			setImgPol05(Un)
@@ -611,7 +617,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol06(Fog)
 		} else if (idWeatherPol06 === 800) {
 			setImgPol06(Sun)
-		} else if (idWeatherPol06 >= 801 && idWeatherPol06 <= 804) {
+		} else if (idWeatherPol06 === 801) {
+			setImgPol06(FewClouds)
+		} else if (idWeatherPol06 > 801 && idWeatherPol06 <= 804) {
 			setImgPol06(Cloud)
 		} else {
 			setImgPol06(Un)
@@ -670,7 +678,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol07(Fog)
 		} else if (idWeatherPol07 === 800) {
 			setImgPol07(Sun)
-		} else if (idWeatherPol07 >= 801 && idWeatherPol07 <= 804) {
+		} else if (idWeatherPol07 === 801) {
+			setImgPol07(FewClouds)
+		} else if (idWeatherPol07 > 801 && idWeatherPol07 <= 804) {
 			setImgPol07(Cloud)
 		} else {
 			setImgPol07(Un)
@@ -729,7 +739,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol08(Fog)
 		} else if (idWeatherPol08 === 800) {
 			setImgPol08(Sun)
-		} else if (idWeatherPol08 >= 801 && idWeatherPol08 <= 804) {
+		} else if (idWeatherPol08 === 801) {
+			setImgPol08(FewClouds)
+		} else if (idWeatherPol08 > 801 && idWeatherPol08 <= 804) {
 			setImgPol08(Cloud)
 		} else {
 			setImgPol08(Un)
@@ -788,7 +800,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol09(Fog)
 		} else if (idWeatherPol09 === 800) {
 			setImgPol09(Sun)
-		} else if (idWeatherPol09 >= 801 && idWeatherPol09 <= 804) {
+		} else if (idWeatherPol09 === 801) {
+			setImgPol09(FewClouds)
+		} else if (idWeatherPol09 > 801 && idWeatherPol09 <= 804) {
 			setImgPol09(Cloud)
 		} else {
 			setImgPol09(Un)
@@ -847,7 +861,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol10(Fog)
 		} else if (idWeatherPol10 === 800) {
 			setImgPol10(Sun)
-		} else if (idWeatherPol10 >= 801 && idWeatherPol10 <= 804) {
+		} else if (idWeatherPol10 === 801) {
+			setImgPol10(FewClouds)
+		} else if (idWeatherPol10 > 801 && idWeatherPol10 <= 804) {
 			setImgPol10(Cloud)
 		} else {
 			setImgPol10(Un)
@@ -906,7 +922,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol11(Fog)
 		} else if (idWeatherPol11 === 800) {
 			setImgPol11(Sun)
-		} else if (idWeatherPol11 >= 801 && idWeatherPol11 <= 804) {
+		} else if (idWeatherPol11 === 801) {
+			setImgPol11(FewClouds)
+		} else if (idWeatherPol11 > 801 && idWeatherPol11 <= 804) {
 			setImgPol11(Cloud)
 		} else {
 			setImgPol11(Un)
