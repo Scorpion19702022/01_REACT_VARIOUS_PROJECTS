@@ -160,12 +160,14 @@
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		align-items: center;
+		/* justify-content: space-between; */
 		margin-bottom: 0.4em;
 	}
 
 	.name_city {
-		width: 60%;
+		width: 100%;
+		text-align: center;
 		font-size: 1.6em;
 		padding-bottom: 0.4em;
 		color: var(--color-darkred02);
