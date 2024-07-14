@@ -79,6 +79,13 @@ const PolandWeather = () => {
 		imgPol10,
 		tempPol10,
 		windPol10,
+
+		// === LUBLIN ===
+
+		cityPol11,
+		imgPol11,
+		tempPol11,
+		windPol11,
 	} = useContext(PolandContext)
 
 	const CityPol01 = (
@@ -210,6 +217,19 @@ const PolandWeather = () => {
 		</div>
 	)
 
+	const CityPol11 = (
+		<div className={styles.city_weather}>
+			<div className={styles.top}>
+				<h4 className={styles.name_city}>{cityPol11}</h4>
+				<img className={styles.img_city} src={imgPol11} alt='' />
+			</div>
+			<div className={styles.bottom}>
+				<span className={styles.city_info_weather}>{tempPol11}</span>
+				<span className={styles.city_info_weather}>{windPol11}</span>
+			</div>
+		</div>
+	)
+
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
@@ -228,6 +248,7 @@ const PolandWeather = () => {
 				<div className={styles.box_cities_08}>{CityPol08}</div>
 				<div className={styles.box_cities_09}>{CityPol09}</div>
 				<div className={styles.box_cities_10}>{CityPol10}</div>
+				<div className={styles.box_cities_11}>{CityPol11}</div>
 			</div>
 		</section>
 	)

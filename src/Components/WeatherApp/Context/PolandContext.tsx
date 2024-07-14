@@ -2,6 +2,7 @@ import React, { useEffect, createContext, useState } from 'react'
 
 import Un from '../assets/unknown.png'
 import Sun from '../assets/sun.png'
+import FewClouds from '../assets/few_clouds.png'
 import Cloud from '../assets/cloud.png'
 import Rain from '../assets/rain.png'
 import Thunder from '../assets/thunderstorm.png'
@@ -109,6 +110,16 @@ type InitialStateType = {
 	idWeatherPol10: number
 	tempPol10: number | string
 	windPol10: number | string
+
+	// ========
+
+	// ==== LUBLIN ====
+
+	cityPol11: string
+	imgPol11: any
+	idWeatherPol11: number
+	tempPol11: number | string
+	windPol11: number | string
 
 	// ========
 }
@@ -219,6 +230,16 @@ const InitialState: InitialStateType = {
 	windPol10: 0,
 
 	// ========
+
+	// ==== LUBLIN ====
+
+	cityPol11: '',
+	imgPol11: Un,
+	idWeatherPol11: 0,
+	tempPol11: 0,
+	windPol11: 0,
+
+	// ========
 }
 
 const PolandContext = createContext(InitialState)
@@ -291,7 +312,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol01(Fog)
 		} else if (idWeatherPol01 === 800) {
 			setImgPol01(Sun)
-		} else if (idWeatherPol01 >= 801 && idWeatherPol01 <= 804) {
+		} else if (idWeatherPol01 === 801) {
+			setImgPol01(FewClouds)
+		} else if (idWeatherPol01 > 801 && idWeatherPol01 <= 804) {
 			setImgPol01(Cloud)
 		} else {
 			setImgPol01(Un)
@@ -350,7 +373,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol02(Fog)
 		} else if (idWeatherPol02 === 800) {
 			setImgPol02(Sun)
-		} else if (idWeatherPol02 >= 801 && idWeatherPol02 <= 804) {
+		} else if (idWeatherPol02 === 801) {
+			setImgPol02(FewClouds)
+		} else if (idWeatherPol02 > 801 && idWeatherPol02 <= 804) {
 			setImgPol02(Cloud)
 		} else {
 			setImgPol02(Un)
@@ -831,6 +856,65 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 	// ======
 
+	// === LUBLIN ===
+
+	const [cityPol11, setCityPol11] = useState<string>('LUBLIN')
+	const [imgPol11, setImgPol11] = useState<any>(Un)
+	const [idWeatherPol11, setIdWeatherPol11] = useState<number>(0)
+	const [tempPol11, setTempPol11] = useState<number | string>(0)
+	const [windPol11, setWindPol11] = useState<number | string>(0)
+
+	const URL_POLAND_11 = API_LINK_POLAND + cityPol11 + API_KEY_POLAND + API_UNITS_POLAND
+
+	useEffect(() => {
+		const cityPol11 = async () => {
+			try {
+				const response = await fetch(URL_POLAND_11)
+				const data = await response.json()
+				console.log(data)
+				const codID = Object.assign({}, ...data.weather)
+				setIdWeatherPol11(codID.id)
+				const temp = data.main.temp
+				setTempPol11(`${temp.toFixed(1)}℃`)
+				const wind = data.wind.speed.toFixed(1)
+				setWindPol11(`${wind} km/h`)
+			} catch (error) {
+				console.log(error)
+				setCityPol11('ERROR')
+				setImgPol11(Un)
+				setTempPol11('ERROR')
+			}
+		}
+
+		cityPol11()
+
+		window.setInterval(() => {
+			cityPol11()
+		}, 600000)
+	}, [])
+
+	useEffect(() => {
+		if (idWeatherPol11 >= 200 && idWeatherPol11 <= 232) {
+			setImgPol11(Thunder)
+		} else if (idWeatherPol11 >= 300 && idWeatherPol11 <= 321) {
+			setImgPol11(Drizzle)
+		} else if (idWeatherPol11 >= 500 && idWeatherPol11 <= 531) {
+			setImgPol11(Rain)
+		} else if (idWeatherPol11 >= 600 && idWeatherPol11 <= 622) {
+			setImgPol11(Snow)
+		} else if (idWeatherPol11 >= 701 && idWeatherPol11 <= 781) {
+			setImgPol11(Fog)
+		} else if (idWeatherPol11 === 800) {
+			setImgPol11(Sun)
+		} else if (idWeatherPol11 >= 801 && idWeatherPol11 <= 804) {
+			setImgPol11(Cloud)
+		} else {
+			setImgPol11(Un)
+		}
+	}, [idWeatherPol11])
+
+	// ======
+
 	return (
 		<PolandContext.Provider
 			value={{
@@ -915,6 +999,14 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				idWeatherPol10,
 				tempPol10,
 				windPol10,
+
+				// === LUBLIN ===
+
+				cityPol11,
+				imgPol11,
+				idWeatherPol11,
+				tempPol11,
+				windPol11,
 			}}
 		>
 			{children}
