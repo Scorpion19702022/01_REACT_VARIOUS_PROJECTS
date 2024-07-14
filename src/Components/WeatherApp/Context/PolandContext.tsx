@@ -874,7 +874,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 	// === LUBLIN ===
 
-	const [cityPol11, setCityPol11] = useState<string>('LUBLIN')
+	const [cityPol11, setCityPol11] = useState<string>('Lublin')
 	const [imgPol11, setImgPol11] = useState<any>(Un)
 	const [idWeatherPol11, setIdWeatherPol11] = useState<number>(0)
 	const [tempPol11, setTempPol11] = useState<number | string>(0)
