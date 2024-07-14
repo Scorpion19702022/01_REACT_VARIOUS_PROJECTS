@@ -81,6 +81,54 @@
 	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 }
 
+.box_cities_02 {
+	position: absolute;
+	top: 23%;
+	left: 19.5%;
+	width: 16%;
+	padding: 0.6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	border: 0.04em solid var(--color-darkred01);
+	background-color: var(--color-darkred05);
+	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+}
+
+.box_cities_03 {
+	position: absolute;
+	top: 18%;
+	left: 37%;
+	width: 16%;
+	padding: 0.6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	border: 0.04em solid var(--color-darkred01);
+	background-color: var(--color-darkred05);
+	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+}
+
+.box_cities_04 {
+	position: absolute;
+	top: 20%;
+	right: 27%;
+	width: 16%;
+	padding: 0.6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	border: 0.04em solid var(--color-darkred01);
+	background-color: var(--color-darkred05);
+	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+}
+
 .city_weather {
 	width: 100%;
 	display: flex;
@@ -136,6 +184,54 @@
 		position: absolute;
 		top: 21%;
 		left: 28%;
+		width: 7%;
+		padding: 0.6em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+		border: 0.04em solid var(--color-darkred01);
+		background-color: var(--color-darkred05);
+		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+	}
+
+	.box_cities_02 {
+		position: absolute;
+		top: 17%;
+		left: 36%;
+		width: 7%;
+		padding: 0.6em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+		border: 0.04em solid var(--color-darkred01);
+		background-color: var(--color-darkred05);
+		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+	}
+
+	.box_cities_03 {
+		position: absolute;
+		top: 11%;
+		left: 44%;
+		width: 7%;
+		padding: 0.6em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+		border: 0.04em solid var(--color-darkred01);
+		background-color: var(--color-darkred05);
+		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+	}
+
+	.box_cities_04 {
+		position: absolute;
+		top: 14%;
+		right: 40%;
 		width: 7%;
 		padding: 0.6em;
 		display: flex;
