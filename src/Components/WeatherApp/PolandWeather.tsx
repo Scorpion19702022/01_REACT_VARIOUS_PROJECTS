@@ -37,6 +37,27 @@ const PolandWeather = () => {
 		imgPol04,
 		tempPol04,
 		windPol04,
+
+		// === BIALYSTOK ===
+
+		cityPol05,
+		imgPol05,
+		tempPol05,
+		windPol05,
+
+		// === ZIELONA GORA ===
+
+		// cityPol06,
+		imgPol06,
+		tempPol06,
+		windPol06,
+
+		// === POZNAN ===
+
+		cityPol07,
+		imgPol07,
+		tempPol07,
+		windPol07,
 	} = useContext(PolandContext)
 
 	const CityPol01 = (
@@ -90,6 +111,45 @@ const PolandWeather = () => {
 		</div>
 	)
 
+	const CityPol05 = (
+		<div className={styles.city_weather}>
+			<div className={styles.top}>
+				<h4 className={styles.name_city}>{cityPol05}</h4>
+				<img className={styles.img_city} src={imgPol05} alt='' />
+			</div>
+			<div className={styles.bottom}>
+				<span className={styles.city_info_weather}>{tempPol05}</span>
+				<span className={styles.city_info_weather}>{windPol05}</span>
+			</div>
+		</div>
+	)
+
+	const CityPol06 = (
+		<div className={styles.city_weather}>
+			<div className={styles.top}>
+				<h4 className={styles.name_city}>Zielona G.</h4>
+				<img className={styles.img_city} src={imgPol06} alt='' />
+			</div>
+			<div className={styles.bottom}>
+				<span className={styles.city_info_weather}>{tempPol06}</span>
+				<span className={styles.city_info_weather}>{windPol06}</span>
+			</div>
+		</div>
+	)
+
+	const CityPol07 = (
+		<div className={styles.city_weather}>
+			<div className={styles.top}>
+				<h4 className={styles.name_city}>{cityPol07}</h4>
+				<img className={styles.img_city} src={imgPol07} alt='' />
+			</div>
+			<div className={styles.bottom}>
+				<span className={styles.city_info_weather}>{tempPol07}</span>
+				<span className={styles.city_info_weather}>{windPol07}</span>
+			</div>
+		</div>
+	)
+
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
@@ -102,6 +162,9 @@ const PolandWeather = () => {
 				<div className={styles.box_cities_02}>{CityPol02}</div>
 				<div className={styles.box_cities_03}>{CityPol03}</div>
 				<div className={styles.box_cities_04}>{CityPol04}</div>
+				<div className={styles.box_cities_05}>{CityPol05}</div>
+				<div className={styles.box_cities_06}>{CityPol06}</div>
+				<div className={styles.box_cities_07}>{CityPol07}</div>
 			</div>
 		</section>
 	)

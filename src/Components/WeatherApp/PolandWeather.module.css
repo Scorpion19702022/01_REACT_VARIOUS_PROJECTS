@@ -129,6 +129,54 @@
 	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 }
 
+.box_cities_05 {
+	position: absolute;
+	top: 26%;
+	right: 6%;
+	width: 16%;
+	padding: 0.6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	border: 0.04em solid var(--color-darkred01);
+	background-color: var(--color-darkred05);
+	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+}
+
+.box_cities_06 {
+	position: absolute;
+	top: 41%;
+	left: 3%;
+	width: 16%;
+	padding: 0.6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	border: 0.04em solid var(--color-darkred01);
+	background-color: var(--color-darkred05);
+	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+}
+
+.box_cities_07 {
+	position: absolute;
+	top: 39%;
+	left: 21%;
+	width: 16%;
+	padding: 0.6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	border: 0.04em solid var(--color-darkred01);
+	background-color: var(--color-darkred05);
+	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+}
+
 .city_weather {
 	width: 100%;
 	display: flex;
@@ -146,8 +194,8 @@
 }
 
 .name_city {
-	width: 60%;
-	font-size: 1.2em;
+	width: 80%;
+	/* font-size: 0.9em; */
 	padding-bottom: 0.4em;
 	color: var(--color-darkred02);
 }
@@ -232,6 +280,54 @@
 		position: absolute;
 		top: 14%;
 		right: 40%;
+		width: 7%;
+		padding: 0.6em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+		border: 0.04em solid var(--color-darkred01);
+		background-color: var(--color-darkred05);
+		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+	}
+
+	.box_cities_05 {
+		position: absolute;
+		top: 24%;
+		right: 29%;
+		width: 7%;
+		padding: 0.6em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+		border: 0.04em solid var(--color-darkred01);
+		background-color: var(--color-darkred05);
+		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+	}
+
+	.box_cities_06 {
+		position: absolute;
+		top: 38%;
+		left: 29%;
+		width: 7%;
+		padding: 0.6em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+		border: 0.04em solid var(--color-darkred01);
+		background-color: var(--color-darkred05);
+		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+	}
+
+	.box_cities_07 {
+		position: absolute;
+		top: 36%;
+		left: 37%;
 		width: 7%;
 		padding: 0.6em;
 		display: flex;
