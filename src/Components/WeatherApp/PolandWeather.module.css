@@ -177,6 +177,22 @@
 	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 }
 
+.box_cities_08 {
+	position: absolute;
+	top: 33%;
+	left: 38.5%;
+	width: 16%;
+	padding: 0.6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	border: 0.04em solid var(--color-darkred01);
+	background-color: var(--color-darkred05);
+	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+}
+
 .city_weather {
 	width: 100%;
 	display: flex;
@@ -201,7 +217,7 @@
 }
 
 .img_city {
-	width: 50%;
+	width: 40%;
 	height: 20%;
 	object-fit: cover;
 }
@@ -328,6 +344,22 @@
 		position: absolute;
 		top: 36%;
 		left: 37%;
+		width: 7%;
+		padding: 0.6em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+		border: 0.04em solid var(--color-darkred01);
+		background-color: var(--color-darkred05);
+		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+	}
+
+	.box_cities_08 {
+		position: absolute;
+		top: 30%;
+		left: 44.4%;
 		width: 7%;
 		padding: 0.6em;
 		display: flex;

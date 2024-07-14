@@ -81,6 +81,16 @@ type InitialStateType = {
 	windPol07: number | string
 
 	// ========
+
+	// ==== BYDGOSZCZ ====
+
+	cityPol08: string
+	imgPol08: any
+	idWeatherPol08: number
+	tempPol08: number | string
+	windPol08: number | string
+
+	// ========
 }
 
 type PolandProviderType = {
@@ -157,6 +167,16 @@ const InitialState: InitialStateType = {
 	idWeatherPol07: 0,
 	tempPol07: 0,
 	windPol07: 0,
+
+	// ========
+
+	// ==== BYDGOSZCZ ====
+
+	cityPol08: '',
+	imgPol08: Un,
+	idWeatherPol08: 0,
+	tempPol08: 0,
+	windPol08: 0,
 
 	// ========
 }
@@ -594,6 +614,65 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 	// ======
 
+	// === POZNAN ===
+
+	const [cityPol08, setCityPol08] = useState<string>('Bydgoszcz')
+	const [imgPol08, setImgPol08] = useState<any>(Un)
+	const [idWeatherPol08, setIdWeatherPol08] = useState<number>(0)
+	const [tempPol08, setTempPol08] = useState<number | string>(0)
+	const [windPol08, setWindPol08] = useState<number | string>(0)
+
+	const URL_POLAND_08 = API_LINK_POLAND + cityPol08 + API_KEY_POLAND + API_UNITS_POLAND
+
+	useEffect(() => {
+		const cityPol08 = async () => {
+			try {
+				const response = await fetch(URL_POLAND_08)
+				const data = await response.json()
+				console.log(data)
+				const codID = Object.assign({}, ...data.weather)
+				setIdWeatherPol08(codID.id)
+				const temp = data.main.temp
+				setTempPol08(`${temp.toFixed(1)}℃`)
+				const wind = data.wind.speed.toFixed(1)
+				setWindPol08(`${wind} km/h`)
+			} catch (error) {
+				console.log(error)
+				setCityPol08('ERROR')
+				setImgPol08(Un)
+				setTempPol08('ERROR')
+			}
+		}
+
+		cityPol08()
+
+		window.setInterval(() => {
+			cityPol08()
+		}, 600000)
+	}, [])
+
+	useEffect(() => {
+		if (idWeatherPol08 >= 200 && idWeatherPol08 <= 232) {
+			setImgPol08(Thunder)
+		} else if (idWeatherPol08 >= 300 && idWeatherPol08 <= 321) {
+			setImgPol08(Drizzle)
+		} else if (idWeatherPol08 >= 500 && idWeatherPol08 <= 531) {
+			setImgPol08(Rain)
+		} else if (idWeatherPol08 >= 600 && idWeatherPol08 <= 622) {
+			setImgPol08(Snow)
+		} else if (idWeatherPol08 >= 701 && idWeatherPol08 <= 781) {
+			setImgPol08(Fog)
+		} else if (idWeatherPol08 === 800) {
+			setImgPol08(Sun)
+		} else if (idWeatherPol08 >= 801 && idWeatherPol08 <= 804) {
+			setImgPol08(Cloud)
+		} else {
+			setImgPol08(Un)
+		}
+	}, [idWeatherPol08])
+
+	// ======
+
 	return (
 		<PolandContext.Provider
 			value={{
@@ -654,6 +733,14 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				idWeatherPol07,
 				tempPol07,
 				windPol07,
+
+				// === BYDGOSZCZ ===
+
+				cityPol08,
+				imgPol08,
+				idWeatherPol08,
+				tempPol08,
+				windPol08,
 			}}
 		>
 			{children}
