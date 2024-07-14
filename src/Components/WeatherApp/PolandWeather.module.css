@@ -65,10 +65,15 @@
 	object-fit: cover;
 }
 
-.box_cities_01 {
+.box_cities_01,
+.box_cities_02,
+.box_cities_03,
+.box_cities_04,
+.box_cities_05,
+.box_cities_06,
+.box_cities_07,
+.box_cities_08 {
 	position: absolute;
-	top: 27%;
-	left: 2%;
 	width: 16%;
 	padding: 0.6em;
 	display: flex;
@@ -79,118 +84,46 @@
 	border: 0.04em solid var(--color-darkred01);
 	background-color: var(--color-darkred05);
 	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+}
+
+.box_cities_01 {
+	top: 27%;
+	left: 2%;
 }
 
 .box_cities_02 {
-	position: absolute;
 	top: 23%;
 	left: 19.5%;
-	width: 16%;
-	padding: 0.6em;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 12px;
-	border: 0.04em solid var(--color-darkred01);
-	background-color: var(--color-darkred05);
-	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 }
 
 .box_cities_03 {
-	position: absolute;
 	top: 18%;
 	left: 37%;
-	width: 16%;
-	padding: 0.6em;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 12px;
-	border: 0.04em solid var(--color-darkred01);
-	background-color: var(--color-darkred05);
-	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 }
 
 .box_cities_04 {
-	position: absolute;
 	top: 20%;
 	right: 27%;
-	width: 16%;
-	padding: 0.6em;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 12px;
-	border: 0.04em solid var(--color-darkred01);
-	background-color: var(--color-darkred05);
-	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 }
 
 .box_cities_05 {
-	position: absolute;
 	top: 26%;
 	right: 6%;
-	width: 16%;
-	padding: 0.6em;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 12px;
-	border: 0.04em solid var(--color-darkred01);
-	background-color: var(--color-darkred05);
-	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 }
 
 .box_cities_06 {
-	position: absolute;
 	top: 41%;
 	left: 3%;
-	width: 16%;
-	padding: 0.6em;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 12px;
-	border: 0.04em solid var(--color-darkred01);
-	background-color: var(--color-darkred05);
-	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 }
 
 .box_cities_07 {
-	position: absolute;
 	top: 39%;
 	left: 21%;
-	width: 16%;
-	padding: 0.6em;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 12px;
-	border: 0.04em solid var(--color-darkred01);
-	background-color: var(--color-darkred05);
-	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 }
 
 .box_cities_08 {
-	position: absolute;
 	top: 33%;
 	left: 38.5%;
-	width: 16%;
-	padding: 0.6em;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 12px;
-	border: 0.04em solid var(--color-darkred01);
-	background-color: var(--color-darkred05);
-	box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 }
 
 .city_weather {
@@ -244,10 +177,15 @@
 		width: 40%;
 	}
 
-	.box_cities_01 {
+	.box_cities_01,
+	.box_cities_02,
+	.box_cities_03,
+	.box_cities_04,
+	.box_cities_05,
+	.box_cities_06,
+	.box_cities_07,
+	.box_cities_08 {
 		position: absolute;
-		top: 21%;
-		left: 28%;
 		width: 7%;
 		padding: 0.6em;
 		display: flex;
@@ -258,118 +196,46 @@
 		border: 0.04em solid var(--color-darkred01);
 		background-color: var(--color-darkred05);
 		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+	}
+
+	.box_cities_01 {
+		top: 21%;
+		left: 28%;
 	}
 
 	.box_cities_02 {
-		position: absolute;
 		top: 17%;
 		left: 36%;
-		width: 7%;
-		padding: 0.6em;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 12px;
-		border: 0.04em solid var(--color-darkred01);
-		background-color: var(--color-darkred05);
-		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 	}
 
 	.box_cities_03 {
-		position: absolute;
 		top: 11%;
 		left: 44%;
-		width: 7%;
-		padding: 0.6em;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 12px;
-		border: 0.04em solid var(--color-darkred01);
-		background-color: var(--color-darkred05);
-		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 	}
 
 	.box_cities_04 {
-		position: absolute;
 		top: 14%;
 		right: 40%;
-		width: 7%;
-		padding: 0.6em;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 12px;
-		border: 0.04em solid var(--color-darkred01);
-		background-color: var(--color-darkred05);
-		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 	}
 
 	.box_cities_05 {
-		position: absolute;
 		top: 24%;
 		right: 29%;
-		width: 7%;
-		padding: 0.6em;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 12px;
-		border: 0.04em solid var(--color-darkred01);
-		background-color: var(--color-darkred05);
-		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 	}
 
 	.box_cities_06 {
-		position: absolute;
 		top: 38%;
 		left: 29%;
-		width: 7%;
-		padding: 0.6em;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 12px;
-		border: 0.04em solid var(--color-darkred01);
-		background-color: var(--color-darkred05);
-		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 	}
 
 	.box_cities_07 {
-		position: absolute;
 		top: 36%;
 		left: 37%;
-		width: 7%;
-		padding: 0.6em;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 12px;
-		border: 0.04em solid var(--color-darkred01);
-		background-color: var(--color-darkred05);
-		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 	}
 
 	.box_cities_08 {
-		position: absolute;
 		top: 30%;
 		left: 44.4%;
-		width: 7%;
-		padding: 0.6em;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border-radius: 12px;
-		border: 0.04em solid var(--color-darkred01);
-		background-color: var(--color-darkred05);
-		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
 	}
 
 	.city_weather {
