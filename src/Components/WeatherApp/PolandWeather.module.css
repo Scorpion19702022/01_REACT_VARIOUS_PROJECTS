@@ -69,7 +69,7 @@
 	position: absolute;
 	top: 27%;
 	left: 2%;
-	width: 20%;
+	width: 16%;
 	padding: 0.6em;
 	display: flex;
 	flex-direction: column;
@@ -92,17 +92,20 @@
 .top {
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	margin-bottom: 0.4em;
 }
 
 .name_city {
 	width: 60%;
+	font-size: 1.2em;
+	padding-bottom: 0.4em;
 	color: var(--color-darkred02);
 }
 
 .img_city {
-	width: 30%;
+	width: 50%;
 	height: 20%;
 	object-fit: cover;
 }
@@ -110,11 +113,14 @@
 .bottom {
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 }
 
 .city_info_weather {
-	font-size: 0.6em;
+	font-size: 0.8em;
+	font-weight: 700;
+	margin-bottom: 0.2em;
 	color: var(--color-darkred01);
 }
 
@@ -124,5 +130,63 @@
 	}
 	.img_poland_map {
 		width: 40%;
+	}
+
+	.box_cities_01 {
+		position: absolute;
+		top: 21%;
+		left: 28%;
+		width: 7%;
+		padding: 0.6em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+		border: 0.04em solid var(--color-darkred01);
+		background-color: var(--color-darkred05);
+		box-shadow: 0.4em 0.4em 1em var(--color-darkred08);
+	}
+
+	.city_weather {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.top {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-bottom: 0.4em;
+	}
+
+	.name_city {
+		width: 60%;
+		font-size: 1.6em;
+		padding-bottom: 0.4em;
+		color: var(--color-darkred02);
+	}
+
+	.img_city {
+		width: 50%;
+		height: 20%;
+		object-fit: cover;
+	}
+
+	.bottom {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.city_info_weather {
+		font-size: 1em;
+		font-weight: 700;
+		color: var(--color-darkred01);
 	}
 }

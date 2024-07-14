@@ -7,7 +7,6 @@ import Rain from '../assets/rain.png'
 import Thunder from '../assets/thunderstorm.png'
 import Drizzle from '../assets/drizzle.png'
 import Fog from '../assets/fog.png'
-// import Ice from '../assets/ice.png'
 import Snow from '../assets/snow.png'
 
 type InitialStateType = {
@@ -20,7 +19,6 @@ type InitialStateType = {
 	idWeatherPol01: number
 	tempPol01: number | string
 	windPol01: number | string
-	pressurePol01: number | string
 
 	// ========
 }
@@ -39,7 +37,6 @@ const InitialState: InitialStateType = {
 	idWeatherPol01: 0,
 	tempPol01: 0,
 	windPol01: 0,
-	pressurePol01: 0,
 
 	// ========
 }
@@ -71,7 +68,6 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 	const [idWeatherPol01, setIdWeatherPol01] = useState<number>(0)
 	const [tempPol01, setTempPol01] = useState<number | string>(0)
 	const [windPol01, setWindPol01] = useState<number | string>(0)
-	const [pressurePol01, setPressure01] = useState<number | string>(0)
 
 	const URL_POLAND_01 = API_LINK_POLAND + cityPol01 + API_KEY_POLAND + API_UNITS_POLAND
 
@@ -87,13 +83,10 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				setTempPol01(`${temp.toFixed(1)}℃`)
 				const wind = data.wind.speed.toFixed(1)
 				setWindPol01(`${wind} km/h`)
-				const pressure = data.main.pressure
-				setPressure01(`${pressure} hPa`)
 			} catch (error) {
 				console.log(error)
 				setCityPol01('ERROR')
 				setImgPol01(Un)
-				setTempPol01('ERROR')
 				setTempPol01('ERROR')
 			}
 		}
@@ -129,9 +122,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 	// ======
 
 	return (
-		<PolandContext.Provider
-			value={{ refresh, cityPol01, imgPol01, idWeatherPol01, tempPol01, windPol01, pressurePol01 }}
-		>
+		<PolandContext.Provider value={{ refresh, cityPol01, imgPol01, idWeatherPol01, tempPol01, windPol01 }}>
 			{children}
 		</PolandContext.Provider>
 	)
