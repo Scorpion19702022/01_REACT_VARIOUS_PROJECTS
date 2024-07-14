@@ -72,7 +72,9 @@
 .box_cities_05,
 .box_cities_06,
 .box_cities_07,
-.box_cities_08 {
+.box_cities_08,
+.box_cities_09,
+.box_cities_10 {
 	position: absolute;
 	width: 16%;
 	padding: 0.6em;
@@ -124,6 +126,16 @@
 .box_cities_08 {
 	top: 33%;
 	left: 38.5%;
+}
+
+.box_cities_09 {
+	top: 38%;
+	right: 25%;
+}
+
+.box_cities_10 {
+	top: 46%;
+	right: 41.8%;
 }
 
 .city_weather {
@@ -184,7 +196,9 @@
 	.box_cities_05,
 	.box_cities_06,
 	.box_cities_07,
-	.box_cities_08 {
+	.box_cities_08,
+	.box_cities_09,
+	.box_cities_10 {
 		position: absolute;
 		width: 7%;
 		padding: 0.6em;
@@ -236,6 +250,16 @@
 	.box_cities_08 {
 		top: 30%;
 		left: 44.4%;
+	}
+
+	.box_cities_09 {
+		top: 34%;
+		right: 39%;
+	}
+
+	.box_cities_10 {
+		top: 46%;
+		right: 46.5%;
 	}
 
 	.city_weather {

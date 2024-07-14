@@ -91,6 +91,26 @@ type InitialStateType = {
 	windPol08: number | string
 
 	// ========
+
+	// ==== WARSZAWA ====
+
+	cityPol09: string
+	imgPol09: any
+	idWeatherPol09: number
+	tempPol09: number | string
+	windPol09: number | string
+
+	// ========
+
+	// ==== LODZ ====
+
+	cityPol10: string
+	imgPol10: any
+	idWeatherPol10: number
+	tempPol10: number | string
+	windPol10: number | string
+
+	// ========
 }
 
 type PolandProviderType = {
@@ -177,6 +197,26 @@ const InitialState: InitialStateType = {
 	idWeatherPol08: 0,
 	tempPol08: 0,
 	windPol08: 0,
+
+	// ========
+
+	// ==== WARSZAWA ====
+
+	cityPol09: '',
+	imgPol09: Un,
+	idWeatherPol09: 0,
+	tempPol09: 0,
+	windPol09: 0,
+
+	// ========
+
+	// ==== LODZ ====
+
+	cityPol10: '',
+	imgPol10: Un,
+	idWeatherPol10: 0,
+	tempPol10: 0,
+	windPol10: 0,
 
 	// ========
 }
@@ -614,7 +654,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 	// ======
 
-	// === POZNAN ===
+	// === BYDGOSZCZ ===
 
 	const [cityPol08, setCityPol08] = useState<string>('Bydgoszcz')
 	const [imgPol08, setImgPol08] = useState<any>(Un)
@@ -670,6 +710,124 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			setImgPol08(Un)
 		}
 	}, [idWeatherPol08])
+
+	// ======
+
+	// === WARSZAWA ===
+
+	const [cityPol09, setCityPol09] = useState<string>('Warszawa')
+	const [imgPol09, setImgPol09] = useState<any>(Un)
+	const [idWeatherPol09, setIdWeatherPol09] = useState<number>(0)
+	const [tempPol09, setTempPol09] = useState<number | string>(0)
+	const [windPol09, setWindPol09] = useState<number | string>(0)
+
+	const URL_POLAND_09 = API_LINK_POLAND + cityPol09 + API_KEY_POLAND + API_UNITS_POLAND
+
+	useEffect(() => {
+		const cityPol09 = async () => {
+			try {
+				const response = await fetch(URL_POLAND_09)
+				const data = await response.json()
+				console.log(data)
+				const codID = Object.assign({}, ...data.weather)
+				setIdWeatherPol09(codID.id)
+				const temp = data.main.temp
+				setTempPol09(`${temp.toFixed(1)}℃`)
+				const wind = data.wind.speed.toFixed(1)
+				setWindPol09(`${wind} km/h`)
+			} catch (error) {
+				console.log(error)
+				setCityPol09('ERROR')
+				setImgPol09(Un)
+				setTempPol09('ERROR')
+			}
+		}
+
+		cityPol09()
+
+		window.setInterval(() => {
+			cityPol09()
+		}, 600000)
+	}, [])
+
+	useEffect(() => {
+		if (idWeatherPol09 >= 200 && idWeatherPol09 <= 232) {
+			setImgPol09(Thunder)
+		} else if (idWeatherPol09 >= 300 && idWeatherPol09 <= 321) {
+			setImgPol09(Drizzle)
+		} else if (idWeatherPol09 >= 500 && idWeatherPol09 <= 531) {
+			setImgPol09(Rain)
+		} else if (idWeatherPol09 >= 600 && idWeatherPol09 <= 622) {
+			setImgPol09(Snow)
+		} else if (idWeatherPol09 >= 701 && idWeatherPol09 <= 781) {
+			setImgPol09(Fog)
+		} else if (idWeatherPol09 === 800) {
+			setImgPol09(Sun)
+		} else if (idWeatherPol09 >= 801 && idWeatherPol09 <= 804) {
+			setImgPol09(Cloud)
+		} else {
+			setImgPol09(Un)
+		}
+	}, [idWeatherPol09])
+
+	// ======
+
+	// === LODZ ===
+
+	const [cityPol10, setCityPol10] = useState<string>('Łódź')
+	const [imgPol10, setImgPol10] = useState<any>(Un)
+	const [idWeatherPol10, setIdWeatherPol10] = useState<number>(0)
+	const [tempPol10, setTempPol10] = useState<number | string>(0)
+	const [windPol10, setWindPol10] = useState<number | string>(0)
+
+	const URL_POLAND_10 = API_LINK_POLAND + cityPol10 + API_KEY_POLAND + API_UNITS_POLAND
+
+	useEffect(() => {
+		const cityPol10 = async () => {
+			try {
+				const response = await fetch(URL_POLAND_10)
+				const data = await response.json()
+				console.log(data)
+				const codID = Object.assign({}, ...data.weather)
+				setIdWeatherPol10(codID.id)
+				const temp = data.main.temp
+				setTempPol10(`${temp.toFixed(1)}℃`)
+				const wind = data.wind.speed.toFixed(1)
+				setWindPol10(`${wind} km/h`)
+			} catch (error) {
+				console.log(error)
+				setCityPol10('ERROR')
+				setImgPol10(Un)
+				setTempPol10('ERROR')
+			}
+		}
+
+		cityPol10()
+
+		window.setInterval(() => {
+			cityPol10()
+		}, 600000)
+	}, [])
+
+	useEffect(() => {
+		if (idWeatherPol10 >= 200 && idWeatherPol10 <= 232) {
+			setImgPol10(Thunder)
+		} else if (idWeatherPol10 >= 300 && idWeatherPol10 <= 321) {
+			setImgPol10(Drizzle)
+		} else if (idWeatherPol10 >= 500 && idWeatherPol10 <= 531) {
+			setImgPol10(Rain)
+		} else if (idWeatherPol10 >= 600 && idWeatherPol10 <= 622) {
+			setImgPol10(Snow)
+		} else if (idWeatherPol10 >= 701 && idWeatherPol10 <= 781) {
+			setImgPol10(Fog)
+		} else if (idWeatherPol10 === 800) {
+			setImgPol10(Sun)
+		} else if (idWeatherPol10 >= 801 && idWeatherPol10 <= 804) {
+			setImgPol10(Cloud)
+		} else {
+			setImgPol10(Un)
+		}
+	}, [idWeatherPol10])
 
 	// ======
 
@@ -741,6 +899,22 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				idWeatherPol08,
 				tempPol08,
 				windPol08,
+
+				// === WARSZAWA ===
+
+				cityPol09,
+				imgPol09,
+				idWeatherPol09,
+				tempPol09,
+				windPol09,
+
+				// === ŁODZ ===
+
+				cityPol10,
+				imgPol10,
+				idWeatherPol10,
+				tempPol10,
+				windPol10,
 			}}
 		>
 			{children}
