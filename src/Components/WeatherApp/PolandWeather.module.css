@@ -67,9 +67,9 @@
 
 .box_cities_01 {
 	position: absolute;
-	top: 25%;
+	top: 27%;
 	left: 2%;
-	width: 28%;
+	width: 20%;
 	padding: 0.6em;
 	display: flex;
 	flex-direction: column;
@@ -114,7 +114,7 @@
 }
 
 .city_info_weather {
-	font-size: 0.8em;
+	font-size: 0.6em;
 	color: var(--color-darkred01);
 }
 
