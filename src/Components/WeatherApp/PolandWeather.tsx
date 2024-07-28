@@ -30,62 +30,6 @@ const PolandWeather = () => {
 		imgPol03,
 		tempPol03,
 		windPol03,
-
-		// === OLSZTYN ===
-
-		cityPol04,
-		imgPol04,
-		tempPol04,
-		windPol04,
-
-		// === BIALYSTOK ===
-
-		cityPol05,
-		imgPol05,
-		tempPol05,
-		windPol05,
-
-		// === ZIELONA GORA ===
-
-		// cityPol06,
-		imgPol06,
-		tempPol06,
-		windPol06,
-
-		// === POZNAN ===
-
-		cityPol07,
-		imgPol07,
-		tempPol07,
-		windPol07,
-
-		// === BYDGOSZCZ ===
-
-		cityPol08,
-		imgPol08,
-		tempPol08,
-		windPol08,
-
-		// === WARSZAWA ===
-
-		cityPol09,
-		imgPol09,
-		tempPol09,
-		windPol09,
-
-		// === LODZ ===
-
-		cityPol10,
-		imgPol10,
-		tempPol10,
-		windPol10,
-
-		// === LUBLIN ===
-
-		cityPol11,
-		imgPol11,
-		tempPol11,
-		windPol11,
 	} = useContext(PolandContext)
 
 	const CityPol01 = (
@@ -126,109 +70,6 @@ const PolandWeather = () => {
 			</div>
 		</div>
 	)
-	const CityPol04 = (
-		<div className={styles.city_weather}>
-			<div className={styles.top}>
-				<h4 className={styles.name_city}>{cityPol04}</h4>
-				<img className={styles.img_city} src={imgPol04} alt='' />
-			</div>
-			<div className={styles.bottom}>
-				<span className={styles.city_info_weather}>{tempPol04}</span>
-				<span className={styles.city_info_weather}>{windPol04}</span>
-			</div>
-		</div>
-	)
-
-	const CityPol05 = (
-		<div className={styles.city_weather}>
-			<div className={styles.top}>
-				<h4 className={styles.name_city}>{cityPol05}</h4>
-				<img className={styles.img_city} src={imgPol05} alt='' />
-			</div>
-			<div className={styles.bottom}>
-				<span className={styles.city_info_weather}>{tempPol05}</span>
-				<span className={styles.city_info_weather}>{windPol05}</span>
-			</div>
-		</div>
-	)
-
-	const CityPol06 = (
-		<div className={styles.city_weather}>
-			<div className={styles.top}>
-				<h4 className={styles.name_city}>Zielona G.</h4>
-				<img className={styles.img_city} src={imgPol06} alt='' />
-			</div>
-			<div className={styles.bottom}>
-				<span className={styles.city_info_weather}>{tempPol06}</span>
-				<span className={styles.city_info_weather}>{windPol06}</span>
-			</div>
-		</div>
-	)
-
-	const CityPol07 = (
-		<div className={styles.city_weather}>
-			<div className={styles.top}>
-				<h4 className={styles.name_city}>{cityPol07}</h4>
-				<img className={styles.img_city} src={imgPol07} alt='' />
-			</div>
-			<div className={styles.bottom}>
-				<span className={styles.city_info_weather}>{tempPol07}</span>
-				<span className={styles.city_info_weather}>{windPol07}</span>
-			</div>
-		</div>
-	)
-
-	const CityPol08 = (
-		<div className={styles.city_weather}>
-			<div className={styles.top}>
-				<h4 className={styles.name_city}>{cityPol08}</h4>
-				<img className={styles.img_city} src={imgPol08} alt='' />
-			</div>
-			<div className={styles.bottom}>
-				<span className={styles.city_info_weather}>{tempPol08}</span>
-				<span className={styles.city_info_weather}>{windPol08}</span>
-			</div>
-		</div>
-	)
-
-	const CityPol09 = (
-		<div className={styles.city_weather}>
-			<div className={styles.top}>
-				<h4 className={styles.name_city}>{cityPol09}</h4>
-				<img className={styles.img_city} src={imgPol09} alt='' />
-			</div>
-			<div className={styles.bottom}>
-				<span className={styles.city_info_weather}>{tempPol09}</span>
-				<span className={styles.city_info_weather}>{windPol09}</span>
-			</div>
-		</div>
-	)
-
-	const CityPol10 = (
-		<div className={styles.city_weather}>
-			<div className={styles.top}>
-				<h4 className={styles.name_city}>{cityPol10}</h4>
-				<img className={styles.img_city} src={imgPol10} alt='' />
-			</div>
-			<div className={styles.bottom}>
-				<span className={styles.city_info_weather}>{tempPol10}</span>
-				<span className={styles.city_info_weather}>{windPol10}</span>
-			</div>
-		</div>
-	)
-
-	const CityPol11 = (
-		<div className={styles.city_weather}>
-			<div className={styles.top}>
-				<h4 className={styles.name_city}>{cityPol11}</h4>
-				<img className={styles.img_city} src={imgPol11} alt='' />
-			</div>
-			<div className={styles.bottom}>
-				<span className={styles.city_info_weather}>{tempPol11}</span>
-				<span className={styles.city_info_weather}>{windPol11}</span>
-			</div>
-		</div>
-	)
 
 	return (
 		<section className={styles.wrapper}>
@@ -241,14 +82,6 @@ const PolandWeather = () => {
 				<div className={styles.box_cities_01}>{CityPol01}</div>
 				<div className={styles.box_cities_02}>{CityPol02}</div>
 				<div className={styles.box_cities_03}>{CityPol03}</div>
-				<div className={styles.box_cities_04}>{CityPol04}</div>
-				<div className={styles.box_cities_05}>{CityPol05}</div>
-				<div className={styles.box_cities_06}>{CityPol06}</div>
-				<div className={styles.box_cities_07}>{CityPol07}</div>
-				<div className={styles.box_cities_08}>{CityPol08}</div>
-				<div className={styles.box_cities_09}>{CityPol09}</div>
-				<div className={styles.box_cities_10}>{CityPol10}</div>
-				<div className={styles.box_cities_11}>{CityPol11}</div>
 			</div>
 		</section>
 	)

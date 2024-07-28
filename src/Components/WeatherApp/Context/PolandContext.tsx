@@ -13,17 +13,11 @@ import Snow from '../assets/snow.png'
 type InitialStateType = {
 	refresh: number
 
-	// ==== SZCZECIN ====
-
 	cityPol01: string
 	imgPol01: any
 	idWeatherPol01: number
 	tempPol01: number | string
 	windPol01: number | string
-
-	// ========
-
-	// ==== KOSZALIN ====
 
 	cityPol02: string
 	imgPol02: any
@@ -31,97 +25,11 @@ type InitialStateType = {
 	tempPol02: number | string
 	windPol02: number | string
 
-	// ========
-
-	// ==== GDANSK ====
-
 	cityPol03: string
 	imgPol03: any
 	idWeatherPol03: number
 	tempPol03: number | string
 	windPol03: number | string
-
-	// ========
-
-	// ==== OlSZTYN ====
-
-	cityPol04: string
-	imgPol04: any
-	idWeatherPol04: number
-	tempPol04: number | string
-	windPol04: number | string
-
-	// ========
-
-	// ==== BIALYSTOK ====
-
-	cityPol05: string
-	imgPol05: any
-	idWeatherPol05: number
-	tempPol05: number | string
-	windPol05: number | string
-
-	// ========
-
-	// ==== ZIELONA GORA ====
-
-	cityPol06: string
-	imgPol06: any
-	idWeatherPol06: number
-	tempPol06: number | string
-	windPol06: number | string
-
-	// ========
-
-	// ==== POZNAN ====
-
-	cityPol07: string
-	imgPol07: any
-	idWeatherPol07: number
-	tempPol07: number | string
-	windPol07: number | string
-
-	// ========
-
-	// ==== BYDGOSZCZ ====
-
-	cityPol08: string
-	imgPol08: any
-	idWeatherPol08: number
-	tempPol08: number | string
-	windPol08: number | string
-
-	// ========
-
-	// ==== WARSZAWA ====
-
-	cityPol09: string
-	imgPol09: any
-	idWeatherPol09: number
-	tempPol09: number | string
-	windPol09: number | string
-
-	// ========
-
-	// ==== LODZ ====
-
-	cityPol10: string
-	imgPol10: any
-	idWeatherPol10: number
-	tempPol10: number | string
-	windPol10: number | string
-
-	// ========
-
-	// ==== LUBLIN ====
-
-	cityPol11: string
-	imgPol11: any
-	idWeatherPol11: number
-	tempPol11: number | string
-	windPol11: number | string
-
-	// ========
 }
 
 type PolandProviderType = {
@@ -131,17 +39,11 @@ type PolandProviderType = {
 const InitialState: InitialStateType = {
 	refresh: 0,
 
-	// ==== SZCZECIN ====
-
 	cityPol01: '',
 	imgPol01: Un,
 	idWeatherPol01: 0,
 	tempPol01: 0,
 	windPol01: 0,
-
-	// ========
-
-	// ==== KOSZALIN ====
 
 	cityPol02: '',
 	imgPol02: Un,
@@ -149,97 +51,11 @@ const InitialState: InitialStateType = {
 	tempPol02: 0,
 	windPol02: 0,
 
-	// ========
-
-	// ==== GDANSK ====
-
 	cityPol03: '',
 	imgPol03: Un,
 	idWeatherPol03: 0,
 	tempPol03: 0,
 	windPol03: 0,
-
-	// ========
-
-	// ==== OLSZTYN ====
-
-	cityPol04: '',
-	imgPol04: Un,
-	idWeatherPol04: 0,
-	tempPol04: 0,
-	windPol04: 0,
-
-	// ========
-
-	// ==== BIALYSTOK ====
-
-	cityPol05: '',
-	imgPol05: Un,
-	idWeatherPol05: 0,
-	tempPol05: 0,
-	windPol05: 0,
-
-	// ========
-
-	// ==== ZIELONA GORA ====
-
-	cityPol06: '',
-	imgPol06: Un,
-	idWeatherPol06: 0,
-	tempPol06: 0,
-	windPol06: 0,
-
-	// ========
-
-	// ==== POZNAN ====
-
-	cityPol07: '',
-	imgPol07: Un,
-	idWeatherPol07: 0,
-	tempPol07: 0,
-	windPol07: 0,
-
-	// ========
-
-	// ==== BYDGOSZCZ ====
-
-	cityPol08: '',
-	imgPol08: Un,
-	idWeatherPol08: 0,
-	tempPol08: 0,
-	windPol08: 0,
-
-	// ========
-
-	// ==== WARSZAWA ====
-
-	cityPol09: '',
-	imgPol09: Un,
-	idWeatherPol09: 0,
-	tempPol09: 0,
-	windPol09: 0,
-
-	// ========
-
-	// ==== LODZ ====
-
-	cityPol10: '',
-	imgPol10: Un,
-	idWeatherPol10: 0,
-	tempPol10: 0,
-	windPol10: 0,
-
-	// ========
-
-	// ==== LUBLIN ====
-
-	cityPol11: '',
-	imgPol11: Un,
-	idWeatherPol11: 0,
-	tempPol11: 0,
-	windPol11: 0,
-
-	// ========
 }
 
 const PolandContext = createContext(InitialState)
@@ -261,8 +77,6 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		clearTimeout(time)
 		setRefresh(10)
 	}
-
-	// === SZCZECIN ===
 
 	const [cityPol01, setCityPol01] = useState<string>('Szczecin')
 	const [imgPol01, setImgPol01] = useState<any>(Un)
@@ -321,10 +135,6 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		}
 	}, [idWeatherPol01])
 
-	// ======
-
-	// === KOSZALIN ===
-
 	const [cityPol02, setCityPol02] = useState<string>('Koszalin')
 	const [imgPol02, setImgPol02] = useState<any>(Un)
 	const [idWeatherPol02, setIdWeatherPol02] = useState<number>(0)
@@ -382,10 +192,6 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		}
 	}, [idWeatherPol02])
 
-	// ======
-
-	// === GDANSK ===
-
 	const [cityPol03, setCityPol03] = useState<string>('Gdańsk')
 	const [imgPol03, setImgPol03] = useState<any>(Un)
 	const [idWeatherPol03, setIdWeatherPol03] = useState<number>(0)
@@ -421,524 +227,10 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		}, 600000)
 	}, [])
 
-	useEffect(() => {
-		if (idWeatherPol03 >= 200 && idWeatherPol03 <= 232) {
-			setImgPol03(Thunder)
-		} else if (idWeatherPol03 >= 300 && idWeatherPol03 <= 321) {
-			setImgPol03(Drizzle)
-		} else if (idWeatherPol03 >= 500 && idWeatherPol03 <= 531) {
-			setImgPol03(Rain)
-		} else if (idWeatherPol03 >= 600 && idWeatherPol03 <= 622) {
-			setImgPol03(Snow)
-		} else if (idWeatherPol03 >= 701 && idWeatherPol03 <= 781) {
-			setImgPol03(Fog)
-		} else if (idWeatherPol03 === 800) {
-			setImgPol03(Sun)
-		} else if (idWeatherPol03 === 801) {
-			setImgPol03(FewClouds)
-		} else if (idWeatherPol03 > 801 && idWeatherPol03 <= 804) {
-			setImgPol03(Cloud)
-		} else {
-			setImgPol03(Un)
-		}
-	}, [idWeatherPol03])
-
-	// ======
-
-	// === OSZTYN ===
-
-	const [cityPol04, setCityPol04] = useState<string>('Olsztyn')
-	const [imgPol04, setImgPol04] = useState<any>(Un)
-	const [idWeatherPol04, setIdWeatherPol04] = useState<number>(0)
-	const [tempPol04, setTempPol04] = useState<number | string>(0)
-	const [windPol04, setWindPol04] = useState<number | string>(0)
-
-	const URL_POLAND_04 = API_LINK_POLAND + cityPol04 + API_KEY_POLAND + API_UNITS_POLAND
-
-	useEffect(() => {
-		const cityPol04 = async () => {
-			try {
-				const response = await fetch(URL_POLAND_04)
-				const data = await response.json()
-				console.log(data)
-				const codID = Object.assign({}, ...data.weather)
-				setIdWeatherPol04(codID.id)
-				const temp = data.main.temp
-				setTempPol04(`${temp.toFixed(1)}℃`)
-				const wind = data.wind.speed.toFixed(1)
-				setWindPol04(`${wind} km/h`)
-			} catch (error) {
-				console.log(error)
-				setCityPol04('ERROR')
-				setImgPol04(Un)
-				setTempPol04('ERROR')
-			}
-		}
-
-		cityPol04()
-
-		window.setInterval(() => {
-			cityPol04()
-		}, 600000)
-	}, [])
-
-	useEffect(() => {
-		if (idWeatherPol04 >= 200 && idWeatherPol04 <= 232) {
-			setImgPol04(Thunder)
-		} else if (idWeatherPol04 >= 300 && idWeatherPol04 <= 321) {
-			setImgPol04(Drizzle)
-		} else if (idWeatherPol04 >= 500 && idWeatherPol04 <= 531) {
-			setImgPol04(Rain)
-		} else if (idWeatherPol04 >= 600 && idWeatherPol04 <= 622) {
-			setImgPol04(Snow)
-		} else if (idWeatherPol04 >= 701 && idWeatherPol04 <= 781) {
-			setImgPol04(Fog)
-		} else if (idWeatherPol04 === 800) {
-			setImgPol04(Sun)
-		} else if (idWeatherPol04 === 801) {
-			setImgPol04(FewClouds)
-		} else if (idWeatherPol04 > 801 && idWeatherPol04 <= 804) {
-			setImgPol04(Cloud)
-		} else {
-			setImgPol04(Un)
-		}
-	}, [idWeatherPol04])
-
-	// ======
-
-	// === BIALYSTOK ===
-
-	const [cityPol05, setCityPol05] = useState<string>('Białystok')
-	const [imgPol05, setImgPol05] = useState<any>(Un)
-	const [idWeatherPol05, setIdWeatherPol05] = useState<number>(0)
-	const [tempPol05, setTempPol05] = useState<number | string>(0)
-	const [windPol05, setWindPol05] = useState<number | string>(0)
-
-	const URL_POLAND_05 = API_LINK_POLAND + cityPol05 + API_KEY_POLAND + API_UNITS_POLAND
-
-	useEffect(() => {
-		const cityPol05 = async () => {
-			try {
-				const response = await fetch(URL_POLAND_05)
-				const data = await response.json()
-				console.log(data)
-				const codID = Object.assign({}, ...data.weather)
-				setIdWeatherPol05(codID.id)
-				const temp = data.main.temp
-				setTempPol05(`${temp.toFixed(1)}℃`)
-				const wind = data.wind.speed.toFixed(1)
-				setWindPol05(`${wind} km/h`)
-			} catch (error) {
-				console.log(error)
-				setCityPol05('ERROR')
-				setImgPol05(Un)
-				setTempPol05('ERROR')
-			}
-		}
-
-		cityPol05()
-
-		window.setInterval(() => {
-			cityPol05()
-		}, 600000)
-	}, [])
-
-	useEffect(() => {
-		if (idWeatherPol05 >= 200 && idWeatherPol05 <= 232) {
-			setImgPol05(Thunder)
-		} else if (idWeatherPol05 >= 300 && idWeatherPol05 <= 321) {
-			setImgPol05(Drizzle)
-		} else if (idWeatherPol05 >= 500 && idWeatherPol05 <= 531) {
-			setImgPol05(Rain)
-		} else if (idWeatherPol05 >= 600 && idWeatherPol05 <= 622) {
-			setImgPol05(Snow)
-		} else if (idWeatherPol05 >= 701 && idWeatherPol05 <= 781) {
-			setImgPol05(Fog)
-		} else if (idWeatherPol05 === 800) {
-			setImgPol05(Sun)
-		} else if (idWeatherPol05 === 801) {
-			setImgPol05(FewClouds)
-		} else if (idWeatherPol05 > 801 && idWeatherPol05 <= 804) {
-			setImgPol05(Cloud)
-		} else {
-			setImgPol05(Un)
-		}
-	}, [idWeatherPol05])
-
-	// ======
-
-	// === ZIELONA GORA ===
-
-	const [cityPol06, setCityPol06] = useState<string>('Zielona Góra')
-	const [imgPol06, setImgPol06] = useState<any>(Un)
-	const [idWeatherPol06, setIdWeatherPol06] = useState<number>(0)
-	const [tempPol06, setTempPol06] = useState<number | string>(0)
-	const [windPol06, setWindPol06] = useState<number | string>(0)
-
-	const URL_POLAND_06 = API_LINK_POLAND + cityPol06 + API_KEY_POLAND + API_UNITS_POLAND
-
-	useEffect(() => {
-		const cityPol06 = async () => {
-			try {
-				const response = await fetch(URL_POLAND_06)
-				const data = await response.json()
-				console.log(data)
-				const codID = Object.assign({}, ...data.weather)
-				setIdWeatherPol06(codID.id)
-				const temp = data.main.temp
-				setTempPol06(`${temp.toFixed(1)}℃`)
-				const wind = data.wind.speed.toFixed(1)
-				setWindPol06(`${wind} km/h`)
-			} catch (error) {
-				console.log(error)
-				setCityPol06('ERROR')
-				setImgPol06(Un)
-				setTempPol06('ERROR')
-			}
-		}
-
-		cityPol06()
-
-		window.setInterval(() => {
-			cityPol06()
-		}, 600000)
-	}, [])
-
-	useEffect(() => {
-		if (idWeatherPol06 >= 200 && idWeatherPol06 <= 232) {
-			setImgPol06(Thunder)
-		} else if (idWeatherPol06 >= 300 && idWeatherPol06 <= 321) {
-			setImgPol06(Drizzle)
-		} else if (idWeatherPol06 >= 500 && idWeatherPol06 <= 531) {
-			setImgPol06(Rain)
-		} else if (idWeatherPol06 >= 600 && idWeatherPol06 <= 622) {
-			setImgPol06(Snow)
-		} else if (idWeatherPol06 >= 701 && idWeatherPol06 <= 781) {
-			setImgPol06(Fog)
-		} else if (idWeatherPol06 === 800) {
-			setImgPol06(Sun)
-		} else if (idWeatherPol06 === 801) {
-			setImgPol06(FewClouds)
-		} else if (idWeatherPol06 > 801 && idWeatherPol06 <= 804) {
-			setImgPol06(Cloud)
-		} else {
-			setImgPol06(Un)
-		}
-	}, [idWeatherPol06])
-
-	// ======
-
-	// === POZNAN ===
-
-	const [cityPol07, setCityPol07] = useState<string>('Poznań')
-	const [imgPol07, setImgPol07] = useState<any>(Un)
-	const [idWeatherPol07, setIdWeatherPol07] = useState<number>(0)
-	const [tempPol07, setTempPol07] = useState<number | string>(0)
-	const [windPol07, setWindPol07] = useState<number | string>(0)
-
-	const URL_POLAND_07 = API_LINK_POLAND + cityPol07 + API_KEY_POLAND + API_UNITS_POLAND
-
-	useEffect(() => {
-		const cityPol07 = async () => {
-			try {
-				const response = await fetch(URL_POLAND_07)
-				const data = await response.json()
-				console.log(data)
-				const codID = Object.assign({}, ...data.weather)
-				setIdWeatherPol07(codID.id)
-				const temp = data.main.temp
-				setTempPol07(`${temp.toFixed(1)}℃`)
-				const wind = data.wind.speed.toFixed(1)
-				setWindPol07(`${wind} km/h`)
-			} catch (error) {
-				console.log(error)
-				setCityPol07('ERROR')
-				setImgPol07(Un)
-				setTempPol07('ERROR')
-			}
-		}
-
-		cityPol07()
-
-		window.setInterval(() => {
-			cityPol07()
-		}, 600000)
-	}, [])
-
-	useEffect(() => {
-		if (idWeatherPol07 >= 200 && idWeatherPol07 <= 232) {
-			setImgPol07(Thunder)
-		} else if (idWeatherPol07 >= 300 && idWeatherPol07 <= 321) {
-			setImgPol07(Drizzle)
-		} else if (idWeatherPol07 >= 500 && idWeatherPol07 <= 531) {
-			setImgPol07(Rain)
-		} else if (idWeatherPol07 >= 600 && idWeatherPol07 <= 622) {
-			setImgPol07(Snow)
-		} else if (idWeatherPol07 >= 701 && idWeatherPol07 <= 781) {
-			setImgPol07(Fog)
-		} else if (idWeatherPol07 === 800) {
-			setImgPol07(Sun)
-		} else if (idWeatherPol07 === 801) {
-			setImgPol07(FewClouds)
-		} else if (idWeatherPol07 > 801 && idWeatherPol07 <= 804) {
-			setImgPol07(Cloud)
-		} else {
-			setImgPol07(Un)
-		}
-	}, [idWeatherPol07])
-
-	// ======
-
-	// === BYDGOSZCZ ===
-
-	const [cityPol08, setCityPol08] = useState<string>('Bydgoszcz')
-	const [imgPol08, setImgPol08] = useState<any>(Un)
-	const [idWeatherPol08, setIdWeatherPol08] = useState<number>(0)
-	const [tempPol08, setTempPol08] = useState<number | string>(0)
-	const [windPol08, setWindPol08] = useState<number | string>(0)
-
-	const URL_POLAND_08 = API_LINK_POLAND + cityPol08 + API_KEY_POLAND + API_UNITS_POLAND
-
-	useEffect(() => {
-		const cityPol08 = async () => {
-			try {
-				const response = await fetch(URL_POLAND_08)
-				const data = await response.json()
-				console.log(data)
-				const codID = Object.assign({}, ...data.weather)
-				setIdWeatherPol08(codID.id)
-				const temp = data.main.temp
-				setTempPol08(`${temp.toFixed(1)}℃`)
-				const wind = data.wind.speed.toFixed(1)
-				setWindPol08(`${wind} km/h`)
-			} catch (error) {
-				console.log(error)
-				setCityPol08('ERROR')
-				setImgPol08(Un)
-				setTempPol08('ERROR')
-			}
-		}
-
-		cityPol08()
-
-		window.setInterval(() => {
-			cityPol08()
-		}, 600000)
-	}, [])
-
-	useEffect(() => {
-		if (idWeatherPol08 >= 200 && idWeatherPol08 <= 232) {
-			setImgPol08(Thunder)
-		} else if (idWeatherPol08 >= 300 && idWeatherPol08 <= 321) {
-			setImgPol08(Drizzle)
-		} else if (idWeatherPol08 >= 500 && idWeatherPol08 <= 531) {
-			setImgPol08(Rain)
-		} else if (idWeatherPol08 >= 600 && idWeatherPol08 <= 622) {
-			setImgPol08(Snow)
-		} else if (idWeatherPol08 >= 701 && idWeatherPol08 <= 781) {
-			setImgPol08(Fog)
-		} else if (idWeatherPol08 === 800) {
-			setImgPol08(Sun)
-		} else if (idWeatherPol08 === 801) {
-			setImgPol08(FewClouds)
-		} else if (idWeatherPol08 > 801 && idWeatherPol08 <= 804) {
-			setImgPol08(Cloud)
-		} else {
-			setImgPol08(Un)
-		}
-	}, [idWeatherPol08])
-
-	// ======
-
-	// === WARSZAWA ===
-
-	const [cityPol09, setCityPol09] = useState<string>('Warszawa')
-	const [imgPol09, setImgPol09] = useState<any>(Un)
-	const [idWeatherPol09, setIdWeatherPol09] = useState<number>(0)
-	const [tempPol09, setTempPol09] = useState<number | string>(0)
-	const [windPol09, setWindPol09] = useState<number | string>(0)
-
-	const URL_POLAND_09 = API_LINK_POLAND + cityPol09 + API_KEY_POLAND + API_UNITS_POLAND
-
-	useEffect(() => {
-		const cityPol09 = async () => {
-			try {
-				const response = await fetch(URL_POLAND_09)
-				const data = await response.json()
-				console.log(data)
-				const codID = Object.assign({}, ...data.weather)
-				setIdWeatherPol09(codID.id)
-				const temp = data.main.temp
-				setTempPol09(`${temp.toFixed(1)}℃`)
-				const wind = data.wind.speed.toFixed(1)
-				setWindPol09(`${wind} km/h`)
-			} catch (error) {
-				console.log(error)
-				setCityPol09('ERROR')
-				setImgPol09(Un)
-				setTempPol09('ERROR')
-			}
-		}
-
-		cityPol09()
-
-		window.setInterval(() => {
-			cityPol09()
-		}, 600000)
-	}, [])
-
-	useEffect(() => {
-		if (idWeatherPol09 >= 200 && idWeatherPol09 <= 232) {
-			setImgPol09(Thunder)
-		} else if (idWeatherPol09 >= 300 && idWeatherPol09 <= 321) {
-			setImgPol09(Drizzle)
-		} else if (idWeatherPol09 >= 500 && idWeatherPol09 <= 531) {
-			setImgPol09(Rain)
-		} else if (idWeatherPol09 >= 600 && idWeatherPol09 <= 622) {
-			setImgPol09(Snow)
-		} else if (idWeatherPol09 >= 701 && idWeatherPol09 <= 781) {
-			setImgPol09(Fog)
-		} else if (idWeatherPol09 === 800) {
-			setImgPol09(Sun)
-		} else if (idWeatherPol09 === 801) {
-			setImgPol09(FewClouds)
-		} else if (idWeatherPol09 > 801 && idWeatherPol09 <= 804) {
-			setImgPol09(Cloud)
-		} else {
-			setImgPol09(Un)
-		}
-	}, [idWeatherPol09])
-
-	// ======
-
-	// === LODZ ===
-
-	const [cityPol10, setCityPol10] = useState<string>('Łódź')
-	const [imgPol10, setImgPol10] = useState<any>(Un)
-	const [idWeatherPol10, setIdWeatherPol10] = useState<number>(0)
-	const [tempPol10, setTempPol10] = useState<number | string>(0)
-	const [windPol10, setWindPol10] = useState<number | string>(0)
-
-	const URL_POLAND_10 = API_LINK_POLAND + cityPol10 + API_KEY_POLAND + API_UNITS_POLAND
-
-	useEffect(() => {
-		const cityPol10 = async () => {
-			try {
-				const response = await fetch(URL_POLAND_10)
-				const data = await response.json()
-				console.log(data)
-				const codID = Object.assign({}, ...data.weather)
-				setIdWeatherPol10(codID.id)
-				const temp = data.main.temp
-				setTempPol10(`${temp.toFixed(1)}℃`)
-				const wind = data.wind.speed.toFixed(1)
-				setWindPol10(`${wind} km/h`)
-			} catch (error) {
-				console.log(error)
-				setCityPol10('ERROR')
-				setImgPol10(Un)
-				setTempPol10('ERROR')
-			}
-		}
-
-		cityPol10()
-
-		window.setInterval(() => {
-			cityPol10()
-		}, 600000)
-	}, [])
-
-	useEffect(() => {
-		if (idWeatherPol10 >= 200 && idWeatherPol10 <= 232) {
-			setImgPol10(Thunder)
-		} else if (idWeatherPol10 >= 300 && idWeatherPol10 <= 321) {
-			setImgPol10(Drizzle)
-		} else if (idWeatherPol10 >= 500 && idWeatherPol10 <= 531) {
-			setImgPol10(Rain)
-		} else if (idWeatherPol10 >= 600 && idWeatherPol10 <= 622) {
-			setImgPol10(Snow)
-		} else if (idWeatherPol10 >= 701 && idWeatherPol10 <= 781) {
-			setImgPol10(Fog)
-		} else if (idWeatherPol10 === 800) {
-			setImgPol10(Sun)
-		} else if (idWeatherPol10 === 801) {
-			setImgPol10(FewClouds)
-		} else if (idWeatherPol10 > 801 && idWeatherPol10 <= 804) {
-			setImgPol10(Cloud)
-		} else {
-			setImgPol10(Un)
-		}
-	}, [idWeatherPol10])
-
-	// ======
-
-	// === LUBLIN ===
-
-	const [cityPol11, setCityPol11] = useState<string>('Lublin')
-	const [imgPol11, setImgPol11] = useState<any>(Un)
-	const [idWeatherPol11, setIdWeatherPol11] = useState<number>(0)
-	const [tempPol11, setTempPol11] = useState<number | string>(0)
-	const [windPol11, setWindPol11] = useState<number | string>(0)
-
-	const URL_POLAND_11 = API_LINK_POLAND + cityPol11 + API_KEY_POLAND + API_UNITS_POLAND
-
-	useEffect(() => {
-		const cityPol11 = async () => {
-			try {
-				const response = await fetch(URL_POLAND_11)
-				const data = await response.json()
-				console.log(data)
-				const codID = Object.assign({}, ...data.weather)
-				setIdWeatherPol11(codID.id)
-				const temp = data.main.temp
-				setTempPol11(`${temp.toFixed(1)}℃`)
-				const wind = data.wind.speed.toFixed(1)
-				setWindPol11(`${wind} km/h`)
-			} catch (error) {
-				console.log(error)
-				setCityPol11('ERROR')
-				setImgPol11(Un)
-				setTempPol11('ERROR')
-			}
-		}
-
-		cityPol11()
-
-		window.setInterval(() => {
-			cityPol11()
-		}, 600000)
-	}, [])
-
-	useEffect(() => {
-		if (idWeatherPol11 >= 200 && idWeatherPol11 <= 232) {
-			setImgPol11(Thunder)
-		} else if (idWeatherPol11 >= 300 && idWeatherPol11 <= 321) {
-			setImgPol11(Drizzle)
-		} else if (idWeatherPol11 >= 500 && idWeatherPol11 <= 531) {
-			setImgPol11(Rain)
-		} else if (idWeatherPol11 >= 600 && idWeatherPol11 <= 622) {
-			setImgPol11(Snow)
-		} else if (idWeatherPol11 >= 701 && idWeatherPol11 <= 781) {
-			setImgPol11(Fog)
-		} else if (idWeatherPol11 === 800) {
-			setImgPol11(Sun)
-		} else if (idWeatherPol11 === 801) {
-			setImgPol11(FewClouds)
-		} else if (idWeatherPol11 > 801 && idWeatherPol11 <= 804) {
-			setImgPol11(Cloud)
-		} else {
-			setImgPol11(Un)
-		}
-	}, [idWeatherPol11])
-
-	// ======
-
 	return (
 		<PolandContext.Provider
 			value={{
 				refresh,
-
-				// === SZCZECIN ===
 
 				cityPol01,
 				imgPol01,
@@ -946,85 +238,17 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				tempPol01,
 				windPol01,
 
-				// === KOSZALIN ===
-
 				cityPol02,
 				imgPol02,
 				idWeatherPol02,
 				tempPol02,
 				windPol02,
 
-				// === GDANSK ===
-
 				cityPol03,
 				imgPol03,
 				idWeatherPol03,
 				tempPol03,
 				windPol03,
-
-				// === OLSZTYN ===
-
-				cityPol04,
-				imgPol04,
-				idWeatherPol04,
-				tempPol04,
-				windPol04,
-
-				// === BIALYSTOK ===
-
-				cityPol05,
-				imgPol05,
-				idWeatherPol05,
-				tempPol05,
-				windPol05,
-
-				// === ZIELONA GORA ===
-
-				cityPol06,
-				imgPol06,
-				idWeatherPol06,
-				tempPol06,
-				windPol06,
-
-				// === POZNAN ===
-
-				cityPol07,
-				imgPol07,
-				idWeatherPol07,
-				tempPol07,
-				windPol07,
-
-				// === BYDGOSZCZ ===
-
-				cityPol08,
-				imgPol08,
-				idWeatherPol08,
-				tempPol08,
-				windPol08,
-
-				// === WARSZAWA ===
-
-				cityPol09,
-				imgPol09,
-				idWeatherPol09,
-				tempPol09,
-				windPol09,
-
-				// === ŁODZ ===
-
-				cityPol10,
-				imgPol10,
-				idWeatherPol10,
-				tempPol10,
-				windPol10,
-
-				// === LUBLIN ===
-
-				cityPol11,
-				imgPol11,
-				idWeatherPol11,
-				tempPol11,
-				windPol11,
 			}}
 		>
 			{children}

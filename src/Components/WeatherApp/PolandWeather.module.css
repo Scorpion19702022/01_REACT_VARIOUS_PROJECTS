@@ -67,15 +67,7 @@
 
 .box_cities_01,
 .box_cities_02,
-.box_cities_03,
-.box_cities_04,
-.box_cities_05,
-.box_cities_06,
-.box_cities_07,
-.box_cities_08,
-.box_cities_09,
-.box_cities_10,
-.box_cities_11 {
+.box_cities_03 {
 	position: absolute;
 	width: 16%;
 	height: 11.4%;
@@ -103,46 +95,6 @@
 .box_cities_03 {
 	top: 18%;
 	left: 37%;
-}
-
-.box_cities_04 {
-	top: 20%;
-	right: 27%;
-}
-
-.box_cities_05 {
-	top: 26%;
-	right: 6%;
-}
-
-.box_cities_06 {
-	top: 41%;
-	left: 3%;
-}
-
-.box_cities_07 {
-	top: 39%;
-	left: 21%;
-}
-
-.box_cities_08 {
-	top: 33%;
-	left: 38.5%;
-}
-
-.box_cities_09 {
-	top: 38%;
-	right: 25%;
-}
-
-.box_cities_10 {
-	top: 46%;
-	right: 41.8%;
-}
-
-.box_cities_11 {
-	top: 48%;
-	right: 6%;
 }
 
 .city_weather {
@@ -198,15 +150,7 @@
 
 	.box_cities_01,
 	.box_cities_02,
-	.box_cities_03,
-	.box_cities_04,
-	.box_cities_05,
-	.box_cities_06,
-	.box_cities_07,
-	.box_cities_08,
-	.box_cities_09,
-	.box_cities_10,
-	.box_cities_11 {
+	.box_cities_03 {
 		position: absolute;
 		width: 6.9%;
 		height: 12.6%;
@@ -234,46 +178,6 @@
 	.box_cities_03 {
 		top: 11%;
 		left: 44%;
-	}
-
-	.box_cities_04 {
-		top: 14%;
-		right: 40%;
-	}
-
-	.box_cities_05 {
-		top: 24%;
-		right: 29%;
-	}
-
-	.box_cities_06 {
-		top: 38%;
-		left: 29%;
-	}
-
-	.box_cities_07 {
-		top: 36%;
-		left: 37%;
-	}
-
-	.box_cities_08 {
-		top: 30%;
-		left: 44.4%;
-	}
-
-	.box_cities_09 {
-		top: 36%;
-		right: 39%;
-	}
-
-	.box_cities_10 {
-		top: 46%;
-		right: 46.5%;
-	}
-
-	.box_cities_11 {
-		top: 48%;
-		right: 31%;
 	}
 
 	.city_weather {
