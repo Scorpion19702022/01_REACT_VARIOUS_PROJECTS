@@ -78,6 +78,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		const cityPol01 = async () => {
 			try {
 				const response = await fetch(URL_POLAND_01)
+				if (!response.ok) {
+					throw new Error('error')
+				}
 				const data = await response.json()
 				console.log(data)
 				const codID = Object.assign({}, ...data.weather)
@@ -135,6 +138,9 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		const cityPol02 = async () => {
 			try {
 				const response = await fetch(URL_POLAND_02)
+				if (!response.ok) {
+					throw new Error('error')
+				}
 				const data = await response.json()
 				console.log(data)
 				const codID = Object.assign({}, ...data.weather)
