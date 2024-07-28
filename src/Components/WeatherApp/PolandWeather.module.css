@@ -66,8 +66,7 @@
 }
 
 .box_cities_01,
-.box_cities_02,
-.box_cities_03 {
+.box_cities_02 {
 	position: absolute;
 	width: 16%;
 	height: 11.4%;
@@ -88,11 +87,6 @@
 }
 
 .box_cities_02 {
-	top: 23%;
-	left: 19.5%;
-}
-
-.box_cities_03 {
 	top: 18%;
 	left: 37%;
 }
@@ -115,7 +109,6 @@
 
 .name_city {
 	width: 80%;
-	/* font-size: 0.9em; */
 	padding-bottom: 0.4em;
 	color: var(--color-darkred02);
 }
@@ -149,8 +142,7 @@
 	}
 
 	.box_cities_01,
-	.box_cities_02,
-	.box_cities_03 {
+	.box_cities_02 {
 		position: absolute;
 		width: 6.9%;
 		height: 12.6%;
@@ -171,11 +163,6 @@
 	}
 
 	.box_cities_02 {
-		top: 17%;
-		left: 36%;
-	}
-
-	.box_cities_03 {
 		top: 11%;
 		left: 44%;
 	}
@@ -211,7 +198,7 @@
 		object-fit: cover;
 	}
 
-	.bottom {
+	.img_city:nth-child() .bottom {
 		width: 100%;
 		display: flex;
 		flex-direction: row;

@@ -24,12 +24,6 @@ type InitialStateType = {
 	idWeatherPol02: number
 	tempPol02: number | string
 	windPol02: number | string
-
-	cityPol03: string
-	imgPol03: any
-	idWeatherPol03: number
-	tempPol03: number | string
-	windPol03: number | string
 }
 
 type PolandProviderType = {
@@ -50,12 +44,6 @@ const InitialState: InitialStateType = {
 	idWeatherPol02: 0,
 	tempPol02: 0,
 	windPol02: 0,
-
-	cityPol03: '',
-	imgPol03: Un,
-	idWeatherPol03: 0,
-	tempPol03: 0,
-	windPol03: 0,
 }
 
 const PolandContext = createContext(InitialState)
@@ -135,7 +123,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		}
 	}, [idWeatherPol01])
 
-	const [cityPol02, setCityPol02] = useState<string>('Koszalin')
+	const [cityPol02, setCityPol02] = useState<string>('Gdańsk')
 	const [imgPol02, setImgPol02] = useState<any>(Un)
 	const [idWeatherPol02, setIdWeatherPol02] = useState<number>(0)
 	const [tempPol02, setTempPol02] = useState<number | string>(0)
@@ -192,41 +180,6 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		}
 	}, [idWeatherPol02])
 
-	const [cityPol03, setCityPol03] = useState<string>('Gdańsk')
-	const [imgPol03, setImgPol03] = useState<any>(Un)
-	const [idWeatherPol03, setIdWeatherPol03] = useState<number>(0)
-	const [tempPol03, setTempPol03] = useState<number | string>(0)
-	const [windPol03, setWindPol03] = useState<number | string>(0)
-
-	const URL_POLAND_03 = API_LINK_POLAND + cityPol03 + API_KEY_POLAND + API_UNITS_POLAND
-
-	useEffect(() => {
-		const cityPol03 = async () => {
-			try {
-				const response = await fetch(URL_POLAND_03)
-				const data = await response.json()
-				console.log(data)
-				const codID = Object.assign({}, ...data.weather)
-				setIdWeatherPol03(codID.id)
-				const temp = data.main.temp
-				setTempPol03(`${temp.toFixed(1)}℃`)
-				const wind = data.wind.speed.toFixed(1)
-				setWindPol03(`${wind} km/h`)
-			} catch (error) {
-				console.log(error)
-				setCityPol03('ERROR')
-				setImgPol03(Un)
-				setTempPol03('ERROR')
-			}
-		}
-
-		cityPol03()
-
-		window.setInterval(() => {
-			cityPol03()
-		}, 600000)
-	}, [])
-
 	return (
 		<PolandContext.Provider
 			value={{
@@ -243,12 +196,6 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				idWeatherPol02,
 				tempPol02,
 				windPol02,
-
-				cityPol03,
-				imgPol03,
-				idWeatherPol03,
-				tempPol03,
-				windPol03,
 			}}
 		>
 			{children}
