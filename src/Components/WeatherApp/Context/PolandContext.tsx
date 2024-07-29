@@ -52,8 +52,8 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 	const API_UNITS_POLAND = '&units=metric'
 
-	const cityWeatherPolandApi = async () => {
-		const URL = `${API_LINK_POLAND}${'Szczecin'}${API_KEY_POLAND}${API_UNITS_POLAND}`
+	const cityWeatherPolandApi = async (city: string, index: number) => {
+		const URL = `${API_LINK_POLAND}${city}${API_KEY_POLAND}${API_UNITS_POLAND}`
 		try {
 			const response = await fetch(URL)
 			if (!response.ok) {
@@ -66,7 +66,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		}
 	}
 
-	cityWeatherPolandApi()
+	cityWeatherPolandApi('Szczecin', 0)
 
 	// const [cityPol01, setCityPol01] = useState<string>('Szczecin')
 	// const [imgPol01, setImgPol01] = useState<any>(Un)
