@@ -31,11 +31,11 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesPoland, setCitiesPoland] = useState<WeatherCityType[]>(InitialState.citiesPoland)
 
-	const API_LINK_POLAND = `https://api.openweathermap.org/data/2.5/weather?q=`
+	// const API_LINK_POLAND = `https://api.openweathermap.org/data/2.5/weather?q=`
 
-	const API_KEY_POLAND = '&appid=24582e46fb113d7a512e20a446965d23'
+	// const API_KEY_POLAND = '&appid=24582e46fb113d7a512e20a446965d23'
 
-	const API_UNITS_POLAND = '&units=metric'
+	// const API_UNITS_POLAND = '&units=metric'
 
 	const time = window.setTimeout(() => {
 		setRefresh(refresh - 1)
@@ -45,6 +45,28 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		clearTimeout(time)
 		setRefresh(10)
 	}
+
+	const API_LINK_POLAND = `https://api.openweathermap.org/data/2.5/weather?q=`
+
+	const API_KEY_POLAND = '&appid=24582e46fb113d7a512e20a446965d23'
+
+	const API_UNITS_POLAND = '&units=metric'
+
+	const cityWeatherPolandApi = async () => {
+		const URL = `${API_LINK_POLAND}${'Szczecin'}${API_KEY_POLAND}${API_UNITS_POLAND}`
+		try {
+			const response = await fetch(URL)
+			if (!response.ok) {
+				throw new Error('error')
+			}
+			const data = await response.json()
+			console.log(data)
+		} catch (error) {
+			console.log('error')
+		}
+	}
+
+	cityWeatherPolandApi()
 
 	// const [cityPol01, setCityPol01] = useState<string>('Szczecin')
 	// const [imgPol01, setImgPol01] = useState<any>(Un)
@@ -110,6 +132,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		<PolandContext.Provider
 			value={{
 				refresh,
+				citiesPoland,
 			}}
 		>
 			{children}
