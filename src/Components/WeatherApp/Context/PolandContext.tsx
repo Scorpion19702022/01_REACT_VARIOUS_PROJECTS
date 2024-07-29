@@ -42,7 +42,65 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		setRefresh(10)
 	}
 
+	// const [cityPol01, setCityPol01] = useState<string>('Szczecin')
+	// const [imgPol01, setImgPol01] = useState<any>(Un)
+	// const [idWeatherPol01, setIdWeatherPol01] = useState<number>(0)
+	// const [tempPol01, setTempPol01] = useState<number | string>(0)
+	// const [windPol01, setWindPol01] = useState<number | string>(0)
+
 	// const URL_POLAND_01 = API_LINK_POLAND + cityPol01 + API_KEY_POLAND + API_UNITS_POLAND
+
+	// useEffect(() => {
+	// 	const cityPol01 = async () => {
+	// 		try {
+	// 			const response = await fetch(URL_POLAND_01)
+	// 			if (!response.ok) {
+	// 				throw new Error('error')
+	// 			}
+	// 			const data = await response.json()
+	// 			console.log(data)
+	// 			const codID = Object.assign({}, ...data.weather)
+	// 			setIdWeatherPol01(codID.id)
+	// 			const temp = data.main.temp
+	// 			setTempPol01(`${temp.toFixed(1)}℃`)
+	// 			const wind = data.wind.speed.toFixed(1)
+	// 			setWindPol01(`${wind} km/h`)
+	// 		} catch (error) {
+	// 			console.log(error)
+	// 			setCityPol01('ERROR')
+	// 			setImgPol01(Un)
+	// 			setTempPol01('ERROR')
+	// 		}
+	// 	}
+
+	// 	cityPol01()
+
+	// 	window.setInterval(() => {
+	// 		cityPol01()
+	// 	}, 600000)
+	// }, [])
+
+	// useEffect(() => {
+	// 	if (idWeatherPol01 >= 200 && idWeatherPol01 <= 232) {
+	// 		setImgPol01(Thunder)
+	// 	} else if (idWeatherPol01 >= 300 && idWeatherPol01 <= 321) {
+	// 		setImgPol01(Drizzle)
+	// 	} else if (idWeatherPol01 >= 500 && idWeatherPol01 <= 531) {
+	// 		setImgPol01(Rain)
+	// 	} else if (idWeatherPol01 >= 600 && idWeatherPol01 <= 622) {
+	// 		setImgPol01(Snow)
+	// 	} else if (idWeatherPol01 >= 701 && idWeatherPol01 <= 781) {
+	// 		setImgPol01(Fog)
+	// 	} else if (idWeatherPol01 === 800) {
+	// 		setImgPol01(Sun)
+	// 	} else if (idWeatherPol01 === 801) {
+	// 		setImgPol01(FewClouds)
+	// 	} else if (idWeatherPol01 > 801 && idWeatherPol01 <= 804) {
+	// 		setImgPol01(Cloud)
+	// 	} else {
+	// 		setImgPol01(Un)
+	// 	}
+	// }, [idWeatherPol01])
 
 	return (
 		<PolandContext.Provider
