@@ -9,9 +9,11 @@ import Thunder from '../assets/thunderstorm.png'
 import Drizzle from '../assets/drizzle.png'
 import Fog from '../assets/fog.png'
 import Snow from '../assets/snow.png'
+import { WeatherCityType } from '../Types/TypeForWeather'
 
 type InitialStateType = {
 	refresh: number
+	citiesPoland: WeatherCityType[]
 }
 
 type PolandProviderType = {
@@ -20,12 +22,14 @@ type PolandProviderType = {
 
 const InitialState: InitialStateType = {
 	refresh: 0,
+	citiesPoland: [{ city: 'Szczecin', img: Un, idWeather: 0, temp: 0, wind: 0 }],
 }
 
 const PolandContext = createContext(InitialState)
 
 export const PolandProvider = ({ children }: PolandProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
+	const [citiesPoland, setCitiesPoland] = useState<WeatherCityType[]>(InitialState.citiesPoland)
 
 	const API_LINK_POLAND = `https://api.openweathermap.org/data/2.5/weather?q=`
 
