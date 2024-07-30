@@ -129,8 +129,6 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		return () => clearInterval(interval)
 	}, [])
 
-	console.log()
-
 	// const [cityPol01, setCityPol01] = useState<string>('Szczecin')
 	// const [imgPol01, setImgPol01] = useState<any>(Un)
 	// const [idWeatherPol01, setIdWeatherPol01] = useState<number>(0)

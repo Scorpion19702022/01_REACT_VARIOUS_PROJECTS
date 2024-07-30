@@ -75,8 +75,6 @@
 
 .box_cities {
 	position: absolute;
-	top: 27%;
-	left: 2%;
 	width: 18%;
 	height: 9%;
 	padding: 0.4em;
@@ -89,10 +87,26 @@
 	box-shadow: 0.6em 0.6em 0.4em var(--color-darkred08);
 }
 
-.box_cities:nth-last-child(1) {
-	position: absolute;
+.box_cities:nth-child(1) {
+	top: 27%;
+	left: 2%;
+}
+.box_cities:nth-child(2) {
 	top: 19%;
 	left: 37%;
+}
+
+.box_cities:nth-child(3) {
+	top: 25%;
+	right: 24%;
+}
+.box_cities:nth-child(4) {
+	top: 43%;
+	left: 4%;
+}
+.box_cities:nth-child(5) {
+	top: 33%;
+	left: 34%;
 }
 
 .top {
