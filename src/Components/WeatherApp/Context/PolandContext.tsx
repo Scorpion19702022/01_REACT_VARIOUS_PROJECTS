@@ -22,7 +22,10 @@ type PolandProviderType = {
 
 const InitialState: InitialStateType = {
 	refresh: 0,
-	citiesPoland: [{ city: 'Szczecin', img: Un, idWeather: 0, temp: 0, wind: 0 }],
+	citiesPoland: [
+		{ city: 'Szczecin', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Gdańsk', img: Un, idWeather: 0, temp: 0, wind: 0 },
+	],
 }
 
 const PolandContext = createContext(InitialState)
@@ -30,12 +33,6 @@ const PolandContext = createContext(InitialState)
 export const PolandProvider = ({ children }: PolandProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesPoland, setCitiesPoland] = useState<WeatherCityType[]>(InitialState.citiesPoland)
-
-	// const API_LINK_POLAND = `https://api.openweathermap.org/data/2.5/weather?q=`
-
-	// const API_KEY_POLAND = '&appid=24582e46fb113d7a512e20a446965d23'
-
-	// const API_UNITS_POLAND = '&units=metric'
 
 	const time = window.setTimeout(() => {
 		setRefresh(refresh - 1)
@@ -52,27 +49,79 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 	const API_UNITS_POLAND = '&units=metric'
 
-	useEffect(() => {
-		const cityWeatherPolandApi = async (city: string, index: number) => {
-			const URL = `${API_LINK_POLAND}${city}${API_KEY_POLAND}${API_UNITS_POLAND}`
-			try {
-				const response = await fetch(URL)
-				if (!response.ok) {
-					throw new Error('error')
-				}
-				const data = await response.json()
-				console.log(data)
-				const codId = Object.assign({}, ...data.weather)
-				const temp = data.main.temp
-				const wind = data.wind.speed.toFixed(1)
-				console.log(wind)
-			} catch (error) {
-				console.log('error')
+	const cityWeatherPolandApi = async (city: string, index: number) => {
+		const URL = `${API_LINK_POLAND}${city}${API_KEY_POLAND}${API_UNITS_POLAND}`
+		try {
+			const response = await fetch(URL)
+			if (!response.ok) {
+				throw new Error('error')
 			}
-		}
+			const data = await response.json()
+			const codId = Object.assign({}, ...data.weather)
+			const temp = data.main.temp
+			const wind = data.wind.speed.toFixed(1)
 
-		cityWeatherPolandApi('Szczecin', 0)
+			setCitiesPoland(prevCities => {
+				const updatedCities = [...prevCities]
+				updatedCities[index] = {
+					...updatedCities[index],
+					idWeather: codId.id,
+					temp: `${temp}℃`,
+					wind: `${wind} km/h`,
+					img: getWeatherImage(codId.id),
+				}
+				return updatedCities
+			})
+
+			const getWeatherImage = (idWeather: number) => {
+				if (idWeather >= 200 && idWeather <= 232) {
+					return Thunder
+				} else if (idWeather >= 300 && idWeather <= 321) {
+					return Drizzle
+				} else if (idWeather >= 500 && idWeather <= 531) {
+					return Rain
+				} else if (idWeather >= 600 && idWeather <= 622) {
+					return Snow
+				} else if (idWeather >= 701 && idWeather <= 781) {
+					return Fog
+				} else if (idWeather === 800) {
+					return Sun
+				} else if (idWeather === 801) {
+					return FewClouds
+				} else if (idWeather > 801 && idWeather <= 804) {
+					return Cloud
+				} else {
+					return Un
+				}
+			}
+		} catch (error) {
+			console.log('error')
+			setCitiesPoland(prevCities => {
+				const updatedCities = [...prevCities]
+				updatedCities[index] = {
+					...updatedCities[index],
+					city: 'ERROR',
+					img: Un,
+					temp: 'ERROR',
+					wind: 'ERROR',
+				}
+				return updatedCities
+			})
+		}
+	}
+
+	useEffect(() => {
+		citiesPoland.forEach((city, index) => {
+			cityWeatherPolandApi(city.city, index)
+			const interval = window.setInterval(() => {
+				cityWeatherPolandApi(city.city, index)
+			}, 600000)
+
+			return () => clearInterval(interval)
+		})
 	}, [])
+
+	console.log(citiesPoland)
 
 	// const [cityPol01, setCityPol01] = useState<string>('Szczecin')
 	// const [imgPol01, setImgPol01] = useState<any>(Un)

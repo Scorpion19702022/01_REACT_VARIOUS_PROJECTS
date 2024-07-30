@@ -7,7 +7,7 @@ import styles from './PolandWeather.module.css'
 import PolandContext from './Context/PolandContext'
 
 const PolandWeather = () => {
-	const { refresh } = useContext(PolandContext)
+	const { refresh, citiesPoland } = useContext(PolandContext)
 
 	// const CityPol01 = (
 	// 	<div className={styles.city_weather}>
@@ -26,6 +26,20 @@ const PolandWeather = () => {
 	// 	</div>
 	// )
 
+	const citiesOfPoland = citiesPoland.map((city, index) => (
+		<div key={index} className={styles.box_cities}>
+			<div className={styles.top}>
+				<h4 className={styles.name_city}>{city.city}</h4>
+			</div>
+			<div className={styles.bottom}>
+				<div className={styles.box_img}>
+					<img className={styles.img_city} src={city.img} alt='' />
+				</div>
+				<div className={styles.box_info}></div>
+			</div>
+		</div>
+	))
+
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
@@ -34,8 +48,7 @@ const PolandWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_poland_map} src={PolandMap} alt='poland_map' />
 				</div>
-				{/* <div className={styles.box_cities}>{CityPol01}</div>
-				<div className={styles.box_cities}>{CityPol02}</div> */}
+				<div className={styles.city_weather}>{citiesOfPoland}</div>
 			</div>
 		</section>
 	)
