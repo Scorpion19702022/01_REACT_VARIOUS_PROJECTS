@@ -35,7 +35,6 @@ const PolandContext = createContext(InitialState)
 export const PolandProvider = ({ children }: PolandProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesPoland, setCitiesPoland] = useState<WeatherCityType[]>(InitialState.citiesPoland)
-	const [cityNames, setCityNames] = useState<string[]>(citiesPoland.map(city => city.city))
 
 	const getWeatherImage = (idWeather: number) => {
 		if (idWeather >= 200 && idWeather <= 232) {
@@ -114,20 +113,12 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			}
 		}
 
-		// Natychmiastowe wywołanie funkcji przy montowaniu komponentu
-		citiesPoland.forEach((city, index) => {
-			cityWeatherPolandApi(city.city, index)
-		})
-
 		// Ustawienie interwału na 10 minut
-		const interval = setInterval(() => {
+		setInterval(() => {
 			citiesPoland.forEach((city, index) => {
 				cityWeatherPolandApi(city.city, index)
 			})
 		}, 600000)
-
-		// Czyszczenie interwału przy odmontowaniu komponentu
-		return () => clearInterval(interval)
 	}, [])
 
 	console.log(citiesPoland)
