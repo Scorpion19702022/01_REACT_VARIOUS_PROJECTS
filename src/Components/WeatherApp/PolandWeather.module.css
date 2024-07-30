@@ -98,15 +98,23 @@
 
 .box_cities:nth-child(3) {
 	top: 25%;
-	right: 24%;
+	right: 25%;
 }
 .box_cities:nth-child(4) {
-	top: 43%;
-	left: 4%;
+	top: 32%;
+	right: 4%;
 }
 .box_cities:nth-child(5) {
-	top: 33%;
-	left: 34%;
+	top: 44%;
+	left: 4%;
+}
+.box_cities:nth-child(6) {
+	top: 32%;
+	left: 33%;
+}
+.box_cities:nth-child(7) {
+	top: 42%;
+	left: 26%;
 }
 
 .top {

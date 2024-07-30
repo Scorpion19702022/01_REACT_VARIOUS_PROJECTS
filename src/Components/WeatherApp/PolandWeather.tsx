@@ -43,8 +43,6 @@ const PolandWeather = () => {
 		</div>
 	))
 
-	console.log(citiesOfPoland)
-
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
