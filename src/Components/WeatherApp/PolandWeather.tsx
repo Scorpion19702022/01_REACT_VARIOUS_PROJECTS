@@ -47,7 +47,7 @@ const PolandWeather = () => {
 		<section className={styles.wrapper}>
 			<NavWorld />
 			<div className={styles.box_content}>
-				<h4 className={styles.heading}>Aktualizacja pogody za {refresh} minut</h4>
+				<h4 className={styles.count}>Aktualizacja pogody za {refresh} minut</h4>
 				<div className={styles.box_map}>
 					<img className={styles.img_poland_map} src={PolandMap} alt='poland_map' />
 				</div>
