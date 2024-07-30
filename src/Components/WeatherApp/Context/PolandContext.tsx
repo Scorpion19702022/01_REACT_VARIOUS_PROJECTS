@@ -25,7 +25,7 @@ const InitialState: InitialStateType = {
 	refresh: 0,
 	citiesPoland: [
 		{ city: 'Szczecin', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Oslo', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Lublin', img: Un, idWeather: 0, temp: 0, wind: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
 }
@@ -73,53 +73,67 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 	const API_UNITS_POLAND = '&units=metric'
 
-	useEffect(() => {
-		const cityWeatherPolandApi = async (city: string, index: number) => {
-			const URL = `${API_LINK_POLAND}${city}${API_KEY_POLAND}${API_UNITS_POLAND}`
-			try {
-				const response = await fetch(URL)
-				if (!response.ok) {
-					throw new Error('error')
-				}
-				const data = await response.json()
-				const codId = Object.assign({}, ...data.weather)
-				const temp = data.main.temp
-				const wind = data.wind.speed.toFixed(1)
-
-				setCitiesPoland(prevCities => {
-					const updatedCities = [...prevCities]
-					updatedCities[index] = {
-						...updatedCities[index],
-						idWeather: codId.id,
-						temp: `${temp}℃`,
-						wind: `${wind} km/h`,
-						img: getWeatherImage(codId.id),
-					}
-					return updatedCities
-				})
-			} catch (error) {
-				console.log('error')
-				setCitiesPoland(prevCities => {
-					const updatedCities = [...prevCities]
-					updatedCities[index] = {
-						...updatedCities[index],
-						city: 'ERROR',
-						img: Un,
-						temp: 'ERROR',
-						wind: 'ERROR',
-					}
-					return updatedCities
-				})
+	const cityWeatherPolandApi = async (city: string, index: number) => {
+		const URL = `${API_LINK_POLAND}${city}${API_KEY_POLAND}${API_UNITS_POLAND}`
+		try {
+			const response = await fetch(URL)
+			if (!response.ok) {
+				throw new Error('error')
 			}
-		}
+			const data = await response.json()
+			const codId = Object.assign({}, ...data.weather)
+			const temp = data.main.temp
+			const wind = data.wind.speed.toFixed(1)
 
+			setCitiesPoland(prevCities => {
+				const updatedCities = [...prevCities]
+				updatedCities[index] = {
+					...updatedCities[index],
+					idWeather: codId.id,
+					temp: `${temp}℃`,
+					wind: `${wind} km/h`,
+					img: getWeatherImage(codId.id),
+				}
+				return updatedCities
+			})
+		} catch (error) {
+			console.log('error')
+			setCitiesPoland(prevCities => {
+				const updatedCities = [...prevCities]
+				updatedCities[index] = {
+					...updatedCities[index],
+					city: 'ERROR',
+					img: Un,
+					temp: 'ERROR',
+					wind: 'ERROR',
+				}
+				return updatedCities
+			})
+		}
+	}
+
+	// Natychmiastowe wywołanie funkcji przy montowaniu komponentu
+	useEffect(() => {
 		citiesPoland.forEach((city, index) => {
 			cityWeatherPolandApi(city.city, index)
-			setInterval(() => {
-				cityWeatherPolandApi(city.city, index)
-			}, 600000)
+		})
+	}, [])
 
-			// return () => clearInterval(interval)
+	// Ustawienie interwału na 10 minut
+	useEffect(() => {
+		const interval = setInterval(() => {
+			citiesPoland.forEach((city, index) => {
+				cityWeatherPolandApi(city.city, index)
+			})
+		}, 600000)
+
+		return () => clearInterval(interval)
+	}, [])
+
+	// Zmiana danych miasta i natychmiastowe wywołanie API przy zmianie miast w citiesPoland
+	useEffect(() => {
+		citiesPoland.forEach((city, index) => {
+			cityWeatherPolandApi(city.city, index)
 		})
 	}, [])
 
