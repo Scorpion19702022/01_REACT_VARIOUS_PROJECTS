@@ -22,7 +22,7 @@ type PolandProviderType = {
 
 const InitialState: InitialStateType = {
 	refresh: 0,
-	citiesPoland: [{ city: 'Szczecin', img: Un, idWeather: 0, temp: 0, wind: 0 }],
+	citiesPoland: [{ id: 0, city: 'Szczecin', img: Un, idWeather: 0, temp: 0, wind: 0 }],
 }
 
 const PolandContext = createContext(InitialState)
@@ -52,21 +52,26 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 	const API_UNITS_POLAND = '&units=metric'
 
-	const cityWeatherPolandApi = async (city: string, index: number) => {
-		const URL = `${API_LINK_POLAND}${city}${API_KEY_POLAND}${API_UNITS_POLAND}`
-		try {
-			const response = await fetch(URL)
-			if (!response.ok) {
-				throw new Error('error')
+	useEffect(() => {
+		const cityWeatherPolandApi = async (city: string, index: number) => {
+			const URL = `${API_LINK_POLAND}${city}${API_KEY_POLAND}${API_UNITS_POLAND}`
+			try {
+				const response = await fetch(URL)
+				if (!response.ok) {
+					throw new Error('error')
+				}
+				const data = await response.json()
+				console.log(data)
+				const codId = Object.assign({}, ...data.weather)
+				const temp = data.main.temp
+				const wind = data.wind.speed.toFixed(1)
+			} catch (error) {
+				console.log('error')
 			}
-			const data = await response.json()
-			console.log(data)
-		} catch (error) {
-			console.log('error')
 		}
-	}
 
-	cityWeatherPolandApi('Szczecin', 0)
+		cityWeatherPolandApi('Szczecin', 0)
+	}, [])
 
 	// const [cityPol01, setCityPol01] = useState<string>('Szczecin')
 	// const [imgPol01, setImgPol01] = useState<any>(Un)
