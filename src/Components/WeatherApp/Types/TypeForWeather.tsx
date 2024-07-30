@@ -1,5 +1,4 @@
 export type WeatherCityType = {
-	id: string | number
 	city: string
 	img: any
 	idWeather: number

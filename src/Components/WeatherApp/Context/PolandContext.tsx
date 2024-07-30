@@ -22,7 +22,7 @@ type PolandProviderType = {
 
 const InitialState: InitialStateType = {
 	refresh: 0,
-	citiesPoland: [{ id: 0, city: 'Szczecin', img: Un, idWeather: 0, temp: 0, wind: 0 }],
+	citiesPoland: [{ city: 'Szczecin', img: Un, idWeather: 0, temp: 0, wind: 0 }],
 }
 
 const PolandContext = createContext(InitialState)
@@ -65,6 +65,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				const codId = Object.assign({}, ...data.weather)
 				const temp = data.main.temp
 				const wind = data.wind.speed.toFixed(1)
+				console.log(wind)
 			} catch (error) {
 				console.log('error')
 			}
