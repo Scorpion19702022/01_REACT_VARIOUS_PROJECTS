@@ -26,6 +26,9 @@ const InitialState: InitialStateType = {
 	citiesPoland: [
 		{ city: 'Szczecin', img: Un, idWeather: 0, temp: 0, wind: 0 },
 		{ city: 'Gdańsk', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Olsztyn', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Zielona Góra', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Bydgoszcz', img: Un, idWeather: 0, temp: 0, wind: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
 }
@@ -112,16 +115,21 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				})
 			}
 		}
+		citiesPoland.forEach((city, index) => {
+			cityWeatherPolandApi(city.city, index)
+		})
 
 		// Ustawienie interwału na 10 minut
-		setInterval(() => {
+		const interval = setInterval(() => {
 			citiesPoland.forEach((city, index) => {
 				cityWeatherPolandApi(city.city, index)
 			})
 		}, 600000)
+
+		return () => clearInterval(interval)
 	}, [])
 
-	console.log(citiesPoland)
+	console.log()
 
 	// const [cityPol01, setCityPol01] = useState<string>('Szczecin')
 	// const [imgPol01, setImgPol01] = useState<any>(Un)

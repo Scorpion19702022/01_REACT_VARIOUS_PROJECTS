@@ -35,7 +35,10 @@ const PolandWeather = () => {
 				<div className={styles.box_img}>
 					<img className={styles.img_city} src={city.img} alt='' />
 				</div>
-				<div className={styles.box_info}></div>
+				<div className={styles.box_info}>
+					<span className={styles.city_info_weather}>{city.temp}</span>
+					<span className={styles.city_info_weather}>{city.wind}</span>
+				</div>
 			</div>
 		</div>
 	))
