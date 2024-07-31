@@ -40,7 +40,6 @@
 }
 
 .count {
-	padding: 0.4em;
 	text-align: center;
 	color: var(--color-dark01);
 	border-radius: 6px;
@@ -72,8 +71,8 @@
 .box_cities {
 	position: absolute;
 	width: 16%;
-	height: 8%;
-	padding: 0.4em;
+	height: 9%;
+	padding: 0.5em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -85,28 +84,28 @@
 
 .box_cities:nth-child(1) {
 	top: 27%;
-	left: 2%;
+	left: 3%;
 }
 .box_cities:nth-child(2) {
-	top: 19%;
+	top: 18%;
 	left: 37%;
 }
 
 .box_cities:nth-child(3) {
-	top: 25%;
-	right: 25%;
+	top: 23%;
+	right: 26%;
 }
 .box_cities:nth-child(4) {
-	top: 32%;
+	top: 29%;
 	right: 4%;
 }
 .box_cities:nth-child(5) {
-	top: 44%;
+	top: 43%;
 	left: 4%;
 }
 .box_cities:nth-child(6) {
-	top: 32%;
-	left: 33%;
+	top: 31%;
+	left: 34%;
 }
 .box_cities:nth-child(7) {
 	top: 42%;
@@ -121,7 +120,7 @@
 	right: 6%;
 }
 .box_cities:nth-child(10) {
-	bottom: 43%;
+	bottom: 44%;
 	right: 41%;
 }
 .box_cities:nth-child(11) {
@@ -137,11 +136,11 @@
 	left: 28%;
 }
 .box_cities:nth-child(14) {
-	bottom: 25%;
+	bottom: 23%;
 	left: 39%;
 }
 .box_cities:nth-child(15) {
-	bottom: 22%;
+	bottom: 21%;
 	right: 27%;
 }
 .box_cities:nth-child(16) {
