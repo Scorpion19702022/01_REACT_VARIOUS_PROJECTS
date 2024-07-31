@@ -5,7 +5,7 @@ import Home from '../Components/Home/Home'
 import Task02 from '../Components/Task02/Task02'
 import WeatherApp from '../Components/WeatherApp/WeatherApp'
 import Poland from '../Components/WeatherApp/Pages/Poland'
-import Europe from '../Components/WeatherApp/Pages/Europe'
+import WestEurope from '../Components/WeatherApp/Pages/WestEurope'
 
 function App() {
 	return (
@@ -16,7 +16,7 @@ function App() {
 					<Route path='/' Component={Home} />
 					<Route path='/WeatherApp' Component={WeatherApp} />
 					<Route path='/WeatherApp/Poland' Component={Poland} />
-					<Route path='/WeatherApp/Europe' Component={Europe} />
+					<Route path='/WeatherApp/WestEurope' Component={WestEurope} />
 					<Route path='/Task02' Component={Task02} />
 				</Routes>
 			</section>
