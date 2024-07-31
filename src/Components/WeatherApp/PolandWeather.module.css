@@ -262,6 +262,36 @@
 		right: 39%;
 	}
 
+	.box_cities:nth-child(9) {
+		bottom: 36%;
+		right: 31%;
+	}
+
+	.box_cities:nth-child(10) {
+		bottom: 38%;
+		right: 44%;
+	}
+
+	.box_cities:nth-child(11) {
+		bottom: 25%;
+		right: 40%;
+	}
+
+	.box_cities:nth-child(12) {
+		bottom: 29%;
+		left: 33%;
+	}
+
+	.box_cities:nth-child(13) {
+		bottom: 26%;
+		left: 41.5%;
+	}
+
+	.box_cities:nth-child(14) {
+		bottom: 14%;
+		left: 44%;
+	}
+
 	.name_city {
 		width: 100%;
 		font-size: 1.2em;
