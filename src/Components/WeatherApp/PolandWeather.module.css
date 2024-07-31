@@ -196,6 +196,10 @@
 	color: var(--color-darkred08);
 }
 
+.parametr {
+	font-weight: 400;
+}
+
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;

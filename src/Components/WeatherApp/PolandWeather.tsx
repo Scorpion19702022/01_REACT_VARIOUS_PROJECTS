@@ -9,23 +9,6 @@ import PolandContext from './Context/PolandContext'
 const PolandWeather = () => {
 	const { refresh, citiesPoland } = useContext(PolandContext)
 
-	// const CityPol01 = (
-	// 	<div className={styles.city_weather}>
-	// 		<div className={styles.top}>
-	// 			<h4 className={styles.name_city}>{cityPol01}</h4>
-	// 		</div>
-	// 		<div className={styles.bottom}>
-	// 			<div className={styles.box_img}>
-	// 				<img className={styles.img_city} src={imgPol01} alt='weather_icon' />
-	// 			</div>
-	// 			<div className={styles.box_info}>
-	// 				<span className={styles.city_info_weather}>{tempPol01}</span>
-	// 				<span className={styles.city_info_weather}>{windPol01}</span>
-	// 			</div>
-	// 		</div>
-	// 	</div>
-	// )
-
 	const citiesOfPoland = citiesPoland.map((city, index) => (
 		<div key={index} className={styles.box_cities}>
 			<div className={styles.top}>
@@ -36,8 +19,12 @@ const PolandWeather = () => {
 					<img className={styles.img_city} src={city.img} alt='' />
 				</div>
 				<div className={styles.box_info}>
-					<span className={styles.city_info_weather}>{city.temp}</span>
-					<span className={styles.city_info_weather}>{city.wind}</span>
+					<span className={styles.city_info_weather}>
+						{city.temp} <span className={styles.parametr}> ℃</span>
+					</span>
+					<span className={styles.city_info_weather}>
+						{city.wind} <span className={styles.parametr}> km/h</span>
+					</span>
 				</div>
 			</div>
 		</div>

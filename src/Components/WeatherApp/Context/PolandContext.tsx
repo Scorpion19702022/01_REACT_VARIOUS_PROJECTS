@@ -105,8 +105,8 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 					updatedCities[index] = {
 						...updatedCities[index],
 						idWeather: codId.id,
-						temp: `${temp}℃`,
-						wind: `${wind} km/h`,
+						temp: temp,
+						wind: wind,
 						img: getWeatherImage(codId.id),
 					}
 					return updatedCities
