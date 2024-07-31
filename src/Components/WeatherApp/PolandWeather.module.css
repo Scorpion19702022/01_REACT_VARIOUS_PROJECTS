@@ -203,11 +203,18 @@
 		width: 40%;
 	}
 
+	.box_content {
+		margin-top: 7em;
+	}
+
+	.count {
+		font-size: 1.4em;
+		margin-bottom: 2em;
+	}
+
 	.box_cities {
-		width: 9%;
+		width: 8%;
 		height: 11%;
-		top: 21%;
-		left: 28%;
 		padding: 0.6em;
 		display: flex;
 		flex-direction: column;
@@ -215,9 +222,44 @@
 		align-items: center;
 	}
 
-	.box_cities:nth-last-child(1) {
-		top: 11%;
-		left: 42%;
+	.box_cities:nth-child(1) {
+		top: 25%;
+		left: 30%;
+	}
+
+	.box_cities:nth-child(2) {
+		top: 14%;
+		left: 43%;
+	}
+
+	.box_cities:nth-child(3) {
+		top: 20%;
+		right: 40%;
+	}
+
+	.box_cities:nth-child(4) {
+		top: 26%;
+		right: 30%;
+	}
+
+	.box_cities:nth-child(5) {
+		top: 43%;
+		left: 30%;
+	}
+
+	.box_cities:nth-child(6) {
+		top: 31%;
+		left: 43%;
+	}
+
+	.box_cities:nth-child(7) {
+		top: 44%;
+		left: 39%;
+	}
+
+	.box_cities:nth-child(8) {
+		top: 39%;
+		right: 39%;
 	}
 
 	.name_city {

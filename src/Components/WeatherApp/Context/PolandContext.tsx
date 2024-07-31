@@ -97,7 +97,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				}
 				const data = await response.json()
 				const codId = Object.assign({}, ...data.weather)
-				const temp = data.main.temp
+				const temp = data.main.temp.toFixed(1)
 				const wind = data.wind.speed.toFixed(1)
 
 				setCitiesPoland(prevCities => {
