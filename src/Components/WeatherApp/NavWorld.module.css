@@ -71,4 +71,12 @@
 	.nav_links {
 		top: 5%;
 	}
+
+	.btn_active {
+		width: 12%;
+	}
+
+	.btn_no_active {
+		width: 10%;
+	}
 }
