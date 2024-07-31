@@ -213,8 +213,8 @@
 	}
 
 	.box_cities {
-		width: 8%;
-		height: 11%;
+		width: 7.3%;
+		height: 10.4%;
 		padding: 0.6em;
 		display: flex;
 		flex-direction: column;
@@ -259,7 +259,7 @@
 
 	.box_cities:nth-child(8) {
 		top: 39%;
-		right: 39%;
+		right: 38%;
 	}
 
 	.box_cities:nth-child(9) {
@@ -268,12 +268,12 @@
 	}
 
 	.box_cities:nth-child(10) {
-		bottom: 38%;
-		right: 44%;
+		bottom: 39%;
+		right: 45%;
 	}
 
 	.box_cities:nth-child(11) {
-		bottom: 25%;
+		bottom: 26%;
 		right: 40%;
 	}
 
@@ -283,12 +283,12 @@
 	}
 
 	.box_cities:nth-child(13) {
-		bottom: 26%;
+		bottom: 27%;
 		left: 41.5%;
 	}
 
 	.box_cities:nth-child(14) {
-		bottom: 14%;
+		bottom: 15%;
 		left: 44%;
 	}
 
@@ -304,12 +304,12 @@
 	}
 
 	.box_img {
-		width: 42%;
+		width: 36%;
 		margin-right: 0.6em;
 	}
 
 	.img_city {
-		height: 70%;
+		height: 40%;
 		object-fit: cover;
 	}
 
