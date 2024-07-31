@@ -29,6 +29,7 @@
 }
 
 .box_content {
+	margin-top: 10em;
 	position: relative;
 	width: 100%;
 	height: 100vh;
@@ -39,15 +40,10 @@
 }
 
 .count {
-	position: absolute;
-	bottom: 10%;
-	left: 50%;
-	transform: translateX(-50%);
 	padding: 0.4em;
+	text-align: center;
 	color: var(--color-dark01);
 	border-radius: 6px;
-	border: 0.04em solid var(--color-dark01);
-	background-color: var(--color-darkred08);
 }
 
 .box_map {
@@ -117,19 +113,19 @@
 	left: 24%;
 }
 .box_cities:nth-child(8) {
-	top: 39%;
+	top: 41%;
 	right: 23%;
 }
 .box_cities:nth-child(9) {
-	bottom: 41%;
+	bottom: 40%;
 	right: 6%;
 }
 .box_cities:nth-child(10) {
-	bottom: 45%;
+	bottom: 43%;
 	right: 41%;
 }
 .box_cities:nth-child(11) {
-	bottom: 35%;
+	bottom: 33%;
 	right: 26%;
 }
 .box_cities:nth-child(12) {
@@ -137,20 +133,20 @@
 	left: 10%;
 }
 .box_cities:nth-child(13) {
-	bottom: 36%;
+	bottom: 34%;
 	left: 28%;
 }
 .box_cities:nth-child(14) {
-	bottom: 27%;
+	bottom: 25%;
 	left: 39%;
 }
 .box_cities:nth-child(15) {
-	bottom: 25%;
+	bottom: 22%;
 	right: 27%;
 }
 .box_cities:nth-child(16) {
-	bottom: 27%;
-	right: 7%;
+	bottom: 25%;
+	right: 8%;
 }
 
 .top {
