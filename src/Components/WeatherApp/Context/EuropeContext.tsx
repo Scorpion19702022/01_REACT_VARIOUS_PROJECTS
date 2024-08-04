@@ -14,6 +14,7 @@ import { WeatherCityType } from '../Types/TypeForWeather'
 type InitialStateType = {
 	refresh: number
 	citiesEurope: WeatherCityType[]
+	getWeatherImage: (idWeather: number) => void
 }
 
 type EuropeProviderType = {
@@ -23,15 +24,47 @@ type EuropeProviderType = {
 const InitialState: InitialStateType = {
 	refresh: 0,
 	citiesEurope: [{ city: 'Reykjavík', img: Un, idWeather: 0, temp: 0, wind: 0 }],
+	getWeatherImage: (idWeather: number) => {},
 }
 
 const EuropeContext = createContext(InitialState)
 
 export const EuropeProvider = ({ children }: EuropeProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
-	const [citiesEurope, setCitiesEurope] = useState([])
+	const [citiesEurope, setCitiesEurope] = useState<WeatherCityType[]>(InitialState.citiesEurope)
 
-	return <EuropeContext.Provider value={{ refresh, citiesEurope }}>{children}</EuropeContext.Provider>
+	const getWeatherImage = (idWeather: number) => {
+		if (idWeather >= 200 && idWeather <= 232) {
+			return Thunder
+		} else if (idWeather >= 300 && idWeather <= 321) {
+			return Drizzle
+		} else if (idWeather >= 500 && idWeather <= 531) {
+			return Rain
+		} else if (idWeather >= 600 && idWeather <= 622) {
+			return Snow
+		} else if (idWeather >= 701 && idWeather <= 781) {
+			return Fog
+		} else if (idWeather === 800) {
+			return Sun
+		} else if (idWeather === 801) {
+			return FewClouds
+		} else if (idWeather > 801 && idWeather <= 804) {
+			return Cloud
+		} else {
+			return Un
+		}
+	}
+
+	const time = window.setTimeout(() => {
+		setRefresh(refresh - 1)
+	}, 60000)
+
+	if (refresh === 0) {
+		clearTimeout(time)
+		setRefresh(10)
+	}
+
+	return <EuropeContext.Provider value={{ refresh, citiesEurope, getWeatherImage }}>{children}</EuropeContext.Provider>
 }
 
 export default EuropeContext
