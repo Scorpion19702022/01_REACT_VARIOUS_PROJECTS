@@ -7,14 +7,15 @@
 	--color-dark06: #2f302b;
 	--color-dark07: #1d1e1b;
 	--color-dark08: #050605;
-	--color-darkred01: #dacccc;
-	--color-darkred02: #b69999;
-	--color-darkred03: #926666;
-	--color-darkred04: #6e3232;
-	--color-darkred05: #4a0000;
-	--color-darkred06: #3b0000;
-	--color-darkred07: #2c0000;
-	--color-darkred08: #1d0000;
+	--color-color01: #cce8f2;
+	--color-color02: #99d1e5;
+	--color-color03: #66bbd8;
+	--color-color04: #32a4cb;
+	--color-color05: #008ebe;
+	--color-color06: #007198;
+	--color-color07: #005572;
+	--color-color08: #00384c;
+	--color-color09: #001c26;
 }
 
 .wrapper {
@@ -25,7 +26,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: var(--color-darkred08);
+	background-color: var(--color-dark07);
 }
 
 .box_info {
@@ -41,7 +42,7 @@
 	height: 10%;
 	margin-top: 2em;
 	font-size: 2em;
-	color: var(--color-darkred02);
+	color: var(--color-color02);
 }
 
 .box_main {
@@ -59,7 +60,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* justify-content: flex-end; */
 }
 
 .main_img {
@@ -70,7 +70,7 @@
 
 .main_text {
 	text-align: center;
-	color: var(--color-darkred01);
+	color: var(--color-color01);
 }
 
 .main_legend {
@@ -85,10 +85,10 @@
 
 .legend_heading {
 	font-size: 1.8em;
-	color: var(--color-darkred02);
+	color: var(--color-color02);
 	margin-bottom: 1em;
 	padding-bottom: 0.4em;
-	border-bottom: 0.04em dotted var(--color-darkred04);
+	border-bottom: 0.04em dotted var(--color-color04);
 }
 
 .legend {
@@ -105,7 +105,7 @@
 	align-items: center;
 	padding-bottom: 0.4em;
 	margin: 0.2em 0em;
-	border-bottom: 0.04em dotted var(--color-darkred04);
+	border-bottom: 0.04em dotted var(--color-color04);
 }
 
 .legend_img {
@@ -114,7 +114,7 @@
 }
 
 .legend_info {
-	color: var(--color-darkred02);
+	color: var(--color-color02);
 	font-size: 1.2em;
 }
 
@@ -124,7 +124,7 @@
 }
 
 .other_info {
-	color: var(--color-darkred02);
+	color: var(--color-color01);
 	text-align: center;
 }
 

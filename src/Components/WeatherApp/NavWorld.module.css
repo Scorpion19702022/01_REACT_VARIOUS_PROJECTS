@@ -7,15 +7,15 @@
 	--color-dark06: #2f302b;
 	--color-dark07: #1d1e1b;
 	--color-dark08: #050605;
-	--color-blue01: #cce8f2;
-	--color-blue02: #99d1e5;
-	--color-blue03: #66bbd8;
-	--color-blue04: #32a4cb;
-	--color-blue05: #008ebe;
-	--color-blue06: #007198;
-	--color-blue07: #005572;
-	--color-blue08: #00384c;
-	--color-blue09: #001c26;
+	--color-color01: #cce8f2;
+	--color-color02: #99d1e5;
+	--color-color03: #66bbd8;
+	--color-color04: #32a4cb;
+	--color-color05: #008ebe;
+	--color-color06: #007198;
+	--color-color07: #005572;
+	--color-color08: #00384c;
+	--color-color09: #001c26;
 }
 
 .nav_links {
@@ -33,8 +33,8 @@
 	padding: 0.2em;
 	text-align: center;
 	margin: 0em 1em;
-	background-color: var(--color-blue08);
-	border: 0.04em solid var(--color-blue03);
+	background-color: var(--color-color08);
+	border: 0.04em solid var(--color-color03);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 }
@@ -49,8 +49,8 @@
 	padding: 0.2em;
 	text-align: center;
 	margin: 0em 1em;
-	background-color: var(--color-blue06);
-	border: 0.04em solid var(--color-blue03);
+	background-color: var(--color-color06);
+	border: 0.04em solid var(--color-color03);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 }
@@ -61,7 +61,7 @@
 }
 
 .into_btn {
-	color: var(--color-blue01);
+	color: var(--color-color01);
 	font-size: 0.8em;
 }
 
