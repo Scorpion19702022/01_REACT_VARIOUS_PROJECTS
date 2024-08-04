@@ -53,15 +53,15 @@
 	margin: 0em 0.4em;
 	background: none;
 	border: 0.04em solid var(--color-color05);
-	color: var(--color-color02);
+	color: var(--color-color01);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 }
 
 .btn_pl:hover,
 .btn_en:hover {
-	background-color: var(--color-color03);
-	color: var(--color-color07);
+	background-color: var(--color-color02);
+	color: var(--color-color09);
 }
 
 .btn_pl_active,
@@ -69,8 +69,8 @@
 	width: 20%;
 	padding: 0.4em;
 	margin: 0em 0.4em;
-	background-color: var(--color-color06);
-	border: 0.04em solid var(--color-color06);
+	background-color: var(--color-color07);
+	border: 0.04em solid var(--color-color07);
 	color: var(--color-color01);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
@@ -82,13 +82,13 @@
 	padding: 1.4em;
 	display: flex;
 	align-items: center;
-	border: 0.04em solid var(--color-color04);
+	border: 0.04em solid var(--color-color06);
 	text-align: center;
-	box-shadow: 0.4em 0.4em 0.6em var(--color-color04);
+	box-shadow: 0.4em 0.4em 0.6em var(--color-color06);
 }
 
 .text {
-	color: var(--color-color02);
+	color: var(--color-color01);
 	font-size: 1.4em;
 }
 
@@ -108,15 +108,15 @@
 		margin: 0em 0.4em;
 		background: none;
 		border: 0.04em solid var(--color-color05);
-		color: var(--color-color02);
+		color: var(--color-color01);
 		cursor: pointer;
 		transition: all 0.3s ease-in-out;
 	}
 
 	.btn_pl:hover,
 	.btn_en:hover {
-		background-color: var(--color-color03);
-		color: var(--color-color07);
+		background-color: var(--color-color02);
+		color: var(--color-color09);
 	}
 
 	.btn_pl_active,
@@ -124,8 +124,8 @@
 		width: 15%;
 		padding: 0.8em;
 		margin: 0em 0.4em;
-		background-color: var(--color-color06);
-		border: 0.04em solid var(--color-color06);
+		background-color: var(--color-color07);
+		border: 0.04em solid var(--color-color07);
 		color: var(--color-color01);
 		cursor: pointer;
 		transition: all 0.3s ease-in-out;
@@ -135,13 +135,13 @@
 		width: 50%;
 		height: 300px;
 		padding: 1.4em;
-		border: 0.04em solid var(--color-color04);
+		border: 0.04em solid var(--color-color06);
 		text-align: center;
-		box-shadow: 0.4em 0.4em 0.6em var(--color-color04);
+		box-shadow: 0.4em 0.4em 0.6em var(--color-color06);
 	}
 
 	.text {
-		color: var(--color-color02);
+		color: var(--color-color01);
 		font-size: 1.6em;
 	}
 }
