@@ -1,11 +1,10 @@
 import React from 'react'
-import NavWorld from '../NavWorld'
+import EuropeWeather from '../EuropeWeather'
 
 const Europe = () => {
 	return (
 		<div>
-			<NavWorld />
-			<h2>Europa zachodnia</h2>
+			<EuropeWeather />
 		</div>
 	)
 }
