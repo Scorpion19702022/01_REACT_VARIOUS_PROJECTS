@@ -1,7 +1,7 @@
 import React from 'react'
 import NavWorld from '../NavWorld'
 
-const WestEurope = () => {
+const Europe = () => {
 	return (
 		<div>
 			<NavWorld />
@@ -10,4 +10,4 @@ const WestEurope = () => {
 	)
 }
 
-export default WestEurope
+export default Europe
