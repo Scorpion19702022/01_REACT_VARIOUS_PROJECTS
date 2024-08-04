@@ -7,15 +7,15 @@
 	--color-dark06: #2f302b;
 	--color-dark07: #1d1e1b;
 	--color-dark08: #050605;
-	--color-blue01: #cce8f2;
-	--color-blue02: #99d1e5;
-	--color-blue03: #66bbd8;
-	--color-blue04: #32a4cb;
-	--color-blue05: #008ebe;
-	--color-blue06: #007198;
-	--color-blue07: #005572;
-	--color-blue08: #00384c;
-	--color-blue09: #001c26;
+	--color-color01: #cce8f2;
+	--color-color02: #99d1e5;
+	--color-color03: #66bbd8;
+	--color-color04: #32a4cb;
+	--color-color05: #008ebe;
+	--color-color06: #007198;
+	--color-color07: #005572;
+	--color-color08: #00384c;
+	--color-color09: #001c26;
 }
 
 .wrapper {
@@ -52,16 +52,16 @@
 	padding: 0.4em;
 	margin: 0em 0.4em;
 	background: none;
-	border: 0.04em solid var(--color-blue05);
-	color: var(--color-blue02);
+	border: 0.04em solid var(--color-color05);
+	color: var(--color-color02);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 }
 
 .btn_pl:hover,
 .btn_en:hover {
-	background-color: var(--color-blue03);
-	color: var(--color-blue07);
+	background-color: var(--color-color03);
+	color: var(--color-color07);
 }
 
 .btn_pl_active,
@@ -69,9 +69,9 @@
 	width: 20%;
 	padding: 0.4em;
 	margin: 0em 0.4em;
-	background-color: var(--color-blue06);
-	border: 0.04em solid var(--color-blue06);
-	color: var(--color-blue01);
+	background-color: var(--color-color06);
+	border: 0.04em solid var(--color-color06);
+	color: var(--color-color01);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 }
@@ -82,13 +82,13 @@
 	padding: 1.4em;
 	display: flex;
 	align-items: center;
-	border: 0.04em solid var(--color-blue04);
+	border: 0.04em solid var(--color-color04);
 	text-align: center;
-	box-shadow: 0.4em 0.4em 0.6em var(--color-blue04);
+	box-shadow: 0.4em 0.4em 0.6em var(--color-color04);
 }
 
 .text {
-	color: var(--color-blue02);
+	color: var(--color-color02);
 	font-size: 1.4em;
 }
 
@@ -107,16 +107,16 @@
 		padding: 0.8em;
 		margin: 0em 0.4em;
 		background: none;
-		border: 0.04em solid var(--color-blue05);
-		color: var(--color-blue02);
+		border: 0.04em solid var(--color-color05);
+		color: var(--color-color02);
 		cursor: pointer;
 		transition: all 0.3s ease-in-out;
 	}
 
 	.btn_pl:hover,
 	.btn_en:hover {
-		background-color: var(--color-blue03);
-		color: var(--color-blue07);
+		background-color: var(--color-color03);
+		color: var(--color-color07);
 	}
 
 	.btn_pl_active,
@@ -124,9 +124,9 @@
 		width: 15%;
 		padding: 0.8em;
 		margin: 0em 0.4em;
-		background-color: var(--color-blue06);
-		border: 0.04em solid var(--color-blue06);
-		color: var(--color-blue01);
+		background-color: var(--color-color06);
+		border: 0.04em solid var(--color-color06);
+		color: var(--color-color01);
 		cursor: pointer;
 		transition: all 0.3s ease-in-out;
 	}
@@ -135,13 +135,13 @@
 		width: 50%;
 		height: 300px;
 		padding: 1.4em;
-		border: 0.04em solid var(--color-blue04);
+		border: 0.04em solid var(--color-color04);
 		text-align: center;
-		box-shadow: 0.4em 0.4em 0.6em var(--color-blue04);
+		box-shadow: 0.4em 0.4em 0.6em var(--color-color04);
 	}
 
 	.text {
-		color: var(--color-blue02);
+		color: var(--color-color02);
 		font-size: 1.6em;
 	}
 }
