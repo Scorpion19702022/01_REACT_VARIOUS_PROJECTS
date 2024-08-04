@@ -11,7 +11,7 @@ const EuropeWeather = () => {
 		<section className={styles.wrapper}>
 			<NavWorld />
 			<div className={styles.box_content}>
-				<h4 className={styles.count}>Aktualizacja pogody za 0 min.</h4>
+				<h4 className={styles.count}>Aktualizacja pogody za min.</h4>
 				<div className={styles.box_map}>
 					<img className={styles.img_europe_map} src={EuropeMap} alt='' />
 				</div>
