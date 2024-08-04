@@ -29,8 +29,53 @@
 	background-color: var(--color-dark07);
 }
 
+.box_content {
+	margin-top: 10em;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.count {
+	text-align: center;
+	color: var(--color-dark01);
+	border-radius: 6px;
+}
+
+.box_map {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.3;
+}
+
+.img_europe_map {
+	width: 100%;
+	object-fit: cover;
+}
+
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;
+	}
+
+	.img_europe_map {
+		width: 42%;
+	}
+
+	.box_content {
+		margin-top: 7em;
+	}
+
+	.count {
+		font-size: 1.4em;
+		margin-bottom: 2em;
 	}
 }
