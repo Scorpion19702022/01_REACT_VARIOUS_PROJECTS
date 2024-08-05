@@ -3,6 +3,7 @@ import NavWorld from './NavWorld'
 import styles from './WeatherApp.module.css'
 
 import Unknown from './assets/unknown.png'
+import FewClouds from './assets/few_clouds.png'
 import Sun from './assets/sun.png'
 import Cloud from './assets/cloud.png'
 import Rain from './assets/rain.png'
@@ -30,6 +31,10 @@ const WeatherApp = () => {
 							<div className={styles.info_legend}>
 								<img className={styles.legend_img} src={Sun} alt='sun' />
 								<span className={styles.legend_info}>- słonecznie</span>
+							</div>
+							<div className={styles.info_legend}>
+								<img className={styles.legend_img} src={FewClouds} alt='few_clouds' />
+								<span className={styles.legend_info}>- częściowo słonecznie</span>
 							</div>
 							<div className={styles.info_legend}>
 								<img className={styles.legend_img} src={Cloud} alt='cloud' />
