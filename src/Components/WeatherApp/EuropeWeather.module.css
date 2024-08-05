@@ -208,6 +208,12 @@
 	right: 16%;
 }
 
+.box_cities:nth-child(24) {
+	bottom: 0%;
+	right: 0%;
+	opacity: 0;
+}
+
 .top {
 	width: 100%;
 	margin-bottom: 0.2em;
@@ -455,9 +461,14 @@
 	}
 
 	.box_cities:nth-child(23) {
-		bottom: 29%;
-		right: 16%;
-		opacity: 0;
+		bottom: 16%;
+		right: 26%;
+	}
+
+	.box_cities:nth-child(24) {
+		bottom: 7%;
+		left: 37%;
+		opacity: 1;
 	}
 
 	.bottom {
