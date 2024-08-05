@@ -28,7 +28,19 @@ const InitialState: InitialStateType = {
 		{ city: 'Dublin', img: Un, idWeather: 0, temp: 0, wind: 0 },
 		{ city: 'Londyn', img: Un, idWeather: 0, temp: 0, wind: 0 },
 		{ city: 'Oslo', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Kopenhaga', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Bruksela', img: Un, idWeather: 0, temp: 0, wind: 0 },
 		{ city: 'Sztokholm', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Amsterdam', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Helsinki', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Moskwa', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Berlin', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Ryga', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Mińsk', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Kijów', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Lizbona', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Madryt', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Paryż', img: Un, idWeather: 0, temp: 0, wind: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
 }
@@ -87,7 +99,7 @@ export const EuropeProvider = ({ children }: EuropeProviderType) => {
 				const data = await response.json()
 				const codId = Object.assign({}, ...data.weather)
 				const temp = data.main.temp.toFixed(1)
-				const wind = data.wind.speed.toFixed(1)
+				const wind = data.wind.speed.toFixed(0)
 
 				setCitiesEurope(prevCities => {
 					const updatedCities = [...prevCities]
