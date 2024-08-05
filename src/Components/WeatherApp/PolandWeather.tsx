@@ -3,6 +3,16 @@ import NavWorld from './NavWorld'
 
 import PolandMap from './assets/polandMAP.png'
 
+import Un from './assets/unknown.png'
+import Sun from './assets/sun.png'
+import FewClouds from './assets/few_clouds.png'
+import Cloud from './assets/cloud.png'
+import Rain from './assets/rain.png'
+import Thunder from './assets/thunderstorm.png'
+import Drizzle from './assets/drizzle.png'
+import Fog from './assets/fog.png'
+import Snow from './assets/snow.png'
+
 import styles from './PolandWeather.module.css'
 import PolandContext from './Context/PolandContext'
 

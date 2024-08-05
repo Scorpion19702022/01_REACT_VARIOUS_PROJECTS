@@ -7,9 +7,7 @@ import Sun from './assets/sun.png'
 import Cloud from './assets/cloud.png'
 import Rain from './assets/rain.png'
 import Thunder from './assets/thunderstorm.png'
-import Drizzle from './assets/drizzle.png'
 import Fog from './assets/fog.png'
-import Ice from './assets/ice.png'
 import Snow from './assets/snow.png'
 
 const WeatherApp = () => {
@@ -38,10 +36,6 @@ const WeatherApp = () => {
 								<span className={styles.legend_info}>- pochmurnie</span>
 							</div>
 							<div className={styles.info_legend}>
-								<img className={styles.legend_img} src={Drizzle} alt='drizzle' />
-								<span className={styles.legend_info}>- mżysto</span>
-							</div>
-							<div className={styles.info_legend}>
 								<img className={styles.legend_img} src={Rain} alt='rain' />
 								<span className={styles.legend_info}>- deszczowo</span>
 							</div>
@@ -56,10 +50,6 @@ const WeatherApp = () => {
 							<div className={styles.info_legend}>
 								<img className={styles.legend_img} src={Fog} alt='fog' />
 								<span className={styles.legend_info}>- mgliście</span>
-							</div>
-							<div className={styles.info_legend}>
-								<img className={styles.legend_img} src={Ice} alt='ice' />
-								<span className={styles.legend_info}>- gołoledź</span>
 							</div>
 							<div className={styles.legend_other_info}>
 								<p className={styles.other_info}>
