@@ -86,7 +86,7 @@
 	align-items: center;
 	background-color: var(--color-dark01);
 	border: 0.04em solid var(--color-dark08);
-	box-shadow: 0.6em 0.6em 0.4em var(--color-dark08);
+	box-shadow: 0.3em 0.3em 0.2em var(--color-dark08);
 }
 
 .box_cities:nth-child(1) {
@@ -171,6 +171,26 @@
 .box_cities:nth-child(17) {
 	bottom: 38%;
 	left: 17%;
+}
+
+.box_cities:nth-child(18) {
+	bottom: 43%;
+	left: 41%;
+}
+
+.box_cities:nth-child(19) {
+	bottom: 35%;
+	left: 41%;
+}
+
+.box_cities:nth-child(20) {
+	bottom: 27%;
+	left: 33%;
+}
+
+.box_cities:nth-child(21) {
+	bottom: 27%;
+	right: 37%;
 }
 
 .top {
