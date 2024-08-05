@@ -309,8 +309,9 @@
 	}
 
 	.img_europe_map {
-		height: 82%;
-		margin-bottom: 10em;
+		position: absolute;
+		height: 100%;
+		margin: 3em 0em 10em 10em;
 	}
 
 	.box_content {
@@ -330,8 +331,8 @@
 	}
 
 	.box_cities {
-		width: 6.8%;
-		height: 9.2%;
+		width: 6.5%;
+		height: 10.4%;
 		padding: 0.6em;
 		display: flex;
 		flex-direction: column;
@@ -340,44 +341,40 @@
 	}
 
 	.box_cities:nth-child(1) {
-		top: 24%;
-		left: 3%;
+		top: 14%;
+		left: 30%;
 	}
 
 	.box_cities:nth-child(2) {
-		top: 35%;
-		left: 11%;
-		opacity: 0;
+		top: 45%;
+		left: 28%;
+		opacity: 1;
 	}
 
 	.box_cities:nth-child(3) {
-		top: 43%;
-		left: 11%;
-		opacity: 0;
+		top: 45%;
+		left: 35%;
 	}
 
 	.box_cities:nth-child(4) {
-		top: 33%;
-		left: 25.5%;
-		opacity: 0;
+		top: 28%;
+		left: 42%;
 	}
 
 	.box_cities:nth-child(5) {
-		top: 30%;
-		left: 25.5%;
-		opacity: 0;
+		top: 39%;
+		left: 44%;
+		opacity: 1;
 	}
 
 	.box_cities:nth-child(6) {
-		top: 46%;
-		left: 25.5%;
-		opacity: 0;
+		top: 50%;
+		left: 42%;
 	}
 
 	.box_cities:nth-child(7) {
-		top: 36%;
-		left: 41%;
-		opacity: 0;
+		top: 27%;
+		left: 49%;
 	}
 
 	.box_cities:nth-child(8) {
@@ -387,9 +384,8 @@
 	}
 
 	.box_cities:nth-child(9) {
-		top: 31%;
-		right: 30%;
-		opacity: 0;
+		top: 29%;
+		right: 37.5%;
 	}
 
 	.box_cities:nth-child(10) {
