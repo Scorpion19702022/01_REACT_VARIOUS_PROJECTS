@@ -214,6 +214,18 @@
 	opacity: 0;
 }
 
+.box_cities:nth-child(25) {
+	bottom: 0%;
+	right: 0%;
+	opacity: 0;
+}
+
+.box_cities:nth-child(26) {
+	bottom: 0%;
+	right: 0%;
+	opacity: 0;
+}
+
 .top {
 	width: 100%;
 	margin-bottom: 0.2em;
@@ -435,9 +447,9 @@
 	}
 
 	.box_cities:nth-child(18) {
-		bottom: 43%;
-		left: 41%;
-		opacity: 0;
+		bottom: 26.4%;
+		left: 53%;
+		opacity: 1;
 	}
 
 	.box_cities:nth-child(19) {
@@ -457,7 +469,7 @@
 
 	.box_cities:nth-child(22) {
 		bottom: 26%;
-		right: 35%;
+		right: 33%;
 	}
 
 	.box_cities:nth-child(23) {
@@ -468,6 +480,18 @@
 	.box_cities:nth-child(24) {
 		bottom: 7%;
 		left: 37%;
+		opacity: 1;
+	}
+
+	.box_cities:nth-child(25) {
+		bottom: 15%;
+		right: 40%;
+		opacity: 1;
+	}
+
+	.box_cities:nth-child(26) {
+		bottom: 14%;
+		right: 33%;
 		opacity: 1;
 	}
 

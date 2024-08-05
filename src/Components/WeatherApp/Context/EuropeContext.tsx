@@ -48,6 +48,8 @@ const InitialState: InitialStateType = {
 		{ city: 'Bukareszt', img: Un, idWeather: 0, temp: 0, wind: 0 },
 		{ city: 'Ankara', img: Un, idWeather: 0, temp: 0, wind: 0 },
 		{ city: 'Barcelona', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Zagrzeb', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Istanbul', img: Un, idWeather: 0, temp: 0, wind: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
 }
