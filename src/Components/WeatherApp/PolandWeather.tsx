@@ -72,11 +72,6 @@ const PolandWeather = () => {
 						<img className={styles.legend_img} src={Fog} alt='fog' />
 						<span className={styles.legend_info}>- mgliście</span>
 					</div>
-					<div className={styles.legend_other_info}>
-						<p className={styles.other_info}>
-							W kolejnych informacjach pojawią się stan pogody, temperatura w ℃, siła wiatru w km/h.
-						</p>
-					</div>
 				</div>
 			</div>
 			<div className={styles.box_content}>

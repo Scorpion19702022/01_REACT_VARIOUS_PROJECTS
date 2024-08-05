@@ -29,6 +29,11 @@
 	background-color: var(--color-dark07);
 }
 
+.weather_legend {
+	position: absolute;
+	opacity: 0;
+}
+
 .box_content {
 	margin-top: 10em;
 	position: relative;
@@ -157,6 +162,54 @@
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;
+	}
+
+	.weather_legend {
+		opacity: 1;
+		left: 10%;
+		bottom: 5%;
+		width: 20%;
+		height: 100%;
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	.legend_heading {
+		font-size: 1.8em;
+		color: var(--color-color02);
+		margin-bottom: 1em;
+		padding-bottom: 0.4em;
+		border-bottom: 0.04em dotted var(--color-color04);
+	}
+
+	.legend {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.info_legend {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 0.4em;
+		margin: 0.2em 0em;
+		border-bottom: 0.04em dotted var(--color-color04);
+	}
+
+	.legend_img {
+		width: 12%;
+		object-fit: cover;
+	}
+
+	.legend_info {
+		color: var(--color-color02);
+		font-size: 1.2em;
 	}
 
 	.img_europe_map {

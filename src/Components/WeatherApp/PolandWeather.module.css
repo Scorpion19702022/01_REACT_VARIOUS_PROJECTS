@@ -254,16 +254,6 @@
 		font-size: 1.2em;
 	}
 
-	.legend_other_info {
-		width: 100%;
-		margin-top: 0.6em;
-	}
-
-	.other_info {
-		color: var(--color-color01);
-		text-align: center;
-	}
-
 	.img_poland_map {
 		width: 40%;
 	}
