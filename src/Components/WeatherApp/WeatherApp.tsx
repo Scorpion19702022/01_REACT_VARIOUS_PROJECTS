@@ -7,6 +7,7 @@ import FewClouds from './assets/few_clouds.png'
 import Sun from './assets/sun.png'
 import Cloud from './assets/cloud.png'
 import Rain from './assets/rain.png'
+import Drizzle from './assets/drizzle.png'
 import Thunder from './assets/thunderstorm.png'
 import Fog from './assets/fog.png'
 import Snow from './assets/snow.png'
@@ -43,6 +44,10 @@ const WeatherApp = () => {
 							<div className={styles.info_legend}>
 								<img className={styles.legend_img} src={Rain} alt='rain' />
 								<span className={styles.legend_info}>- deszczowo</span>
+							</div>
+							<div className={styles.info_legend}>
+								<img className={styles.legend_img} src={Drizzle} alt='drizzle' />
+								<span className={styles.legend_info}>- mżawka</span>
 							</div>
 							<div className={styles.info_legend}>
 								<img className={styles.legend_img} src={Thunder} alt='thunder' />
