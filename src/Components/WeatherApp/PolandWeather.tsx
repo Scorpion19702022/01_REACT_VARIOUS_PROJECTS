@@ -20,7 +20,7 @@ const PolandWeather = () => {
 
 	const divsLines = []
 
-	for (let i = 0; i < 8; i++) {
+	for (let i = 0; i < 16; i++) {
 		divsLines.push(<div key={i} className={styles.line}></div>)
 	}
 

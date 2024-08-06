@@ -269,6 +269,13 @@
 	left: 8%;
 }
 
+.line:nth-child(9) {
+	transform: rotate(-48deg);
+	width: 23%;
+	top: 46%;
+	right: 22%;
+}
+
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;
