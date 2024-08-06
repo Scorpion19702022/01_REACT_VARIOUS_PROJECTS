@@ -270,16 +270,29 @@
 }
 
 .line:nth-child(9) {
-	transform: rotate(-48deg);
-	width: 23%;
-	top: 46%;
+	transform: rotate(-42deg);
+	width: 21%;
+	top: 47%;
 	right: 22%;
 }
 
 .line:nth-child(10) {
 	transform: rotate(-14deg);
-	width: 23%;
-	bottom: 46%;
+	width: 31%;
+	bottom: 45%;
+	right: 22%;
+}
+
+.line:nth-child(11) {
+	width: 8%;
+	bottom: 37%;
+	right: 22%;
+}
+
+.line:nth-child(12) {
+	transform: rotate(21deg);
+	width: 22%;
+	bottom: 29%;
 	right: 22%;
 }
 
