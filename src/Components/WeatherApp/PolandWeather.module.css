@@ -378,8 +378,12 @@
 		font-size: 1.2em;
 	}
 
+	.box_map {
+		margin: 0em 0em 0em 4em;
+	}
+
 	.img_poland_map {
-		width: 40%;
+		width: 36%;
 	}
 
 	.box_content {
@@ -402,38 +406,38 @@
 	}
 
 	.box_cities:nth-child(1) {
-		top: 25%;
-		left: 30%;
+		top: 10%;
+		left: 36%;
 	}
 
 	.box_cities:nth-child(2) {
-		top: 14%;
-		left: 43%;
+		top: 10%;
+		left: 44%;
 	}
 
 	.box_cities:nth-child(3) {
-		top: 20%;
-		right: 40%;
+		top: 10%;
+		right: 40.8%;
 	}
 
 	.box_cities:nth-child(4) {
-		top: 26%;
-		right: 30%;
+		top: 10%;
+		right: 33%;
 	}
 
 	.box_cities:nth-child(5) {
-		top: 43%;
-		left: 30%;
+		top: 40%;
+		left: 28%;
 	}
 
 	.box_cities:nth-child(6) {
-		top: 31%;
-		left: 43%;
+		top: 28%;
+		left: 28%;
 	}
 
 	.box_cities:nth-child(7) {
-		top: 44%;
-		left: 39%;
+		bottom: 37.6%;
+		left: 28%;
 	}
 
 	.box_cities:nth-child(8) {
@@ -457,27 +461,27 @@
 	}
 
 	.box_cities:nth-child(12) {
-		bottom: 29%;
-		left: 33%;
+		bottom: 25.4%;
+		left: 28%;
 	}
 
 	.box_cities:nth-child(13) {
-		bottom: 27%;
-		left: 41.5%;
+		bottom: 8%;
+		left: 36%;
 	}
 
 	.box_cities:nth-child(14) {
-		bottom: 15%;
+		bottom: 8%;
 		left: 44%;
 	}
 
 	.box_cities:nth-child(15) {
-		bottom: 12%;
-		right: 41%;
+		bottom: 8%;
+		right: 40.8%;
 	}
 
 	.box_cities:nth-child(16) {
-		bottom: 14%;
+		bottom: 8%;
 		right: 33%;
 	}
 
