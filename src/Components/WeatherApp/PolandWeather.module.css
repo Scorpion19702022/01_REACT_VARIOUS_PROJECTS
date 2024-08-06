@@ -409,83 +409,72 @@
 	}
 
 	.box_cities:nth-child(1) {
-		top: 10%;
-		left: 36%;
+		top: 11%;
+		left: 38%;
 	}
-
 	.box_cities:nth-child(2) {
-		top: 10%;
-		left: 44%;
+		top: 11%;
+		left: 46%;
 	}
 
 	.box_cities:nth-child(3) {
-		top: 10%;
-		right: 40.8%;
+		top: 11%;
+		right: 38.7%;
 	}
-
 	.box_cities:nth-child(4) {
-		top: 10%;
-		right: 33%;
+		top: 11%;
+		right: 30.7%;
 	}
 
 	.box_cities:nth-child(5) {
-		top: 40%;
-		left: 28%;
+		top: 32%;
+		left: 29%;
 	}
 
 	.box_cities:nth-child(6) {
-		top: 28%;
-		left: 28%;
+		top: 44%;
+		left: 29%;
 	}
 
 	.box_cities:nth-child(7) {
-		bottom: 37.6%;
-		left: 28%;
+		bottom: 33.5%;
+		left: 29%;
 	}
-
 	.box_cities:nth-child(8) {
-		top: 39%;
-		right: 38%;
+		bottom: 21.4%;
+		left: 29%;
 	}
-
 	.box_cities:nth-child(9) {
-		bottom: 36%;
-		right: 31%;
+		top: 32%;
+		right: 22%;
 	}
-
 	.box_cities:nth-child(10) {
-		bottom: 39%;
-		right: 45%;
+		top: 44%;
+		right: 22%;
 	}
-
 	.box_cities:nth-child(11) {
-		bottom: 26%;
-		right: 40%;
+		bottom: 33.5%;
+		right: 22%;
 	}
-
 	.box_cities:nth-child(12) {
-		bottom: 25.4%;
-		left: 28%;
+		bottom: 21.4%;
+		right: 22%;
 	}
-
 	.box_cities:nth-child(13) {
-		bottom: 8%;
-		left: 36%;
+		bottom: 6%;
+		left: 38%;
 	}
-
 	.box_cities:nth-child(14) {
-		bottom: 8%;
-		left: 44%;
+		bottom: 6%;
+		left: 46%;
 	}
-
 	.box_cities:nth-child(15) {
-		bottom: 8%;
-		right: 40.8%;
+		bottom: 6%;
+		right: 38.7%;
 	}
-
 	.box_cities:nth-child(16) {
-		bottom: 8%;
-		right: 33%;
+		bottom: 6%;
+		right: 30.7%;
 	}
 
 	.name_city {
