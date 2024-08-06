@@ -243,6 +243,32 @@
 	right: 18%;
 }
 
+.line:nth-child(5) {
+	width: 30%;
+	top: 42%;
+	left: 8%;
+}
+
+.line:nth-child(6) {
+	width: 9%;
+	bottom: 47%;
+	left: 8%;
+}
+
+.line:nth-child(7) {
+	transform: rotate(-34deg);
+	width: 26%;
+	bottom: 40%;
+	left: 8%;
+}
+
+.line:nth-child(8) {
+	transform: rotate(-34deg);
+	width: 22%;
+	bottom: 30%;
+	left: 8%;
+}
+
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;

@@ -20,11 +20,9 @@ const PolandWeather = () => {
 
 	const divsLines = []
 
-	for (let i = 0; i < 4; i++) {
+	for (let i = 0; i < 8; i++) {
 		divsLines.push(<div key={i} className={styles.line}></div>)
 	}
-
-	console.log(divsLines)
 
 	const citiesOfPoland = citiesPoland.map((city, index) => (
 		<div key={index} className={styles.box_cities}>
