@@ -107,24 +107,27 @@
 	top: 14%;
 	right: 17%;
 }
+
 .box_cities:nth-child(5) {
-	top: 48%;
-	left: 3%;
-}
-.box_cities:nth-child(6) {
 	top: 38%;
 	left: 3%;
 }
+
+.box_cities:nth-child(6) {
+	top: 48%;
+	left: 3%;
+}
+
 .box_cities:nth-child(7) {
 	bottom: 33%;
 	left: 3%;
 }
 .box_cities:nth-child(8) {
-	top: 38%;
-	right: 6%;
+	bottom: 23%;
+	left: 3%;
 }
 .box_cities:nth-child(9) {
-	bottom: 33%;
+	top: 38%;
 	right: 6%;
 }
 .box_cities:nth-child(10) {
@@ -132,12 +135,12 @@
 	right: 6%;
 }
 .box_cities:nth-child(11) {
-	bottom: 23%;
+	bottom: 33%;
 	right: 6%;
 }
 .box_cities:nth-child(12) {
 	bottom: 23%;
-	left: 3%;
+	right: 6%;
 }
 .box_cities:nth-child(13) {
 	bottom: 10%;
