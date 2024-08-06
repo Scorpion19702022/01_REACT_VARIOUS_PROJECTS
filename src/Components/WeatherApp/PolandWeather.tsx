@@ -18,6 +18,14 @@ import PolandContext from './Context/PolandContext'
 const PolandWeather = () => {
 	const { refresh, citiesPoland } = useContext(PolandContext)
 
+	const divsLines = []
+
+	for (let i = 0; i < 4; i++) {
+		divsLines.push(<div key={i} className={styles.line}></div>)
+	}
+
+	console.log(divsLines)
+
 	const citiesOfPoland = citiesPoland.map((city, index) => (
 		<div key={index} className={styles.box_cities}>
 			<div className={styles.top}>
@@ -84,6 +92,7 @@ const PolandWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_poland_map} src={PolandMap} alt='poland_map' />
 				</div>
+				<div className={styles.box_lines}>{divsLines}</div>
 				<div className={styles.city_weather}>{citiesOfPoland}</div>
 			</div>
 		</section>

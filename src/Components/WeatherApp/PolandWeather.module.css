@@ -202,6 +202,47 @@
 	font-weight: 400;
 }
 
+.box_lines {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.line {
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: #008ebe;
+}
+
+.line:nth-child(1) {
+	transform: rotate(110deg);
+	width: 20%;
+	top: 28%;
+	left: 5%;
+}
+
+.line:nth-child(2) {
+	transform: rotate(56deg);
+	width: 12%;
+	top: 25%;
+	left: 30%;
+}
+
+.line:nth-child(3) {
+	transform: rotate(62deg);
+	width: 26%;
+	top: 25%;
+	right: 36%;
+}
+
+.line:nth-child(4) {
+	transform: rotate(78deg);
+	width: 28%;
+	top: 28%;
+	right: 18%;
+}
+
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;
