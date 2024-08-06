@@ -35,7 +35,7 @@
 }
 
 .box_content {
-	margin-top: 10em;
+	margin-top: 8em;
 	position: relative;
 	width: 100%;
 	height: 100vh;
@@ -54,6 +54,7 @@
 .box_map {
 	width: 100%;
 	height: 100%;
+	margin-top: 4em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -62,7 +63,7 @@
 }
 
 .img_poland_map {
-	width: 100%;
+	width: 84%;
 	object-fit: cover;
 }
 
@@ -85,73 +86,73 @@
 	align-items: center;
 	background-color: var(--color-dark01);
 	border: 0.04em solid var(--color-dark08);
-	box-shadow: 0.6em 0.6em 0.4em var(--color-dark08);
+	box-shadow: 0.3em 0.3em 0.4em var(--color-dark08);
 }
 
 .box_cities:nth-child(1) {
-	top: 27%;
-	left: 3%;
+	top: 14%;
+	left: 14%;
 }
 .box_cities:nth-child(2) {
-	top: 18%;
-	left: 37%;
+	top: 14%;
+	left: 31%;
 }
 
 .box_cities:nth-child(3) {
-	top: 23%;
-	right: 26%;
+	top: 14%;
+	right: 36%;
 }
 .box_cities:nth-child(4) {
-	top: 29%;
-	right: 4%;
+	top: 14%;
+	right: 19%;
 }
 .box_cities:nth-child(5) {
-	top: 43%;
-	left: 4%;
+	top: 48%;
+	left: 3%;
 }
 .box_cities:nth-child(6) {
-	top: 31%;
-	left: 34%;
+	top: 38%;
+	left: 3%;
 }
 .box_cities:nth-child(7) {
-	top: 42%;
-	left: 24%;
+	bottom: 33%;
+	left: 3%;
 }
 .box_cities:nth-child(8) {
-	top: 41%;
-	right: 23%;
+	top: 34%;
+	right: 6%;
 }
 .box_cities:nth-child(9) {
-	bottom: 40%;
+	bottom: 37%;
 	right: 6%;
 }
 .box_cities:nth-child(10) {
-	bottom: 44%;
-	right: 41%;
+	bottom: 47%;
+	right: 6%;
 }
 .box_cities:nth-child(11) {
-	bottom: 33%;
-	right: 26%;
+	bottom: 27%;
+	right: 6%;
 }
 .box_cities:nth-child(12) {
-	bottom: 37%;
-	left: 10%;
+	bottom: 23%;
+	left: 3%;
 }
 .box_cities:nth-child(13) {
-	bottom: 34%;
-	left: 28%;
+	bottom: 10%;
+	left: 24%;
 }
 .box_cities:nth-child(14) {
-	bottom: 23%;
-	left: 39%;
+	bottom: 10%;
+	left: 41%;
 }
 .box_cities:nth-child(15) {
-	bottom: 21%;
-	right: 27%;
+	bottom: 10%;
+	right: 26%;
 }
 .box_cities:nth-child(16) {
-	bottom: 25%;
-	right: 8%;
+	bottom: 10%;
+	right: 9%;
 }
 
 .top {
