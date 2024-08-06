@@ -86,7 +86,7 @@
 	justify-content: center;
 	align-items: center;
 	background-color: var(--color-dark02);
-	border: 0.04em solid var(--color-dark08);
+	border: 0.1em solid var(--color-color04);
 	box-shadow: 0.3em 0.3em 0.4em var(--color-dark08);
 }
 
@@ -165,8 +165,8 @@
 	width: 100%;
 	font-size: 0.9em;
 	padding-bottom: 0.2em;
-	border-bottom: 0.04em solid var(--color-dark07);
-	color: var(--color-color08);
+	border-bottom: 0.04em solid var(--color-dark04);
+	color: var(--color-dark08);
 }
 
 .bottom {
@@ -196,7 +196,7 @@
 	font-size: 0.8em;
 	font-weight: 700;
 	margin-bottom: 0.2em;
-	color: var(--color-color08);
+	color: var(--color-dark08);
 }
 
 .parametr {
@@ -213,7 +213,7 @@
 	position: absolute;
 	width: 100%;
 	height: 2px;
-	background-color: #008ebe;
+	background-color: var(--color-color04);
 }
 
 .line:nth-child(1) {
@@ -246,7 +246,7 @@
 
 .line:nth-child(5) {
 	width: 30%;
-	top: 42%;
+	top: 43%;
 	left: 8%;
 }
 
