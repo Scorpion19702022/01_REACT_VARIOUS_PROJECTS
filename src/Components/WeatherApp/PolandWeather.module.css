@@ -91,20 +91,20 @@
 
 .box_cities:nth-child(1) {
 	top: 14%;
-	left: 14%;
+	left: 16%;
 }
 .box_cities:nth-child(2) {
 	top: 14%;
-	left: 31%;
+	left: 33%;
 }
 
 .box_cities:nth-child(3) {
 	top: 14%;
-	right: 36%;
+	right: 34%;
 }
 .box_cities:nth-child(4) {
 	top: 14%;
-	right: 19%;
+	right: 17%;
 }
 .box_cities:nth-child(5) {
 	top: 48%;
@@ -119,19 +119,19 @@
 	left: 3%;
 }
 .box_cities:nth-child(8) {
-	top: 34%;
+	top: 38%;
 	right: 6%;
 }
 .box_cities:nth-child(9) {
-	bottom: 37%;
+	bottom: 33%;
 	right: 6%;
 }
 .box_cities:nth-child(10) {
-	bottom: 47%;
+	bottom: 43%;
 	right: 6%;
 }
 .box_cities:nth-child(11) {
-	bottom: 27%;
+	bottom: 23%;
 	right: 6%;
 }
 .box_cities:nth-child(12) {
@@ -140,19 +140,19 @@
 }
 .box_cities:nth-child(13) {
 	bottom: 10%;
-	left: 24%;
+	left: 16%;
 }
 .box_cities:nth-child(14) {
 	bottom: 10%;
-	left: 41%;
+	left: 33%;
 }
 .box_cities:nth-child(15) {
 	bottom: 10%;
-	right: 26%;
+	right: 34%;
 }
 .box_cities:nth-child(16) {
 	bottom: 10%;
-	right: 9%;
+	right: 17%;
 }
 
 .top {
@@ -273,6 +273,13 @@
 	transform: rotate(-48deg);
 	width: 23%;
 	top: 46%;
+	right: 22%;
+}
+
+.line:nth-child(10) {
+	transform: rotate(-14deg);
+	width: 23%;
+	bottom: 46%;
 	right: 22%;
 }
 
