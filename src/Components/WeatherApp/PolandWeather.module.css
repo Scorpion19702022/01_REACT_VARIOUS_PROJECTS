@@ -35,14 +35,23 @@
 }
 
 .box_content {
-	margin-top: 8em;
 	position: relative;
+	margin-top: 8em;
 	width: 100%;
 	height: 100vh;
 	padding: 2em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	z-index: 1;
+}
+
+.back_img {
+	position: absolute;
+	right: 0;
+	width: 40%;
+	object-fit: cover;
+	z-index: -1;
 }
 
 .count {
