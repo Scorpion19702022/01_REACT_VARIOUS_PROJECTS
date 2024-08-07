@@ -202,12 +202,13 @@
 }
 
 .box_cities:nth-child(22) {
-	top: 44%;
+	top: 36%;
 	left: 81%;
+	opacity: 0;
 }
 
 .box_cities:nth-child(23) {
-	top: 52%;
+	top: 44%;
 	left: 81%;
 }
 
@@ -218,7 +219,7 @@
 }
 
 .box_cities:nth-child(25) {
-	top: 60%;
+	top: 52%;
 	left: 81%;
 }
 
