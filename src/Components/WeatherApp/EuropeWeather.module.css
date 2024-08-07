@@ -62,7 +62,7 @@
 }
 
 .img_europe_map {
-	height: 63%;
+	height: 56%;
 	margin-bottom: 6em;
 	object-fit: cover;
 }
@@ -90,140 +90,136 @@
 }
 
 .box_cities:nth-child(1) {
-	top: 24%;
-	left: 3%;
+	top: 9%;
+	left: 12%;
 }
 
 .box_cities:nth-child(2) {
-	top: 35%;
-	left: 11%;
-	opacity: 0;
+	top: 9%;
+	left: 27%;
 }
 
 .box_cities:nth-child(3) {
-	top: 43%;
-	left: 11%;
+	top: 9%;
+	left: 42%;
 }
 
 .box_cities:nth-child(4) {
-	top: 33%;
-	left: 25.5%;
+	top: 9%;
+	left: 57%;
 }
 
 .box_cities:nth-child(5) {
-	top: 30%;
-	left: 25.5%;
-	opacity: 0;
+	top: 9%;
+	left: 72%;
 }
 
 .box_cities:nth-child(6) {
-	top: 46%;
-	left: 25.5%;
+	top: 30%;
+	left: 3%;
 }
 
 .box_cities:nth-child(7) {
-	top: 36%;
-	left: 41%;
+	top: 38%;
+	left: 3%;
+	opacity: 0;
 }
 
 .box_cities:nth-child(8) {
-	top: 46%;
-	left: 25.5%;
-	opacity: 0;
+	top: 38%;
+	left: 3%;
 }
 
 .box_cities:nth-child(9) {
-	top: 31%;
-	right: 30%;
+	top: 46%;
+	left: 3%;
 }
 
 .box_cities:nth-child(10) {
-	top: 36%;
-	right: 14%;
+	top: 54%;
+	left: 3%;
+	opacity: 0;
 }
+
 .box_cities:nth-child(11) {
-	top: 46%;
-	left: 41%;
+	top: 54%;
+	left: 3%;
 }
 
 .box_cities:nth-child(12) {
-	top: 39%;
-	right: 30%;
+	top: 72%;
+	left: 3%;
 }
 
 .box_cities:nth-child(13) {
-	top: 47%;
-	right: 30%;
-	opacity: 0;
+	top: 72%;
+	left: 18%;
 }
 
 .box_cities:nth-child(14) {
-	top: 47%;
-	right: 24%;
-}
-
-.box_cities:nth-child(15) {
-	bottom: 30%;
-	left: 1%;
-}
-
-.box_cities:nth-child(16) {
-	bottom: 29%;
-	left: 16%;
-}
-
-.box_cities:nth-child(17) {
-	bottom: 38%;
-	left: 17%;
-}
-
-.box_cities:nth-child(18) {
-	bottom: 43%;
-	left: 41%;
+	top: 72%;
+	left: 18%;
 	opacity: 0;
 }
-
-.box_cities:nth-child(19) {
-	bottom: 37%;
-	left: 41%;
-}
-
-.box_cities:nth-child(20) {
-	bottom: 27%;
+.box_cities:nth-child(15) {
+	top: 72%;
 	left: 33%;
 }
 
+.box_cities:nth-child(16) {
+	top: 72%;
+	left: 48%;
+}
+
+.box_cities:nth-child(16) {
+	top: 72%;
+	left: 48%;
+}
+
+.box_cities:nth-child(17) {
+	top: 72%;
+	left: 63%;
+}
+
+.box_cities:nth-child(18) {
+	top: 72%;
+	left: 78%;
+}
+
+.box_cities:nth-child(19) {
+	top: 20%;
+	left: 81%;
+}
+
+.box_cities:nth-child(20) {
+	top: 28%;
+	left: 81%;
+}
+
 .box_cities:nth-child(21) {
-	bottom: 27%;
-	right: 37%;
+	top: 36%;
+	left: 81%;
 }
 
 .box_cities:nth-child(22) {
-	bottom: 37%;
-	right: 28%;
+	top: 44%;
+	left: 81%;
 }
 
 .box_cities:nth-child(23) {
-	bottom: 29%;
-	right: 16%;
+	top: 52%;
+	left: 81%;
 }
 
 .box_cities:nth-child(24) {
-	bottom: 0%;
-	right: 0%;
+	top: 52%;
+	left: 81%;
 	opacity: 0;
 }
 
 .box_cities:nth-child(25) {
-	bottom: 0%;
-	right: 0%;
-	opacity: 0;
-}
-
-.box_cities:nth-child(26) {
-	bottom: 0%;
-	right: 0%;
-	opacity: 0;
+	top: 60%;
+	left: 81%;
 }
 
 .top {
@@ -356,143 +352,6 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-	}
-
-	.box_cities:nth-child(1) {
-		top: 14%;
-		left: 30%;
-	}
-
-	.box_cities:nth-child(2) {
-		top: 45%;
-		left: 28%;
-		opacity: 1;
-	}
-
-	.box_cities:nth-child(3) {
-		top: 45%;
-		left: 35%;
-	}
-
-	.box_cities:nth-child(4) {
-		top: 28%;
-		left: 42%;
-	}
-
-	.box_cities:nth-child(5) {
-		top: 39%;
-		left: 44%;
-		opacity: 1;
-	}
-
-	.box_cities:nth-child(6) {
-		top: 50%;
-		left: 42%;
-	}
-
-	.box_cities:nth-child(7) {
-		top: 27%;
-		left: 49%;
-	}
-
-	.box_cities:nth-child(8) {
-		top: 46%;
-		left: 25.5%;
-		opacity: 0;
-	}
-
-	.box_cities:nth-child(9) {
-		top: 29%;
-		right: 37.5%;
-	}
-
-	.box_cities:nth-child(10) {
-		top: 36%;
-		right: 28%;
-	}
-	.box_cities:nth-child(11) {
-		top: 50%;
-		left: 49%;
-	}
-
-	.box_cities:nth-child(12) {
-		top: 40.4%;
-		right: 37.5%;
-	}
-
-	.box_cities:nth-child(13) {
-		top: 52%;
-		right: 37.5%;
-		opacity: 1;
-	}
-
-	.box_cities:nth-child(14) {
-		top: 52%;
-		right: 30.4%;
-	}
-
-	.box_cities:nth-child(15) {
-		bottom: 16%;
-		left: 26%;
-	}
-
-	.box_cities:nth-child(16) {
-		bottom: 19%;
-		left: 33%;
-	}
-
-	.box_cities:nth-child(17) {
-		bottom: 28%;
-		left: 38%;
-	}
-
-	.box_cities:nth-child(18) {
-		bottom: 26.4%;
-		left: 53%;
-		opacity: 1;
-	}
-
-	.box_cities:nth-child(19) {
-		bottom: 28%;
-		left: 46%;
-	}
-
-	.box_cities:nth-child(20) {
-		bottom: 17%;
-		left: 45%;
-	}
-
-	.box_cities:nth-child(21) {
-		bottom: 3%;
-		right: 39%;
-	}
-
-	.box_cities:nth-child(22) {
-		bottom: 26%;
-		right: 33%;
-	}
-
-	.box_cities:nth-child(23) {
-		bottom: 16%;
-		right: 26%;
-	}
-
-	.box_cities:nth-child(24) {
-		bottom: 7%;
-		left: 37%;
-		opacity: 1;
-	}
-
-	.box_cities:nth-child(25) {
-		bottom: 15%;
-		right: 40%;
-		opacity: 1;
-	}
-
-	.box_cities:nth-child(26) {
-		bottom: 14%;
-		right: 33%;
-		opacity: 1;
 	}
 
 	.bottom {
