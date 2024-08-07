@@ -228,6 +228,18 @@
 	left: 81%;
 }
 
+.box_cities:nth-child(27) {
+	top: 60%;
+	left: 81%;
+	opacity: 0;
+}
+
+.box_cities:nth-child(28) {
+	top: 60%;
+	left: 81%;
+	opacity: 0;
+}
+
 .top {
 	width: 100%;
 	margin-bottom: 0.2em;
