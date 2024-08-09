@@ -21,6 +21,12 @@ import EuropeContext from './Context/EuropeContext'
 const EuropeWeather = () => {
 	const { refresh, citiesEurope } = useContext(EuropeContext)
 
+	const divsLines = []
+
+	for (let i = 0; i < 28; i++) {
+		divsLines.push(<div key={i} className={styles.line}></div>)
+	}
+
 	const citiesOfEurope = citiesEurope.map((city, index) => (
 		<div key={index} className={styles.box_cities}>
 			<div className={styles.top}>
@@ -88,6 +94,7 @@ const EuropeWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_europe_map} src={EuropeMap} alt='' />
 				</div>
+				<div className={styles.box_lines}>{divsLines}</div>
 				<div className={styles.city_weather}>{citiesOfEurope}</div>
 			</div>
 		</section>

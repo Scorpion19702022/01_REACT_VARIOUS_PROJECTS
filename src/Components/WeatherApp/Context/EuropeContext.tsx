@@ -62,8 +62,6 @@ export const EuropeProvider = ({ children }: EuropeProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesEurope, setCitiesEurope] = useState<WeatherCityType[]>(InitialState.citiesEurope)
 
-	console.log(citiesEurope)
-
 	const getWeatherImage = (idWeather: number) => {
 		if (idWeather >= 200 && idWeather <= 232) {
 			return Thunder

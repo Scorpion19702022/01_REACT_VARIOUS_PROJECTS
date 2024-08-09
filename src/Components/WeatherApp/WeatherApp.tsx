@@ -65,7 +65,7 @@ const WeatherApp = () => {
 							</div>
 							<div className={styles.legend_other_info}>
 								<p className={styles.other_info}>
-									W kolejnych informacjach pojawią się stan pogody, temperatura w ℃, siła wiatru w km/h.
+									W kolejnych informacjach pojawią się stan pogody, temperatura w ℃, siła wiatru w m/s.
 								</p>
 							</div>
 						</div>
