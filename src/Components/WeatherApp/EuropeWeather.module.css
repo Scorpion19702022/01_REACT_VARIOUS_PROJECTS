@@ -385,6 +385,38 @@
 	transform: rotate(80deg);
 }
 
+.line:nth-child(14) {
+	opacity: 0;
+}
+
+.line:nth-child(15) {
+	width: 33%;
+	top: 66%;
+	left: 16%;
+	transform: rotate(72deg);
+}
+
+.line:nth-child(16) {
+	width: 24%;
+	top: 70%;
+	left: 34%;
+	transform: rotate(53deg);
+}
+
+.line:nth-child(17) {
+	width: 22%;
+	top: 72%;
+	left: 53%;
+	transform: rotate(32deg);
+}
+
+.line:nth-child(18) {
+	width: 48%;
+	top: 64%;
+	left: 39%;
+	transform: rotate(33deg);
+}
+
 .back_img {
 	display: none;
 }
