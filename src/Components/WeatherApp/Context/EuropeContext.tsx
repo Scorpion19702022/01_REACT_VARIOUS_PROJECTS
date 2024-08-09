@@ -95,7 +95,7 @@ export const EuropeProvider = ({ children }: EuropeProviderType) => {
 
 	const API_LINK_EUROPE = `https://api.openweathermap.org/data/2.5/weather?q=`
 
-	const API_KEY_EUROPE = '&appid=24582e46fb113d7a512e20a446965d23'
+	const API_KEY_EUROPE = '&appid=25837824580cef11fd6d29954795c755'
 
 	const API_UNITS_EUROPE = '&units=metric'
 
