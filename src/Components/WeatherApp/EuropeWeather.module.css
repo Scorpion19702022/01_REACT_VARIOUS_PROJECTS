@@ -301,7 +301,10 @@
 }
 
 .line:nth-child(1) {
-	top: 10%;
+	width: 28%;
+	top: 20%;
+	left: 1.4%;
+	transform: rotate(86deg);
 }
 
 .back_img {
