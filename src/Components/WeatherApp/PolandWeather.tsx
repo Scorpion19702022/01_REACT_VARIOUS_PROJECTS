@@ -12,7 +12,8 @@ import Drizzle from './assets/drizzle.png'
 import Fog from './assets/fog.png'
 import Snow from './assets/snow.png'
 
-import Un from './assets/unknown.png'
+// import Un from './assets/unknown.png'
+import WomanWeather from './assets/back2.png'
 
 import styles from './PolandWeather.module.css'
 import PolandContext from './Context/PolandContext'
@@ -89,7 +90,7 @@ const PolandWeather = () => {
 			</div>
 			<div className={styles.box_content}>
 				<h4 className={styles.count}>Aktualizacja pogody za {refresh} min.</h4>
-				<img className={styles.back_img} src={Un} alt='' />
+				<img className={styles.back_img} src={WomanWeather} alt='' />
 				<div className={styles.box_map}>
 					<img className={styles.img_poland_map} src={PolandMap} alt='poland_map' />
 				</div>

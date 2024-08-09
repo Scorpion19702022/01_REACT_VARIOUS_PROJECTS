@@ -337,6 +337,10 @@
 	right: 26%;
 }
 
+.back_img {
+	opacity: 0;
+}
+
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;
@@ -620,5 +624,13 @@
 		width: 7%;
 		bottom: 18%;
 		right: 33%;
+	}
+
+	.back_img {
+		position: absolute;
+		bottom: 4%;
+		width: 26%;
+		object-fit: cover;
+		opacity: 1;
 	}
 }
