@@ -12,6 +12,8 @@ import Thunder from './assets/thunderstorm.png'
 import Fog from './assets/fog.png'
 import Snow from './assets/snow.png'
 
+import WeatherWoman from './assets/back2.png'
+
 const WeatherApp = () => {
 	return (
 		<section className={styles.wrapper}>
@@ -70,6 +72,7 @@ const WeatherApp = () => {
 					</div>
 				</div>
 			</div>
+			<img className={styles.back_img} src={WeatherWoman} alt='woman_weather' />
 		</section>
 	)
 }

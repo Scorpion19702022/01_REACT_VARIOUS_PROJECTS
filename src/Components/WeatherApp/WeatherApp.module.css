@@ -129,6 +129,10 @@
 	text-align: center;
 }
 
+.back_img {
+	display: none;
+}
+
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;
@@ -139,8 +143,10 @@
 	}
 
 	.box_info {
-		margin-top: 4em;
-		height: 60%;
+		margin: 4em 18em 0em 0em;
+		height: 70%;
+		width: 74%;
+		display: flex;
 	}
 
 	.main_text {
@@ -153,5 +159,15 @@
 
 	.other_info {
 		font-size: 1.4em;
+	}
+
+	.back_img {
+		position: absolute;
+		display: block;
+		bottom: 3%;
+		right: 1%;
+		width: 23.75%;
+		object-fit: cover;
+		opacity: 0.4;
 	}
 }

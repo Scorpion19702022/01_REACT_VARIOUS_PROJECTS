@@ -287,6 +287,10 @@
 	font-weight: 400;
 }
 
+.back_img {
+	display: none;
+}
+
 @media (min-width: 767.98px) {
 	.wrapper {
 		padding-left: 10em;
@@ -390,5 +394,15 @@
 	.city_info_weather {
 		font-size: 1.1em;
 		font-weight: 700;
+	}
+
+	.back_img {
+		display: block;
+		position: absolute;
+		bottom: 3%;
+		right: 1%;
+		width: 26%;
+		object-fit: cover;
+		opacity: 0.4;
 	}
 }

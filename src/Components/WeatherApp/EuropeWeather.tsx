@@ -11,6 +11,8 @@ import Drizzle from './assets/drizzle.png'
 import Fog from './assets/fog.png'
 import Snow from './assets/snow.png'
 
+import WomanWeather from './assets/back2.png'
+
 import styles from './EuropeWeather.module.css'
 
 import NavWorld from './NavWorld'
@@ -82,6 +84,7 @@ const EuropeWeather = () => {
 			</div>
 			<div className={styles.box_content}>
 				<h4 className={styles.count}>Aktualizacja pogody za {refresh} min.</h4>
+				<img className={styles.back_img} src={WomanWeather} alt='woman weather' />
 				<div className={styles.box_map}>
 					<img className={styles.img_europe_map} src={EuropeMap} alt='' />
 				</div>

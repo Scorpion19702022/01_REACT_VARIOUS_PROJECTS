@@ -338,7 +338,7 @@
 }
 
 .back_img {
-	opacity: 0;
+	display: none;
 }
 
 @media (min-width: 767.98px) {
@@ -628,9 +628,11 @@
 
 	.back_img {
 		position: absolute;
-		bottom: 4%;
+		display: block;
+		bottom: 3%;
+		right: 1%;
 		width: 26%;
 		object-fit: cover;
-		opacity: 1;
+		opacity: 0.4;
 	}
 }
