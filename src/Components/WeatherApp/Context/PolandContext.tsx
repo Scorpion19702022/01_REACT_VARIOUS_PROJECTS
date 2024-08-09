@@ -83,7 +83,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 
 	const API_LINK_POLAND = `https://api.openweathermap.org/data/2.5/weather?q=`
 
-	const API_KEY_POLAND = '&appid=5a0b1ad10de3c246a73f7a45541437ff'
+	const API_KEY_POLAND = '&appid=1c588ccdce50a0d60c4afd29309be149'
 
 	const API_UNITS_POLAND = '&units=metric'
 
