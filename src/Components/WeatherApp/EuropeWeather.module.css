@@ -467,6 +467,14 @@
 	transform: rotate(-8deg);
 }
 
+.line:nth-child(27) {
+	opacity: 0;
+}
+
+.line:nth-child(28) {
+	opacity: 0;
+}
+
 .back_img {
 	display: none;
 }
@@ -526,7 +534,7 @@
 
 	.img_europe_map {
 		position: absolute;
-		height: 100%;
+		height: 80%;
 		margin: 3em 0em 10em 10em;
 	}
 
@@ -556,6 +564,178 @@
 		align-items: center;
 	}
 
+	.box_cities:nth-child(1) {
+		top: 9%;
+		left: 12%;
+	}
+
+	.box_cities:nth-child(2) {
+		top: 9%;
+		left: 27%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(3) {
+		top: 9%;
+		left: 42%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(4) {
+		top: 9%;
+		left: 57%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(5) {
+		top: 9%;
+		left: 72%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(6) {
+		top: 30%;
+		left: 3%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(7) {
+		top: 38%;
+		left: 3%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(8) {
+		top: 38%;
+		left: 3%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(9) {
+		top: 46%;
+		left: 3%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(10) {
+		top: 54%;
+		left: 3%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(11) {
+		top: 54%;
+		left: 3%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(12) {
+		top: 72%;
+		left: 3%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(13) {
+		top: 72%;
+		left: 18%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(14) {
+		top: 72%;
+		left: 18%;
+		opacity: 0;
+	}
+	.box_cities:nth-child(15) {
+		top: 72%;
+		left: 33%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(16) {
+		top: 72%;
+		left: 48%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(16) {
+		top: 72%;
+		left: 48%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(17) {
+		top: 72%;
+		left: 63%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(18) {
+		top: 72%;
+		left: 78%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(19) {
+		top: 20%;
+		left: 81%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(20) {
+		top: 28%;
+		left: 81%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(21) {
+		top: 36%;
+		left: 81%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(22) {
+		top: 36%;
+		left: 81%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(23) {
+		top: 44%;
+		left: 81%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(24) {
+		top: 52%;
+		left: 81%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(25) {
+		top: 52%;
+		left: 81%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(26) {
+		top: 60%;
+		left: 81%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(27) {
+		top: 60%;
+		left: 81%;
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(28) {
+		top: 60%;
+		left: 81%;
+		opacity: 0;
+	}
+
 	.bottom {
 		display: flex;
 		justify-content: center;
@@ -574,6 +754,20 @@
 	.city_info_weather {
 		font-size: 1.1em;
 		font-weight: 700;
+	}
+
+	.box_lines {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.line {
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: var(--color-color04);
+		opacity: 0;
 	}
 
 	.back_img {
