@@ -622,44 +622,33 @@
 	}
 
 	.box_cities:nth-child(12) {
-		top: 72%;
-		left: 3%;
-		opacity: 0;
+		top: 84%;
+		left: 28%;
 	}
 
 	.box_cities:nth-child(13) {
-		top: 72%;
-		left: 18%;
-		opacity: 0;
+		top: 84%;
+		left: 35%;
 	}
 
 	.box_cities:nth-child(14) {
-		top: 72%;
-		left: 18%;
-		opacity: 0;
+		top: 84%;
+		left: 42%;
+		opacity: 1;
 	}
 	.box_cities:nth-child(15) {
-		top: 72%;
-		left: 33%;
-		opacity: 0;
+		top: 84%;
+		left: 49%;
 	}
 
 	.box_cities:nth-child(16) {
-		top: 72%;
-		left: 48%;
-		opacity: 0;
-	}
-
-	.box_cities:nth-child(16) {
-		top: 72%;
-		left: 48%;
-		opacity: 0;
+		top: 84%;
+		left: 56%;
 	}
 
 	.box_cities:nth-child(17) {
-		top: 72%;
+		top: 84%;
 		left: 63%;
-		opacity: 0;
 	}
 
 	.box_cities:nth-child(18) {
