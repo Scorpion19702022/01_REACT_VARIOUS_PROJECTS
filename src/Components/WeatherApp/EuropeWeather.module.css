@@ -438,6 +438,35 @@
 	transform: rotate(-28deg);
 }
 
+.line:nth-child(22) {
+	opacity: 0;
+}
+
+.line:nth-child(23) {
+	width: 19%;
+	top: 49%;
+	left: 59%;
+	transform: rotate(-16deg);
+}
+
+.line:nth-child(24) {
+	opacity: 0;
+}
+
+.line:nth-child(25) {
+	width: 24%;
+	top: 57%;
+	left: 56%;
+	transform: rotate(-11deg);
+}
+
+.line:nth-child(26) {
+	width: 12%;
+	top: 64%;
+	left: 66%;
+	transform: rotate(-8deg);
+}
+
 .back_img {
 	display: none;
 }
