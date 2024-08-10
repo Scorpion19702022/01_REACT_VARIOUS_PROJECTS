@@ -84,7 +84,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--color-dark01);
+	background-color: var(--color-dark02);
 	border: 0.04em solid var(--color-dark08);
 	box-shadow: 0.3em 0.3em 0.2em var(--color-dark08);
 }
@@ -250,7 +250,7 @@
 	font-size: 0.9em;
 	padding-bottom: 0.2em;
 	border-bottom: 0.04em solid var(--color-dark07);
-	color: var(--color-color08);
+	color: var(--color-dark08);
 }
 
 .bottom {
@@ -652,27 +652,23 @@
 	}
 
 	.box_cities:nth-child(18) {
-		top: 72%;
-		left: 78%;
-		opacity: 0;
+		top: 84%;
+		left: 70%;
 	}
 
 	.box_cities:nth-child(19) {
-		top: 20%;
-		left: 81%;
-		opacity: 0;
+		top: 16%;
+		left: 70%;
 	}
 
 	.box_cities:nth-child(20) {
-		top: 28%;
-		left: 81%;
-		opacity: 0;
+		top: 27%;
+		left: 70%;
 	}
 
 	.box_cities:nth-child(21) {
-		top: 36%;
-		left: 81%;
-		opacity: 0;
+		top: 38%;
+		left: 70%;
 	}
 
 	.box_cities:nth-child(22) {
@@ -682,9 +678,8 @@
 	}
 
 	.box_cities:nth-child(23) {
-		top: 44%;
-		left: 81%;
-		opacity: 0;
+		top: 49%;
+		left: 70%;
 	}
 
 	.box_cities:nth-child(24) {
