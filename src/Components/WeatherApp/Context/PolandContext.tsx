@@ -24,22 +24,22 @@ type PolandProviderType = {
 const InitialState: InitialStateType = {
 	refresh: 0,
 	citiesPoland: [
-		{ city: 'Szczecin', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Gdańsk', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Olsztyn', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Białystok', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Bydgoszcz', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Zielona Góra', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Poznań', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Wrocław', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Warszawa', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Łódź', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Lublin', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Kielce', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Opole', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Katowice', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Kraków', img: Un, idWeather: 0, temp: 0, wind: 0 },
-		{ city: 'Rzeszów', img: Un, idWeather: 0, temp: 0, wind: 0 },
+		{ city: 'Szczecin', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Gdańsk', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Olsztyn', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Białystok', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Bydgoszcz', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Zielona Góra', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Poznań', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Wrocław', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Warszawa', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Łódź', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Lublin', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Kielce', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Opole', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Katowice', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Kraków', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Rzeszów', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
 }
@@ -98,7 +98,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 				const data = await response.json()
 				const codId = Object.assign({}, ...data.weather)
 				const temp = data.main.temp.toFixed(1)
-				const wind = data.wind.speed.toFixed(1)
+				// const wind = data.wind.speed.toFixed(1)
 
 				setCitiesPoland(prevCities => {
 					const updatedCities = [...prevCities]
@@ -106,7 +106,6 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 						...updatedCities[index],
 						idWeather: codId.id,
 						temp: temp,
-						wind: wind,
 						img: getWeatherImage(codId.id),
 					}
 					return updatedCities
@@ -120,7 +119,6 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 						city: 'ERROR',
 						img: Un,
 						temp: 'ERROR',
-						wind: 'ERROR',
 					}
 					return updatedCities
 				})

@@ -177,7 +177,7 @@
 
 .name_city {
 	width: 100%;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	padding-bottom: 0.2em;
 	border-bottom: 0.04em solid var(--color-dark04);
 	color: var(--color-dark08);

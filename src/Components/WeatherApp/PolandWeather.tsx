@@ -17,7 +17,6 @@ import WomanWeather from './assets/back2.png'
 
 import styles from './PolandWeather.module.css'
 import PolandContext from './Context/PolandContext'
-import NavBar from '../NavBar/NavBar'
 
 const PolandWeather = () => {
 	const { refresh, citiesPoland } = useContext(PolandContext)
@@ -40,9 +39,6 @@ const PolandWeather = () => {
 				<div className={styles.box_info}>
 					<span className={styles.city_info_weather}>
 						{city.temp} <span className={styles.parametr}> ℃</span>
-					</span>
-					<span className={styles.city_info_weather}>
-						{city.wind} <span className={styles.parametr}> m/s</span>
 					</span>
 				</div>
 			</div>
