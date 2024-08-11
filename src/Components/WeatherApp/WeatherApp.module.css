@@ -139,22 +139,50 @@
 	}
 
 	.heading {
-		margin-bottom: 4em;
+		margin-bottom: 1em;
+		font-size: 2em;
 	}
 
 	.box_info {
-		margin: 4em 18em 0em 0em;
+		margin: 2em 18em 0em 0em;
 		height: 70%;
 		width: 74%;
 		display: flex;
+		flex-direction: row;
+	}
+
+	.box_main {
+		width: 100%;
+		padding: 2em;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.main_info {
+		width: 48%;
+		border-bottom: none;
 	}
 
 	.main_text {
 		font-size: 1.4em;
 	}
 
+	.main_legend {
+		width: 48%;
+	}
+
+	.legend_heading {
+		font-size: 1.6em;
+	}
+
 	.legend_img {
 		width: 4%;
+	}
+
+	.legend_info {
+		font-size: 1.4em;
 	}
 
 	.other_info {
