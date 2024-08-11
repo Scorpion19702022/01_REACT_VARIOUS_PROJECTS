@@ -18,14 +18,14 @@ const WeatherApp = () => {
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
+			<h1 className={styles.heading}>Co zobaczysz na stronach?</h1>
 			<div className={styles.box_info}>
-				<h1 className={styles.heading}>Co zobaczysz na stronach?</h1>
 				<div className={styles.box_main}>
 					<div className={styles.main_info}>
 						<img className={styles.main_img} src={Unknown} alt='some_weather' />
 						<p className={styles.main_text}>
 							Po wybraniu państwa/kontynentu przeniesiesz się na stronę i uzyskasz informację o stanie pogody w głównych
-							miastach w regionie. Jeżeli długo przebywasz na stronie pogoda będzie aktualizowana co 20 minut
+							miastach w regionie. Jeżeli długo przebywasz na stronie pogoda będzie aktualizowana co 10 minut
 						</p>
 					</div>
 					<div className={styles.main_legend}>

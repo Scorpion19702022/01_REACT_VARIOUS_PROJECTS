@@ -17,6 +17,7 @@ import WomanWeather from './assets/back2.png'
 
 import styles from './PolandWeather.module.css'
 import PolandContext from './Context/PolandContext'
+import NavBar from '../NavBar/NavBar'
 
 const PolandWeather = () => {
 	const { refresh, citiesPoland } = useContext(PolandContext)
