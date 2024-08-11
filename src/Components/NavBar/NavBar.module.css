@@ -120,7 +120,7 @@ a {
 	border-bottom: 0.04em solid var(--color-dark02);
 }
 
-@media (min-width: 767.98px) {
+@media (min-width: 992px) {
 	.nav_btn {
 		opacity: 0;
 	}
