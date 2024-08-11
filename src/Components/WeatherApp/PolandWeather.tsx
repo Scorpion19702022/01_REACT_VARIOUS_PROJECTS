@@ -38,7 +38,7 @@ const PolandWeather = () => {
 				</div>
 				<div className={styles.box_info}>
 					<span className={styles.city_info_weather}>
-						{city.temp} <span className={styles.parametr}> ℃</span>
+						{city.temp} <span className={styles.parametr}>℃</span>
 					</span>
 				</div>
 			</div>

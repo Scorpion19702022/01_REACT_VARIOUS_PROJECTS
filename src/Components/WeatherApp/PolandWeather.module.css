@@ -54,7 +54,6 @@
 }
 
 .count {
-	/* font-size: 1.2em; */
 	text-align: center;
 	color: var(--color-dark01);
 	border-radius: 6px;
@@ -63,7 +62,7 @@
 .box_map {
 	width: 100%;
 	min-height: 100vh;
-	/* margin-top: 2em; */
+	margin-bottom: 2em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -74,6 +73,7 @@
 .img_poland_map {
 	width: 84%;
 	object-fit: cover;
+	margin-bottom: 8em;
 }
 
 .city_weather {
@@ -86,7 +86,7 @@
 
 .box_cities {
 	position: absolute;
-	width: 22%;
+	width: 20%;
 	height: 9%;
 	padding: 0.5em;
 	display: flex;
