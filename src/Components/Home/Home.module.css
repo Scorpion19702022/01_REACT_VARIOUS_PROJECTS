@@ -27,7 +27,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(29, 30, 27, 1);
+	background-color: var(--color-color08);
+	/* background-color: rgba(29, 30, 27, 1);
 	background-image: radial-gradient(
 		circle,
 		rgba(29, 30, 27, 1) 0%,
@@ -35,12 +36,13 @@
 		rgba(29, 30, 27, 1) 50%,
 		rgba(47, 48, 43, 1) 75%,
 		rgba(29, 30, 27, 1) 100%
-	);
+	); */
 	z-index: 1;
 }
 
 .box_btns {
 	width: 100%;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	margin-bottom: 2em;
