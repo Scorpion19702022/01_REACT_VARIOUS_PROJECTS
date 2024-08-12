@@ -46,10 +46,13 @@
 	justify-content: center;
 }
 
+.back_img {
+	display: none;
+}
+
 .count {
 	text-align: center;
 	color: var(--color-dark01);
-	border-radius: 6px;
 }
 
 .box_map {
@@ -63,7 +66,7 @@
 }
 
 .img_europe_map {
-	height: 56%;
+	height: 40%;
 	margin-bottom: 6em;
 	object-fit: cover;
 }
@@ -78,36 +81,37 @@
 
 .box_cities {
 	position: absolute;
-	width: 14%;
-	height: 7.4%;
-	padding: 0.5em;
+	width: 21%;
+	height: 8%;
+	padding: 0.4em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background-color: var(--color-dark02);
-	border: 0.04em solid var(--color-dark08);
-	box-shadow: 0.3em 0.3em 0.2em var(--color-dark08);
+	border: 0.1em solid var(--color-color04);
+	box-shadow: 0.3em 0.3em 0.4em var(--color-dark08);
 }
 
 .box_cities:nth-child(1) {
 	top: 9%;
-	left: 12%;
+	left: 6%;
 }
 
 .box_cities:nth-child(2) {
 	top: 9%;
-	left: 27%;
+	left: 28%;
 }
 
 .box_cities:nth-child(3) {
 	top: 9%;
 	left: 42%;
+	opacity: 0;
 }
 
 .box_cities:nth-child(4) {
 	top: 9%;
-	left: 57%;
+	left: 50%;
 }
 
 .box_cities:nth-child(5) {
@@ -116,8 +120,9 @@
 }
 
 .box_cities:nth-child(6) {
-	top: 30%;
+	top: 28%;
 	left: 3%;
+	opacity: 0;
 }
 
 .box_cities:nth-child(7) {
@@ -127,12 +132,12 @@
 }
 
 .box_cities:nth-child(8) {
-	top: 38%;
+	top: 21%;
 	left: 3%;
 }
 
 .box_cities:nth-child(9) {
-	top: 46%;
+	top: 30%;
 	left: 3%;
 }
 
@@ -143,63 +148,59 @@
 }
 
 .box_cities:nth-child(11) {
-	top: 54%;
+	top: 39%;
 	left: 3%;
 }
 
 .box_cities:nth-child(12) {
-	top: 72%;
+	top: 48%;
 	left: 3%;
 }
 
 .box_cities:nth-child(13) {
-	top: 72%;
-	left: 18%;
+	top: 57%;
+	left: 3%;
 }
 
 .box_cities:nth-child(14) {
-	top: 72%;
+	top: 68%;
 	left: 18%;
 	opacity: 0;
 }
 .box_cities:nth-child(15) {
-	top: 72%;
-	left: 33%;
+	top: 69%;
+	left: 6%;
 }
 
 .box_cities:nth-child(16) {
-	top: 72%;
-	left: 48%;
-}
-
-.box_cities:nth-child(16) {
-	top: 72%;
-	left: 48%;
+	top: 69%;
+	left: 28%;
 }
 
 .box_cities:nth-child(17) {
-	top: 72%;
-	left: 63%;
+	top: 69%;
+	left: 50%;
 }
 
 .box_cities:nth-child(18) {
-	top: 72%;
-	left: 78%;
+	top: 69%;
+	left: 72%;
 }
 
 .box_cities:nth-child(19) {
-	top: 20%;
-	left: 81%;
+	top: 21%;
+	left: 76%;
 }
 
 .box_cities:nth-child(20) {
-	top: 28%;
-	left: 81%;
+	top: 30%;
+	left: 76%;
 }
 
 .box_cities:nth-child(21) {
 	top: 36%;
 	left: 81%;
+	opacity: 0;
 }
 
 .box_cities:nth-child(22) {
@@ -209,8 +210,8 @@
 }
 
 .box_cities:nth-child(23) {
-	top: 44%;
-	left: 81%;
+	top: 39%;
+	left: 76%;
 }
 
 .box_cities:nth-child(24) {
@@ -220,13 +221,13 @@
 }
 
 .box_cities:nth-child(25) {
-	top: 52%;
-	left: 81%;
+	top: 48%;
+	left: 76%;
 }
 
 .box_cities:nth-child(26) {
-	top: 60%;
-	left: 81%;
+	top: 57%;
+	left: 76%;
 }
 
 .box_cities:nth-child(27) {
@@ -243,26 +244,28 @@
 
 .top {
 	width: 100%;
-	margin-bottom: 0.2em;
+	height: 20%;
 }
 
 .name_city {
 	width: 100%;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	padding-bottom: 0.2em;
-	border-bottom: 0.04em solid var(--color-dark07);
+	border-bottom: 0.04em solid var(--color-dark04);
 	color: var(--color-dark08);
 }
 
 .bottom {
 	width: 100%;
+	height: 80%;
+	padding-top: 1em;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
 .box_img {
-	width: 38%;
+	width: 40%;
 }
 
 .img_city {
@@ -271,17 +274,16 @@
 }
 
 .box_info {
-	width: 55%;
+	width: 58%;
 	display: flex;
-	flex-direction: column;
 }
 
 .city_info_weather {
 	width: 100%;
-	font-size: 0.8em;
+	font-size: 0.7em;
 	font-weight: 700;
-	margin-bottom: 0.2em;
-	color: var(--color-color08);
+	text-align: center;
+	color: var(--color-dark08);
 }
 
 .parametr {
@@ -295,194 +297,37 @@
 }
 
 .line {
-	position: absolute;
-	width: 100%;
-	height: 2px;
-	background-color: var(--color-color04);
-}
-
-.line:nth-child(1) {
-	width: 28%;
-	top: 20%;
-	left: 1.4%;
-	transform: rotate(86deg);
-}
-
-.line:nth-child(2) {
-	width: 43%;
-	top: 26%;
-	left: 10%;
-	transform: rotate(80deg);
-}
-
-.line:nth-child(3) {
-	width: 48%;
-	top: 30%;
-	left: 17%;
-	transform: rotate(99deg);
-}
-
-.line:nth-child(4) {
-	width: 43%;
-	top: 27%;
-	left: 31%;
-	transform: rotate(114deg);
-}
-
-.line:nth-child(5) {
-	width: 46%;
-	top: 25%;
-	left: 42%;
-	transform: rotate(124deg);
-}
-
-.line:nth-child(6) {
-	width: 20%;
-	top: 39%;
-	left: 4%;
-	transform: rotate(71deg);
-}
-
-.line:nth-child(7) {
 	opacity: 0;
-}
-
-.line:nth-child(8) {
-	width: 24%;
-	top: 44%;
-	left: 4%;
-	transform: rotate(42deg);
-}
-
-.line:nth-child(9) {
-	width: 25%;
-	top: 50%;
-	left: 4%;
-	transform: rotate(6deg);
-}
-
-.line:nth-child(10) {
-	opacity: 0;
-}
-
-.line:nth-child(11) {
-	width: 36%;
-	top: 55%;
-	left: 4%;
-	transform: rotate(-24deg);
-}
-
-.line:nth-child(12) {
-	width: 16%;
-	top: 70%;
-	left: -2%;
-	transform: rotate(105deg);
-}
-
-.line:nth-child(13) {
-	width: 20%;
-	top: 70%;
-	left: 10%;
-	transform: rotate(80deg);
-}
-
-.line:nth-child(14) {
-	opacity: 0;
-}
-
-.line:nth-child(15) {
-	width: 33%;
-	top: 66%;
-	left: 16%;
-	transform: rotate(72deg);
-}
-
-.line:nth-child(16) {
-	width: 24%;
-	top: 70%;
-	left: 34%;
-	transform: rotate(53deg);
-}
-
-.line:nth-child(17) {
-	width: 22%;
-	top: 72%;
-	left: 53%;
-	transform: rotate(32deg);
-}
-
-.line:nth-child(18) {
-	width: 48%;
-	top: 64%;
-	left: 39%;
-	transform: rotate(33deg);
-}
-
-.line:nth-child(19) {
-	width: 44%;
-	top: 32%;
-	left: 43%;
-	transform: rotate(-47deg);
-}
-
-.line:nth-child(20) {
-	width: 25%;
-	top: 35%;
-	left: 60%;
-	transform: rotate(-58deg);
-}
-
-.line:nth-child(21) {
-	width: 36%;
-	top: 41%;
-	left: 54%;
-	transform: rotate(-28deg);
-}
-
-.line:nth-child(22) {
-	opacity: 0;
-}
-
-.line:nth-child(23) {
-	width: 19%;
-	top: 49%;
-	left: 59%;
-	transform: rotate(-16deg);
-}
-
-.line:nth-child(24) {
-	opacity: 0;
-}
-
-.line:nth-child(25) {
-	width: 24%;
-	top: 57%;
-	left: 56%;
-	transform: rotate(-11deg);
-}
-
-.line:nth-child(26) {
-	width: 12%;
-	top: 64%;
-	left: 66%;
-	transform: rotate(-8deg);
-}
-
-.line:nth-child(27) {
-	opacity: 0;
-}
-
-.line:nth-child(28) {
-	opacity: 0;
-}
-
-.back_img {
-	display: none;
 }
 
 @media (min-width: 660px) {
 	.wrapper {
 		height: 100%;
+	}
+
+	.box_content {
+		margin-top: 5em;
+	}
+
+	.box_map {
+		width: 100%;
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		opacity: 0.3;
+		margin-top: 4em;
+	}
+
+	.img_europe_map {
+		width: 60%;
+		object-fit: cover;
+	}
+
+	.box_cities {
+		width: 16%;
+		height: 10%;
 	}
 }
 
