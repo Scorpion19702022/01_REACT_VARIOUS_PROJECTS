@@ -188,11 +188,12 @@
 }
 
 .box_img {
+	padding-top: 0.2em;
 	width: 40%;
 }
 
 .img_city {
-	width: 100%;
+	width: 90%;
 	object-fit: cover;
 }
 
