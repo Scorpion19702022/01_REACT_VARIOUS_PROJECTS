@@ -47,10 +47,7 @@
 }
 
 .back_img {
-	position: absolute;
-	right: 0;
-	width: 40%;
-	object-fit: cover;
+	display: none;
 }
 
 .count {
@@ -224,10 +221,6 @@
 
 .line {
 	opacity: 0;
-}
-
-.back_img {
-	display: none;
 }
 
 @media (min-width: 660px) {
