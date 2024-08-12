@@ -240,7 +240,7 @@
 	}
 
 	.box_content {
-		margin-top: 4em;
+		margin-top: 5em;
 	}
 
 	.box_map {
@@ -265,81 +265,82 @@
 	}
 
 	.box_cities:nth-child(1) {
-		top: 10%;
-		left: 6%;
+		top: 12%;
+		left: 17%;
 		cursor: pointer;
 	}
 
 	.box_cities:nth-child(2) {
-		top: 10%;
-		left: 28%;
+		top: 12%;
+		left: 34%;
 	}
 
 	.box_cities:nth-child(3) {
-		top: 10%;
-		left: 50%;
+		top: 12%;
+		left: 51%;
 	}
 
 	.box_cities:nth-child(4) {
-		top: 10%;
-		left: 72%;
+		top: 12%;
+		left: 68%;
 	}
 
 	.box_cities:nth-child(5) {
-		top: 24%;
+		top: 28%;
 		left: 3%;
 	}
 
 	.box_cities:nth-child(6) {
-		top: 33%;
+		top: 39%;
 		left: 3%;
 	}
 
 	.box_cities:nth-child(7) {
-		top: 42%;
+		top: 50%;
 		left: 3%;
 	}
 	.box_cities:nth-child(8) {
-		top: 51%;
+		top: 61%;
 		left: 3%;
 	}
 	.box_cities:nth-child(9) {
-		top: 38%;
-		right: 6%;
+		top: 28%;
+		right: 3%;
 	}
 	.box_cities:nth-child(10) {
-		bottom: 43%;
-		right: 6%;
+		top: 39%;
+		right: 3%;
 	}
 	.box_cities:nth-child(11) {
-		bottom: 33%;
-		right: 6%;
+		top: 50%;
+		right: 3%;
 	}
 	.box_cities:nth-child(12) {
-		bottom: 23%;
-		right: 6%;
+		top: 61%;
+		right: 3%;
 	}
 	.box_cities:nth-child(13) {
-		bottom: 10%;
-		left: 16%;
+		top: 76%;
+		left: 17%;
 	}
 	.box_cities:nth-child(14) {
-		bottom: 10%;
-		left: 33%;
+		top: 76%;
+		left: 34%;
 	}
 	.box_cities:nth-child(15) {
-		bottom: 10%;
-		right: 34%;
+		top: 76%;
+		left: 51%;
 	}
 	.box_cities:nth-child(16) {
-		bottom: 10%;
-		right: 17%;
+		top: 76%;
+		left: 68%;
 	}
 }
 
 @media (min-width: 992px) {
 	.wrapper {
 		padding-left: 10em;
+		height: 100vh;
 	}
 
 	.weather_legend {
@@ -396,6 +397,16 @@
 
 	.img_poland_map {
 		width: 36%;
+	}
+
+	.back_img {
+		position: absolute;
+		display: block;
+		bottom: 16%;
+		right: 1%;
+		width: 25%;
+		object-fit: cover;
+		opacity: 0.4;
 	}
 
 	.box_content {
@@ -620,15 +631,5 @@
 		width: 7%;
 		bottom: 18%;
 		right: 33%;
-	}
-
-	.back_img {
-		position: absolute;
-		display: block;
-		bottom: 3%;
-		right: 1%;
-		width: 26%;
-		object-fit: cover;
-		opacity: 0.4;
 	}
 }
