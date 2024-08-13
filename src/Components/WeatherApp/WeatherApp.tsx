@@ -18,6 +18,7 @@ const WeatherApp = () => {
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
+			<img className={styles.back_img} src={WeatherWoman} alt='woman_weather' />
 			<h1 className={styles.heading}>Co zobaczysz na stronach?</h1>
 			<div className={styles.box_info}>
 				<div className={styles.box_main}>
@@ -70,7 +71,6 @@ const WeatherApp = () => {
 					</div>
 				</div>
 			</div>
-			<img className={styles.back_img} src={WeatherWoman} alt='woman_weather' />
 		</section>
 	)
 }
