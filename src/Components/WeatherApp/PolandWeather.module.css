@@ -388,14 +388,14 @@
 	}
 
 	.img_poland_map {
-		width: 35%;
+		width: 34%;
 		margin-bottom: 3.8em;
 	}
 
 	.back_img {
 		position: absolute;
 		display: block;
-		bottom: 16%;
+		top: -14%;
 		right: 1%;
 		width: 25%;
 		object-fit: cover;
@@ -412,7 +412,7 @@
 	.box_content {
 		width: 100%;
 		height: 100%;
-		margin-top: 8em;
+		margin-top: 10em;
 	}
 
 	.box_cities {
