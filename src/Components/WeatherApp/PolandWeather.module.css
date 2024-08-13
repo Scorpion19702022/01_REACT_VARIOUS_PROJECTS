@@ -399,15 +399,11 @@
 		opacity: 0.4;
 	}
 
-	/* .box_content {
+	.box_content {
 		margin-top: 8em;
-	} */
+	}
 
 	.count {
-		position: absolute;
-		top: 0%;
-		left: 50%;
-		transform: translateX(-50%);
 		font-size: 1.4em;
 		/* margin: 4em 0em 1em 0em; */
 	}
