@@ -39,6 +39,7 @@
 	position: relative;
 	margin-top: 8em;
 	width: 100%;
+	min-height: 100vh;
 	padding: 2em;
 	display: flex;
 	flex-direction: column;
@@ -50,6 +51,8 @@
 }
 
 .count {
+	position: absolute;
+	top: 18%;
 	text-align: center;
 	color: var(--color-dark01);
 }
@@ -385,8 +388,8 @@
 	}
 
 	.img_poland_map {
-		width: 36%;
-		margin-top: 6em;
+		width: 35%;
+		margin-bottom: 3.8em;
 	}
 
 	.back_img {
