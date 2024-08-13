@@ -232,7 +232,8 @@
 	}
 
 	.box_content {
-		padding-top: 12em;
+		height: 100%;
+		padding-top: 24em;
 	}
 
 	.box_map {
