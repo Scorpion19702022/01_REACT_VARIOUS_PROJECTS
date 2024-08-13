@@ -404,8 +404,12 @@
 	}
 
 	.count {
+		position: absolute;
+		top: 0%;
+		left: 50%;
+		transform: translateX(-50%);
 		font-size: 1.4em;
-		margin: 4em 0em 1em 0em;
+		/* margin: 4em 0em 1em 0em; */
 	}
 
 	.box_cities {
