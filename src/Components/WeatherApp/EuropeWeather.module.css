@@ -515,7 +515,7 @@
 	}
 
 	.img_europe_map {
-		width: 40%;
+		width: 42%;
 		padding: 2em 0em 18em 7em;
 	}
 
@@ -557,27 +557,27 @@
 
 	.box_cities:nth-child(2) {
 		top: 24%;
-		left: 38%;
+		left: 37.5%;
 	}
 
 	.box_cities:nth-child(3) {
 		top: 24%;
-		left: 46%;
+		left: 45%;
 		opacity: 1;
 	}
 
 	.box_cities:nth-child(4) {
 		top: 24%;
-		left: 54%;
+		left: 52.5%;
 	}
 
 	.box_cities:nth-child(5) {
 		top: 24%;
-		left: 62%;
+		left: 60%;
 	}
 
 	.box_cities:nth-child(6) {
-		top: 36%;
+		top: 35%;
 		left: 28%;
 		opacity: 1;
 	}
@@ -587,12 +587,12 @@
 	}
 
 	.box_cities:nth-child(8) {
-		top: 46%;
+		top: 45%;
 		left: 28%;
 	}
 
 	.box_cities:nth-child(9) {
-		top: 56%;
+		top: 55%;
 		left: 28%;
 	}
 
@@ -601,83 +601,84 @@
 	}
 
 	.box_cities:nth-child(11) {
-		top: 66%;
+		top: 65%;
 		left: 28%;
 	}
 
 	.box_cities:nth-child(12) {
-		top: 84%;
-		left: 32%;
+		top: 75%;
+		left: 28%;
 	}
 
 	.box_cities:nth-child(13) {
-		top: 84%;
-		left: 39%;
+		top: 86%;
+		left: 30%;
 	}
 
 	.box_cities:nth-child(14) {
-		top: 84%;
-		left: 42%;
+		top: 86%;
+		left: 37.5%;
+		opacity: 1;
 	}
 	.box_cities:nth-child(15) {
-		top: 84%;
-		left: 46%;
+		top: 86%;
+		left: 45%;
 	}
 
 	.box_cities:nth-child(16) {
-		top: 84%;
-		left: 53%;
+		top: 86%;
+		left: 52.5%;
 	}
 
 	.box_cities:nth-child(17) {
-		top: 84%;
+		top: 86%;
 		left: 60%;
 	}
 
 	.box_cities:nth-child(18) {
-		top: 84%;
-		left: 67%;
+		top: 86%;
+		left: 67.5%;
 	}
 
 	.box_cities:nth-child(19) {
-		top: 16%;
-		left: 70%;
+		top: 24%;
+		left: 67.5%;
 	}
 
 	.box_cities:nth-child(20) {
-		top: 27%;
+		top: 35%;
 		left: 70%;
 	}
 
 	.box_cities:nth-child(21) {
-		top: 38%;
+		top: 55%;
 		left: 70%;
 	}
 
 	.box_cities:nth-child(22) {
-		top: 36%;
+		top: 35%;
 		left: 81%;
 		opacity: 0;
 	}
 
 	.box_cities:nth-child(23) {
-		top: 49%;
+		top: 45%;
 		left: 70%;
 	}
 
 	.box_cities:nth-child(24) {
-		top: 52%;
-		left: 81%;
-		opacity: 0;
+		top: 55%;
+		left: 70%;
+		opacity: 1;
 	}
 
 	.box_cities:nth-child(25) {
-		top: 60%;
+		top: 65%;
 		left: 70%;
 	}
 
 	.box_cities:nth-child(26) {
-		top: 71%;
+		top: 75%;
 		left: 70%;
 	}
 
@@ -691,6 +692,12 @@
 		top: 60%;
 		left: 81%;
 		opacity: 0;
+	}
+
+	.name_city {
+		width: 100%;
+		font-size: 1.2em;
+		padding-bottom: 0.1em;
 	}
 
 	.bottom {
@@ -709,7 +716,7 @@
 	}
 
 	.city_info_weather {
-		font-size: 1.1em;
+		font-size: 1.2em;
 		font-weight: 700;
 	}
 
