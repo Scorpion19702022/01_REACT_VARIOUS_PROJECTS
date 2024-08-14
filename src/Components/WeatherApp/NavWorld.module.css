@@ -20,7 +20,7 @@
 
 .nav_links {
 	position: fixed;
-	top: 10%;
+	top: 12%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -71,7 +71,13 @@
 	font-size: 0.8em;
 }
 
-@media (min-width: 767.98px) {
+@media (min-width: 660px) {
+	.nav_links {
+		top: 18%;
+	}
+}
+
+@media (min-width: 992px) {
 	.wrapper {
 		padding-left: 10em;
 	}
