@@ -86,8 +86,8 @@ const PolandWeather = () => {
 					</div>
 				</div>
 			</div>
-			<h4 className={styles.count}>Aktualizacja pogody za {refresh} min.</h4>
 			<div className={styles.box_content}>
+				<h4 className={styles.count}>Aktualizacja pogody za {refresh} min.</h4>
 				<div className={styles.box_map}>
 					<img className={styles.img_poland_map} src={PolandMap} alt='poland_map' />
 				</div>
