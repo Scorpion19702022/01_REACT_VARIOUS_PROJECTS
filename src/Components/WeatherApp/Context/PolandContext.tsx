@@ -54,7 +54,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 		if (idWeather >= 200 && idWeather <= 232) {
 			return Thunder
 		} else if (idWeather >= 300 && idWeather <= 321) {
-			return Drizzle
+			return Rain
 		} else if (idWeather >= 500 && idWeather <= 531) {
 			return Rain
 		} else if (idWeather >= 600 && idWeather <= 622) {

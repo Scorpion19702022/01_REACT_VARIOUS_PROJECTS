@@ -735,24 +735,24 @@
 	}
 
 	.line:nth-child(1) {
-		width: 10%;
-		top: 24%;
-		left: 30%;
+		width: 12%;
+		top: 20%;
+		left: 28%;
 		transform: rotate(20deg);
 	}
 
 	.line:nth-child(2) {
-		width: 16%;
-		top: 30%;
+		width: 15%;
+		top: 26%;
 		left: 35%;
-		transform: rotate(47deg);
+		transform: rotate(49deg);
 	}
 
 	.line:nth-child(3) {
-		width: 15%;
-		top: 33%;
-		left: 41%;
-		transform: rotate(81deg);
+		width: 14%;
+		top: 29%;
+		left: 40.5%;
+		transform: rotate(83deg);
 	}
 
 	.line:nth-child(4) {

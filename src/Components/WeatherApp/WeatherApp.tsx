@@ -49,10 +49,6 @@ const WeatherApp = () => {
 								<span className={styles.legend_info}>- deszczowo</span>
 							</div>
 							<div className={styles.info_legend}>
-								<img className={styles.legend_img} src={Drizzle} alt='drizzle' />
-								<span className={styles.legend_info}>- mżawka</span>
-							</div>
-							<div className={styles.info_legend}>
 								<img className={styles.legend_img} src={Thunder} alt='thunder' />
 								<span className={styles.legend_info}>- burza</span>
 							</div>

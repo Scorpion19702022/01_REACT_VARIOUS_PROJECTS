@@ -23,7 +23,7 @@ const EuropeWeather = () => {
 
 	const divsLines = []
 
-	for (let i = 0; i < 28; i++) {
+	for (let i = 0; i < 23; i++) {
 		divsLines.push(<div key={i} className={styles.line}></div>)
 	}
 
@@ -67,10 +67,6 @@ const EuropeWeather = () => {
 					<div className={styles.info_legend}>
 						<img className={styles.legend_img} src={Rain} alt='rain' />
 						<span className={styles.legend_info}>- deszczowo</span>
-					</div>
-					<div className={styles.info_legend}>
-						<img className={styles.legend_img} src={Drizzle} alt='drizzle' />
-						<span className={styles.legend_info}>- mżawka</span>
 					</div>
 					<div className={styles.info_legend}>
 						<img className={styles.legend_img} src={Thunder} alt='thunder' />
