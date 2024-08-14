@@ -48,6 +48,7 @@ const EuropeWeather = () => {
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
+			<img className={styles.back_img} src={WomanWeather} alt='woman weather' />
 			<div className={styles.weather_legend}>
 				<h4 className={styles.legend_heading}>Legenda:</h4>
 				<div className={styles.legend}>
@@ -87,7 +88,6 @@ const EuropeWeather = () => {
 			</div>
 			<div className={styles.box_content}>
 				<h4 className={styles.count}>Aktualizacja pogody za {refresh} min.</h4>
-				<img className={styles.back_img} src={WomanWeather} alt='woman weather' />
 				<div className={styles.box_map}>
 					<img className={styles.img_europe_map} src={EuropeMap} alt='' />
 				</div>

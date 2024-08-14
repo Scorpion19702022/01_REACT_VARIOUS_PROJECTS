@@ -37,7 +37,7 @@
 
 .box_content {
 	position: relative;
-	padding: 14em 2em 2em 2em;
+	padding: 12em 2em 2em 2em;
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -68,7 +68,7 @@
 .img_poland_map {
 	width: 76%;
 	object-fit: cover;
-	padding-bottom: 14em;
+	padding-bottom: 16em;
 }
 
 .city_weather {
@@ -94,74 +94,74 @@
 }
 
 .box_cities:nth-child(1) {
-	top: 32%;
+	top: 30%;
 	left: 6%;
 	cursor: pointer;
 }
 
 .box_cities:nth-child(2) {
-	top: 32%;
+	top: 30%;
 	left: 28%;
 }
 
 .box_cities:nth-child(3) {
-	top: 32%;
+	top: 30%;
 	left: 50%;
 }
 
 .box_cities:nth-child(4) {
-	top: 32%;
+	top: 30%;
 	left: 72%;
 }
 
 .box_cities:nth-child(5) {
-	top: 44%;
+	top: 42%;
 	left: 3%;
 }
 
 .box_cities:nth-child(6) {
-	top: 53%;
+	top: 51%;
 	left: 3%;
 }
 
 .box_cities:nth-child(7) {
-	top: 62%;
+	top: 60%;
 	left: 3%;
 }
 .box_cities:nth-child(8) {
-	top: 71%;
+	top: 69%;
 	left: 3%;
 }
 .box_cities:nth-child(9) {
-	top: 44%;
+	top: 42%;
 	right: 3%;
 }
 .box_cities:nth-child(10) {
-	top: 53%;
+	top: 51%;
 	right: 3%;
 }
 .box_cities:nth-child(11) {
-	top: 62%;
+	top: 60%;
 	right: 3%;
 }
 .box_cities:nth-child(12) {
-	top: 71%;
+	top: 69%;
 	right: 3%;
 }
 .box_cities:nth-child(13) {
-	top: 83%;
+	top: 81%;
 	left: 6%;
 }
 .box_cities:nth-child(14) {
-	top: 83%;
+	top: 81%;
 	left: 28%;
 }
 .box_cities:nth-child(15) {
-	top: 83%;
+	top: 81%;
 	left: 50%;
 }
 .box_cities:nth-child(16) {
-	top: 83%;
+	top: 81%;
 	left: 72%;
 }
 
