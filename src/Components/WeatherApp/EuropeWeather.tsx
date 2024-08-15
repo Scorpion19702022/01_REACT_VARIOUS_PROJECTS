@@ -23,7 +23,7 @@ const EuropeWeather = () => {
 
 	const divsLines = []
 
-	for (let i = 0; i < 23; i++) {
+	for (let i = 0; i < 22; i++) {
 		divsLines.push(<div key={i} className={styles.line}></div>)
 	}
 
