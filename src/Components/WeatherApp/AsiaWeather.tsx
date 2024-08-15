@@ -18,6 +18,24 @@ import AsiaContext from './Context/AsiaContext'
 const AsiaWeather = () => {
 	const { refresh, citiesAsia } = useContext(AsiaContext)
 
+	const citiesOfAsia = citiesAsia.map((city, index) => (
+		<div key={index} className={styles.box_cities}>
+			<div className={styles.top}>
+				<h4 className={styles.name_city}>{city.city}</h4>
+			</div>
+			<div className={styles.bottom}>
+				<div className={styles.box_img}>
+					<img className={styles.img_city} src={city.img} alt='' />
+				</div>
+				<div className={styles.box_info}>
+					<span className={styles.city_info_weather}>
+						{city.temp} <span className={styles.parametr}>℃</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	))
+
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
@@ -60,8 +78,8 @@ const AsiaWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_asia_map} src={AsiaMap} alt='' />
 				</div>
-				{/* <div className={styles.box_lines}>{divsLines}</div>
-				<div className={styles.city_weather}>{citiesOfEurope}</div> */}
+				{/* <div className={styles.box_lines}>{divsLines}</div> */}
+				<div className={styles.city_weather}>{citiesOfAsia}</div>
 			</div>
 		</section>
 	)

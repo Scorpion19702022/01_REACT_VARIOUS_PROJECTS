@@ -22,7 +22,10 @@ type AsiaProviderType = {
 
 const InitialState: InitialStateType = {
 	refresh: 0,
-	citiesAsia: [{ city: 'Tokyo', img: Un, idWeather: 0, temp: 0 }],
+	citiesAsia: [
+		{ city: 'Warszawa', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Opole', img: Un, idWeather: 0, temp: 0 },
+	],
 	getWeatherImage: (idWeather: number) => {},
 }
 
