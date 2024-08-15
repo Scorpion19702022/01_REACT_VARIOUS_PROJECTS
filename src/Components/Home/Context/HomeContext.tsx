@@ -24,7 +24,7 @@ const HomeContext = createContext(InitialState)
 
 export const HomeProvider = ({ children }: HomeProviderType) => {
 	const [textPL, setTextPL] = useState<string>(
-		'Czesc. W tym projekcie chciałbym przedstawić różne prace z React.js z użyciem Context i TypeScript. Znajdziesz tu Aplikacje pogodową, zaawansowaną ToDoList, konwenter stopni i inne. Projekty są responsywne, rozdzielczość na urządzenia mobilne do 768 pikseli i na desktop. Zapraszam do przeglądania.'
+		'Czesc. W tym projekcie chciałbym przedstawić różne prace z React.js z użyciem Context i TypeScript. Znajdziesz tu Aplikacje pogodową, zaawansowaną ToDoList, konwenter stopni i inne. Projekty są responsywne. Zapraszam do przeglądania.'
 	)
 	const [textEN, setTextEN] = useState<string>('')
 
@@ -36,7 +36,7 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 			setIsActivePL(true)
 			setIsActiveEN(false)
 			setTextPL(
-				'Czesc. W tym projekcie chciałbym przedstawić różne prace z React.js z użyciem Context i TypeScript. Znajdziesz tu Aplikacje pogodową, zaawansowaną ToDoList, konwenter stopni i inne. Projekty są responsywne, rozdzielczość na urządzenia mobilne do 768 pikseli i na desktop. Zapraszam do przeglądania.'
+				'Czesc. W tym projekcie chciałbym przedstawić różne prace z React.js z użyciem Context i TypeScript. Znajdziesz tu Aplikacje pogodową, zaawansowaną ToDoList, konwenter stopni i inne. Projekty są responsywne. Zapraszam do przeglądania.'
 			)
 			setTextEN('')
 		} else if (kind === textEN) {
@@ -44,7 +44,7 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 			setIsActiveEN(true)
 			setTextPL('')
 			setTextEN(
-				'Hi. In this project I would like to present various works with React.js using Context and TypeScript. Here you will find weather applications, advanced ToDoList, degree converter and others. The designs are responsive, resolution for mobile devices up to 768 pixels and for desktop. I invite you to browse.'
+				'Hi. In this project I would like to present various works with React.js using Context and TypeScript. Here you will find weather applications, advanced ToDoList, degree converter and others. The designs are responsive. I invite you to browse.'
 			)
 		}
 	}
