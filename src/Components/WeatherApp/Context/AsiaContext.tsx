@@ -23,13 +23,13 @@ type AsiaProviderType = {
 const InitialState: InitialStateType = {
 	refresh: 0,
 	citiesAsia: [
-		{ city: 'Jekaterynburg', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Tbilisi', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Astana', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Nowosybirsk', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Krasnojarsk', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Jakutsk', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Władywostok', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Tibilisi', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Astana', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Ułan Bator', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Władywostok', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Bejrut', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Jerozolima', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Bagdad', img: Un, idWeather: 0, temp: 0 },

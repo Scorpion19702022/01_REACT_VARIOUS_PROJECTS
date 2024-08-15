@@ -66,7 +66,7 @@
 }
 
 .img_asia_map {
-	width: 68%;
+	width: 78%;
 	object-fit: cover;
 	padding-bottom: 12em;
 }
@@ -106,12 +106,98 @@
 
 .box_cities:nth-child(3) {
 	top: 30%;
-	left: 48%;
+	left: 50%;
 }
 
 .box_cities:nth-child(4) {
+	opacity: 0;
+}
+
+.box_cities:nth-child(5) {
+	opacity: 0;
+}
+
+.box_cities:nth-child(6) {
 	top: 30%;
-	left: 68%;
+	left: 72%;
+}
+
+.box_cities:nth-child(7) {
+	opacity: 0;
+}
+
+.box_cities:nth-child(8) {
+	top: 40%;
+	left: 3%;
+}
+
+.box_cities:nth-child(9) {
+	top: 49%;
+	left: 3%;
+}
+
+.box_cities:nth-child(10) {
+	top: 58%;
+	left: 3%;
+}
+
+.box_cities:nth-child(11) {
+	top: 67%;
+	left: 3%;
+}
+
+.box_cities:nth-child(12) {
+	top: 76%;
+	left: 3%;
+}
+
+.box_cities:nth-child(13) {
+	top: 86%;
+	left: 6%;
+}
+
+.box_cities:nth-child(14) {
+	top: 86%;
+	left: 28%;
+}
+
+.box_cities:nth-child(15) {
+	top: 86%;
+	left: 50%;
+}
+
+.box_cities:nth-child(16) {
+	opacity: 0;
+}
+
+.box_cities:nth-child(17) {
+	top: 86%;
+	left: 72%;
+}
+
+.box_cities:nth-child(18) {
+	top: 40%;
+	left: 76%;
+}
+
+.box_cities:nth-child(19) {
+	top: 49%;
+	left: 76%;
+}
+
+.box_cities:nth-child(20) {
+	top: 58%;
+	left: 76%;
+}
+
+.box_cities:nth-child(21) {
+	top: 67%;
+	left: 76%;
+}
+
+.box_cities:nth-child(22) {
+	top: 76%;
+	left: 76%;
 }
 
 .top {
