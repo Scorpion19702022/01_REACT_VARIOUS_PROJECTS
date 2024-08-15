@@ -281,21 +281,22 @@
 
 	.box_cities {
 		width: 16%;
-		height: 7%;
+		height: 8%;
 	}
 
 	.box_cities:nth-child(1) {
-		top: 28%;
+		top: 27%;
 		left: 16%;
 	}
 
 	.box_cities:nth-child(2) {
-		top: 30%;
-		left: 28%;
+		top: 27%;
+		left: 33%;
 	}
 
 	.box_cities:nth-child(3) {
-		opacity: 0;
+		top: 27%;
+		left: 50%;
 	}
 
 	.box_cities:nth-child(4) {
@@ -307,7 +308,8 @@
 	}
 
 	.box_cities:nth-child(6) {
-		opacity: 0;
+		top: 27%;
+		left: 67%;
 	}
 
 	.box_cities:nth-child(7) {
@@ -315,100 +317,76 @@
 	}
 
 	.box_cities:nth-child(8) {
-		top: 40%;
+		top: 37%;
 		left: 3%;
 	}
 
 	.box_cities:nth-child(9) {
-		top: 49%;
+		top: 46%;
 		left: 3%;
 	}
 
 	.box_cities:nth-child(10) {
-		opacity: 0;
+		top: 55%;
+		left: 3%;
 	}
 
 	.box_cities:nth-child(11) {
-		top: 58%;
+		top: 64%;
 		left: 3%;
 	}
 
 	.box_cities:nth-child(12) {
-		top: 67%;
+		top: 73%;
 		left: 3%;
 	}
 
 	.box_cities:nth-child(13) {
-		top: 76%;
-		left: 3%;
+		top: 83%;
+		left: 16%;
 	}
 
 	.box_cities:nth-child(14) {
-		opacity: 0;
+		top: 83%;
+		left: 33%;
 	}
 	.box_cities:nth-child(15) {
-		top: 86%;
-		left: 6%;
-	}
-
-	.box_cities:nth-child(16) {
-		top: 86%;
-		left: 28%;
-	}
-
-	.box_cities:nth-child(17) {
-		top: 86%;
+		top: 83%;
 		left: 50%;
 	}
 
+	.box_cities:nth-child(16) {
+		opacity: 0;
+	}
+
+	.box_cities:nth-child(17) {
+		top: 83%;
+		left: 67%;
+	}
+
 	.box_cities:nth-child(18) {
-		top: 86%;
-		left: 72%;
+		top: 37%;
+		left: 81%;
 	}
 
 	.box_cities:nth-child(19) {
-		top: 40%;
-		left: 76%;
+		top: 46%;
+		left: 81%;
 	}
 
 	.box_cities:nth-child(20) {
-		top: 49%;
-		left: 76%;
+		top: 55%;
+		left: 81%;
 	}
 
 	.box_cities:nth-child(21) {
-		opacity: 0;
+		top: 64%;
+		left: 81%;
 	}
 
 	.box_cities:nth-child(22) {
-		opacity: 0;
-	}
-
-	.box_cities:nth-child(23) {
-		top: 58%;
-		left: 76%;
-	}
-
-	.box_cities:nth-child(24) {
-		opacity: 0;
-	}
-
-	.box_cities:nth-child(25) {
-		top: 67%;
-		left: 76%;
-	}
-
-	.box_cities:nth-child(26) {
-		top: 76%;
-		left: 76%;
-	}
-
-	.box_cities:nth-child(27) {
-		opacity: 0;
-	}
-
-	.box_cities:nth-child(28) {
-		opacity: 0;
+		top: 73%;
+		left: 81%;
 	}
 }
 
@@ -520,6 +498,111 @@
 	.box_cities:nth-child(2) {
 		top: 24%;
 		left: 37.5%;
+	}
+
+	.box_cities:nth-child(3) {
+		top: 24%;
+		left: 45%;
+		opacity: 1;
+	}
+
+	.box_cities:nth-child(4) {
+		top: 24%;
+		left: 52.5%;
+		opacity: 1;
+	}
+
+	.box_cities:nth-child(5) {
+		top: 24%;
+		left: 60%;
+		opacity: 1;
+	}
+
+	.box_cities:nth-child(6) {
+		top: 24%;
+		left: 67.5%;
+		opacity: 1;
+	}
+
+	.box_cities:nth-child(7) {
+		top: 35%;
+		left: 70%;
+		opacity: 1;
+	}
+
+	.box_cities:nth-child(8) {
+		top: 35%;
+		left: 28%;
+	}
+
+	.box_cities:nth-child(9) {
+		top: 45%;
+		left: 28%;
+	}
+
+	.box_cities:nth-child(10) {
+		top: 55%;
+		left: 28%;
+	}
+
+	.box_cities:nth-child(11) {
+		top: 65%;
+		left: 28%;
+	}
+
+	.box_cities:nth-child(12) {
+		top: 75%;
+		left: 28%;
+	}
+
+	.box_cities:nth-child(13) {
+		top: 86%;
+		left: 30%;
+	}
+
+	.box_cities:nth-child(14) {
+		top: 86%;
+		left: 37.5%;
+	}
+	.box_cities:nth-child(15) {
+		top: 86%;
+		left: 45%;
+	}
+
+	.box_cities:nth-child(16) {
+		top: 86%;
+		left: 52.5%;
+		opacity: 1;
+	}
+
+	.box_cities:nth-child(17) {
+		top: 86%;
+		left: 60%;
+	}
+
+	.box_cities:nth-child(18) {
+		top: 45%;
+		left: 70%;
+	}
+
+	.box_cities:nth-child(19) {
+		top: 55%;
+		left: 70%;
+	}
+
+	.box_cities:nth-child(20) {
+		top: 65%;
+		left: 70%;
+	}
+
+	.box_cities:nth-child(21) {
+		top: 75%;
+		left: 70%;
+	}
+
+	.box_cities:nth-child(22) {
+		top: 86%;
+		left: 67.5%;
 	}
 
 	.name_city {
