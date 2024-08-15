@@ -16,7 +16,7 @@ import WomanWeather from './assets/back2.png'
 import AsiaContext from './Context/AsiaContext'
 
 const AsiaWeather = () => {
-	const { refresh } = useContext(AsiaContext)
+	const { refresh, citiesAsia } = useContext(AsiaContext)
 
 	return (
 		<section className={styles.wrapper}>
