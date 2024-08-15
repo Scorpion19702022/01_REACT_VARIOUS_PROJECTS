@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import NavWorld from './NavWorld'
 import styles from './AsiaWeather.module.css'
 
@@ -13,8 +13,11 @@ import Snow from './assets/snow.png'
 import AsiaMap from './assets/AsiaMAP.png'
 
 import WomanWeather from './assets/back2.png'
+import AsiaContext from './Context/AsiaContext'
 
 const AsiaWeather = () => {
+	const { refresh } = useContext(AsiaContext)
+
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
@@ -53,7 +56,7 @@ const AsiaWeather = () => {
 				</div>
 			</div>
 			<div className={styles.box_content}>
-				<h4 className={styles.count}>Aktualizacja pogody za 0 min.</h4>
+				<h4 className={styles.count}>Aktualizacja pogody za {refresh} min.</h4>
 				<div className={styles.box_map}>
 					<img className={styles.img_asia_map} src={AsiaMap} alt='' />
 				</div>
