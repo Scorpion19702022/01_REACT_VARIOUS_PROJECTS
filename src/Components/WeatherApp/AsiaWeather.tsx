@@ -18,6 +18,12 @@ import AsiaContext from './Context/AsiaContext'
 const AsiaWeather = () => {
 	const { refresh, citiesAsia } = useContext(AsiaContext)
 
+	const divsLines = []
+
+	for (let i = 0; i < 22; i++) {
+		divsLines.push(<div key={i} className={styles.line}></div>)
+	}
+
 	const citiesOfAsia = citiesAsia.map((city, index) => (
 		<div key={index} className={styles.box_cities}>
 			<div className={styles.top}>
@@ -78,7 +84,7 @@ const AsiaWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_asia_map} src={AsiaMap} alt='' />
 				</div>
-				{/* <div className={styles.box_lines}>{divsLines}</div> */}
+				<div className={styles.box_lines}>{divsLines}</div>
 				<div className={styles.city_weather}>{citiesOfAsia}</div>
 			</div>
 		</section>

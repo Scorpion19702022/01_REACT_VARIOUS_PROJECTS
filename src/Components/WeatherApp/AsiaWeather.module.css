@@ -249,6 +249,16 @@
 	font-weight: 400;
 }
 
+.box_lines {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.line {
+	opacity: 0;
+}
+
 @media (min-width: 660px) {
 	.wrapper {
 		height: 100%;
@@ -629,5 +639,19 @@
 	.city_info_weather {
 		font-size: 1.2em;
 		font-weight: 700;
+	}
+
+	.box_lines {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.line {
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: var(--color-color04);
+		opacity: 1;
 	}
 }
