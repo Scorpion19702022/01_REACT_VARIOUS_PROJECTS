@@ -466,7 +466,7 @@
 
 	.img_asia_map {
 		width: 42%;
-		padding: 2em 0em 18em 7em;
+		padding: 2em 0em 14em 7em;
 	}
 
 	.back_img {
@@ -653,5 +653,47 @@
 		height: 2px;
 		background-color: var(--color-color04);
 		opacity: 1;
+	}
+
+	.line:nth-child(1) {
+		width: 18%;
+		top: 31.4%;
+		left: 25.8%;
+		transform: rotate(68deg);
+	}
+
+	.line:nth-child(2) {
+		width: 14%;
+		top: 30.6%;
+		left: 34.5%;
+		transform: rotate(68deg);
+	}
+
+	.line:nth-child(3) {
+		width: 12%;
+		top: 30%;
+		left: 40.5%;
+		transform: rotate(92deg);
+	}
+
+	.line:nth-child(4) {
+		width: 9%;
+		top: 25%;
+		left: 47%;
+		transform: rotate(131deg);
+	}
+
+	.line:nth-child(5) {
+		width: 16%;
+		top: 24%;
+		left: 52%;
+		transform: rotate(130deg);
+	}
+
+	.line:nth-child(6) {
+		width: 26%;
+		top: 30%;
+		left: 49%;
+		transform: rotate(143deg);
 	}
 }
