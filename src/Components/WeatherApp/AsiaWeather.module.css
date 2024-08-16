@@ -759,4 +759,18 @@
 		left: 51%;
 		transform: rotate(-147deg);
 	}
+
+	.line:nth-child(16) {
+		width: 14%;
+		top: 69.7%;
+		left: 50%;
+		transform: rotate(-159deg);
+	}
+
+	.line:nth-child(17) {
+		width: 19%;
+		top: 67%;
+		left: 53.6%;
+		transform: rotate(-157deg);
+	}
 }
