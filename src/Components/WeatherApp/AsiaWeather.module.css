@@ -167,12 +167,12 @@
 }
 
 .box_cities:nth-child(16) {
-	opacity: 0;
+	top: 86%;
+	left: 72%;
 }
 
 .box_cities:nth-child(17) {
-	top: 86%;
-	left: 72%;
+	opacity: 0;
 }
 
 .box_cities:nth-child(18) {
@@ -366,12 +366,12 @@
 	}
 
 	.box_cities:nth-child(16) {
-		opacity: 0;
+		top: 83%;
+		left: 67%;
 	}
 
 	.box_cities:nth-child(17) {
-		top: 83%;
-		left: 67%;
+		opacity: 0;
 	}
 
 	.box_cities:nth-child(18) {
@@ -582,12 +582,12 @@
 	.box_cities:nth-child(16) {
 		top: 86%;
 		left: 52.5%;
-		opacity: 1;
 	}
 
 	.box_cities:nth-child(17) {
 		top: 86%;
 		left: 60%;
+		opacity: 1;
 	}
 
 	.box_cities:nth-child(18) {
@@ -730,5 +730,33 @@
 		top: 62.6%;
 		left: 29%;
 		transform: rotate(-43deg);
+	}
+
+	.line:nth-child(12) {
+		width: 20%;
+		top: 64%;
+		left: 27%;
+		transform: rotate(-42deg);
+	}
+
+	.line:nth-child(13) {
+		width: 14%;
+		top: 65%;
+		left: 34.4%;
+		transform: rotate(-56deg);
+	}
+
+	.line:nth-child(14) {
+		width: 8%;
+		top: 67%;
+		left: 44%;
+		transform: rotate(-58deg);
+	}
+
+	.line:nth-child(15) {
+		width: 7%;
+		top: 72%;
+		left: 51%;
+		transform: rotate(-147deg);
 	}
 }
