@@ -25,8 +25,8 @@ type SouthAmProviderType = {
 const InitialState: InitialStateType = {
 	refresh: 0,
 	citiesSouthAm: [
-		{ city: 'Fairbanks', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Vancouver', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Bogota', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Caracas', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
 }
