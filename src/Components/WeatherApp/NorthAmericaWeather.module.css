@@ -690,4 +690,32 @@
 		left: 54.4%;
 		transform: rotate(-50deg);
 	}
+
+	.line:nth-child(15) {
+		width: 17%;
+		top: 43%;
+		left: 55.2%;
+		transform: rotate(-39deg);
+	}
+
+	.line:nth-child(16) {
+		width: 16%;
+		top: 50%;
+		left: 54.8%;
+		transform: rotate(-22deg);
+	}
+
+	.line:nth-child(17) {
+		width: 14%;
+		top: 57%;
+		left: 56.4%;
+		transform: rotate(-10deg);
+	}
+
+	.line:nth-child(18) {
+		width: 21%;
+		top: 63.6%;
+		left: 53.4%;
+		transform: rotate(14.2deg);
+	}
 }
