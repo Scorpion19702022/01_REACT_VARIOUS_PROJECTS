@@ -30,8 +30,8 @@ const NavWorld = () => {
 				<p className={styles.into_btn}>Azja</p>
 			</Link>
 			<Link
-				to='/WeatherApp/Europe'
-				className={location.pathname === '/WeatherApp/Europe' ? styles.btn_active : styles.btn_no_active}
+				to='/WeatherApp/NorthAmerica'
+				className={location.pathname === '/WeatherApp/NorthAmerica' ? styles.btn_active : styles.btn_no_active}
 			>
 				<p className={styles.into_btn}>Ameryka Płn</p>
 			</Link>
