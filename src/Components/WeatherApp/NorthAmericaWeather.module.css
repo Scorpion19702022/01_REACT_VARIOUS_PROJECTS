@@ -103,6 +103,11 @@
 	left: 28%;
 }
 
+.box_cities:nth-child(3) {
+	top: 30%;
+	left: 50%;
+}
+
 .top {
 	width: 100%;
 	height: 20%;

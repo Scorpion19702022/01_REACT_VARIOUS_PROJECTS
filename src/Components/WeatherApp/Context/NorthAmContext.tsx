@@ -25,8 +25,9 @@ type NorthAmProviderType = {
 const InitialState: InitialStateType = {
 	refresh: 0,
 	citiesNorthAm: [
-		{ city: 'Reykjavík', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Oslo', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Fairbanks', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Vancouver', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Ottawa', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
 }
