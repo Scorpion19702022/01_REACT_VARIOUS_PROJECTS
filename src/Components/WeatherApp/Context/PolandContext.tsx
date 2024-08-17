@@ -1,5 +1,7 @@
 import React, { useEffect, createContext, useState } from 'react'
 
+import { Analytics } from '@vercel/analytics/react'
+
 import Un from '../assets/unknown.png'
 import Sun from '../assets/sun.png'
 import FewClouds from '../assets/few_clouds.png'
@@ -145,6 +147,7 @@ export const PolandProvider = ({ children }: PolandProviderType) => {
 			}}
 		>
 			{children}
+			<Analytics />
 		</PolandContext.Provider>
 	)
 }

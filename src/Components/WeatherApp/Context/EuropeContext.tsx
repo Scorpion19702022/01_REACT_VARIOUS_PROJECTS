@@ -1,5 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
 
+import { Analytics } from '@vercel/analytics/react'
+
 import Un from '../assets/unknown.png'
 import Sun from '../assets/sun.png'
 import FewClouds from '../assets/few_clouds.png'
@@ -148,7 +150,12 @@ export const EuropeProvider = ({ children }: EuropeProviderType) => {
 		return () => clearInterval(interval)
 	}, [])
 
-	return <EuropeContext.Provider value={{ refresh, citiesEurope, getWeatherImage }}>{children}</EuropeContext.Provider>
+	return (
+		<EuropeContext.Provider value={{ refresh, citiesEurope, getWeatherImage }}>
+			{children}
+			<Analytics />
+		</EuropeContext.Provider>
+	)
 }
 
 export default EuropeContext

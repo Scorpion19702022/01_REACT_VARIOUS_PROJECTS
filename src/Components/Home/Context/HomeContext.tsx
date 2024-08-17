@@ -1,5 +1,7 @@
 import { createContext, useState } from 'react'
 
+import { Analytics } from '@vercel/analytics/react'
+
 type InstalStateType = {
 	textPL: string
 	textEN: string
@@ -52,6 +54,7 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 	return (
 		<HomeContext.Provider value={{ textPL, textEN, isActivePL, isActiveEN, addedText }}>
 			{children}
+			<Analytics />
 		</HomeContext.Provider>
 	)
 }
