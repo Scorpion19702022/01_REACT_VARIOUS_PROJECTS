@@ -634,4 +634,60 @@
 		left: 30.2%;
 		transform: rotate(27deg);
 	}
+
+	.line:nth-child(7) {
+		width: 16%;
+		top: 47.4%;
+		left: 29.2%;
+		transform: rotate(15deg);
+	}
+
+	.line:nth-child(8) {
+		width: 17%;
+		top: 55.6%;
+		left: 28.8%;
+		transform: rotate(-2deg);
+	}
+
+	.line:nth-child(9) {
+		width: 22%;
+		top: 65.4%;
+		left: 29%;
+		transform: rotate(-1deg);
+	}
+
+	.line:nth-child(10) {
+		width: 18%;
+		top: 71%;
+		left: 36.4%;
+		transform: rotate(172deg);
+	}
+
+	.line:nth-child(11) {
+		width: 12%;
+		top: 72%;
+		left: 44%;
+		transform: rotate(173deg);
+	}
+
+	.line:nth-child(12) {
+		width: 9%;
+		top: 72.2%;
+		left: 50%;
+		transform: rotate(104deg);
+	}
+
+	.line:nth-child(13) {
+		width: 9%;
+		top: 72.2%;
+		left: 57%;
+		transform: rotate(46deg);
+	}
+
+	.line:nth-child(14) {
+		width: 17.7%;
+		top: 37%;
+		left: 54.4%;
+		transform: rotate(-50deg);
+	}
 }
