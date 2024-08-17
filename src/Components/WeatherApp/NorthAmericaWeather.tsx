@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import NavWorld from './NavWorld'
 
 import styles from './NorthAmericaWeather.module.css'
@@ -14,8 +14,29 @@ import Snow from './assets/snow.png'
 import NorthAmMap from './assets/NorthAmer.png'
 
 import WomanWeather from './assets/back2.png'
+import NorthAmContext from './Context/NorthAmContext'
 
 const NorthAmericaWeather = () => {
+	const { refresh, citiesNorthAm } = useContext(NorthAmContext)
+
+	const citiesOfNorthAm = citiesNorthAm.map((city, index) => (
+		<div key={index} className={styles.box_cities}>
+			<div className={styles.top}>
+				<h4 className={styles.name_city}>{city.city}</h4>
+			</div>
+			<div className={styles.bottom}>
+				<div className={styles.box_img}>
+					<img className={styles.img_city} src={city.img} alt='' />
+				</div>
+				<div className={styles.box_info}>
+					<span className={styles.city_info_weather}>
+						{city.temp} <span className={styles.parametr}>℃</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	))
+
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
@@ -54,12 +75,12 @@ const NorthAmericaWeather = () => {
 				</div>
 			</div>
 			<div className={styles.box_content}>
-				<h4 className={styles.count}>Aktualizacja pogody za 0 min.</h4>
+				<h4 className={styles.count}>Aktualizacja pogody za {refresh} min.</h4>
 				<div className={styles.box_map}>
 					<img className={styles.img_northam_map} src={NorthAmMap} alt='' />
 				</div>
 				{/* <div className={styles.box_lines}>{divsLines}</div> */}
-				{/* <div className={styles.city_weather}>{citiesOfAsia}</div> */}
+				<div className={styles.city_weather}>{citiesOfNorthAm}</div>
 			</div>
 		</section>
 	)
