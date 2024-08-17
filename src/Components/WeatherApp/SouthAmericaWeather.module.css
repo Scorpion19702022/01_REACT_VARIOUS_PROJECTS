@@ -66,7 +66,7 @@
 }
 
 .img_southam_map {
-	width: 76%;
+	width: 70%;
 	object-fit: cover;
 	padding-bottom: 12em;
 }
@@ -114,61 +114,61 @@
 }
 
 .box_cities:nth-child(5) {
-	top: 40%;
+	top: 44%;
 	left: 3%;
 }
 
 .box_cities:nth-child(6) {
-	top: 49%;
+	top: 53%;
 	left: 3%;
 }
 
 .box_cities:nth-child(7) {
-	top: 58%;
+	top: 62%;
 	left: 3%;
 }
 
 .box_cities:nth-child(8) {
-	top: 67%;
+	top: 71%;
 	left: 3%;
 }
 
 .box_cities:nth-child(9) {
-	top: 76%;
-	left: 3%;
-}
-
-.box_cities:nth-child(10) {
 	top: 86%;
 	left: 6%;
 }
 
-.box_cities:nth-child(11) {
+.box_cities:nth-child(10) {
 	top: 86%;
 	left: 28%;
 }
 
-.box_cities:nth-child(12) {
+.box_cities:nth-child(11) {
 	top: 86%;
 	left: 50%;
 }
 
-.box_cities:nth-child(13) {
+.box_cities:nth-child(12) {
 	top: 86%;
 	left: 72%;
 }
 
+.box_cities:nth-child(13) {
+	top: 44%;
+	left: 76%;
+}
+
 .box_cities:nth-child(14) {
-	top: 40%;
+	top: 53%;
 	left: 76%;
 }
 .box_cities:nth-child(15) {
-	top: 49%;
+	top: 62%;
 	left: 76%;
 }
 
 .box_cities:nth-child(16) {
-	top: 58%;
+	top: 71%;
 	left: 76%;
 }
 
@@ -250,7 +250,7 @@
 	}
 
 	.img_southam_map {
-		width: 76%;
+		width: 62%;
 		object-fit: cover;
 		padding-top: 4em;
 	}
@@ -409,8 +409,8 @@
 	}
 
 	.img_southam_map {
-		width: 36%;
-		padding: 2em 4em 18em 7em;
+		width: 28%;
+		padding: 2em 2em 14em 7em;
 	}
 
 	.back_img {
