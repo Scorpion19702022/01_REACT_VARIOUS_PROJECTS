@@ -116,7 +116,7 @@ a {
 	color: var(--color-dark03);
 }
 .link:hover {
-	color: var(--color-color02);
+	color: var(--color-color03);
 	border-bottom: 0.04em solid var(--color-dark02);
 }
 

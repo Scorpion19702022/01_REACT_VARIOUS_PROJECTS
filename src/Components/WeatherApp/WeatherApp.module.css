@@ -29,16 +29,9 @@
 	background-color: var(--color-dark07);
 }
 
-.heading {
-	height: 10%;
-	margin-top: 6em;
-	font-size: 1.4em;
-	color: var(--color-color02);
-}
-
 .box_info {
 	width: 100%;
-	margin-top: 2%;
+	padding-top: 10em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -138,13 +131,8 @@
 		padding-left: 10em;
 	}
 
-	.heading {
-		margin-bottom: 1em;
-		font-size: 2em;
-	}
-
 	.box_info {
-		margin: 2em 18em 0em 0em;
+		padding: 8em 10em 0em 0em;
 		height: 70%;
 		width: 74%;
 		display: flex;
