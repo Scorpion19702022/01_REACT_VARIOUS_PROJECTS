@@ -19,6 +19,12 @@ import NorthAmContext from './Context/NorthAmContext'
 const NorthAmericaWeather = () => {
 	const { refresh, citiesNorthAm } = useContext(NorthAmContext)
 
+	const divsLines = []
+
+	for (let i = 0; i < 16; i++) {
+		divsLines.push(<div key={i} className={styles.line}></div>)
+	}
+
 	const citiesOfNorthAm = citiesNorthAm.map((city, index) => (
 		<div key={index} className={styles.box_cities}>
 			<div className={styles.top}>
@@ -79,7 +85,7 @@ const NorthAmericaWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_northam_map} src={NorthAmMap} alt='' />
 				</div>
-				{/* <div className={styles.box_lines}>{divsLines}</div> */}
+				<div className={styles.box_lines}>{divsLines}</div>
 				<div className={styles.city_weather}>{citiesOfNorthAm}</div>
 			</div>
 		</section>

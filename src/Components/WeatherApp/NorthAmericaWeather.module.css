@@ -231,6 +231,10 @@
 	font-weight: 400;
 }
 
+.line {
+	opacity: 0;
+}
+
 @media (min-width: 660px) {
 	.wrapper {
 		height: 100%;
@@ -425,7 +429,7 @@
 	}
 
 	.img_northam_map {
-		width: 38%;
+		width: 36%;
 		padding: 2em 4em 18em 7em;
 	}
 
@@ -573,5 +577,61 @@
 	.city_info_weather {
 		font-size: 1.2em;
 		font-weight: 700;
+	}
+
+	.box_lines {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.line {
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: var(--color-color04);
+		opacity: 1;
+	}
+
+	.line:nth-child(1) {
+		width: 11%;
+		top: 23%;
+		left: 35%;
+		transform: rotate(62deg);
+	}
+
+	.line:nth-child(2) {
+		width: 17%;
+		top: 28%;
+		left: 38%;
+		transform: rotate(94deg);
+	}
+
+	.line:nth-child(3) {
+		width: 18%;
+		top: 30%;
+		left: 46%;
+		transform: rotate(78deg);
+	}
+
+	.line:nth-child(4) {
+		width: 10%;
+		top: 24%;
+		left: 56%;
+		transform: rotate(104deg);
+	}
+
+	.line:nth-child(5) {
+		width: 28%;
+		top: 36%;
+		left: 28.2%;
+		transform: rotate(33deg);
+	}
+
+	.line:nth-child(6) {
+		width: 21%;
+		top: 42.6%;
+		left: 30.2%;
+		transform: rotate(27deg);
 	}
 }
