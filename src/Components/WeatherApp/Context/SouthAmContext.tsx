@@ -25,8 +25,22 @@ type SouthAmProviderType = {
 const InitialState: InitialStateType = {
 	refresh: 0,
 	citiesSouthAm: [
-		{ city: 'Bogota', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Caracas', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Port of Spain', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Georgetown', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Bogota', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Quito', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Lima', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'La Paz', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Santiago', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Buenos Aires', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Montevideo', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Brasilia', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Rio de Janeiro', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Sao Paulo', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Asuncion', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Córdoba', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Ushuaia', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
 }

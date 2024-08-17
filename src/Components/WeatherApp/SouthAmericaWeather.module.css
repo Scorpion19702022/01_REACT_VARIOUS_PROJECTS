@@ -172,16 +172,6 @@
 	left: 76%;
 }
 
-.box_cities:nth-child(17) {
-	top: 67%;
-	left: 76%;
-}
-
-.box_cities:nth-child(18) {
-	top: 76%;
-	left: 76%;
-}
-
 .top {
 	width: 100%;
 	height: 20%;
@@ -346,16 +336,6 @@
 
 	.box_cities:nth-child(16) {
 		top: 50%;
-		left: 81%;
-	}
-
-	.box_cities:nth-child(17) {
-		top: 58%;
-		left: 81%;
-	}
-
-	.box_cities:nth-child(18) {
-		top: 66%;
 		left: 81%;
 	}
 
@@ -540,16 +520,6 @@
 
 	.box_cities:nth-child(16) {
 		top: 55%;
-		left: 70%;
-	}
-
-	.box_cities:nth-child(17) {
-		top: 65%;
-		left: 70%;
-	}
-
-	.box_cities:nth-child(18) {
-		top: 75%;
 		left: 70%;
 	}
 
