@@ -446,7 +446,7 @@
 	}
 
 	.img_africa_map {
-		width: 25%;
+		width: 31%;
 		padding: 2em 0em 14em 7em;
 	}
 
@@ -483,106 +483,102 @@
 
 	.box_cities:nth-child(1) {
 		top: 24%;
-		left: 30%;
+		left: 34%;
 	}
 
 	.box_cities:nth-child(2) {
 		top: 24%;
-		left: 37.5%;
+		left: 41.5%;
 	}
 
 	.box_cities:nth-child(3) {
 		top: 24%;
-		left: 45%;
+		left: 49%;
 		opacity: 1;
 	}
 
 	.box_cities:nth-child(4) {
 		top: 24%;
-		left: 52.5%;
-		opacity: 1;
+		left: 56.5%;
 	}
 
 	.box_cities:nth-child(5) {
 		top: 24%;
-		left: 60%;
-		opacity: 1;
+		left: 64%;
 	}
 
 	.box_cities:nth-child(6) {
-		top: 24%;
-		left: 67.5%;
-		opacity: 1;
+		top: 35%;
+		left: 28%;
 	}
 
 	.box_cities:nth-child(7) {
-		top: 35%;
-		left: 70%;
-		opacity: 1;
+		top: 45%;
+		left: 28%;
 	}
 
 	.box_cities:nth-child(8) {
-		top: 35%;
+		top: 55%;
 		left: 28%;
 	}
 
 	.box_cities:nth-child(9) {
-		top: 45%;
+		top: 65%;
 		left: 28%;
 	}
 
 	.box_cities:nth-child(10) {
-		top: 55%;
-		left: 28%;
-	}
-
-	.box_cities:nth-child(11) {
-		top: 65%;
-		left: 28%;
-	}
-
-	.box_cities:nth-child(12) {
 		top: 75%;
 		left: 28%;
 	}
 
+	.box_cities:nth-child(11) {
+		top: 86%;
+		left: 34%;
+	}
+
+	.box_cities:nth-child(12) {
+		top: 86%;
+		left: 41.5%;
+	}
+
 	.box_cities:nth-child(13) {
 		top: 86%;
-		left: 30%;
+		left: 49%;
+		opacity: 1;
 	}
 
 	.box_cities:nth-child(14) {
 		top: 86%;
-		left: 37.5%;
+		left: 56.5%;
 	}
 	.box_cities:nth-child(15) {
 		top: 86%;
-		left: 45%;
+		left: 64%;
 	}
 
 	.box_cities:nth-child(16) {
-		top: 86%;
-		left: 52.5%;
+		top: 35%;
+		left: 70%;
 	}
 
 	.box_cities:nth-child(17) {
-		top: 86%;
-		left: 60%;
-		opacity: 1;
-	}
-
-	.box_cities:nth-child(18) {
 		top: 45%;
 		left: 70%;
 	}
 
-	.box_cities:nth-child(19) {
+	.box_cities:nth-child(18) {
 		top: 55%;
 		left: 70%;
 	}
 
-	.box_cities:nth-child(20) {
+	.box_cities:nth-child(19) {
 		top: 65%;
+		left: 70%;
+	}
+
+	.box_cities:nth-child(20) {
+		top: 75%;
 		left: 70%;
 	}
 
