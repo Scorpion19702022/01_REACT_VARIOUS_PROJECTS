@@ -1,8 +1,13 @@
 import React from 'react'
 import AfricaWeather from '../AfricaWeather'
+import { AfricaProvider } from '../Context/AfricaContext'
 
 const Africa = () => {
-	return <AfricaWeather />
+	return (
+		<AfricaProvider>
+			<AfricaWeather />
+		</AfricaProvider>
+	)
 }
 
 export default Africa
