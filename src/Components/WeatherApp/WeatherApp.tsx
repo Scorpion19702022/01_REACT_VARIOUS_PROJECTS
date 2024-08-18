@@ -59,7 +59,7 @@ const WeatherApp = () => {
 								<span className={styles.legend_info}>- mgliście</span>
 							</div>
 							<div className={styles.legend_other_info}>
-								<p className={styles.other_info}>W kolejnych informacjach pojawią się stan pogody, temperatura w ℃.</p>
+								<p className={styles.other_info}>W kolejnych informacjach pojawią się stan pogody i temperatura w ℃.</p>
 							</div>
 						</div>
 					</div>
