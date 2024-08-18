@@ -19,6 +19,12 @@ import AfricaContext from './Context/AfricaContext'
 const AfricaWeather = () => {
 	const { refresh, citiesAfrica } = useContext(AfricaContext)
 
+	const divsLines = []
+
+	for (let i = 0; i < 16; i++) {
+		divsLines.push(<div key={i} className={styles.line}></div>)
+	}
+
 	const citiesOfAfrica = citiesAfrica.map((city, index) => (
 		<div key={index} className={styles.box_cities}>
 			<div className={styles.top}>
@@ -79,7 +85,7 @@ const AfricaWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_africa_map} src={AfricaMap} alt='' />
 				</div>
-				{/* <div className={styles.box_lines}>{divsLines}</div> */}
+				<div className={styles.box_lines}>{divsLines}</div>
 				<div className={styles.city_weather}>{citiesOfAfrica}</div>
 			</div>
 		</section>
