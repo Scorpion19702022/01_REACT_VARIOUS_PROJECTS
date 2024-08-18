@@ -42,7 +42,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Pretoria', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Chartum', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Addis Abeba', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Mogadiszu', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Nairobi', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Lusaka', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Antananarywa', img: Un, idWeather: 0, temp: 0 },
 	],

@@ -21,7 +21,7 @@ const AfricaWeather = () => {
 
 	const divsLines = []
 
-	for (let i = 0; i < 16; i++) {
+	for (let i = 0; i < 20; i++) {
 		divsLines.push(<div key={i} className={styles.line}></div>)
 	}
 
