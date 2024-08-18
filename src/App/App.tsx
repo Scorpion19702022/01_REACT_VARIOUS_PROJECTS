@@ -10,6 +10,7 @@ import Europe from '../Components/WeatherApp/Pages/Europe'
 import Asia from '../Components/WeatherApp/Pages/Asia'
 import NorthAmerica from '../Components/WeatherApp/Pages/NorthAmerica'
 import SouthAmerica from '../Components/WeatherApp/Pages/SouthAmerica'
+import Africa from '../Components/WeatherApp/Pages/Africa'
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 					<Route path='/WeatherApp/Asia' Component={Asia} />
 					<Route path='/WeatherApp/NorthAmerica' Component={NorthAmerica} />
 					<Route path='/WeatherApp/SouthAmerica' Component={SouthAmerica} />
+					<Route path='/WeatherApp/Africa' Component={Africa} />
 					<Route path='/Task02' Component={Task02} />
 				</Routes>
 			</section>
