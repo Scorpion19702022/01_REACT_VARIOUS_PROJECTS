@@ -19,6 +19,12 @@ import SouthAmContext from './Context/SouthAmContext'
 const SouthAmericaWeather = () => {
 	const { refresh, citiesSouthAm } = useContext(SouthAmContext)
 
+	const divsLines = []
+
+	for (let i = 0; i < 16; i++) {
+		divsLines.push(<div key={i} className={styles.line}></div>)
+	}
+
 	const citiesOfSouthAm = citiesSouthAm.map((city, index) => (
 		<div key={index} className={styles.box_cities}>
 			<div className={styles.top}>
@@ -79,7 +85,7 @@ const SouthAmericaWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_southam_map} src={SouthAmMap} alt='' />
 				</div>
-				{/* <div className={styles.box_lines}>{divsLines}</div> */}
+				<div className={styles.box_lines}>{divsLines}</div>
 				<div className={styles.city_weather}>{citiesOfSouthAm}</div>
 			</div>
 		</section>
