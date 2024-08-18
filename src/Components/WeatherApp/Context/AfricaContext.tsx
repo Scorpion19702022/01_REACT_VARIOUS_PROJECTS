@@ -37,7 +37,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Jaunde', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Kinszasa', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Luanda', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Luanda', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Windhuk', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Kapsztad', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Pretoria', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Chartum', img: Un, idWeather: 0, temp: 0 },

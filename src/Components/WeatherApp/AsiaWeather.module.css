@@ -96,7 +96,6 @@
 .box_cities:nth-child(1) {
 	top: 30%;
 	left: 6%;
-	cursor: pointer;
 }
 
 .box_cities:nth-child(2) {
