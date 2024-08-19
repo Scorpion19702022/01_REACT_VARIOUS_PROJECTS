@@ -71,7 +71,7 @@ export const OceaniaProvider = ({ children }: AfricaProviderType) => {
 
 	const API_LINK_OCEANIA = `https://api.openweathermap.org/data/2.5/weather?q=`
 
-	const API_KEY_OCEANIA = `&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY_AFRICA}`
+	const API_KEY_OCEANIA = `&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY_OCEANIA}`
 
 	const API_UNITS_OCEANIA = '&units=metric'
 

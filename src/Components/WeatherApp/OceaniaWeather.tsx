@@ -17,7 +17,25 @@ import NavWorld from './NavWorld'
 import OceaniaContext from './Context/OceaniaContext'
 
 const OceaniaWeather = () => {
-	const { refresh } = useContext(OceaniaContext)
+	const { refresh, citiesOceania } = useContext(OceaniaContext)
+
+	const citiesOfOceania = citiesOceania.map((city, index) => (
+		<div key={index} className={styles.box_cities}>
+			<div className={styles.top}>
+				<h4 className={styles.name_city}>{city.city}</h4>
+			</div>
+			<div className={styles.bottom}>
+				<div className={styles.box_img}>
+					<img className={styles.img_city} src={city.img} alt='' />
+				</div>
+				<div className={styles.box_info}>
+					<span className={styles.city_info_weather}>
+						{city.temp} <span className={styles.parametr}>℃</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	))
 
 	return (
 		<section className={styles.wrapper}>
@@ -61,8 +79,8 @@ const OceaniaWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_oceania_map} src={OceaniaMap} alt='' />
 				</div>
-				{/* <div className={styles.box_lines}>{divsLines}</div>
-				<div className={styles.city_weather}>{citiesOfAfrica}</div> */}
+				{/* <div className={styles.box_lines}>{divsLines}</div> */}
+				<div className={styles.city_weather}>{citiesOfOceania}</div>
 			</div>
 		</section>
 	)
