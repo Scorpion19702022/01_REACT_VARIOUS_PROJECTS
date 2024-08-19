@@ -25,22 +25,22 @@ type AfricaProviderType = {
 const InitialState: InitialStateType = {
 	refresh: 0,
 	citiesOceania: [
-		{ city: 'Nawakszut', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Rabat', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Algier', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Port Hedland', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Darwin', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Alice Springs', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Port Moresby', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Canberra', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Sunshine Coast', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Perth', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Sydney', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Werribee', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Brisbane', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Adelaide', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Gold Coast', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Numea', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Hobart', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Auckland', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Wellington', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
 }
@@ -100,6 +100,8 @@ export const OceaniaProvider = ({ children }: AfricaProviderType) => {
 				const codId = Object.assign({}, ...data.weather)
 				const temp = data.main.temp.toFixed(1)
 				// const wind = data.wind.speed.toFixed(0)
+
+				console.log(data)
 
 				setCitiesOceania(prevCities => {
 					const updatedCities = [...prevCities]
