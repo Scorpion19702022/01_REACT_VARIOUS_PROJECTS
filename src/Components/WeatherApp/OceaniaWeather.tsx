@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './OceaniaWeather.module.css'
 
@@ -14,8 +14,11 @@ import OceaniaMap from './assets/oceania.png'
 
 import WomanWeather from './assets/back2.png'
 import NavWorld from './NavWorld'
+import OceaniaContext from './Context/OceaniaContext'
 
 const OceaniaWeather = () => {
+	const { refresh } = useContext(OceaniaContext)
+
 	return (
 		<section className={styles.wrapper}>
 			<NavWorld />
@@ -54,7 +57,7 @@ const OceaniaWeather = () => {
 				</div>
 			</div>
 			<div className={styles.box_content}>
-				<h4 className={styles.count}>Aktualizacja pogody za 0 min.</h4>
+				<h4 className={styles.count}>Aktualizacja pogody za {refresh} min.</h4>
 				<div className={styles.box_map}>
 					<img className={styles.img_oceania_map} src={OceaniaMap} alt='' />
 				</div>
