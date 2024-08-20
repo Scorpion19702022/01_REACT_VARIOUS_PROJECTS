@@ -562,4 +562,25 @@
 		background-color: var(--color-color04);
 		opacity: 1;
 	}
+
+	.line:nth-child(1) {
+		width: 14%;
+		top: 23.4%;
+		left: 34.2%;
+		transform: rotate(56deg);
+	}
+
+	.line:nth-child(2) {
+		width: 18.4%;
+		top: 30.4%;
+		left: 37.4%;
+		transform: rotate(91deg);
+	}
+
+	.line:nth-child(3) {
+		width: 10%;
+		top: 20.9%;
+		left: 49.2%;
+		transform: rotate(79deg);
+	}
 }

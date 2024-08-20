@@ -19,6 +19,12 @@ import OceaniaContext from './Context/OceaniaContext'
 const OceaniaWeather = () => {
 	const { refresh, citiesOceania } = useContext(OceaniaContext)
 
+	const divsLines = []
+
+	for (let i = 0; i < 16; i++) {
+		divsLines.push(<div key={i} className={styles.line}></div>)
+	}
+
 	const citiesOfOceania = citiesOceania.map((city, index) => (
 		<div key={index} className={styles.box_cities}>
 			<div className={styles.top}>
@@ -79,7 +85,7 @@ const OceaniaWeather = () => {
 				<div className={styles.box_map}>
 					<img className={styles.img_oceania_map} src={OceaniaMap} alt='' />
 				</div>
-				{/* <div className={styles.box_lines}>{divsLines}</div> */}
+				<div className={styles.box_lines}>{divsLines}</div>
 				<div className={styles.city_weather}>{citiesOfOceania}</div>
 			</div>
 		</section>
