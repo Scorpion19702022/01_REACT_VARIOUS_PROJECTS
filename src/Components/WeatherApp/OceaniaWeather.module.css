@@ -583,4 +583,39 @@
 		left: 49.2%;
 		transform: rotate(79deg);
 	}
+
+	.line:nth-child(4) {
+		width: 18%;
+		top: 26%;
+		left: 50%;
+		transform: rotate(123deg);
+	}
+
+	.line:nth-child(5) {
+		width: 11%;
+		top: 36.4%;
+		left: 29.6%;
+		transform: rotate(57deg);
+	}
+
+	.line:nth-child(6) {
+		width: 9%;
+		top: 43.4%;
+		left: 29.4%;
+		transform: rotate(54deg);
+	}
+
+	.line:nth-child(7) {
+		width: 11%;
+		top: 52%;
+		left: 28.5%;
+		transform: rotate(37deg);
+	}
+
+	.line:nth-child(8) {
+		width: 21%;
+		top: 61%;
+		left: 28.8%;
+		transform: rotate(0deg);
+	}
 }

@@ -30,7 +30,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Port Moresby', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Cairns', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Port Hedland', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Exmouth', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Carnarvon', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Perth', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Adelaide', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Werribee', img: Un, idWeather: 0, temp: 0 },
