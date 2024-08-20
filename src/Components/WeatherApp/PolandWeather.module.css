@@ -649,3 +649,9 @@
 		right: 35%;
 	}
 }
+
+@media (min-width: 2400px) {
+	.line {
+		opacity: 0;
+	}
+}
