@@ -27,7 +27,7 @@
 	justify-content: space-around;
 	align-items: center;
 	overflow: hidden;
-	background-color: var(--color-dark07);
+	background-color: var(--color-dark08);
 }
 
 .weather_legend {
@@ -88,9 +88,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--color-dark01);
-	border: 0.1em solid var(--color-color04);
-	box-shadow: 0.3em 0.3em 0.4em var(--color-dark08);
+	background-color: var(--color-dark07);
+	border: 0.06em solid var(--color-dark04);
+	box-shadow: 0.3em 0.3em 0.4em var(--color-dark09);
 }
 
 .box_cities:nth-child(1) {
@@ -180,9 +180,10 @@
 .name_city {
 	width: 100%;
 	font-size: 0.7em;
+	font-weight: 400;
 	padding-bottom: 0.2em;
-	border-bottom: 0.04em solid var(--color-dark04);
-	color: var(--color-dark08);
+	border-bottom: 0.04em solid var(--color-color06);
+	color: var(--color-dark01);
 }
 
 .bottom {
@@ -212,13 +213,13 @@
 .city_info_weather {
 	width: 100%;
 	font-size: 0.7em;
-	font-weight: 700;
+	font-weight: 400;
 	text-align: center;
-	color: var(--color-dark08);
+	color: var(--color-dark01);
 }
 
 .parametr {
-	font-weight: 400;
+	font-weight: 100;
 }
 
 .line {
@@ -365,10 +366,10 @@
 
 	.legend_heading {
 		font-size: 1.8em;
-		color: var(--color-color02);
+		color: var(--color-color01);
 		margin-bottom: 1em;
 		padding-bottom: 0.4em;
-		border-bottom: 0.04em dotted var(--color-color04);
+		border-bottom: 0.04em dotted var(--color-color02);
 	}
 
 	.legend {
@@ -385,7 +386,7 @@
 		align-items: center;
 		padding-bottom: 0.4em;
 		margin: 0.2em 0em;
-		border-bottom: 0.04em dotted var(--color-color04);
+		border-bottom: 0.04em dotted var(--color-color03);
 	}
 
 	.legend_img {
@@ -559,7 +560,7 @@
 		position: absolute;
 		width: 100%;
 		height: 2px;
-		background-color: var(--color-color04);
+		background-color: var(--color-color06);
 		opacity: 1;
 	}
 
