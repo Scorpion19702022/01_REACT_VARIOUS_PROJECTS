@@ -764,3 +764,9 @@
 		transform: rotate(25deg);
 	}
 }
+
+@media (min-width: 2400px) {
+	.line {
+		opacity: 0;
+	}
+}
