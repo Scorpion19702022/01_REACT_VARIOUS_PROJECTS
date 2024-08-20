@@ -7,15 +7,15 @@
 	--color-dark06: #2f302b;
 	--color-dark07: #1d1e1b;
 	--color-dark08: #050605;
-	--color-color01: #cce8f2;
-	--color-color02: #99d1e5;
-	--color-color03: #66bbd8;
-	--color-color04: #32a4cb;
-	--color-color05: #008ebe;
-	--color-color06: #007198;
-	--color-color07: #005572;
-	--color-color08: #00384c;
-	--color-color09: #001c26;
+	--color-color01: #d6ecf3;
+	--color-color02: #add9e7;
+	--color-color03: #85c6db;
+	--color-color04: #5cb3cf;
+	--color-color05: #34a0c4;
+	--color-color06: #29809c;
+	--color-color07: #1f6075;
+	--color-color08: #14404e;
+	--color-color09: #0a2027;
 }
 
 .wrapper {
@@ -27,15 +27,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(29, 30, 27, 1);
-	background-image: radial-gradient(
-		circle,
-		rgba(29, 30, 27, 1) 0%,
-		rgba(47, 48, 43, 1) 25%,
-		rgba(29, 30, 27, 1) 50%,
-		rgba(47, 48, 43, 1) 75%,
-		rgba(29, 30, 27, 1) 100%
-	);
+	background-color: var(--color-dark07);
 	z-index: 1;
 }
 
@@ -52,7 +44,7 @@
 	padding: 0.4em;
 	margin: 0em 0.4em;
 	background: none;
-	border: 0.04em solid var(--color-color05);
+	border: 0.04em solid var(--color-color06);
 	color: var(--color-color01);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
@@ -60,8 +52,8 @@
 
 .btn_pl:hover,
 .btn_en:hover {
-	background-color: var(--color-color02);
-	color: var(--color-color09);
+	background-color: var(--color-color07);
+	color: var(--color-color01);
 }
 
 .btn_pl_active,
@@ -78,12 +70,13 @@
 
 .box_content {
 	width: 80%;
+	height: 200px;
 	padding: 1.4em;
 	display: flex;
 	align-items: center;
-	border: 0.04em solid var(--color-color06);
+	border: 0.04em solid var(--color-color07);
 	text-align: center;
-	box-shadow: 0.4em 0.4em 0.6em var(--color-color06);
+	box-shadow: 0.4em 0.4em 0.6em var(--color-color07);
 }
 
 .text {
@@ -107,7 +100,7 @@
 		padding: 0.8em;
 		margin: 0em 0.4em;
 		background: none;
-		border: 0.04em solid var(--color-color05);
+		border: 0.04em solid var(--color-color08);
 		color: var(--color-color01);
 		cursor: pointer;
 		transition: all 0.3s ease-in-out;
@@ -115,8 +108,8 @@
 
 	.btn_pl:hover,
 	.btn_en:hover {
-		background-color: var(--color-color02);
-		color: var(--color-color09);
+		background-color: var(--color-color07);
+		color: var(--color-color01);
 	}
 
 	.btn_pl_active,
@@ -124,7 +117,7 @@
 		width: 15%;
 		padding: 0.8em;
 		margin: 0em 0.4em;
-		background-color: var(--color-color07);
+		background-color: var(--color-color08);
 		border: 0.04em solid var(--color-color07);
 		color: var(--color-color01);
 		cursor: pointer;
@@ -135,9 +128,9 @@
 		width: 50%;
 		height: 200px;
 		padding: 1.4em;
-		border: 0.04em solid var(--color-color06);
+		border: 0.04em solid var(--color-color07);
 		text-align: center;
-		box-shadow: 0.4em 0.4em 0.6em var(--color-color06);
+		box-shadow: 0.4em 0.4em 0.6em var(--color-color07);
 	}
 
 	.text {
