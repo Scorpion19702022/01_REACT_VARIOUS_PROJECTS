@@ -7,15 +7,15 @@
 	--color-dark06: #2f302b;
 	--color-dark07: #1d1e1b;
 	--color-dark08: #050605;
-	--color-color01: #cce8f2;
-	--color-color02: #99d1e5;
-	--color-color03: #66bbd8;
-	--color-color04: #32a4cb;
-	--color-color05: #008ebe;
-	--color-color06: #007198;
-	--color-color07: #005572;
-	--color-color08: #00384c;
-	--color-color09: #001c26;
+	--color-color01: #d6ecf3;
+	--color-color02: #add9e7;
+	--color-color03: #85c6db;
+	--color-color04: #5cb3cf;
+	--color-color05: #34a0c4;
+	--color-color06: #29809c;
+	--color-color07: #1f6075;
+	--color-color08: #14404e;
+	--color-color09: #0a2027;
 }
 
 .nav_links {
@@ -36,15 +36,16 @@
 	align-items: center;
 	margin: 0.4em 0.4em;
 	font-size: 1em;
-	background-color: var(--color-color08);
-	border: 0.04em solid var(--color-color03);
+	background-color: var(--color-dark07);
+	border: 0.04em solid var(--color-color06);
+	box-shadow: 0.08em 0.08em 0.6em var(--color-color06);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 }
 
 .btn_active:hover {
 	background-color: var(--color-dark08);
-	border: 0.04em solid var(--color-dark05);
+	border: 0.04em solid var(--color-color06);
 }
 
 .btn_no_active {
@@ -56,8 +57,8 @@
 	text-align: center;
 	font-size: 1em;
 	margin: 0.4em 0.4em;
-	background-color: var(--color-color06);
-	border: 0.04em solid var(--color-color03);
+	background-color: var(--color-dark06);
+	border: 0.04em solid var(--color-color06);
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 }
@@ -68,7 +69,7 @@
 }
 
 .into_btn {
-	color: var(--color-color01);
+	color: var(--color-dark01);
 	font-size: 0.8em;
 }
 
