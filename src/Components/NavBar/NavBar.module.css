@@ -6,16 +6,17 @@
 	--color-dark05: #2f302b;
 	--color-dark06: #2f302b;
 	--color-dark07: #1d1e1b;
-	--color-dark08: #050605;
-	--color-color01: #cce8f2;
-	--color-color02: #99d1e5;
-	--color-color03: #66bbd8;
-	--color-color04: #32a4cb;
-	--color-color05: #008ebe;
-	--color-color06: #007198;
-	--color-color07: #005572;
-	--color-color08: #00384c;
-	--color-color09: #001c26;
+	--color-dark08: #121311;
+	--color-dark09: #050605;
+	--color-color01: #d6ecf3;
+	--color-color02: #add9e7;
+	--color-color03: #85c6db;
+	--color-color04: #5cb3cf;
+	--color-color05: #34a0c4;
+	--color-color06: #29809c;
+	--color-color07: #1f6075;
+	--color-color08: #14404e;
+	--color-color09: #0a2027;
 }
 
 .nav {
@@ -74,7 +75,7 @@
 	justify-content: center;
 	align-items: center;
 	transform: translateX(0%);
-	background-color: var(--color-dark08);
+	background-color: var(--color-dark09);
 	transition: all 0.3s ease-in-out;
 }
 
@@ -89,7 +90,7 @@
 	justify-content: center;
 	align-items: center;
 	transform: translateX(-100%);
-	background-color: var(--color-dark08);
+	background-color: var(--color-dark09);
 	transition: all 0.3s ease-in-out;
 }
 

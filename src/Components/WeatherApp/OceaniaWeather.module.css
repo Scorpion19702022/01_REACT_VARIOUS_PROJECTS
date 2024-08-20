@@ -6,16 +6,17 @@
 	--color-dark05: #2f302b;
 	--color-dark06: #2f302b;
 	--color-dark07: #1d1e1b;
-	--color-dark08: #050605;
-	--color-color01: #cce8f2;
-	--color-color02: #99d1e5;
-	--color-color03: #66bbd8;
-	--color-color04: #32a4cb;
-	--color-color05: #008ebe;
-	--color-color06: #007198;
-	--color-color07: #005572;
-	--color-color08: #00384c;
-	--color-color09: #001c26;
+	--color-dark08: #121311;
+	--color-dark09: #050605;
+	--color-color01: #d6ecf3;
+	--color-color02: #add9e7;
+	--color-color03: #85c6db;
+	--color-color04: #5cb3cf;
+	--color-color05: #34a0c4;
+	--color-color06: #29809c;
+	--color-color07: #1f6075;
+	--color-color08: #14404e;
+	--color-color09: #0a2027;
 }
 
 .wrapper {
@@ -27,7 +28,7 @@
 	justify-content: space-around;
 	align-items: center;
 	overflow: hidden;
-	background-color: var(--color-dark07);
+	background-color: var(--color-dark08);
 }
 
 .weather_legend {
@@ -88,9 +89,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--color-dark01);
-	border: 0.1em solid var(--color-color04);
-	box-shadow: 0.3em 0.3em 0.4em var(--color-dark08);
+	background-color: var(--color-dark07);
+	border: 0.06em solid var(--color-dark04);
+	box-shadow: 0.3em 0.3em 0.4em var(--color-dark09);
 }
 
 .box_cities:nth-child(1) {
@@ -180,9 +181,10 @@
 .name_city {
 	width: 100%;
 	font-size: 0.7em;
+	font-weight: 400;
 	padding-bottom: 0.2em;
-	border-bottom: 0.04em solid var(--color-dark04);
-	color: var(--color-dark08);
+	border-bottom: 0.04em solid var(--color-color06);
+	color: var(--color-dark01);
 }
 
 .bottom {
@@ -212,13 +214,13 @@
 .city_info_weather {
 	width: 100%;
 	font-size: 0.7em;
-	font-weight: 700;
+	font-weight: 400;
 	text-align: center;
-	color: var(--color-dark08);
+	color: var(--color-dark01);
 }
 
 .parametr {
-	font-weight: 400;
+	font-weight: 100;
 }
 
 .line {
@@ -365,10 +367,10 @@
 
 	.legend_heading {
 		font-size: 1.8em;
-		color: var(--color-color02);
+		color: var(--color-color01);
 		margin-bottom: 1em;
 		padding-bottom: 0.4em;
-		border-bottom: 0.04em dotted var(--color-color04);
+		border-bottom: 0.04em dotted var(--color-color02);
 	}
 
 	.legend {
@@ -385,7 +387,7 @@
 		align-items: center;
 		padding-bottom: 0.4em;
 		margin: 0.2em 0em;
-		border-bottom: 0.04em dotted var(--color-color04);
+		border-bottom: 0.04em dotted var(--color-color03);
 	}
 
 	.legend_img {
@@ -559,7 +561,7 @@
 		position: absolute;
 		width: 100%;
 		height: 2px;
-		background-color: var(--color-color04);
+		background-color: var(--color-color06);
 		opacity: 1;
 	}
 

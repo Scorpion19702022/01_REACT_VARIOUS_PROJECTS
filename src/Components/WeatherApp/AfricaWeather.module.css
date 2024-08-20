@@ -6,7 +6,8 @@
 	--color-dark05: #2f302b;
 	--color-dark06: #2f302b;
 	--color-dark07: #1d1e1b;
-	--color-dark08: #050605;
+	--color-dark08: #121311;
+	--color-dark09: #050605;
 	--color-color01: #d6ecf3;
 	--color-color02: #add9e7;
 	--color-color03: #85c6db;
@@ -27,7 +28,7 @@
 	justify-content: space-around;
 	align-items: center;
 	overflow: hidden;
-	background-color: var(--color-dark07);
+	background-color: var(--color-dark08);
 }
 
 .weather_legend {
@@ -90,7 +91,7 @@
 	align-items: center;
 	background-color: var(--color-dark07);
 	border: 0.06em solid var(--color-dark04);
-	box-shadow: 0.3em 0.3em 0.4em var(--color-dark08);
+	box-shadow: 0.3em 0.3em 0.4em var(--color-dark09);
 }
 
 .box_cities:nth-child(1) {
@@ -619,7 +620,7 @@
 		position: absolute;
 		width: 100%;
 		height: 2px;
-		background-color: var(--color-color04);
+		background-color: var(--color-color06);
 		opacity: 1;
 	}
 
