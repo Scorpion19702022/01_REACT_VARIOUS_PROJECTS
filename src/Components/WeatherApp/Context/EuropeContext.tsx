@@ -2,6 +2,10 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
 
+import { format } from 'date-fns'
+import { toZonedTime } from 'date-fns-tz'
+import { pl } from 'date-fns/locale'
+
 import Un from '../assets/unknown.png'
 import Sun from '../assets/sun.png'
 import FewClouds from '../assets/few_clouds.png'
@@ -16,6 +20,7 @@ type InitialStateType = {
 	refresh: number
 	citiesEurope: WeatherCityType[]
 	getWeatherImage: (idWeather: number) => void
+	europeCityTime: string
 }
 
 type EuropeProviderType = {
@@ -55,6 +60,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Istanbul', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
+	europeCityTime: '',
 }
 
 const EuropeContext = createContext(InitialState)
@@ -62,6 +68,22 @@ const EuropeContext = createContext(InitialState)
 export const EuropeProvider = ({ children }: EuropeProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesEurope, setCitiesEurope] = useState<WeatherCityType[]>(InitialState.citiesEurope)
+	const [europeCityTime, setEuropeCityTime] = useState<string>('')
+
+	useEffect(() => {
+		const updatePolandTime = () => {
+			const now = new Date()
+			const timeZone = 'Europe/London'
+			const zonedTime = toZonedTime(now, timeZone)
+			const formattedTime = format(zonedTime, 'EEEE, HH:mm', { locale: pl })
+			setEuropeCityTime(formattedTime)
+		}
+
+		updatePolandTime()
+		const interval = setInterval(updatePolandTime, 60000)
+
+		return () => clearInterval(interval)
+	}, [])
 
 	const getWeatherImage = (idWeather: number) => {
 		if (idWeather >= 200 && idWeather <= 232) {
@@ -151,7 +173,7 @@ export const EuropeProvider = ({ children }: EuropeProviderType) => {
 	}, [])
 
 	return (
-		<EuropeContext.Provider value={{ refresh, citiesEurope, getWeatherImage }}>
+		<EuropeContext.Provider value={{ refresh, citiesEurope, getWeatherImage, europeCityTime }}>
 			{children}
 			<Analytics />
 		</EuropeContext.Provider>
