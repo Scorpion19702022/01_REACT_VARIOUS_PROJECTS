@@ -17,7 +17,7 @@ import WomanWeather from './assets/back2.png'
 import NorthAmContext from './Context/NorthAmContext'
 
 const NorthAmericaWeather = () => {
-	const { refresh, citiesNorthAm } = useContext(NorthAmContext)
+	const { refresh, citiesNorthAm, northAmCityTime } = useContext(NorthAmContext)
 
 	const divsLines = []
 
@@ -47,6 +47,10 @@ const NorthAmericaWeather = () => {
 		<section className={styles.wrapper}>
 			<NavWorld />
 			<img className={styles.back_img} src={WomanWeather} alt='woman weather' />
+			<div className={styles.box_locale_time}>
+				<h4 className={styles.city_locale_time}>Czas: New York</h4>
+				<span className={styles.locale_time}>{northAmCityTime}</span>
+			</div>
 			<div className={styles.weather_legend}>
 				<h4 className={styles.legend_heading}>Legenda:</h4>
 				<div className={styles.legend}>
