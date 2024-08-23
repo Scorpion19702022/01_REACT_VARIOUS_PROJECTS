@@ -101,8 +101,6 @@ export const OceaniaProvider = ({ children }: OceaniaProviderType) => {
 				const temp = data.main.temp.toFixed(1)
 				// const wind = data.wind.speed.toFixed(0)
 
-				console.log(data)
-
 				setCitiesOceania(prevCities => {
 					const updatedCities = [...prevCities]
 					updatedCities[index] = {
