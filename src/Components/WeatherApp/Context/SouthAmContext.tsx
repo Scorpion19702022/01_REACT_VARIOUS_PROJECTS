@@ -2,6 +2,10 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
 
+import { format } from 'date-fns'
+import { toZonedTime } from 'date-fns-tz'
+import { pl } from 'date-fns/locale'
+
 import Un from '../assets/unknown.png'
 import Sun from '../assets/sun.png'
 import FewClouds from '../assets/few_clouds.png'
@@ -16,6 +20,7 @@ type InitialStateType = {
 	refresh: number
 	citiesSouthAm: WeatherCityType[]
 	getWeatherImage: (idWeather: number) => void
+	citySouthAmTime: string
 }
 
 type SouthAmProviderType = {
@@ -43,6 +48,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Asuncion', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
+	citySouthAmTime: '',
 }
 
 const SouthAmContext = createContext(InitialState)
@@ -50,6 +56,22 @@ const SouthAmContext = createContext(InitialState)
 export const SouthAmProvider = ({ children }: SouthAmProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesSouthAm, setCitiesSouthAm] = useState<WeatherCityType[]>(InitialState.citiesSouthAm)
+	const [citySouthAmTime, setCitySouthAmTime] = useState<string>('')
+
+	useEffect(() => {
+		const updateSoutAmTime = () => {
+			const now = new Date()
+			const timeZone = 'America/Sao_Paulo'
+			const zonedTime = toZonedTime(now, timeZone)
+			const formattedTime = format(zonedTime, 'EEEE, HH:mm', { locale: pl })
+			setCitySouthAmTime(formattedTime)
+		}
+
+		updateSoutAmTime()
+		const interval = setInterval(updateSoutAmTime, 60000)
+
+		return () => clearInterval(interval)
+	}, [])
 
 	const getWeatherImage = (idWeather: number) => {
 		if (idWeather >= 200 && idWeather <= 232) {
@@ -139,7 +161,7 @@ export const SouthAmProvider = ({ children }: SouthAmProviderType) => {
 	}, [])
 
 	return (
-		<SouthAmContext.Provider value={{ refresh, citiesSouthAm, getWeatherImage }}>
+		<SouthAmContext.Provider value={{ refresh, citiesSouthAm, getWeatherImage, citySouthAmTime }}>
 			{children}
 			<Analytics />
 		</SouthAmContext.Provider>
