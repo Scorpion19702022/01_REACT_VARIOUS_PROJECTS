@@ -66,7 +66,7 @@ export const AfricaProvider = ({ children }: AfricaProviderType) => {
 	useEffect(() => {
 		const updateAfricaTime = () => {
 			const now = new Date()
-			const timeZone = 'Europe/Warsaw'
+			const timeZone = 'Africa/Johannesburg'
 			const zonedTime = toZonedTime(now, timeZone)
 			const formattedTime = format(zonedTime, 'EEEE, HH:mm', { locale: pl })
 			setAfricaCityTime(formattedTime)
