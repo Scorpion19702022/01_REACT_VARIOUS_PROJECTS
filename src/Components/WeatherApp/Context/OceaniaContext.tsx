@@ -18,7 +18,7 @@ type InitialStateType = {
 	getWeatherImage: (idWeather: number) => void
 }
 
-type AfricaProviderType = {
+type OceaniaProviderType = {
 	children: React.ReactNode
 }
 
@@ -47,7 +47,7 @@ const InitialState: InitialStateType = {
 
 const OceaniaContext = createContext(InitialState)
 
-export const OceaniaProvider = ({ children }: AfricaProviderType) => {
+export const OceaniaProvider = ({ children }: OceaniaProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesOceania, setCitiesOceania] = useState<WeatherCityType[]>(InitialState.citiesOceania)
 
