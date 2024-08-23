@@ -2,6 +2,10 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
 
+import { format } from 'date-fns'
+import { toZonedTime } from 'date-fns-tz'
+import { pl } from 'date-fns/locale'
+
 import Un from '../assets/unknown.png'
 import Sun from '../assets/sun.png'
 import FewClouds from '../assets/few_clouds.png'
@@ -16,6 +20,7 @@ type InitialStateType = {
 	refresh: number
 	citiesNorthAm: WeatherCityType[]
 	getWeatherImage: (idWeather: number) => void
+	northAmCityTime: string
 }
 
 type NorthAmProviderType = {
@@ -45,6 +50,7 @@ const InitialState: InitialStateType = {
 		{ city: 'New Orleans', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
+	northAmCityTime: '',
 }
 
 const NorthAmContext = createContext(InitialState)
@@ -52,6 +58,23 @@ const NorthAmContext = createContext(InitialState)
 export const NorthAmProvider = ({ children }: NorthAmProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesNorthAm, setCitiesNorthAm] = useState<WeatherCityType[]>(InitialState.citiesNorthAm)
+
+	const [northAmCityTime, setNorthAmCityTime] = useState<string>('')
+
+	useEffect(() => {
+		const updateNorthAmTime = () => {
+			const now = new Date()
+			const timeZone = 'America/New_York'
+			const zonedTime = toZonedTime(now, timeZone)
+			const formattedTime = format(zonedTime, 'EEEE, HH:mm', { locale: pl })
+			setNorthAmCityTime(formattedTime)
+		}
+
+		updateNorthAmTime()
+		const interval = setInterval(updateNorthAmTime, 60000)
+
+		return () => clearInterval(interval)
+	}, [])
 
 	const getWeatherImage = (idWeather: number) => {
 		if (idWeather >= 200 && idWeather <= 232) {
@@ -141,7 +164,7 @@ export const NorthAmProvider = ({ children }: NorthAmProviderType) => {
 	}, [])
 
 	return (
-		<NorthAmContext.Provider value={{ refresh, citiesNorthAm, getWeatherImage }}>
+		<NorthAmContext.Provider value={{ refresh, citiesNorthAm, getWeatherImage, northAmCityTime }}>
 			{children}
 			<Analytics />
 		</NorthAmContext.Provider>
