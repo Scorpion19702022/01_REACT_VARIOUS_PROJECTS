@@ -2,6 +2,10 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
 
+import { format } from 'date-fns'
+import { toZonedTime } from 'date-fns-tz'
+import { pl } from 'date-fns/locale'
+
 import Un from '../assets/unknown.png'
 import Sun from '../assets/sun.png'
 import FewClouds from '../assets/few_clouds.png'
@@ -16,6 +20,7 @@ type InitialStateType = {
 	refresh: number
 	citiesAfrica: WeatherCityType[]
 	getWeatherImage: (idWeather: number) => void
+	africaCityTime: string
 }
 
 type AfricaProviderType = {
@@ -39,7 +44,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Luanda', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Windhuk', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Kapsztad', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Pretoria', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Johannesburg', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Chartum', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Addis Abeba', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Nairobi', img: Un, idWeather: 0, temp: 0 },
@@ -47,6 +52,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Antananarywa', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
+	africaCityTime: '',
 }
 
 const AfricaContext = createContext(InitialState)
@@ -54,6 +60,23 @@ const AfricaContext = createContext(InitialState)
 export const AfricaProvider = ({ children }: AfricaProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesAfrica, setCitiesAfrica] = useState<WeatherCityType[]>(InitialState.citiesAfrica)
+
+	const [africaCityTime, setAfricaCityTime] = useState<string>('')
+
+	useEffect(() => {
+		const updateAfricaTime = () => {
+			const now = new Date()
+			const timeZone = 'Europe/Warsaw'
+			const zonedTime = toZonedTime(now, timeZone)
+			const formattedTime = format(zonedTime, 'EEEE, HH:mm', { locale: pl })
+			setAfricaCityTime(formattedTime)
+		}
+
+		updateAfricaTime()
+		const interval = setInterval(updateAfricaTime, 60000)
+
+		return () => clearInterval(interval)
+	}, [])
 
 	const getWeatherImage = (idWeather: number) => {
 		if (idWeather >= 200 && idWeather <= 232) {
@@ -143,7 +166,7 @@ export const AfricaProvider = ({ children }: AfricaProviderType) => {
 	}, [])
 
 	return (
-		<AfricaContext.Provider value={{ refresh, citiesAfrica, getWeatherImage }}>
+		<AfricaContext.Provider value={{ refresh, citiesAfrica, getWeatherImage, africaCityTime }}>
 			{children}
 			<Analytics />
 		</AfricaContext.Provider>
