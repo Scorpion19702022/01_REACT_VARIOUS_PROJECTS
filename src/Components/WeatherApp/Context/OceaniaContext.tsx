@@ -2,6 +2,10 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
 
+import { format } from 'date-fns'
+import { toZonedTime } from 'date-fns-tz'
+import { pl } from 'date-fns/locale'
+
 import Un from '../assets/unknown.png'
 import Sun from '../assets/sun.png'
 import FewClouds from '../assets/few_clouds.png'
@@ -16,6 +20,7 @@ type InitialStateType = {
 	refresh: number
 	citiesOceania: WeatherCityType[]
 	getWeatherImage: (idWeather: number) => void
+	oceaniaCityTime: string
 }
 
 type OceaniaProviderType = {
@@ -43,6 +48,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Auckland', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
+	oceaniaCityTime: '',
 }
 
 const OceaniaContext = createContext(InitialState)
@@ -50,6 +56,23 @@ const OceaniaContext = createContext(InitialState)
 export const OceaniaProvider = ({ children }: OceaniaProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesOceania, setCitiesOceania] = useState<WeatherCityType[]>(InitialState.citiesOceania)
+
+	const [oceaniaCityTime, setOceaniaCityTime] = useState<string>('')
+
+	useEffect(() => {
+		const updateOceaniaTime = () => {
+			const now = new Date()
+			const timeZone = 'Australia/Sydney'
+			const zonedTime = toZonedTime(now, timeZone)
+			const formattedTime = format(zonedTime, 'EEEE, HH:mm', { locale: pl })
+			setOceaniaCityTime(formattedTime)
+		}
+
+		updateOceaniaTime()
+		const interval = setInterval(updateOceaniaTime, 60000)
+
+		return () => clearInterval(interval)
+	}, [])
 
 	const getWeatherImage = (idWeather: number) => {
 		if (idWeather >= 200 && idWeather <= 232) {
@@ -139,7 +162,7 @@ export const OceaniaProvider = ({ children }: OceaniaProviderType) => {
 	}, [])
 
 	return (
-		<OceaniaContext.Provider value={{ refresh, citiesOceania, getWeatherImage }}>
+		<OceaniaContext.Provider value={{ refresh, citiesOceania, getWeatherImage, oceaniaCityTime }}>
 			{children}
 			<Analytics />
 		</OceaniaContext.Provider>
