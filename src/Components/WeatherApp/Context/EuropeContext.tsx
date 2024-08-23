@@ -71,7 +71,7 @@ export const EuropeProvider = ({ children }: EuropeProviderType) => {
 	const [europeCityTime, setEuropeCityTime] = useState<string>('')
 
 	useEffect(() => {
-		const updatePolandTime = () => {
+		const updateEuropeTime = () => {
 			const now = new Date()
 			const timeZone = 'Europe/London'
 			const zonedTime = toZonedTime(now, timeZone)
@@ -79,8 +79,8 @@ export const EuropeProvider = ({ children }: EuropeProviderType) => {
 			setEuropeCityTime(formattedTime)
 		}
 
-		updatePolandTime()
-		const interval = setInterval(updatePolandTime, 60000)
+		updateEuropeTime()
+		const interval = setInterval(updateEuropeTime, 60000)
 
 		return () => clearInterval(interval)
 	}, [])

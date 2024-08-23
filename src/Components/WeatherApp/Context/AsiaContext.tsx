@@ -2,6 +2,10 @@ import React, { useEffect, createContext, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
 
+import { format } from 'date-fns'
+import { toZonedTime } from 'date-fns-tz'
+import { pl } from 'date-fns/locale'
+
 import Un from '../assets/unknown.png'
 import Sun from '../assets/sun.png'
 import FewClouds from '../assets/few_clouds.png'
@@ -16,6 +20,7 @@ type InitialStateType = {
 	refresh: number
 	citiesAsia: WeatherCityType[]
 	getWeatherImage: (idWeather: number) => void
+	asiaCityTime: string
 }
 
 type AsiaProviderType = {
@@ -49,6 +54,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Manila', img: Un, idWeather: 0, temp: 0 },
 	],
 	getWeatherImage: (idWeather: number) => {},
+	asiaCityTime: '',
 }
 
 const AsiaContext = createContext(InitialState)
@@ -56,6 +62,23 @@ const AsiaContext = createContext(InitialState)
 export const AsiaProvider = ({ children }: AsiaProviderType) => {
 	const [refresh, setRefresh] = useState<number>(10)
 	const [citiesAsia, setCitiesAsia] = useState<WeatherCityType[]>(InitialState.citiesAsia)
+
+	const [asiaCityTime, setAsiaCityTime] = useState<string>('')
+
+	useEffect(() => {
+		const updateAsiaTime = () => {
+			const now = new Date()
+			const timeZone = 'Asia/Tokyo'
+			const zonedTime = toZonedTime(now, timeZone)
+			const formattedTime = format(zonedTime, 'EEEE, HH:mm', { locale: pl })
+			setAsiaCityTime(formattedTime)
+		}
+
+		updateAsiaTime()
+		const interval = setInterval(updateAsiaTime, 60000)
+
+		return () => clearInterval(interval)
+	}, [])
 
 	const getWeatherImage = (idWeather: number) => {
 		if (idWeather >= 200 && idWeather <= 232) {
@@ -149,6 +172,7 @@ export const AsiaProvider = ({ children }: AsiaProviderType) => {
 				refresh,
 				citiesAsia,
 				getWeatherImage,
+				asiaCityTime,
 			}}
 		>
 			{children}
