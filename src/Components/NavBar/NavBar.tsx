@@ -28,9 +28,9 @@ const NavBar = () => {
 							WeatherApp
 						</li>
 					</NavLink>
-					<NavLink to='./Task02'>
+					<NavLink to='./ToDoList'>
 						<li className={styles.link} onClick={handleNavView}>
-							Task 02
+							ToDoList
 						</li>
 					</NavLink>
 				</ul>

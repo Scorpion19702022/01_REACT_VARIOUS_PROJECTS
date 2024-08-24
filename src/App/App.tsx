@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import NavBar from '../Components/NavBar/NavBar'
 import Home from '../Components/Home/Home'
-import Task02 from '../Components/Task02/Task02'
+
 import WeatherApp from '../Components/WeatherApp/WeatherApp'
 import Poland from '../Components/WeatherApp/Pages/Poland'
 import Europe from '../Components/WeatherApp/Pages/Europe'
@@ -12,6 +12,8 @@ import NorthAmerica from '../Components/WeatherApp/Pages/NorthAmerica'
 import SouthAmerica from '../Components/WeatherApp/Pages/SouthAmerica'
 import Africa from '../Components/WeatherApp/Pages/Africa'
 import Oceania from '../Components/WeatherApp/Pages/Oceania'
+
+import ToDoList from '../Components/ToDoList/ToDoList'
 
 function App() {
 	return (
@@ -28,7 +30,7 @@ function App() {
 					<Route path='/WeatherApp/SouthAmerica' Component={SouthAmerica} />
 					<Route path='/WeatherApp/Africa' Component={Africa} />
 					<Route path='/WeatherApp/Oceania' Component={Oceania} />
-					<Route path='/Task02' Component={Task02} />
+					<Route path='/ToDoList' Component={ToDoList} />
 				</Routes>
 			</section>
 		</Router>
