@@ -6,7 +6,7 @@ import ToDoImage from './assets/todo_image.png'
 import ToDoContext from './Context/ToDoContext'
 
 const InputsToDoList = () => {
-	const { taskInput, handleChangeInput } = useContext(ToDoContext)
+	const { taskInput, quantitySign, handleChangeInput } = useContext(ToDoContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -23,8 +23,10 @@ const InputsToDoList = () => {
 							onChange={e => handleChangeInput(e.target.value)}
 						/>
 						<div className={styles.quantity_inputs}>
-							<span className={styles.quantity_signs}>Ilość znaków: 0</span>
-							<span className={styles.quantity_errors}>Osiągąłeś maksymalną ilość znaków</span>
+							<span className={styles.quantity_signs}>Ilość znaków: {quantitySign}</span>
+							<span className={styles.quantity_errors}>
+								{quantitySign >= 10 ? 'Osiągąłeś maksymalną ilość znaków' : ''}
+							</span>
 						</div>
 					</div>
 					<div className={styles.input_important}>

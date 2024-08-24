@@ -6,6 +6,8 @@ import { Analytics } from '@vercel/analytics/react'
 type InitialStateType = {
 	// toDo: TypeForToDo[]
 	taskInput: string
+	quantitySign: number
+	// quantityError: string
 	important: boolean
 	handleChangeInput: (e: string) => void
 	// handleChangeCheckpoit: (e: boolean) => void
@@ -18,6 +20,8 @@ type ToDoProviderType = {
 const InitialState: InitialStateType = {
 	// toDo: [],
 	taskInput: '',
+	quantitySign: 0,
+	// quantityError: '',
 	important: false,
 	handleChangeInput: (e: string) => {},
 	// handleChangeCheckpoit: (e: boolean) => {},
@@ -27,18 +31,20 @@ const ToDoContext = createContext(InitialState)
 
 export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [taskInput, setTaskInput] = useState<string>('')
+	const [quantitySign, setQuantitySign] = useState<number>(0)
 	const [important, setImportant] = useState<boolean>(false)
 
 	const handleChangeInput = (e: string) => {
-		if (e.length < 10) {
+		if (e.length <= 10) {
 			setTaskInput(e)
+			setQuantitySign(e.length)
 		}
 	}
 
 	console.log(taskInput)
 
 	return (
-		<ToDoContext.Provider value={{ taskInput, important, handleChangeInput }}>
+		<ToDoContext.Provider value={{ taskInput, quantitySign, important, handleChangeInput }}>
 			{children}
 			<Analytics />
 		</ToDoContext.Provider>
