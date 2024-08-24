@@ -30,7 +30,9 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [important, setImportant] = useState<boolean>(false)
 
 	const handleChangeInput = (e: string) => {
-		setTaskInput(e)
+		if (e.length < 10) {
+			setTaskInput(e)
+		}
 	}
 
 	console.log(taskInput)
