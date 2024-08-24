@@ -1,0 +1,130 @@
+:root {
+	--color-dark01: #ffffff;
+	--color-dark02: #c4c4c2;
+	--color-dark03: #898a86;
+	--color-dark04: #62625e;
+	--color-dark05: #2f302b;
+	--color-dark06: #2f302b;
+	--color-dark07: #1d1e1b;
+	--color-dark08: #121311;
+	--color-dark09: #050605;
+	--color-color01: #d6ecf3;
+	--color-color02: #add9e7;
+	--color-color03: #85c6db;
+	--color-color04: #5cb3cf;
+	--color-color05: #34a0c4;
+	--color-color06: #29809c;
+	--color-color07: #1f6075;
+	--color-color08: #14404e;
+	--color-color09: #0a2027;
+
+	--color-error: #ff0000;
+}
+
+.wrapper_inputs {
+	width: 90%;
+	height: 340px;
+	padding: 1em;
+	margin-top: 4em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-dark07);
+	border: 0.04em solid var(--color-color07);
+	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
+}
+
+.heading {
+	width: 100%;
+	color: var(--color-color02);
+	padding-bottom: 0.4em;
+	margin-bottom: 1em;
+	border-bottom: 0.04em solid var(--color-color02);
+}
+
+.box_inputs {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.inputs {
+	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	color: var(--color-dark02);
+	margin: 0em 0.4em 0.4em 0em;
+}
+
+.input {
+	padding: 0.6em;
+	background: none;
+	border: none;
+	border-bottom: 0.04em solid var(--color-color03);
+	outline: none;
+}
+
+.quantity_inputs {
+	display: flex;
+	flex-direction: column;
+	margin: 0.4em 0em;
+}
+
+.quantity_signs {
+	color: var(--color-color03);
+}
+.quantity_errors {
+	color: var(--color-error);
+}
+
+.input_important {
+	width: 100%;
+	margin-bottom: 0.4em;
+}
+
+.checkbox {
+	width: 24px;
+	height: 24px;
+	margin-left: 1em;
+}
+
+.btn_added_task {
+	width: 40%;
+	padding: 0.4em;
+	background-color: var(--color-dark07);
+	border: 0.04em solid var(--color-dark02);
+	color: var(--color-dark02);
+	cursor: pointer;
+	align-self: flex-end;
+}
+
+.box_info {
+	width: 100%;
+	margin-top: 1em;
+	padding: 0.6em;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-dark08);
+}
+
+.quantity_heading {
+	color: var(--color-dark02);
+	font-weight: 400;
+}
+
+.quantity_result {
+	color: var(--color-color03);
+	font-weight: bold;
+}
+
+@media (min-width: 660px) {
+}
+
+@media (min-width: 992px) {
+	.wrapper_inputs {
+		padding-left: 10em;
+	}
+}
