@@ -6,7 +6,7 @@ import ToDoImage from './assets/todo_image.png'
 import ToDoContext from './Context/ToDoContext'
 
 const InputsToDoList = () => {
-	const { taskInput, quantitySign, handleChangeInput } = useContext(ToDoContext)
+	const { taskInput, quantitySign, important, handleChangeInput, handleChangeCheckpoit } = useContext(ToDoContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -31,7 +31,7 @@ const InputsToDoList = () => {
 					</div>
 					<div className={styles.input_important}>
 						<label className={styles.label}>Ważość:</label>
-						<input className={styles.checkbox} type='checkbox' />
+						<input className={styles.checkbox} checked={important} type='checkbox' onChange={handleChangeCheckpoit} />
 					</div>
 					<button className={styles.btn_added_task}>Dodaj</button>
 				</div>

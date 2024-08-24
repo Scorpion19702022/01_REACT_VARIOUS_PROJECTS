@@ -7,10 +7,9 @@ type InitialStateType = {
 	// toDo: TypeForToDo[]
 	taskInput: string
 	quantitySign: number
-	// quantityError: string
 	important: boolean
 	handleChangeInput: (e: string) => void
-	// handleChangeCheckpoit: (e: boolean) => void
+	handleChangeCheckpoit: () => void
 }
 
 type ToDoProviderType = {
@@ -21,10 +20,9 @@ const InitialState: InitialStateType = {
 	// toDo: [],
 	taskInput: '',
 	quantitySign: 0,
-	// quantityError: '',
 	important: false,
 	handleChangeInput: (e: string) => {},
-	// handleChangeCheckpoit: (e: boolean) => {},
+	handleChangeCheckpoit: () => {},
 }
 
 const ToDoContext = createContext(InitialState)
@@ -41,10 +39,14 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}
 	}
 
-	console.log(taskInput)
+	const handleChangeCheckpoit = () => {
+		setImportant(!important)
+	}
+
+	console.log(important)
 
 	return (
-		<ToDoContext.Provider value={{ taskInput, quantitySign, important, handleChangeInput }}>
+		<ToDoContext.Provider value={{ taskInput, quantitySign, important, handleChangeInput, handleChangeCheckpoit }}>
 			{children}
 			<Analytics />
 		</ToDoContext.Provider>
