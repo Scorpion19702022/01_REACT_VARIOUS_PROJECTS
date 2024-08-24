@@ -22,6 +22,7 @@
 }
 
 .wrapper {
+	position: relative;
 	width: 90%;
 	padding: 1em;
 	margin-top: 4em;
@@ -39,6 +40,14 @@
 	font-size: 2em;
 	color: var(--color-color02);
 	padding-bottom: 1em;
+}
+
+.todo_icon {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	width: 40%;
+	object-fit: cover;
 }
 
 .wrapper_inputs {
@@ -124,6 +133,9 @@
 }
 
 @media (min-width: 660px) {
+	.todo_icon {
+		width: 27%;
+	}
 }
 
 @media (min-width: 992px) {
@@ -136,9 +148,16 @@
 		font-size: 2em;
 		margin-bottom: 1em;
 		padding-bottom: 0.2em;
-		border-bottom: 0.04em solid var(--color-color02);
-		width: 10%;
+		border-bottom: 0.04em solid var(--color-color08);
 		align-self: flex-start;
+	}
+
+	.todo_icon {
+		top: -8%;
+		right: 28%;
+		z-index: 1;
+		width: 17%;
+		transform: rotate(12deg);
 	}
 
 	.wrapper_inputs {
@@ -170,7 +189,27 @@
 		padding-left: 2em;
 	}
 
+	.btn_added_task {
+		position: relative;
+		width: 20%;
+		background-color: var(--color-dark06);
+	}
+
 	.box_info {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		right: 1%;
+		bottom: 0%;
 		width: 25%;
+		height: 50%;
+		margin-bottom: 1em;
+		border: 0.04em solid var(--color-dark04);
+	}
+
+	.quantity_heading {
+		font-size: 1.6em;
+		text-align: center;
 	}
 }

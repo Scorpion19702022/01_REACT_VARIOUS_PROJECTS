@@ -2,10 +2,13 @@ import React from 'react'
 
 import styles from './Style/InputsToDoList.module.css'
 
+import ToDoImage from './assets/todo_image.png'
+
 const InputsToDoList = () => {
 	return (
 		<section className={styles.wrapper}>
 			<h1 className={styles.heading}>ToDo List</h1>
+			<img className={styles.todo_icon} src={ToDoImage} alt='to do icon' />
 			<div className={styles.wrapper_inputs}>
 				<div className={styles.box_inputs}>
 					<div className={styles.inputs}>
