@@ -21,9 +21,8 @@
 	--color-error: #ff0000;
 }
 
-.wrapper_inputs {
+.wrapper {
 	width: 90%;
-	height: 340px;
 	padding: 1em;
 	margin-top: 4em;
 	display: flex;
@@ -37,10 +36,13 @@
 
 .heading {
 	width: 100%;
+	font-size: 2em;
 	color: var(--color-color02);
-	padding-bottom: 0.4em;
-	margin-bottom: 1em;
-	border-bottom: 0.04em solid var(--color-color02);
+	padding-bottom: 1em;
+}
+
+.wrapper_inputs {
+	width: 100%;
 }
 
 .box_inputs {
@@ -64,6 +66,7 @@
 	background: none;
 	border: none;
 	border-bottom: 0.04em solid var(--color-color03);
+	color: var(--color-dark01);
 	outline: none;
 }
 
@@ -124,7 +127,50 @@
 }
 
 @media (min-width: 992px) {
+	.wrapper {
+		display: flex;
+		margin-top: 1em;
+	}
+
+	.heading {
+		font-size: 2em;
+		margin-bottom: 1em;
+		padding-bottom: 0.2em;
+		border-bottom: 0.04em solid var(--color-color02);
+		width: 10%;
+		align-self: flex-start;
+	}
+
 	.wrapper_inputs {
-		padding-left: 10em;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.box_inputs {
+		width: 70%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.inputs {
+		width: 50%;
+	}
+
+	.quantity_inputs {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0.4em 0em;
+	}
+
+	.input_important {
+		width: 20%;
+		padding-left: 2em;
+	}
+
+	.box_info {
+		width: 25%;
 	}
 }
