@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Style/InputsToDoList.module.css'
 
 import ToDoImage from './assets/todo_image.png'
+import ToDoContext from './Context/ToDoContext'
 
 const InputsToDoList = () => {
+	const { handleChangeInput } = useContext(ToDoContext)
+
 	return (
 		<section className={styles.wrapper}>
 			<h1 className={styles.heading}>ToDo List</h1>
@@ -13,7 +16,7 @@ const InputsToDoList = () => {
 				<div className={styles.box_inputs}>
 					<div className={styles.inputs}>
 						<label className={styles.label}>Wpisz zadanie:</label>
-						<input className={styles.input} type='text' />
+						<input className={styles.input} type='text' onChange={e => handleChangeInput(e.target.value)} />
 						<div className={styles.quantity_inputs}>
 							<span className={styles.quantity_signs}>Ilość znaków: 0</span>
 							<span className={styles.quantity_errors}>Osiągąłeś maksymalną ilość znaków</span>
