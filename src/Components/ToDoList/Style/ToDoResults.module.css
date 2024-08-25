@@ -20,3 +20,18 @@
 
 	--color-error: #ff0000;
 }
+
+.wrapper {
+	margin: 2em 0em;
+	width: 90%;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+}
+
+@media (min-width: 992px) {
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+	}
+}
