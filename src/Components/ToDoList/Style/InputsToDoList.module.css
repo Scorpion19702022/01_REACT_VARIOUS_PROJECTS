@@ -81,7 +81,7 @@
 
 .quantity_inputs {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
 	margin: 0.4em 0em;
 }
 
@@ -103,6 +103,18 @@
 	margin-left: 1em;
 }
 
+.inputs_date {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.input_date {
+	background-color: var(--color-dark06);
+	border: 0.04em solid var(--color-dark03);
+	padding: 0.2em;
+	color: var(--color-color02);
+}
+
 .btn_added_task {
 	width: 40%;
 	padding: 0.4em;
@@ -110,7 +122,6 @@
 	border: 0.04em solid var(--color-dark02);
 	color: var(--color-dark02);
 	cursor: pointer;
-	align-self: flex-end;
 }
 
 .box_info {
