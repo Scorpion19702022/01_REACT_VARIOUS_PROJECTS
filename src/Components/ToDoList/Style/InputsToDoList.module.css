@@ -154,8 +154,10 @@
 
 @media (min-width: 992px) {
 	.wrapper {
+		width: 90%;
+		height: 200px;
 		display: flex;
-		/* margin-top: 1em; */
+		margin-top: 1em;
 	}
 
 	.heading {
@@ -175,13 +177,13 @@
 	}
 
 	.wrapper_inputs {
-		display: flex;
-		justify-content: space-between;
 		width: 100%;
+		height: 80%;
 	}
 
 	.box_inputs {
 		width: 70%;
+		height: 100%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -199,16 +201,42 @@
 	}
 
 	.input_important {
-		width: 20%;
-		padding-left: 2em;
+		width: 12%;
+		height: 100%;
+		display: flex;
+		padding-left: 1em;
+		flex-direction: column;
+	}
+
+	.checkbox {
+		width: 30px;
+		height: 30px;
 	}
 
 	.inputs_date {
 		width: 20%;
-		margin: 0.8em 0em;
+		height: 100%;
+		display: flex;
+		margin: 0;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.input_date {
+		padding: 0.4em;
+	}
+
+	.box_btn {
+		width: 20%;
+		display: flex;
+		flex-direction: column;
+		align-self: center;
 	}
 
 	.btn_added_task {
+		width: 70%;
+		padding: 0.5em;
+		margin-bottom: 0.5em;
 		position: relative;
 		background-color: var(--color-dark06);
 		z-index: 1;
@@ -255,10 +283,9 @@
 		flex-direction: column;
 		justify-content: center;
 		right: 1%;
-		bottom: 0%;
+		bottom: 7%;
 		width: 25%;
 		height: 50%;
-		margin-bottom: 1em;
 		border: 0.04em solid var(--color-dark04);
 	}
 

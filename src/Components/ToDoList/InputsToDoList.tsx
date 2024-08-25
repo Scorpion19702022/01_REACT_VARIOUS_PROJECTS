@@ -38,7 +38,9 @@ const InputsToDoList = () => {
 						<label className={styles.label}>Data dodania:</label>
 						<input className={styles.input_date} type='date' value={date} min={date} onChange={handleChangeDate} />
 					</div>
-					<button className={styles.btn_added_task}>Dodaj</button>
+					<div className={styles.box_btn}>
+						<button className={styles.btn_added_task}>Dodaj</button>
+					</div>
 				</div>
 				<div className={styles.box_info}>
 					<h4 className={styles.quantity_heading}>
