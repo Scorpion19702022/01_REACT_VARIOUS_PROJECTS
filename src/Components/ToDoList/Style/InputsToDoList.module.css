@@ -94,7 +94,6 @@
 
 .input_important {
 	width: 100%;
-	margin-bottom: 0.4em;
 }
 
 .checkbox {
@@ -105,7 +104,7 @@
 
 .inputs_date {
 	width: 100%;
-	margin-bottom: 1em;
+	margin: 0.8em 0em;
 }
 
 .input_date {
@@ -116,8 +115,8 @@
 }
 
 .btn_added_task {
-	width: 40%;
 	padding: 0.4em;
+	width: 40%;
 	background-color: var(--color-dark07);
 	border: 0.04em solid var(--color-dark02);
 	color: var(--color-dark02);
@@ -144,6 +143,10 @@
 }
 
 @media (min-width: 660px) {
+	.wrapper {
+		margin-bottom: 2em;
+	}
+
 	.todo_icon {
 		width: 27%;
 	}
@@ -152,7 +155,7 @@
 @media (min-width: 992px) {
 	.wrapper {
 		display: flex;
-		margin-top: 1em;
+		/* margin-top: 1em; */
 	}
 
 	.heading {
@@ -185,7 +188,7 @@
 	}
 
 	.inputs {
-		width: 50%;
+		width: 40%;
 	}
 
 	.quantity_inputs {
@@ -200,9 +203,13 @@
 		padding-left: 2em;
 	}
 
+	.inputs_date {
+		width: 20%;
+		margin: 0.8em 0em;
+	}
+
 	.btn_added_task {
 		position: relative;
-		width: 20%;
 		background-color: var(--color-dark06);
 		z-index: 1;
 		overflow: hidden;

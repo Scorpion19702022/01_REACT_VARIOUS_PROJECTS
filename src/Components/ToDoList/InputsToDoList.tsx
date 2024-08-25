@@ -31,7 +31,7 @@ const InputsToDoList = () => {
 						</div>
 					</div>
 					<div className={styles.input_important}>
-						<label className={styles.label}>Ważość:</label>
+						<label className={styles.label}>Priorytet:</label>
 						<input className={styles.checkbox} checked={priority} type='checkbox' onChange={handleChangeCheckpoit} />
 					</div>
 					<div className={styles.inputs_date}>
