@@ -24,7 +24,6 @@
 .wrapper {
 	margin: 2em 0em;
 	width: 90%;
-	padding: 1em;
 	display: flex;
 	flex-direction: column;
 }
