@@ -200,6 +200,13 @@
 		margin: 0.4em 0em;
 	}
 
+	.quantity_signs {
+		font-size: 1.2em;
+	}
+	.quantity_errors {
+		font-size: 1.2em;
+	}
+
 	.input_important {
 		width: 12%;
 		height: 100%;
