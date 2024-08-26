@@ -17,6 +17,7 @@ type InitialStateType = {
 	handleChangeCheckpoit: () => void
 	handleChangeDate: (e: any) => void
 	handleAddTask: () => void
+	handleDeleteTask: (id: string, item: string) => void
 	handleDeleteAllTasks: () => void
 }
 
@@ -36,6 +37,7 @@ const InitialState: InitialStateType = {
 	handleChangeCheckpoit: () => {},
 	handleChangeDate: (e: any) => {},
 	handleAddTask: () => {},
+	handleDeleteTask: (id: string, item: string) => {},
 	handleDeleteAllTasks: () => {},
 }
 
@@ -106,6 +108,18 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}
 	}
 
+	const handleDeleteTask = (id: string, item: string) => {
+		const deleteTask = toDo.filter(itemID => id !== itemID.id)
+
+		if (deleteTask) {
+			setToDo(deleteTask)
+			setInfoToDo(`usunięto zadanie: ${item}`)
+			setTimeout(() => {
+				setInfoToDo('')
+			}, 2000)
+		}
+	}
+
 	console.log(toDo)
 
 	const handleDeleteAllTasks = () => {
@@ -130,6 +144,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				handleChangeCheckpoit,
 				handleChangeDate,
 				handleAddTask,
+				handleDeleteTask,
 				handleDeleteAllTasks,
 			}}
 		>
