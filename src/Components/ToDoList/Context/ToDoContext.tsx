@@ -75,7 +75,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	}, [taskInput.length])
 
 	useEffect(() => {
-		if (toDo.length >= 5) {
+		if (toDo.length >= 10) {
 			setInfoToDo('dodano maksymalną ilość zadań')
 		}
 	}, [toDo.length])
@@ -89,7 +89,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			important: priority,
 		}
 
-		if (taskInput !== '' && toDo.length < 5) {
+		if (taskInput !== '' && toDo.length < 10) {
 			setToDo([...toDo, Task])
 			setTaskInput('')
 			setPriority(false)
