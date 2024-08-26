@@ -12,6 +12,7 @@ type InitialStateType = {
 	inputErrors: string
 	priority: boolean
 	date: any
+	infoToDo: string
 	handleChangeInput: (e: string) => void
 	handleChangeCheckpoit: () => void
 	handleChangeDate: (e: any) => void
@@ -29,6 +30,7 @@ const InitialState: InitialStateType = {
 	inputErrors: '',
 	priority: false,
 	date: '',
+	infoToDo: '',
 	handleChangeInput: (e: string) => {},
 	handleChangeCheckpoit: () => {},
 	handleChangeDate: (e: any) => {},
@@ -45,6 +47,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [inputErrors, setInputErrors] = useState<string>('')
 	const [priority, setPriority] = useState<boolean>(false)
 	const [date, setDate] = useState<any>(currentDate)
+	const [infoToDo, setInfoToDo] = useState<string>('')
 
 	const [toDo, setToDo] = useState<TypeForToDo[]>([])
 
@@ -80,9 +83,12 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			important: priority,
 		}
 
-		if (taskInput !== '') {
+		if (taskInput !== '' && toDo.length <= 5) {
 			setToDo([...toDo, Task])
 			setTaskInput('')
+			setInfoToDo('dodano zadanie')
+		} else if (toDo.length > 5) {
+			setInfoToDo('dodano maksymalną ilość zadań')
 		}
 
 		if (taskInput === '') {
@@ -101,6 +107,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				priority,
 				date,
 				toDo,
+				infoToDo,
 				handleChangeInput,
 				handleChangeCheckpoit,
 				handleChangeDate,
