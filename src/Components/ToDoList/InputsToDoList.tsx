@@ -7,6 +7,7 @@ import ToDoContext from './Context/ToDoContext'
 
 const InputsToDoList = () => {
 	const {
+		toDo,
 		taskInput,
 		quantitySign,
 		inputErrors,
@@ -53,7 +54,7 @@ const InputsToDoList = () => {
 				</div>
 				<div className={styles.box_info}>
 					<h4 className={styles.quantity_heading}>
-						Ilość zadań do wykoania: <span className={styles.quantity_result}>0</span>
+						Ilość zadań do wykoania: <span className={styles.quantity_result}>{toDo.length}</span>
 					</h4>
 					<h4 className={styles.quantity_heading}>
 						Ilość zadań wykonanych: <span className={styles.quantity_result}>0</span>

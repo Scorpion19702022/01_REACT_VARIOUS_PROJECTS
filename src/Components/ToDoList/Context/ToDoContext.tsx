@@ -17,6 +17,7 @@ type InitialStateType = {
 	handleChangeCheckpoit: () => void
 	handleChangeDate: (e: any) => void
 	handleAddTask: () => void
+	handleDeleteAllTasks: () => void
 }
 
 type ToDoProviderType = {
@@ -35,6 +36,7 @@ const InitialState: InitialStateType = {
 	handleChangeCheckpoit: () => {},
 	handleChangeDate: (e: any) => {},
 	handleAddTask: () => {},
+	handleDeleteAllTasks: () => {},
 }
 
 const ToDoContext = createContext(InitialState)
@@ -94,6 +96,9 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			setTaskInput('')
 			setPriority(false)
 			setInfoToDo('dodano zadanie')
+			setTimeout(() => {
+				setInfoToDo('')
+			}, 2000)
 		}
 
 		if (taskInput === '') {
@@ -102,6 +107,14 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	}
 
 	console.log(toDo)
+
+	const handleDeleteAllTasks = () => {
+		setToDo([])
+		setInfoToDo('usunięto wszystkie zadania')
+		setTimeout(() => {
+			setInfoToDo('')
+		}, 2000)
+	}
 
 	return (
 		<ToDoContext.Provider
@@ -117,6 +130,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				handleChangeCheckpoit,
 				handleChangeDate,
 				handleAddTask,
+				handleDeleteAllTasks,
 			}}
 		>
 			{children}

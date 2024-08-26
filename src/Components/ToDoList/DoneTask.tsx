@@ -6,7 +6,7 @@ const DoneTask = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_content}>
-				<h2 className={styles.heading}>Lista zadań do zrobionych</h2>
+				<h2 className={styles.heading}>Lista zadań zrobionych</h2>
 				<div className={styles.box_info}>
 					<span className={styles.info}>Informacja:</span>
 				</div>

@@ -4,7 +4,7 @@ import styles from './Style/ToDoTask.module.css'
 import ToDoContext from './Context/ToDoContext'
 
 const ToDoTask = () => {
-	const { toDo, infoToDo } = useContext(ToDoContext)
+	const { toDo, infoToDo, handleDeleteAllTasks } = useContext(ToDoContext)
 
 	const taskToDo = toDo.map(item => (
 		<div className={styles.box_task} key={item.id}>
@@ -34,7 +34,9 @@ const ToDoTask = () => {
 				</div>
 				<div className={styles.box_todo}>{taskToDo}</div>
 			</div>
-			<button className={styles.main_btn}>Usuń wszystko</button>
+			<button className={styles.main_btn} onClick={handleDeleteAllTasks}>
+				Usuń wszystko
+			</button>
 		</section>
 	)
 }
