@@ -52,7 +52,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [toDo, setToDo] = useState<TypeForToDo[]>([])
 
 	const handleChangeInput = (e: string) => {
-		if (e.length <= 10) {
+		if (e.length <= 20) {
 			setTaskInput(e)
 			setQuantitySign(e.length)
 		}
@@ -67,12 +67,18 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	}
 
 	useEffect(() => {
-		if (taskInput.length >= 10) {
+		if (taskInput.length >= 20) {
 			setInputErrors('osiągąłeś maksymalną ilość znaków')
 		} else {
 			setInputErrors('')
 		}
 	}, [taskInput.length])
+
+	useEffect(() => {
+		if (toDo.length >= 5) {
+			setInfoToDo('dodano maksymalną ilość zadań')
+		}
+	}, [toDo.length])
 
 	const handleAddTask = () => {
 		const Task: TypeForToDo = {
@@ -83,12 +89,11 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			important: priority,
 		}
 
-		if (taskInput !== '' && toDo.length <= 5) {
+		if (taskInput !== '' && toDo.length < 5) {
 			setToDo([...toDo, Task])
 			setTaskInput('')
+			setPriority(false)
 			setInfoToDo('dodano zadanie')
-		} else if (toDo.length > 5) {
-			setInfoToDo('dodano maksymalną ilość zadań')
 		}
 
 		if (taskInput === '') {

@@ -22,7 +22,9 @@ const ToDoTask = () => {
 			<div className={styles.box_content}>
 				<h2 className={styles.heading}>Lista zadań do zrobienia</h2>
 				<div className={styles.box_info}>
-					<span className={styles.info}>Informacja: {infoToDo}</span>
+					<span className={styles.info}>
+						Informacja: <span className={toDo.length < 5 ? styles.info_is_well : styles.info_too_many}>{infoToDo}</span>
+					</span>
 				</div>
 				<div className={styles.box_select_btns}>
 					<button className={styles.select_btn}>wszystkie</button>
