@@ -154,6 +154,12 @@
 		display: flex;
 	}
 
+	.info,
+	.info_is_well,
+	.info_too_many {
+		font-size: 1.2em;
+	}
+
 	.box_btn {
 		width: 20%;
 		display: flex;
@@ -200,6 +206,50 @@
 
 	.select_btn:hover::after {
 		transform: translate(-160%, -30%);
+	}
+
+	.title_task_important {
+		width: 38%;
+		font-size: 1em;
+		font-weight: 500;
+		color: var(--color-color01);
+	}
+
+	.title_task_no_important {
+		width: 38%;
+		font-size: 1em;
+		font-weight: 200;
+		color: var(--color-color02);
+	}
+
+	.date_important {
+		width: 20%;
+		font-weight: 500;
+		font-size: 0.8em;
+		color: var(--color-color01);
+	}
+
+	.date_no_important {
+		width: 18%;
+		font-weight: 200;
+		font-size: 0.8em;
+		color: var(--color-color02);
+	}
+
+	.btns_task {
+		width: 40%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.btn_task {
+		width: 45%;
+		padding: 0.2em;
+		font-size: 0.6em;
+		color: var(--color-dark01);
+		background-color: var(--color-dark06);
+		border: 0.04em solid var(--color-dark03);
+		cursor: pointer;
 	}
 
 	.main_btn {

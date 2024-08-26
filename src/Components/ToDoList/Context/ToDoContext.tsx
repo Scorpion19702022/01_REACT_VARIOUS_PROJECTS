@@ -84,6 +84,14 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}
 	}, [toDo.length])
 
+	useEffect(() => {
+		setTimeout(() => {
+			if (infoToDo === 'dodano zadanie') {
+				setInfoToDo('')
+			}
+		}, 2000)
+	}, [infoToDo])
+
 	const handleAddTask = () => {
 		const Task: TypeForToDo = {
 			...toDo,
@@ -98,9 +106,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			setTaskInput('')
 			setPriority(false)
 			setInfoToDo('dodano zadanie')
-			setTimeout(() => {
-				setInfoToDo('')
-			}, 2000)
 		}
 
 		if (taskInput === '') {
