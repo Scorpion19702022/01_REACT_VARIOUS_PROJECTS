@@ -3,5 +3,4 @@ export type TypeForToDo = {
 	title: string
 	addDate: any
 	important: boolean
-	isDone: boolean
 }

@@ -15,6 +15,7 @@ const InputsToDoList = () => {
 		handleChangeInput,
 		handleChangeCheckpoit,
 		handleChangeDate,
+		handleAddTask,
 	} = useContext(ToDoContext)
 
 	return (
@@ -45,7 +46,9 @@ const InputsToDoList = () => {
 						<input className={styles.input_date} type='date' value={date} min={date} onChange={handleChangeDate} />
 					</div>
 					<div className={styles.box_btn}>
-						<button className={styles.btn_added_task}>Dodaj</button>
+						<button className={styles.btn_added_task} onClick={handleAddTask}>
+							Dodaj
+						</button>
 					</div>
 				</div>
 				<div className={styles.box_info}>

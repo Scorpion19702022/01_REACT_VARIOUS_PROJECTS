@@ -1,10 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
-// import { TypeForToDo } from '../Types/TypeForToDo'
+import { TypeForToDo } from '../Types/TypeForToDo'
+
+import { v4 as uuidv4 } from 'uuid'
 
 type InitialStateType = {
-	// toDo: TypeForToDo[]
+	toDo: TypeForToDo[]
 	taskInput: string
 	quantitySign: number
 	inputErrors: string
@@ -13,6 +15,7 @@ type InitialStateType = {
 	handleChangeInput: (e: string) => void
 	handleChangeCheckpoit: () => void
 	handleChangeDate: (e: any) => void
+	handleAddTask: () => void
 }
 
 type ToDoProviderType = {
@@ -20,7 +23,7 @@ type ToDoProviderType = {
 }
 
 const InitialState: InitialStateType = {
-	// toDo: [],
+	toDo: [],
 	taskInput: '',
 	quantitySign: 0,
 	inputErrors: '',
@@ -29,6 +32,7 @@ const InitialState: InitialStateType = {
 	handleChangeInput: (e: string) => {},
 	handleChangeCheckpoit: () => {},
 	handleChangeDate: (e: any) => {},
+	handleAddTask: () => {},
 }
 
 const ToDoContext = createContext(InitialState)
@@ -41,6 +45,8 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [inputErrors, setInputErrors] = useState<string>('')
 	const [priority, setPriority] = useState<boolean>(false)
 	const [date, setDate] = useState<any>(currentDate)
+
+	const [toDo, setToDo] = useState<TypeForToDo[]>([])
 
 	const handleChangeInput = (e: string) => {
 		if (e.length <= 10) {
@@ -65,6 +71,27 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}
 	}, [taskInput.length])
 
+	const handleAddTask = () => {
+		const Task: TypeForToDo = {
+			...toDo,
+			id: uuidv4(),
+			title: taskInput,
+			addDate: date,
+			important: priority,
+		}
+
+		if (taskInput !== '') {
+			setToDo([...toDo, Task])
+			setTaskInput('')
+		}
+
+		if (taskInput === '') {
+			setInputErrors('nie wpisałeś zadania')
+		}
+	}
+
+	console.log(toDo)
+
 	return (
 		<ToDoContext.Provider
 			value={{
@@ -73,9 +100,11 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				inputErrors,
 				priority,
 				date,
+				toDo,
 				handleChangeInput,
 				handleChangeCheckpoit,
 				handleChangeDate,
+				handleAddTask,
 			}}
 		>
 			{children}
