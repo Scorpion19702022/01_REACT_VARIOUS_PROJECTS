@@ -92,6 +92,10 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}, 2000)
 	}, [infoToDo])
 
+	useEffect(() => {
+		setQuantitySign(taskInput.length)
+	}, [taskInput.length])
+
 	const handleAddTask = () => {
 		const Task: TypeForToDo = {
 			...toDo,
@@ -124,8 +128,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			}, 2000)
 		}
 	}
-
-	console.log(toDo)
 
 	const handleDeleteAllTasks = () => {
 		setToDo([])
