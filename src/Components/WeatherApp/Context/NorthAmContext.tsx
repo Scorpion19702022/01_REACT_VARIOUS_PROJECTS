@@ -44,7 +44,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Havana', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Santo Domingo', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'New York', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Arlington', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Hyattsville', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Atlanta', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Miami', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'New Orleans', img: Un, idWeather: 0, temp: 0 },
