@@ -79,6 +79,15 @@
 	cursor: pointer;
 }
 
+.active_select_btn {
+	width: 30%;
+	padding: 0.4em;
+	background-color: var(--color-dark08);
+	border: 0.04em solid var(--color-dark01);
+	color: var(--color-dark01);
+	cursor: pointer;
+}
+
 .box_todo {
 	width: 100%;
 	display: flex;

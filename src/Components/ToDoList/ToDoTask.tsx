@@ -4,8 +4,18 @@ import styles from './Style/ToDoTask.module.css'
 import ToDoContext from './Context/ToDoContext'
 
 const ToDoTask = () => {
-	const { toDo, infoToDo, infoMaxToDoList, handleDeleteAllTasks, handleDeleteTask, handleDoneTask } =
-		useContext(ToDoContext)
+	const {
+		toDo,
+		infoToDo,
+		infoMaxToDoList,
+		selectImportant,
+		selectLessImportant,
+		selectAll,
+		handleSelectTask,
+		handleDeleteAllTasks,
+		handleDeleteTask,
+		handleDoneTask,
+	} = useContext(ToDoContext)
 
 	const taskToDo = toDo.map(item => (
 		<div className={styles.box_task} key={item.id}>
@@ -35,9 +45,24 @@ const ToDoTask = () => {
 					</span>
 				</div>
 				<div className={styles.box_select_btns}>
-					<button className={styles.select_btn}>wszystkie</button>
-					<button className={styles.select_btn}>ważne</button>
-					<button className={styles.select_btn}>inne</button>
+					<button
+						className={selectAll ? styles.active_select_btn : styles.select_btn}
+						onClick={() => handleSelectTask('all')}
+					>
+						wszystkie
+					</button>
+					<button
+						className={selectImportant ? styles.active_select_btn : styles.select_btn}
+						onClick={() => handleSelectTask('important')}
+					>
+						ważne
+					</button>
+					<button
+						className={selectLessImportant ? styles.active_select_btn : styles.select_btn}
+						onClick={() => handleSelectTask('lessImportant')}
+					>
+						inne
+					</button>
 				</div>
 				<div className={styles.box_todo}>{taskToDo}</div>
 			</div>
