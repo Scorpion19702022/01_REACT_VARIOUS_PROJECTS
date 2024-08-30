@@ -75,15 +75,15 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 
 	useEffect(() => {
 		if (taskInput.length >= 20) {
-			setInfoMaxToDoList('osiągąłeś maksymalną ilość znaków')
+			setInputErrors('osiągąłeś maksymalną ilość znaków')
 		} else {
-			setInfoMaxToDoList('')
+			setInputErrors('')
 		}
 	}, [taskInput.length])
 
 	useEffect(() => {
 		if (toDo.length >= 10) {
-			setInfoToDo('dodano maksymalną ilość zadań')
+			setInfoMaxToDoList('dodano maksymalną ilość zadań')
 		}
 	}, [toDo.length])
 

@@ -4,7 +4,7 @@ import styles from './Style/ToDoTask.module.css'
 import ToDoContext from './Context/ToDoContext'
 
 const ToDoTask = () => {
-	const { toDo, infoToDo, handleDeleteAllTasks, handleDeleteTask } = useContext(ToDoContext)
+	const { toDo, infoToDo, infoMaxToDoList, handleDeleteAllTasks, handleDeleteTask } = useContext(ToDoContext)
 
 	const taskToDo = toDo.map(item => (
 		<div className={styles.box_task} key={item.id}>
@@ -26,7 +26,9 @@ const ToDoTask = () => {
 				<div className={styles.box_info}>
 					<span className={styles.info}>
 						Informacja:{' '}
-						<span className={toDo.length < 10 ? styles.info_is_well : styles.info_too_many}>{infoToDo}</span>
+						<span className={toDo.length < 10 ? styles.info_is_well : styles.info_too_many}>
+							{toDo.length >= 10 ? infoMaxToDoList : infoToDo}
+						</span>
 					</span>
 				</div>
 				<div className={styles.box_select_btns}>
