@@ -4,7 +4,7 @@ import styles from './Style/DoneTask.module.css'
 import ToDoContext from './Context/ToDoContext'
 
 const DoneTask = () => {
-	const { done } = useContext(ToDoContext)
+	const { done, handleDeleteTaskDone, handleDeleteAllTaskDone } = useContext(ToDoContext)
 
 	const dataDoneHour = new Date().toLocaleTimeString().slice(0, 5)
 
@@ -17,7 +17,9 @@ const DoneTask = () => {
 			<span className={styles.done_time}>
 				{dayName}, {dataDoneHour}
 			</span>
-			<button className={styles.btn_done}>usuń</button>
+			<button className={styles.btn_done} onClick={() => handleDeleteTaskDone(item.id)}>
+				usuń
+			</button>
 		</div>
 	))
 
@@ -27,7 +29,9 @@ const DoneTask = () => {
 				<h2 className={styles.heading}>Lista zadań zrobionych</h2>
 				<div className={styles.box_done}>{doneTask}</div>
 			</div>
-			<button className={styles.main_btn}>Usuń wszystko</button>
+			<button className={styles.main_btn} onClick={handleDeleteAllTaskDone}>
+				Usuń wszystko
+			</button>
 		</section>
 	)
 }

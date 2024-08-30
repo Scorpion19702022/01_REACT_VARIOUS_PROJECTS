@@ -127,6 +127,7 @@
 		color: var(--color-dark01);
 		background-color: var(--color-dark06);
 		border: 0.04em solid var(--color-dark03);
+		cursor: pointer;
 	}
 
 	.main_btn {

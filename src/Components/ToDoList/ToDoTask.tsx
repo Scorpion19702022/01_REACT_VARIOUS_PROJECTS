@@ -15,7 +15,7 @@ const ToDoTask = () => {
 				<button className={styles.btn_task} onClick={() => handleDeleteTask(item.id, item.title)}>
 					Usuń
 				</button>
-				<button className={styles.btn_task} onClick={() => handleDoneTask(item.id)}>
+				<button className={styles.btn_task} onClick={() => handleDoneTask(item.id, item.title)}>
 					Zrobione
 				</button>
 			</div>

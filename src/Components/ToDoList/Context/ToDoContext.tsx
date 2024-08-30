@@ -20,8 +20,10 @@ type InitialStateType = {
 	handleChangeDate: (e: any) => void
 	handleAddTask: () => void
 	handleDeleteTask: (id: string, item: string) => void
-	handleDoneTask: (id: string) => void
+	handleDoneTask: (id: string, item: string) => void
 	handleDeleteAllTasks: () => void
+	handleDeleteTaskDone: (id: string) => void
+	handleDeleteAllTaskDone: () => void
 }
 
 type ToDoProviderType = {
@@ -43,8 +45,10 @@ const InitialState: InitialStateType = {
 	handleChangeDate: (e: any) => {},
 	handleAddTask: () => {},
 	handleDeleteTask: (id: string, item: string) => {},
-	handleDoneTask: (id: string) => {},
+	handleDoneTask: (id: string, item: string) => {},
 	handleDeleteAllTasks: () => {},
+	handleDeleteTaskDone: (id: string) => {},
+	handleDeleteAllTaskDone: () => {},
 }
 
 const ToDoContext = createContext(InitialState)
@@ -145,14 +149,28 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}, 2000)
 	}
 
-	const handleDoneTask = (id: string) => {
+	const handleDoneTask = (id: string, item: string) => {
 		const addDoneTask = toDo.filter(item => item.id === id)
 		setDone([...done, ...addDoneTask])
 
 		const doneTask = toDo.filter(item => item.id !== id)
 		setToDo(doneTask)
 
-		console.log(done)
+		if (doneTask) {
+			setInfoToDo(`zrobiłeś zadanie ${item}`)
+			setTimeout(() => {
+				setInfoToDo('')
+			}, 2000)
+		}
+	}
+
+	const handleDeleteTaskDone = (id: string) => {
+		const taskDone = done.filter((item: any) => item.id !== id)
+		setDone(taskDone)
+	}
+
+	const handleDeleteAllTaskDone = () => {
+		setDone([])
 	}
 
 	return (
@@ -174,6 +192,8 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				handleDeleteTask,
 				handleDoneTask,
 				handleDeleteAllTasks,
+				handleDeleteTaskDone,
+				handleDeleteAllTaskDone,
 			}}
 		>
 			{children}
