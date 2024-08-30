@@ -163,17 +163,17 @@
 	.heading {
 		font-size: 2em;
 		margin-bottom: 1em;
-		padding-bottom: 0.2em;
+		padding: 0em 0em 0.2em 4em;
 		border-bottom: 0.04em solid var(--color-color08);
 		align-self: flex-start;
 	}
 
 	.todo_icon {
-		top: -8%;
-		right: 28%;
+		top: 8%;
+		left: 0.6%;
 		z-index: 1;
-		width: 17%;
-		transform: rotate(12deg);
+		width: 7%;
+		transform: rotate(-18deg);
 	}
 
 	.wrapper_inputs {
@@ -236,14 +236,14 @@
 	.box_btn {
 		width: 20%;
 		display: flex;
-		flex-direction: column;
+		justify-content: center;
 		align-self: center;
 	}
 
 	.btn_added_task {
 		width: 70%;
 		padding: 0.5em;
-		margin-bottom: 0.5em;
+		margin-bottom: 1em;
 		position: relative;
 		background-color: var(--color-dark06);
 		z-index: 1;
