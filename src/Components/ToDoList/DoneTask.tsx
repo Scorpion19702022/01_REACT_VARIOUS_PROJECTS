@@ -14,6 +14,32 @@ const DoneTask = () => {
 					<p>pierwszy</p>
 					<p>drugi</p>
 					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
+					<p>trzeci</p>
 				</div>
 			</div>
 			<button className={styles.main_btn}>Usuń wszystko</button>
