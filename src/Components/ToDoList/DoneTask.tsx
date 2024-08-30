@@ -6,10 +6,18 @@ import ToDoContext from './Context/ToDoContext'
 const DoneTask = () => {
 	const { done } = useContext(ToDoContext)
 
+	const dataDoneHour = new Date().toLocaleTimeString().slice(0, 5)
+
+	const date = new Date()
+	const dayName = date.toLocaleDateString('pl-PL', { weekday: 'long' })
+
 	const doneTask = done.map(item => (
 		<div key={item.id}>
-			<span>{item.title}</span>
-			<button>usuń</button>
+			<span className={styles.done_title}>{item.title}</span>
+			<span className={styles.done_time}>
+				{dayName}, {dataDoneHour}
+			</span>
+			<button className={styles.btn_done}>usuń</button>
 		</div>
 	))
 
