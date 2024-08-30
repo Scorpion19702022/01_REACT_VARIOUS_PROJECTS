@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 type InitialStateType = {
 	toDo: TypeForToDo[]
+	done: any[]
 	taskInput: string
 	quantitySign: number
 	inputErrors: string
@@ -19,6 +20,7 @@ type InitialStateType = {
 	handleChangeDate: (e: any) => void
 	handleAddTask: () => void
 	handleDeleteTask: (id: string, item: string) => void
+	handleDoneTask: (id: string) => void
 	handleDeleteAllTasks: () => void
 }
 
@@ -28,6 +30,7 @@ type ToDoProviderType = {
 
 const InitialState: InitialStateType = {
 	toDo: [],
+	done: [],
 	taskInput: '',
 	quantitySign: 0,
 	inputErrors: '',
@@ -40,6 +43,7 @@ const InitialState: InitialStateType = {
 	handleChangeDate: (e: any) => {},
 	handleAddTask: () => {},
 	handleDeleteTask: (id: string, item: string) => {},
+	handleDoneTask: (id: string) => {},
 	handleDeleteAllTasks: () => {},
 }
 
@@ -57,6 +61,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [infoMaxToDoList, setInfoMaxToDoList] = useState<string>('')
 
 	const [toDo, setToDo] = useState<TypeForToDo[]>([])
+	const [done, setDone] = useState<any>([])
 
 	const handleChangeInput = (e: string) => {
 		if (e.length <= 20) {
@@ -140,6 +145,16 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}, 2000)
 	}
 
+	const handleDoneTask = (id: string) => {
+		const addDoneTask = toDo.filter(item => item.id === id)
+		setDone([...done, ...addDoneTask])
+
+		const doneTask = toDo.filter(item => item.id !== id)
+		setToDo(doneTask)
+
+		console.log(done)
+	}
+
 	return (
 		<ToDoContext.Provider
 			value={{
@@ -149,6 +164,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				priority,
 				date,
 				toDo,
+				done,
 				infoToDo,
 				infoMaxToDoList,
 				handleChangeInput,
@@ -156,6 +172,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				handleChangeDate,
 				handleAddTask,
 				handleDeleteTask,
+				handleDoneTask,
 				handleDeleteAllTasks,
 			}}
 		>
