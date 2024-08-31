@@ -16,6 +16,7 @@ type InitialStateType = {
 	infoToDo: string
 	infoMaxToDoList: string
 	sureDelete: { [key: string]: boolean }
+	sureDone: { [key: string]: boolean }
 	select: string
 	selectImportant: boolean
 	selectLessImportant: boolean
@@ -26,6 +27,7 @@ type InitialStateType = {
 	handleSelectTask: (isSelect: string) => void
 	handleAddTask: () => void
 	handleSureDelete: (id: string) => void
+	handleSureDone: (id: string) => void
 	handleDeleteTask: (id: string, item: string) => void
 	handleDoneTask: (id: string, item: string) => void
 	handleDeleteAllTasks: () => void
@@ -48,6 +50,7 @@ const InitialState: InitialStateType = {
 	infoToDo: '',
 	infoMaxToDoList: '',
 	sureDelete: {},
+	sureDone: {},
 	select: '',
 	selectImportant: false,
 	selectLessImportant: false,
@@ -58,6 +61,7 @@ const InitialState: InitialStateType = {
 	handleSelectTask: (isSelect: string) => {},
 	handleAddTask: () => {},
 	handleSureDelete: (id: string) => {},
+	handleSureDone: (id: string) => {},
 	handleDeleteTask: (id: string, item: string) => {},
 	handleDoneTask: (id: string, item: string) => {},
 	handleDeleteAllTasks: () => {},
@@ -82,6 +86,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [done, setDone] = useState<any>([])
 
 	const [sureDelete, setSureDelete] = useState<{ [key: string]: boolean }>({})
+	const [sureDone, setSureDone] = useState<{ [key: string]: boolean }>({})
 
 	const [select, setSelect] = useState<string>('all')
 
@@ -162,6 +167,13 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}))
 	}
 
+	const handleSureDone = (id: string) => {
+		setSureDone(prevState => ({
+			...prevState,
+			[id]: !prevState[id],
+		}))
+	}
+
 	const handleSelectTask = (isSelect: string) => {
 		if (isSelect === 'all') {
 			setSelect('all')
@@ -237,6 +249,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				done,
 				infoToDo,
 				sureDelete,
+				sureDone,
 				infoMaxToDoList,
 				select,
 				selectImportant,
@@ -248,6 +261,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				handleSelectTask,
 				handleAddTask,
 				handleSureDelete,
+				handleSureDone,
 				handleDeleteTask,
 				handleDoneTask,
 				handleDeleteAllTasks,

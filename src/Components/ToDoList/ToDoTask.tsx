@@ -9,12 +9,14 @@ const ToDoTask = () => {
 		infoToDo,
 		infoMaxToDoList,
 		sureDelete,
+		sureDone,
 		select,
 		selectImportant,
 		selectLessImportant,
 		selectAll,
 		handleSelectTask,
 		handleSureDelete,
+		handleSureDone,
 		handleDeleteAllTasks,
 		handleDeleteTask,
 		handleDoneTask,
@@ -28,17 +30,28 @@ const ToDoTask = () => {
 				<button className={styles.btn_task} onClick={() => handleSureDelete(item.id)}>
 					Usuń
 				</button>
-				<button className={styles.btn_task} onClick={() => handleDoneTask(item.id, item.title)}>
+				<button className={styles.btn_task} onClick={() => handleSureDone(item.id)}>
 					Zrobione
 				</button>
 			</div>
 			<div className={!sureDelete[item.id] ? styles.no_popup : styles.popup}>
-				<h4 className={styles.popup_heading}>Jesteś pewien, że chcesz usunąć zadanie?</h4>
+				<h4 className={styles.popup_heading}>Jesteś pewna/pewien, że chcesz usunąć zadanie?</h4>
 				<div className={styles.box_btn_popup}>
 					<button className={styles.btn_popup} onClick={() => handleDeleteTask(item.id, item.title)}>
 						Tak
 					</button>
 					<button className={styles.btn_popup} onClick={() => handleSureDelete(item.id)}>
+						Nie
+					</button>
+				</div>
+			</div>
+			<div className={!sureDone[item.id] ? styles.no_popup : styles.popup}>
+				<h4 className={styles.popup_heading}>Jesteś pewna/pewien, że zadanie zostało wykonane?</h4>
+				<div className={styles.box_btn_popup}>
+					<button className={styles.btn_popup} onClick={() => handleDoneTask(item.id, item.title)}>
+						Tak
+					</button>
+					<button className={styles.btn_popup} onClick={() => handleSureDone(item.id)}>
 						Nie
 					</button>
 				</div>
