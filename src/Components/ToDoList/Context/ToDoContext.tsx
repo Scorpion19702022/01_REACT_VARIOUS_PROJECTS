@@ -121,23 +121,25 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	}, [taskInput.length])
 
 	const handleSelectTask = (select: any) => {
-		// if (select === 'all') {
-		// 	setSelectAll(true)
-		// 	setSelecImportant(false)
-		// 	setSelectLessImportant(false)
-		// 	setToDo(toDo)
-		// } else if (select === 'important') {
-		// 	const important = toDo.filter(item => !item.important)
-		// 	setToDo([...toDo, ...important])
-		// 	setSelecImportant(!selectImportant)
-		// 	setSelectAll(false)
-		// 	setSelectLessImportant(false)
-		// } else if (select === 'lessImportant') {
-		// 	setSelecImportant(false)
-		// 	setSelectAll(false)
-		// 	setSelectLessImportant(!selectLessImportant)
-		// }
-		// console.log(toDo)
+		if (select === 'all') {
+			setSelectAll(true)
+			setSelecImportant(false)
+			setSelectLessImportant(false)
+			setToDo(toDo)
+		} else if (select === 'important') {
+			const important = toDo.filter(item => item.important)
+			setToDo(important)
+			setSelecImportant(!selectImportant)
+			setSelectAll(false)
+			setSelectLessImportant(false)
+		} else if (select === 'lessImportant') {
+			const LessImportant = toDo.filter(item => !item.important)
+			setToDo(LessImportant)
+			setSelecImportant(false)
+			setSelectAll(false)
+			setSelectLessImportant(!selectLessImportant)
+		}
+		console.log(toDo)
 	}
 
 	const handleAddTask = () => {
