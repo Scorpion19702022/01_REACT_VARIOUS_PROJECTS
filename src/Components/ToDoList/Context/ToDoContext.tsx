@@ -15,7 +15,7 @@ type InitialStateType = {
 	date: any
 	infoToDo: string
 	infoMaxToDoList: string
-	sureDelete: boolean
+	sureDelete: { [key: string]: boolean }
 	select: string
 	selectImportant: boolean
 	selectLessImportant: boolean
@@ -25,7 +25,7 @@ type InitialStateType = {
 	handleChangeDate: (e: any) => void
 	handleSelectTask: (isSelect: string) => void
 	handleAddTask: () => void
-	handleSureDelete: () => void
+	handleSureDelete: (id: string) => void
 	handleDeleteTask: (id: string, item: string) => void
 	handleDoneTask: (id: string, item: string) => void
 	handleDeleteAllTasks: () => void
@@ -47,7 +47,7 @@ const InitialState: InitialStateType = {
 	date: '',
 	infoToDo: '',
 	infoMaxToDoList: '',
-	sureDelete: false,
+	sureDelete: {},
 	select: '',
 	selectImportant: false,
 	selectLessImportant: false,
@@ -57,7 +57,7 @@ const InitialState: InitialStateType = {
 	handleChangeDate: (e: any) => {},
 	handleSelectTask: (isSelect: string) => {},
 	handleAddTask: () => {},
-	handleSureDelete: () => {},
+	handleSureDelete: (id: string) => {},
 	handleDeleteTask: (id: string, item: string) => {},
 	handleDoneTask: (id: string, item: string) => {},
 	handleDeleteAllTasks: () => {},
@@ -81,7 +81,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [toDo, setToDo] = useState<TypeForToDo[]>([])
 	const [done, setDone] = useState<any>([])
 
-	const [sureDelete, setSureDelete] = useState<boolean>(false)
+	const [sureDelete, setSureDelete] = useState<{ [key: string]: boolean }>({})
 
 	const [select, setSelect] = useState<string>('all')
 
@@ -131,6 +131,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	}, [taskInput.length])
 
 	const handleAddTask = () => {
+		// setSureDelete(sureDelete)
 		const Task: TypeForToDo = {
 			...toDo,
 			id: uuidv4(),
@@ -151,8 +152,11 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}
 	}
 
-	const handleSureDelete = () => {
-		setSureDelete(!sureDelete)
+	const handleSureDelete = (id: string) => {
+		setSureDelete(prevState => ({
+			...prevState,
+			[id]: !prevState[id],
+		}))
 	}
 
 	const handleSelectTask = (isSelect: string) => {
