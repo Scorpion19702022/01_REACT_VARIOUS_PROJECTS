@@ -15,6 +15,7 @@ type InitialStateType = {
 	date: any
 	infoToDo: string
 	infoMaxToDoList: string
+	select: string
 	selectImportant: boolean
 	selectLessImportant: boolean
 	selectAll: boolean
@@ -44,6 +45,7 @@ const InitialState: InitialStateType = {
 	date: '',
 	infoToDo: '',
 	infoMaxToDoList: '',
+	select: '',
 	selectImportant: false,
 	selectLessImportant: false,
 	selectAll: true,
@@ -74,6 +76,8 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 
 	const [toDo, setToDo] = useState<TypeForToDo[]>([])
 	const [done, setDone] = useState<any>([])
+
+	const [select, setSelect] = useState<string>('all')
 
 	const [selectImportant, setSelecImportant] = useState<boolean>(false)
 	const [selectLessImportant, setSelectLessImportant] = useState<boolean>(false)
@@ -146,21 +150,21 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 
 	const handleSelectTask = (isSelect: string) => {
 		if (isSelect === 'all') {
+			setSelect('all')
 			setSelectAll(true)
 			setSelecImportant(false)
 			setSelectLessImportant(false)
-			console.log(toDo)
+			setToDo(toDo)
 		} else if (isSelect === 'important') {
+			setSelect('important')
 			setSelecImportant(!selectImportant)
 			setSelectAll(false)
 			setSelectLessImportant(false)
-			console.log(Important)
 		} else if (isSelect === 'lessImportant') {
+			setSelect('lessImportant')
 			setSelecImportant(false)
 			setSelectAll(false)
 			setSelectLessImportant(!selectLessImportant)
-			console.log(LessImportant)
-		} else {
 		}
 	}
 
@@ -220,6 +224,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				done,
 				infoToDo,
 				infoMaxToDoList,
+				select,
 				selectImportant,
 				selectLessImportant,
 				selectAll,
