@@ -91,6 +91,7 @@
 .box_todo {
 	position: relative;
 	width: 100%;
+	height: 380px;
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 0.8em;
@@ -293,7 +294,7 @@
 	.popup {
 		position: absolute;
 		display: block;
-		top: 70%;
+		top: 30%;
 		left: 50%;
 		transform: translateX(-50%);
 		width: 90%;
