@@ -145,8 +145,8 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}
 	}
 
-	const Important = toDo.filter(item => item.important)
-	const LessImportant = toDo.filter(item => !item.important)
+	// const Important = toDo.filter(item => item.important)
+	// const LessImportant = toDo.filter(item => !item.important)
 
 	const handleSelectTask = (isSelect: string) => {
 		if (isSelect === 'all') {
@@ -154,7 +154,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			setSelectAll(true)
 			setSelecImportant(false)
 			setSelectLessImportant(false)
-			setToDo(toDo)
 		} else if (isSelect === 'important') {
 			setSelect('important')
 			setSelecImportant(!selectImportant)

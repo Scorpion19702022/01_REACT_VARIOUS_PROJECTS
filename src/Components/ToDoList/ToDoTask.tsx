@@ -17,7 +17,7 @@ const ToDoTask = () => {
 		handleDoneTask,
 	} = useContext(ToDoContext)
 
-	const taskToDo = toDo.map(item => (
+	const taskToDoAll = toDo.map(item => (
 		<div className={styles.box_task} key={item.id}>
 			<h5 className={item.important ? styles.title_task_important : styles.title_task_no_important}>{item.title}</h5>
 			<span className={item.important ? styles.date_important : styles.date_no_important}>{item.addDate}</span>
@@ -64,7 +64,7 @@ const ToDoTask = () => {
 						inne
 					</button>
 				</div>
-				<div className={styles.box_todo}>{taskToDo}</div>
+				<div className={styles.box_todo}>{taskToDoAll}</div>
 			</div>
 			<button className={styles.main_btn} onClick={handleDeleteAllTasks}>
 				Usuń wszystko
