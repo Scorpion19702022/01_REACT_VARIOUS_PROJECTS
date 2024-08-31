@@ -124,25 +124,29 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setQuantitySign(taskInput.length)
 	}, [taskInput.length])
 
-	const important = toDo.filter(item => item.important)
-	const LessImportant = toDo.filter(item => !item.important)
-
 	useEffect(() => {
+		if (select === 'all') {
+			setToDo(toDo)
+			console.log(toDo)
+		}
+
 		if (select === 'important') {
-			if (important) {
-				setToDo(important)
+			const Important = toDo.filter(item => item.important)
+			if (Important) {
+				setToDo(Important)
 			} else {
 				setToDo(toDo)
 			}
-		} else if (select === 'lessImportant') {
-			console.log(LessImportant)
+			console.log(toDo)
+		}
+
+		if (select === 'lessImportant') {
+			const LessImportant = toDo.filter(item => !item.important)
 			if (LessImportant) {
 				setToDo(LessImportant)
 			} else {
 				setToDo(toDo)
 			}
-		} else if (select === 'all') {
-			setToDo(toDo)
 			console.log(toDo)
 		}
 	}, [select])
@@ -153,7 +157,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			setSelectAll(true)
 			setSelecImportant(false)
 			setSelectLessImportant(false)
-			setToDo(toDo)
 			// console.log(toDo)
 		} else if (isSelect === 'important') {
 			setSelect('important')
