@@ -131,7 +131,10 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	}, [taskInput.length])
 
 	const handleAddTask = () => {
-		// setSureDelete(sureDelete)
+		setSelect('all')
+		setSelectAll(true)
+		setSelecImportant(false)
+		setSelectLessImportant(false)
 		const Task: TypeForToDo = {
 			...toDo,
 			id: uuidv4(),
