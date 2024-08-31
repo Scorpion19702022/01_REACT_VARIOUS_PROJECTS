@@ -8,6 +8,7 @@ const ToDoTask = () => {
 		toDo,
 		infoToDo,
 		infoMaxToDoList,
+		select,
 		selectImportant,
 		selectLessImportant,
 		selectAll,
@@ -31,6 +32,40 @@ const ToDoTask = () => {
 			</div>
 		</div>
 	))
+
+	const taskToDoImportant = toDo
+		.filter(item => item.important)
+		.map(item => (
+			<div className={styles.box_task} key={item.id}>
+				<h5 className={item.important ? styles.title_task_important : styles.title_task_no_important}>{item.title}</h5>
+				<span className={item.important ? styles.date_important : styles.date_no_important}>{item.addDate}</span>
+				<div className={styles.btns_task}>
+					<button className={styles.btn_task} onClick={() => handleDeleteTask(item.id, item.title)}>
+						Usuń
+					</button>
+					<button className={styles.btn_task} onClick={() => handleDoneTask(item.id, item.title)}>
+						Zrobione
+					</button>
+				</div>
+			</div>
+		))
+
+	const taskToDoLessImportant = toDo
+		.filter(item => !item.important)
+		.map(item => (
+			<div className={styles.box_task} key={item.id}>
+				<h5 className={item.important ? styles.title_task_important : styles.title_task_no_important}>{item.title}</h5>
+				<span className={item.important ? styles.date_important : styles.date_no_important}>{item.addDate}</span>
+				<div className={styles.btns_task}>
+					<button className={styles.btn_task} onClick={() => handleDeleteTask(item.id, item.title)}>
+						Usuń
+					</button>
+					<button className={styles.btn_task} onClick={() => handleDoneTask(item.id, item.title)}>
+						Zrobione
+					</button>
+				</div>
+			</div>
+		))
 
 	return (
 		<section className={styles.wrapper}>
@@ -64,7 +99,15 @@ const ToDoTask = () => {
 						inne
 					</button>
 				</div>
-				<div className={styles.box_todo}>{taskToDoAll}</div>
+				<div className={styles.box_todo}>
+					{select === 'all'
+						? taskToDoAll
+						: select === 'important'
+						? taskToDoImportant
+						: select === 'lessImportant'
+						? taskToDoLessImportant
+						: null}
+				</div>
 			</div>
 			<button className={styles.main_btn} onClick={handleDeleteAllTasks}>
 				Usuń wszystko

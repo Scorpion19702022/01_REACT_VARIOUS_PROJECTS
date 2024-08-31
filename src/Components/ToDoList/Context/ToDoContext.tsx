@@ -145,9 +145,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}
 	}
 
-	// const Important = toDo.filter(item => item.important)
-	// const LessImportant = toDo.filter(item => !item.important)
-
 	const handleSelectTask = (isSelect: string) => {
 		if (isSelect === 'all') {
 			setSelect('all')
