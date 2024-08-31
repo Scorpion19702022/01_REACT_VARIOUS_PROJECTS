@@ -8,11 +8,13 @@ const ToDoTask = () => {
 		toDo,
 		infoToDo,
 		infoMaxToDoList,
+		sureDelete,
 		select,
 		selectImportant,
 		selectLessImportant,
 		selectAll,
 		handleSelectTask,
+		handleSureDelete,
 		handleDeleteAllTasks,
 		handleDeleteTask,
 		handleDoneTask,
@@ -23,12 +25,23 @@ const ToDoTask = () => {
 			<h5 className={item.important ? styles.title_task_important : styles.title_task_no_important}>{item.title}</h5>
 			<span className={item.important ? styles.date_important : styles.date_no_important}>{item.addDate}</span>
 			<div className={styles.btns_task}>
-				<button className={styles.btn_task} onClick={() => handleDeleteTask(item.id, item.title)}>
+				<button className={styles.btn_task} onClick={handleSureDelete}>
 					Usuń
 				</button>
 				<button className={styles.btn_task} onClick={() => handleDoneTask(item.id, item.title)}>
 					Zrobione
 				</button>
+			</div>
+			<div className={sureDelete ? styles.no_popup : styles.popup}>
+				<h4 className={styles.popup_heading}>Jesteś pewien, że chcesz usunąć zadanie?</h4>
+				<div className={styles.box_btn_popup}>
+					<button className={styles.btn_popup} onClick={() => handleDeleteTask(item.id, item.title)}>
+						Tak
+					</button>
+					<button className={styles.btn_popup} onClick={handleSureDelete}>
+						Nie
+					</button>
+				</div>
 			</div>
 		</div>
 	))

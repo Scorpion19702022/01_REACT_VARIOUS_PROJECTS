@@ -15,6 +15,7 @@ type InitialStateType = {
 	date: any
 	infoToDo: string
 	infoMaxToDoList: string
+	sureDelete: boolean
 	select: string
 	selectImportant: boolean
 	selectLessImportant: boolean
@@ -24,6 +25,7 @@ type InitialStateType = {
 	handleChangeDate: (e: any) => void
 	handleSelectTask: (isSelect: string) => void
 	handleAddTask: () => void
+	handleSureDelete: () => void
 	handleDeleteTask: (id: string, item: string) => void
 	handleDoneTask: (id: string, item: string) => void
 	handleDeleteAllTasks: () => void
@@ -45,6 +47,7 @@ const InitialState: InitialStateType = {
 	date: '',
 	infoToDo: '',
 	infoMaxToDoList: '',
+	sureDelete: false,
 	select: '',
 	selectImportant: false,
 	selectLessImportant: false,
@@ -54,6 +57,7 @@ const InitialState: InitialStateType = {
 	handleChangeDate: (e: any) => {},
 	handleSelectTask: (isSelect: string) => {},
 	handleAddTask: () => {},
+	handleSureDelete: () => {},
 	handleDeleteTask: (id: string, item: string) => {},
 	handleDoneTask: (id: string, item: string) => {},
 	handleDeleteAllTasks: () => {},
@@ -76,6 +80,8 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 
 	const [toDo, setToDo] = useState<TypeForToDo[]>([])
 	const [done, setDone] = useState<any>([])
+
+	const [sureDelete, setSureDelete] = useState<boolean>(false)
 
 	const [select, setSelect] = useState<string>('all')
 
@@ -143,6 +149,10 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		if (taskInput === '') {
 			setInputErrors('nie wpisałeś zadania')
 		}
+	}
+
+	const handleSureDelete = () => {
+		setSureDelete(!sureDelete)
 	}
 
 	const handleSelectTask = (isSelect: string) => {
@@ -219,6 +229,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				toDo,
 				done,
 				infoToDo,
+				sureDelete,
 				infoMaxToDoList,
 				select,
 				selectImportant,
@@ -229,6 +240,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				handleChangeDate,
 				handleSelectTask,
 				handleAddTask,
+				handleSureDelete,
 				handleDeleteTask,
 				handleDoneTask,
 				handleDeleteAllTasks,
