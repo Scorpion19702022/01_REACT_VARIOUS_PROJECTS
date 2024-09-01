@@ -44,7 +44,7 @@ const InputsToDoList = () => {
 						<input className={styles.checkbox} checked={priority} type='checkbox' onChange={handleChangeCheckpoit} />
 					</div>
 					<div className={styles.inputs_date}>
-						<label className={styles.label}>Data dodania:</label>
+						<label className={styles.label}>Termin realizacji:</label>
 						<input className={styles.input_date} type='date' value={date} min={date} onChange={handleChangeDate} />
 					</div>
 					<div className={styles.box_btn}>

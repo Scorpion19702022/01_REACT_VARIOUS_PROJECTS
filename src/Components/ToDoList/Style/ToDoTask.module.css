@@ -88,10 +88,23 @@
 	cursor: pointer;
 }
 
+.box_nav {
+	width: 100%;
+	padding: 0.4em;
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--color-dark08);
+	border-top: 0.04em solid var(--color-color06);
+}
+
+.nav {
+	color: var(--color-dark01);
+	font-size: 0.8em;
+}
+
 .box_todo {
 	position: relative;
 	width: 100%;
-	height: 380px;
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 0.8em;
@@ -204,7 +217,7 @@
 @media (min-width: 992px) {
 	.wrapper {
 		width: 48%;
-		height: 600px;
+		height: 630px;
 		margin-bottom: 1em;
 		display: flex;
 	}
@@ -261,6 +274,10 @@
 
 	.select_btn:hover::after {
 		transform: translate(-160%, -30%);
+	}
+
+	.nav:nth-child(2) {
+		margin-right: 1.4em;
 	}
 
 	.title_task_important {

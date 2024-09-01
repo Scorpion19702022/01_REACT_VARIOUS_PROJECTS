@@ -169,6 +169,11 @@ const ToDoTask = () => {
 						inne
 					</button>
 				</div>
+				<div className={styles.box_nav}>
+					<span className={styles.nav}>ZADANIE</span>
+					<span className={styles.nav}>TERMIN</span>
+					<span className={styles.nav}>ZADZIAŁAJ</span>
+				</div>
 				<div className={styles.box_todo}>
 					{select === 'all'
 						? taskToDoAll
