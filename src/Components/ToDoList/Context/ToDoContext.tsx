@@ -17,6 +17,7 @@ type InitialStateType = {
 	infoMaxToDoList: string
 	sureDelete: { [key: string]: boolean }
 	sureDone: { [key: string]: boolean }
+	sureDeleteAll: boolean
 	select: string
 	selectImportant: boolean
 	selectLessImportant: boolean
@@ -28,6 +29,7 @@ type InitialStateType = {
 	handleAddTask: () => void
 	handleSureDelete: (id: string) => void
 	handleSureDone: (id: string) => void
+	handleSureDeleteAll: () => void
 	handleDeleteTask: (id: string, item: string) => void
 	handleDoneTask: (id: string, item: string) => void
 	handleDeleteAllTasks: () => void
@@ -51,6 +53,7 @@ const InitialState: InitialStateType = {
 	infoMaxToDoList: '',
 	sureDelete: {},
 	sureDone: {},
+	sureDeleteAll: false,
 	select: '',
 	selectImportant: false,
 	selectLessImportant: false,
@@ -62,6 +65,7 @@ const InitialState: InitialStateType = {
 	handleAddTask: () => {},
 	handleSureDelete: (id: string) => {},
 	handleSureDone: (id: string) => {},
+	handleSureDeleteAll: () => {},
 	handleDeleteTask: (id: string, item: string) => {},
 	handleDoneTask: (id: string, item: string) => {},
 	handleDeleteAllTasks: () => {},
@@ -87,6 +91,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 
 	const [sureDelete, setSureDelete] = useState<{ [key: string]: boolean }>({})
 	const [sureDone, setSureDone] = useState<{ [key: string]: boolean }>({})
+	const [sureDeleteAll, setSureDeleteAll] = useState<boolean>(false)
 
 	const [select, setSelect] = useState<string>('all')
 
@@ -174,6 +179,10 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}))
 	}
 
+	const handleSureDeleteAll = () => {
+		setSureDeleteAll(!sureDeleteAll)
+	}
+
 	const handleSelectTask = (isSelect: string) => {
 		if (isSelect === 'all') {
 			setSelect('all')
@@ -207,6 +216,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 
 	const handleDeleteAllTasks = () => {
 		setToDo([])
+		setSureDeleteAll(false)
 		setInfoToDo('usunięto wszystkie zadania')
 		setTimeout(() => {
 			setInfoToDo('')
@@ -250,6 +260,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				infoToDo,
 				sureDelete,
 				sureDone,
+				sureDeleteAll,
 				infoMaxToDoList,
 				select,
 				selectImportant,
@@ -262,6 +273,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				handleAddTask,
 				handleSureDelete,
 				handleSureDone,
+				handleSureDeleteAll,
 				handleDeleteTask,
 				handleDoneTask,
 				handleDeleteAllTasks,

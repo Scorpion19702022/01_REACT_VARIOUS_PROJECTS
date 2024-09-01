@@ -10,6 +10,7 @@ const ToDoTask = () => {
 		infoMaxToDoList,
 		sureDelete,
 		sureDone,
+		sureDeleteAll,
 		select,
 		selectImportant,
 		selectLessImportant,
@@ -17,6 +18,7 @@ const ToDoTask = () => {
 		handleSelectTask,
 		handleSureDelete,
 		handleSureDone,
+		handleSureDeleteAll,
 		handleDeleteAllTasks,
 		handleDeleteTask,
 		handleDoneTask,
@@ -184,9 +186,20 @@ const ToDoTask = () => {
 						: null}
 				</div>
 			</div>
-			<button className={styles.main_btn} onClick={handleDeleteAllTasks}>
+			<button className={styles.main_btn} onClick={handleSureDeleteAll}>
 				Usuń wszystko
 			</button>
+			<div className={!sureDeleteAll ? styles.no_popup : styles.popup}>
+				<h4 className={styles.popup_heading}>Jesteś pewna/pewien, że chcesz usuąć wszystkie zadania?</h4>
+				<div className={styles.box_btn_popup}>
+					<button className={styles.btn_popup} onClick={handleDeleteAllTasks}>
+						Tak
+					</button>
+					<button className={styles.btn_popup} onClick={handleSureDeleteAll}>
+						Nie
+					</button>
+				</div>
+			</div>
 		</section>
 	)
 }
