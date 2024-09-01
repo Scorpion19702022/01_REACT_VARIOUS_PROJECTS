@@ -145,6 +145,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setSelectAll(true)
 		setSelecImportant(false)
 		setSelectLessImportant(false)
+		setDate(currentDate)
 		const Task: TypeForToDo = {
 			...toDo,
 			id: uuidv4(),
