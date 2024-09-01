@@ -48,6 +48,20 @@
 	border-bottom: 0.04em solid var(--color-color07);
 }
 
+.box_nav {
+	width: 100%;
+	padding: 0.4em;
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--color-dark08);
+	border-top: 0.04em solid var(--color-color06);
+}
+
+.nav {
+	color: var(--color-dark01);
+	font-size: 0.8em;
+}
+
 .box_done {
 	width: 100%;
 	max-height: 400px;
@@ -110,6 +124,10 @@
 		height: 630px;
 		margin-bottom: 1em;
 		display: flex;
+	}
+
+	.nav:nth-child(2) {
+		margin-right: 4.4em;
 	}
 
 	.done_title {

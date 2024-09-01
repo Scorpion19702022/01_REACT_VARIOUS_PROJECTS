@@ -27,6 +27,11 @@ const DoneTask = () => {
 		<section className={styles.wrapper}>
 			<div className={styles.box_content}>
 				<h2 className={styles.heading}>Lista zadań zrobionych</h2>
+				<div className={styles.box_nav}>
+					<span className={styles.nav}>ZADANIE</span>
+					<span className={styles.nav}>TERMIN</span>
+					<span className={styles.nav}>ZADZIAŁAJ</span>
+				</div>
 				<div className={styles.box_done}>{doneTask}</div>
 			</div>
 			<button className={styles.main_btn} onClick={handleDeleteAllTaskDone}>
