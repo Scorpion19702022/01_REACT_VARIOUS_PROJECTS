@@ -2,9 +2,9 @@ import React from 'react'
 
 const BmiResult = () => {
 	return (
-		<div>
+		<section>
 			<h1>Result</h1>
-		</div>
+		</section>
 	)
 }
 

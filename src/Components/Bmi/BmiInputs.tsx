@@ -1,10 +1,12 @@
 import React from 'react'
+import BmiResult from './BmiResult'
 
 const BmiInputs = () => {
 	return (
-		<div>
-			<h1>inputs</h1>
-		</div>
+		<section>
+			<h1>Inputs</h1>
+			<BmiResult />
+		</section>
 	)
 }
 
