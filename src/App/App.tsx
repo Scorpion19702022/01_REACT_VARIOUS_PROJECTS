@@ -14,6 +14,7 @@ import Africa from '../Components/WeatherApp/Pages/Africa'
 import Oceania from '../Components/WeatherApp/Pages/Oceania'
 
 import ToDoList from '../Components/ToDoList/ToDoList'
+import Bmi from '../Components/Bmi/Bmi'
 
 function App() {
 	return (
@@ -31,6 +32,7 @@ function App() {
 					<Route path='/WeatherApp/Africa' Component={Africa} />
 					<Route path='/WeatherApp/Oceania' Component={Oceania} />
 					<Route path='/ToDoList' Component={ToDoList} />
+					<Route path='Bmi' Component={Bmi} />
 				</Routes>
 			</section>
 		</Router>

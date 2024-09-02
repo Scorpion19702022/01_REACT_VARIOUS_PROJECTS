@@ -33,6 +33,11 @@ const NavBar = () => {
 							ToDoList
 						</li>
 					</NavLink>
+					<NavLink to='./Bmi'>
+						<li className={styles.link} onClick={handleNavView}>
+							Bmi
+						</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>
