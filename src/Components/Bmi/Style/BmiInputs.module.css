@@ -31,19 +31,60 @@
 	align-items: center;
 	background-color: var(--color-dark07);
 	border: 0.04em solid var(--color-color07);
+	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
 }
 
 .box_inputs {
 	width: 100%;
 	margin-bottom: 2em;
+	display: flex;
+	flex-direction: column;
 }
 
 .heading {
 	text-align: center;
 	color: var(--color-color03);
-	padding-bottom: 0.4em;
-	margin-bottom: 0.8em;
-	border-bottom: 0.04em solid var(--color-color03);
+	margin-bottom: 1.6em;
+}
+
+.input_tall {
+	width: 100%;
+}
+
+.input_weight {
+	width: 100%;
+	margin: 1em 0em;
+}
+
+.label {
+	color: var(--color-color01);
+}
+
+.input {
+	width: 100%;
+	margin-top: 0.4em;
+	padding: 0.4em;
+	background: none;
+	border: none;
+	border-bottom: 0.04em solid var(--color-color04);
+	outline: none;
+	color: var(--color-dark01);
+	font-size: 1.4em;
+}
+
+.box_btns {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1em;
+}
+
+.btn {
+	width: 35%;
+	padding: 0.6em;
+	background: none;
+	border: 0.04em solid var(--color-color06);
+	color: var(--color-color03);
 }
 
 @media (min-width: 660px) {
@@ -54,9 +95,8 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 46%;
-		height: 200px;
+		width: 56%;
+		height: 800px;
 		display: flex;
-		margin: 2em 0em 0.4em 0em;
 	}
 }

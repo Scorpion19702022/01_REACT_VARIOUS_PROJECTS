@@ -9,13 +9,13 @@ const BmiInputs = () => {
 			<div className={styles.box_inputs}>
 				<h2 className={styles.heading}>Wprowadź swoje dane</h2>
 				<div className={styles.input_tall}>
-					<label>Podaj wzrost w centymetrach:</label>
-					<input type='number' min={0} />
+					<label className={styles.label}>Podaj wzrost w centymetrach:</label>
+					<input className={styles.input} type='number' min={0} />
 				</div>
 				<div className={styles.input_weight}>
 					<div className={styles.input_tall}>
-						<label>Podaj wagę w kilogramach:</label>
-						<input type='number' min={0} />
+						<label className={styles.label}>Podaj wagę w kilogramach:</label>
+						<input className={styles.input} type='number' min={0} />
 					</div>
 				</div>
 				<div className={styles.box_btns}>
