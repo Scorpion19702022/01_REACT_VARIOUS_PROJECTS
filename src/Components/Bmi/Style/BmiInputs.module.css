@@ -60,16 +60,29 @@
 	color: var(--color-color01);
 }
 
-.input {
+.box_input {
 	width: 100%;
 	margin-top: 0.4em;
-	padding: 0.4em;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	padding-bottom: 1em;
+	border-bottom: 0.04em solid var(--color-color04);
+}
+
+.input {
+	width: 70%;
+	margin-top: 0.4em;
 	background: none;
 	border: none;
-	border-bottom: 0.04em solid var(--color-color04);
 	outline: none;
 	color: var(--color-dark01);
 	font-size: 1.4em;
+}
+
+.span_input {
+	font-size: 1.2em;
+	color: var(--color-color04);
 }
 
 .box_btns {
@@ -95,8 +108,31 @@
 
 @media (min-width: 992px) {
 	.wrapper {
+		padding: 2em;
 		width: 56%;
 		height: 800px;
 		display: flex;
+	}
+
+	.box_inputs {
+		height: 50%;
+	}
+
+	.heading {
+		font-size: 2em;
+	}
+
+	.input {
+		font-size: 1.6em;
+	}
+
+	.btn {
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.btn:hover {
+		background-color: var(--color-color09);
+		color: var(--color-color02);
 	}
 }
