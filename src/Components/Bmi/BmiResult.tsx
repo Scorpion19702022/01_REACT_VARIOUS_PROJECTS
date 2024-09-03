@@ -7,7 +7,6 @@ import woman from './assets/bmi_4.png'
 const BmiResult = () => {
 	return (
 		<section className={styles.wrapper}>
-			<h2 className={styles.heading}>Poznaj swoje BMI</h2>
 			<div className={styles.box_info_result}>
 				<h4 className={styles.headig_result}>
 					Twoje BMI wynosi: <span className={styles.result}>28</span>

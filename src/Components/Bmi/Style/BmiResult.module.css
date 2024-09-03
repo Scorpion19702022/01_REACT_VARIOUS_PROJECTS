@@ -22,12 +22,24 @@
 .wrapper {
 	position: relative;
 	width: 100%;
-	height: 50%;
+	height: 35%;
 	padding: 1em;
 	margin-top: 4em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	border-top: 1em solid var(--color-color08);
+}
+
+.box_info_result {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.img {
+	width: 30%;
+	object-fit: cover;
 }
 
 @media (min-width: 660px) {
