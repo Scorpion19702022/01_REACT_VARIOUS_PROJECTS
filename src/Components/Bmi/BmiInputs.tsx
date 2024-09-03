@@ -7,7 +7,7 @@ const BmiInputs = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_inputs}>
-				<h2>Wprowadź swoje dane</h2>
+				<h2 className={styles.heading}>Wprowadź swoje dane</h2>
 				<div className={styles.input_tall}>
 					<label>Podaj wzrost w centymetrach:</label>
 					<input type='number' min={0} />
