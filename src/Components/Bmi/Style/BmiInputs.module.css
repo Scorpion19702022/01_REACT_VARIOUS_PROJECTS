@@ -28,9 +28,6 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	background-color: var(--color-dark07);
-	border: 0.04em solid var(--color-color07);
-	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
 }
 
 @media (min-width: 660px) {
@@ -41,7 +38,7 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 90%;
+		width: 46%;
 		height: 200px;
 		display: flex;
 		margin: 2em 0em 0.4em 0em;

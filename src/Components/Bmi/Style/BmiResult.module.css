@@ -41,8 +41,7 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 90%;
-		height: 200px;
+		width: 45%;
 		display: flex;
 		margin: 2em 0em 0.4em 0em;
 	}

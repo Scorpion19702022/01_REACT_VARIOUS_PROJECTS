@@ -2,9 +2,12 @@ import React from 'react'
 
 import styles from './Style/BmiInfo.module.css'
 
+import MainImg from './assets/main_bmi_30.jpg'
+
 const BmiInfo = () => {
 	return (
 		<section className={styles.wrapper}>
+			<img className={styles.main_img} src={MainImg} alt='photo_measure' />
 			<h1 className={styles.heading}>Czym jest wskaźnik BMI</h1>
 			<p className={styles.text}>
 				Wskaźnik BMI to stosunek masy ciała (wagi) do wzrostu. Niskie wartości mówią o tym, że ważmy za mało, wysokie –
