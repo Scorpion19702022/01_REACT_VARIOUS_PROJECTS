@@ -21,16 +21,13 @@
 
 .wrapper {
 	position: relative;
-	width: 90%;
+	width: 100%;
+	height: 50%;
 	padding: 1em;
 	margin-top: 4em;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	align-items: center;
-	background-color: var(--color-dark07);
-	border: 0.04em solid var(--color-color07);
-	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
 }
 
 @media (min-width: 660px) {
