@@ -4,7 +4,15 @@ import styles from './Style/DoneTask.module.css'
 import ToDoContext from './Context/ToDoContext'
 
 const DoneTask = () => {
-	const { done, handleDeleteTaskDone, handleDeleteAllTaskDone } = useContext(ToDoContext)
+	const {
+		done,
+		sureDelete,
+		sureDeleteAllDone,
+		handleDeleteTaskDone,
+		handleDeleteAllTaskDone,
+		handleSureDelete,
+		handleSureDeleteAllDone,
+	} = useContext(ToDoContext)
 
 	const dataDoneHour = new Date().toLocaleTimeString().slice(0, 5)
 
@@ -17,9 +25,20 @@ const DoneTask = () => {
 			<span className={styles.done_time}>
 				{dayName}, {dataDoneHour}
 			</span>
-			<button className={styles.btn_done} onClick={() => handleDeleteTaskDone(item.id)}>
+			<button className={styles.btn_done} onClick={() => handleSureDelete(item.id)}>
 				usuń
 			</button>
+			<div className={!sureDelete[item.id] ? styles.no_popup : styles.popup}>
+				<h4 className={styles.popup_heading}>Jesteś pewna/pewien, że chcesz usunąć zrobione zadanie?</h4>
+				<div className={styles.box_btn_popup}>
+					<button className={styles.btn_popup} onClick={() => handleDeleteTaskDone(item.id)}>
+						Tak
+					</button>
+					<button className={styles.btn_popup} onClick={() => handleSureDelete(item.id)}>
+						Nie
+					</button>
+				</div>
+			</div>
 		</div>
 	))
 
@@ -34,9 +53,20 @@ const DoneTask = () => {
 				</div>
 				<div className={styles.box_done}>{doneTask}</div>
 			</div>
-			<button className={styles.main_btn} onClick={handleDeleteAllTaskDone}>
+			<button className={styles.main_btn} onClick={handleSureDeleteAllDone}>
 				Usuń wszystko
 			</button>
+			<div className={!sureDeleteAllDone ? styles.no_popup : styles.popup}>
+				<h4 className={styles.popup_heading}>Jesteś pewna/pewien, że chcesz usuąć wszystkie zrobione zadania?</h4>
+				<div className={styles.box_btn_popup}>
+					<button className={styles.btn_popup} onClick={handleDeleteAllTaskDone}>
+						Tak
+					</button>
+					<button className={styles.btn_popup} onClick={handleSureDeleteAllDone}>
+						Nie
+					</button>
+				</div>
+			</div>
 		</section>
 	)
 }
