@@ -229,7 +229,9 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	}
 
 	const handleSureDeleteAll = () => {
-		setSureDeleteAll(!sureDeleteAll)
+		if (toDo.length !== 0) {
+			setSureDeleteAll(!sureDeleteAll)
+		}
 	}
 
 	const handleSelectTask = (isSelect: string) => {
@@ -293,7 +295,9 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	}
 
 	const handleSureDeleteAllDone = () => {
-		setSureDeleteAllDone(!sureDeleteAllDone)
+		if (done.length !== 0) {
+			setSureDeleteAllDone(!sureDeleteAllDone)
+		}
 	}
 
 	const handleDeleteAllTaskDone = () => {
