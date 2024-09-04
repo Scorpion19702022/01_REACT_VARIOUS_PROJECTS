@@ -244,44 +244,13 @@
 		width: 70%;
 		padding: 0.5em;
 		margin-bottom: 1em;
-		position: relative;
 		background-color: var(--color-dark06);
-		z-index: 1;
-		overflow: hidden;
+		cursor: pointer;
+		transition: background-color 0.3s ease-in-out;
 	}
 
-	.btn_added_task::before {
-		position: absolute;
-		content: '';
-		width: 120%;
-		height: 150%;
+	.btn_added_task:hover {
 		background-color: var(--color-dark08);
-		transform: translate(-150%, -30%);
-		border-radius: 20px;
-		filter: blur(0.4em);
-		z-index: -1;
-		transition: transform 0.3s ease-in-out;
-	}
-
-	.btn_added_task::after {
-		position: absolute;
-		content: '';
-		width: 120%;
-		height: 150%;
-		background-color: var(--color-dark08);
-		transform: translate(50%, -30%);
-		border-radius: 20px;
-		filter: blur(0.4em);
-		z-index: -1;
-		transition: transform 0.3s ease-in-out;
-	}
-
-	.btn_added_task:hover::before {
-		transform: translate(65%, -30%);
-	}
-
-	.btn_added_task:hover::after {
-		transform: translate(-160%, -30%);
 	}
 
 	.box_info {
