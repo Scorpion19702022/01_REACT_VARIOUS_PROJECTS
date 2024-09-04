@@ -28,6 +28,7 @@ type InitialStateType = {
 	handleChangeDate: (e: any) => void
 	handleSelectTask: (isSelect: string) => void
 	handleAddTask: () => void
+	handleKeyDown: (e: any) => void
 	handleSureDelete: (id: string) => void
 	handleSureDone: (id: string) => void
 	handleSureDeleteAll: () => void
@@ -66,6 +67,7 @@ const InitialState: InitialStateType = {
 	handleChangeDate: (e: any) => {},
 	handleSelectTask: (isSelect: string) => {},
 	handleAddTask: () => {},
+	handleKeyDown: (e: any) => {},
 	handleSureDelete: (id: string) => {},
 	handleSureDone: (id: string) => {},
 	handleSureDeleteAll: () => {},
@@ -214,6 +216,13 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}
 	}
 
+	const handleKeyDown = (e: any) => {
+		if (e.key === 'Enter') {
+			handleAddTask()
+			e.preventDefault()
+		}
+	}
+
 	const handleSureDelete = (id: string) => {
 		setSureDelete(prevState => ({
 			...prevState,
@@ -330,6 +339,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 				handleChangeDate,
 				handleSelectTask,
 				handleAddTask,
+				handleKeyDown,
 				handleSureDelete,
 				handleSureDone,
 				handleSureDeleteAll,

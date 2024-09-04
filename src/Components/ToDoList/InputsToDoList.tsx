@@ -18,10 +18,11 @@ const InputsToDoList = () => {
 		handleChangeCheckpoit,
 		handleChangeDate,
 		handleAddTask,
+		handleKeyDown,
 	} = useContext(ToDoContext)
 
 	return (
-		<section className={styles.wrapper}>
+		<section className={styles.wrapper} onKeyDown={handleKeyDown}>
 			<h1 className={styles.heading}>ToDo List</h1>
 			<img className={styles.todo_icon} src={ToDoImage} alt='to do icon' />
 			<div className={styles.wrapper_inputs}>
