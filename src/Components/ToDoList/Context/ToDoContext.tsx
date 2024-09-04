@@ -90,8 +90,18 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [infoToDo, setInfoToDo] = useState<string>('')
 	const [infoMaxToDoList, setInfoMaxToDoList] = useState<string>('')
 
-	const [toDo, setToDo] = useState<TypeForToDo[]>([])
-	const [done, setDone] = useState<any>([])
+	// const [toDo, setToDo] = useState<TypeForToDo[]>([])
+	// const [done, setDone] = useState<any>([])
+
+	const [toDo, setToDo] = useState<TypeForToDo[]>(() => {
+		const savedToDo = localStorage.getItem('toDoList')
+		return savedToDo ? JSON.parse(savedToDo) : []
+	})
+
+	const [done, setDone] = useState<TypeForToDo[]>(() => {
+		const savedDone = localStorage.getItem('doneList')
+		return savedDone ? JSON.parse(savedDone) : []
+	})
 
 	const [sureDelete, setSureDelete] = useState<{ [key: string]: boolean }>({})
 	const [sureDone, setSureDone] = useState<{ [key: string]: boolean }>({})
@@ -145,6 +155,40 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setQuantitySign(taskInput.length)
 	}, [taskInput.length])
 
+	useEffect(() => {
+		localStorage.setItem('toDoList', JSON.stringify(toDo))
+	}, [toDo])
+
+	useEffect(() => {
+		localStorage.setItem('doneList', JSON.stringify(done))
+	}, [done])
+
+	// const handleAddTask = () => {
+	// 	setSelect('all')
+	// 	setSelectAll(true)
+	// 	setSelecImportant(false)
+	// 	setSelectLessImportant(false)
+	// 	setDate(currentDate)
+	// 	const Task: TypeForToDo = {
+	// 		...toDo,
+	// 		id: uuidv4(),
+	// 		title: taskInput,
+	// 		addDate: date,
+	// 		important: priority,
+	// 	}
+
+	// 	if (taskInput !== '' && toDo.length < 10 && taskInput.trim()) {
+	// 		setToDo([...toDo, Task])
+	// 		setTaskInput('')
+	// 		setPriority(false)
+	// 		setInfoToDo('dodano zadanie')
+	// 	}
+
+	// 	if (taskInput === '' || taskInput !== taskInput.trim()) {
+	// 		setInputErrors('nie wpisałeś zadania')
+	// 	}
+	// }
+
 	const handleAddTask = () => {
 		setSelect('all')
 		setSelectAll(true)
@@ -152,7 +196,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setSelectLessImportant(false)
 		setDate(currentDate)
 		const Task: TypeForToDo = {
-			...toDo,
 			id: uuidv4(),
 			title: taskInput,
 			addDate: date,
@@ -160,7 +203,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}
 
 		if (taskInput !== '' && toDo.length < 10 && taskInput.trim()) {
-			setToDo([...toDo, Task])
+			setToDo(prevToDo => [...prevToDo, Task])
 			setTaskInput('')
 			setPriority(false)
 			setInfoToDo('dodano zadanie')
