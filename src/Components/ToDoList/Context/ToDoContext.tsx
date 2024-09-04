@@ -159,14 +159,14 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			important: priority,
 		}
 
-		if (taskInput !== '' && toDo.length < 10) {
+		if (taskInput !== '' && toDo.length < 10 && taskInput.trim()) {
 			setToDo([...toDo, Task])
 			setTaskInput('')
 			setPriority(false)
 			setInfoToDo('dodano zadanie')
 		}
 
-		if (taskInput === '') {
+		if (taskInput === '' || taskInput !== taskInput.trim()) {
 			setInputErrors('nie wpisałeś zadania')
 		}
 	}
