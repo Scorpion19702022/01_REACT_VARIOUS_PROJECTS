@@ -27,7 +27,7 @@
 	margin: 2em 0em;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	background-color: var(--color-dark07);
 	border: 0.04em solid var(--color-color07);

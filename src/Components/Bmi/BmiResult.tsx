@@ -8,6 +8,14 @@ const BmiResult = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_info_result}>
+				<div className={styles.box_your_parametrs}>
+					<h4 className={styles.your_parametr}>
+						Twój wzrost: <span className={styles.parametr}>180 cm</span>
+					</h4>
+					<h4 className={styles.your_parametr}>
+						Twoja waga: <span className={styles.parametr}>75 kg</span>
+					</h4>
+				</div>
 				<h4 className={styles.heading_result}>
 					Twoje BMI wynosi: <span className={styles.result}>28</span>
 				</h4>
