@@ -102,10 +102,6 @@
 	font-size: 0.8em;
 }
 
-.nav:nth-child(2) {
-	margin-right: 0.6em;
-}
-
 .box_todo {
 	width: 100%;
 	display: flex;
@@ -175,25 +171,27 @@
 .title_task_no_important {
 	width: 38%;
 	font-weight: 200;
-	color: var(--color-color02);
+	color: var(--color-color01);
 }
 
 .date_important {
 	width: 20%;
 	font-weight: 500;
 	font-size: 0.7em;
+	text-align: center;
 	color: var(--color-color01);
 }
 
 .date_no_important {
-	width: 18%;
+	width: 20%;
 	font-weight: 200;
 	font-size: 0.7em;
-	color: var(--color-color02);
+	text-align: center;
+	color: var(--color-color01);
 }
 
 .btns_task {
-	width: 40%;
+	width: 35%;
 	display: flex;
 	justify-content: space-between;
 }
@@ -247,36 +245,28 @@
 		background-color: var(--color-dark08);
 	}
 
-	.nav:nth-child(2) {
-		margin-right: 7em;
-	}
-
 	.title_task_important {
 		width: 38%;
 		font-size: 1em;
 		font-weight: 500;
-		color: var(--color-color01);
 	}
 
 	.title_task_no_important {
 		width: 38%;
 		font-size: 1em;
 		font-weight: 200;
-		color: var(--color-color02);
 	}
 
 	.date_important {
 		width: 20%;
 		font-weight: 500;
 		font-size: 0.8em;
-		color: var(--color-color01);
 	}
 
 	.date_no_important {
 		width: 18%;
 		font-weight: 200;
 		font-size: 0.8em;
-		color: var(--color-color02);
 	}
 
 	.popup {
