@@ -118,10 +118,12 @@
 
 	.box_inputs {
 		height: 50%;
+		margin-bottom: 0em;
 	}
 
 	.heading {
 		font-size: 2em;
+		margin-bottom: 0.6em;
 	}
 
 	.input {
@@ -129,6 +131,7 @@
 	}
 
 	.btn {
+		margin-top: 0em;
 		cursor: pointer;
 		transition: all 0.3s ease-in-out;
 	}
