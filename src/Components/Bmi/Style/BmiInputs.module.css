@@ -17,6 +17,8 @@
 	--color-color07: #1f6075;
 	--color-color08: #14404e;
 	--color-color09: #0a2027;
+
+	--color-error: #ff0000;
 }
 
 .wrapper {
@@ -92,6 +94,12 @@
 	display: flex;
 	justify-content: space-between;
 	margin-top: 1em;
+}
+
+.error {
+	height: 30px;
+	padding: 1em 0em;
+	color: var(--color-error);
 }
 
 .btn {
