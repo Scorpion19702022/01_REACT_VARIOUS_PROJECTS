@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import BmiResult from './BmiResult'
 
 import styles from './Style/BmiInputs.module.css'
+import BmiContext from './Context/BmiContext'
 
 const BmiInputs = () => {
+	const { tall, weight, handleChangeTall, handleChangeWeight } = useContext(BmiContext)
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_inputs}>
@@ -11,7 +14,7 @@ const BmiInputs = () => {
 				<div className={styles.input_tall}>
 					<label className={styles.label}>Podaj wzrost w centymetrach:</label>
 					<div className={styles.box_input}>
-						<input className={styles.input} type='number' min={0} />
+						<input className={styles.input} type='number' min={0} value={Number(tall)} />
 						<span className={styles.span_input}>cm</span>
 					</div>
 					<span className={styles.error}>error</span>
@@ -20,7 +23,7 @@ const BmiInputs = () => {
 					<div className={styles.input_tall}>
 						<label className={styles.label}>Podaj wagę w kilogramach:</label>
 						<div className={styles.box_input}>
-							<input className={styles.input} type='number' min={0} />
+							<input className={styles.input} type='number' min={0} value={Number(weight)} />
 							<span className={styles.span_input}>kg</span>
 						</div>
 						<span className={styles.error}>error</span>
