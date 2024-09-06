@@ -14,16 +14,11 @@ const DoneTask = () => {
 		handleSureDeleteAllDone,
 	} = useContext(ToDoContext)
 
-	const dataDoneHour = new Date().toLocaleTimeString().slice(0, 5)
-
-	const date = new Date()
-	const dayName = date.toLocaleDateString('pl-PL', { weekday: 'long' })
-
 	const doneTask = done.map(item => (
 		<div className={styles.done_task} key={item.id}>
 			<span className={styles.done_title}>{item.title}</span>
 			<span className={styles.done_time}>
-				{dayName}, {dataDoneHour}
+				{item.doneHour}, {item.doneDay}
 			</span>
 			<button className={styles.btn_done} onClick={() => handleSureDelete(item.id)}>
 				usuń

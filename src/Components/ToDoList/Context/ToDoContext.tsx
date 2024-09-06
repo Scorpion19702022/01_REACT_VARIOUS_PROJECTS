@@ -165,32 +165,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		localStorage.setItem('doneList', JSON.stringify(done))
 	}, [done])
 
-	// const handleAddTask = () => {
-	// 	setSelect('all')
-	// 	setSelectAll(true)
-	// 	setSelecImportant(false)
-	// 	setSelectLessImportant(false)
-	// 	setDate(currentDate)
-	// 	const Task: TypeForToDo = {
-	// 		...toDo,
-	// 		id: uuidv4(),
-	// 		title: taskInput,
-	// 		addDate: date,
-	// 		important: priority,
-	// 	}
-
-	// 	if (taskInput !== '' && toDo.length < 10 && taskInput.trim()) {
-	// 		setToDo([...toDo, Task])
-	// 		setTaskInput('')
-	// 		setPriority(false)
-	// 		setInfoToDo('dodano zadanie')
-	// 	}
-
-	// 	if (taskInput === '' || taskInput !== taskInput.trim()) {
-	// 		setInputErrors('nie wpisałeś zadania')
-	// 	}
-	// }
-
 	const handleAddTask = () => {
 		setSelect('all')
 		setSelectAll(true)
@@ -283,14 +257,25 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}, 2000)
 	}
 
+	const dataDoneHour = new Date().toLocaleTimeString().slice(0, 5)
+	const dateDone = new Date()
+	const dayName = dateDone.toLocaleDateString('pl-PL', { weekday: 'long' })
+
 	const handleDoneTask = (id: string, item: string) => {
-		const addDoneTask = toDo.filter(item => item.id === id)
-		setDone([...done, ...addDoneTask])
+		const addDoneTask = toDo.find(task => task.id === id)
 
-		const doneTask = toDo.filter(item => item.id !== id)
-		setToDo(doneTask)
+		if (addDoneTask) {
+			const updatedTask: TypeForToDo = {
+				...addDoneTask,
+				doneHour: dataDoneHour,
+				doneDay: dayName,
+			}
 
-		if (doneTask) {
+			setDone(prevDone => [...prevDone, updatedTask])
+
+			const remainingTasks = toDo.filter(task => task.id !== id)
+			setToDo(remainingTasks)
+
 			setInfoToDo(`zrobiłeś zadanie ${item}`)
 			setTimeout(() => {
 				setInfoToDo('')

@@ -3,4 +3,6 @@ export type TypeForToDo = {
 	title: string
 	addDate: any
 	important: boolean
+	doneHour?: string
+	doneDay?: string
 }
