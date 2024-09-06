@@ -59,7 +59,7 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 	const [yourWeight, setYourWeight] = useState<number>(0)
 	const [imgWoman, setImgWoman] = useState<any>(woman04)
 	const [resultBmi, setResultBmi] = useState<number>(0)
-	const [textInfo, setTextInfo] = useState('Tu pojawi się informacja dla Ciebie')
+	const [textInfo, setTextInfo] = useState('')
 
 	const handleChangeTall = (e: string) => {
 		setTall(e)
@@ -69,7 +69,17 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 		setWeight(e)
 	}
 
-	const handleCountBmi = () => {}
+	const handleCountBmi = () => {
+		if (tall === '') {
+			setErrorTall('nie podałeś wartości')
+			setErrorAll('nie wypełniłeś poprawnie formularza')
+		}
+
+		if (weight === '') {
+			setErrorWeight('nie podałeś wartości')
+			setErrorAll('nie wypełniłeś poprawnie formularza')
+		}
+	}
 
 	const handleDeleteAll = () => {}
 

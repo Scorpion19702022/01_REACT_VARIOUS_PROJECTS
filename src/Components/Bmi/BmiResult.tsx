@@ -4,7 +4,7 @@ import styles from './Style/BmiResult.module.css'
 import BmiContext from './Context/BmiContext'
 
 const BmiResult = () => {
-	const { yourTall, yourWeight, resultBmi, textInfo, imgWoman } = useContext(BmiContext)
+	const { tall, weight, errorAll, yourTall, yourWeight, resultBmi, textInfo, imgWoman } = useContext(BmiContext)
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_info_result}>
@@ -21,7 +21,7 @@ const BmiResult = () => {
 				</h4>
 				<div className={styles.info_result}>
 					<div className={styles.box_text}>
-						<p className={styles.text}>{textInfo}</p>
+						<p className={styles.text}>{tall === '' || weight === '' ? errorAll : textInfo}</p>
 					</div>
 					<div className={styles.box_img}>
 						<img className={styles.img} src={imgWoman} alt='' />
