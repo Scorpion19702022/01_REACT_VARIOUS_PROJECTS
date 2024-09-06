@@ -23,6 +23,7 @@ type initiallStateType = {
 	handleChangeTall: (e: string) => void
 	handleChangeWeight: (e: string) => void
 	handleCountBmi: () => void
+	handleDeleteAll: () => void
 }
 
 type BmiTypeProvider = {
@@ -43,6 +44,7 @@ const initialState: initiallStateType = {
 	handleChangeTall: (e: string) => {},
 	handleChangeWeight: (e: string) => {},
 	handleCountBmi: () => {},
+	handleDeleteAll: () => {},
 }
 
 const BmiContext = createContext(initialState)
@@ -69,6 +71,8 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 
 	const handleCountBmi = () => {}
 
+	const handleDeleteAll = () => {}
+
 	return (
 		<BmiContext.Provider
 			value={{
@@ -85,6 +89,7 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 				handleChangeTall,
 				handleChangeWeight,
 				handleCountBmi,
+				handleDeleteAll,
 			}}
 		>
 			{children}
