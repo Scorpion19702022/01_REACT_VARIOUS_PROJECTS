@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Style/BmiResult.module.css'
-
-import woman from './assets/bmi_4.png'
+import BmiContext from './Context/BmiContext'
 
 const BmiResult = () => {
+	const { imgWoman } = useContext(BmiContext)
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_info_result}>
@@ -24,7 +24,7 @@ const BmiResult = () => {
 						<p className={styles.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, inventore.</p>
 					</div>
 					<div className={styles.box_img}>
-						<img className={styles.img} src={woman} alt='' />
+						<img className={styles.img} src={imgWoman} alt='' />
 					</div>
 				</div>
 			</div>
