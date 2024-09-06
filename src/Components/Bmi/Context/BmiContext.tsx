@@ -14,6 +14,7 @@ type initiallStateType = {
 	weight: string | null
 	errorTall: string
 	errorWeight: string
+	errorAll: string
 	yourTall: number
 	yourWeight: number
 	imgWoman: any
@@ -33,6 +34,7 @@ const initialState: initiallStateType = {
 	weight: '',
 	errorTall: '',
 	errorWeight: '',
+	errorAll: '',
 	yourTall: 0,
 	yourWeight: 0,
 	imgWoman: woman04,
@@ -50,6 +52,7 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 	const [weight, setWeight] = useState<string | null>('')
 	const [errorTall, setErrorTall] = useState<string>('')
 	const [errorWeight, setErrorWeight] = useState<string>('')
+	const [errorAll, setErrorAll] = useState<string>('')
 	const [yourTall, setYourTall] = useState<number>(0)
 	const [yourWeight, setYourWeight] = useState<number>(0)
 	const [imgWoman, setImgWoman] = useState<any>(woman04)
@@ -73,6 +76,7 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 				weight,
 				errorTall,
 				errorWeight,
+				errorAll,
 				yourTall,
 				yourWeight,
 				imgWoman,
