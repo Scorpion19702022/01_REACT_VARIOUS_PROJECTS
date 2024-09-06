@@ -1,8 +1,8 @@
 import React, { createContext, useState } from 'react'
 
 type initiallStateType = {
-	tall: string
-	weight: string
+	tall: string | null
+	weight: string | null
 	handleChangeTall: (e: string) => void
 	handleChangeWeight: (e: string) => void
 }
@@ -21,8 +21,8 @@ const initialState: initiallStateType = {
 const BmiContext = createContext(initialState)
 
 export const BmiProvider = ({ children }: BmiTypeProvider) => {
-	const [tall, setTall] = useState<string>('')
-	const [weight, setWeight] = useState<string>('')
+	const [tall, setTall] = useState<string | null>(null)
+	const [weight, setWeight] = useState<string | null>(null)
 
 	const handleChangeTall = (e: string) => {
 		setTall(e)

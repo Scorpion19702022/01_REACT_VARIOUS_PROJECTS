@@ -14,19 +14,23 @@ const BmiInputs = () => {
 				<div className={styles.input_tall}>
 					<label className={styles.label}>Podaj wzrost w centymetrach:</label>
 					<div className={styles.box_input}>
-						<input className={styles.input} type='number' min={0} value={Number(tall)} />
+						<input className={styles.input} type='number' min={0} value={Number(tall) || ''} />
 						<span className={styles.span_input}>cm</span>
 					</div>
-					<span className={styles.error}>error</span>
+					<div className={styles.box_error}>
+						<span className={styles.error}>error</span>
+					</div>
 				</div>
 				<div className={styles.input_weight}>
 					<div className={styles.input_tall}>
 						<label className={styles.label}>Podaj wagę w kilogramach:</label>
 						<div className={styles.box_input}>
-							<input className={styles.input} type='number' min={0} value={Number(weight)} />
+							<input className={styles.input} type='number' min={0} value={Number(weight) || ''} />
 							<span className={styles.span_input}>kg</span>
 						</div>
-						<span className={styles.error}>error</span>
+						<div className={styles.box_error}>
+							<span className={styles.error}>error</span>
+						</div>
 					</div>
 				</div>
 				<div className={styles.box_btns}>
