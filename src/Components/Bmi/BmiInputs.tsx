@@ -3,9 +3,10 @@ import BmiResult from './BmiResult'
 
 import styles from './Style/BmiInputs.module.css'
 import BmiContext from './Context/BmiContext'
+import { errorMonitor } from 'events'
 
 const BmiInputs = () => {
-	const { tall, weight, handleChangeTall, handleChangeWeight } = useContext(BmiContext)
+	const { tall, weight, errorTall, errorWeight, handleChangeTall, handleChangeWeight } = useContext(BmiContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -24,7 +25,7 @@ const BmiInputs = () => {
 						<span className={styles.span_input}>cm</span>
 					</div>
 					<div className={styles.box_error}>
-						<span className={styles.error}>error</span>
+						<span className={styles.error}>{errorTall}</span>
 					</div>
 				</div>
 				<div className={styles.input_weight}>
@@ -41,7 +42,7 @@ const BmiInputs = () => {
 							<span className={styles.span_input}>kg</span>
 						</div>
 						<div className={styles.box_error}>
-							<span className={styles.error}>error</span>
+							<span className={styles.error}>{errorWeight}</span>
 						</div>
 					</div>
 				</div>
