@@ -18,11 +18,11 @@ const BmiResult = () => {
 					</h4>
 				</div>
 				<h4 className={styles.heading_result}>
-					Twoje BMI wynosi: <span className={styles.result}>{resultBmi.toFixed(0)}</span>
+					Twoje BMI wynosi: <span className={styles.result}>{resultBmi.toFixed(2)}</span>
 				</h4>
 				<div className={styles.info_result}>
 					<div className={styles.box_text}>
-						<h4 className={styles.main_info}>{mainInfo}</h4>
+						<h4 className={styles.main_info}>{mainInfo.toUpperCase()}</h4>
 						<p className={tall === '' || weight === '' ? styles.error : styles.text}>
 							{tall === '' || weight === '' ? errorAll : textInfo}
 						</p>

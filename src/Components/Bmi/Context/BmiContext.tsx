@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 
-// import woman01 from '../assets/bmi_1.png'
+import woman01 from '../assets/bmi_1.png'
 // import woman02 from '../assets/bmi_2.png'
 // import woman03 from '../assets/bmi_3.png'
 import woman04 from '../assets/bmi_4.png'
@@ -73,7 +73,7 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 	}
 
 	useEffect(() => {
-		setResultBmi(+resultBmi.toFixed(0))
+		setResultBmi(+resultBmi.toFixed(2))
 	}, [resultBmi])
 
 	useEffect(() => {
@@ -89,6 +89,17 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 			setErrorAll('')
 		}
 	}, [tall, weight])
+
+	useEffect(() => {
+		if (resultBmi > 0 && resultBmi <= 16) {
+			setMainInfo('wygłodzenie')
+			setTextInfo(
+				'Masa ciała jest zbyt niska. Skontaktuj się ze swoim lekarzem, który przeprowadzi wywiad medyczny i być może zleci wykonanie badań diagnostycznych i/lub modyfikację diety.'
+			)
+			setImgWoman(woman01)
+		} else {
+		}
+	}, [resultBmi])
 
 	const handleCountBmi = () => {
 		if (tall !== '' && weight !== '' && Number(tall) > 0 && Number(weight) > 0) {
@@ -129,6 +140,7 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 		setYourTall(0)
 		setYourWeight(0)
 		setResultBmi(0)
+		setMainInfo('')
 		setTextInfo('')
 		setImgWoman(woman04)
 	}

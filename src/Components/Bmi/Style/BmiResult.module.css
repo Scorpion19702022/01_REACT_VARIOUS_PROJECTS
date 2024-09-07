@@ -84,8 +84,9 @@
 }
 
 .main_info {
-	color: var(--color-color03);
+	color: var(--color-color01);
 	text-align: center;
+	margin-bottom: 0.4em;
 }
 
 .error {
@@ -94,6 +95,7 @@
 
 .text {
 	text-align: center;
+	font-size: 0.9em;
 	color: var(--color-color02);
 }
 
@@ -138,10 +140,12 @@
 	.info_result {
 		width: 100%;
 		padding: 1em;
+		justify-content: space-around;
 		background-color: var(--color-dark08);
 	}
 
 	.box_text {
+		width: 50%;
 		justify-content: center;
 	}
 
@@ -150,7 +154,7 @@
 	}
 
 	.text {
-		font-size: 1.4em;
+		font-size: 1.2em;
 		text-align: center;
 	}
 
