@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 // import woman01 from '../assets/bmi_1.png'
 // import woman02 from '../assets/bmi_2.png'
@@ -69,7 +69,17 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 		setWeight(e)
 	}
 
+	useEffect(() => {
+		setResultBmi(+resultBmi.toFixed(0))
+	}, [resultBmi])
+
 	const handleCountBmi = () => {
+		if (tall !== '' && weight !== '') {
+			setResultBmi(Number(weight) / Math.pow(Number(tall) / 100, 2))
+			setYourTall(Number(tall))
+			setYourWeight(Number(weight))
+		}
+
 		if (tall === '') {
 			setErrorTall('nie podałeś wartości')
 			setErrorAll('nie wypełniłeś poprawnie formularza')

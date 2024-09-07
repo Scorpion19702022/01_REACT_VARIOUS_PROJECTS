@@ -17,7 +17,7 @@ const BmiResult = () => {
 					</h4>
 				</div>
 				<h4 className={styles.heading_result}>
-					Twoje BMI wynosi: <span className={styles.result}>{resultBmi}</span>
+					Twoje BMI wynosi: <span className={styles.result}>{resultBmi.toFixed(0)}</span>
 				</h4>
 				<div className={styles.info_result}>
 					<div className={styles.box_text}>
