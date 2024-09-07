@@ -19,6 +19,7 @@ type initiallStateType = {
 	yourWeight: number
 	imgWoman: any
 	resultBmi: number
+	mainInfo: string
 	textInfo: string
 	handleChangeTall: (e: string) => void
 	handleChangeWeight: (e: string) => void
@@ -40,6 +41,7 @@ const initialState: initiallStateType = {
 	yourWeight: 0,
 	imgWoman: woman04,
 	resultBmi: 0,
+	mainInfo: '',
 	textInfo: '',
 	handleChangeTall: (e: string) => {},
 	handleChangeWeight: (e: string) => {},
@@ -59,6 +61,7 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 	const [yourWeight, setYourWeight] = useState<number>(0)
 	const [imgWoman, setImgWoman] = useState<any>(woman04)
 	const [resultBmi, setResultBmi] = useState<number>(0)
+	const [mainInfo, setMainInfo] = useState('')
 	const [textInfo, setTextInfo] = useState('')
 
 	const handleChangeTall = (e: string) => {
@@ -142,6 +145,7 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 				yourWeight,
 				imgWoman,
 				resultBmi,
+				mainInfo,
 				textInfo,
 				handleChangeTall,
 				handleChangeWeight,
