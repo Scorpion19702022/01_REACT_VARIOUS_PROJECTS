@@ -5,8 +5,16 @@ import styles from './Style/BmiInputs.module.css'
 import BmiContext from './Context/BmiContext'
 
 const BmiInputs = () => {
-	const { tall, weight, errorTall, errorWeight, handleChangeTall, handleChangeWeight, handleCountBmi } =
-		useContext(BmiContext)
+	const {
+		tall,
+		weight,
+		errorTall,
+		errorWeight,
+		handleChangeTall,
+		handleChangeWeight,
+		handleCountBmi,
+		handleDeleteAll,
+	} = useContext(BmiContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -50,7 +58,9 @@ const BmiInputs = () => {
 					<button className={styles.btn} onClick={handleCountBmi}>
 						Sprawdź
 					</button>
-					<button className={styles.btn}>Wyczyść</button>
+					<button className={styles.btn} onClick={handleDeleteAll}>
+						Wyczyść
+					</button>
 				</div>
 			</div>
 			<BmiResult />

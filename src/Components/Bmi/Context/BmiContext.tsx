@@ -73,25 +73,45 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 		setResultBmi(+resultBmi.toFixed(0))
 	}, [resultBmi])
 
+	useEffect(() => {
+		if (tall !== '') {
+			setErrorTall('')
+		}
+
+		if (weight !== '') {
+			setErrorWeight('')
+		}
+	}, [tall, weight])
+
 	const handleCountBmi = () => {
 		if (tall !== '' && weight !== '') {
 			setResultBmi(Number(weight) / Math.pow(Number(tall) / 100, 2))
 			setYourTall(Number(tall))
 			setYourWeight(Number(weight))
-		}
-
-		if (tall === '') {
+			setErrorTall('')
+			setErrorWeight('')
+			setErrorAll('')
+		} else if (tall === '') {
 			setErrorTall('nie podałeś wartości')
 			setErrorAll('nie wypełniłeś poprawnie formularza')
-		}
-
-		if (weight === '') {
+		} else if (weight === '') {
 			setErrorWeight('nie podałeś wartości')
 			setErrorAll('nie wypełniłeś poprawnie formularza')
 		}
 	}
 
-	const handleDeleteAll = () => {}
+	const handleDeleteAll = () => {
+		setTall('')
+		setWeight('')
+		setErrorTall('')
+		setErrorWeight('')
+		setErrorAll('')
+		setYourTall(0)
+		setYourWeight(0)
+		setResultBmi(0)
+		setTextInfo('')
+		setImgWoman(woman04)
+	}
 
 	return (
 		<BmiContext.Provider
