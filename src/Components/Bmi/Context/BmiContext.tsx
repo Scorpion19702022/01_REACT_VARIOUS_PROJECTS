@@ -4,10 +4,10 @@ import woman01 from '../assets/bmi_1.png'
 import woman02 from '../assets/bmi_2.png'
 import woman03 from '../assets/bmi_3.png'
 import woman04 from '../assets/bmi_4.png'
-// import woman05 from '../assets/bmi_5.png'
-// import woman06 from '../assets/bmi_6.png'
-// import woman07 from '../assets/bmi_7.png'
-// import woman08 from '../assets/bmi_8.png'
+import woman05 from '../assets/bmi_5.png'
+import woman06 from '../assets/bmi_6.png'
+import woman07 from '../assets/bmi_7.png'
+import woman08 from '../assets/bmi_8.png'
 
 type initiallStateType = {
 	tall: string | null
@@ -109,12 +109,34 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 				'Masa ciała jest zbyt niska. Rozważ konsultację lekarską i wzbogać dietę w zdrowe tłuszcze roślinne, białko oraz węglowodany złożone.'
 			)
 			setImgWoman(woman03)
-		} else if (resultBmi > 18.5 && resultBmi <= 24.49) {
+		} else if (resultBmi > 18.5 && resultBmi <= 24.99) {
 			setMainInfo('prawidłowa masa ciała')
 			setTextInfo(
-				'Masa ciała jest prawidłowa. Dbaj o bogatą w warzywa i owoce dietę oraz codzienną dawkę sportu, aby utrzymać dobrą formę. '
+				'Masa ciała jest prawidłowa. Dbaj o bogatą w warzywa i owoce dietę oraz codzienną dawkę sportu, aby utrzymać dobrą formę.'
 			)
 			setImgWoman(woman04)
+		} else if (resultBmi > 25 && resultBmi <= 29.99) {
+			setMainInfo('nadwaga')
+			setTextInfo('Masa ciała jest zbyt wysoka. Rozważ konsultację lekarską i modyfikację stylu życia.')
+			setImgWoman(woman05)
+		} else if (resultBmi > 30 && resultBmi <= 34.99) {
+			setMainInfo('Otyłość pierwszego stopnia')
+			setTextInfo(
+				'Masa ciała jest zbyt wysoka, wartości BMI wskazuje na rozwijającą się otyłość I stopnia. Skontaktuj się ze swoim lekarzem, który zarekomenduje modyfikację diety i wprowadzenie codziennej dawki ruchu. Wdrażając zmiany, unikniesz powikłań otyłości i zachowasz zdrowie na dłużej.'
+			)
+			setImgWoman(woman06)
+		} else if (resultBmi > 35 && resultBmi <= 39.99) {
+			setMainInfo('Otyłość drugiego stopnia')
+			setTextInfo(
+				'Masa ciała jest zbyt wysoka, wartości BMI wskazuje na rozwijającą się otyłość II stopnia. Skontaktuj się ze swoim lekarzem, który zarekomenduje modyfikację diety i wprowadzenie codziennej dawki ruchu. Wdrażając zmiany, unikniesz powikłań otyłości i zachowasz zdrowie na dłużej.'
+			)
+			setImgWoman(woman06)
+		} else if (resultBmi >= 40) {
+			setMainInfo('Otyłość trzeciego stopnia')
+			setTextInfo(
+				'Masa ciała jest zbyt wysoka, wartości BMI wskazuje na rozwijającą się otyłość III stopnia. Skontaktuj się ze swoim lekarzem, który zarekomenduje modyfikację diety i wprowadzenie codziennej dawki ruchu. Być może konieczne będzie wprowadzenie leczenia farmakologicznego. Wdrażając zmiany i przestrzegając zaleceń lekarza, unikniesz powikłań otyłości i zachowasz zdrowie na dłużej.'
+			)
+			setImgWoman(woman06)
 		}
 	}, [resultBmi])
 
