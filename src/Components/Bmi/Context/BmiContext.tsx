@@ -81,9 +81,22 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 		if (weight !== '') {
 			setErrorWeight('')
 		}
+
+		if (tall !== '' && weight !== '') {
+			setErrorAll('')
+		}
 	}, [tall, weight])
 
 	const handleCountBmi = () => {
+		if (tall !== '' && weight !== '' && Number(tall) > 0 && Number(weight) > 0) {
+			setResultBmi(Number(weight) / Math.pow(Number(tall) / 100, 2))
+			setYourTall(Number(tall))
+			setYourWeight(Number(weight))
+			setErrorTall('')
+			setErrorWeight('')
+			setErrorAll('')
+		}
+
 		if (tall === '') {
 			setErrorTall('nie podałeś wartości')
 			setErrorAll('nie wypełniłeś poprawnie formularza')
@@ -92,22 +105,15 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 			setErrorWeight('nie podałeś wartości')
 			setErrorAll('nie wypełniłeś poprawnie formularza')
 		}
-
 		if (Number(tall) <= 0) {
 			setErrorTall('niepoprawa wartość')
+			setResultBmi(0)
+			setYourTall(0)
 		}
-
 		if (Number(weight) <= 0) {
 			setErrorWeight('niepoprawna wartość')
-		}
-
-		if (tall !== '' && weight !== '' && Number(tall) > 0 && Number(weight) > 0) {
-			setResultBmi(Number(weight) / Math.pow(Number(tall) / 100, 2))
-			setYourTall(Number(tall))
-			setYourWeight(Number(weight))
-			setErrorTall('')
-			setErrorWeight('')
-			setErrorAll('')
+			setResultBmi(0)
+			setYourWeight(0)
 		}
 	}
 
