@@ -145,7 +145,7 @@
 	}
 
 	.box_text {
-		width: 50%;
+		width: 70%;
 		justify-content: center;
 	}
 
@@ -164,7 +164,8 @@
 	}
 
 	.box_img {
+		padding-right: 2em;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 	}
 }

@@ -1,8 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react'
 
 import woman01 from '../assets/bmi_1.png'
-// import woman02 from '../assets/bmi_2.png'
-// import woman03 from '../assets/bmi_3.png'
+import woman02 from '../assets/bmi_2.png'
+import woman03 from '../assets/bmi_3.png'
 import woman04 from '../assets/bmi_4.png'
 // import woman05 from '../assets/bmi_5.png'
 // import woman06 from '../assets/bmi_6.png'
@@ -97,7 +97,24 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 				'Masa ciała jest zbyt niska. Skontaktuj się ze swoim lekarzem, który przeprowadzi wywiad medyczny i być może zleci wykonanie badań diagnostycznych i/lub modyfikację diety.'
 			)
 			setImgWoman(woman01)
-		} else {
+		} else if (resultBmi > 16 && resultBmi <= 16.99) {
+			setMainInfo('wychudzenie')
+			setTextInfo(
+				'Masa ciała jest zbyt niska. Skontaktuj się ze swoim lekarzem, który przeprowadzi wywiad medyczny i być może zleci wykonanie badań diagnostycznych i/lub modyfikację diety.'
+			)
+			setImgWoman(woman02)
+		} else if (resultBmi > 17 && resultBmi <= 18.49) {
+			setMainInfo('niedowaga')
+			setTextInfo(
+				'Masa ciała jest zbyt niska. Rozważ konsultację lekarską i wzbogać dietę w zdrowe tłuszcze roślinne, białko oraz węglowodany złożone.'
+			)
+			setImgWoman(woman03)
+		} else if (resultBmi > 18.5 && resultBmi <= 24.49) {
+			setMainInfo('prawidłowa masa ciała')
+			setTextInfo(
+				'Masa ciała jest prawidłowa. Dbaj o bogatą w warzywa i owoce dietę oraz codzienną dawkę sportu, aby utrzymać dobrą formę. '
+			)
+			setImgWoman(woman04)
 		}
 	}, [resultBmi])
 
@@ -123,11 +140,17 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 			setErrorTall('niepoprawa wartość')
 			setResultBmi(0)
 			setYourTall(0)
+			setMainInfo('')
+			setTextInfo('')
+			setImgWoman(woman04)
 		}
 		if (Number(weight) <= 0) {
 			setErrorWeight('niepoprawna wartość')
 			setResultBmi(0)
 			setYourWeight(0)
+			setMainInfo('')
+			setTextInfo('')
+			setImgWoman(woman04)
 		}
 	}
 
