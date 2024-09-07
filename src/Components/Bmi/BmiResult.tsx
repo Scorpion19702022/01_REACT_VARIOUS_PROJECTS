@@ -21,7 +21,9 @@ const BmiResult = () => {
 				</h4>
 				<div className={styles.info_result}>
 					<div className={styles.box_text}>
-						<p className={styles.text}>{tall === '' || weight === '' ? errorAll : textInfo}</p>
+						<p className={tall === '' || weight === '' ? styles.error : styles.text}>
+							{tall === '' || weight === '' ? errorAll : textInfo}
+						</p>
 					</div>
 					<div className={styles.box_img}>
 						<img className={styles.img} src={imgWoman} alt='' />

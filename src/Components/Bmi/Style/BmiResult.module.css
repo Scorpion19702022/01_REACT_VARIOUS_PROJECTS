@@ -81,6 +81,10 @@
 	align-items: center;
 }
 
+.error {
+	color: var(--color-error);
+}
+
 .text {
 	text-align: center;
 	color: var(--color-color02);
@@ -121,7 +125,13 @@
 
 	.heading_result {
 		font-size: 1.6em;
-		padding: 0.4em 0em;
+		padding: 0.4em 0em 1em 0em;
+	}
+
+	.info_result {
+		width: 100%;
+		padding: 1em;
+		background-color: var(--color-dark08);
 	}
 
 	.box_text {
@@ -129,8 +139,13 @@
 	}
 
 	.text {
-		font-size: 1.2em;
+		font-size: 1.6em;
 		text-align: center;
+	}
+
+	.error {
+		text-align: center;
+		font-size: 1.6em;
 	}
 
 	.box_img {
