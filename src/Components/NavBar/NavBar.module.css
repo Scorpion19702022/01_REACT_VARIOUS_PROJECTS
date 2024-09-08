@@ -106,7 +106,7 @@
 
 .link {
 	margin-bottom: 0.6em;
-	transition: all 2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 a {
@@ -118,7 +118,6 @@ a {
 }
 .link:hover {
 	color: var(--color-color03);
-	border-bottom: 0.04em solid var(--color-dark02);
 }
 
 @media (min-width: 992px) {

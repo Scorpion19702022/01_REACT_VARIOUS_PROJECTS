@@ -16,7 +16,7 @@ const NavBar = () => {
 				<div className={styles.line}></div>
 				<div className={styles.line}></div>
 			</button>
-			<div className={navView ? styles.nav_links_no_view : styles.nav_links_view}>
+			<div className={!navView ? styles.nav_links_no_view : styles.nav_links_view}>
 				<ul className={styles.list_links}>
 					<NavLink to='/'>
 						<li className={styles.link} onClick={handleNavView}>
