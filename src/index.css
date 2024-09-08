@@ -57,28 +57,16 @@ code {
 
 @media (min-width: 992px) {
 	.swiper-button-next::after {
+		opacity: 1;
 		position: absolute;
-		display: flex;
 		right: 20%;
-		justify-content: center;
-		align-items: center;
-		width: 70px;
-		height: 70px;
-		background-color: var(--color-color08);
-		color: var(--color-color02);
-		border-radius: 50%;
+		color: var(--color-color04);
 	}
 
 	.swiper-button-prev::after {
+		opacity: 1;
 		position: absolute;
-		display: flex;
 		left: 20%;
-		justify-content: center;
-		align-items: center;
-		width: 70px;
-		height: 70px;
-		background-color: var(--color-color08);
-		color: var(--color-color02);
-		border-radius: 50%;
+		color: var(--color-color04);
 	}
 }

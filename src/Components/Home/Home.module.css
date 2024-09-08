@@ -193,4 +193,25 @@
 		justify-content: center;
 		align-items: center;
 	}
+
+	.card_box_text {
+		position: absolute;
+		width: 100%;
+		padding: 0.6em;
+	}
+
+	.card_heading {
+		width: 30%;
+		color: var(--color-color01);
+		margin-bottom: 0.2em;
+		padding-bottom: 0.4em;
+		border-bottom: 0.04em solid var(--color-color01);
+		font-weight: 400;
+		font-size: 1.4em;
+	}
+
+	.card_text {
+		display: block;
+		color: var(--color-color02);
+	}
 }
