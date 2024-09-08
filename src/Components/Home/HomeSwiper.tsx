@@ -19,6 +19,11 @@ const HomeSwiper = () => {
 			<Swiper
 				slidesPerView={1}
 				spaceBetween={10}
+				autoplay={{
+					delay: 3500,
+					disableOnInteraction: false,
+				}}
+				loop={true}
 				pagination={{
 					clickable: true,
 				}}
@@ -27,7 +32,7 @@ const HomeSwiper = () => {
 						slidesPerView: 1,
 						spaceBetween: 20,
 					},
-					1024: {
+					992: {
 						slidesPerView: 2,
 						spaceBetween: 40,
 					},
@@ -37,32 +42,35 @@ const HomeSwiper = () => {
 				className={styles.swiper}
 			>
 				<SwiperSlide className={styles.box_swiper}>
-					<div className={styles.box_card_swiper}>
-						<div className={styles.card_box_text}>
-							<h4 className={styles.card_heading}>Aplikacja pogodowa</h4>
-							<p className={styles.card_text}>
-								Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10
-								miut
-							</p>
-						</div>
-						<div className={styles.card_box_img}>
-							<img className={styles.card_img} src={imgSlider01} alt='photoSlider' />
-						</div>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>Aplikacja pogodowa</h4>
+						<p className={styles.card_text}>
+							Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10
+							miut
+						</p>
 					</div>
+					<img className={styles.card_img} src={imgSlider01} alt='photoSlider' />
 				</SwiperSlide>
 				<SwiperSlide className={styles.box_swiper}>
-					<div className={styles.box_card_swiper}>
-						<div className={styles.card_box_text}>
-							<h4 className={styles.card_heading}>Aplikacja pogodowa</h4>
-							<p className={styles.card_text}>
-								Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10
-								miut
-							</p>
-						</div>
-						<div className={styles.card_box_img}>
-							<img className={styles.card_img} src={imgSlider02} alt='photoSlider' />
-						</div>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>ToDoList</h4>
+						<p className={styles.card_text}>
+							Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10
+							miut
+						</p>
 					</div>
+					<img className={styles.card_img} src={imgSlider02} alt='photoSlider' />
+				</SwiperSlide>
+
+				<SwiperSlide className={styles.box_swiper}>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>Kalkulator BMI</h4>
+						<p className={styles.card_text}>
+							Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10
+							miut
+						</p>
+					</div>
+					<img className={styles.card_img} src={imgSlider03} alt='photoSlider' />
 				</SwiperSlide>
 			</Swiper>
 		</section>
