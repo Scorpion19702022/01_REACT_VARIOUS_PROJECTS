@@ -1,0 +1,34 @@
+import React from 'react'
+
+import styles from './Home.module.css'
+
+import imgSlider01 from './assets/imgSwiper01.jpg'
+import imgSlider02 from './assets/imgSwiper02.jpg'
+import imgSlider03 from './assets/imgSwiper03.jpg'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+
+const HomeSwiper = () => {
+	return (
+		<section>
+			<div className={styles.box_card}>
+				<div className={styles.card_box_text}>
+					<h4 className={styles.card_heading}>Aplikacja pogodowa</h4>
+					<p className={styles.card_text}>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, minima!
+					</p>
+				</div>
+				<div className={styles.card_box_img}>
+					<img className={styles.card_img} src={imgSlider01} alt='photoSlider' />
+				</div>
+			</div>
+		</section>
+	)
+}
+
+export default HomeSwiper
