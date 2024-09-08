@@ -8,6 +8,7 @@ import woman05 from '../assets/bmi_5.png'
 import woman06 from '../assets/bmi_6.png'
 import woman07 from '../assets/bmi_7.png'
 import woman08 from '../assets/bmi_8.png'
+import { Analytics } from '@vercel/analytics/react'
 
 type initiallStateType = {
 	tall: string | null
@@ -130,13 +131,13 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 			setTextInfo(
 				'Masa ciała jest zbyt wysoka, wartości BMI wskazuje na rozwijającą się otyłość II stopnia. Skontaktuj się ze swoim lekarzem, który zarekomenduje modyfikację diety i wprowadzenie codziennej dawki ruchu. Wdrażając zmiany, unikniesz powikłań otyłości i zachowasz zdrowie na dłużej.'
 			)
-			setImgWoman(woman06)
+			setImgWoman(woman07)
 		} else if (resultBmi >= 40) {
 			setMainInfo('Otyłość trzeciego stopnia')
 			setTextInfo(
-				'Masa ciała jest zbyt wysoka, wartości BMI wskazuje na rozwijającą się otyłość III stopnia. Skontaktuj się ze swoim lekarzem, który zarekomenduje modyfikację diety i wprowadzenie codziennej dawki ruchu. Być może konieczne będzie wprowadzenie leczenia farmakologicznego. Wdrażając zmiany i przestrzegając zaleceń lekarza, unikniesz powikłań otyłości i zachowasz zdrowie na dłużej.'
+				'Masa ciała jest zbyt wysoka, wartości BMI wskazuje na rozwijającą się otyłość III stopnia. Skontaktuj się ze swoim lekarzem, który zarekomenduje modyfikację diety i wprowadzenie codziennej dawki ruchu. Być może konieczne będzie wprowadzenie leczenia farmakologicznego.'
 			)
-			setImgWoman(woman06)
+			setImgWoman(woman08)
 		}
 	}, [resultBmi])
 
@@ -211,6 +212,7 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 			}}
 		>
 			{children}
+			<Analytics />
 		</BmiContext.Provider>
 	)
 }
