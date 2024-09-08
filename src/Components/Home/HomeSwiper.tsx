@@ -15,12 +15,12 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 const HomeSwiper = () => {
 	return (
-		<section>
+		<section className={styles.wrapper_card}>
 			<div className={styles.box_card}>
 				<div className={styles.card_box_text}>
 					<h4 className={styles.card_heading}>Aplikacja pogodowa</h4>
 					<p className={styles.card_text}>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, minima!
+						Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10 miut
 					</p>
 				</div>
 				<div className={styles.card_box_img}>

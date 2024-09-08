@@ -104,6 +104,11 @@
 	background-color: var(--color-color08);
 }
 
+.card_heading {
+	color: var(--color-color01);
+	font-weight: 100;
+}
+
 .card_text {
 	display: none;
 }
@@ -170,5 +175,49 @@
 	.text {
 		color: var(--color-color01);
 		font-size: 1.6em;
+	}
+
+	.wrapper_card {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.box_card {
+		width: 45%;
+		height: 40%;
+	}
+
+	.card_box_text {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		padding: 0.4em;
+		background-color: var(--color-color08);
+	}
+
+	.card_heading {
+		color: var(--color-color01);
+		font-size: 1.4em;
+		font-weight: 400;
+		padding-bottom: 0.4em;
+		margin-bottom: 0.6em;
+		border-bottom: 0.04em solid var(--color-color01);
+	}
+
+	.card_text {
+		display: block;
+		color: var(--color-color03);
+	}
+
+	.card_box_img {
+		width: 100%;
+	}
+
+	.card_img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 }
