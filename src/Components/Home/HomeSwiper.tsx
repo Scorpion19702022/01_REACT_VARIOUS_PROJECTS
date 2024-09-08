@@ -11,7 +11,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+import { Autoplay, Navigation } from 'swiper/modules'
 
 const HomeSwiper = () => {
 	return (
@@ -24,9 +24,6 @@ const HomeSwiper = () => {
 					disableOnInteraction: false,
 				}}
 				loop={true}
-				pagination={{
-					clickable: true,
-				}}
 				breakpoints={{
 					778: {
 						slidesPerView: 1,
@@ -38,7 +35,7 @@ const HomeSwiper = () => {
 					},
 				}}
 				navigation={true}
-				modules={[Autoplay, Pagination, Navigation]}
+				modules={[Autoplay, Navigation]}
 				className={styles.swiper}
 			>
 				<SwiperSlide className={styles.box_swiper}>
