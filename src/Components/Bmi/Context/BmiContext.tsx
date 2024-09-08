@@ -66,11 +66,15 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 	const [textInfo, setTextInfo] = useState('')
 
 	const handleChangeTall = (e: string) => {
-		setTall(e)
+		if (e.length <= 3) {
+			setTall(e)
+		}
 	}
 
 	const handleChangeWeight = (e: string) => {
-		setWeight(e)
+		if (e.length <= 3) {
+			setWeight(e)
+		}
 	}
 
 	useEffect(() => {
