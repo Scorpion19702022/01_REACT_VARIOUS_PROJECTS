@@ -26,7 +26,7 @@ const HomeContext = createContext(InitialState)
 
 export const HomeProvider = ({ children }: HomeProviderType) => {
 	const [textPL, setTextPL] = useState<string>(
-		'Czesc. W tym projekcie chciałbym przedstawić różne prace z React.js z użyciem Context i TypeScript. Znajdziesz tu Aplikacje pogodową, zaawansowaną ToDoList, konwenter stopni i inne. Projekty są responsywne. Zapraszam do przeglądania.'
+		'Czesść. W tym projekcie chciałbym przedstawić różne prace z React.js z użyciem Context i TypeScript. Projekty są responsywne. Slider poniżej przedstawia co zobaczysz na stroach. Jeżeli jesteś zainteresowana/zaiteresowany kliknij w link w nawigacji. Zapraszam.'
 	)
 	const [textEN, setTextEN] = useState<string>('')
 
@@ -38,7 +38,7 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 			setIsActivePL(true)
 			setIsActiveEN(false)
 			setTextPL(
-				'Czesc. W tym projekcie chciałbym przedstawić różne prace z React.js z użyciem Context i TypeScript. Znajdziesz tu Aplikacje pogodową, zaawansowaną ToDoList, konwenter stopni i inne. Projekty są responsywne. Zapraszam do przeglądania.'
+				'Czesść. W tym projekcie chciałbym przedstawić różne prace z React.js z użyciem Context i TypeScript. Projekty są responsywne. Slider poniżej przedstawia co zobaczysz na stroach. Jeżeli jesteś zainteresowana/zaiteresowany kliknij w link w nawigacji. Zapraszam.'
 			)
 			setTextEN('')
 		} else if (kind === textEN) {
@@ -46,7 +46,7 @@ export const HomeProvider = ({ children }: HomeProviderType) => {
 			setIsActiveEN(true)
 			setTextPL('')
 			setTextEN(
-				'Hi. In this project I would like to present various works with React.js using Context and TypeScript. Here you will find weather applications, advanced ToDoList, degree converter and others. The designs are responsive. I invite you to browse.'
+				'Hello. In this project I would like to present various works with React.js using Context and TypeScript. The projects are responsive. The slider below shows what you will see on the pages. If you are interested click on the link in the navigation. I invite you.'
 			)
 		}
 	}
