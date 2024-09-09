@@ -14,7 +14,7 @@ const SalaryInput = () => {
 				</div>
 				<div className={styles.box_inputs}>
 					<div className={styles.box_input_label}>
-						<label className={styles.label}>Wpisz wynagrodzenie brutto</label>
+						<label className={styles.label}>Wpisz wynagrodzenie brutto:</label>
 						<div className={styles.box_input}>
 							<input className={styles.input} type='number' />
 							<span className={styles.kind_value}>zł brutto</span>
