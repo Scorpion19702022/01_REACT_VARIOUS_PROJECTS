@@ -63,15 +63,17 @@
 	margin-bottom: 1em;
 }
 
-.box_inputs {
+.box_main {
 	width: 100%;
+	height: 70%;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 1em;
 }
 
 .box_input_img {
-	width: 25%;
+	width: 35%;
+	display: flex;
+	align-items: center;
 }
 
 .input_img {
@@ -79,14 +81,23 @@
 	object-fit: cover;
 }
 
-.box_input {
-	width: 70%;
+.box_inputs {
+	width: 60%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
 }
 
-.box_btns {
+.box_input_label {
 	width: 100%;
+	height: 100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
+}
+
+.box_input {
+	display: flex;
 }
 
 @media (min-width: 660px) {
