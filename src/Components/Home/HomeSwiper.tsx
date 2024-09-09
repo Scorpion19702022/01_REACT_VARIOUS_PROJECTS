@@ -52,8 +52,8 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>ToDoList</h4>
 						<p className={styles.card_text}>
-							Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10
-							miut
+							Zaawansowana lista zadań do zrobienia. Dane zapisywane są w LocalStorage i można je przetrzymywać na danym
+							urządzeiu
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider02} alt='photoSlider' />
@@ -63,8 +63,8 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Kalkulator BMI</h4>
 						<p className={styles.card_text}>
-							Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10
-							miut
+							Kalkulator pokazuje nie tylko wskaźnik BMI, ale także wyświetli poradę i pokaże sylwetkę ciała adekwatną
+							do wskaźnika
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider03} alt='photoSlider' />
