@@ -7,7 +7,7 @@ import styles from './Styles/SalaryInput.module.css'
 const SalaryInput = () => {
 	return (
 		<section className={styles.wrapper}>
-			<h4 className={styles.heading}>Kalkulator wynagrodzenia dotyczy tylko umowy o pracę na pełny etat.</h4>
+			<h2 className={styles.heading}>Kalkulator wynagrodzenia dotyczy tylko umowy o pracę na pełny etat.</h2>
 			<div className={styles.box_inputs}>
 				<div className={styles.box_input_img}>
 					<img className={styles.input_img} src={imgInput} alt='' />

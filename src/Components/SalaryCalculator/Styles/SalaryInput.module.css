@@ -56,6 +56,39 @@
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
 }
 
+.heading {
+	color: var(--color-color02);
+	text-align: center;
+	font-size: 1.4em;
+	margin-bottom: 1em;
+}
+
+.box_inputs {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1em;
+}
+
+.box_input_img {
+	width: 25%;
+}
+
+.input_img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.box_input {
+	width: 70%;
+}
+
+.box_btns {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
 @media (min-width: 660px) {
 	.wrapper {
 		margin-bottom: 2em;
