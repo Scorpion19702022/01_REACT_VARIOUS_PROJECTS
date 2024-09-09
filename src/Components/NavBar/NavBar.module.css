@@ -107,6 +107,7 @@
 .link {
 	margin-bottom: 0.6em;
 	transition: all 0.2s ease-in-out;
+	text-align: center;
 }
 
 a {

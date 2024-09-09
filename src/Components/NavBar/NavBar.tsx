@@ -38,6 +38,11 @@ const NavBar = () => {
 							Bmi
 						</li>
 					</NavLink>
+					<NavLink to='./KalkulatorWynagrodzenia'>
+						<li className={styles.link} onClick={handleNavView}>
+							Kalkulator wynagrodzenia
+						</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>
