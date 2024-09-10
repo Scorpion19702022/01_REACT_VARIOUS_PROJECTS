@@ -72,8 +72,17 @@
 	align-items: flex-end;
 }
 
-.input_img {
+.input_img_mobile {
 	position: absolute;
+	top: 25%;
+	left: 3%;
+	width: 35%;
+	object-fit: cover;
+}
+
+.input_img_desktop {
+	position: absolute;
+	opacity: 0;
 	top: 25%;
 	left: 3%;
 	width: 35%;
@@ -158,7 +167,7 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 90%;
+		width: 60%;
 		height: 320px;
 		display: flex;
 		flex-direction: column;
@@ -166,7 +175,21 @@
 		justify-content: space-around;
 	}
 
-	.input_img {
-		width: 15%;
+	.input_img_mobile {
+		width: 17%;
+		top: 6%;
+		left: 10%;
+		opacity: 0;
+	}
+
+	.input_img_desktop {
+		width: 40%;
+		top: 6%;
+		left: 0%;
+		opacity: 1;
+	}
+
+	.box_btns {
+		width: 60%;
 	}
 }
