@@ -186,4 +186,13 @@
 	.box_btns {
 		width: 50%;
 	}
+
+	.btn {
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn:hover {
+		background-color: var(--color-dark08);
+	}
 }
