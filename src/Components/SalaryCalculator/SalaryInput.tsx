@@ -21,7 +21,7 @@ const SalaryInput = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h2 className={styles.heading}>Kalkulator wynagrodzenia dotyczy tylko umowy o pracę na pełny etat.</h2>
+			<h2 className={styles.heading}>Kalkulator wynagrodzeń</h2>
 			<img className={styles.input_img} src={imgInput} alt='moneyimage' />
 			<div className={styles.box_main}>
 				<div className={styles.box_inputs}>
