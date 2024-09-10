@@ -81,12 +81,7 @@
 }
 
 .input_img_desktop {
-	position: absolute;
-	opacity: 0;
-	top: 25%;
-	left: 3%;
-	width: 35%;
-	object-fit: cover;
+	display: none;
 }
 
 .box_inputs {
@@ -118,10 +113,10 @@
 }
 
 .select_contract {
-	background-color: var(--color-dark08);
+	background-color: var(--color-dark07);
 	padding: 0.4em;
 	color: var(--color-color01);
-	border: 0.04em solid var(--color-color04);
+	border: 0.04em solid var(--color-color07);
 }
 
 .input {
@@ -168,28 +163,48 @@
 @media (min-width: 992px) {
 	.wrapper {
 		width: 60%;
-		height: 320px;
+		height: 350px;
 		display: flex;
 		flex-direction: column;
 		margin-top: 1em;
 		justify-content: space-around;
 	}
 
+	.heading {
+		font-size: 2em;
+		margin: 0em 0em 0.6em 16em;
+	}
+
+	.box_main {
+		width: 100%;
+		height: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
 	.input_img_mobile {
-		width: 17%;
-		top: 6%;
-		left: 10%;
-		opacity: 0;
+		display: none;
 	}
 
 	.input_img_desktop {
-		width: 40%;
+		position: absolute;
+		width: 45%;
 		top: 6%;
 		left: 0%;
-		opacity: 1;
+		display: block;
+	}
+
+	.box_inputs {
+		width: 50%;
+		height: 85%;
+	}
+
+	.select_contract {
+		font-size: 1.2em;
 	}
 
 	.box_btns {
-		width: 60%;
+		width: 50%;
 	}
 }
