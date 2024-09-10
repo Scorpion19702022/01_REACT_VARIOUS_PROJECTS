@@ -34,7 +34,7 @@ function App() {
 					<Route path='/WeatherApp/Oceania' Component={Oceania} />
 					<Route path='/ToDoList' Component={ToDoList} />
 					<Route path='/Bmi' Component={Bmi} />
-					<Route path='/KalkulatorWynagrodzenia' Component={SalaryCalculator} />
+					<Route path='/SalaryCalculator' Component={SalaryCalculator} />
 				</Routes>
 			</section>
 		</Router>
