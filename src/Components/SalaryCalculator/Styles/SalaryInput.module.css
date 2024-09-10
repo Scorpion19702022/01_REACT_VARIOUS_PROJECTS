@@ -108,6 +108,13 @@
 	border-bottom: 0.04em solid var(--color-color04);
 }
 
+.select_contract {
+	background-color: var(--color-dark08);
+	padding: 0.4em;
+	color: var(--color-color01);
+	border: 0.04em solid var(--color-color04);
+}
+
 .input {
 	width: 60%;
 	padding: 0.4em;
@@ -121,6 +128,7 @@
 .kind_value {
 	width: 35%;
 	padding: 0.4em;
+	color: var(--color-color04);
 }
 
 .error {
@@ -132,6 +140,14 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+}
+
+.btn {
+	width: 30%;
+	padding: 0.4em;
+	background: none;
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color02);
 }
 
 @media (min-width: 660px) {

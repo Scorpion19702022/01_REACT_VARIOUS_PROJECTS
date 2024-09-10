@@ -26,8 +26,8 @@ const SalaryInput = () => {
 			<div className={styles.box_main}>
 				<div className={styles.box_inputs}>
 					<div className={styles.box_input_label}>
-						<label>wybierz rodzaj umowy:</label>
-						<select>{selectContract}</select>
+						<label className={styles.label}>wybierz rodzaj umowy:</label>
+						<select className={styles.select_contract}>{selectContract}</select>
 						<span className={styles.error}>error</span>
 						<label className={styles.label}>Wpisz wynagrodzenie brutto:</label>
 						<div className={styles.box_input}>
