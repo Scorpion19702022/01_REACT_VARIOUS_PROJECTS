@@ -110,4 +110,36 @@
 		border: 0.04em solid var(--color-color07);
 		box-shadow: 0.4em 0.4em 1em var(--color-dark09);
 	}
+
+	.heading_small {
+		font-size: 1.8em;
+	}
+
+	.result_small {
+		font-size: 1.2em;
+	}
+
+	.heading_salary {
+		font-size: 2.4em;
+	}
+
+	.result_salary {
+		font-size: 3em;
+	}
+
+	.box_btn {
+		margin-top: 2em;
+	}
+
+	.btn {
+		width: 100%;
+		padding: 0.6em;
+		font-size: 1em;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn:hover {
+		background-color: var(--color-dark09);
+	}
 }
