@@ -33,6 +33,7 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 0.4em;
 }
 
 .result {
@@ -41,32 +42,48 @@
 	flex-direction: column;
 	align-items: center;
 	padding-bottom: 0.6em;
-	margin-bottom: 1em;
+	margin-bottom: 0.4em;
 	border-bottom: 0.04em solid var(--color-color08);
 }
 
 .heading_small {
 	color: var(--color-color04);
 	margin-bottom: 0.4em;
-	font-size: 1.4em;
+	font-size: 1em;
 	font-weight: 200;
 }
 
 .result_small {
 	color: var(--color-color02);
+	font-size: 0.8em;
 }
 
 .heading_salary {
 	color: var(--color-color04);
-	font-size: 1.8em;
+	font-size: 1.4em;
 	margin-bottom: 0.4em;
 	font-weight: 400;
 }
 
 .result_salary {
 	color: var(--color-color01);
-	font-size: 2.6em;
+	font-size: 1.8em;
 	font-weight: bold;
+}
+
+.box_btn {
+	margin-top: 0.6em;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.btn {
+	width: 50%;
+	padding: 0.3em;
+	background: none;
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color03);
 }
 
 @media (min-width: 992px) {
