@@ -82,4 +82,19 @@
 	.wrapper {
 		width: 50%;
 	}
+
+	.heading_tax {
+		font-size: 2.6em;
+	}
+
+	.name_tax,
+	.result_tax {
+		font-size: 1.4em;
+	}
+
+	.name_sum_tax,
+	.result_sum_tax {
+		font-size: 1.8em;
+		font-weight: 600;
+	}
 }
