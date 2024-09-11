@@ -30,4 +30,7 @@
 }
 
 @media (min-width: 992px) {
+	.wrapper {
+		width: 50%;
+	}
 }

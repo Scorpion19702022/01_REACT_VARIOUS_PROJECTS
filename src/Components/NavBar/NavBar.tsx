@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './NavBar.module.css'
 import { NavLink } from 'react-router-dom'
 
@@ -8,6 +8,17 @@ const NavBar = () => {
 	const handleNavView = () => {
 		setNavView(!navView)
 	}
+
+	useEffect(() => {
+		if (navView) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = ''
+		}
+		return () => {
+			document.body.style.overflow = ''
+		}
+	}, [navView])
 
 	return (
 		<nav className={styles.nav}>
