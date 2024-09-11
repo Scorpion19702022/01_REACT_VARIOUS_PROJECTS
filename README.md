@@ -1,5 +1,9 @@
 # Project in progress
 
+## live:
+
+https://variousprojects.vercel.app/
+
 ## Environment setup
 
 ### To run the project locally, you need to setup the `.env` file. Here are the steps:
