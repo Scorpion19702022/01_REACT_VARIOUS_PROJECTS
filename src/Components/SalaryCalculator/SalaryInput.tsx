@@ -41,7 +41,6 @@ const SalaryInput = () => {
 				</div>
 				<div className={styles.box_btns}>
 					<button className={styles.btn}>Sprawdź</button>
-					<button className={styles.btn}>Wyczyść</button>
 				</div>
 			</div>
 		</section>

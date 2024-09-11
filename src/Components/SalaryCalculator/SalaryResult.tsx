@@ -19,6 +19,9 @@ const SalaryResult = () => {
 					<h2 className={styles.heading_salary}>Wynagrodzenie netto:</h2>
 					<span className={styles.result_salary}>800000 zł</span>
 				</div>
+				<div className={styles.box_btn}>
+					<button className={styles.btn}>wyczyść</button>
+				</div>
 			</div>
 			<SalaryTax />
 		</section>

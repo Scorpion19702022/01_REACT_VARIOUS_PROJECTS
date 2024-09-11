@@ -52,9 +52,9 @@
 
 .input_img_mobile {
 	position: absolute;
-	top: 20%;
-	left: 3%;
-	width: 32%;
+	top: 30%;
+	left: 2%;
+	width: 35%;
 	object-fit: cover;
 }
 
@@ -121,7 +121,7 @@
 .box_btns {
 	width: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 }
 
 .btn {
@@ -146,8 +146,6 @@
 
 	.box_btns {
 		width: 60%;
-		display: flex;
-		justify-content: space-between;
 	}
 }
 

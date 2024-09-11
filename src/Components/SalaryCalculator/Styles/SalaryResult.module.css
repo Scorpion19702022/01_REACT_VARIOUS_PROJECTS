@@ -79,6 +79,8 @@
 
 	.box_results {
 		width: 40%;
+		height: 100%;
+		justify-content: center;
 	}
 
 	.result:nth-child(2) {
