@@ -23,18 +23,44 @@
 
 .wrapper {
 	width: 90%;
-	height: 600px;
+	padding: 1em;
 	display: flex;
 	flex-direction: column;
-	margin-top: 1em;
+	align-items: center;
 }
 
-.box_result {
+.result {
 	width: 100%;
-	height: 300px;
-	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 0.6em;
 	margin-bottom: 1em;
-	background-color: #fff;
+	border-bottom: 0.04em solid var(--color-color08);
+}
+
+.heading_small {
+	color: var(--color-color04);
+	margin-bottom: 0.4em;
+	font-size: 1.4em;
+	font-weight: 200;
+}
+
+.result_small {
+	color: var(--color-color02);
+}
+
+.heading_salary {
+	color: var(--color-color04);
+	font-size: 1.8em;
+	margin-bottom: 0.4em;
+	font-weight: 400;
+}
+
+.result_salary {
+	color: var(--color-color01);
+	font-size: 2.6em;
+	font-weight: bold;
 }
 
 @media (min-width: 992px) {

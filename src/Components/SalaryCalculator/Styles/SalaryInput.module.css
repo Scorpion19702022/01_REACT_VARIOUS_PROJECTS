@@ -140,6 +140,10 @@
 		object-fit: cover;
 	}
 
+	.heading {
+		margin: 0em 2.8em 0.6em 0em;
+	}
+
 	.box_btns {
 		width: 60%;
 		display: flex;
@@ -159,7 +163,7 @@
 
 	.heading {
 		font-size: 2em;
-		margin: 0em 3.2em 0.6em 0em;
+		margin: 0em 3.4em 0.6em 0em;
 	}
 
 	.box_main {
