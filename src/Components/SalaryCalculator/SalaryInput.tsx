@@ -22,10 +22,10 @@ const SalaryInput = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h2 className={styles.heading}>Kalkulator wynagrodzeń</h2>
 			<img className={styles.input_img_mobile} src={imgInput} alt='moneyimage' />
 			<img className={styles.input_img_desktop} src={imgInputDesktop} alt='moneyimage' />
 			<div className={styles.box_main}>
+				<h2 className={styles.heading}>Kalkulator wynagrodzeń</h2>
 				<div className={styles.box_inputs}>
 					<div className={styles.box_input_label}>
 						<label className={styles.label}>wybierz rodzaj umowy:</label>
