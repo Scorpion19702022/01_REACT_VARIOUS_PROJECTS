@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import styles from './OceaniaWeather.module.css'
+import styles from './Styles/OceaniaWeather.module.css'
 
 import Sun from './assets/sun.png'
 import FewClouds from './assets/few_clouds.png'

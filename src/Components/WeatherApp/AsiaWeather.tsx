@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import NavWorld from './NavWorld'
-import styles from './AsiaWeather.module.css'
+import styles from './Styles/AsiaWeather.module.css'
 
 import Sun from './assets/sun.png'
 import FewClouds from './assets/few_clouds.png'

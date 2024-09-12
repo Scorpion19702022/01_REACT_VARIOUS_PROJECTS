@@ -12,7 +12,7 @@ import Snow from './assets/snow.png'
 
 import WomanWeather from './assets/back2.png'
 
-import styles from './EuropeWeather.module.css'
+import styles from './Styles/EuropeWeather.module.css'
 
 import NavWorld from './NavWorld'
 import EuropeContext from './Context/EuropeContext'

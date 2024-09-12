@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-import styles from './NavWorld.module.css'
+import styles from './Styles/NavWorld.module.css'
 
 const NavWorld = () => {
 	const location = useLocation()

@@ -1,6 +1,6 @@
 import React from 'react'
 import NavWorld from './NavWorld'
-import styles from './WeatherApp.module.css'
+import styles from './Styles/WeatherApp.module.css'
 
 import Unknown from './assets/unknown.png'
 import FewClouds from './assets/few_clouds.png'

@@ -13,7 +13,7 @@ import Snow from './assets/snow.png'
 
 import WomanWeather from './assets/back2.png'
 
-import styles from './PolandWeather.module.css'
+import styles from './Styles/PolandWeather.module.css'
 import PolandContext from './Context/PolandContext'
 
 const PolandWeather = () => {
