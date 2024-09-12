@@ -29,7 +29,7 @@ const EuropeWeather = () => {
 	const citiesOfEurope = citiesEurope.map((city, index) => (
 		<div key={index} className={styles.box_cities}>
 			<div className={styles.top}>
-				<h4 className={styles.name_city}>{city.city}</h4>
+				<h4 className={styles.name_city}>{city.city === 'Ringsend' ? 'Dublin' : city.city}</h4>
 			</div>
 			<div className={styles.bottom}>
 				<div className={styles.box_img}>

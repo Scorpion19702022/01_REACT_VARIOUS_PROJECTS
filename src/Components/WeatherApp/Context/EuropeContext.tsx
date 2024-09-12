@@ -35,7 +35,7 @@ const InitialState: InitialStateType = {
 		{ city: 'Kopenhaga', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Sztokholm', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Helsinki', img: Un, idWeather: 0, temp: 0 },
-		{ city: 'Dublin', img: Un, idWeather: 0, temp: 0 },
+		{ city: 'Ringsend', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Glasgow', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Londyn', img: Un, idWeather: 0, temp: 0 },
 		{ city: 'Bruksela', img: Un, idWeather: 0, temp: 0 },
