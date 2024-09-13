@@ -10,6 +10,7 @@ type InitialStateType = {
 	handleChangeContract: (e: string) => void
 	handleChangeInputSalary: (e: string) => void
 	handleCalculateSalary: () => void
+	handleDeleteAll: () => void
 }
 
 type SlarayProviderType = { children: React.ReactNode }
@@ -24,6 +25,7 @@ const InitialState: InitialStateType = {
 	handleChangeContract: (e: string) => {},
 	handleChangeInputSalary: (e: string) => {},
 	handleCalculateSalary: () => {},
+	handleDeleteAll: () => {},
 }
 
 const SalaryContext = createContext(InitialState)
@@ -74,9 +76,15 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		if (salaryInput === '') {
 			setErrorInputValue('nie podałeś wartości')
 		}
+	}
 
+	const handleDeleteAll = () => {
 		setContract('wybierz umowę')
 		setSalaryInput('')
+		setErrorContract('')
+		setErrorInputValue('')
+		setResultContract('')
+		setResultGrossSalary(0)
 	}
 
 	return (
@@ -91,6 +99,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				handleChangeContract,
 				handleChangeInputSalary,
 				handleCalculateSalary,
+				handleDeleteAll,
 			}}
 		>
 			{children}

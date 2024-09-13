@@ -5,7 +5,7 @@ import styles from './Styles/SalaryResult.module.css'
 import SalaryContext from './Context/SalaryContext'
 
 const SalaryResult = () => {
-	const { resultContract, resultGrossSalary } = useContext(SalaryContext)
+	const { resultContract, resultGrossSalary, handleDeleteAll } = useContext(SalaryContext)
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_results}>
@@ -22,7 +22,9 @@ const SalaryResult = () => {
 					<span className={styles.result_salary}>800000 zł</span>
 				</div>
 				<div className={styles.box_btn}>
-					<button className={styles.btn}>wyczyść</button>
+					<button className={styles.btn} onClick={handleDeleteAll}>
+						wyczyść
+					</button>
 				</div>
 			</div>
 			<SalaryTax />
