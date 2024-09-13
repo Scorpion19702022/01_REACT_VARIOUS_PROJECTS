@@ -54,6 +54,12 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 	}, [salaryInput])
 
+	useEffect(() => {
+		if (contract !== 'wybierz contract') {
+			setErrorContract('')
+		}
+	}, [contract])
+
 	const handleCalculateSalary = () => {
 		if (contract === 'wybierz umowę') {
 			setErrorContract('nie wybrałeś typu umowy')
@@ -64,6 +70,13 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setResultContract(contract)
 			setResultGrossSalary(Number(salaryInput))
 		}
+
+		if (salaryInput === '') {
+			setErrorInputValue('nie podałeś wartości')
+		}
+
+		setContract('wybierz umowę')
+		setSalaryInput('')
 	}
 
 	return (
