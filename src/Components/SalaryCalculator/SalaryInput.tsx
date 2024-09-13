@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import imgInput from './assets/salary1.png'
 import imgInputDesktop from './assets/salary.png'
 
 import styles from './Styles/SalaryInput.module.css'
+import SalaryContext from './Context/SalaryContext'
 
 const SalaryInput = () => {
+	const { salaryInput, handleChangeInputSalary } = useContext(SalaryContext)
+
 	const typeOfContract = {
 		contract01: 'wybierz umowę',
 		contract02: 'umowa o pracę',
@@ -33,7 +36,13 @@ const SalaryInput = () => {
 						<span className={styles.error}>error</span>
 						<label className={styles.label}>Wpisz wynagrodzenie brutto:</label>
 						<div className={styles.box_input}>
-							<input className={styles.input} type='number' />
+							<input
+								className={styles.input}
+								type='number'
+								min={0}
+								value={Number(salaryInput) || ''}
+								onChange={e => handleChangeInputSalary(e.target.value)}
+							/>
 							<span className={styles.kind_value}>zł brutto</span>
 						</div>
 						<span className={styles.error}>error</span>
