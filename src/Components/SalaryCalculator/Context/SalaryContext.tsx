@@ -5,6 +5,8 @@ type InitialStateType = {
 	errorContract: string
 	salaryInput: string | null
 	errorInputValue: string
+	resultContract: string
+	resultGrossSalary: number
 	handleChangeContract: (e: string) => void
 	handleChangeInputSalary: (e: string) => void
 	handleCalculateSalary: () => void
@@ -17,6 +19,8 @@ const InitialState: InitialStateType = {
 	errorContract: '',
 	salaryInput: '',
 	errorInputValue: '',
+	resultContract: '',
+	resultGrossSalary: 0,
 	handleChangeContract: (e: string) => {},
 	handleChangeInputSalary: (e: string) => {},
 	handleCalculateSalary: () => {},
@@ -29,6 +33,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const [errorContract, setErrorContract] = useState<string>('')
 	const [salaryInput, setSalaryInput] = useState<string | null>('')
 	const [errorInputValue, setErrorInputValue] = useState<string>('')
+	const [resultContract, setResultContract] = useState<string>('brak rodzaju umowy')
+	const [resultGrossSalary, setResultGrossSalary] = useState<number>(0)
 
 	const handleChangeContract = (e: string) => {
 		setContract(e)
@@ -51,8 +57,12 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const handleCalculateSalary = () => {
 		if (contract === 'wybierz umowę') {
 			setErrorContract('nie wybrałeś typu umowy')
+			setResultContract('nie wybrałeś typu umowy')
+			setResultGrossSalary(0)
 		} else if (contract !== 'wybierz umowę') {
 			setErrorContract('')
+			setResultContract(contract)
+			setResultGrossSalary(Number(salaryInput))
 		}
 	}
 
@@ -63,6 +73,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				errorContract,
 				salaryInput,
 				errorInputValue,
+				resultContract,
+				resultGrossSalary,
 				handleChangeContract,
 				handleChangeInputSalary,
 				handleCalculateSalary,
