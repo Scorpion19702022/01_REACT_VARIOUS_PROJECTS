@@ -113,8 +113,12 @@
 	color: var(--color-color04);
 }
 
+.box_error {
+	height: 30px;
+	margin: 0.2em 0em;
+}
+
 .error {
-	margin: 0.2em 0em 1em 0em;
 	color: var(--color-error);
 }
 
