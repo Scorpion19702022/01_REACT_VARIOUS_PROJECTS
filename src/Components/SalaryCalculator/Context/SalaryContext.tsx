@@ -38,6 +38,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const [resultContract, setResultContract] = useState<string>('brak typu umowy')
 	const [resultGrossSalary, setResultGrossSalary] = useState<number>(0)
 
+	let minSalary = 4300
+
 	const handleChangeContract = (e: string) => {
 		setContract(e)
 	}
@@ -55,6 +57,18 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setErrorInputValue('')
 		}
 	}, [salaryInput])
+
+	useEffect(() => {
+		if (
+			(Number(salaryInput) < minSalary && Number(salaryInput) > 0 && contract === 'wybierz umowę') ||
+			contract === 'umowa o dzieło' ||
+			contract === 'umowa B2B'
+		) {
+			setErrorInputValue('podałeś wartość poiżej minimalnego wynaggrodzenia')
+		} else {
+			setErrorInputValue('')
+		}
+	}, [minSalary, salaryInput, contract])
 
 	useEffect(() => {
 		if (contract !== 'wybierz contract') {
