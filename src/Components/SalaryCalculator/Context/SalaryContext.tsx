@@ -35,7 +35,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const [errorContract, setErrorContract] = useState<string>('')
 	const [salaryInput, setSalaryInput] = useState<string | null>('')
 	const [errorInputValue, setErrorInputValue] = useState<string>('')
-	const [resultContract, setResultContract] = useState<string>('brak rodzaju umowy')
+	const [resultContract, setResultContract] = useState<string>('brak typu umowy')
 	const [resultGrossSalary, setResultGrossSalary] = useState<number>(0)
 
 	const handleChangeContract = (e: string) => {
@@ -83,7 +83,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		setSalaryInput('')
 		setErrorContract('')
 		setErrorInputValue('')
-		setResultContract('')
+		setResultContract('brak typu umowy')
 		setResultGrossSalary(0)
 	}
 

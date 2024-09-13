@@ -39,7 +39,7 @@ const SalaryInput = () => {
 				<h2 className={styles.heading}>Kalkulator wynagrodzeń</h2>
 				<div className={styles.box_inputs}>
 					<div className={styles.box_input_label}>
-						<label className={styles.label}>wybierz rodzaj umowy:</label>
+						<label className={styles.label}>wybierz typ umowy:</label>
 						<select
 							className={styles.select_contract}
 							value={contract}
