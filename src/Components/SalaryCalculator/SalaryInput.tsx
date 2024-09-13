@@ -7,8 +7,15 @@ import styles from './Styles/SalaryInput.module.css'
 import SalaryContext from './Context/SalaryContext'
 
 const SalaryInput = () => {
-	const { contract, errorContract, salaryInput, handleChangeContract, handleChangeInputSalary, handleCalculateSalary } =
-		useContext(SalaryContext)
+	const {
+		contract,
+		errorContract,
+		salaryInput,
+		errorInputValue,
+		handleChangeContract,
+		handleChangeInputSalary,
+		handleCalculateSalary,
+	} = useContext(SalaryContext)
 
 	const typeOfContract = {
 		contract01: 'wybierz umowę',
@@ -55,7 +62,7 @@ const SalaryInput = () => {
 							<span className={styles.kind_value}>zł brutto</span>
 						</div>
 						<div className={styles.box_error}>
-							<span className={styles.error}>error</span>
+							<span className={styles.error}>{errorInputValue}</span>
 						</div>
 					</div>
 				</div>
