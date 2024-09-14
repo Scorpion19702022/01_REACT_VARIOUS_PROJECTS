@@ -12,7 +12,7 @@ const SalaryTax = () => {
 			<div className={styles.box_tax}>
 				<div className={styles.tax}>
 					<h4 className={styles.name_tax}>Składka ZUS:</h4>
-					<span className={styles.result_tax}>{contributions.contributionZUS} zł</span>
+					<span className={styles.result_tax}>{contributions.contrZUS} zł</span>
 				</div>
 				<div className={styles.tax}>
 					<h4 className={styles.name_tax}>Składka emerytalna:</h4>

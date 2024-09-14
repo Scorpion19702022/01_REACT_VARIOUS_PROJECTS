@@ -28,7 +28,7 @@ const InitialState: InitialStateType = {
 	resultGrossSalary: 0,
 	resultNetSalary: 0,
 	contributions: {
-		contributionZUS: 0,
+		contrZUS: 0,
 		contrPension: 0,
 		contrDisability: 0,
 		contrSickness: 0,
@@ -54,7 +54,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const [resultNetSalary, setResultNetSalary] = useState<number>(0)
 
 	const [contributions, setContributions] = useState<ContributionsType>({
-		contributionZUS: 0,
+		contrZUS: 0,
 		contrPension: 0,
 		contrDisability: 0,
 		contrSickness: 0,
@@ -128,7 +128,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 
 		if (salaryInput !== '' && Number(salaryInput) >= minSalary && contract === 'umowa o pracę') {
-			setResultNetSalary(Number(salaryInput) * tax)
+			setContributions({ ...contributions, contrZUS: Number(salaryInput) * contributionsZUS })
 		}
 	}
 
