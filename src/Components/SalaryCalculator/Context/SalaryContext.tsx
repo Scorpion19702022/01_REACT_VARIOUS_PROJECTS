@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { ContributionsType } from '../Types/TypeForSalaryCalculator'
 
 type InitialStateType = {
 	contract: string
@@ -7,6 +8,8 @@ type InitialStateType = {
 	errorInputValue: string
 	resultContract: string
 	resultGrossSalary: number
+	contributions: ContributionsType
+	contributionsAll: string | number
 	handleChangeContract: (e: string) => void
 	handleChangeInputSalary: (e: string) => void
 	handleCalculateSalary: () => void
@@ -22,6 +25,15 @@ const InitialState: InitialStateType = {
 	errorInputValue: '',
 	resultContract: '',
 	resultGrossSalary: 0,
+	contributions: {
+		contributionZUS: 0,
+		contrPension: 0,
+		contrDisability: 0,
+		contrSickness: 0,
+		contrHealthy: 0,
+		contrTax: 0,
+	},
+	contributionsAll: 0,
 	handleChangeContract: (e: string) => {},
 	handleChangeInputSalary: (e: string) => {},
 	handleCalculateSalary: () => {},
@@ -38,7 +50,28 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const [resultContract, setResultContract] = useState<string>('brak typu umowy')
 	const [resultGrossSalary, setResultGrossSalary] = useState<number>(0)
 
+	const [contributions, setContributions] = useState<ContributionsType>({
+		contributionZUS: 0,
+		contrPension: 0,
+		contrDisability: 0,
+		contrSickness: 0,
+		contrHealthy: 0,
+		contrTax: 0,
+	})
+
+	const [contributionsAll, setContributionsAll] = useState<string | number>(0)
+
 	let minSalary = 4300
+
+	let contributionsZUS = 0.1371
+	let contributionPension = 0.0976
+	let contributionDisability = 0.015
+	let contributionSikness = 0.0245
+
+	let contributionsHealthy = 0.09
+	let costMonth = 250
+
+	let tax = 0.12
 
 	const handleChangeContract = (e: string) => {
 		setContract(e)
@@ -110,6 +143,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				errorInputValue,
 				resultContract,
 				resultGrossSalary,
+				contributions,
+				contributionsAll,
 				handleChangeContract,
 				handleChangeInputSalary,
 				handleCalculateSalary,
