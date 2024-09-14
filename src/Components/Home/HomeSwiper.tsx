@@ -5,6 +5,7 @@ import styles from './Home.module.css'
 import imgSlider01 from './assets/imgSwiper01.jpg'
 import imgSlider02 from './assets/imgSwiper02.jpg'
 import imgSlider03 from './assets/imgSwiper03.jpg'
+import imgSlider04 from './assets/imgSwiper04.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -68,6 +69,17 @@ const HomeSwiper = () => {
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider03} alt='photoSlider' />
+				</SwiperSlide>
+
+				<SwiperSlide className={styles.box_swiper}>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>Kalkulator wynagrodzeńn</h4>
+						<p className={styles.card_text}>
+							Umożliwia obliczenie wartości wynagrodzenia netto z brutto dla poszczególych typów umowy, wysokość składek
+							i podatek
+						</p>
+					</div>
+					<img className={styles.card_img} src={imgSlider04} alt='photoSlider' />
 				</SwiperSlide>
 			</Swiper>
 		</section>
