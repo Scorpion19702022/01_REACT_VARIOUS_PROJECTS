@@ -15,7 +15,7 @@ const SalaryResult = () => {
 				</div>
 				<div className={styles.result}>
 					<h2 className={styles.heading_small}>Wynagrodzenie brutto:</h2>
-					<span className={styles.result_small}>{resultGrossSalary}</span>
+					<span className={styles.result_small}>{resultGrossSalary} zł</span>
 				</div>
 				<div className={styles.result}>
 					<h2 className={styles.heading_salary}>Wynagrodzenie netto:</h2>
