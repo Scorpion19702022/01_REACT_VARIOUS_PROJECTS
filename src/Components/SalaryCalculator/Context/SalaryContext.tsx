@@ -11,6 +11,7 @@ type InitialStateType = {
 	resultNetSalary: number
 	contributions: ContributionsType
 	contributionsAll: string | number
+	income: number
 	handleChangeContract: (e: string) => void
 	handleChangeInputSalary: (e: string) => void
 	handleCalculateSalary: () => void
@@ -36,6 +37,7 @@ const InitialState: InitialStateType = {
 		contrTax: 0,
 	},
 	contributionsAll: 0,
+	income: 0,
 	handleChangeContract: (e: string) => {},
 	handleChangeInputSalary: (e: string) => {},
 	handleCalculateSalary: () => {},
@@ -63,6 +65,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	})
 
 	const [contributionsAll, setContributionsAll] = useState<string | number>(0)
+
+	const [income, setIncome] = useState<number>(0)
 
 	let minSalary = 4300
 
@@ -112,6 +116,17 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 	}, [contract])
 
+	// useEffect(() => {
+	// 	if (
+	// 		salaryInput !== '' &&
+	// 		Number(salaryInput) >= minSalary &&
+	// 		contract === 'umowa o pracę' &&
+	// 		contributions.contrZUS > 0
+	// 	) {
+	// 		setContributions({ ...contributions })
+	// 	}
+	// }, [])
+
 	const handleCalculateSalary = () => {
 		if (contract === 'wybierz umowę') {
 			setErrorContract('nie wybrałeś typu umowy')
@@ -128,7 +143,13 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 
 		if (salaryInput !== '' && Number(salaryInput) >= minSalary && contract === 'umowa o pracę') {
-			setContributions({ ...contributions, contrZUS: Number(salaryInput) * contributionsZUS })
+			setContributions({
+				...contributions,
+				contrZUS: Number(salaryInput) * contributionsZUS,
+				contrPension: Number(salaryInput) * contributionPension,
+				contrDisability: Number(salaryInput) * contributionDisability,
+				contrSickness: Number(salaryInput) * contributionSikness,
+			})
 		}
 	}
 
@@ -153,6 +174,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				resultNetSalary,
 				contributions,
 				contributionsAll,
+				income,
 				handleChangeContract,
 				handleChangeInputSalary,
 				handleCalculateSalary,
