@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react'
 import { ContributionsType } from '../Types/TypeForSalaryCalculator'
 
+import { Analytics } from '@vercel/analytics/react'
+
 type InitialStateType = {
 	contract: string
 	errorContract: string
@@ -212,6 +214,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			}}
 		>
 			{children}
+			<Analytics />
 		</SalaryContext.Provider>
 	)
 }
