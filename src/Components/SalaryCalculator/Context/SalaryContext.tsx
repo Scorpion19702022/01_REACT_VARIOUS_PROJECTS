@@ -149,6 +149,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrPension: Number(salaryInput) * contributionPension,
 				contrDisability: Number(salaryInput) * contributionDisability,
 				contrSickness: Number(salaryInput) * contributionSikness,
+				contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
 			})
 		}
 	}
