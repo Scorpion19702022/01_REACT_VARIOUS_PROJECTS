@@ -50,7 +50,9 @@ const SalaryInput = () => {
 						<div className={styles.box_error}>
 							<span className={styles.error}>{errorContract}</span>
 						</div>
-						<label className={styles.label}>Wpisz wynagrodzenie brutto:</label>
+						<label className={styles.label}>
+							<span className={styles.label_span}>{`miesięczne`.toLocaleUpperCase()}</span> wynagrodzenie brutto:
+						</label>
 						<div className={styles.box_input}>
 							<input
 								className={styles.input}

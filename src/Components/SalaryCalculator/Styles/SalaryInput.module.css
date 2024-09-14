@@ -79,6 +79,11 @@
 .label {
 	margin-bottom: 0.4em;
 	color: var(--color-color03);
+	font-size: 0.9em;
+}
+
+.label_span {
+	color: var(--color-color01);
 }
 
 .box_input {
@@ -195,6 +200,10 @@
 
 	.select_contract {
 		font-size: 1.2em;
+	}
+
+	.label {
+		font-size: 1em;
 	}
 
 	.box_btns {

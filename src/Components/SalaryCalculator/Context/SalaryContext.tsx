@@ -60,11 +60,11 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 	useEffect(() => {
 		if (
-			(Number(salaryInput) < minSalary && Number(salaryInput) > 0 && contract === 'wybierz umowę') ||
-			contract === 'umowa o dzieło' ||
-			contract === 'umowa B2B'
+			Number(salaryInput) < minSalary &&
+			Number(salaryInput) > 0 &&
+			(contract === 'wybierz umowę' || contract === 'umowa o pracę' || contract === 'umowa zlecenie')
 		) {
-			setErrorInputValue('podałeś wartość poiżej minimalnego wynaggrodzenia')
+			setErrorInputValue(`minimalna płaca to ${minSalary} zł`)
 		} else {
 			setErrorInputValue('')
 		}
