@@ -141,6 +141,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setResultNetSalary(
 				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
 			)
+			setContributionsAll(contributions.contrZUS + contributions.contrHealthy + contributions.contrTax)
 		}
 	}, [contributions.contrTax, contract])
 
@@ -178,6 +179,17 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		setErrorInputValue('')
 		setResultContract('brak typu umowy')
 		setResultGrossSalary(0)
+		setResultNetSalary(0)
+		setContributions({
+			contrZUS: 0,
+			contrPension: 0,
+			contrDisability: 0,
+			contrSickness: 0,
+			contrHealthy: 0,
+			contrTax: 0,
+		})
+		setContributionsAll(0)
+		setIncome(0)
 	}
 
 	return (
