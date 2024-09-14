@@ -8,6 +8,7 @@ type InitialStateType = {
 	errorInputValue: string
 	resultContract: string
 	resultGrossSalary: number
+	resultNetSalary: number
 	contributions: ContributionsType
 	contributionsAll: string | number
 	handleChangeContract: (e: string) => void
@@ -25,6 +26,7 @@ const InitialState: InitialStateType = {
 	errorInputValue: '',
 	resultContract: '',
 	resultGrossSalary: 0,
+	resultNetSalary: 0,
 	contributions: {
 		contributionZUS: 0,
 		contrPension: 0,
@@ -49,6 +51,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const [errorInputValue, setErrorInputValue] = useState<string>('')
 	const [resultContract, setResultContract] = useState<string>('brak typu umowy')
 	const [resultGrossSalary, setResultGrossSalary] = useState<number>(0)
+	const [resultNetSalary, setResultNetSalary] = useState<number>(0)
 
 	const [contributions, setContributions] = useState<ContributionsType>({
 		contributionZUS: 0,
@@ -97,14 +100,14 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			Number(salaryInput) > 0 &&
 			(contract === 'wybierz umowę' || contract === 'umowa o pracę' || contract === 'umowa zlecenie')
 		) {
-			setErrorInputValue(`minimalna płaca to ${minSalary} zł`)
+			setErrorInputValue(`minimalne wynagr. to ${minSalary} zł`)
 		} else {
 			setErrorInputValue('')
 		}
 	}, [minSalary, salaryInput, contract])
 
 	useEffect(() => {
-		if (contract !== 'wybierz contract') {
+		if (contract !== 'wybierz umowę') {
 			setErrorContract('')
 		}
 	}, [contract])
@@ -122,6 +125,10 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 		if (salaryInput === '') {
 			setErrorInputValue('nie podałeś wartości')
+		}
+
+		if (salaryInput !== '' && Number(salaryInput) >= minSalary && contract === 'umowa o pracę') {
+			setResultNetSalary(Number(salaryInput) * tax)
 		}
 	}
 
@@ -143,6 +150,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				errorInputValue,
 				resultContract,
 				resultGrossSalary,
+				resultNetSalary,
 				contributions,
 				contributionsAll,
 				handleChangeContract,
