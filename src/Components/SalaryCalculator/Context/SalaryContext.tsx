@@ -116,16 +116,33 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 	}, [contract])
 
-	// useEffect(() => {
-	// 	if (
-	// 		salaryInput !== '' &&
-	// 		Number(salaryInput) >= minSalary &&
-	// 		contract === 'umowa o pracę' &&
-	// 		contributions.contrZUS > 0
-	// 	) {
-	// 		setContributions({ ...contributions })
-	// 	}
-	// }, [])
+	useEffect(() => {
+		if (
+			salaryInput !== '' &&
+			Number(salaryInput) >= minSalary &&
+			contract === 'umowa o pracę' &&
+			contributions.contrZUS > 0
+		) {
+			setIncome(Number(salaryInput) - contributions.contrZUS - costMonth)
+		}
+	}, [contract, contributions.contrZUS, costMonth, minSalary, salaryInput])
+
+	useEffect(() => {
+		if (income > 0 && contract === 'umowa o pracę') {
+			setContributions({
+				...contributions,
+				contrTax: +(income * tax - 300).toFixed(0),
+			})
+		}
+	}, [income, contract])
+
+	useEffect(() => {
+		if (contributions.contrTax > 0 && contract === 'umowa o pracę') {
+			setResultNetSalary(
+				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
+			)
+		}
+	}, [contributions.contrTax, contract])
 
 	const handleCalculateSalary = () => {
 		if (contract === 'wybierz umowę') {

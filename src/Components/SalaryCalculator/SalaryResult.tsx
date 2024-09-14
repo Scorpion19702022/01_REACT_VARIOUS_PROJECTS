@@ -19,7 +19,7 @@ const SalaryResult = () => {
 				</div>
 				<div className={styles.result}>
 					<h2 className={styles.heading_salary}>Wynagrodzenie netto:</h2>
-					<span className={styles.result_salary}>{resultNetSalary} zł</span>
+					<span className={styles.result_salary}>{resultNetSalary.toFixed(2)} zł</span>
 				</div>
 				<div className={styles.box_btn}>
 					<button className={styles.btn} onClick={handleDeleteAll}>
