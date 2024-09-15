@@ -53,11 +53,13 @@ const InitialState: InitialStateType = {
 const SalaryContext = createContext(InitialState)
 
 export const SalaryProvider = ({ children }: SlarayProviderType) => {
-	const [contract, setContract] = useState<string>('wybierz umowę')
+	const [contract, setContract] = useState<string>(localStorage.getItem('contract') || 'wybierz umowę')
 	const [errorContract, setErrorContract] = useState<string>('')
-	const [salaryInput, setSalaryInput] = useState<string | null>('')
+	const [salaryInput, setSalaryInput] = useState<string | null>(localStorage.getItem('salaryInput') || '')
 	const [errorInputValue, setErrorInputValue] = useState<string>('')
-	const [resultContract, setResultContract] = useState<string>('brak typu umowy')
+	const [resultContract, setResultContract] = useState<string>(
+		localStorage.getItem('resultContract') || 'brak typu umowy'
+	)
 	const [resultGrossSalary, setResultGrossSalary] = useState<number>(0)
 	const [resultNetSalary, setResultNetSalary] = useState<number>(0)
 
@@ -90,11 +92,17 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		setContract(e)
 	}
 
-	// const handleChangeInputSalary = (e: string) => {
-	// 	if (e.length <= 5) {
-	// 		setSalaryInput(e)
-	// 	}
-	// }
+	useEffect(() => {
+		localStorage.setItem('contract', contract)
+	}, [contract])
+
+	useEffect(() => {
+		localStorage.setItem('salaryInput', salaryInput || '')
+	}, [salaryInput])
+
+	useEffect(() => {
+		localStorage.setItem('resultContract', resultContract || '')
+	}, [resultContract])
 
 	const handleKeyDown = (e: any) => {
 		const invalidChars = [' ', '.', ',']
