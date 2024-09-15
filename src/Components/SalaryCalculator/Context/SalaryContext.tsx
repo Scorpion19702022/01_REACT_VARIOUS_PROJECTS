@@ -9,8 +9,8 @@ type InitialStateType = {
 	salaryInput: string | null
 	errorInputValue: string
 	resultContract: string
-	resultGrossSalary: number
-	resultNetSalary: number
+	resultGrossSalary: any | number
+	resultNetSalary: any | number
 	contributions: ContributionsType
 	contributionsAll: string | number
 	income: number
@@ -60,8 +60,10 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const [resultContract, setResultContract] = useState<string>(
 		localStorage.getItem('resultContract') || 'brak typu umowy'
 	)
-	const [resultGrossSalary, setResultGrossSalary] = useState<number>(0)
-	const [resultNetSalary, setResultNetSalary] = useState<number>(0)
+	const [resultGrossSalary, setResultGrossSalary] = useState<any | number>(
+		localStorage.getItem('resultGrossSalary') || 0
+	)
+	const [resultNetSalary, setResultNetSalary] = useState<any | number>(localStorage.getItem('resultNetSalary') || 0)
 
 	const [contributions, setContributions] = useState<ContributionsType>({
 		contrZUS: 0,
@@ -88,21 +90,17 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 	let tax = 0.12
 
+	useEffect(() => {
+		localStorage.setItem('contract', contract)
+		localStorage.setItem('salaryInput', salaryInput || '')
+		localStorage.setItem('resultContract', resultContract || '')
+		localStorage.setItem('resultGrossSalary', resultGrossSalary)
+		localStorage.setItem('resultNetSalary', resultNetSalary)
+	}, [contract, salaryInput, resultContract, resultGrossSalary, resultNetSalary])
+
 	const handleChangeContract = (e: string) => {
 		setContract(e)
 	}
-
-	useEffect(() => {
-		localStorage.setItem('contract', contract)
-	}, [contract])
-
-	useEffect(() => {
-		localStorage.setItem('salaryInput', salaryInput || '')
-	}, [salaryInput])
-
-	useEffect(() => {
-		localStorage.setItem('resultContract', resultContract || '')
-	}, [resultContract])
 
 	const handleKeyDown = (e: any) => {
 		const invalidChars = [' ', '.', ',']
