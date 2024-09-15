@@ -85,6 +85,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	let costMonth = 250
 
 	let tax = 0.12
+	let taxOfWork = 0.096
 
 	const handleChangeContract = (e: string) => {
 		setContract(e)
@@ -168,6 +169,15 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 	}, [contributions.contrTax, contract])
 
+	useEffect(() => {
+		if (contributions.contrTax > 0 && contract === 'umowa o dzieło') {
+			setResultNetSalary(
+				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
+			)
+			setContributionsAll(contributions.contrZUS + contributions.contrHealthy + contributions.contrTax)
+		}
+	}, [contributions.contrTax, contract])
+
 	const handleCalculateSalary = () => {
 		if (contract === 'wybierz umowę') {
 			setErrorContract('nie wybrałeś typu umowy')
@@ -191,6 +201,17 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrDisability: Number(salaryInput) * contributionDisability,
 				contrSickness: Number(salaryInput) * contributionSikness,
 				contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
+			})
+		}
+
+		if (salaryInput !== '' && contract === 'umowa o dzieło') {
+			setContributions({
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: 0,
+				contrTax: Number(salaryInput) * taxOfWork,
 			})
 		}
 	}
