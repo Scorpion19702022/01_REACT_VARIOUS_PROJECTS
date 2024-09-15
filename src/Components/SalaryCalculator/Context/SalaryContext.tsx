@@ -89,6 +89,27 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 	const handleChangeContract = (e: string) => {
 		setContract(e)
+		if (
+			contract === 'wybierz umowę' ||
+			contract === ' umowa o pracę' ||
+			contract === 'umowa zlecenie' ||
+			contract === 'umowa o dzieło' ||
+			contract === 'umowa B2B'
+		) {
+			setResultContract('brak typu umowy')
+			setResultGrossSalary(0)
+			setResultNetSalary(0)
+			setContributions({
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: 0,
+				contrTax: 0,
+			})
+			setIncome(0)
+			setContributionsAll(0)
+		}
 	}
 
 	const handleKeyDown = (e: any) => {
@@ -198,6 +219,20 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 		if (salaryInput === '') {
 			setErrorInputValue('nie podałeś wartości')
+		}
+
+		if (contract === 'wybierz umowę' || salaryInput === '') {
+			setResultNetSalary(0)
+			setContributions({
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: 0,
+				contrTax: 0,
+			})
+			setIncome(0)
+			setContributionsAll(0)
 		}
 
 		if (salaryInput !== '' && Number(salaryInput) >= minSalary && contract === 'umowa o pracę') {
