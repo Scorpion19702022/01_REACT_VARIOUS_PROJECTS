@@ -24,6 +24,8 @@ type initiallStateType = {
 	textInfo: string
 	handleChangeTall: (e: string) => void
 	handleChangeWeight: (e: string) => void
+	handleKeyDown: (e: any) => void
+	handleUseEnter: (e: any) => void
 	handleCountBmi: () => void
 	handleDeleteAll: () => void
 }
@@ -46,6 +48,8 @@ const initialState: initiallStateType = {
 	textInfo: '',
 	handleChangeTall: (e: string) => {},
 	handleChangeWeight: (e: string) => {},
+	handleKeyDown: (e: any) => {},
+	handleUseEnter: (e: any) => {},
 	handleCountBmi: () => {},
 	handleDeleteAll: () => {},
 }
@@ -74,6 +78,21 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 	const handleChangeWeight = (e: string) => {
 		if (e.length <= 3) {
 			setWeight(e)
+		}
+	}
+
+	const handleKeyDown = (e: any) => {
+		const invalidChars = [' ', '.', ',']
+
+		if (invalidChars.includes(e.key)) {
+			e.preventDefault()
+		}
+	}
+
+	const handleUseEnter = (e: any) => {
+		if (e.key === 'Enter') {
+			handleCountBmi()
+			e.preventDefault()
 		}
 	}
 
@@ -211,6 +230,8 @@ export const BmiProvider = ({ children }: BmiTypeProvider) => {
 				textInfo,
 				handleChangeTall,
 				handleChangeWeight,
+				handleKeyDown,
+				handleUseEnter,
 				handleCountBmi,
 				handleDeleteAll,
 			}}

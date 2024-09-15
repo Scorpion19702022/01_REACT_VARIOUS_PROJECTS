@@ -12,12 +12,14 @@ const BmiInputs = () => {
 		errorWeight,
 		handleChangeTall,
 		handleChangeWeight,
+		handleKeyDown,
+		handleUseEnter,
 		handleCountBmi,
 		handleDeleteAll,
 	} = useContext(BmiContext)
 
 	return (
-		<section className={styles.wrapper}>
+		<section className={styles.wrapper} onKeyDown={handleUseEnter}>
 			<div className={styles.box_inputs}>
 				<h2 className={styles.heading}>Wprowadź swoje dane</h2>
 				<div className={styles.input_tall}>
@@ -28,6 +30,7 @@ const BmiInputs = () => {
 							type='number'
 							min={0}
 							value={Number(tall) || ''}
+							onKeyDown={handleKeyDown}
 							onChange={e => handleChangeTall(e.target.value)}
 						/>
 						<span className={styles.span_input}>cm</span>
@@ -45,6 +48,7 @@ const BmiInputs = () => {
 								type='number'
 								min={0}
 								value={Number(weight) || ''}
+								onKeyDown={handleKeyDown}
 								onChange={e => handleChangeWeight(e.target.value)}
 							/>
 							<span className={styles.span_input}>kg</span>
