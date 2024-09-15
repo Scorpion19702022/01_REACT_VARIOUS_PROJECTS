@@ -13,6 +13,8 @@ const SalaryInput = () => {
 		salaryInput,
 		errorInputValue,
 		handleChangeContract,
+		handleUseEnter,
+		handleKeyDown,
 		handleChangeInputSalary,
 		handleCalculateSalary,
 	} = useContext(SalaryContext)
@@ -32,7 +34,7 @@ const SalaryInput = () => {
 	))
 
 	return (
-		<section className={styles.wrapper}>
+		<section className={styles.wrapper} onKeyDown={handleUseEnter}>
 			<img className={styles.input_img_mobile} src={imgInput} alt='moneyimage' />
 			<img className={styles.input_img_desktop} src={imgInputDesktop} alt='moneyimage' />
 			<div className={styles.box_main}>
@@ -59,6 +61,7 @@ const SalaryInput = () => {
 								type='number'
 								min={0}
 								value={Number(salaryInput) || ''}
+								onKeyDown={handleKeyDown}
 								onChange={e => handleChangeInputSalary(e.target.value)}
 							/>
 							<span className={styles.kind_value}>zł brutto</span>

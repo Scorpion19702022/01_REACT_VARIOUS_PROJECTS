@@ -15,6 +15,8 @@ type InitialStateType = {
 	contributionsAll: string | number
 	income: number
 	handleChangeContract: (e: string) => void
+	handleKeyDown: (e: any) => void
+	handleUseEnter: (e: any) => void
 	handleChangeInputSalary: (e: string) => void
 	handleCalculateSalary: () => void
 	handleDeleteAll: () => void
@@ -41,6 +43,8 @@ const InitialState: InitialStateType = {
 	contributionsAll: 0,
 	income: 0,
 	handleChangeContract: (e: string) => {},
+	handleKeyDown: (e: any) => {},
+	handleUseEnter: (e: any) => {},
 	handleChangeInputSalary: (e: string) => {},
 	handleCalculateSalary: () => {},
 	handleDeleteAll: () => {},
@@ -86,9 +90,25 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		setContract(e)
 	}
 
+	// const handleChangeInputSalary = (e: string) => {
+	// 	if (e.length <= 5) {
+	// 		setSalaryInput(e)
+	// 	}
+	// }
+
+	const handleKeyDown = (e: any) => {
+		const invalidChars = [' ', '.', ',']
+
+		if (invalidChars.includes(e.key)) {
+			e.preventDefault()
+		}
+	}
+
 	const handleChangeInputSalary = (e: string) => {
-		if (e.length <= 5) {
-			setSalaryInput(e)
+		const numericValue = e.replace(/\D/g, '')
+
+		if (numericValue.length <= 5) {
+			setSalaryInput(numericValue)
 		}
 	}
 
@@ -174,6 +194,13 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 	}
 
+	const handleUseEnter = (e: any) => {
+		if (e.key === 'Enter') {
+			handleCalculateSalary()
+			e.preventDefault()
+		}
+	}
+
 	const handleDeleteAll = () => {
 		setContract('wybierz umowę')
 		setSalaryInput('')
@@ -208,6 +235,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contributionsAll,
 				income,
 				handleChangeContract,
+				handleUseEnter,
+				handleKeyDown,
 				handleChangeInputSalary,
 				handleCalculateSalary,
 				handleDeleteAll,
