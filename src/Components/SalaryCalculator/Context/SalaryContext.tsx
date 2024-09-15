@@ -143,6 +143,12 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	}, [resultNetSalary])
 
 	useEffect(() => {
+		if (contract !== 'wybierz umowę') {
+			setErrorContract('')
+		}
+	}, [contract])
+
+	useEffect(() => {
 		if (Number(salaryInput) <= 0 && salaryInput !== '') {
 			setErrorInputValue('niepoprawna wartość')
 		} else {
@@ -161,12 +167,6 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setErrorInputValue('')
 		}
 	}, [minSalary, salaryInput, contract])
-
-	useEffect(() => {
-		if (contract !== 'wybierz umowę') {
-			setErrorContract('')
-		}
-	}, [contract])
 
 	useEffect(() => {
 		if (
