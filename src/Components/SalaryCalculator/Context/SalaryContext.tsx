@@ -129,13 +129,6 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 	}
 
-	// useEffect(() => {
-	// 	if (resultNetSalary > 0) {
-	// 		setContract('wybierz umowę')
-	// 		setSalaryInput('')
-	// 	}
-	// }, [resultNetSalary])
-
 	useEffect(() => {
 		if (contract !== 'wybierz umowę') {
 			setErrorContract('')
