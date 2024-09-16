@@ -89,13 +89,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 	const handleChangeContract = (e: string) => {
 		setContract(e)
-		if (
-			contract === 'wybierz umowę' ||
-			contract === ' umowa o pracę' ||
-			contract === 'umowa zlecenie' ||
-			contract === 'umowa o dzieło' ||
-			contract === 'umowa B2B'
-		) {
+		if (contract === 'wybierz umowę') {
 			setResultContract('brak typu umowy')
 			setResultGrossSalary(0)
 			setResultNetSalary(0)
@@ -135,12 +129,12 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 	}
 
-	useEffect(() => {
-		if (resultNetSalary > 0) {
-			setContract('wybierz umowę')
-			setSalaryInput('')
-		}
-	}, [resultNetSalary])
+	// useEffect(() => {
+	// 	if (resultNetSalary > 0) {
+	// 		setContract('wybierz umowę')
+	// 		setSalaryInput('')
+	// 	}
+	// }, [resultNetSalary])
 
 	useEffect(() => {
 		if (contract !== 'wybierz umowę') {
