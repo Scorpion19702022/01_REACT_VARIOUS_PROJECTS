@@ -106,6 +106,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrTax: 0,
 			})
 			setIncome(0)
+			setIncomeContractOfMandate(0)
 			setContributionsAll(0)
 		}
 	}
@@ -182,12 +183,14 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 	useEffect(() => {
 		if (income > 0 && contract === 'umowa o pracę') {
+			setIncomeContractOfMandate(0)
 			setContributions({
 				...contributions,
 				contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
 				contrTax: +(income * tax - 300).toFixed(0),
 			})
-		} else if (incomeContractOfMandate > 0 && income === 0 && contract === 'umowa zlecenie') {
+		} else if (incomeContractOfMandate > 0 && contract === 'umowa zlecenie') {
+			setIncome(0)
 			setContributions({
 				...contributions,
 				contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
@@ -245,6 +248,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrTax: 0,
 			})
 			setIncome(0)
+			setIncomeContractOfMandate(0)
 			setContributionsAll(0)
 		}
 
@@ -294,6 +298,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		})
 		setContributionsAll(0)
 		setIncome(0)
+		setIncomeContractOfMandate(0)
 	}
 
 	return (
