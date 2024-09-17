@@ -83,6 +83,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 	let contributionsHealthy = 0.09
 	let costMonth = 250
+	let costOfObtainingIncome = 0.2
 
 	let tax = 0.12
 	let taxOfWork = 0.096
@@ -163,6 +164,13 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			contributions.contrZUS > 0
 		) {
 			setIncome(Number(salaryInput) - contributions.contrZUS - costMonth)
+		} else if (
+			salaryInput !== '' &&
+			Number(salaryInput) >= minSalary &&
+			contract === 'umowa zlecenie' &&
+			contributions.contrZUS > 0
+		) {
+			setIncome(Number(salaryInput) - contributions.contrZUS - Number(salaryInput) * 0.2)
 		}
 	}, [contract, contributions.contrZUS, costMonth, minSalary, salaryInput])
 
@@ -172,6 +180,12 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				...contributions,
 				contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
 				contrTax: +(income * tax - 300).toFixed(0),
+			})
+		} else if (income > 0 && contract === 'umowa zlecenie') {
+			setContributions({
+				...contributions,
+				contrHealthy: 0,
+				contrTax: +(income * tax).toFixed(0),
 			})
 		}
 	}, [income, contract])
@@ -221,6 +235,14 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 
 		if (salaryInput !== '' && Number(salaryInput) >= minSalary && contract === 'umowa o pracę') {
+			setContributions({
+				...contributions,
+				contrZUS: Number(salaryInput) * contributionsZUS,
+				contrPension: Number(salaryInput) * contributionPension,
+				contrDisability: Number(salaryInput) * contributionDisability,
+				contrSickness: Number(salaryInput) * contributionSikness,
+			})
+		} else if (salaryInput !== '' && contract === 'umowa zlecenie') {
 			setContributions({
 				...contributions,
 				contrZUS: Number(salaryInput) * contributionsZUS,
