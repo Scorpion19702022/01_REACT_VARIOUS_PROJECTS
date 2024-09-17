@@ -161,6 +161,17 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	}, [minSalary, salaryInput, contract])
 
 	useEffect(() => {
+		if (contract === 'umowa o pracę') {
+			setIncomeContractOfMandate(0)
+		} else if (contract === 'umowa zlecenie') {
+			setIncome(0)
+		} else if (contract === 'umowa o dzieło') {
+			setIncome(0)
+			setIncomeContractOfMandate(0)
+		}
+	}, [contract])
+
+	useEffect(() => {
 		if (
 			salaryInput !== '' &&
 			Number(salaryInput) >= minSalary &&
