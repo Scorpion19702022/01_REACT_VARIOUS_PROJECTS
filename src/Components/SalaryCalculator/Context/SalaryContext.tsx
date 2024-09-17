@@ -182,11 +182,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
 			)
 			setContributionsAll(contributions.contrZUS + contributions.contrHealthy + contributions.contrTax)
-		}
-	}, [contributions.contrTax, contract])
-
-	useEffect(() => {
-		if (contributions.contrTax > 0 && contract === 'umowa o dzieło') {
+		} else if (contributions.contrTax > 0 && contract === 'umowa o dzieło') {
+			setIncome(0)
 			setResultNetSalary(
 				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
 			)
@@ -231,9 +228,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrDisability: Number(salaryInput) * contributionDisability,
 				contrSickness: Number(salaryInput) * contributionSikness,
 			})
-		}
-
-		if (salaryInput !== '' && contract === 'umowa o dzieło') {
+		} else if (salaryInput !== '' && contract === 'umowa o dzieło') {
 			setContributions({
 				contrZUS: 0,
 				contrPension: 0,
