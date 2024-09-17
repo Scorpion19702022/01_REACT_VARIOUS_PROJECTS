@@ -14,6 +14,7 @@ type InitialStateType = {
 	contributions: ContributionsType
 	contributionsAll: string | number
 	income: number
+	incomeContractOfMandate: number
 	handleChangeContract: (e: string) => void
 	handleKeyDown: (e: any) => void
 	handleUseEnter: (e: any) => void
@@ -42,6 +43,7 @@ const InitialState: InitialStateType = {
 	},
 	contributionsAll: 0,
 	income: 0,
+	incomeContractOfMandate: 0,
 	handleChangeContract: (e: string) => {},
 	handleKeyDown: (e: any) => {},
 	handleUseEnter: (e: any) => {},
@@ -73,6 +75,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const [contributionsAll, setContributionsAll] = useState<string | number>(0)
 
 	const [income, setIncome] = useState<number>(0)
+	const [incomeContractOfMandate, setIncomeContractOfMandate] = useState<number>(0)
 
 	let minSalary = 4300
 
@@ -170,7 +173,10 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			contract === 'umowa zlecenie' &&
 			contributions.contrZUS > 0
 		) {
-			setIncome(Number(salaryInput) - contributions.contrZUS - Number(salaryInput) * 0.2)
+			setIncome(0)
+			setIncomeContractOfMandate(Number(salaryInput) - contributions.contrZUS - Number(salaryInput) * 0.2)
+		} else if (salaryInput !== '' && contract === 'umowa o dzieło') {
+			setIncome(0)
 		}
 	}, [contract, contributions.contrZUS, costMonth, minSalary, salaryInput])
 
@@ -181,23 +187,31 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
 				contrTax: +(income * tax - 300).toFixed(0),
 			})
-		} else if (income > 0 && contract === 'umowa zlecenie') {
+		} else if (incomeContractOfMandate > 0 && income === 0 && contract === 'umowa zlecenie') {
 			setContributions({
 				...contributions,
-				contrHealthy: 0,
-				contrTax: +(income * tax).toFixed(0),
+				contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
+				contrTax: +(incomeContractOfMandate * tax).toFixed(0),
 			})
 		}
-	}, [income, contract])
+	}, [income, contract, incomeContractOfMandate])
 
 	useEffect(() => {
 		if (contributions.contrTax > 0 && contract === 'umowa o pracę') {
+			setIncomeContractOfMandate(0)
+			setResultNetSalary(
+				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
+			)
+			setContributionsAll(contributions.contrZUS + contributions.contrHealthy + contributions.contrTax)
+		} else if (contributions.contrTax > 0 && contract === 'umowa zlecenie') {
+			setIncome(0)
 			setResultNetSalary(
 				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
 			)
 			setContributionsAll(contributions.contrZUS + contributions.contrHealthy + contributions.contrTax)
 		} else if (contributions.contrTax > 0 && contract === 'umowa o dzieło') {
 			setIncome(0)
+			setIncomeContractOfMandate(0)
 			setResultNetSalary(
 				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
 			)
@@ -248,7 +262,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrZUS: Number(salaryInput) * contributionsZUS,
 				contrPension: Number(salaryInput) * contributionPension,
 				contrDisability: Number(salaryInput) * contributionDisability,
-				contrSickness: Number(salaryInput) * contributionSikness,
+				contrSickness: 0,
 			})
 		} else if (salaryInput !== '' && contract === 'umowa o dzieło') {
 			setContributions({
@@ -295,6 +309,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contributions,
 				contributionsAll,
 				income,
+				incomeContractOfMandate,
 				handleChangeContract,
 				handleUseEnter,
 				handleKeyDown,
