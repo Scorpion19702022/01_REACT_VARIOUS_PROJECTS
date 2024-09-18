@@ -245,14 +245,26 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setResultContract('nie wybrałeś typu umowy')
 			setErrorInputValue('nie podałeś wartości')
 			setResultGrossSalary(0)
+		} else if (contract !== 'wybierz umowę' && salaryInput === '') {
+			setErrorContract('')
+			setResultContract(contract)
+			setErrorInputValue('nie podałeś wartości')
+			setResultGrossSalary(0)
+		} else if (contract === 'wybierz umowę' && salaryInput !== '') {
+			setErrorContract('nie wybrałeś typu umowy')
+			setResultContract('nie wybrałeś typu umowy')
+			setErrorInputValue('')
+			setResultGrossSalary(0)
 		} else if (contract === 'wybierz umowę') {
 			setErrorContract('nie wybrałeś typu umowy')
 			setResultContract('nie wybrałeś typu umowy')
+			setErrorInputValue('')
 			setResultGrossSalary(0)
 		} else if (salaryInput === '') {
 			setErrorInputValue('nie podałeś wartości')
-		} else {
+		} else if (contract !== 'wybierz umowę' && salaryInput !== '') {
 			setErrorContract('')
+			setErrorInputValue('')
 			setResultContract(contract)
 			setResultGrossSalary(Number(salaryInput))
 		}
