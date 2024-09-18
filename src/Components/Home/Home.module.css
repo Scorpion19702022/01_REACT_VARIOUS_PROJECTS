@@ -114,12 +114,13 @@
 .btn_link {
 	position: absolute;
 	top: 5%;
-	right: 3%;
+	left: 3%;
 	width: 42px;
 	height: 42px;
 	border-radius: 50%;
 	background-color: var(--color-color08);
 	border: none;
+	border: 0.04em solid var(--color-color03);
 	color: var(--color-color03);
 }
 
@@ -210,6 +211,17 @@
 		position: absolute;
 		width: 100%;
 		padding: 0.6em;
+	}
+
+	.btn_link {
+		width: 60px;
+		height: 60px;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn_link:hover {
+		background-color: var(--color-color09);
 	}
 
 	.card_heading {

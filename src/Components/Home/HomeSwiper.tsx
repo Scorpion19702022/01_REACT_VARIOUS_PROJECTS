@@ -23,7 +23,7 @@ const HomeSwiper = () => {
 				slidesPerView={1}
 				spaceBetween={10}
 				autoplay={{
-					delay: 3500,
+					delay: 4500,
 					disableOnInteraction: false,
 				}}
 				loop={true}
@@ -55,7 +55,9 @@ const HomeSwiper = () => {
 					<img className={styles.card_img} src={imgSlider01} alt='photoSlider' />
 				</SwiperSlide>
 				<SwiperSlide className={styles.box_swiper}>
-					<button className={styles.btn_link}>LINK</button>
+					<NavLink to='./ToDoList'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>ToDoList</h4>
 						<p className={styles.card_text}>
@@ -67,7 +69,9 @@ const HomeSwiper = () => {
 				</SwiperSlide>
 
 				<SwiperSlide className={styles.box_swiper}>
-					<button className={styles.btn_link}>LINK</button>
+					<NavLink to='./Bmi'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Kalkulator BMI</h4>
 						<p className={styles.card_text}>
@@ -79,7 +83,9 @@ const HomeSwiper = () => {
 				</SwiperSlide>
 
 				<SwiperSlide className={styles.box_swiper}>
-					<button className={styles.btn_link}>LINK</button>
+					<NavLink to='./SalaryCalculator'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Kalkulator wynagrodzeń</h4>
 						<p className={styles.card_text}>
