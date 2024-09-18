@@ -111,6 +111,18 @@
 	background-color: var(--color-color08);
 }
 
+.btn_link {
+	position: absolute;
+	top: 5%;
+	right: 3%;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	background-color: var(--color-color08);
+	border: none;
+	color: var(--color-color03);
+}
+
 .card_heading {
 	color: var(--color-color01);
 	font-weight: 100;

@@ -2,6 +2,8 @@ import React from 'react'
 
 import styles from './Home.module.css'
 
+import { NavLink } from 'react-router-dom'
+
 import imgSlider01 from './assets/imgSwiper01.jpg'
 import imgSlider02 from './assets/imgSwiper02.jpg'
 import imgSlider03 from './assets/imgSwiper03.jpg'
@@ -40,6 +42,9 @@ const HomeSwiper = () => {
 				className={styles.swiper}
 			>
 				<SwiperSlide className={styles.box_swiper}>
+					<NavLink to='./WeatherApp'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Aplikacja pogodowa</h4>
 						<p className={styles.card_text}>
@@ -50,6 +55,7 @@ const HomeSwiper = () => {
 					<img className={styles.card_img} src={imgSlider01} alt='photoSlider' />
 				</SwiperSlide>
 				<SwiperSlide className={styles.box_swiper}>
+					<button className={styles.btn_link}>LINK</button>
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>ToDoList</h4>
 						<p className={styles.card_text}>
@@ -61,6 +67,7 @@ const HomeSwiper = () => {
 				</SwiperSlide>
 
 				<SwiperSlide className={styles.box_swiper}>
+					<button className={styles.btn_link}>LINK</button>
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Kalkulator BMI</h4>
 						<p className={styles.card_text}>
@@ -72,8 +79,9 @@ const HomeSwiper = () => {
 				</SwiperSlide>
 
 				<SwiperSlide className={styles.box_swiper}>
+					<button className={styles.btn_link}>LINK</button>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>Kalkulator wynagrodzeńn</h4>
+						<h4 className={styles.card_heading}>Kalkulator wynagrodzeń</h4>
 						<p className={styles.card_text}>
 							Umożliwia obliczenie wartości wynagrodzenia netto z brutto dla poszczególych typów umowy, wysokość składek
 							i podatek
