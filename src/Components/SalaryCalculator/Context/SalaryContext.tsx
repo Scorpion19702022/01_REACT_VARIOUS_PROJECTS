@@ -90,7 +90,6 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 	let contributionsHealthy = 0.09
 	let costMonth = 250
-	let costOfObtainingIncome = 0.2
 
 	let tax = 0.12
 	let taxOfWork = 0.096
@@ -241,20 +240,21 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	}, [contributions.contrTax, contract])
 
 	const handleCalculateSalary = () => {
-		if (contract === 'wybierz umowę') {
+		if (contract === 'wybierz umowę' && salaryInput === '') {
+			setErrorContract('nie wybrałeś typu umowy')
+			setResultContract('nie wybrałeś typu umowy')
+			setErrorInputValue('nie podałeś wartości')
+			setResultGrossSalary(0)
+		} else if (contract === 'wybierz umowę') {
 			setErrorContract('nie wybrałeś typu umowy')
 			setResultContract('nie wybrałeś typu umowy')
 			setResultGrossSalary(0)
-			return
+		} else if (salaryInput === '') {
+			setErrorInputValue('nie podałeś wartości')
 		} else {
 			setErrorContract('')
 			setResultContract(contract)
 			setResultGrossSalary(Number(salaryInput))
-		}
-
-		if (salaryInput === '') {
-			setErrorInputValue('nie podałeś wartości')
-			return
 		}
 		setIsCalculating(true)
 
