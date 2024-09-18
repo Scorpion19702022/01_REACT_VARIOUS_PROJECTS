@@ -15,6 +15,7 @@ type InitialStateType = {
 	contributionsAll: string | number
 	income: number
 	incomeContractOfMandate: number
+	isCalculating: boolean
 	handleChangeContract: (e: string) => void
 	handleKeyDown: (e: any) => void
 	handleUseEnter: (e: any) => void
@@ -44,6 +45,7 @@ const InitialState: InitialStateType = {
 	contributionsAll: 0,
 	income: 0,
 	incomeContractOfMandate: 0,
+	isCalculating: false,
 	handleChangeContract: (e: string) => {},
 	handleKeyDown: (e: any) => {},
 	handleUseEnter: (e: any) => {},
@@ -76,6 +78,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 	const [income, setIncome] = useState<number>(0)
 	const [incomeContractOfMandate, setIncomeContractOfMandate] = useState<number>(0)
+
+	const [isCalculating, setIsCalculating] = useState<boolean>(false)
 
 	let minSalary = 4300
 
@@ -193,22 +197,25 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	}, [contract, contributions.contrZUS, costMonth, minSalary, salaryInput])
 
 	useEffect(() => {
-		if (income > 0 && contract === 'umowa o pracę') {
-			setIncomeContractOfMandate(0)
-			setContributions({
-				...contributions,
-				contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
-				contrTax: +(income * tax - 300).toFixed(0),
-			})
-		} else if (incomeContractOfMandate > 0 && contract === 'umowa zlecenie') {
-			setIncome(0)
-			setContributions({
-				...contributions,
-				contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
-				contrTax: +(incomeContractOfMandate * tax).toFixed(0),
-			})
+		if (isCalculating) {
+			if (income > 0 && contract === 'umowa o pracę') {
+				setIncomeContractOfMandate(0)
+				setContributions({
+					...contributions,
+					contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
+					contrTax: +(income * tax - 300).toFixed(0),
+				})
+			} else if (incomeContractOfMandate > 0 && contract === 'umowa zlecenie') {
+				setIncome(0)
+				setContributions({
+					...contributions,
+					contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
+					contrTax: +(incomeContractOfMandate * tax).toFixed(0),
+				})
+			}
+			setIsCalculating(false)
 		}
-	}, [income, contract, incomeContractOfMandate])
+	}, [isCalculating, income, contract, incomeContractOfMandate, salaryInput, contributions.contrZUS])
 
 	useEffect(() => {
 		if (contributions.contrTax > 0 && contract === 'umowa o pracę') {
@@ -238,7 +245,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setErrorContract('nie wybrałeś typu umowy')
 			setResultContract('nie wybrałeś typu umowy')
 			setResultGrossSalary(0)
-		} else if (contract !== 'wybierz umowę') {
+			return
+		} else {
 			setErrorContract('')
 			setResultContract(contract)
 			setResultGrossSalary(Number(salaryInput))
@@ -246,22 +254,9 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 
 		if (salaryInput === '') {
 			setErrorInputValue('nie podałeś wartości')
+			return
 		}
-
-		if (contract === 'wybierz umowę' || salaryInput === '') {
-			setResultNetSalary(0)
-			setContributions({
-				contrZUS: 0,
-				contrPension: 0,
-				contrDisability: 0,
-				contrSickness: 0,
-				contrHealthy: 0,
-				contrTax: 0,
-			})
-			setIncome(0)
-			setIncomeContractOfMandate(0)
-			setContributionsAll(0)
-		}
+		setIsCalculating(true)
 
 		if (salaryInput !== '' && Number(salaryInput) >= minSalary && contract === 'umowa o pracę') {
 			setContributions({
@@ -271,6 +266,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrDisability: Number(salaryInput) * contributionDisability,
 				contrSickness: Number(salaryInput) * contributionSikness,
 			})
+			const incomeWork = Number(salaryInput) - Number(salaryInput) * contributionsZUS - costMonth
+			setIncome(incomeWork)
 		} else if (salaryInput !== '' && contract === 'umowa zlecenie') {
 			setContributions({
 				...contributions,
@@ -279,6 +276,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrDisability: Number(salaryInput) * contributionDisability,
 				contrSickness: 0,
 			})
+			const incomeMandate = Number(salaryInput) - Number(salaryInput) * contributionsZUS - Number(salaryInput) * 0.2
+			setIncomeContractOfMandate(incomeMandate)
 		} else if (salaryInput !== '' && contract === 'umowa o dzieło') {
 			setContributions({
 				contrZUS: 0,
@@ -310,6 +309,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		setContributionsAll(0)
 		setIncome(0)
 		setIncomeContractOfMandate(0)
+		setIsCalculating(false)
 	}
 
 	return (
@@ -326,6 +326,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contributionsAll,
 				income,
 				incomeContractOfMandate,
+				isCalculating,
 				handleChangeContract,
 				handleUseEnter,
 				handleKeyDown,
