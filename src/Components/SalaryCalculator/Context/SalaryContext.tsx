@@ -138,10 +138,13 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	}
 
 	useEffect(() => {
-		if (contract !== 'wybierz umowę') {
+		if (contract !== 'wybierz umowę' && salaryInput === '') {
 			setErrorContract('')
+			setErrorInputValue("nie podałeś wartości'")
+		} else {
+			setErrorInputValue('')
 		}
-	}, [contract])
+	}, [contract, salaryInput])
 
 	useEffect(() => {
 		if (Number(salaryInput) <= 0 && salaryInput !== '') {
@@ -245,23 +248,84 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setResultContract('nie wybrałeś typu umowy')
 			setErrorInputValue('nie podałeś wartości')
 			setResultGrossSalary(0)
+			setResultNetSalary(0)
+			setContributions({
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: 0,
+				contrTax: 0,
+			})
+			setContributionsAll(0)
+			setIncome(0)
+			setIncomeContractOfMandate(0)
 		} else if (contract !== 'wybierz umowę' && salaryInput === '') {
 			setErrorContract('')
 			setResultContract(contract)
 			setErrorInputValue('nie podałeś wartości')
 			setResultGrossSalary(0)
+			setResultNetSalary(0)
+			setContributions({
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: 0,
+				contrTax: 0,
+			})
+			setContributionsAll(0)
+			setIncome(0)
+			setIncomeContractOfMandate(0)
 		} else if (contract === 'wybierz umowę' && salaryInput !== '') {
 			setErrorContract('nie wybrałeś typu umowy')
 			setResultContract('nie wybrałeś typu umowy')
 			setErrorInputValue('')
 			setResultGrossSalary(0)
+			setResultNetSalary(0)
+			setContributions({
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: 0,
+				contrTax: 0,
+			})
+			setContributionsAll(0)
+			setIncome(0)
+			setIncomeContractOfMandate(0)
 		} else if (contract === 'wybierz umowę') {
 			setErrorContract('nie wybrałeś typu umowy')
 			setResultContract('nie wybrałeś typu umowy')
 			setErrorInputValue('')
 			setResultGrossSalary(0)
+			setResultNetSalary(0)
+			setContributions({
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: 0,
+				contrTax: 0,
+			})
+			setContributionsAll(0)
+			setIncome(0)
+			setIncomeContractOfMandate(0)
 		} else if (salaryInput === '') {
 			setErrorInputValue('nie podałeś wartości')
+			setResultGrossSalary(0)
+			setResultNetSalary(0)
+			setContributions({
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: 0,
+				contrTax: 0,
+			})
+			setContributionsAll(0)
+			setIncome(0)
+			setIncomeContractOfMandate(0)
 		} else if (contract !== 'wybierz umowę' && salaryInput !== '') {
 			setErrorContract('')
 			setErrorInputValue('')
