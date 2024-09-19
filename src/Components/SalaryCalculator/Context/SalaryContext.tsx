@@ -367,6 +367,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			})
 			const incomeWork = Number(salaryInput) - Number(salaryInput) * contributionsZUS - costMonth
 			setIncome(incomeWork)
+			setShowInfo(false)
 		} else if (salaryInput !== '' && contract === 'umowa zlecenie') {
 			setContributions({
 				...contributions,
@@ -377,6 +378,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			})
 			const incomeMandate = Number(salaryInput) - Number(salaryInput) * contributionsZUS - Number(salaryInput) * 0.2
 			setIncomeContractOfMandate(incomeMandate)
+			setShowInfo(false)
 		} else if (salaryInput !== '' && contract === 'umowa o dzieło') {
 			setContributions({
 				contrZUS: 0,
@@ -386,6 +388,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrHealthy: 0,
 				contrTax: Number(salaryInput) * taxOfWork,
 			})
+			setShowInfo(true)
 		} else if (salaryInput !== '' && contract === 'umowa B2B') {
 			setContributions({
 				...contributions,
@@ -396,10 +399,13 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrHealthy: Number(salaryInput) * cotributionsHealthyOfB2B,
 				contrTax: 0,
 			})
+			setShowInfo(true)
 		}
 	}
 
-	const handleCloseInfo = () => {}
+	const handleCloseInfo = () => {
+		setShowInfo(false)
+	}
 
 	const handleDeleteAll = () => {
 		setContract('wybierz umowę')
@@ -421,6 +427,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		setIncome(0)
 		setIncomeContractOfMandate(0)
 		setIsCalculating(false)
+		setShowInfo(false)
 	}
 
 	return (
