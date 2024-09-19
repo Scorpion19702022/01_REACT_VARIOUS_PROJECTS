@@ -43,6 +43,23 @@
 	background-color: var(--color-dark07);
 	border: 0.04em solid var(--color-color07);
 	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
+	opacity: 1;
+}
+
+.no_box_info {
+	position: absolute;
+	top: 0%;
+	width: 100%;
+	min-height: 280px;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-dark07);
+	border: 0.04em solid var(--color-color07);
+	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
+	opacity: 0;
 }
 
 .heading_info {
@@ -52,6 +69,14 @@
 .text_info {
 	color: var(--color-color02);
 	text-align: center;
+}
+
+.btn_close_info {
+	width: 100%;
+	padding: 0.4em;
+	background: none;
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color01);
 }
 
 .box_results {
