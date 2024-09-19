@@ -16,11 +16,14 @@ type InitialStateType = {
 	income: number
 	incomeContractOfMandate: number
 	isCalculating: boolean
+	info: string
+	showInfo: boolean
 	handleChangeContract: (e: string) => void
 	handleKeyDown: (e: any) => void
 	handleUseEnter: (e: any) => void
 	handleChangeInputSalary: (e: string) => void
 	handleCalculateSalary: () => void
+	handleCloseInfo: () => void
 	handleDeleteAll: () => void
 }
 
@@ -46,11 +49,14 @@ const InitialState: InitialStateType = {
 	income: 0,
 	incomeContractOfMandate: 0,
 	isCalculating: false,
+	info: '',
+	showInfo: false,
 	handleChangeContract: (e: string) => {},
 	handleKeyDown: (e: any) => {},
 	handleUseEnter: (e: any) => {},
 	handleChangeInputSalary: (e: string) => {},
 	handleCalculateSalary: () => {},
+	handleCloseInfo: () => {},
 	handleDeleteAll: () => {},
 }
 
@@ -80,6 +86,9 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const [incomeContractOfMandate, setIncomeContractOfMandate] = useState<number>(0)
 
 	const [isCalculating, setIsCalculating] = useState<boolean>(false)
+
+	const [info, setInfo] = useState<string>('')
+	const [showInfo, setShowInfo] = useState<boolean>(false)
 
 	let minSalary = 4300
 
@@ -390,6 +399,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 		}
 	}
 
+	const handleCloseInfo = () => {}
+
 	const handleDeleteAll = () => {
 		setContract('wybierz umowę')
 		setSalaryInput('')
@@ -427,11 +438,14 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				income,
 				incomeContractOfMandate,
 				isCalculating,
+				info,
+				showInfo,
 				handleChangeContract,
 				handleUseEnter,
 				handleKeyDown,
 				handleChangeInputSalary,
 				handleCalculateSalary,
+				handleCloseInfo,
 				handleDeleteAll,
 			}}
 		>
