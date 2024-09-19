@@ -5,10 +5,11 @@ import styles from './Styles/SalaryResult.module.css'
 import SalaryContext from './Context/SalaryContext'
 
 const SalaryResult = () => {
-	const { resultContract, resultGrossSalary, resultNetSalary, handleDeleteAll } = useContext(SalaryContext)
+	const { resultContract, resultGrossSalary, resultNetSalary, showInfo, info, handleCloseInfo, handleDeleteAll } =
+		useContext(SalaryContext)
 	return (
 		<section className={styles.wrapper}>
-			<div className={styles.box_info}>
+			<div className={showInfo ? styles.box_info : styles.no_box_info}>
 				<h2 className={styles.heading_info}>Informacja</h2>
 				<p className={styles.text_info}>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorum minus optio obcaecati excepturi
@@ -16,7 +17,9 @@ const SalaryResult = () => {
 					mollitia! Molestiae architecto quibusdam quos modi aliquid delectus numquam consectetur non in est quod
 					laudantium ipsum itaque hic animi quae voluptatem, illo consequatur.
 				</p>
-				<button className={styles.btn_close_info}>Zamknij i zobacz obliczenia</button>
+				<button className={styles.btn_close_info} onClick={handleCloseInfo}>
+					Zamknij i zobacz obliczenia
+				</button>
 			</div>
 			<div className={styles.box_results}>
 				<div className={styles.result}>
