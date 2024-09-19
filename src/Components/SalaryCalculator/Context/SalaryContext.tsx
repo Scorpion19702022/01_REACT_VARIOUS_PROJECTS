@@ -408,6 +408,9 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrHealthy: Number(salaryInput) * cotributionsHealthyOfB2B,
 				contrTax: 0,
 			})
+			setInfo(
+				'UMOWA B2B. Umowa cywilnoprawna, zawierana na podstawie przepisów kodeksu cywilnego. Polega na prowadzeniu własnej działalności gospodarczej i oznacza całkowitą zmianę charakteru zatrudnienia. Umożliwia samodzielny wybór sposobu opodatkowania działalności. Jako przedsiębiorca, to Ty ponosisz odpowiedzialność za prowadzenie działalności gospodarczej. Oznacza to, że odpowiadasz za księgowość, odprowadzanie składek na ubezpieczenia ZUS oraz podatków VAT i PIT do Urzędu Skarbowego.'
+			)
 			setShowInfo(true)
 		}
 	}

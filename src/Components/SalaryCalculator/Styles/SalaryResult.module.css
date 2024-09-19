@@ -34,7 +34,7 @@
 	position: absolute;
 	top: 0%;
 	width: 100%;
-	min-height: 280px;
+	min-height: 320px;
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
@@ -138,7 +138,7 @@
 		top: 0%;
 		left: 25%;
 		width: 50%;
-		min-height: 280px;
+		min-height: 340px;
 		opacity: 1;
 	}
 
