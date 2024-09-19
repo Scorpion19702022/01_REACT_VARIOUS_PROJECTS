@@ -367,7 +367,10 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			})
 			const incomeWork = Number(salaryInput) - Number(salaryInput) * contributionsZUS - costMonth
 			setIncome(incomeWork)
-			setShowInfo(false)
+			setInfo(
+				'UMOWA O PRACĘ. Zawierana jest na podstawie przepisów kodeksu pracy. Gwarantuje prawo do urlopu wypoczynkowego, zwolnienia chorobowego i wynagrodzenia, które jest równe lub większe minimalnej krajowej. Z jej tytułu pracodawca jest zobowiązany do opłacania wszystkich składek.'
+			)
+			setShowInfo(true)
 		} else if (salaryInput !== '' && contract === 'umowa zlecenie') {
 			setContributions({
 				...contributions,
@@ -378,7 +381,10 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			})
 			const incomeMandate = Number(salaryInput) - Number(salaryInput) * contributionsZUS - Number(salaryInput) * 0.2
 			setIncomeContractOfMandate(incomeMandate)
-			setShowInfo(false)
+			setInfo(
+				'UMOWA ZLECENIE. Umowa cywilnoprawna, która zostaje zawarta na podstawie przepisów kodeksu cywilnego. Nie mają zastosowania przepisy kodeksu pracy np. o ochronie wynagrodzenia, prawa do urlopu czy dni wolnych, chyba że umowa stanowi inaczej. Gwarantuje otrzymanie minimalnego wynagrodzenia. Umożliwia opłacania składek na ubezpieczenie chorobowe. Nie wlicza się do ogólnego stażu pracy.'
+			)
+			setShowInfo(true)
 		} else if (salaryInput !== '' && contract === 'umowa o dzieło') {
 			setContributions({
 				contrZUS: 0,
