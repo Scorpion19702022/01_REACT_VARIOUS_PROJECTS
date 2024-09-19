@@ -388,6 +388,9 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrHealthy: 0,
 				contrTax: Number(salaryInput) * taxOfWork,
 			})
+			setInfo(
+				'UMOWA O DZIEŁO. Podpisuje się wyłącznie w przypadku realizacji zadania, w ramach którego powstaje dzieło. Brak składek ZUS. Nie podlega ubezpieczeniom społecznym i zdrowotnym. Brak minimalnej stawki wynagrodzenia. Nie wlicza się do stażu pracy.'
+			)
 			setShowInfo(true)
 		} else if (salaryInput !== '' && contract === 'umowa B2B') {
 			setContributions({
