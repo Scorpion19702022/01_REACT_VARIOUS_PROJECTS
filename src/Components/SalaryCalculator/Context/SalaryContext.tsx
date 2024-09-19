@@ -89,10 +89,12 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	let contributionSikness = 0.0245
 
 	let contributionsHealthy = 0.09
+	let cotributionsHealthyOfB2B = 0.049
 	let costMonth = 250
 
 	let tax = 0.12
 	let taxOfWork = 0.096
+	let taxOfB2B = 0.19
 
 	const handleChangeContract = (e: string) => {
 		setContract(e)
@@ -214,6 +216,13 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 					contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
 					contrTax: +(incomeContractOfMandate * tax).toFixed(0),
 				})
+			} else if (contract === 'umowa B2B') {
+				setIncome(0)
+				setIncomeContractOfMandate(0)
+				setContributions({
+					...contributions,
+					contrTax: (Number(salaryInput) - contributions.contrHealthy) * taxOfB2B,
+				})
 			}
 			setIsCalculating(false)
 		}
@@ -239,6 +248,11 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
 			)
 			setContributionsAll(contributions.contrZUS + contributions.contrHealthy + contributions.contrTax)
+		} else if (contributions.contrTax > 0 && contract === 'umowa B2B') {
+			setIncome(0)
+			setIncomeContractOfMandate(0)
+			setResultNetSalary(Number(salaryInput) - contributions.contrHealthy - contributions.contrTax)
+			setContributionsAll(contributions.contrHealthy + contributions.contrTax)
 		}
 	}, [contributions.contrTax, contract])
 
@@ -362,6 +376,16 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrSickness: 0,
 				contrHealthy: 0,
 				contrTax: Number(salaryInput) * taxOfWork,
+			})
+		} else if (salaryInput !== '' && contract === 'umowa B2B') {
+			setContributions({
+				...contributions,
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: Number(salaryInput) * cotributionsHealthyOfB2B,
+				contrTax: 0,
 			})
 		}
 	}
