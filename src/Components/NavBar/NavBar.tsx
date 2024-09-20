@@ -54,6 +54,11 @@ const NavBar = () => {
 							Kalkulator wynagrodzeń
 						</li>
 					</NavLink>
+					<NavLink to='./SnackBar'>
+						<li className={styles.link} onClick={handleNavView}>
+							SnackBar
+						</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>
