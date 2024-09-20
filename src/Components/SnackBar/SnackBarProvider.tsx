@@ -1,11 +1,12 @@
 import React from 'react'
 
 import styles from './Styles/SnackBarProvider.module.css'
+import SnackBarPoster from './SnackBarPoster'
 
 const SnackBarProvider = () => {
 	return (
 		<main className={styles.wrapper}>
-			<h1>SnackBar</h1>
+			<SnackBarPoster />
 		</main>
 	)
 }
