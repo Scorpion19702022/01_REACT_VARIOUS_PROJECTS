@@ -257,9 +257,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
 			)
 			setContributionsAll(contributions.contrZUS + contributions.contrHealthy + contributions.contrTax)
-		} else if (contributions.contrTax > 0 && contract === 'umowa B2B') {
-			setIncome(0)
-			setIncomeContractOfMandate(0)
+		} else if (income === 0 && contributions.contrTax > 0 && contract === 'umowa B2B') {
 			setResultNetSalary(Number(salaryInput) - contributions.contrHealthy - contributions.contrTax)
 			setContributionsAll(contributions.contrHealthy + contributions.contrTax)
 		}
