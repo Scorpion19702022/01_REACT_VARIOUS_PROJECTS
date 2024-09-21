@@ -9,10 +9,12 @@ const SnackBarProducts = () => {
 
 	const productsList = products.map(item => (
 		<div className={styles.product} key={item.id}>
-			<h2>{item.name}</h2>
-			<span>{item.price}</span>
-			<img src={item.img} alt='' />
-			<button className={styles.btn_order}>zamów</button>
+			<h4 className={styles.product_name}>{item.name}</h4>
+			<span className={styles.product_price}>{item.price}</span>
+			<div className={styles.box_img_product}>
+				<img className={styles.img_product} src={item.img} alt='' />
+			</div>
+			<button className={styles.btn_product_order}>zamów</button>
 		</div>
 	))
 
