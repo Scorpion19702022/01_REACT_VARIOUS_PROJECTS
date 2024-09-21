@@ -1,0 +1,25 @@
+{
+	"products": [
+		{
+			"id": 0,
+			"category": "danie główne",
+			"name": "schabowy z ziemiakami",
+			"price": 21,
+			"img": "https://cdn.pixabay.com/photo/2016/11/19/02/22/schnipo-1837703_960_720.jpg"
+		},
+		{
+			"id": 1,
+			"category": "przekąski",
+			"name": "lody",
+			"price": 16,
+			"img": "https://cdn.pixabay.com/photo/2016/12/26/16/09/bowl-1932375_960_720.jpg"
+		},
+		{
+			"id": 2,
+			"category": "apoje",
+			"name": "herbata",
+			"price": 7,
+			"img": "https://cdn.pixabay.com/photo/2015/07/02/20/37/cup-829527_960_720.jpg"
+		}
+	]
+}
