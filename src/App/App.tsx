@@ -16,7 +16,7 @@ import Oceania from '../Components/WeatherApp/Pages/Oceania'
 import ToDoList from '../Components/ToDoList/ToDoList'
 import Bmi from '../Components/Bmi/Bmi'
 import SalaryCalculator from '../Components/SalaryCalculator/SalaryCalculator'
-import SnackBar from '../Components/SnackBar/SnackBarProvider'
+import SnackBar from '../Components/SnackBar/SnackBar'
 
 function App() {
 	return (

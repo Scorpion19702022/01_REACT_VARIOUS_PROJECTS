@@ -3,14 +3,17 @@ import React from 'react'
 import styles from './Styles/SnackBarProvider.module.css'
 import SnackBarPoster from './SnackBarPoster'
 import SnackBarProducts from './SnackBarProducts'
+import { SnackBarProvider } from './Context/SnackBarCotext'
 
-const SnackBarProvider = () => {
+const SnackBar = () => {
 	return (
 		<main className={styles.wrapper}>
 			<SnackBarPoster />
-			<SnackBarProducts />
+			<SnackBarProvider>
+				<SnackBarProducts />
+			</SnackBarProvider>
 		</main>
 	)
 }
 
-export default SnackBarProvider
+export default SnackBar
