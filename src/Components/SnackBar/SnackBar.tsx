@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './Styles/SnackBarProvider.module.css'
 import SnackBarPoster from './SnackBarPoster'
 import SnackBarProducts from './SnackBarProducts'
-import { SnackBarProvider } from './Context/SnackBarCotext'
+import { SnackBarProvider } from './Context/SnackBarContext'
 
 const SnackBar = () => {
 	return (
