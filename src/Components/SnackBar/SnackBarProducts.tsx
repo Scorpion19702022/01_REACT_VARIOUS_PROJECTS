@@ -24,7 +24,7 @@ const SnackBarProducts = () => {
 				<h1 className={styles.products_heading}>Nasze menu:</h1>
 				<div className={styles.box_products_btns}>
 					<button className={styles.products_btn}>dania głowne</button>
-					<button className={styles.products_btn}>dodatki i desery</button>
+					<button className={styles.products_btn}>przekąski i desery</button>
 					<button className={styles.products_btn}>napoje i alkohol</button>
 				</div>
 				<div className={styles.products}>{productsList}</div>
