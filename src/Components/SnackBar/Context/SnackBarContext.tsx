@@ -1,17 +1,24 @@
 import { Analytics } from '@vercel/analytics/react'
-import React, { createContext, useEffect } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
+import { TypeForSnackBar } from '../Types/TypeForSnackBar'
 
-type InitialStateType = {}
+type InitialStateType = {
+	products: TypeForSnackBar[]
+}
 
 type SnackBarProviderType = {
 	children: React.ReactNode
 }
 
-const InitialState: InitialStateType = {}
+const InitialState: InitialStateType = {
+	products: [],
+}
 
 const SnackBarContext = createContext(InitialState)
 
 export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
+	const [products, setProducts] = useState<TypeForSnackBar[]>([])
+
 	useEffect(() => {
 		const fetchProducts = async () => {
 			try {
@@ -20,7 +27,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 					throw new Error(`HTTP error! status: ${response.status}`)
 				}
 				const data = await response.json()
-				console.log(data)
+				setProducts(data.products)
 			} catch (error) {
 				console.error('Error fetching products', error)
 			}
@@ -29,8 +36,10 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		fetchProducts()
 	}, [])
 
+	console.log(products)
+
 	return (
-		<SnackBarContext.Provider value={{}}>
+		<SnackBarContext.Provider value={{ products }}>
 			{children}
 			<Analytics />
 		</SnackBarContext.Provider>
