@@ -7,6 +7,7 @@ type InitialStateType = {
 	btnIsActiveMain: boolean
 	btnIsActiveDesserts: boolean
 	btnIsActiveDrinks: boolean
+	selectProducts: string
 	handleSelectProducts: (isSelect: string) => void
 }
 
@@ -19,6 +20,7 @@ const InitialState: InitialStateType = {
 	btnIsActiveMain: false,
 	btnIsActiveDesserts: false,
 	btnIsActiveDrinks: false,
+	selectProducts: '',
 	handleSelectProducts: (isSelect: string) => {},
 }
 
@@ -29,6 +31,8 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [btnIsActiveMain, setBtnIsActiveMain] = useState<boolean>(true)
 	const [btnIsActiveDesserts, setBtnIsActiveDesserts] = useState<boolean>(false)
 	const [btnIsActiveDrinks, setBtnIsActiveDrinks] = useState<boolean>(false)
+
+	const [selectProducts, setSelectProducts] = useState<string>('main')
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -49,14 +53,17 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 
 	const handleSelectProducts = (isSelect: string) => {
 		if (isSelect === 'main') {
+			setSelectProducts('main')
 			setBtnIsActiveMain(true)
 			setBtnIsActiveDesserts(false)
 			setBtnIsActiveDrinks(false)
 		} else if (isSelect === 'desserts') {
+			setSelectProducts('desserts')
 			setBtnIsActiveMain(false)
 			setBtnIsActiveDesserts(true)
 			setBtnIsActiveDrinks(false)
 		} else if (isSelect === 'drinks') {
+			setSelectProducts('drinks')
 			setBtnIsActiveMain(false)
 			setBtnIsActiveDesserts(false)
 			setBtnIsActiveDrinks(true)
@@ -65,7 +72,14 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 
 	return (
 		<SnackBarContext.Provider
-			value={{ products, btnIsActiveMain, btnIsActiveDesserts, btnIsActiveDrinks, handleSelectProducts }}
+			value={{
+				products,
+				btnIsActiveMain,
+				btnIsActiveDesserts,
+				btnIsActiveDrinks,
+				selectProducts,
+				handleSelectProducts,
+			}}
 		>
 			{children}
 			<Analytics />

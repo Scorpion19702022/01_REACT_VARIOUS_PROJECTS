@@ -5,19 +5,58 @@ import styles from './Styles/SnackBarProducts.module.css'
 import SnackBarContext from './Context/SnackBarContext'
 
 const SnackBarProducts = () => {
-	const { products, btnIsActiveMain, btnIsActiveDesserts, btnIsActiveDrinks, handleSelectProducts } =
+	const { products, btnIsActiveMain, btnIsActiveDesserts, btnIsActiveDrinks, selectProducts, handleSelectProducts } =
 		useContext(SnackBarContext)
 
-	const productsList = products.map(item => (
-		<div className={styles.product} key={item.id}>
-			<h4 className={styles.product_name}>{item.name}</h4>
-			<span className={styles.product_price}>{item.price} zł</span>
-			<div className={styles.box_img_product}>
-				<img className={styles.img_product} src={item.img} alt='' />
+	// const productsListMain = products.filter(item => (
+	// 	<div className={styles.product} key={item.id}>
+	// 		<h4 className={styles.product_name}>{item.name}</h4>
+	// 		<span className={styles.product_price}>{item.price} zł</span>
+	// 		<div className={styles.box_img_product}>
+	// 			<img className={styles.img_product} src={item.img} alt='' />
+	// 		</div>
+	// 		<button className={styles.btn_product_order}>zamów</button>
+	// 	</div>
+	// ))
+
+	const productsListMain = products
+		.filter(item => item.category === 'danie główne')
+		.map(item => (
+			<div className={styles.product} key={item.id}>
+				<h4 className={styles.product_name}>{item.name}</h4>
+				<span className={styles.product_price}>{item.price} zł</span>
+				<div className={styles.box_img_product}>
+					<img className={styles.img_product} src={item.img} alt='' />
+				</div>
+				<button className={styles.btn_product_order}>zamów</button>
 			</div>
-			<button className={styles.btn_product_order}>zamów</button>
-		</div>
-	))
+		))
+
+	const productsListDesserts = products
+		.filter(item => item.category === 'przekąski')
+		.map(item => (
+			<div className={styles.product} key={item.id}>
+				<h4 className={styles.product_name}>{item.name}</h4>
+				<span className={styles.product_price}>{item.price} zł</span>
+				<div className={styles.box_img_product}>
+					<img className={styles.img_product} src={item.img} alt='' />
+				</div>
+				<button className={styles.btn_product_order}>zamów</button>
+			</div>
+		))
+
+	const productsListDrinks = products
+		.filter(item => item.category === 'napoje')
+		.map(item => (
+			<div className={styles.product} key={item.id}>
+				<h4 className={styles.product_name}>{item.name}</h4>
+				<span className={styles.product_price}>{item.price} zł</span>
+				<div className={styles.box_img_product}>
+					<img className={styles.img_product} src={item.img} alt='' />
+				</div>
+				<button className={styles.btn_product_order}>zamów</button>
+			</div>
+		))
 
 	return (
 		<section className={styles.wrapper}>
@@ -43,7 +82,15 @@ const SnackBarProducts = () => {
 						napoje i alkohol
 					</button>
 				</div>
-				<div className={styles.products}>{productsList}</div>
+				<div className={styles.products}>
+					{selectProducts === 'main'
+						? productsListMain
+						: selectProducts === 'desserts'
+						? productsListDesserts
+						: selectProducts === 'drinks'
+						? productsListDrinks
+						: null}
+				</div>
 			</div>
 			<SnackBarOrder />
 		</section>
