@@ -22,7 +22,8 @@
 }
 
 .wrapper {
-	width: 100%;
+	width: 90%;
+	height: 500px;
 	padding: 1em;
 	margin: 1em 0em;
 	display: flex;
@@ -34,6 +35,8 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 50%;
+		width: 30%;
+		height: 700px;
+		margin: 0em;
 	}
 }

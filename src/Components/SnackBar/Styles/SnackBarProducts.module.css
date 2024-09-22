@@ -160,15 +160,16 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		height: 460px;
+		width: 90%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		align-items: flex-start;
 	}
 
 	.box_products {
-		width: 40%;
-		height: 100%;
-		justify-content: center;
+		width: 65%;
+		height: 700px;
+		padding: 0em;
 	}
 }
