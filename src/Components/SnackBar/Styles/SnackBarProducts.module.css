@@ -64,6 +64,15 @@
 	color: var(--color-color02);
 }
 
+.products_btn_active {
+	width: 30%;
+	padding: 0.6em 0.2em;
+	font-size: 0.7em;
+	background-color: var(--color-dark09);
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color02);
+}
+
 .products {
 	width: 100%;
 	display: flex;
@@ -162,6 +171,12 @@
 		font-size: 1em;
 		cursor: pointer;
 		transition: background-color 0.2s ease-in-out;
+	}
+
+	.products_btn_active {
+		font-size: 1em;
+		cursor: pointer;
+		background-color: var(--color-dark09);
 	}
 
 	.products_btn:hover {

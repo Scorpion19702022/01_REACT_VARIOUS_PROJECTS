@@ -5,7 +5,8 @@ import styles from './Styles/SnackBarProducts.module.css'
 import SnackBarContext from './Context/SnackBarContext'
 
 const SnackBarProducts = () => {
-	const { products } = useContext(SnackBarContext)
+	const { products, btnIsActiveMain, btnIsActiveDesserts, btnIsActiveDrinks, handleSelectProducts } =
+		useContext(SnackBarContext)
 
 	const productsList = products.map(item => (
 		<div className={styles.product} key={item.id}>
@@ -23,9 +24,24 @@ const SnackBarProducts = () => {
 			<div className={styles.box_products}>
 				<h1 className={styles.products_heading}>Nasze menu:</h1>
 				<div className={styles.box_products_btns}>
-					<button className={styles.products_btn}>dania głowne</button>
-					<button className={styles.products_btn}>przekąski i desery</button>
-					<button className={styles.products_btn}>napoje i alkohol</button>
+					<button
+						className={!btnIsActiveMain ? styles.products_btn : styles.products_btn_active}
+						onClick={() => handleSelectProducts('main')}
+					>
+						dania głowne
+					</button>
+					<button
+						className={!btnIsActiveDesserts ? styles.products_btn : styles.products_btn_active}
+						onClick={() => handleSelectProducts('desserts')}
+					>
+						przekąski i desery
+					</button>
+					<button
+						className={!btnIsActiveDrinks ? styles.products_btn : styles.products_btn_active}
+						onClick={() => handleSelectProducts('drinks')}
+					>
+						napoje i alkohol
+					</button>
 				</div>
 				<div className={styles.products}>{productsList}</div>
 			</div>
