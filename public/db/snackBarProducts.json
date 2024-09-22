@@ -20,6 +20,20 @@
 			"name": "herbata",
 			"price": 7,
 			"img": "https://cdn.pixabay.com/photo/2015/07/02/20/37/cup-829527_960_720.jpg"
+		},
+		{
+			"id": 3,
+			"category": "napoje",
+			"name": "kawa",
+			"price": 12,
+			"img": "https://cdn.pixabay.com/photo/2018/01/31/09/57/coffee-3120750_960_720.jpg"
+		},
+		{
+			"id": 4,
+			"category": "napoje",
+			"name": "kawa",
+			"price": 12,
+			"img": "https://cdn.pixabay.com/photo/2018/01/31/09/57/coffee-3120750_960_720.jpg"
 		}
 	]
 }

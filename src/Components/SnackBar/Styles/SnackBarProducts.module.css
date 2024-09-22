@@ -161,9 +161,24 @@
 	.products_btn {
 		font-size: 1em;
 		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
 	}
 
 	.products_btn:hover {
+		background-color: var(--color-dark09);
+	}
+
+	.product {
+		width: 23%;
+		height: 160px;
+	}
+
+	.btn_product_order {
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn_product_order:hover {
 		background-color: var(--color-dark09);
 	}
 }
