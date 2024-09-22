@@ -195,6 +195,62 @@
 			"name": "coca-cola",
 			"price": 10,
 			"img": "https://cdn.pixabay.com/photo/2017/01/07/13/22/cola-1960326_960_720.jpg"
+		},
+		{
+			"id": 28,
+			"category": "napoje",
+			"name": "sok pomarańczowy",
+			"price": 12,
+			"img": "https://cdn.pixabay.com/photo/2016/08/23/15/52/fresh-orange-juice-1614822_960_720.jpg"
+		},
+		{
+			"id": 29,
+			"category": "napoje",
+			"name": "piwo",
+			"price": 15,
+			"img": "https://cdn.pixabay.com/photo/2018/07/01/21/51/beer-3510526_960_720.jpg"
+		},
+		{
+			"id": 30,
+			"category": "napoje",
+			"name": "piwo bezalkoholowe",
+			"price": 12,
+			"img": "https://cdn.pixabay.com/photo/2018/05/06/08/49/beer-3378136_960_720.jpg"
+		},
+		{
+			"id": 31,
+			"category": "napoje",
+			"name": "wino białe",
+			"price": 23,
+			"img": "https://cdn.pixabay.com/photo/2017/09/26/16/44/wine-2789265_960_720.jpg"
+		},
+		{
+			"id": 32,
+			"category": "napoje",
+			"name": "wino czerwone",
+			"price": 23,
+			"img": "https://cdn.pixabay.com/photo/2014/11/22/18/38/wine-541922_960_720.jpg"
+		},
+		{
+			"id": 33,
+			"category": "napoje",
+			"name": "wódka",
+			"price": 38,
+			"img": "https://cdn.pixabay.com/photo/2017/06/05/14/55/glass-2374311_960_720.jpg"
+		},
+		{
+			"id": 34,
+			"category": "napoje",
+			"name": "Johnny Walker",
+			"price": 43,
+			"img": "https://cdn.pixabay.com/photo/2018/06/03/14/32/pistachios-3450670_960_720.jpg"
+		},
+		{
+			"id": 35,
+			"category": "napoje",
+			"name": "Jack Daniel's",
+			"price": 50,
+			"img": "https://cdn.pixabay.com/photo/2018/02/26/11/15/whisky-3182840_960_720.jpg"
 		}
 	]
 }
