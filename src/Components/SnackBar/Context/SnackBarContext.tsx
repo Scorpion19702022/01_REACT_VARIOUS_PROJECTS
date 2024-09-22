@@ -4,6 +4,7 @@ import { TypeForSnackBar } from '../Types/TypeForSnackBar'
 
 type InitialStateType = {
 	products: TypeForSnackBar[]
+	btnIsActive: boolean
 }
 
 type SnackBarProviderType = {
@@ -12,12 +13,14 @@ type SnackBarProviderType = {
 
 const InitialState: InitialStateType = {
 	products: [],
+	btnIsActive: false,
 }
 
 const SnackBarContext = createContext(InitialState)
 
 export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [products, setProducts] = useState<TypeForSnackBar[]>([])
+	const [btnIsActive, setBtnIsActive] = useState<boolean>(false)
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -39,7 +42,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	console.log(products)
 
 	return (
-		<SnackBarContext.Provider value={{ products }}>
+		<SnackBarContext.Provider value={{ products, btnIsActive }}>
 			{children}
 			<Analytics />
 		</SnackBarContext.Provider>
