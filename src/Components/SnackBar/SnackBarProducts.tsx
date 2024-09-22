@@ -8,17 +8,6 @@ const SnackBarProducts = () => {
 	const { products, btnIsActiveMain, btnIsActiveDesserts, btnIsActiveDrinks, selectProducts, handleSelectProducts } =
 		useContext(SnackBarContext)
 
-	// const productsListMain = products.filter(item => (
-	// 	<div className={styles.product} key={item.id}>
-	// 		<h4 className={styles.product_name}>{item.name}</h4>
-	// 		<span className={styles.product_price}>{item.price} zł</span>
-	// 		<div className={styles.box_img_product}>
-	// 			<img className={styles.img_product} src={item.img} alt='' />
-	// 		</div>
-	// 		<button className={styles.btn_product_order}>zamów</button>
-	// 	</div>
-	// ))
-
 	const productsListMain = products
 		.filter(item => item.category === 'danie główne')
 		.map(item => (
