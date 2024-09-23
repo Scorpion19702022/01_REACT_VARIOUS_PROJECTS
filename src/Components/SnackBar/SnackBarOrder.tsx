@@ -16,11 +16,11 @@ const SnackBarOrder = () => {
 					</h2>
 				</div>
 				<div className={styles.heading_info}>
-					<h3 className={styles.other_info}>
-						Zamówiłeś: <span className={styles.order_product_name}>Kaszankę</span>
+					<h3 className={styles.info_orders}>
+						Zamówiłeś: <span className={styles.info_span}>Kaszankę</span>
 					</h3>
 				</div>
-				<button className={styles.clean_orders}>usuń zamówienie</button>
+				<button className={styles.btn_clean_orders}>usuń całe zamówienie</button>
 			</div>
 			<div className={styles.box_orders_list}>
 				<ul>
