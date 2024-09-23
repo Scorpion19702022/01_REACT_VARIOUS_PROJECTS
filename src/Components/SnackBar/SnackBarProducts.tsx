@@ -6,11 +6,23 @@ import SnackBarContext from './Context/SnackBarContext'
 const SnackBarProducts = () => {
 	const { products, selectProducts, handleSelectProducts } = useContext(SnackBarContext)
 
+	// const filteredProducts = products.filter(item => {
+	// 	if (selectProducts === 'main') return item.category === 'danie główne'
+	// 	if (selectProducts === 'desserts') return item.category === 'przekąski'
+	// 	if (selectProducts === 'drinks') return item.category === 'napoje'
+	// 	return false
+	// })
+
 	const filteredProducts = products.filter(item => {
-		if (selectProducts === 'main') return item.category === 'danie główne'
-		if (selectProducts === 'desserts') return item.category === 'przekąski'
-		if (selectProducts === 'drinks') return item.category === 'napoje'
-		return false
+		if (selectProducts === 'main') {
+			return item.category === 'danie główne'
+		} else if (selectProducts === 'desserts') {
+			return item.category === 'przekąski'
+		} else if (selectProducts === 'drinks') {
+			return item.category === 'napoje'
+		} else {
+			return false
+		}
 	})
 
 	const productsList = filteredProducts.map(item => (
