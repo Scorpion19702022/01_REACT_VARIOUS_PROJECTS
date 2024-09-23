@@ -22,7 +22,7 @@ const SnackBarOrder = () => {
 				</div>
 				<button className={styles.btn_clean_orders}>usuń całe zamówienie</button>
 			</div>
-			<div className={styles.box_orders_list}>
+			<div className={styles.box_order_list}>
 				<ul>
 					<li>aaaaaa</li>
 					<li>aaaaaaaaaa</li>
@@ -46,6 +46,7 @@ const SnackBarOrder = () => {
 					<li>aaaaaaaaaa</li>
 				</ul>
 			</div>
+			<button className={styles.btn_send_order}>wyślij zamówienie</button>
 		</section>
 	)
 }
