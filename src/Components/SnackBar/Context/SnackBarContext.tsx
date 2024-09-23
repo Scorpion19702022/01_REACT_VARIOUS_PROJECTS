@@ -4,9 +4,6 @@ import { TypeForSnackBar } from '../Types/TypeForSnackBar'
 
 type InitialStateType = {
 	products: TypeForSnackBar[]
-	btnIsActiveMain: boolean
-	btnIsActiveDesserts: boolean
-	btnIsActiveDrinks: boolean
 	selectProducts: string
 	handleSelectProducts: (isSelect: string) => void
 }
@@ -17,10 +14,7 @@ type SnackBarProviderType = {
 
 const InitialState: InitialStateType = {
 	products: [],
-	btnIsActiveMain: false,
-	btnIsActiveDesserts: false,
-	btnIsActiveDrinks: false,
-	selectProducts: '',
+	selectProducts: 'main',
 	handleSelectProducts: (isSelect: string) => {},
 }
 
@@ -28,10 +22,6 @@ const SnackBarContext = createContext(InitialState)
 
 export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [products, setProducts] = useState<TypeForSnackBar[]>([])
-	const [btnIsActiveMain, setBtnIsActiveMain] = useState<boolean>(true)
-	const [btnIsActiveDesserts, setBtnIsActiveDesserts] = useState<boolean>(false)
-	const [btnIsActiveDrinks, setBtnIsActiveDrinks] = useState<boolean>(false)
-
 	const [selectProducts, setSelectProducts] = useState<string>('main')
 
 	useEffect(() => {
@@ -52,31 +42,13 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	}, [])
 
 	const handleSelectProducts = (isSelect: string) => {
-		if (isSelect === 'main') {
-			setSelectProducts('main')
-			setBtnIsActiveMain(true)
-			setBtnIsActiveDesserts(false)
-			setBtnIsActiveDrinks(false)
-		} else if (isSelect === 'desserts') {
-			setSelectProducts('desserts')
-			setBtnIsActiveMain(false)
-			setBtnIsActiveDesserts(true)
-			setBtnIsActiveDrinks(false)
-		} else if (isSelect === 'drinks') {
-			setSelectProducts('drinks')
-			setBtnIsActiveMain(false)
-			setBtnIsActiveDesserts(false)
-			setBtnIsActiveDrinks(true)
-		}
+		setSelectProducts(isSelect)
 	}
 
 	return (
 		<SnackBarContext.Provider
 			value={{
 				products,
-				btnIsActiveMain,
-				btnIsActiveDesserts,
-				btnIsActiveDrinks,
 				selectProducts,
 				handleSelectProducts,
 			}}
