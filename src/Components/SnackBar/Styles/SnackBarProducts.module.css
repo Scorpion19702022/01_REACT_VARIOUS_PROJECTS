@@ -177,6 +177,7 @@
 		font-size: 1em;
 		cursor: pointer;
 		background-color: var(--color-dark09);
+		box-shadow: 0.2em 0.2em 1em var(--color-color08);
 	}
 
 	.products_btn:hover {
