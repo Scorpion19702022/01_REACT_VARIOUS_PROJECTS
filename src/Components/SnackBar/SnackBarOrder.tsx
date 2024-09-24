@@ -4,7 +4,7 @@ import styles from './Styles/SnackBarOrder.module.css'
 import SnackBarContext from './Context/SnackBarContext'
 
 const SnackBarOrder = () => {
-	const { orderNameProduct } = useContext(SnackBarContext)
+	const { orderNameProduct, handleDeleteAllOrder } = useContext(SnackBarContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -23,7 +23,9 @@ const SnackBarOrder = () => {
 						Zamówiłeś: <span className={styles.info_span}>{orderNameProduct}</span>
 					</h3>
 				</div>
-				<button className={styles.btn_clean_orders}>usuń całe zamówienie</button>
+				<button className={styles.btn_clean_orders} onClick={handleDeleteAllOrder}>
+					usuń całe zamówienie
+				</button>
 			</div>
 			<div className={styles.box_order_list}>
 				<ul>

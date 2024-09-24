@@ -10,6 +10,7 @@ type InitialStateType = {
 	orderNameProduct: string
 	handleSelectProducts: (isSelect: string) => void
 	handleOrderProducts: (id: number, product: string, price: number) => void
+	handleDeleteAllOrder: () => void
 }
 
 type SnackBarProviderType = {
@@ -24,6 +25,7 @@ const InitialState: InitialStateType = {
 	orderNameProduct: '',
 	handleSelectProducts: (isSelect: string) => {},
 	handleOrderProducts: (id: number, product: string, price: number) => {},
+	handleDeleteAllOrder: () => {},
 }
 
 const SnackBarContext = createContext(InitialState)
@@ -72,6 +74,11 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		}
 	}
 
+	const handleDeleteAllOrder = () => {
+		setOrderProducts([])
+		setOrderNameProduct('zrezygnowałaś z zamówienia? 🤔')
+	}
+
 	return (
 		<SnackBarContext.Provider
 			value={{
@@ -82,6 +89,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				orderNameProduct,
 				handleSelectProducts,
 				handleOrderProducts,
+				handleDeleteAllOrder,
 			}}
 		>
 			{children}
