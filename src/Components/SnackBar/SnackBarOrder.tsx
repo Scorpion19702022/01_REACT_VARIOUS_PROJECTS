@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Styles/SnackBarOrder.module.css'
+import SnackBarContext from './Context/SnackBarContext'
 
 const SnackBarOrder = () => {
+	const { orderNameProduct } = useContext(SnackBarContext)
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_orders}>
@@ -17,7 +20,7 @@ const SnackBarOrder = () => {
 				</div>
 				<div className={styles.heading_info}>
 					<h3 className={styles.info_orders}>
-						Zamówiłeś: <span className={styles.info_span}>Kaszankę</span>
+						Zamówiłeś: <span className={styles.info_span}>{orderNameProduct}</span>
 					</h3>
 				</div>
 				<button className={styles.btn_clean_orders}>usuń całe zamówienie</button>

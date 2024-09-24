@@ -7,8 +7,9 @@ type InitialStateType = {
 	orderProducts: TypeForSnackBar[]
 	orderCost: TypeForSnackBar[]
 	selectProducts: string
+	orderNameProduct: string
 	handleSelectProducts: (isSelect: string) => void
-	handleOrderProducts: (id: number) => void
+	handleOrderProducts: (id: number, product: string, price: number) => void
 }
 
 type SnackBarProviderType = {
@@ -20,8 +21,9 @@ const InitialState: InitialStateType = {
 	orderProducts: [],
 	orderCost: [],
 	selectProducts: 'main',
+	orderNameProduct: '',
 	handleSelectProducts: (isSelect: string) => {},
-	handleOrderProducts: (id: number) => {},
+	handleOrderProducts: (id: number, product: string, price: number) => {},
 }
 
 const SnackBarContext = createContext(InitialState)
@@ -31,6 +33,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [orderProducts, setOrderProducts] = useState<TypeForSnackBar[]>([])
 	const [orderCost, setOrderCost] = useState<TypeForSnackBar[]>([])
 	const [selectProducts, setSelectProducts] = useState<string>('main')
+	const [orderNameProduct, setOrderNameProduct] = useState<string>('brak zamówiemia')
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -53,9 +56,20 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		setSelectProducts(isSelect)
 	}
 
-	const handleOrderProducts = (id: number) => {
+	useEffect(() => {
+		if (orderProducts.length > 0) {
+			setTimeout(() => {
+				setOrderNameProduct('złóż kolejne zamówienie')
+			}, 2500)
+		}
+	}, [orderProducts.length])
+
+	const handleOrderProducts = (id: number, product: string, price: number) => {
 		const order = products.find(item => item.id === id)
-		console.log(order)
+		if (order) {
+			setOrderProducts([...orderProducts, order])
+			setOrderNameProduct(`zamówiłaś/eś ${product} za ${price} zł`)
+		}
 	}
 
 	return (
@@ -65,6 +79,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				orderProducts,
 				orderCost,
 				selectProducts,
+				orderNameProduct,
 				handleSelectProducts,
 				handleOrderProducts,
 			}}
