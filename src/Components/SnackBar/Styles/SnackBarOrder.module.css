@@ -119,4 +119,25 @@
 		height: 700px;
 		margin: 0em;
 	}
+
+	.heading_orders {
+		font-size: 2em;
+		margin-bottom: 0.4em;
+	}
+
+	.info_orders {
+		font-size: 1.4em;
+	}
+
+	.btn_clean_orders {
+		width: 40%;
+		padding: 0.6em;
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.btn_clean_orders:hover {
+		color: var(--color-color02);
+		background-color: var(--color-dark09);
+	}
 }
