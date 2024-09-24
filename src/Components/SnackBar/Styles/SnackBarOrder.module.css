@@ -140,4 +140,16 @@
 		color: var(--color-color02);
 		background-color: var(--color-dark09);
 	}
+
+	.btn_check_and_send {
+		font-size: 1em;
+		color: var(--color-color02);
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.btn_check_and_send:hover {
+		color: var(--color-dark01);
+		background-color: var(--color-dark09);
+	}
 }
