@@ -46,7 +46,10 @@ const SnackBarOrder = () => {
 					<li>aaaaaaaaaa</li>
 				</ul>
 			</div>
-			<button className={styles.btn_send_order}>wyślij zamówienie</button>
+			<div className={styles.box_btns_check_and_send}>
+				<button className={styles.btn_check_and_send}>wyślij zamówienie</button>
+				<button className={styles.btn_check_and_send}>sprawdż status</button>
+			</div>
 		</section>
 	)
 }

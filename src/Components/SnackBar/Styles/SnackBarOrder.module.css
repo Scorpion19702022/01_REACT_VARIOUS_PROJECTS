@@ -96,15 +96,21 @@
 	overflow: auto;
 }
 
-.btn_send_order {
+.box_btns_check_and_send {
+	width: 100%;
 	margin: 2em 0em 0em 0em;
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn_check_and_send {
 	align-self: flex-end;
-	width: 50%;
-	padding: 0.4em;
+	width: 45%;
+	padding: 0.6em;
 	background: none;
 	border: 0.04em solid var(--color-color07);
-	font-size: 1em;
-	color: var(--color-color04);
+	font-size: 0.8em;
+	color: var(--color-color02);
 }
 
 @media (min-width: 992px) {
