@@ -4,7 +4,7 @@ import styles from './Styles/SnackBarProducts.module.css'
 import SnackBarContext from './Context/SnackBarContext'
 
 const SnackBarProducts = () => {
-	const { products, selectProducts, handleSelectProducts } = useContext(SnackBarContext)
+	const { products, selectProducts, handleSelectProducts, handleOrderProducts } = useContext(SnackBarContext)
 
 	// const filteredProducts = products.filter(item => {
 	// 	if (selectProducts === 'main') return item.category === 'danie główne'
@@ -32,7 +32,9 @@ const SnackBarProducts = () => {
 			<div className={styles.box_img_product}>
 				<img className={styles.img_product} src={item.img} alt={item.name} />
 			</div>
-			<button className={styles.btn_product_order}>zamów</button>
+			<button className={styles.btn_product_order} onClick={() => handleOrderProducts(item.id)}>
+				zamów
+			</button>
 		</div>
 	))
 

@@ -8,6 +8,7 @@ type InitialStateType = {
 	orderCost: TypeForSnackBar[]
 	selectProducts: string
 	handleSelectProducts: (isSelect: string) => void
+	handleOrderProducts: (id: number) => void
 }
 
 type SnackBarProviderType = {
@@ -20,6 +21,7 @@ const InitialState: InitialStateType = {
 	orderCost: [],
 	selectProducts: 'main',
 	handleSelectProducts: (isSelect: string) => {},
+	handleOrderProducts: (id: number) => {},
 }
 
 const SnackBarContext = createContext(InitialState)
@@ -51,6 +53,11 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		setSelectProducts(isSelect)
 	}
 
+	const handleOrderProducts = (id: number) => {
+		const order = products.find(item => item.id === id)
+		console.log(order)
+	}
+
 	return (
 		<SnackBarContext.Provider
 			value={{
@@ -59,6 +66,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				orderCost,
 				selectProducts,
 				handleSelectProducts,
+				handleOrderProducts,
 			}}
 		>
 			{children}
