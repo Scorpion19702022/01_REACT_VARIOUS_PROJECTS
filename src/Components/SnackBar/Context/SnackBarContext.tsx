@@ -4,6 +4,8 @@ import { TypeForSnackBar } from '../Types/TypeForSnackBar'
 
 type InitialStateType = {
 	products: TypeForSnackBar[]
+	orderProducts: TypeForSnackBar[]
+	orderCost: TypeForSnackBar[]
 	selectProducts: string
 	handleSelectProducts: (isSelect: string) => void
 }
@@ -14,6 +16,8 @@ type SnackBarProviderType = {
 
 const InitialState: InitialStateType = {
 	products: [],
+	orderProducts: [],
+	orderCost: [],
 	selectProducts: 'main',
 	handleSelectProducts: (isSelect: string) => {},
 }
@@ -22,6 +26,8 @@ const SnackBarContext = createContext(InitialState)
 
 export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [products, setProducts] = useState<TypeForSnackBar[]>([])
+	const [orderProducts, setOrderProducts] = useState<TypeForSnackBar[]>([])
+	const [orderCost, setOrderCost] = useState<TypeForSnackBar[]>([])
 	const [selectProducts, setSelectProducts] = useState<string>('main')
 
 	useEffect(() => {
@@ -49,6 +55,8 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		<SnackBarContext.Provider
 			value={{
 				products,
+				orderProducts,
+				orderCost,
 				selectProducts,
 				handleSelectProducts,
 			}}
