@@ -8,12 +8,13 @@ type InitialStateType = {
 	orderCost: TypeForSnackBar[]
 	selectProducts: string
 	orderNameProduct: string
-	deleteAllOrderPoPup: boolean
+	servicePopup: boolean
 	deleteAllOrderTextInfo: string
 	handleSelectProducts: (isSelect: string) => void
 	handleOrderProducts: (id: number, product: string, price: number) => void
-	handleVisibleDeletePopup: () => void
+	handleVisiblePopup: (popup: string) => void
 	handleDeleteAllOrder: () => void
+	handleClosePopup: () => void
 }
 
 type SnackBarProviderType = {
@@ -26,12 +27,13 @@ const InitialState: InitialStateType = {
 	orderCost: [],
 	selectProducts: 'main',
 	orderNameProduct: '',
-	deleteAllOrderPoPup: false,
+	servicePopup: false,
 	deleteAllOrderTextInfo: '',
 	handleSelectProducts: (isSelect: string) => {},
 	handleOrderProducts: (id: number, product: string, price: number) => {},
-	handleVisibleDeletePopup: () => {},
+	handleVisiblePopup: (popup: string) => {},
 	handleDeleteAllOrder: () => {},
+	handleClosePopup: () => {},
 }
 
 const SnackBarContext = createContext(InitialState)
@@ -42,7 +44,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [orderCost, setOrderCost] = useState<TypeForSnackBar[]>([])
 	const [selectProducts, setSelectProducts] = useState<string>('main')
 	const [orderNameProduct, setOrderNameProduct] = useState<string>('brak zamówiemia')
-	const [deleteAllOrderPoPup, setDeleteAllOrderPopup] = useState<boolean>(false)
+	const [servicePopup, setServicePopup] = useState<boolean>(false)
 	const [deleteAllOrderTextInfo, setDeleteAllOrderTextInfo] = useState<string>('')
 
 	useEffect(() => {
@@ -82,8 +84,14 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		}
 	}
 
-	const handleVisibleDeletePopup = () => {
-		setDeleteAllOrderPopup(true)
+	const handleVisiblePopup = (popup: string) => {
+		if (popup === 'deleteAll') {
+			setServicePopup(true)
+		}
+	}
+
+	const handleClosePopup = () => {
+		setServicePopup(false)
 	}
 
 	const handleDeleteAllOrder = () => {
@@ -99,12 +107,13 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				orderCost,
 				selectProducts,
 				orderNameProduct,
-				deleteAllOrderPoPup,
+				servicePopup,
 				deleteAllOrderTextInfo,
 				handleSelectProducts,
 				handleOrderProducts,
-				handleVisibleDeletePopup,
+				handleVisiblePopup,
 				handleDeleteAllOrder,
+				handleClosePopup,
 			}}
 		>
 			{children}
