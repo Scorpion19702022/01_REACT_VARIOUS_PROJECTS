@@ -132,18 +132,7 @@
 
 .no_box_info_popup {
 	position: absolute;
-	top: 40%;
-	width: 90%;
-	height: 160px;
-	padding: 2em;
 	visibility: hidden;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	background-color: var(--color-dark09);
-	border: 0.04em solid var(--color-color07);
-	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
 }
 
 .text_info {

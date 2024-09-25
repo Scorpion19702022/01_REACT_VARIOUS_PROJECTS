@@ -96,7 +96,11 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 
 	const handleDeleteAllOrder = () => {
 		setOrderProducts([])
+		setServicePopup(false)
 		setOrderNameProduct('zrezygnowałaś z zamówienia? Dlaczego?')
+		setTimeout(() => {
+			setOrderNameProduct('brak zamówienia')
+		}, 2500)
 	}
 
 	return (
