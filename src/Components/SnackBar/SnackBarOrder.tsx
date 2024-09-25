@@ -4,7 +4,7 @@ import styles from './Styles/SnackBarOrder.module.css'
 import SnackBarContext from './Context/SnackBarContext'
 
 const SnackBarOrder = () => {
-	const { orderNameProduct, handleDeleteAllOrder } = useContext(SnackBarContext)
+	const { orderNameProduct, deleteAllOrderPoPup, handleDeleteAllOrder } = useContext(SnackBarContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -30,30 +30,18 @@ const SnackBarOrder = () => {
 			<div className={styles.box_order_list}>
 				<ul>
 					<li>aaaaaa</li>
-					<li>aaaaaaaaaa</li>
-					<li>aaaaaaaaaaa</li>
-					<li>aaaaaaaaaaa</li>
-					<li>aaaaaaaaaaa</li>
-					<li>aaaaaaa</li>
-					<li>aaaaaaaa</li>
-					<li>aaaaaaaaa</li>
-					<li>aaaaaaaaaa</li>
-					<li>aaaaaaaaa</li>
-					<li>aaaaaaaaa</li>
-					<li>aaaaaaaaaa</li>
-					<li>aaaaaaaaaa</li>
-					<li>aaaaaaaaaa</li>
-					<li>aaaaaaaaaaa</li>
-					<li>aaaaaaaaaaaaa</li>
-					<li>aaaaaaaaaaa</li>
-					<li>aaaaaaaaaa</li>
-					<li>aaaaaaaaaa</li>
-					<li>aaaaaaaaaa</li>
 				</ul>
 			</div>
 			<div className={styles.box_btns_check_and_send}>
 				<button className={styles.btn_check_and_send}>wyślij zamówienie</button>
 				<button className={styles.btn_check_and_send}>sprawdź status</button>
+			</div>
+			<div className={deleteAllOrderPoPup ? styles.no_box_info_popup : styles.box_info_popup}>
+				<p className={styles.text_info}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, debitis.</p>
+				<div className={styles.box_btns_popup}>
+					<button className={styles.btn_popup}>nie</button>
+					<button className={styles.btn_popup}>tak</button>
+				</div>
 			</div>
 		</section>
 	)
