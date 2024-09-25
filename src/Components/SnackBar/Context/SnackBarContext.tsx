@@ -12,6 +12,7 @@ type InitialStateType = {
 	deleteAllOrderTextInfo: string
 	handleSelectProducts: (isSelect: string) => void
 	handleOrderProducts: (id: number, product: string, price: number) => void
+	handleVisibleDeletePopup: () => void
 	handleDeleteAllOrder: () => void
 }
 
@@ -29,6 +30,7 @@ const InitialState: InitialStateType = {
 	deleteAllOrderTextInfo: '',
 	handleSelectProducts: (isSelect: string) => {},
 	handleOrderProducts: (id: number, product: string, price: number) => {},
+	handleVisibleDeletePopup: () => {},
 	handleDeleteAllOrder: () => {},
 }
 
@@ -40,7 +42,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [orderCost, setOrderCost] = useState<TypeForSnackBar[]>([])
 	const [selectProducts, setSelectProducts] = useState<string>('main')
 	const [orderNameProduct, setOrderNameProduct] = useState<string>('brak zamówiemia')
-	const [deleteAllOrderPoPup, deleteAllOrderPopup] = useState<boolean>(false)
+	const [deleteAllOrderPoPup, setDeleteAllOrderPopup] = useState<boolean>(false)
 	const [deleteAllOrderTextInfo, setDeleteAllOrderTextInfo] = useState<string>('')
 
 	useEffect(() => {
@@ -80,6 +82,10 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		}
 	}
 
+	const handleVisibleDeletePopup = () => {
+		setDeleteAllOrderPopup(true)
+	}
+
 	const handleDeleteAllOrder = () => {
 		setOrderProducts([])
 		setOrderNameProduct('zrezygnowałaś z zamówienia? Dlaczego?')
@@ -97,6 +103,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				deleteAllOrderTextInfo,
 				handleSelectProducts,
 				handleOrderProducts,
+				handleVisibleDeletePopup,
 				handleDeleteAllOrder,
 			}}
 		>

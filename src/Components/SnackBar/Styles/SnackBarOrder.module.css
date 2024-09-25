@@ -120,6 +120,23 @@
 	width: 90%;
 	height: 160px;
 	padding: 2em;
+	visibility: visible;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-dark09);
+	border: 0.04em solid var(--color-color07);
+	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
+}
+
+.no_box_info_popup {
+	position: absolute;
+	top: 40%;
+	width: 90%;
+	height: 160px;
+	padding: 2em;
+	visibility: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -186,5 +203,37 @@
 	.btn_check_and_send:hover {
 		color: var(--color-dark01);
 		background-color: var(--color-dark09);
+	}
+
+	.box_info_popup {
+		width: 93%;
+		height: 160px;
+		padding: 2em;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		background-color: var(--color-dark09);
+		border: 0.04em solid var(--color-color07);
+		box-shadow: 0.4em 0.4em 1em var(--color-dark09);
+	}
+
+	.text_info {
+		color: var(--color-color03);
+		text-align: center;
+	}
+
+	.box_btns_popup {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.btn_popup {
+		width: 30%;
+		padding: 0.4em;
+		background-color: var(--color-dark08);
+		border: 0.04em solid var(--color-color07);
+		color: var(--color-color03);
 	}
 }
