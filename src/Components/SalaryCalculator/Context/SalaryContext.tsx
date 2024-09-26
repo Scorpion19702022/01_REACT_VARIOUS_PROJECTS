@@ -206,6 +206,9 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setIncomeContractOfMandate(Number(salaryInput) - contributions.contrZUS - Number(salaryInput) * 0.2)
 		} else if (salaryInput !== '' && contract === 'umowa o dzieło') {
 			setIncome(0)
+		} else if (salaryInput !== '' && contract === 'umowa B2B') {
+			setIncome(0)
+			setIncomeContractOfMandate(0)
 		}
 	}, [contract, contributions.contrZUS, costMonth, minSalary, salaryInput])
 
