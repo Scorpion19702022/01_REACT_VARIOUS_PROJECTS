@@ -225,7 +225,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 					contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
 					contrTax: +(incomeContractOfMandate * tax).toFixed(0),
 				})
-			} else if (incomeContractOfMandate > 0 && income > 0 && contract === 'umowa B2B') {
+			} else if (contract === 'umowa B2B') {
+				setIncome(0)
 				setIncomeContractOfMandate(0)
 				setContributions({
 					...contributions,
@@ -256,9 +257,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				Number(salaryInput) - contributions.contrZUS - contributions.contrHealthy - contributions.contrTax
 			)
 			setContributionsAll(contributions.contrZUS + contributions.contrHealthy + contributions.contrTax)
-		} else if (contributions.contrTax > 0 && contract === 'umowa B2B') {
-			setIncome(0)
-			setIncomeContractOfMandate(0)
+		} else if (income === 0 && contributions.contrTax > 0 && contract === 'umowa B2B') {
 			setResultNetSalary(Number(salaryInput) - contributions.contrHealthy - contributions.contrTax)
 			setContributionsAll(contributions.contrHealthy + contributions.contrTax)
 		}
