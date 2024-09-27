@@ -196,6 +196,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			contract === 'umowa o pracę' &&
 			contributions.contrZUS > 0
 		) {
+			setIncomeContractOfMandate(0)
 			setIncome(Number(salaryInput) - contributions.contrZUS - costMonth)
 		} else if (
 			salaryInput !== '' &&
@@ -226,6 +227,8 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				setIncome(0)
 				setContributions({
 					...contributions,
+					contrZUS: contributions.contrPension + contributions.contrDisability,
+					contrSickness: 0,
 					contrHealthy: (Number(salaryInput) - contributions.contrZUS) * contributionsHealthy,
 					contrTax: +(incomeContractOfMandate * tax).toFixed(0),
 				})
@@ -418,7 +421,6 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				contrZUS: Number(salaryInput) * contributionsZUS,
 				contrPension: Number(salaryInput) * contributionPension,
 				contrDisability: Number(salaryInput) * contributionDisability,
-				contrSickness: 0,
 			})
 			const incomeMandate = Number(salaryInput) - Number(salaryInput) * contributionsZUS - Number(salaryInput) * 0.2
 			setIncomeContractOfMandate(incomeMandate)
