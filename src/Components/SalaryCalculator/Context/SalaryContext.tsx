@@ -153,6 +153,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setErrorContract('')
 			setErrorInputValue("nie podałeś wartości'")
 		} else {
+			setErrorContract('')
 			setErrorInputValue('')
 		}
 	}, [contract, salaryInput])
