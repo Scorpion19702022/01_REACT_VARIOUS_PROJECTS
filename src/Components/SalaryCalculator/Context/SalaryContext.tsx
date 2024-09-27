@@ -361,11 +361,35 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setErrorInputValue(`minimalne wynagr. to ${minSalary} zł`)
 			setResultContract(`minimalne wynagr. to ${minSalary} zł`)
 			setResultGrossSalary(0)
+			setResultNetSalary(0)
+			setContributions({
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: 0,
+				contrTax: 0,
+			})
+			setContributionsAll(0)
+			setIncome(0)
+			setIncomeContractOfMandate(0)
 		} else if (contract === 'umowa zlecenie' && Number(salaryInput) < minSalary) {
 			setErrorContract('')
 			setErrorInputValue(`minimalne wynagr. to ${minSalary} zł`)
 			setResultContract(`minimalne wynagr. to ${minSalary} zł`)
 			setResultGrossSalary(0)
+			setResultNetSalary(0)
+			setContributions({
+				contrZUS: 0,
+				contrPension: 0,
+				contrDisability: 0,
+				contrSickness: 0,
+				contrHealthy: 0,
+				contrTax: 0,
+			})
+			setContributionsAll(0)
+			setIncome(0)
+			setIncomeContractOfMandate(0)
 		} else if (contract !== 'wybierz umowę' && salaryInput !== '') {
 			setErrorContract('')
 			setErrorInputValue('')
