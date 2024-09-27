@@ -356,6 +356,16 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 			setContributionsAll(0)
 			setIncome(0)
 			setIncomeContractOfMandate(0)
+		} else if (contract === 'umowa o pracę' && Number(salaryInput) < minSalary) {
+			setErrorContract('')
+			setErrorInputValue(`minimalne wynagr. to ${minSalary} zł`)
+			setResultContract(`minimalne wynagr. to ${minSalary} zł`)
+			setResultGrossSalary(0)
+		} else if (contract === 'umowa zlecenie' && Number(salaryInput) < minSalary) {
+			setErrorContract('')
+			setErrorInputValue(`minimalne wynagr. to ${minSalary} zł`)
+			setResultContract(`minimalne wynagr. to ${minSalary} zł`)
+			setResultGrossSalary(0)
 		} else if (contract !== 'wybierz umowę' && salaryInput !== '') {
 			setErrorContract('')
 			setErrorInputValue('')
@@ -378,7 +388,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 				'UMOWA O PRACĘ. Zawierana jest na podstawie przepisów kodeksu pracy. Gwarantuje prawo do urlopu wypoczynkowego, zwolnienia chorobowego i wynagrodzenia, które jest równe lub większe minimalnej krajowej. Z jej tytułu pracodawca jest zobowiązany do opłacania wszystkich składek.'
 			)
 			setShowInfo(true)
-		} else if (salaryInput !== '' && contract === 'umowa zlecenie') {
+		} else if (salaryInput !== '' && Number(salaryInput) >= minSalary && contract === 'umowa zlecenie') {
 			setContributions({
 				...contributions,
 				contrZUS: Number(salaryInput) * contributionsZUS,
