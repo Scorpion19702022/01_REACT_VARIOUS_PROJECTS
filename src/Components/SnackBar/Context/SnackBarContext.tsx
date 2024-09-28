@@ -93,7 +93,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		const order = products.find(item => item.id === id)
 		if (order) {
 			setOrderProducts([...orderProducts, order])
-			setOrderNameProduct(`zamówiłaś/eś ${product}`)
+			setOrderNameProduct(`${product}`)
 		}
 	}
 
@@ -104,7 +104,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 			setDeleteAllOrderTextInfo('Czy jesteś pewna/pewien, że chcesz zrezygnować z całego zamówienia?')
 		} else if (popup === 'deleteAll' && orderProducts.length === 0) {
 			setServicePopup(false)
-			setOrderNameProduct('niczego jeszcze nie zamówiłeś')
+			setOrderNameProduct('niczego jeszcze nie zamówiłaś/eś')
 			setTimeout(() => {
 				setOrderNameProduct('brak zamówieia')
 			}, 2500)

@@ -24,12 +24,12 @@ const SnackBarOrder = () => {
 						Ilość zamówienia: <span className={styles.info_span}>{orderProducts.length}</span> {orderQuantityProducts}
 					</h2>
 					<h2 className={styles.info_orders}>
-						Suma zamówieia <span className={styles.info_span}>0</span> zł
+						Do zapłaty: <span className={styles.info_span}>0</span> zł
 					</h2>
 				</div>
 				<div className={styles.heading_info}>
 					<h3 className={styles.info_orders}>
-						Zamówiłeś: <span className={styles.info_span}>{orderNameProduct}</span>
+						Zamówiłaś/eś: <span className={styles.info_span}>{orderNameProduct}</span>
 					</h3>
 				</div>
 				<button className={styles.btn_clean_orders} onClick={() => handleVisiblePopup('deleteAll')}>
