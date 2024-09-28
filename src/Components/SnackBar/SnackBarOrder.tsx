@@ -15,6 +15,16 @@ const SnackBarOrder = () => {
 		deleteAllOrderTextInfo,
 	} = useContext(SnackBarContext)
 
+	const yourOrderProduct = orderProducts.map(item => (
+		<ul className={styles.order_products_list} key={item.id}>
+			<li className={styles.order_product}>
+				<h4 className={styles.order_name}>{item.name}</h4>
+				<span className={styles.order_price}>{item.price} zł</span>
+				<button className={styles.order_btn}>usuń</button>
+			</li>
+		</ul>
+	))
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_orders}>
@@ -36,11 +46,7 @@ const SnackBarOrder = () => {
 					usuń całe zamówienie
 				</button>
 			</div>
-			<div className={styles.box_order_list}>
-				<ul>
-					<li>aaaaaa</li>
-				</ul>
-			</div>
+			<div className={styles.box_order_list}>{yourOrderProduct}</div>
 			<div className={styles.box_btns_check_and_send}>
 				<button className={styles.btn_check_and_send}>wyślij zamówienie</button>
 				<button className={styles.btn_check_and_send}>sprawdź status</button>

@@ -97,6 +97,43 @@
 	overflow: auto;
 }
 
+.order_products_list {
+	width: 100%;
+	list-style-type: none;
+}
+
+.order_product {
+	width: 100%;
+	padding-right: 0.6em;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 0.6em;
+	margin-bottom: 0.4em;
+	border-bottom: 0.04em dotted var(--color-color07);
+}
+
+.order_name {
+	width: 50%;
+	text-align: left;
+	color: var(--color-color01);
+	font-weight: 200;
+}
+
+.order_price {
+	width: 20%;
+	text-align: right;
+	padding-right: 1em;
+	color: var(--color-color02);
+}
+
+.order_btn {
+	width: 25%;
+	padding: 0.1em;
+	background: none;
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color03);
+}
+
 .box_btns_check_and_send {
 	width: 100%;
 	margin: 2em 0em 0em 0em;
@@ -179,6 +216,20 @@
 
 	.btn_clean_orders:hover {
 		color: var(--color-color02);
+		background-color: var(--color-dark09);
+	}
+
+	.order_name,
+	.order_price {
+		font-size: 1.2em;
+	}
+
+	.order_btn {
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.order_btn:hover {
 		background-color: var(--color-dark09);
 	}
 
