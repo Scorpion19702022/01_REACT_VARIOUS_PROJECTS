@@ -5,6 +5,7 @@ import { TypeForSnackBar } from '../Types/TypeForSnackBar'
 type InitialStateType = {
 	products: TypeForSnackBar[]
 	orderProducts: TypeForSnackBar[]
+	sendOrder: TypeForSnackBar[]
 	selectProducts: string
 	orderCost: number
 	orderQuantityProducts: string
@@ -18,6 +19,7 @@ type InitialStateType = {
 	handleDeleteAllOrder: () => void
 	handleDeleteProductOrder: (id: number, product: string) => void
 	handleClosePopup: () => void
+	handleSendOrder: () => void
 }
 
 type SnackBarProviderType = {
@@ -27,6 +29,7 @@ type SnackBarProviderType = {
 const InitialState: InitialStateType = {
 	products: [],
 	orderProducts: [],
+	sendOrder: [],
 	selectProducts: 'main',
 	orderCost: 0,
 	orderQuantityProducts: '',
@@ -40,6 +43,7 @@ const InitialState: InitialStateType = {
 	handleDeleteAllOrder: () => {},
 	handleDeleteProductOrder: (id: number, product: string) => {},
 	handleClosePopup: () => {},
+	handleSendOrder: () => {},
 }
 
 const SnackBarContext = createContext(InitialState)
@@ -47,6 +51,7 @@ const SnackBarContext = createContext(InitialState)
 export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [products, setProducts] = useState<TypeForSnackBar[]>([])
 	const [orderProducts, setOrderProducts] = useState<TypeForSnackBar[]>([])
+	const [sendOrder, setSendOrder] = useState<TypeForSnackBar[]>([])
 	const [selectProducts, setSelectProducts] = useState<string>('main')
 	const [orderCost, setOrderCost] = useState<number>(0)
 	const [orderQuantityProducts, setOrderQuantityProducts] = useState<string>('produktów')
@@ -166,11 +171,19 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		}, 2500)
 	}
 
+	const handleSendOrder = () => {
+		setSendOrder(orderProducts)
+		setOrderProducts([])
+	}
+
+	console.log(sendOrder)
+
 	return (
 		<SnackBarContext.Provider
 			value={{
 				products,
 				orderProducts,
+				sendOrder,
 				selectProducts,
 				orderCost,
 				orderQuantityProducts,
@@ -184,6 +197,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				handleDeleteAllOrder,
 				handleDeleteProductOrder,
 				handleClosePopup,
+				handleSendOrder,
 			}}
 		>
 			{children}
