@@ -100,6 +100,8 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const handleVisiblePopup = (popup: string) => {
 		if (popup === 'deleteAll' && orderProducts.length > 0) {
 			setServicePopup(true)
+			setOrderNameProduct('stan anulowania zamówienia')
+			setDeleteAllOrderTextInfo('Czy jesteś pewna/pewien, że chcesz zrezygnować z całego zamówienia?')
 		} else if (popup === 'deleteAll' && orderProducts.length === 0) {
 			setServicePopup(false)
 			setOrderNameProduct('niczego jeszcze nie zamówiłeś')
@@ -116,7 +118,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const handleDeleteAllOrder = () => {
 		setOrderProducts([])
 		setServicePopup(false)
-		setOrderNameProduct('zrezygnowałaś z zamówienia? Dlaczego?')
+		setOrderNameProduct('zrezygnowałaś z zamówienia')
 		setTimeout(() => {
 			setOrderNameProduct('brak zamówienia')
 		}, 2500)

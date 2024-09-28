@@ -12,6 +12,7 @@ const SnackBarOrder = () => {
 		handleVisiblePopup,
 		handleClosePopup,
 		handleDeleteAllOrder,
+		deleteAllOrderTextInfo,
 	} = useContext(SnackBarContext)
 
 	return (
@@ -45,7 +46,7 @@ const SnackBarOrder = () => {
 				<button className={styles.btn_check_and_send}>sprawdź status</button>
 			</div>
 			<div className={!servicePopup ? styles.no_box_info_popup : styles.box_info_popup}>
-				<p className={styles.text_info}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, debitis.</p>
+				<p className={styles.text_info}>{deleteAllOrderTextInfo}</p>
 				<div className={styles.box_btns_popup}>
 					<button className={styles.btn_popup} onClick={handleClosePopup}>
 						nie
