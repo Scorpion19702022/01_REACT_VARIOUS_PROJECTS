@@ -12,6 +12,7 @@ const SnackBarOrder = () => {
 		servicePopup,
 		sureDeleteOrder,
 		sureSend,
+		statusOrder,
 		handleVisiblePopup,
 		handleClosePopup,
 		handleDeleteAllOrder,
@@ -93,6 +94,14 @@ const SnackBarOrder = () => {
 					</button>
 					<button className={styles.btn_popup} onClick={handleSendOrder}>
 						tak
+					</button>
+				</div>
+			</div>
+			<div className={statusOrder ? styles.no_box_info_popup : styles.box_info_popup}>
+				<p className={styles.text_info}>{deleteAllOrderTextInfo}</p>
+				<div className={styles.box_btns_popup}>
+					<button className={styles.btn_popup_close_status} onClick={handleClosePopup}>
+						zamknij
 					</button>
 				</div>
 			</div>

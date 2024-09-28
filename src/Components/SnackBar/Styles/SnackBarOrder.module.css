@@ -191,6 +191,14 @@
 	color: var(--color-color03);
 }
 
+.btn_popup_close_status {
+	width: 100%;
+	padding: 0.4em;
+	background-color: var(--color-dark08);
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color03);
+}
+
 @media (min-width: 992px) {
 	.wrapper {
 		width: 30%;
@@ -262,6 +270,15 @@
 	}
 
 	.btn_popup:hover {
+		background-color: var(--color-dark09);
+	}
+
+	.btn_popup_close_status {
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn_popup_close_status:hover {
 		background-color: var(--color-dark09);
 	}
 }

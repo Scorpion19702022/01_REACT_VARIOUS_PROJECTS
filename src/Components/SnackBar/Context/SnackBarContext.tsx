@@ -13,6 +13,7 @@ type InitialStateType = {
 	servicePopup: boolean
 	sureDeleteOrder: boolean
 	sureSend: boolean
+	statusOrder: boolean
 	deleteAllOrderTextInfo: string
 	handleSelectProducts: (isSelect: string) => void
 	handleOrderProducts: (id: number, product: string) => void
@@ -22,6 +23,7 @@ type InitialStateType = {
 	handleClosePopup: () => void
 	handleSendOrder: () => void
 	handleSureSend: () => void
+	handleCheckStatus: () => void
 }
 
 type SnackBarProviderType = {
@@ -39,6 +41,7 @@ const InitialState: InitialStateType = {
 	servicePopup: false,
 	sureDeleteOrder: false,
 	sureSend: false,
+	statusOrder: false,
 	deleteAllOrderTextInfo: '',
 	handleSelectProducts: (isSelect: string) => {},
 	handleOrderProducts: (id: number, product: string) => {},
@@ -48,6 +51,7 @@ const InitialState: InitialStateType = {
 	handleClosePopup: () => {},
 	handleSendOrder: () => {},
 	handleSureSend: () => {},
+	handleCheckStatus: () => {},
 }
 
 const SnackBarContext = createContext(InitialState)
@@ -63,6 +67,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [servicePopup, setServicePopup] = useState<boolean>(false)
 	const [sureDeleteOrder, setSureDeleteOrder] = useState<boolean>(false)
 	const [sureSend, setSureSend] = useState<boolean>(false)
+	const [statusOrder, setStatusOrder] = useState<boolean>(false)
 	const [deleteAllOrderTextInfo, setDeleteAllOrderTextInfo] = useState<string>('')
 
 	useEffect(() => {
@@ -143,6 +148,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		setServicePopup(false)
 		setSureDeleteOrder(false)
 		setSureSend(false)
+		setStatusOrder(false)
 		setOrderNameProduct('złóż kolejne zamówienie')
 	}
 
@@ -196,6 +202,10 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		}
 	}
 
+	const handleCheckStatus = () => {
+		setStatusOrder(true)
+	}
+
 	return (
 		<SnackBarContext.Provider
 			value={{
@@ -209,6 +219,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				servicePopup,
 				sureDeleteOrder,
 				sureSend,
+				statusOrder,
 				deleteAllOrderTextInfo,
 				handleSelectProducts,
 				handleOrderProducts,
@@ -218,6 +229,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				handleClosePopup,
 				handleSendOrder,
 				handleSureSend,
+				handleCheckStatus,
 			}}
 		>
 			{children}
