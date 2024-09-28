@@ -5,14 +5,14 @@ import { TypeForSnackBar } from '../Types/TypeForSnackBar'
 type InitialStateType = {
 	products: TypeForSnackBar[]
 	orderProducts: TypeForSnackBar[]
-	orderCost: TypeForSnackBar[]
 	selectProducts: string
+	orderCost: number
 	orderQuantityProducts: string
 	orderNameProduct: string
 	servicePopup: boolean
 	deleteAllOrderTextInfo: string
 	handleSelectProducts: (isSelect: string) => void
-	handleOrderProducts: (id: number, product: string, price: number) => void
+	handleOrderProducts: (id: number, product: string) => void
 	handleVisiblePopup: (popup: string) => void
 	handleDeleteAllOrder: () => void
 	handleClosePopup: () => void
@@ -25,14 +25,14 @@ type SnackBarProviderType = {
 const InitialState: InitialStateType = {
 	products: [],
 	orderProducts: [],
-	orderCost: [],
 	selectProducts: 'main',
+	orderCost: 0,
 	orderQuantityProducts: '',
 	orderNameProduct: '',
 	servicePopup: false,
 	deleteAllOrderTextInfo: '',
 	handleSelectProducts: (isSelect: string) => {},
-	handleOrderProducts: (id: number, product: string, price: number) => {},
+	handleOrderProducts: (id: number, product: string) => {},
 	handleVisiblePopup: (popup: string) => {},
 	handleDeleteAllOrder: () => {},
 	handleClosePopup: () => {},
@@ -43,8 +43,8 @@ const SnackBarContext = createContext(InitialState)
 export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [products, setProducts] = useState<TypeForSnackBar[]>([])
 	const [orderProducts, setOrderProducts] = useState<TypeForSnackBar[]>([])
-	const [orderCost, setOrderCost] = useState<TypeForSnackBar[]>([])
 	const [selectProducts, setSelectProducts] = useState<string>('main')
+	const [orderCost, setOrderCost] = useState<number>(0)
 	const [orderQuantityProducts, setOrderQuantityProducts] = useState<string>('produktów')
 	const [orderNameProduct, setOrderNameProduct] = useState<string>('brak zamówiemia')
 	const [servicePopup, setServicePopup] = useState<boolean>(false)
@@ -89,7 +89,13 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		}
 	}, [orderProducts.length])
 
-	const handleOrderProducts = (id: number, product: string, price: number) => {
+	useEffect(() => {
+		const yourCost = orderProducts.map(item => item.price)
+		console.log(yourCost)
+		setOrderCost(yourCost.reduce((accumulate: any, current: any) => accumulate + current, 0))
+	}, [orderProducts])
+
+	const handleOrderProducts = (id: number, product: string) => {
 		const order = products.find(item => item.id === id)
 		if (order) {
 			setOrderProducts([...orderProducts, order])
@@ -130,8 +136,8 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 			value={{
 				products,
 				orderProducts,
-				orderCost,
 				selectProducts,
+				orderCost,
 				orderQuantityProducts,
 				orderNameProduct,
 				servicePopup,

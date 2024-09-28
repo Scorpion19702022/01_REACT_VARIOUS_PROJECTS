@@ -6,6 +6,7 @@ import SnackBarContext from './Context/SnackBarContext'
 const SnackBarOrder = () => {
 	const {
 		orderProducts,
+		orderCost,
 		orderQuantityProducts,
 		orderNameProduct,
 		servicePopup,
@@ -34,7 +35,7 @@ const SnackBarOrder = () => {
 						Ilość zamówienia: <span className={styles.info_span}>{orderProducts.length}</span> {orderQuantityProducts}
 					</h2>
 					<h2 className={styles.info_orders}>
-						Do zapłaty: <span className={styles.info_span}>0</span> zł
+						Do zapłaty: <span className={styles.info_span}>{orderCost}</span> zł
 					</h2>
 				</div>
 				<div className={styles.heading_info}>

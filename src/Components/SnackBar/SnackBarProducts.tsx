@@ -32,7 +32,7 @@ const SnackBarProducts = () => {
 			<div className={styles.box_img_product}>
 				<img className={styles.img_product} src={item.img} alt={item.name} />
 			</div>
-			<button className={styles.btn_product_order} onClick={() => handleOrderProducts(item.id, item.name, item.price)}>
+			<button className={styles.btn_product_order} onClick={() => handleOrderProducts(item.id, item.name)}>
 				zamów
 			</button>
 		</div>
