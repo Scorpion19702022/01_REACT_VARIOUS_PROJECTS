@@ -10,9 +10,11 @@ const SnackBarOrder = () => {
 		orderQuantityProducts,
 		orderNameProduct,
 		servicePopup,
+		sureDeleteOrder,
 		handleVisiblePopup,
 		handleClosePopup,
 		handleDeleteAllOrder,
+		handleDeleteProductOrder,
 		deleteAllOrderTextInfo,
 	} = useContext(SnackBarContext)
 
@@ -21,8 +23,23 @@ const SnackBarOrder = () => {
 			<li className={styles.order_product}>
 				<h4 className={styles.order_name}>{item.name}</h4>
 				<span className={styles.order_price}>{item.price} zł</span>
-				<button className={styles.order_btn}>usuń</button>
+				<button className={styles.order_btn} onClick={() => handleVisiblePopup('deleteOrder')}>
+					usuń
+				</button>
 			</li>
+			<div className={!sureDeleteOrder ? styles.no_box_info_popup : styles.box_info_popup}>
+				<p className={styles.text_info}>
+					{deleteAllOrderTextInfo} {item.name}
+				</p>
+				<div className={styles.box_btns_popup}>
+					<button className={styles.btn_popup} onClick={handleClosePopup}>
+						nie
+					</button>
+					<button className={styles.btn_popup} onClick={() => handleDeleteProductOrder(item.id, item.name)}>
+						tak
+					</button>
+				</div>
+			</div>
 		</ul>
 	))
 

@@ -70,7 +70,7 @@
 
 .info_orders {
 	width: 100%;
-	font-size: 1em;
+	font-size: 0.8em;
 	font-weight: 200;
 	color: var(--color-color04);
 }
@@ -204,7 +204,7 @@
 	}
 
 	.info_orders {
-		font-size: 1.4em;
+		font-size: 1.2em;
 	}
 
 	.btn_clean_orders {

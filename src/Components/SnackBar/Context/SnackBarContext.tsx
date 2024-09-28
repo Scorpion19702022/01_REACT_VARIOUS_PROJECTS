@@ -10,11 +10,13 @@ type InitialStateType = {
 	orderQuantityProducts: string
 	orderNameProduct: string
 	servicePopup: boolean
+	sureDeleteOrder: boolean
 	deleteAllOrderTextInfo: string
 	handleSelectProducts: (isSelect: string) => void
 	handleOrderProducts: (id: number, product: string) => void
 	handleVisiblePopup: (popup: string) => void
 	handleDeleteAllOrder: () => void
+	handleDeleteProductOrder: (id: number, product: string) => void
 	handleClosePopup: () => void
 }
 
@@ -30,11 +32,13 @@ const InitialState: InitialStateType = {
 	orderQuantityProducts: '',
 	orderNameProduct: '',
 	servicePopup: false,
+	sureDeleteOrder: false,
 	deleteAllOrderTextInfo: '',
 	handleSelectProducts: (isSelect: string) => {},
 	handleOrderProducts: (id: number, product: string) => {},
 	handleVisiblePopup: (popup: string) => {},
 	handleDeleteAllOrder: () => {},
+	handleDeleteProductOrder: (id: number, product: string) => {},
 	handleClosePopup: () => {},
 }
 
@@ -48,6 +52,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [orderQuantityProducts, setOrderQuantityProducts] = useState<string>('produktów')
 	const [orderNameProduct, setOrderNameProduct] = useState<string>('brak zamówiemia')
 	const [servicePopup, setServicePopup] = useState<boolean>(false)
+	const [sureDeleteOrder, setSureDeleteOrder] = useState<boolean>(false)
 	const [deleteAllOrderTextInfo, setDeleteAllOrderTextInfo] = useState<string>('')
 
 	useEffect(() => {
@@ -91,7 +96,6 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 
 	useEffect(() => {
 		const yourCost = orderProducts.map(item => item.price)
-		console.log(yourCost)
 		setOrderCost(yourCost.reduce((accumulate: any, current: any) => accumulate + current, 0))
 	}, [orderProducts])
 
@@ -106,19 +110,28 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const handleVisiblePopup = (popup: string) => {
 		if (popup === 'deleteAll' && orderProducts.length > 0) {
 			setServicePopup(true)
+			setSureDeleteOrder(false)
 			setOrderNameProduct('stan anulowania całego zamówienia')
 			setDeleteAllOrderTextInfo('Czy jesteś pewna/pewien, że chcesz zrezygnować z całego zamówienia?')
 		} else if (popup === 'deleteAll' && orderProducts.length === 0) {
 			setServicePopup(false)
+			setSureDeleteOrder(false)
 			setOrderNameProduct('niczego jeszcze nie zamówiłaś/eś')
 			setTimeout(() => {
 				setOrderNameProduct('brak zamówieia')
 			}, 2500)
+		} else if (popup === 'deleteOrder') {
+			setSureDeleteOrder(true)
+			setOrderNameProduct('stan anulowania zamówieia')
+			setDeleteAllOrderTextInfo('Czy jesteś pewna/pewien, że chcesz zrezygnować z zamówienia:')
+		} else if (popup !== 'deleteOrder') {
+			setSureDeleteOrder(false)
 		}
 	}
 
 	const handleClosePopup = () => {
 		setServicePopup(false)
+		setSureDeleteOrder(false)
 		setOrderNameProduct('złóż kolejne zamówienie')
 	}
 
@@ -128,6 +141,28 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		setOrderNameProduct('zrezygnowałaś z zamówienia')
 		setTimeout(() => {
 			setOrderNameProduct('brak zamówienia')
+		}, 2500)
+	}
+
+	useEffect(() => {
+		if (orderProducts.length === 0) {
+			setTimeout(() => {
+				setOrderNameProduct('brak zamówienia')
+			}, 2500)
+		}
+	}, [orderProducts.length])
+
+	const handleDeleteProductOrder = (id: number, product: string) => {
+		const deleteOrderProduct = orderProducts.filter(item => item.id !== id)
+		setOrderProducts(deleteOrderProduct)
+		setSureDeleteOrder(false)
+		setOrderNameProduct(`zrezygnowałaś/eś z: ${product}`)
+		setTimeout(() => {
+			if (orderProducts.length > 0) {
+				setOrderNameProduct('złóż kolejne zamówienie')
+			} else if (orderProducts.length === 0) {
+				setOrderNameProduct('brak zamówienia')
+			}
 		}, 2500)
 	}
 
@@ -141,11 +176,13 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				orderQuantityProducts,
 				orderNameProduct,
 				servicePopup,
+				sureDeleteOrder,
 				deleteAllOrderTextInfo,
 				handleSelectProducts,
 				handleOrderProducts,
 				handleVisiblePopup,
 				handleDeleteAllOrder,
+				handleDeleteProductOrder,
 				handleClosePopup,
 			}}
 		>
