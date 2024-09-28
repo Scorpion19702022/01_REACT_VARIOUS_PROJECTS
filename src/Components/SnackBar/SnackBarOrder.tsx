@@ -4,8 +4,15 @@ import styles from './Styles/SnackBarOrder.module.css'
 import SnackBarContext from './Context/SnackBarContext'
 
 const SnackBarOrder = () => {
-	const { orderNameProduct, servicePopup, handleVisiblePopup, handleClosePopup, handleDeleteAllOrder } =
-		useContext(SnackBarContext)
+	const {
+		orderProducts,
+		orderQuantityProducts,
+		orderNameProduct,
+		servicePopup,
+		handleVisiblePopup,
+		handleClosePopup,
+		handleDeleteAllOrder,
+	} = useContext(SnackBarContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -13,7 +20,7 @@ const SnackBarOrder = () => {
 				<h1 className={styles.heading_orders}>Twoje zamówieie:</h1>
 				<div className={styles.heading_info}>
 					<h2 className={styles.info_orders}>
-						Ilość zamówienia: <span className={styles.info_span}>0</span> produktów
+						Ilość zamówienia: <span className={styles.info_span}>{orderProducts.length}</span> {orderQuantityProducts}
 					</h2>
 					<h2 className={styles.info_orders}>
 						Suma zamówieia <span className={styles.info_span}>0</span> zł

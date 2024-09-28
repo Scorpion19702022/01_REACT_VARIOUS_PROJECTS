@@ -7,6 +7,7 @@ type InitialStateType = {
 	orderProducts: TypeForSnackBar[]
 	orderCost: TypeForSnackBar[]
 	selectProducts: string
+	orderQuantityProducts: string
 	orderNameProduct: string
 	servicePopup: boolean
 	deleteAllOrderTextInfo: string
@@ -26,6 +27,7 @@ const InitialState: InitialStateType = {
 	orderProducts: [],
 	orderCost: [],
 	selectProducts: 'main',
+	orderQuantityProducts: '',
 	orderNameProduct: '',
 	servicePopup: false,
 	deleteAllOrderTextInfo: '',
@@ -43,9 +45,20 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [orderProducts, setOrderProducts] = useState<TypeForSnackBar[]>([])
 	const [orderCost, setOrderCost] = useState<TypeForSnackBar[]>([])
 	const [selectProducts, setSelectProducts] = useState<string>('main')
+	const [orderQuantityProducts, setOrderQuantityProducts] = useState<string>('produktów')
 	const [orderNameProduct, setOrderNameProduct] = useState<string>('brak zamówiemia')
 	const [servicePopup, setServicePopup] = useState<boolean>(false)
 	const [deleteAllOrderTextInfo, setDeleteAllOrderTextInfo] = useState<string>('')
+
+	useEffect(() => {
+		if (orderProducts.length === 1) {
+			return setOrderQuantityProducts('produkt')
+		} else if (orderProducts.length > 1 && orderProducts.length < 5) {
+			return setOrderQuantityProducts('produkty')
+		} else {
+			return setOrderQuantityProducts('produktów')
+		}
+	}, [orderProducts.length])
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -80,13 +93,19 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		const order = products.find(item => item.id === id)
 		if (order) {
 			setOrderProducts([...orderProducts, order])
-			setOrderNameProduct(`zamówiłaś/eś ${product} za ${price} zł`)
+			setOrderNameProduct(`zamówiłaś/eś ${product}`)
 		}
 	}
 
 	const handleVisiblePopup = (popup: string) => {
-		if (popup === 'deleteAll') {
+		if (popup === 'deleteAll' && orderProducts.length > 0) {
 			setServicePopup(true)
+		} else if (popup === 'deleteAll' && orderProducts.length === 0) {
+			setServicePopup(false)
+			setOrderNameProduct('niczego jeszcze nie zamówiłeś')
+			setTimeout(() => {
+				setOrderNameProduct('brak zamówieia')
+			}, 2500)
 		}
 	}
 
@@ -110,6 +129,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				orderProducts,
 				orderCost,
 				selectProducts,
+				orderQuantityProducts,
 				orderNameProduct,
 				servicePopup,
 				deleteAllOrderTextInfo,
