@@ -15,6 +15,9 @@ type InitialStateType = {
 	sureSend: boolean
 	statusOrder: boolean
 	deleteAllOrderTextInfo: string
+	smallOrder: number
+	middleOrder: number
+	bigOrder: number
 	handleSelectProducts: (isSelect: string) => void
 	handleOrderProducts: (id: number, product: string) => void
 	handleVisiblePopup: (popup: string) => void
@@ -43,6 +46,9 @@ const InitialState: InitialStateType = {
 	sureSend: false,
 	statusOrder: false,
 	deleteAllOrderTextInfo: '',
+	smallOrder: 2,
+	middleOrder: 4,
+	bigOrder: 7,
 	handleSelectProducts: (isSelect: string) => {},
 	handleOrderProducts: (id: number, product: string) => {},
 	handleVisiblePopup: (popup: string) => {},
@@ -69,6 +75,10 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [sureSend, setSureSend] = useState<boolean>(false)
 	const [statusOrder, setStatusOrder] = useState<boolean>(false)
 	const [deleteAllOrderTextInfo, setDeleteAllOrderTextInfo] = useState<string>('')
+
+	const [smallOrder, setSmallOrder] = useState<number>(2)
+	const [middleOrder, setMiddleOrder] = useState<number>(4)
+	const [bigOrder, setBigOrder] = useState<number>(7)
 
 	useEffect(() => {
 		if (orderProducts.length === 1) {
@@ -183,11 +193,33 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		}, 2500)
 	}
 
-	useEffect(() => {
-		if (sendOrder.length > 0) {
-			setOrderNameProduct('zamówienie w toku')
-		}
-	}, [sendOrder.length])
+	// useEffect(() => {
+	// 	if (sendOrder.length > 0 && sendOrder.length <= 5) {
+	// 		const interval = setInterval(() => {
+	// 			setSmallOrder(smallOrder - 1)
+	// 			setOrderNameProduct(`zamówienie za ${smallOrder} min.`)
+	// 		}, 100)
+	// 		if (smallOrder === 0) {
+	// 			clearInterval(interval)
+	// 		}
+	// 	} else if (sendOrder.length > 5 && sendOrder.length <= 10) {
+	// 		const interval = setInterval(() => {
+	// 			setMiddleOrder(middleOrder - 1)
+	// 			setOrderNameProduct(`zamówienie za ${middleOrder} min.`)
+	// 		}, 100)
+	// 		if (middleOrder === 0) {
+	// 			clearInterval(interval)
+	// 		}
+	// 	} else if (sendOrder.length > 10) {
+	// 		const interval = setInterval(() => {
+	// 			setBigOrder(bigOrder - 1)
+	// 			setOrderNameProduct(`zamówienie za ${bigOrder} min.`)
+	// 		}, 100)
+	// 		if (bigOrder === 0) {
+	// 			clearInterval(interval)
+	// 		}
+	// 	}
+	// }, [sendOrder.length, smallOrder, middleOrder, bigOrder])
 
 	const handleSendOrder = () => {
 		setSendOrder(orderProducts)
@@ -202,8 +234,20 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		}
 	}
 
+	useEffect(() => {
+		if (sendOrder.length > 0 && sendOrder.length < 5) {
+			setDeleteAllOrderTextInfo('Czas realizacji')
+		}
+	}, [])
+
 	const handleCheckStatus = () => {
-		setStatusOrder(true)
+		if (sendOrder.length > 0) {
+			setStatusOrder(true)
+			setDeleteAllOrderTextInfo('Twoje zamówieie jest w toku')
+		} else if (sendOrder.length === 0) {
+			setStatusOrder(false)
+			setDeleteAllOrderTextInfo('Twoje zamówieie zostało zrealizowane')
+		}
 	}
 
 	return (
@@ -221,6 +265,9 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				sureSend,
 				statusOrder,
 				deleteAllOrderTextInfo,
+				smallOrder,
+				middleOrder,
+				bigOrder,
 				handleSelectProducts,
 				handleOrderProducts,
 				handleVisiblePopup,
