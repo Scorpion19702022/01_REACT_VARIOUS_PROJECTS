@@ -12,6 +12,7 @@ type InitialStateType = {
 	orderNameProduct: string
 	servicePopup: boolean
 	sureDeleteOrder: boolean
+	sureSend: boolean
 	deleteAllOrderTextInfo: string
 	handleSelectProducts: (isSelect: string) => void
 	handleOrderProducts: (id: number, product: string) => void
@@ -20,6 +21,7 @@ type InitialStateType = {
 	handleDeleteProductOrder: (id: number, product: string) => void
 	handleClosePopup: () => void
 	handleSendOrder: () => void
+	handleSureSend: () => void
 }
 
 type SnackBarProviderType = {
@@ -36,6 +38,7 @@ const InitialState: InitialStateType = {
 	orderNameProduct: '',
 	servicePopup: false,
 	sureDeleteOrder: false,
+	sureSend: false,
 	deleteAllOrderTextInfo: '',
 	handleSelectProducts: (isSelect: string) => {},
 	handleOrderProducts: (id: number, product: string) => {},
@@ -44,6 +47,7 @@ const InitialState: InitialStateType = {
 	handleDeleteProductOrder: (id: number, product: string) => {},
 	handleClosePopup: () => {},
 	handleSendOrder: () => {},
+	handleSureSend: () => {},
 }
 
 const SnackBarContext = createContext(InitialState)
@@ -58,6 +62,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [orderNameProduct, setOrderNameProduct] = useState<string>('brak zamówiemia')
 	const [servicePopup, setServicePopup] = useState<boolean>(false)
 	const [sureDeleteOrder, setSureDeleteOrder] = useState<boolean>(false)
+	const [sureSend, setSureSend] = useState<boolean>(false)
 	const [deleteAllOrderTextInfo, setDeleteAllOrderTextInfo] = useState<string>('')
 
 	useEffect(() => {
@@ -137,6 +142,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const handleClosePopup = () => {
 		setServicePopup(false)
 		setSureDeleteOrder(false)
+		setSureSend(false)
 		setOrderNameProduct('złóż kolejne zamówienie')
 	}
 
@@ -150,12 +156,12 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	}
 
 	useEffect(() => {
-		if (orderProducts.length === 0) {
+		if (orderProducts.length === 0 && sendOrder.length === 0) {
 			setTimeout(() => {
 				setOrderNameProduct('brak zamówienia')
 			}, 2500)
 		}
-	}, [orderProducts.length])
+	}, [orderProducts.length, sendOrder.length])
 
 	const handleDeleteProductOrder = (id: number, product: string) => {
 		const deleteOrderProduct = orderProducts.filter(item => item.id !== id)
@@ -163,20 +169,32 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		setSureDeleteOrder(false)
 		setOrderNameProduct(`zrezygnowałaś/eś z: ${product}`)
 		setTimeout(() => {
-			if (orderProducts.length > 0) {
+			if (orderProducts.length > 0 && sendOrder.length === 0) {
 				setOrderNameProduct('złóż kolejne zamówienie')
-			} else if (orderProducts.length === 0) {
+			} else if (orderProducts.length === 0 && sendOrder.length === 0) {
 				setOrderNameProduct('brak zamówienia')
 			}
 		}, 2500)
 	}
 
+	useEffect(() => {
+		if (sendOrder.length > 0) {
+			setOrderNameProduct('zamówienie w toku')
+		}
+	}, [sendOrder.length])
+
 	const handleSendOrder = () => {
 		setSendOrder(orderProducts)
 		setOrderProducts([])
+		setSureSend(false)
 	}
 
-	console.log(sendOrder)
+	const handleSureSend = () => {
+		if (orderProducts.length > 0) {
+			setSureSend(true)
+			setDeleteAllOrderTextInfo('Czy jesteś pewna/pewien, że chcesz wysłać zamówienie?')
+		}
+	}
 
 	return (
 		<SnackBarContext.Provider
@@ -190,6 +208,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				orderNameProduct,
 				servicePopup,
 				sureDeleteOrder,
+				sureSend,
 				deleteAllOrderTextInfo,
 				handleSelectProducts,
 				handleOrderProducts,
@@ -198,6 +217,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				handleDeleteProductOrder,
 				handleClosePopup,
 				handleSendOrder,
+				handleSureSend,
 			}}
 		>
 			{children}
