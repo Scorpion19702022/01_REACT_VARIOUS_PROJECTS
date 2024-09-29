@@ -8,6 +8,7 @@ import imgSlider01 from './assets/imgSwiper01.jpg'
 import imgSlider02 from './assets/imgSwiper02.jpg'
 import imgSlider03 from './assets/imgSwiper03.jpg'
 import imgSlider04 from './assets/imgSwiper04.jpg'
+import imgSlider05 from './assets/imgSwiper05.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -94,6 +95,19 @@ const HomeSwiper = () => {
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider04} alt='photoSlider' />
+				</SwiperSlide>
+
+				<SwiperSlide className={styles.box_swiper}>
+					<NavLink to='./SnackBar'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>SnackBar</h4>
+						<p className={styles.card_text}>
+							Zamów produkt w SnackBar, sprawdź ilość zamówienia oraz cenę do zapłaty. Wyślij zamówieie
+						</p>
+					</div>
+					<img className={styles.card_img} src={imgSlider05} alt='photoSlider' />
 				</SwiperSlide>
 			</Swiper>
 		</section>
