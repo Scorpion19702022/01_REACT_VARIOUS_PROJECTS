@@ -191,8 +191,9 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 
 	useEffect(() => {
 		if (sendOrder.length > 0 && realiseOrder > 0) {
-			const interval = setInterval(() => {
-				setRealiseOrder(prev => prev - 1)
+			let interval = setInterval(() => {
+				// setRealiseOrder(prev => prev - 1)
+				setRealiseOrder(realiseOrder - 1)
 				setOrderNameProduct(`zamówienie za ${realiseOrder} min.`)
 			}, 10000)
 			return () => clearInterval(interval)
@@ -205,6 +206,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	console.log(sendOrder)
 
 	const handleSendOrder = () => {
+		setOrderNameProduct(`zamówienie za ${realiseOrder} min.`)
 		setSendOrder(orderProducts)
 		setOrderProducts([])
 		setSureSend(false)
