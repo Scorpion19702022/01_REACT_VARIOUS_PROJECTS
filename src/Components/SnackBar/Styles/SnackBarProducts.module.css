@@ -144,6 +144,12 @@
 	font-weight: 100;
 }
 
+.btn_product_order:disabled {
+	background-color: var(--color-dark05);
+	border: 0.04em solid var(--color-dark07);
+	color: var(--color-dark09);
+}
+
 @media (min-width: 992px) {
 	.wrapper {
 		width: 90%;
@@ -196,5 +202,12 @@
 
 	.btn_product_order:hover {
 		background-color: var(--color-dark09);
+	}
+
+	.btn_product_order:disabled {
+		background-color: var(--color-dark05);
+		border: 0.04em solid var(--color-dark07);
+		color: var(--color-dark09);
+		cursor: auto;
 	}
 }

@@ -195,7 +195,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 			let interval = setInterval(() => {
 				setRealiseOrder(prevRealiseOrder => prevRealiseOrder - 1)
 				setOrderNameProduct(`zamówienie za ${realiseOrder} min.`)
-			}, 10000)
+			}, 120000)
 
 			return () => clearInterval(interval)
 		}
