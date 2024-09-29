@@ -68,6 +68,10 @@ const SnackBarProducts = () => {
 				</div>
 				<div className={styles.products}>{productsList}</div>
 			</div>
+			<div className={sendOrder.length > 0 ? styles.box_popup_info : styles.no_box_popup_info}>
+				<h4 className={styles.heading_popup_info}>Koleje zamówieie możliwe po zrealizowaiu poprzedniego zamówieia.</h4>
+				<span className={styles.text_popup_info}>BLOKADA ZIKNIE PO ZREALIZOWAIU ZAMÓWIEIA!!!</span>
+			</div>
 			<SnackBarOrder />
 		</section>
 	)
