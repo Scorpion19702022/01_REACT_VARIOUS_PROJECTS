@@ -21,6 +21,7 @@ const SnackBarOrder = () => {
 		handleSendOrder,
 		handleSureSend,
 		handleCheckStatus,
+		handleCloseCheckOrderPopup,
 	} = useContext(SnackBarContext)
 
 	const yourOrderProduct = orderProducts.map(item => (
@@ -103,7 +104,7 @@ const SnackBarOrder = () => {
 			<div className={!statusOrder ? styles.no_box_info_popup : styles.box_info_popup}>
 				<p className={styles.text_info}>{deleteAllOrderTextInfo}</p>
 				<div className={styles.box_btns_popup}>
-					<button className={styles.btn_popup_close_status} onClick={handleClosePopup}>
+					<button className={styles.btn_popup_close_status} onClick={handleCloseCheckOrderPopup}>
 						zamknij
 					</button>
 				</div>

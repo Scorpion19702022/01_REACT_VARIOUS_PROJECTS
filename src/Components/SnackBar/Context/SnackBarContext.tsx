@@ -27,6 +27,7 @@ type InitialStateType = {
 	handleSendOrder: () => void
 	handleSureSend: () => void
 	handleCheckStatus: () => void
+	handleCloseCheckOrderPopup: () => void
 }
 
 type SnackBarProviderType = {
@@ -56,6 +57,7 @@ const InitialState: InitialStateType = {
 	handleSendOrder: () => {},
 	handleSureSend: () => {},
 	handleCheckStatus: () => {},
+	handleCloseCheckOrderPopup: () => {},
 }
 
 const SnackBarContext = createContext(InitialState)
@@ -154,7 +156,6 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		setServicePopup(false)
 		setSureDeleteOrder(false)
 		setSureSend(false)
-		setStatusOrder(false)
 		setOrderNameProduct('złóż kolejne zamówienie')
 	}
 
@@ -192,7 +193,6 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	useEffect(() => {
 		if (sendOrder.length > 0 && realiseOrder > 0) {
 			let interval = setInterval(() => {
-				// setRealiseOrder(prev => prev - 1)
 				setRealiseOrder(realiseOrder - 1)
 				setOrderNameProduct(`zamówienie za ${realiseOrder} min.`)
 			}, 10000)
@@ -200,8 +200,9 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		} else if (realiseOrder <= 0) {
 			setOrderNameProduct(`zamówienie zrealizowane. SMACZNEGO!!!`)
 			setSendOrder([])
+			setStatusOrder(false)
 		}
-	}, [sendOrder.length, realiseOrder])
+	}, [sendOrder.length, realiseOrder, statusOrder])
 
 	console.log(sendOrder)
 
@@ -229,10 +230,12 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		if (sendOrder.length > 0) {
 			setStatusOrder(true)
 			setDeleteAllOrderTextInfo('Twoje zamówieie jest w toku')
-		} else if (sendOrder.length === 0) {
-			setStatusOrder(false)
-			setDeleteAllOrderTextInfo('Twoje zamówieie zostało zrealizowane')
+			setOrderNameProduct(`zamówienie za ${realiseOrder} min.`)
 		}
+	}
+
+	const handleCloseCheckOrderPopup = () => {
+		setStatusOrder(false)
 	}
 
 	return (
@@ -260,6 +263,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 				handleSendOrder,
 				handleSureSend,
 				handleCheckStatus,
+				handleCloseCheckOrderPopup,
 			}}
 		>
 			{children}
