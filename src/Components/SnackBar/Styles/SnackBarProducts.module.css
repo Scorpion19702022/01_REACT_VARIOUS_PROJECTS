@@ -167,6 +167,7 @@
 }
 
 .no_box_popup_info {
+	position: fixed;
 	visibility: hidden;
 }
 
@@ -253,10 +254,6 @@
 		visibility: visible;
 		display: flex;
 		padding: 1em;
-	}
-
-	.no_box_popup_info {
-		visibility: hidden;
 	}
 
 	.heading_popup_info {
