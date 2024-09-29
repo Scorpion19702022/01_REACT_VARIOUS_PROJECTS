@@ -50,7 +50,7 @@ const HomeSwiper = () => {
 						<h4 className={styles.card_heading}>Aplikacja pogodowa</h4>
 						<p className={styles.card_text}>
 							Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10
-							miut
+							minut.
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider01} alt='photoSlider' />
@@ -63,7 +63,7 @@ const HomeSwiper = () => {
 						<h4 className={styles.card_heading}>ToDoList</h4>
 						<p className={styles.card_text}>
 							Zaawansowana lista zadań do zrobienia. Dane zapisywane są w LocalStorage i można je przetrzymywać na danym
-							urządzeiu
+							urządzeiu.
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider02} alt='photoSlider' />
@@ -77,7 +77,7 @@ const HomeSwiper = () => {
 						<h4 className={styles.card_heading}>Kalkulator BMI</h4>
 						<p className={styles.card_text}>
 							Kalkulator pokazuje nie tylko wskaźnik BMI, ale także wyświetli poradę i pokaże sylwetkę ciała adekwatną
-							do wskaźnika
+							do wskaźnika.
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider03} alt='photoSlider' />
@@ -91,7 +91,7 @@ const HomeSwiper = () => {
 						<h4 className={styles.card_heading}>Kalkulator wynagrodzeń</h4>
 						<p className={styles.card_text}>
 							Umożliwia obliczenie wartości wynagrodzenia netto z brutto dla poszczególych typów umowy, wysokość składek
-							i podatek
+							i podatek.
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider04} alt='photoSlider' />
@@ -104,7 +104,7 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>SnackBar</h4>
 						<p className={styles.card_text}>
-							Zamów produkt w SnackBar, sprawdź ilość zamówienia oraz cenę do zapłaty. Wyślij zamówieie
+							Zamawiaie produktów. Sprawdzenie ilości zamówienia i ceny. Wysłanie zamówienia i czas oczekiwania.
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider05} alt='photoSlider' />
