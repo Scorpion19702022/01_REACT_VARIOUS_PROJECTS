@@ -69,7 +69,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [selectProducts, setSelectProducts] = useState<string>('main')
 	const [orderCost, setOrderCost] = useState<number>(0)
 	const [orderQuantityProducts, setOrderQuantityProducts] = useState<string>('produktów')
-	const [orderNameProduct, setOrderNameProduct] = useState<string>('brak zamówiemia')
+	const [orderNameProduct, setOrderNameProduct] = useState<string>('brak zamówienia')
 	const [servicePopup, setServicePopup] = useState<boolean>(false)
 	const [sureDeleteOrder, setSureDeleteOrder] = useState<boolean>(false)
 	const [sureSend, setSureSend] = useState<boolean>(false)
@@ -192,6 +192,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 
 	useEffect(() => {
 		if (sendOrder.length > 0 && realiseOrder > 0) {
+			setOrderNameProduct(`realizacja zamówienia za ${realiseOrder} min.`)
 			let interval = setInterval(() => {
 				setRealiseOrder(prevRealiseOrder => prevRealiseOrder - 1)
 				setOrderNameProduct(`realizacja zamówienia za ${realiseOrder} min.`)
@@ -211,7 +212,6 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	}, [realiseOrder, sendOrder.length])
 
 	const handleSendOrder = () => {
-		setOrderNameProduct(`Realizacja zamówienia za ${realiseOrder} min.`)
 		setSendOrder(orderProducts)
 		setRealiseOrder(2)
 		setOrderProducts([])
@@ -235,7 +235,6 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		if (sendOrder.length > 0) {
 			setStatusOrder(true)
 			setDeleteAllOrderTextInfo('Twoje zamówieie jest w toku')
-			setOrderNameProduct(`realizacja zamówienia za ${realiseOrder} min.`)
 		}
 	}
 
