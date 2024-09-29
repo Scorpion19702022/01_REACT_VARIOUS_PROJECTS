@@ -1,5 +1,5 @@
 export type TypeForSnackBar = {
-	id: number
+	id: number | string
 	category: string
 	name: string
 	price: number

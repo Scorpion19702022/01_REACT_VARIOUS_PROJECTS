@@ -25,8 +25,8 @@ const SnackBarProducts = () => {
 		}
 	})
 
-	const productsList = filteredProducts.map(item => (
-		<div className={styles.product} key={item.id}>
+	const productsList = filteredProducts.map((item, index) => (
+		<div className={styles.product} key={`${item.id}-${index}`}>
 			<h4 className={styles.product_name}>{item.name}</h4>
 			<span className={styles.product_price}>{item.price} zł</span>
 			<div className={styles.box_img_product}>

@@ -2,6 +2,8 @@ import { Analytics } from '@vercel/analytics/react'
 import React, { createContext, useEffect, useState } from 'react'
 import { TypeForSnackBar } from '../Types/TypeForSnackBar'
 
+import { v4 as uuidv4 } from 'uuid'
+
 type InitialStateType = {
 	products: TypeForSnackBar[]
 	orderProducts: TypeForSnackBar[]
@@ -17,10 +19,10 @@ type InitialStateType = {
 	deleteAllOrderTextInfo: string
 	realiseOrder: number
 	handleSelectProducts: (isSelect: string) => void
-	handleOrderProducts: (id: number, product: string) => void
+	handleOrderProducts: (id: number | string, product: string) => void
 	handleVisiblePopup: (popup: string) => void
 	handleDeleteAllOrder: () => void
-	handleDeleteProductOrder: (id: number, product: string) => void
+	handleDeleteProductOrder: (id: number | string, product: string) => void
 	handleClosePopup: () => void
 	handleSendOrder: () => void
 	handleSureSend: () => void
@@ -46,10 +48,10 @@ const InitialState: InitialStateType = {
 	deleteAllOrderTextInfo: '',
 	realiseOrder: 0,
 	handleSelectProducts: (isSelect: string) => {},
-	handleOrderProducts: (id: number, product: string) => {},
+	handleOrderProducts: (id: number | string, product: string) => {},
 	handleVisiblePopup: (popup: string) => {},
 	handleDeleteAllOrder: () => {},
-	handleDeleteProductOrder: (id: number, product: string) => {},
+	handleDeleteProductOrder: (id: number | string, product: string) => {},
 	handleClosePopup: () => {},
 	handleSendOrder: () => {},
 	handleSureSend: () => {},
@@ -72,7 +74,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const [statusOrder, setStatusOrder] = useState<boolean>(false)
 	const [deleteAllOrderTextInfo, setDeleteAllOrderTextInfo] = useState<string>('')
 
-	const [realiseOrder, setRealiseOrder] = useState<number>(10)
+	const [realiseOrder, setRealiseOrder] = useState<number>(3)
 
 	useEffect(() => {
 		if (orderProducts.length === 1) {
@@ -118,10 +120,10 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		setOrderCost(yourCost.reduce((accumulate: any, current: any) => accumulate + current, 0))
 	}, [orderProducts])
 
-	const handleOrderProducts = (id: number, product: string) => {
+	const handleOrderProducts = (id: number | string, product: string) => {
 		const order = products.find(item => item.id === id)
 		if (order) {
-			setOrderProducts([...orderProducts, order])
+			setOrderProducts([...orderProducts, { ...order, id: uuidv4() }])
 			setOrderNameProduct(`${product}`)
 		}
 	}
@@ -173,7 +175,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		}
 	}, [orderProducts.length, sendOrder.length])
 
-	const handleDeleteProductOrder = (id: number, product: string) => {
+	const handleDeleteProductOrder = (id: number | string, product: string) => {
 		const deleteOrderProduct = orderProducts.filter(item => item.id !== id)
 		setOrderProducts(deleteOrderProduct)
 		setSureDeleteOrder(false)
@@ -188,19 +190,19 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	}
 
 	useEffect(() => {
-		if (sendOrder.length > 0) {
-			let interval = setInterval(() => {
-				setRealiseOrder(realiseOrder - 1)
+		if (sendOrder.length > 0 && realiseOrder > 0) {
+			const interval = setInterval(() => {
+				setRealiseOrder(prev => prev - 1)
 				setOrderNameProduct(`zamówienie za ${realiseOrder} min.`)
-			}, 1000)
-			return () => {
-				if (realiseOrder <= 0) {
-					clearInterval(interval)
-					setOrderNameProduct(`zamówienie zrealizowane. SMACZNEGO!!!`)
-				}
-			}
+			}, 10000)
+			return () => clearInterval(interval)
+		} else if (realiseOrder <= 0) {
+			setOrderNameProduct(`zamówienie zrealizowane. SMACZNEGO!!!`)
+			setSendOrder([])
 		}
 	}, [sendOrder.length, realiseOrder])
+
+	console.log(sendOrder)
 
 	const handleSendOrder = () => {
 		setSendOrder(orderProducts)
