@@ -211,7 +211,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	}, [realiseOrder, sendOrder.length])
 
 	const handleSendOrder = () => {
-		setOrderNameProduct(`zamówienie za ${realiseOrder} min.`)
+		setOrderNameProduct(`Realizacja zamówienia za ${realiseOrder} min.`)
 		setSendOrder(orderProducts)
 		setRealiseOrder(2)
 		setOrderProducts([])
