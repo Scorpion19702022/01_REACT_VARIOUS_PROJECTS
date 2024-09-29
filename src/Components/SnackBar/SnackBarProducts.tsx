@@ -72,7 +72,7 @@ const SnackBarProducts = () => {
 				<h4 className={styles.heading_popup_info}>
 					Kolejne zamówienie możliwe po zrealizowaniu poprzedniego zamówienia.
 				</h4>
-				<span className={styles.text_popup_info}>BLOKADA ZNIKNIE PO ZREALIZOWANIU ZAMÓWIEIA!!!</span>
+				<span className={styles.text_popup_info}>BLOKADA ZNIKNIE PO ZREALIZOWANIU ZAMÓWIENIA!!!</span>
 			</div>
 			<SnackBarOrder />
 		</section>

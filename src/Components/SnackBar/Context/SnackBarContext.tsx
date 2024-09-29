@@ -194,8 +194,8 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		if (sendOrder.length > 0 && realiseOrder > 0) {
 			let interval = setInterval(() => {
 				setRealiseOrder(prevRealiseOrder => prevRealiseOrder - 1)
-				setOrderNameProduct(`zamówienie za ${realiseOrder} min.`)
-			}, 120000)
+				setOrderNameProduct(`realizacja zamówienia za ${realiseOrder} min.`)
+			}, 60000)
 
 			return () => clearInterval(interval)
 		}
@@ -209,8 +209,6 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 			setRealiseOrder(2)
 		}
 	}, [realiseOrder, sendOrder.length])
-
-	console.log(sendOrder)
 
 	const handleSendOrder = () => {
 		setOrderNameProduct(`zamówienie za ${realiseOrder} min.`)
@@ -237,7 +235,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 		if (sendOrder.length > 0) {
 			setStatusOrder(true)
 			setDeleteAllOrderTextInfo('Twoje zamówieie jest w toku')
-			setOrderNameProduct(`zamówienie za ${realiseOrder} min.`)
+			setOrderNameProduct(`realizacja zamówienia za ${realiseOrder} min.`)
 		}
 	}
 
