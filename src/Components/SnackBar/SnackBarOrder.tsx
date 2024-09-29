@@ -6,6 +6,7 @@ import SnackBarContext from './Context/SnackBarContext'
 const SnackBarOrder = () => {
 	const {
 		orderProducts,
+		sendOrder,
 		orderCost,
 		orderQuantityProducts,
 		orderNameProduct,
@@ -66,16 +67,28 @@ const SnackBarOrder = () => {
 						Zamówiłaś/eś: <span className={styles.info_span}>{orderNameProduct}</span>
 					</h3>
 				</div>
-				<button className={styles.btn_clean_orders} onClick={() => handleVisiblePopup('deleteAll')}>
+				<button
+					className={styles.btn_clean_orders}
+					onClick={() => handleVisiblePopup('deleteAll')}
+					disabled={orderProducts.length > 0 ? false : true}
+				>
 					usuń całe zamówienie
 				</button>
 			</div>
 			<div className={styles.box_order_list}>{yourOrderProduct}</div>
 			<div className={styles.box_btns_check_and_send}>
-				<button className={styles.btn_check_and_send} onClick={handleSureSend}>
+				<button
+					className={styles.btn_check_and_send}
+					onClick={handleSureSend}
+					disabled={orderProducts.length > 0 ? false : true}
+				>
 					wyślij zamówienie
 				</button>
-				<button className={styles.btn_check_and_send} onClick={handleCheckStatus}>
+				<button
+					className={styles.btn_check_and_send}
+					onClick={handleCheckStatus}
+					disabled={sendOrder.length > 0 ? false : true}
+				>
 					sprawdź status
 				</button>
 			</div>
