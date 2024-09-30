@@ -63,6 +63,17 @@
 	align-items: flex-end;
 }
 
+.header {
+	color: var(--color-color01);
+	font-family: 'Tilt Warp', sans-serif;
+	font-size: 1.4em;
+}
+
+.text {
+	font-size: 1em;
+	color: var(--color-color03);
+}
+
 @media (min-width: 660px) {
 }
 

@@ -11,8 +11,8 @@ const TicTacToeHeader = () => {
 			</div>
 			<div className={styles.back}></div>
 			<div className={styles.header_text}>
-				<h1>Tic Tac Toe</h1>
-				<span>zagraj w popularną grę</span>
+				<h1 className={styles.header}>Tic Tac Toe</h1>
+				<span className={styles.text}>zagraj w popularną grę</span>
 			</div>
 		</section>
 	)
