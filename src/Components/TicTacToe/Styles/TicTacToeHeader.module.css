@@ -28,6 +28,7 @@
 	margin: 5em 0em 0em 0em;
 	padding: 1em;
 	display: flex;
+	justify-content: center;
 	border: 0.04em solid var(--color-color07);
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
 }
@@ -37,6 +38,7 @@
 	top: -30%;
 	left: -2%;
 	width: 50%;
+	height: 50%;
 	z-index: 1;
 }
 
@@ -79,9 +81,33 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 90%;
+		width: 60%;
 		height: 120px;
+		padding: 1em;
 		display: flex;
-		background-position: 0% 18%;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.header_img {
+		width: 40%;
+		height: 30%;
+		top: -45%;
+	}
+
+	.img {
+		width: 70%;
+	}
+
+	.back {
+		width: 70%;
+		height: 200px;
+		top: 0%;
+		left: -40%;
+		transform: rotate(-15deg);
+	}
+
+	.header {
+		font-size: 4em;
 	}
 }
