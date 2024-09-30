@@ -17,6 +17,7 @@ import ToDoList from '../Components/ToDoList/ToDoList'
 import Bmi from '../Components/Bmi/Bmi'
 import SalaryCalculator from '../Components/SalaryCalculator/SalaryCalculator'
 import SnackBar from '../Components/SnackBar/SnackBar'
+import TicTacToe from '../Components/TicTacToe/TicTacToe'
 
 function App() {
 	return (
@@ -37,6 +38,7 @@ function App() {
 					<Route path='/Bmi' Component={Bmi} />
 					<Route path='/SalaryCalculator' Component={SalaryCalculator} />
 					<Route path='/SnackBar' Component={SnackBar} />
+					<Route path='/TicTacToe' Component={TicTacToe} />
 				</Routes>
 			</section>
 		</Router>

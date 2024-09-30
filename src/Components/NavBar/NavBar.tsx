@@ -59,6 +59,11 @@ const NavBar = () => {
 							SnackBar
 						</li>
 					</NavLink>
+					<NavLink to='./TicTacToe'>
+						<li className={styles.link} onClick={handleNavView}>
+							TicTacToe
+						</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>
