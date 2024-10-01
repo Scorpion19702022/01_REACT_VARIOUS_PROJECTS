@@ -31,9 +31,6 @@
 }
 
 @media (min-width: 660px) {
-	.wrapper {
-		min-height: 100%;
-	}
 }
 
 @media (min-width: 992px) {

@@ -77,6 +77,24 @@
 }
 
 @media (min-width: 660px) {
+	.header_img {
+		top: -30%;
+		left: 0%;
+		width: 30%;
+		height: 30%;
+	}
+
+	.img {
+		width: 100%;
+		object-fit: cover;
+	}
+	.back {
+		top: -20%;
+		left: -17em;
+		width: 80%;
+		height: 180px;
+		transform: rotate(-25deg);
+	}
 }
 
 @media (min-width: 992px) {
