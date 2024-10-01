@@ -29,17 +29,25 @@
 
 .box_players {
 	width: 100%;
-	padding: 1em;
+	height: 60px;
+	padding: 0.2em;
 	display: flex;
 	justify-content: space-between;
 	background-color: var(--color-dark07);
 	border: 0.04em solid var(--color-color07);
 }
 
+.line_select {
+	width: 2px;
+	height: 100%;
+	background-color: var(--color-color08);
+}
+
 .box_player_one,
 .box_player_two {
 	width: 45%;
 	display: flex;
+	margin: 0.6em;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -54,9 +62,12 @@
 	outline: none;
 }
 
-.player_sign {
-	width: 10%;
-	color: var(--color-color03);
+.player_save_btn {
+	width: 45%;
+	padding: 0.4em;
+	background: none;
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color02);
 }
 
 @media (min-width: 660px) {
