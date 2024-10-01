@@ -80,4 +80,26 @@
 		width: 80%;
 		height: 80px;
 	}
+
+	.box_player_one,
+	.box_player_two {
+		justify-content: space-around;
+	}
+
+	.player_input {
+		width: 40%;
+		font-size: 1.4em;
+	}
+
+	.player_save_btn {
+		width: 30%;
+		padding: 0.4em;
+		font-size: 1.2em;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.player_save_btn:hover {
+		background-color: var(--color-dark09);
+	}
 }
