@@ -16,7 +16,7 @@ const TicTacToePlayers = () => {
 						placeholder='Player-X'
 						onChange={e => handleChangePlayer(e.target.value, 'player1')}
 					/>
-					<i className={`fas fa-xmark ${styles.sign_cross}`}></i>
+					<i className={`fas fa-xmark ${styles.sign}`}></i>
 					<button className={styles.player_save_btn}>edytuj</button>
 				</div>
 				<div className={styles.line_select}></div>
@@ -27,7 +27,7 @@ const TicTacToePlayers = () => {
 						placeholder='Player-0'
 						onChange={e => handleChangePlayer(e.target.value, 'player2')}
 					/>
-					<i className={`fa-regular fa-circle ${styles.sign_circle}`}></i>
+					<i className={`fa-regular fa-circle ${styles.sign}`}></i>
 					<button className={styles.player_save_btn}>edytuj</button>
 				</div>
 			</div>

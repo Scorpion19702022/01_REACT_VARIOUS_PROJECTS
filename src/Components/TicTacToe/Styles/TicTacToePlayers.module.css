@@ -54,11 +54,7 @@
 	align-items: center;
 }
 
-.sign_cross {
-	opacity: 0;
-}
-
-.sign_circle {
+.sign {
 	opacity: 0;
 }
 
@@ -70,6 +66,10 @@
 	border-bottom: 0.04em solid var(--color-color06);
 	color: var(--color-color02);
 	outline: none;
+}
+
+.sign {
+	opacity: 0;
 }
 
 .player_save_btn {
@@ -87,6 +87,7 @@
 	.box_players {
 		width: 80%;
 		height: 80px;
+		justify-content: space-around;
 	}
 
 	.box_player_one,
@@ -97,6 +98,14 @@
 	.player_input {
 		width: 40%;
 		font-size: 1.4em;
+	}
+
+	.sign {
+		width: 20%;
+		text-align: center;
+		opacity: 1;
+		font-size: 2em;
+		color: var(--color-color07);
 	}
 
 	.player_save_btn {
