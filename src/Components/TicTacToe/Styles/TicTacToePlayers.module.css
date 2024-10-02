@@ -52,6 +52,7 @@
 	width: 45%;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .player {
@@ -60,12 +61,17 @@
 	justify-content: space-between;
 }
 
-.player_name {
+.player_name,
+.player_symbol {
 	color: var(--color-color02);
 }
 
 .btn_edit {
 	width: 40%;
+	background: none;
+	padding: 0.4em;
+	color: var(--color-color03);
+	border: 0.04em solid var(--color-color07);
 }
 
 @media (min-width: 660px) {
