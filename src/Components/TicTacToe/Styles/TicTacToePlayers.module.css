@@ -79,8 +79,37 @@
 
 @media (min-width: 992px) {
 	.box_players {
-		width: 80%;
+		width: 67%;
 		height: 80px;
+		justify-content: space-between;
+	}
+
+	.players {
 		justify-content: space-around;
+	}
+
+	.players_list {
+		width: 30%;
+	}
+
+	.player {
+		width: 30%;
+		justify-content: space-around;
+	}
+
+	.player_name,
+	.player_symbol {
+		font-size: 1.6em;
+	}
+
+	.btn_edit {
+		padding: 0.4em;
+		font-size: 1.2em;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn_edit:hover {
+		background-color: var(--color-dark09);
 	}
 }
