@@ -54,6 +54,14 @@
 	align-items: center;
 }
 
+.sign_cross {
+	opacity: 0;
+}
+
+.sign_circle {
+	opacity: 0;
+}
+
 .player_input {
 	width: 50%;
 	padding: 0.4em;
