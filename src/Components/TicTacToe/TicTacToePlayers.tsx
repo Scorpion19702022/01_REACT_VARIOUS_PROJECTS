@@ -1,35 +1,27 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import styles from './Styles/TicTacToePlayers.module.css'
-import TicTacToeContext from './Context/TicTacToeContext'
 
 const TicTacToePlayers = () => {
-	const { handleChangePlayer } = useContext(TicTacToeContext)
-
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_players}>
-				<div className={styles.box_player_one}>
-					<input
-						className={styles.player_input}
-						type='text'
-						placeholder='Player-X'
-						onChange={e => handleChangePlayer(e.target.value, 'player1')}
-					/>
-					<i className={`fas fa-xmark ${styles.sign}`}></i>
-					<button className={styles.player_save_btn}>edytuj</button>
-				</div>
-				<div className={styles.line_select}></div>
-				<div className={styles.box_player_two}>
-					<input
-						className={styles.player_input}
-						type='text'
-						placeholder='Player-0'
-						onChange={e => handleChangePlayer(e.target.value, 'player2')}
-					/>
-					<i className={`fa-regular fa-circle ${styles.sign}`}></i>
-					<button className={styles.player_save_btn}>edytuj</button>
-				</div>
+				<ol className={styles.players}>
+					<li className={styles.players_list}>
+						<span className={styles.player}>
+							<span className={styles.player_name}>Player 1</span>
+							<span className={styles.player_symbol}>X</span>
+						</span>
+						<button className={styles.btn_edit}>edytuj</button>
+					</li>
+					<li className={styles.players_list}>
+						<span className={styles.player}>
+							<span className={styles.player_name}>Player 1</span>
+							<span className={styles.player_symbol}>0</span>
+						</span>
+						<button className={styles.btn_edit}>edytuj</button>
+					</li>
+				</ol>
 			</div>
 		</section>
 	)

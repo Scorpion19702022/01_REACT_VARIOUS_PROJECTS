@@ -31,7 +31,7 @@
 .box_players {
 	width: 100%;
 	height: 60px;
-	padding: 0.2em;
+	padding: 1em;
 	display: flex;
 	justify-content: space-between;
 	background-color: var(--color-dark07);
@@ -39,45 +39,33 @@
 	z-index: 1;
 }
 
-.line_select {
-	width: 2px;
+.players {
+	width: 100%;
 	height: 100%;
-	background-color: var(--color-color08);
-}
-
-.box_player_one,
-.box_player_two {
-	width: 45%;
 	display: flex;
-	margin: 0.6em;
 	justify-content: space-between;
 	align-items: center;
+	list-style-type: none;
 }
 
-.sign {
-	opacity: 0;
-}
-
-.player_input {
-	width: 50%;
-	padding: 0.4em;
-	background: none;
-	border: none;
-	border-bottom: 0.04em solid var(--color-color06);
-	color: var(--color-color02);
-	outline: none;
-}
-
-.sign {
-	opacity: 0;
-}
-
-.player_save_btn {
+.players_list {
 	width: 45%;
-	padding: 0.4em;
-	background: none;
-	border: 0.04em solid var(--color-color07);
+	display: flex;
+	justify-content: space-between;
+}
+
+.player {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.player_name {
 	color: var(--color-color02);
+}
+
+.btn_edit {
+	width: 40%;
 }
 
 @media (min-width: 660px) {
@@ -88,35 +76,5 @@
 		width: 80%;
 		height: 80px;
 		justify-content: space-around;
-	}
-
-	.box_player_one,
-	.box_player_two {
-		justify-content: space-around;
-	}
-
-	.player_input {
-		width: 40%;
-		font-size: 1.4em;
-	}
-
-	.sign {
-		width: 20%;
-		text-align: center;
-		opacity: 1;
-		font-size: 2em;
-		color: var(--color-color07);
-	}
-
-	.player_save_btn {
-		width: 30%;
-		padding: 0.4em;
-		font-size: 1.2em;
-		cursor: pointer;
-		transition: background-color 0.2s ease-in-out;
-	}
-
-	.player_save_btn:hover {
-		background-color: var(--color-dark09);
 	}
 }
