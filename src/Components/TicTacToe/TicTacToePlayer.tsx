@@ -1,25 +1,33 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 
 import styles from './Styles/TicTacToePlayers.module.css'
-import TicTacToeContext from './Context/TicTacToeContext'
 
 type InitialTypeProps = {
 	name: string
 	symbol: string
-	buttonActive: any
 }
 
-const TicTacToePlayer: React.FC<InitialTypeProps> = ({ name, symbol, buttonActive }) => {
-	const { isActiveInput } = useContext(TicTacToeContext)
+const TicTacToePlayer: React.FC<InitialTypeProps> = ({ name, symbol }) => {
+	const [isEditing, setIsEditing] = useState<boolean>(false)
+
+	const handleEditClick = () => {
+		setIsEditing(true)
+	}
+
+	let player = <span className={styles.player_name}>{name}</span>
+
+	if (isEditing) {
+		player = <input type='text' required />
+	}
 
 	return (
 		<li className={styles.players_list}>
 			<span className={styles.player}>
-				<span className={styles.player_name}>{name}</span>
+				{player}
 				<span className={styles.player_symbol}>{symbol}</span>
 			</span>
-			<button className={styles.btn_edit} onClick={buttonActive}>
-				{!isActiveInput ? 'edytuj' : 'zapisz'}
+			<button className={styles.btn_edit} onClick={handleEditClick}>
+				{!isEditing ? 'edytuj' : 'zapisz'}
 			</button>
 		</li>
 	)
