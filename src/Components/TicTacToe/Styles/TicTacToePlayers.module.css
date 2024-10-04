@@ -31,7 +31,7 @@
 .box_players {
 	width: 100%;
 	height: 60px;
-	padding: 1em;
+	padding: 0.8em;
 	display: flex;
 	justify-content: space-between;
 	background-color: var(--color-dark07);
@@ -43,13 +43,13 @@
 	width: 100%;
 	height: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	list-style-type: none;
 }
 
 .players_list {
-	width: 45%;
+	width: 47%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -79,12 +79,13 @@
 }
 
 .input {
-	width: 78%;
-	background-color: var(--color-dark07);
+	width: 80%;
+	background-color: var(--color-dark09);
+	padding-left: 0.2em;
 	border: none;
-	border-bottom: 0.04em solid var(--color-color06);
 	outline: none;
 	color: var(--color-dark03);
+	font-family: 'Barlow Condensed', sans-serif;
 }
 
 @media (min-width: 660px) {
@@ -94,15 +95,17 @@
 	.box_players {
 		width: 67%;
 		height: 80px;
+		padding: 2em;
+		background-color: var(--color-dark08);
 		justify-content: space-between;
 	}
 
 	.players {
-		justify-content: space-around;
+		justify-content: space-between;
 	}
 
 	.players_list {
-		width: 35%;
+		width: 40%;
 	}
 
 	.player {
@@ -126,6 +129,7 @@
 	}
 
 	.input {
-		width: 90%;
+		width: 80%;
+		font-size: 1.4em;
 	}
 }
