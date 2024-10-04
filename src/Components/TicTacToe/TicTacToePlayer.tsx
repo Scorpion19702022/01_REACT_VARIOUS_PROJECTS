@@ -3,21 +3,38 @@ import React, { useState } from 'react'
 import styles from './Styles/TicTacToePlayers.module.css'
 
 type InitialTypeProps = {
-	name: string
+	InitialName: string
 	symbol: string
 }
 
-const TicTacToePlayer: React.FC<InitialTypeProps> = ({ name, symbol }) => {
+const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol }) => {
+	const [playerName, setPlayerName] = useState<string>(InitialName)
 	const [isEditing, setIsEditing] = useState<boolean>(false)
 
 	const handleEditClick = () => {
-		setIsEditing(!isEditing)
+		setIsEditing(editing => !editing)
+		if (playerName === '') {
+			setPlayerName(InitialName)
+		}
 	}
 
-	let player = <span className={styles.player_name}>{name}</span>
+	const handleChange = (e: string) => {
+		setPlayerName(e)
+	}
+
+	let player = <span className={styles.player_name}>{playerName}</span>
 
 	if (isEditing) {
-		player = <input className={styles.input} type='text' required placeholder={name} />
+		player = (
+			<input
+				className={styles.input}
+				type='text'
+				required
+				placeholder={playerName}
+				value={playerName}
+				onChange={e => handleChange(e.target.value)}
+			/>
+		)
 	}
 
 	return (
