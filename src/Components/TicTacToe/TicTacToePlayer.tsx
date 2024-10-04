@@ -22,6 +22,13 @@ const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol }) =>
 		setPlayerName(e)
 	}
 
+	const handleKeyDown = (e: any) => {
+		if (e.key === 'Enter') {
+			handleEditClick()
+			e.preventDefault()
+		}
+	}
+
 	let player = <span className={styles.player_name}>{playerName}</span>
 
 	if (isEditing) {
@@ -38,7 +45,7 @@ const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol }) =>
 	}
 
 	return (
-		<li className={styles.players_list}>
+		<li className={styles.players_list} onKeyDown={handleKeyDown}>
 			<span className={styles.player}>
 				{player}
 				<span className={styles.player_symbol}>{symbol}</span>
