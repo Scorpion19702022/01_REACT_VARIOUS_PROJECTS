@@ -234,7 +234,7 @@ export const SnackBarProvider = ({ children }: SnackBarProviderType) => {
 	const handleCheckStatus = () => {
 		if (sendOrder.length > 0) {
 			setStatusOrder(true)
-			setDeleteAllOrderTextInfo('Twoje zamówieie jest w toku')
+			setDeleteAllOrderTextInfo('Twoje zamówienie jest w toku')
 		}
 	}
 
