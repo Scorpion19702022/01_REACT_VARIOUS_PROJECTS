@@ -11,13 +11,13 @@ const TicTacToePlayer: React.FC<InitialTypeProps> = ({ name, symbol }) => {
 	const [isEditing, setIsEditing] = useState<boolean>(false)
 
 	const handleEditClick = () => {
-		setIsEditing(true)
+		setIsEditing(!isEditing)
 	}
 
 	let player = <span className={styles.player_name}>{name}</span>
 
 	if (isEditing) {
-		player = <input type='text' required />
+		player = <input className={styles.input} type='text' required placeholder={name} />
 	}
 
 	return (

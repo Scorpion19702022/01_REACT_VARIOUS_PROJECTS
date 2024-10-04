@@ -9,8 +9,8 @@ const TicTacToePlayers = () => {
 		<section className={styles.wrapper}>
 			<div className={styles.box_players}>
 				<ol className={styles.players}>
-					<TicTacToePlayer name='Player - X' symbol='X' />
-					<TicTacToePlayer name='Player - 0' symbol='O' />
+					<TicTacToePlayer name='Player-X' symbol='X' />
+					<TicTacToePlayer name='Player-0' symbol='O' />
 				</ol>
 			</div>
 		</section>

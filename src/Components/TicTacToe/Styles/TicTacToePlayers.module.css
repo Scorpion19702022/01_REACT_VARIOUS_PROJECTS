@@ -78,6 +78,15 @@
 	border: 0.04em solid var(--color-color07);
 }
 
+.input {
+	width: 78%;
+	background-color: var(--color-dark07);
+	border: none;
+	border-bottom: 0.04em solid var(--color-color06);
+	outline: none;
+	color: var(--color-dark03);
+}
+
 @media (min-width: 660px) {
 }
 
@@ -93,11 +102,11 @@
 	}
 
 	.players_list {
-		width: 30%;
+		width: 35%;
 	}
 
 	.player {
-		width: 40%;
+		width: 50%;
 	}
 
 	.player_name,
@@ -114,5 +123,9 @@
 
 	.btn_edit:hover {
 		background-color: var(--color-dark09);
+	}
+
+	.input {
+		width: 90%;
 	}
 }
