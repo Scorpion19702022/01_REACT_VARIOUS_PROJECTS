@@ -13,10 +13,9 @@ const TicTacToeGameBoard = () => {
 
 	const handleSelectSquare = (rowIndex: number, colIndex: number) => {
 		setGameBoard(prevState => {
-			const newState = prevState.map((row, rIdx) =>
-				row.map((cell, cIdx) => (rIdx === rowIndex && cIdx === colIndex ? 'X' : cell))
-			)
-			return newState
+			const updatedBoard = [...prevState.map(innerAray => [...innerAray])]
+			updatedBoard[rowIndex][colIndex] = 'X'
+			return updatedBoard
 		})
 	}
 
@@ -29,7 +28,9 @@ const TicTacToeGameBoard = () => {
 							<ol className={styles.game_group}>
 								{row.map((playerSymbol: any, colIndex: any) => (
 									<li key={colIndex} className={styles.game_col}>
-										<button className={styles.game_btns}>{playerSymbol}</button>
+										<button className={styles.game_btns} onClick={() => handleSelectSquare(rowIndex, colIndex)}>
+											{playerSymbol}
+										</button>
 									</li>
 								))}
 							</ol>
