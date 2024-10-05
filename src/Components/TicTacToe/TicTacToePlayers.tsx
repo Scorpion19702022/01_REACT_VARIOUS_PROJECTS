@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import TicTacToePlayer from './TicTacToePlayer'
 
@@ -6,6 +6,12 @@ import styles from './Styles/TicTacToePlayers.module.css'
 import TicTacToeGameBoard from './TicTacToeGameBoard'
 
 const TicTacToePlayers = () => {
+	// const [activePlayer, setActivePlayer] = useState('X')
+
+	// const handleSelectSquare = () => {
+	// 	setActivePlayer(curActivePlayer => (curActivePlayer === 'X' ? 'O' : 'X'))
+	// }
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_players}>

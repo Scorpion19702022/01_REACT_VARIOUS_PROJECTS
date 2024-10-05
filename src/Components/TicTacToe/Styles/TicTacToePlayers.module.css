@@ -53,6 +53,16 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0.4em;
+}
+
+.active_players_list {
+	width: 47%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.4em;
+	background-color: var(--color-dark08);
 }
 
 .player {
@@ -106,6 +116,11 @@
 
 	.players_list {
 		width: 40%;
+	}
+
+	.active_players_list {
+		width: 40%;
+		background-color: var(--color-dark09);
 	}
 
 	.player {
