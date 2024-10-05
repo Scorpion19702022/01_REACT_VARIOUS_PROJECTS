@@ -3,6 +3,7 @@ import React from 'react'
 import TicTacToePlayer from './TicTacToePlayer'
 
 import styles from './Styles/TicTacToePlayers.module.css'
+import TicTacToeGameBoard from './TicTacToeGameBoard'
 
 const TicTacToePlayers = () => {
 	return (
@@ -13,6 +14,7 @@ const TicTacToePlayers = () => {
 					<TicTacToePlayer InitialName='Player-2' symbol='O' />
 				</ol>
 			</div>
+			<TicTacToeGameBoard />
 		</section>
 	)
 }
