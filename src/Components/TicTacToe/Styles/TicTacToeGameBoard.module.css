@@ -104,4 +104,12 @@
 		height: 500px;
 		background-color: var(--color-dark07);
 	}
+	.game_btns {
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.game_btns:hover {
+		background-color: var(--color-dark09);
+	}
 }
