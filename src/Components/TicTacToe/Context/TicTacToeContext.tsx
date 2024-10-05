@@ -1,5 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
-import React, { createContext, useState } from 'react'
+import React, { createContext } from 'react'
 
 type InitialStateType = {}
 

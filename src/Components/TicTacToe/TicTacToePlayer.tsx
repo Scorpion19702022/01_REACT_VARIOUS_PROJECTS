@@ -5,6 +5,7 @@ import styles from './Styles/TicTacToePlayers.module.css'
 type InitialTypeProps = {
 	InitialName: string
 	symbol: string
+	// isActivPlayer: string
 }
 
 const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol }) => {

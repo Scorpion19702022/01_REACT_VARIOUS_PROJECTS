@@ -6,11 +6,13 @@ import styles from './Styles/TicTacToePlayers.module.css'
 import TicTacToeGameBoard from './TicTacToeGameBoard'
 
 const TicTacToePlayers = () => {
-	// const [activePlayer, setActivePlayer] = useState('X')
+	const [activePlayer, setActivePlayer] = useState('X')
 
-	// const handleSelectSquare = () => {
-	// 	setActivePlayer(curActivePlayer => (curActivePlayer === 'X' ? 'O' : 'X'))
-	// }
+	const handleChangePlayer = () => {
+		setActivePlayer(curActivePlayer => (curActivePlayer === 'X' ? 'O' : 'X'))
+
+		console.log(activePlayer)
+	}
 
 	return (
 		<section className={styles.wrapper}>
@@ -20,7 +22,7 @@ const TicTacToePlayers = () => {
 					<TicTacToePlayer InitialName='Player-2' symbol='O' />
 				</ol>
 			</div>
-			<TicTacToeGameBoard />
+			<TicTacToeGameBoard changePlayer={handleChangePlayer} />
 		</section>
 	)
 }

@@ -2,13 +2,17 @@ import React, { useState } from 'react'
 
 import styles from './Styles/TicTacToeGameBoard.module.css'
 
+type InitialTypeProps = {
+	changePlayer: () => void
+}
+
 const initialGameBorder: (string | null)[][] = [
 	[null, null, null],
 	[null, null, null],
 	[null, null, null],
 ]
 
-const TicTacToeGameBoard = () => {
+const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer }) => {
 	const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBorder)
 
 	const handleSelectSquare = (rowIndex: number, colIndex: number) => {
@@ -17,6 +21,8 @@ const TicTacToeGameBoard = () => {
 			updatedBoard[rowIndex][colIndex] = 'X'
 			return updatedBoard
 		})
+
+		changePlayer()
 	}
 
 	return (
