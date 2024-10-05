@@ -1,18 +1,30 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 
 import styles from './Styles/TicTacToeGameBoard.module.css'
-import TicTacToeContext from './Context/TicTacToeContext'
+
+const initialGameBorder: (string | null)[][] = [
+	[null, null, null],
+	[null, null, null],
+	[null, null, null],
+]
 
 const TicTacToeGameBoard = () => {
-	const { initialGameBorder } = useContext(TicTacToeContext)
+	const [gameBoard, setGameBoard] = useState(initialGameBorder)
 
-	console.log(initialGameBorder)
+	const handleSelectSquare = (rowIndex: number, colIndex: number) => {
+		setGameBoard(prevState => {
+			const newState = prevState.map((row, rIdx) =>
+				row.map((cell, cIdx) => (rIdx === rowIndex && cIdx === colIndex ? 'X' : cell))
+			)
+			return newState
+		})
+	}
 
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_game_board}>
 				<ol className={styles.game_board}>
-					{initialGameBorder.map((row, rowIndex) => (
+					{gameBoard.map((row, rowIndex) => (
 						<li key={rowIndex} className={styles.game_row}>
 							<ol className={styles.game_group}>
 								{row.map((playerSymbol: any, colIndex: any) => (
