@@ -5,10 +5,10 @@ import styles from './Styles/TicTacToePlayers.module.css'
 type InitialTypeProps = {
 	InitialName: string
 	symbol: string
-	// isActivPlayer: string
+	isActivPlayer: string | boolean
 }
 
-const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol }) => {
+const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol, isActivPlayer }) => {
 	const [playerName, setPlayerName] = useState<string>(InitialName)
 	const [isEditing, setIsEditing] = useState<boolean>(false)
 
@@ -46,7 +46,7 @@ const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol }) =>
 	}
 
 	return (
-		<li className={styles.players_list} onKeyDown={handleKeyDown}>
+		<li className={isActivPlayer ? styles.active_players_list : styles.players_list} onKeyDown={handleKeyDown}>
 			<span className={styles.player}>
 				{player}
 				<span className={styles.player_symbol}>{symbol}</span>

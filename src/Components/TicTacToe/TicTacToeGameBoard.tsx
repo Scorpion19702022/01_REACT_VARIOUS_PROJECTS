@@ -4,6 +4,7 @@ import styles from './Styles/TicTacToeGameBoard.module.css'
 
 type InitialTypeProps = {
 	changePlayer: () => void
+	activePlayerSymbol: any
 }
 
 const initialGameBorder: (string | null)[][] = [
@@ -12,13 +13,13 @@ const initialGameBorder: (string | null)[][] = [
 	[null, null, null],
 ]
 
-const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer }) => {
+const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, activePlayerSymbol }) => {
 	const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBorder)
 
 	const handleSelectSquare = (rowIndex: number, colIndex: number) => {
 		setGameBoard(prevState => {
 			const updatedBoard = [...prevState.map(innerAray => [...innerAray])]
-			updatedBoard[rowIndex][colIndex] = 'X'
+			updatedBoard[rowIndex][colIndex] = activePlayerSymbol
 			return updatedBoard
 		})
 
