@@ -8,20 +8,27 @@ import TicTacToeLog from './TicTacToeLog'
 
 const TicTacToePlayers = () => {
 	const [gameTurns, setGameTurns] = useState<any[]>([])
-	const [activePlayer, setActivePlayer] = useState<string | boolean>('X')
+	// const [activePlayer, setActivePlayer] = useState<string | boolean>('X')
+
+	const deriveActivePlayer = (gameTurns: any) => {
+		let currentPlayer = 'X'
+
+		if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
+			currentPlayer = 'O'
+		}
+
+		return currentPlayer
+	}
+
+	const activePlayer = deriveActivePlayer(gameTurns)
 
 	const handleChangePlayer = (rowIndex: any, colIndex: any) => {
-		setActivePlayer(curActivePlayer => (curActivePlayer === 'X' ? 'O' : 'X'))
 		setGameTurns(prevTurns => {
-			let currentPlayer: string = 'X'
+			const currentPlayer = deriveActivePlayer(prevTurns)
 
-			if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
-				currentPlayer = 'O'
-			}
+			const updateTurns = [{ square: { row: rowIndex, col: colIndex }, player: currentPlayer }, ...prevTurns]
 
-			const updatedTurns = [{ square: { row: rowIndex, col: colIndex }, player: activePlayer }, ...prevTurns]
-
-			return updatedTurns
+			return updateTurns
 		})
 	}
 

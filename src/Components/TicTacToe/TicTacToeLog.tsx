@@ -7,6 +7,8 @@ type InitialTypeProps = {
 }
 
 const TicTacToeLog: React.FC<InitialTypeProps> = ({ turns }) => {
+	console.log(turns)
+
 	return (
 		<section className={styles.box_log}>
 			<ol className={styles.log}>
