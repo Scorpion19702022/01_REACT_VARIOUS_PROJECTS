@@ -24,11 +24,8 @@
 .wrapper {
 	width: 100%;
 	height: 300px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	padding: 2em;
-	margin: 1em 0em;
+	margin: 2em 0em;
 	background-color: var(--color-dark07);
 	border: 0.04em solid var(--color-color07);
 }
@@ -37,9 +34,8 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 500px;
+		width: 48%;
 		height: 500px;
-		margin: 0em;
 		justify-content: center;
 	}
 }

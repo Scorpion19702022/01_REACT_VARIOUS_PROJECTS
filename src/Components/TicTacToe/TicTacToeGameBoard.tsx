@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 import styles from './Styles/TicTacToeGameBoard.module.css'
-import TicTacToeLog from './TicTacToeLog'
 
 type InitialTypeProps = {
 	changePlayer: () => void
@@ -46,7 +45,6 @@ const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, activePl
 					))}
 				</ol>
 			</div>
-			<TicTacToeLog />
 		</section>
 	)
 }

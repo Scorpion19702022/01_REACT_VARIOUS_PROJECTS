@@ -4,6 +4,7 @@ import TicTacToePlayer from './TicTacToePlayer'
 
 import styles from './Styles/TicTacToePlayers.module.css'
 import TicTacToeGameBoard from './TicTacToeGameBoard'
+import TicTacToeLog from './TicTacToeLog'
 
 const TicTacToePlayers = () => {
 	const [activePlayer, setActivePlayer] = useState<string | boolean>('X')
@@ -22,7 +23,10 @@ const TicTacToePlayers = () => {
 					<TicTacToePlayer InitialName='Player-2' symbol='O' isActivPlayer={activePlayer === 'O'} />
 				</ol>
 			</div>
-			<TicTacToeGameBoard changePlayer={handleChangePlayer} activePlayerSymbol={activePlayer} />
+			<div className={styles.box_game}>
+				<TicTacToeGameBoard changePlayer={handleChangePlayer} activePlayerSymbol={activePlayer} />
+				<TicTacToeLog />
+			</div>
 		</section>
 	)
 }
