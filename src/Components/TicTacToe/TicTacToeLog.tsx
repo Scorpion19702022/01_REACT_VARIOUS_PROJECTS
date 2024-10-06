@@ -11,7 +11,7 @@ const TicTacToeLog: React.FC<InitialTypeProps> = ({ turns }) => {
 		<section className={styles.box_log}>
 			<ol className={styles.log}>
 				{turns.map((turn: any) => (
-					<li key={`${turn.square.row}${turn.square.col}`}>
+					<li className={styles.log_list} key={`${turn.square.row}${turn.square.col}`}>
 						Gracz: {turn.player} zaznaczył {turn.square.row}, {turn.square.col}
 					</li>
 				))}
