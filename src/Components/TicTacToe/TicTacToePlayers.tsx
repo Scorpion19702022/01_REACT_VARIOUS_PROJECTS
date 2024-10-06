@@ -10,10 +10,10 @@ const TicTacToePlayers = () => {
 	const [gameTurns, setGameTurns] = useState<any[]>([])
 	const [activePlayer, setActivePlayer] = useState<string | boolean>('X')
 
-	const handleChangePlayer = (rowIndex, colIndex) => {
+	const handleChangePlayer = (rowIndex: any, colIndex: any) => {
 		setActivePlayer(curActivePlayer => (curActivePlayer === 'X' ? 'O' : 'X'))
 		setGameTurns(prevTurns => {
-			let currentPlayer = 'X'
+			let currentPlayer: string = 'X'
 
 			if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
 				currentPlayer = 'O'
@@ -34,7 +34,7 @@ const TicTacToePlayers = () => {
 				</ol>
 			</div>
 			<div className={styles.box_game}>
-				<TicTacToeGameBoard changePlayer={handleChangePlayer} activePlayerSymbol={activePlayer} turns={gameTurns} />
+				<TicTacToeGameBoard changePlayer={handleChangePlayer} turns={gameTurns} />
 				<TicTacToeLog />
 			</div>
 		</section>

@@ -3,9 +3,8 @@ import React, { useState } from 'react'
 import styles from './Styles/TicTacToeGameBoard.module.css'
 
 type InitialTypeProps = {
-	changePlayer: () => void
+	changePlayer: (rowIndex: any, colIndex: any) => void
 	turns: any[]
-	// activePlayerSymbol: any
 }
 
 const initialGameBorder: (string | null)[][] = [
@@ -15,6 +14,15 @@ const initialGameBorder: (string | null)[][] = [
 ]
 
 const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, turns }) => {
+	let gameBoard = initialGameBorder
+
+	for (const turn of turns) {
+		const { square, player } = turn
+		const { row, col } = square
+
+		gameBoard[row][col] = player
+	}
+
 	// const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBorder)
 
 	// const handleSelectSquare = (rowIndex: number, colIndex: number) => {
@@ -36,7 +44,7 @@ const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, turns })
 							<ol className={styles.game_group}>
 								{row.map((playerSymbol: any, colIndex: any) => (
 									<li key={colIndex} className={styles.game_col}>
-										<button className={styles.game_btns} onClick={changePlayer}>
+										<button className={styles.game_btns} onClick={() => changePlayer(rowIndex, colIndex)}>
 											{playerSymbol}
 										</button>
 									</li>
