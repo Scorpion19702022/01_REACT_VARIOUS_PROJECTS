@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import TicTacToePlayer from './TicTacToePlayer'
 
 import styles from './Styles/TicTacToePlayers.module.css'
 import TicTacToeGameBoard from './TicTacToeGameBoard'
 import TicTacToeLog from './TicTacToeLog'
+import TicTacToeContext from './Context/TicTacToeContext'
 
 const TicTacToePlayers = () => {
+	const { winningCombination } = useContext(TicTacToeContext)
+
 	const [gameTurns, setGameTurns] = useState<any[]>([])
 	// const [activePlayer, setActivePlayer] = useState<string | boolean>('X')
 
@@ -19,7 +22,6 @@ const TicTacToePlayers = () => {
 
 		return currentPlayer
 	}
-
 	const activePlayer = deriveActivePlayer(gameTurns)
 
 	const handleChangePlayer = (rowIndex: any, colIndex: any) => {

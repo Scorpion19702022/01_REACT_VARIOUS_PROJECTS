@@ -44,7 +44,11 @@ const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, turns })
 							<ol className={styles.game_group}>
 								{row.map((playerSymbol: any, colIndex: any) => (
 									<li key={colIndex} className={styles.game_col}>
-										<button className={styles.game_btns} onClick={() => changePlayer(rowIndex, colIndex)}>
+										<button
+											className={styles.game_btns}
+											onClick={() => changePlayer(rowIndex, colIndex)}
+											disabled={playerSymbol !== null}
+										>
 											{playerSymbol}
 										</button>
 									</li>
