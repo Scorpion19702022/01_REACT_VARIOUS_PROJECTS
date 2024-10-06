@@ -2,10 +2,20 @@ import React from 'react'
 
 import styles from './Styles/TicTacToeLog.module.css'
 
-const TicTacToeLog = () => {
+type InitialTypeProps = {
+	turns: any
+}
+
+const TicTacToeLog: React.FC<InitialTypeProps> = ({ turns }) => {
 	return (
 		<section className={styles.box_log}>
-			<ol></ol>
+			<ol className={styles.log}>
+				{turns.map((turn: any) => (
+					<li key={`${turn.square.row}${turn.square.col}`}>
+						Gracz: {turn.player} zaznaczył {turn.square.row}, {turn.square.col}
+					</li>
+				))}
+			</ol>
 		</section>
 	)
 }

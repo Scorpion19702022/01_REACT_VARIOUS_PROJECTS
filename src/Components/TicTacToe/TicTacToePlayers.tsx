@@ -35,7 +35,7 @@ const TicTacToePlayers = () => {
 			</div>
 			<div className={styles.box_game}>
 				<TicTacToeGameBoard changePlayer={handleChangePlayer} turns={gameTurns} />
-				<TicTacToeLog />
+				<TicTacToeLog turns={gameTurns} />
 			</div>
 		</section>
 	)
