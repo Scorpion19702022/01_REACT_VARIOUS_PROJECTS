@@ -30,7 +30,7 @@ const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol, isAc
 		}
 	}
 
-	let player = <span className={styles.player_name}>{playerName}</span>
+	let player = <span className={isActivPlayer ? styles.active_player_name : styles.player_name}>{playerName}</span>
 
 	if (isEditing) {
 		player = (
@@ -46,10 +46,10 @@ const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol, isAc
 	}
 
 	return (
-		<li className={isActivPlayer ? styles.active_players_list : styles.players_list} onKeyDown={handleKeyDown}>
+		<li className={styles.players_list} onKeyDown={handleKeyDown}>
 			<span className={styles.player}>
 				{player}
-				<span className={styles.player_symbol}>{symbol}</span>
+				<span className={isActivPlayer ? styles.active_player_symbol : styles.player_symbol}>{symbol}</span>
 			</span>
 			<button className={styles.btn_edit} onClick={handleEditClick}>
 				{!isEditing ? 'edytuj' : 'zapisz'}

@@ -53,7 +53,7 @@ const SnackBarOrder = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_orders}>
-				<h1 className={styles.heading_orders}>Twoje zamówieie:</h1>
+				<h1 className={styles.heading_orders}>Twoje zamówienie:</h1>
 				<div className={styles.heading_info}>
 					<h2 className={styles.info_orders}>
 						Ilość zamówienia: <span className={styles.info_span}>{orderProducts.length}</span> {orderQuantityProducts}

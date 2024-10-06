@@ -56,15 +56,6 @@
 	padding: 0.4em;
 }
 
-.active_players_list {
-	width: 47%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0.4em;
-	background-color: var(--color-dark08);
-}
-
 .player {
 	width: 50%;
 	display: flex;
@@ -73,10 +64,16 @@
 
 .player_name,
 .player_symbol {
-	color: var(--color-color02);
+	color: var(--color-color06);
 }
 
-.player_symbol {
+.active_player_name,
+.active_player_symbol {
+	color: var(--color-color01);
+}
+
+.player_symbol,
+.active_player_symbol {
 	font-family: 'Tilt Warp', sans-serif;
 }
 
@@ -118,17 +115,17 @@
 		width: 40%;
 	}
 
-	.active_players_list {
-		width: 40%;
-		background-color: var(--color-dark09);
-	}
-
 	.player {
 		width: 50%;
 	}
 
 	.player_name,
 	.player_symbol {
+		font-size: 1.6em;
+	}
+
+	.active_player_name,
+	.active_player_symbol {
 		font-size: 1.6em;
 	}
 
