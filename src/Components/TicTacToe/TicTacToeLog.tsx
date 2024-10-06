@@ -4,7 +4,7 @@ import styles from './Styles/TicTacToeLog.module.css'
 
 const TicTacToeLog = () => {
 	return (
-		<section className={styles.wrapper}>
+		<section className={styles.box_log}>
 			<ol></ol>
 		</section>
 	)

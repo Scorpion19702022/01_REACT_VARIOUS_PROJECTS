@@ -7,12 +7,22 @@ import TicTacToeGameBoard from './TicTacToeGameBoard'
 import TicTacToeLog from './TicTacToeLog'
 
 const TicTacToePlayers = () => {
+	const [gameTurns, setGameTurns] = useState<any[]>([])
 	const [activePlayer, setActivePlayer] = useState<string | boolean>('X')
 
-	const handleChangePlayer = () => {
+	const handleChangePlayer = (rowIndex, colIndex) => {
 		setActivePlayer(curActivePlayer => (curActivePlayer === 'X' ? 'O' : 'X'))
+		setGameTurns(prevTurns => {
+			let currentPlayer = 'X'
 
-		console.log(activePlayer)
+			if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
+				currentPlayer = 'O'
+			}
+
+			const updatedTurns = [{ square: { row: rowIndex, col: colIndex }, player: activePlayer }, ...prevTurns]
+
+			return updatedTurns
+		})
 	}
 
 	return (
@@ -24,7 +34,7 @@ const TicTacToePlayers = () => {
 				</ol>
 			</div>
 			<div className={styles.box_game}>
-				<TicTacToeGameBoard changePlayer={handleChangePlayer} activePlayerSymbol={activePlayer} />
+				<TicTacToeGameBoard changePlayer={handleChangePlayer} activePlayerSymbol={activePlayer} turns={gameTurns} />
 				<TicTacToeLog />
 			</div>
 		</section>

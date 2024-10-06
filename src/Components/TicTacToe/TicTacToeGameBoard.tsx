@@ -4,7 +4,8 @@ import styles from './Styles/TicTacToeGameBoard.module.css'
 
 type InitialTypeProps = {
 	changePlayer: () => void
-	activePlayerSymbol: any
+	turns: any[]
+	// activePlayerSymbol: any
 }
 
 const initialGameBorder: (string | null)[][] = [
@@ -13,18 +14,18 @@ const initialGameBorder: (string | null)[][] = [
 	[null, null, null],
 ]
 
-const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, activePlayerSymbol }) => {
-	const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBorder)
+const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, turns }) => {
+	// const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBorder)
 
-	const handleSelectSquare = (rowIndex: number, colIndex: number) => {
-		setGameBoard(prevState => {
-			const updatedBoard = [...prevState.map(innerAray => [...innerAray])]
-			updatedBoard[rowIndex][colIndex] = activePlayerSymbol
-			return updatedBoard
-		})
+	// const handleSelectSquare = (rowIndex: number, colIndex: number) => {
+	// 	setGameBoard(prevState => {
+	// 		const updatedBoard = [...prevState.map(innerAray => [...innerAray])]
+	// 		updatedBoard[rowIndex][colIndex] = activePlayerSymbol
+	// 		return updatedBoard
+	// 	})
 
-		changePlayer()
-	}
+	// 	changePlayer()
+	// }
 
 	return (
 		<section className={styles.wrapper}>
@@ -35,7 +36,7 @@ const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, activePl
 							<ol className={styles.game_group}>
 								{row.map((playerSymbol: any, colIndex: any) => (
 									<li key={colIndex} className={styles.game_col}>
-										<button className={styles.game_btns} onClick={() => handleSelectSquare(rowIndex, colIndex)}>
+										<button className={styles.game_btns} onClick={changePlayer}>
 											{playerSymbol}
 										</button>
 									</li>
