@@ -1,39 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from './Styles/TicTacToeGameBoard.module.css'
 
 type InitialTypeProps = {
-	changePlayer: (rowIndex: any, colIndex: any) => void
-	turns: any[]
+	changePlayer: (rowIndex: number, colIndex: number) => void
+	turns: { square: { row: number; col: number }; player: string }[]
 }
 
-const initialGameBorder: (string | null)[][] = [
+const initialGameBoard: (string | null)[][] = [
 	[null, null, null],
 	[null, null, null],
 	[null, null, null],
 ]
 
 const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, turns }) => {
-	let gameBoard = initialGameBorder
+	const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBoard)
 
-	for (const turn of turns) {
-		const { square, player } = turn
-		const { row, col } = square
+	useEffect(() => {
+		const updatedBoard = initialGameBoard.map(row => row.slice())
 
-		gameBoard[row][col] = player
-	}
+		for (const turn of turns) {
+			const { square, player } = turn
+			const { row, col } = square
+			updatedBoard[row][col] = player
+		}
 
-	// const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBorder)
-
-	// const handleSelectSquare = (rowIndex: number, colIndex: number) => {
-	// 	setGameBoard(prevState => {
-	// 		const updatedBoard = [...prevState.map(innerAray => [...innerAray])]
-	// 		updatedBoard[rowIndex][colIndex] = activePlayerSymbol
-	// 		return updatedBoard
-	// 	})
-
-	// 	changePlayer()
-	// }
+		setGameBoard(updatedBoard)
+	}, [turns])
 
 	return (
 		<section className={styles.wrapper}>
@@ -42,7 +35,7 @@ const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, turns })
 					{gameBoard.map((row, rowIndex) => (
 						<li key={rowIndex} className={styles.game_row}>
 							<ol className={styles.game_group}>
-								{row.map((playerSymbol: any, colIndex: any) => (
+								{row.map((playerSymbol, colIndex) => (
 									<li key={colIndex} className={styles.game_col}>
 										<button
 											className={styles.game_btns}
