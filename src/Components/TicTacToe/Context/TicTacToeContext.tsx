@@ -1,9 +1,10 @@
 import { Analytics } from '@vercel/analytics/react'
 import React, { createContext } from 'react'
 
+type Square = string | null // Typ dla kwadratów na planszy (może być "X", "O" lub null)
 type InitialStateType = {
-	initialGameBoard: (string | null)[][]
-	winningCombination: any[]
+	initialGameBoard: Square[][] // Plansza 3x3
+	winningCombination: { row: number; column: number }[][] // Kombinacje wygrywające
 }
 
 type TicTacToeProviderType = { children: React.ReactNode }

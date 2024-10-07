@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import TicTacToePlayer from './TicTacToePlayer'
 
@@ -8,13 +8,17 @@ import TicTacToeLog from './TicTacToeLog'
 import TicTacToeContext from './Context/TicTacToeContext'
 
 const TicTacToePlayers = () => {
-	const { winningCombination } = useContext(TicTacToeContext)
+	const { initialGameBoard, winningCombination } = useContext(TicTacToeContext)
 
 	const [gameTurns, setGameTurns] = useState<any[]>([])
 
-	for (const combination of winningCombination) {
-		console.log(combination)
-	}
+	// let gameBoard = initialGameBoard
+
+	// for (const combination of winningCombination) {
+	// 	const firstSquareSymbol =
+	// 	const secondSquareSymbol =
+	// 	const thirdSquareSymbol =
+	// }
 
 	const deriveActivePlayer = (gameTurns: any) => {
 		let currentPlayer = 'X'
@@ -26,6 +30,20 @@ const TicTacToePlayers = () => {
 		return currentPlayer
 	}
 	const activePlayer = deriveActivePlayer(gameTurns)
+
+	const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBoard)
+
+	useEffect(() => {
+		const updatedBoard = initialGameBoard.map(row => row.slice())
+
+		for (const turn of gameTurns) {
+			const { square, player } = turn
+			const { row, col } = square
+			updatedBoard[row][col] = player
+		}
+
+		setGameBoard(updatedBoard)
+	}, [gameTurns])
 
 	const handleChangePlayer = (rowIndex: any, colIndex: any) => {
 		setGameTurns(prevTurns => {
@@ -46,7 +64,7 @@ const TicTacToePlayers = () => {
 				</ol>
 			</div>
 			<div className={styles.box_game}>
-				<TicTacToeGameBoard changePlayer={handleChangePlayer} turns={gameTurns} />
+				<TicTacToeGameBoard changePlayer={handleChangePlayer} board={gameBoard} />
 				<TicTacToeLog turns={gameTurns} />
 			</div>
 		</section>

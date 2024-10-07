@@ -1,35 +1,18 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 
 import styles from './Styles/TicTacToeGameBoard.module.css'
-import TicTacToeContext from './Context/TicTacToeContext'
 
-type InitialTypeProps = {
+type TicTacToeGameBoardProps = {
 	changePlayer: (rowIndex: number, colIndex: number) => void
-	turns: { square: { row: number; col: number }; player: string }[]
+	board: (string | null)[][]
 }
 
-const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, turns }) => {
-	const { initialGameBoard } = useContext(TicTacToeContext)
-
-	const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBoard)
-
-	useEffect(() => {
-		const updatedBoard = initialGameBoard.map(row => row.slice())
-
-		for (const turn of turns) {
-			const { square, player } = turn
-			const { row, col } = square
-			updatedBoard[row][col] = player
-		}
-
-		setGameBoard(updatedBoard)
-	}, [turns])
-
+const TicTacToeGameBoard: React.FC<TicTacToeGameBoardProps> = ({ changePlayer, board }) => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_game_board}>
 				<ol className={styles.game_board}>
-					{gameBoard.map((row, rowIndex) => (
+					{board.map((row, rowIndex) => (
 						<li key={rowIndex} className={styles.game_row}>
 							<ol className={styles.game_group}>
 								{row.map((playerSymbol, colIndex) => (
