@@ -11,7 +11,10 @@ const TicTacToePlayers = () => {
 	const { winningCombination } = useContext(TicTacToeContext)
 
 	const [gameTurns, setGameTurns] = useState<any[]>([])
-	// const [activePlayer, setActivePlayer] = useState<string | boolean>('X')
+
+	for (const combination of winningCombination) {
+		console.log(combination)
+	}
 
 	const deriveActivePlayer = (gameTurns: any) => {
 		let currentPlayer = 'X'

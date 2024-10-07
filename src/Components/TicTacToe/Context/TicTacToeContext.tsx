@@ -2,18 +2,26 @@ import { Analytics } from '@vercel/analytics/react'
 import React, { createContext } from 'react'
 
 type InitialStateType = {
+	initialGameBoard: (string | null)[][]
 	winningCombination: any[]
 }
 
 type TicTacToeProviderType = { children: React.ReactNode }
 
 const InitialState: InitialStateType = {
+	initialGameBoard: [],
 	winningCombination: [],
 }
 
 const TicTacToeContext = createContext(InitialState)
 
 export const TicTacToeProvider = ({ children }: TicTacToeProviderType) => {
+	const initialGameBoard = [
+		[null, null, null],
+		[null, null, null],
+		[null, null, null],
+	]
+
 	const winningCombination = [
 		[
 			{ row: 0, column: 0 },
@@ -58,7 +66,7 @@ export const TicTacToeProvider = ({ children }: TicTacToeProviderType) => {
 	]
 
 	return (
-		<TicTacToeContext.Provider value={{ winningCombination }}>
+		<TicTacToeContext.Provider value={{ initialGameBoard, winningCombination }}>
 			{children} <Analytics />
 		</TicTacToeContext.Provider>
 	)

@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import styles from './Styles/TicTacToeGameBoard.module.css'
+import TicTacToeContext from './Context/TicTacToeContext'
 
 type InitialTypeProps = {
 	changePlayer: (rowIndex: number, colIndex: number) => void
 	turns: { square: { row: number; col: number }; player: string }[]
 }
 
-const initialGameBoard: (string | null)[][] = [
-	[null, null, null],
-	[null, null, null],
-	[null, null, null],
-]
-
 const TicTacToeGameBoard: React.FC<InitialTypeProps> = ({ changePlayer, turns }) => {
+	const { initialGameBoard } = useContext(TicTacToeContext)
+
 	const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBoard)
 
 	useEffect(() => {
