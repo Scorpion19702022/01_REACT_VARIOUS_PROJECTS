@@ -11,14 +11,21 @@ const TicTacToePlayers = () => {
 	const { initialGameBoard, winningCombination } = useContext(TicTacToeContext)
 
 	const [gameTurns, setGameTurns] = useState<any[]>([])
+	const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBoard)
 
 	// let gameBoard = initialGameBoard
 
-	// for (const combination of winningCombination) {
-	// 	const firstSquareSymbol =
-	// 	const secondSquareSymbol =
-	// 	const thirdSquareSymbol =
-	// }
+	let winner
+
+	for (const combination of winningCombination) {
+		const firstSquareSymbol = gameBoard[combination[0].row][combination[0].column]
+		const secondSquareSymbol = gameBoard[combination[1].row][combination[1].column]
+		const thirdSquareSymbol = gameBoard[combination[2].row][combination[2].column]
+
+		if (firstSquareSymbol && firstSquareSymbol === secondSquareSymbol && firstSquareSymbol === thirdSquareSymbol) {
+			winner = firstSquareSymbol
+		}
+	}
 
 	const deriveActivePlayer = (gameTurns: any) => {
 		let currentPlayer = 'X'
@@ -30,8 +37,6 @@ const TicTacToePlayers = () => {
 		return currentPlayer
 	}
 	const activePlayer = deriveActivePlayer(gameTurns)
-
-	const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBoard)
 
 	useEffect(() => {
 		const updatedBoard = initialGameBoard.map(row => row.slice())
@@ -64,6 +69,7 @@ const TicTacToePlayers = () => {
 				</ol>
 			</div>
 			<div className={styles.box_game}>
+				{winner && <p>Wygrał {winner}</p>}
 				<TicTacToeGameBoard changePlayer={handleChangePlayer} board={gameBoard} />
 				<TicTacToeLog turns={gameTurns} />
 			</div>
