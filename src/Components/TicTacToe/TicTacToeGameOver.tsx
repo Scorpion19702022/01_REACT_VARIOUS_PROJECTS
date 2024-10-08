@@ -19,7 +19,7 @@ const TicTacToeGameOver: React.FC<InitialTypeProps> = ({ winner, restartGame }) 
 					Zwycięzca: <span className={styles.player_name_win}>{playerNames[winner as 'X' | 'O']}</span>
 				</p>
 			)}
-			{!winner && <p className={styles.game_over_draw}>Gra nie rozstrzygnięta</p>}
+			{!winner && <p className={styles.game_over_draw}>Gra nierozstrzygnięta</p>}
 			<button className={styles.btn_reset} onClick={restartGame}>
 				Restart
 			</button>
