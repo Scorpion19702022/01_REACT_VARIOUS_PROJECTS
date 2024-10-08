@@ -67,7 +67,19 @@
 
 @media (min-width: 992px) {
 	.box_game_over {
+		width: 50%;
 		top: 50%;
-		transform: translateY(-50%);
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.btn_reset {
+		width: 40%;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn_reset:hover {
+		background-color: var(--color-dark09);
 	}
 }
