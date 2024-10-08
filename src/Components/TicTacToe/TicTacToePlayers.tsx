@@ -9,12 +9,10 @@ import TicTacToeContext from './Context/TicTacToeContext'
 import TicTacToeGameOver from './TicTacToeGameOver'
 
 const TicTacToePlayers = () => {
-	const { initialGameBoard, winningCombination } = useContext(TicTacToeContext)
+	const { initialGameBoard, winningCombination, playerNames } = useContext(TicTacToeContext)
 
 	const [gameTurns, setGameTurns] = useState<any[]>([])
 	const [gameBoard, setGameBoard] = useState<(string | null)[][]>(initialGameBoard)
-
-	// let gameBoard = initialGameBoard
 
 	let winner
 
@@ -72,8 +70,8 @@ const TicTacToePlayers = () => {
 		<section className={styles.wrapper}>
 			<div className={styles.box_players}>
 				<ol className={styles.players}>
-					<TicTacToePlayer InitialName='Player-1' symbol='X' isActivPlayer={activePlayer === 'X'} />
-					<TicTacToePlayer InitialName='Player-2' symbol='O' isActivPlayer={activePlayer === 'O'} />
+					<TicTacToePlayer InitialName={playerNames.X} symbol='X' isActivPlayer={activePlayer === 'X'} />
+					<TicTacToePlayer InitialName={playerNames.O} symbol='O' isActivPlayer={activePlayer === 'O'} />
 				</ol>
 			</div>
 			<div className={styles.box_game}>

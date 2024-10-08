@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import styles from './Styles/TicTacToePlayers.module.css'
+import TicTacToeContext from './Context/TicTacToeContext'
 
 type InitialTypeProps = {
 	InitialName: string
@@ -9,6 +10,8 @@ type InitialTypeProps = {
 }
 
 const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol, isActivPlayer }) => {
+	const { playerNames, setPlayerNames } = useContext(TicTacToeContext)
+
 	const [playerName, setPlayerName] = useState<string>(InitialName)
 	const [isEditing, setIsEditing] = useState<boolean>(false)
 
@@ -16,6 +19,11 @@ const TicTacToePlayer: React.FC<InitialTypeProps> = ({ InitialName, symbol, isAc
 		setIsEditing(editing => !editing)
 		if (playerName === '') {
 			setPlayerName(InitialName)
+		} else {
+			setPlayerNames({
+				...playerNames,
+				[symbol]: playerName,
+			})
 		}
 	}
 
