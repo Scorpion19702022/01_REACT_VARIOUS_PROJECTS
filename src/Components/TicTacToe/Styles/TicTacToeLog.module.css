@@ -40,10 +40,16 @@
 .log_list {
 	width: 100%;
 	font-size: 1em;
+	display: flex;
+	justify-content: space-between;
 	color: var(--color-color03);
 	padding-bottom: 0.4em;
 	margin-bottom: 0.4em;
 	border-bottom: 0.04em dotted var(--color-color08);
+}
+
+.player_name {
+	color: var(--color-color01);
 }
 
 @media (min-width: 660px) {
