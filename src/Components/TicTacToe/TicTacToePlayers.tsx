@@ -6,6 +6,7 @@ import styles from './Styles/TicTacToePlayers.module.css'
 import TicTacToeGameBoard from './TicTacToeGameBoard'
 import TicTacToeLog from './TicTacToeLog'
 import TicTacToeContext from './Context/TicTacToeContext'
+import TicTacToeGameOver from './TicTacToeGameOver'
 
 const TicTacToePlayers = () => {
 	const { initialGameBoard, winningCombination } = useContext(TicTacToeContext)
@@ -69,7 +70,7 @@ const TicTacToePlayers = () => {
 				</ol>
 			</div>
 			<div className={styles.box_game}>
-				{winner && <p>Wygrał {winner}</p>}
+				{winner ? <TicTacToeGameOver /> : null}
 				<TicTacToeGameBoard changePlayer={handleChangePlayer} board={gameBoard} />
 				<TicTacToeLog turns={gameTurns} />
 			</div>
