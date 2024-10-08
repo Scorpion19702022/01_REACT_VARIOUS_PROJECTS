@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import styles from './Styles/GameOver.module.css'
+import styles from './Styles/TicTacToeGameOver.module.css'
 import TicTacToeContext from './Context/TicTacToeContext'
 
 export type InitialTypeProps = {
@@ -13,10 +13,16 @@ const TicTacToeGameOver: React.FC<InitialTypeProps> = ({ winner, restartGame }) 
 
 	return (
 		<div className={styles.box_game_over}>
-			<h2 className={styles.game_over_heading}>Gra zakończona</h2>
-			{winner && <p>Zwyciężył: {playerNames[winner as 'X' | 'O']}</p>}
-			{!winner && <p>Gra nie rozstrzygnięta</p>}
-			<button onClick={restartGame}>Restart</button>
+			<h2 className={styles.game_over_heading}>Gra zakończona!</h2>
+			{winner && (
+				<p className={styles.game_over_win}>
+					Zwyciężył: <span className={styles.player_name_win}>{playerNames[winner as 'X' | 'O']}</span>
+				</p>
+			)}
+			{!winner && <p className={styles.game_over_draw}>Gra nie rozstrzygnięta</p>}
+			<button className={styles.btn_reset} onClick={restartGame}>
+				Restart
+			</button>
 		</div>
 	)
 }

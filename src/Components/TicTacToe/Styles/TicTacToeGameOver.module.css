@@ -26,11 +26,40 @@
 	top: 10%;
 	left: 5%;
 	width: 90%;
-	height: 200px;
+	height: 220px;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 	background-color: var(--color-dark09);
 	border: 0.04em solid var(--color-color07);
 	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
-	color: white;
+}
+
+.game_over_heading {
+	font-size: 2em;
+	color: var(--color-color04);
+}
+
+.game_over_win,
+.game_over_draw {
+	font-size: 1.4em;
+	color: var(--color-color03);
+	font-weight: 100;
+}
+
+.player_name_win {
+	color: var(--color-color01);
+	font-weight: 400;
+}
+
+.btn_reset {
+	width: 100%;
+	padding: 0.4em;
+	background-color: var(--color-dark08);
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color03);
 }
 
 @media (min-width: 660px) {
