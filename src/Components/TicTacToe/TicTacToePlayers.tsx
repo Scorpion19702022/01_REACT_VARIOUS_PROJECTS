@@ -70,7 +70,7 @@ const TicTacToePlayers = () => {
 				</ol>
 			</div>
 			<div className={styles.box_game}>
-				{winner ? <TicTacToeGameOver /> : null}
+				{winner ? <TicTacToeGameOver winner={winner} /> : null}
 				<TicTacToeGameBoard changePlayer={handleChangePlayer} board={gameBoard} />
 				<TicTacToeLog turns={gameTurns} />
 			</div>
