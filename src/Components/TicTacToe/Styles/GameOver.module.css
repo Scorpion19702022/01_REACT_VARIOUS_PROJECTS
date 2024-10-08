@@ -30,6 +30,7 @@
 	background-color: var(--color-dark09);
 	border: 0.04em solid var(--color-color07);
 	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
+	color: white;
 }
 
 @media (min-width: 660px) {

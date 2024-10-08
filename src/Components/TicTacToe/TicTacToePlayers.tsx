@@ -61,6 +61,13 @@ const TicTacToePlayers = () => {
 		})
 	}
 
+	const hasDraw = gameTurns.length === 9 && !winner
+
+	const handleRestartGame = () => {
+		setGameTurns([])
+		setGameBoard(initialGameBoard)
+	}
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_players}>
@@ -70,7 +77,7 @@ const TicTacToePlayers = () => {
 				</ol>
 			</div>
 			<div className={styles.box_game}>
-				{winner ? <TicTacToeGameOver winner={winner} /> : null}
+				{(winner || hasDraw) && <TicTacToeGameOver winner={winner} restartGame={handleRestartGame} />}
 				<TicTacToeGameBoard changePlayer={handleChangePlayer} board={gameBoard} />
 				<TicTacToeLog turns={gameTurns} />
 			</div>
