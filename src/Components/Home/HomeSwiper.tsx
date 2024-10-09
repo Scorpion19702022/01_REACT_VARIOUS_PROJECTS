@@ -112,7 +112,7 @@ const HomeSwiper = () => {
 				</SwiperSlide>
 
 				<SwiperSlide className={styles.box_swiper}>
-					<NavLink to='./SnackBar'>
+					<NavLink to='./TicTacToe'>
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
