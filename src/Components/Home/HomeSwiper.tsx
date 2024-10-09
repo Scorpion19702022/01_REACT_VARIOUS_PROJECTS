@@ -116,9 +116,9 @@ const HomeSwiper = () => {
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>SnackBar</h4>
+						<h4 className={styles.card_heading}>TicTacToe</h4>
 						<p className={styles.card_text}>
-							Zamawiaie produktów. Sprawdzenie ilości zamówienia i ceny. Wysłanie zamówienia i czas oczekiwania.
+							Popularna gra w kółko i krzyżyk. Edycja nazwy graczy, lista wykonanych ruchów i info o wyniku gry.
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider06} alt='photoSlider' />
