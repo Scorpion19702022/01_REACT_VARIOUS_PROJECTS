@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import styles from './Styles/QuizAnswers.module.css'
 
 const QuizAnswers = () => {
-	const [pro, setPro] = useState(20)
+	const [pro, setPro] = useState(10)
 
 	const handleProgress = () => {
 		setPro(pro + 10)

@@ -36,7 +36,6 @@
 	padding: 2em;
 }
 
-/* Stylowanie całego paska */
 .progress {
 	width: 100%;
 	height: 20px;
@@ -46,18 +45,15 @@
 	overflow: hidden;
 }
 
-/* Stylowanie tła paska (część bez postępu) */
 .progress::-webkit-progress-bar {
 	background-color: var(--color-dark09);
 }
 
-/* Stylowanie wartości postępu (część z postępem) */
 .progress::-webkit-progress-value {
 	background-color: var(--color-color06);
 	border-radius: 5px 0 0 5px;
 }
 
-/* Dla przeglądarek Firefox */
 .progress::-moz-progress-bar {
 	background-color: var(--color-color06);
 	border-radius: 5px 0 0 5px;
