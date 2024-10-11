@@ -64,6 +64,11 @@ const NavBar = () => {
 							TicTacToe
 						</li>
 					</NavLink>
+					<NavLink to='./Quiz'>
+						<li className={styles.link} onClick={handleNavView}>
+							Quiz
+						</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>
