@@ -1,0 +1,76 @@
+:root {
+	--color-dark01: #ffffff;
+	--color-dark02: #c4c4c2;
+	--color-dark03: #898a86;
+	--color-dark04: #62625e;
+	--color-dark05: #2f302b;
+	--color-dark06: #2f302b;
+	--color-dark07: #1d1e1b;
+	--color-dark08: #121311;
+	--color-dark09: #050605;
+	--color-color01: #d6ecf3;
+	--color-color02: #add9e7;
+	--color-color03: #85c6db;
+	--color-color04: #5cb3cf;
+	--color-color05: #34a0c4;
+	--color-color06: #29809c;
+	--color-color07: #1f6075;
+	--color-color08: #14404e;
+	--color-color09: #0a2027;
+
+	--color-error: #ff0000;
+}
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 1em;
+}
+
+.box_progress {
+	width: 100%;
+	height: 100px;
+	padding: 2em;
+}
+
+/* Stylowanie całego paska */
+.progress {
+	width: 100%;
+	height: 20px;
+	border-radius: 5px;
+	background-color: var(--color-dark09);
+	border: none;
+	overflow: hidden;
+}
+
+/* Stylowanie tła paska (część bez postępu) */
+.progress::-webkit-progress-bar {
+	background-color: var(--color-dark09);
+}
+
+/* Stylowanie wartości postępu (część z postępem) */
+.progress::-webkit-progress-value {
+	background-color: var(--color-color06);
+	border-radius: 5px 0 0 5px;
+}
+
+/* Dla przeglądarek Firefox */
+.progress::-moz-progress-bar {
+	background-color: var(--color-color06);
+	border-radius: 5px 0 0 5px;
+}
+
+@media (min-width: 660px) {
+}
+
+@media (min-width: 992px) {
+	.wrapper {
+		width: 48%;
+		flex-direction: row;
+		margin-top: 2em;
+		justify-content: space-around;
+	}
+}
