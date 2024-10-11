@@ -64,9 +64,7 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 48%;
-		flex-direction: row;
+		width: 64%;
 		margin-top: 2em;
-		justify-content: space-around;
 	}
 }
