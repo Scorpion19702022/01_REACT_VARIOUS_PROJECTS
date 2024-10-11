@@ -33,6 +33,8 @@
 .box_progress {
 	width: 100%;
 	height: 100px;
+	display: flex;
+	justify-content: center;
 	padding: 2em;
 }
 
@@ -66,5 +68,14 @@
 	.wrapper {
 		width: 64%;
 		margin-top: 2em;
+	}
+
+	.progress {
+		width: 50%;
+		height: 20px;
+		border-radius: 5px;
+		background-color: var(--color-dark09);
+		border: none;
+		overflow: hidden;
 	}
 }
