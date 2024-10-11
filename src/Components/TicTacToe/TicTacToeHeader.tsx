@@ -7,7 +7,7 @@ const TicTacToeHeader = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.header_img}>
-				<img className={styles.img} src={TicTacImg01} alt='' />
+				<img className={styles.img} src={TicTacImg01} alt='photo_tictactoe' />
 			</div>
 			<div className={styles.back}></div>
 			<div className={styles.header_text}>
