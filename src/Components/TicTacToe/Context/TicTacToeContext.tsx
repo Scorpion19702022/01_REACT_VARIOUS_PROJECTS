@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react'
 import useTicTacToeData from '../Hook/useTicTacToeData'
+import { Analytics } from '@vercel/analytics/react'
 
 type InitialStateType = {
 	playerNames: { X: string; O: string }
@@ -24,6 +25,7 @@ export const TicTacToeProvider = ({ children }: { children: React.ReactNode }) =
 	return (
 		<TicTacToeContext.Provider value={{ playerNames, setPlayerNames, initialGameBoard, winningCombination }}>
 			{children}
+			<Analytics />
 		</TicTacToeContext.Provider>
 	)
 }
