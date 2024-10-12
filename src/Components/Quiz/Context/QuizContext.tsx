@@ -11,6 +11,7 @@ type Question = {
 }
 
 type InitialStateType = {
+	progressHeading: number
 	progress: number
 	quizList: Question[]
 	answerIsWell: string[]
@@ -23,6 +24,7 @@ type QuizTypeProvider = {
 }
 
 const InitialState: InitialStateType = {
+	progressHeading: 1,
 	progress: 10,
 	quizList: [],
 	answerIsWell: [],
@@ -35,7 +37,8 @@ const QuizContext = createContext(InitialState)
 export const QuizProvider = ({ children }: QuizTypeProvider) => {
 	const { QuizListData } = useQuiz()
 
-	const [progress, setProgress] = useState<number>(0)
+	const [progressHeading, setProgressHeadig] = useState<number>(1)
+	const [progress, setProgress] = useState<number>(10)
 	const [quizList, setQuizList] = useState<Question[]>(QuizListData)
 	const [answerIsWell, setAnswerIsWell] = useState<string[]>([])
 	const [changeID, setChangeID] = useState<number>(0)
@@ -48,10 +51,14 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 		if (progress <= 100) {
 			setProgress(progress + 10)
 		}
+
+		if (progressHeading < 10) {
+			setProgressHeadig(progressHeading + 1)
+		}
 	}
 
 	return (
-		<QuizContext.Provider value={{ progress, quizList, answerIsWell, changeID, handleChangeQuiz }}>
+		<QuizContext.Provider value={{ progressHeading, progress, quizList, answerIsWell, changeID, handleChangeQuiz }}>
 			{children}
 			<Analytics />
 		</QuizContext.Provider>

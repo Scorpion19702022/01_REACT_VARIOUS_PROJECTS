@@ -4,14 +4,14 @@ import styles from './Styles/QuizAnswers.module.css'
 import QuizContext from './Context/QuizContext'
 
 const QuizAnswers = () => {
-	const { progress, quizList, changeID, handleChangeQuiz } = useContext(QuizContext)
+	const { progressHeading, progress, quizList, changeID, handleChangeQuiz } = useContext(QuizContext)
 
 	const answer = quizList[changeID]
 
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_progress}>
-				<h2 className={styles.progress_heading}>Pytanie /10</h2>
+				<h2 className={styles.progress_heading}>Pytanie {progressHeading}/10</h2>
 				<progress className={styles.progress} max='100' value={progress}></progress>
 			</div>
 			<div className={styles.box_quiz}>
