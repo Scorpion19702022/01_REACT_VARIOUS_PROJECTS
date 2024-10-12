@@ -50,8 +50,6 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 		}
 	}
 
-	console.log(answerIsWell)
-
 	return (
 		<QuizContext.Provider value={{ progress, quizList, answerIsWell, changeID, handleChangeQuiz }}>
 			{children}
