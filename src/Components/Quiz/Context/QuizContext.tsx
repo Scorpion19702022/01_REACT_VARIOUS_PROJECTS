@@ -6,11 +6,14 @@ type Question = {
 	id: number
 	question: string
 	img: string
-	answers: { answerText: string; isCorrect: boolean }[]
+	answers: string[]
+	goodAnswer: string
 }
 
 type InitialStateType = {
 	quizList: Question[]
+	changeID: number
+	handleChangeQuiz: () => void
 }
 
 type QuizTypeProvider = {
@@ -19,6 +22,8 @@ type QuizTypeProvider = {
 
 const InitialState: InitialStateType = {
 	quizList: [],
+	changeID: 0,
+	handleChangeQuiz: () => {},
 }
 
 const QuizContext = createContext(InitialState)
@@ -26,15 +31,20 @@ const QuizContext = createContext(InitialState)
 export const QuizProvider = ({ children }: QuizTypeProvider) => {
 	const { QuizListData } = useQuiz()
 	const [quizList, setQuizList] = useState<Question[]>(QuizListData)
+	const [changeID, setChangeID] = useState<number>(0)
 
-	console.log(quizList)
+	const handleChangeQuiz = () => {
+		if (changeID < 9) {
+			setChangeID(changeID + 1)
+		}
+	}
 
 	return (
-		<QuizContext.Provider value={{ quizList }}>
+		<QuizContext.Provider value={{ quizList, changeID, handleChangeQuiz }}>
 			{children}
 			<Analytics />
 		</QuizContext.Provider>
 	)
 }
 
-export default QuizProvider
+export default QuizContext
