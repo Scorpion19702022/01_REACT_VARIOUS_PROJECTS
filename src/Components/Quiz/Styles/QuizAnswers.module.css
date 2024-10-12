@@ -32,9 +32,16 @@
 
 .box_progress {
 	width: 90%;
-	height: 100px;
+	height: 20%;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.progress_heading {
+	color: var(--color-color04);
+	margin-bottom: 0.4em;
 }
 
 .progress {
@@ -62,7 +69,7 @@
 
 .box_quiz {
 	width: 100%;
-	height: 70%;
+	height: 78%;
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
@@ -71,7 +78,7 @@
 
 .box_question {
 	width: 100%;
-	height: 240px;
+	height: 48%;
 	margin-bottom: 1em;
 	display: flex;
 	flex-direction: column;
@@ -96,6 +103,33 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+.box_answers {
+	width: 100%;
+	height: 48%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.answers_list {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	list-style-type: none;
+}
+
+.answer {
+	width: 100%;
+}
+
+.btn_answer {
+	width: 100%;
+	margin: 0.4em 0em;
 }
 
 @media (min-width: 660px) {
