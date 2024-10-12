@@ -1,12 +1,5 @@
-type Question = {
-	id: number
-	question: string
-	img: string
-	answers: { answerText: string; isCorrect: boolean }[]
-}
-
 const useQuiz = () => {
-	const QuizList: Question[] = [
+	const QuizListData = [
 		{
 			id: 0,
 			question: 'Miasto z Pałacem Kultury i Pałacem Królewskim to?',
@@ -119,7 +112,7 @@ const useQuiz = () => {
 		},
 	]
 
-	return { QuizList }
+	return { QuizListData }
 }
 
 export default useQuiz
