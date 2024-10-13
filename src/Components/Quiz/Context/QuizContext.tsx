@@ -16,7 +16,7 @@ type InitialStateType = {
 	quizList: Question[]
 	answerIsWell: string[]
 	changeID: number
-	handleChangeQuiz: () => void
+	handleChangeQuiz: (selectedAnswer: string) => void
 }
 
 type QuizTypeProvider = {
@@ -29,7 +29,7 @@ const InitialState: InitialStateType = {
 	quizList: [],
 	answerIsWell: [],
 	changeID: 0,
-	handleChangeQuiz: () => {},
+	handleChangeQuiz: (selectedAnswer: string) => {},
 }
 
 const QuizContext = createContext(InitialState)
@@ -43,8 +43,17 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 	const [answerIsWell, setAnswerIsWell] = useState<string[]>([])
 	const [changeID, setChangeID] = useState<number>(0)
 
-	const handleChangeQuiz = () => {
-		if (changeID < 9) {
+	const handleChangeQuiz = (selectedAnswer: string) => {
+		const goodAnswer = quizList[changeID].goodAnswer
+		if (selectedAnswer === goodAnswer && changeID - 1) {
+			setAnswerIsWell([...answerIsWell, selectedAnswer])
+		} else {
+		}
+
+		if (changeID === quizList.length - 1) {
+		}
+
+		if (changeID < quizList.length - 1) {
 			setChangeID(changeID + 1)
 		}
 
@@ -52,21 +61,11 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 			setProgress(progress + 10)
 		}
 
-		if (progressHeading < 10) {
+		if (progressHeading < quizList.length) {
 			setProgressHeadig(progressHeading + 1)
 		}
-
-		const allAnswers = quizList[changeID].answers.map(item => item)
-		const goodAnswer = quizList[changeID].goodAnswer
-
-		const isGoodAnswer = allAnswers.find(item => item)
-
-		if (isGoodAnswer === goodAnswer) {
-			setAnswerIsWell([...answerIsWell, isGoodAnswer])
-		}
-
-		console.log(answerIsWell)
 	}
+	console.log(answerIsWell)
 
 	return (
 		<QuizContext.Provider value={{ progressHeading, progress, quizList, answerIsWell, changeID, handleChangeQuiz }}>

@@ -26,22 +26,22 @@ const QuizAnswers = () => {
 				<div className={styles.box_answers}>
 					<ul className={styles.answers_list}>
 						<li className={styles.answer}>
-							<button className={styles.btn_answer} onClick={handleChangeQuiz}>
+							<button className={styles.btn_answer} onClick={() => handleChangeQuiz(answer.answers[0])}>
 								{answer.answers[0]}
 							</button>
 						</li>
 						<li className={styles.answer}>
-							<button className={styles.btn_answer} onClick={handleChangeQuiz}>
+							<button className={styles.btn_answer} onClick={() => handleChangeQuiz(answer.answers[1])}>
 								{answer.answers[1]}
 							</button>
 						</li>
 						<li className={styles.answer}>
-							<button className={styles.btn_answer} onClick={handleChangeQuiz}>
+							<button className={styles.btn_answer} onClick={() => handleChangeQuiz(answer.answers[2])}>
 								{answer.answers[2]}
 							</button>
 						</li>
 						<li className={styles.answer}>
-							<button className={styles.btn_answer} onClick={handleChangeQuiz}>
+							<button className={styles.btn_answer} onClick={() => handleChangeQuiz(answer.answers[3])}>
 								{answer.answers[3]}
 							</button>
 						</li>
