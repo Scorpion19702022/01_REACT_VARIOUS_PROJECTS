@@ -68,7 +68,7 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 				setProgress(progress + 10)
 				setProgressHeadig(progressHeading + 1)
 			}
-		}, 700)
+		}, 1000)
 
 		if (changeID === quizList.length - 1) {
 		}
