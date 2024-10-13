@@ -55,6 +55,25 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 		if (progressHeading < 10) {
 			setProgressHeadig(progressHeading + 1)
 		}
+
+		const test = quizList[changeID].answers.map(item => item)
+		const test2 = quizList[changeID].goodAnswer
+
+		const test3 = test.find(item => console.log(item))
+
+		console.log(test)
+
+		// if (test2 === test3) {
+		// 	console.log('YES')
+		// } else if (test2 !== test3) {
+		// 	console.log('NO')
+		// }
+
+		// if (test3) {
+		// 	setAnswerIsWell([...answerIsWell, test2])
+		// }
+
+		// console.log(answerIsWell)
 	}
 
 	return (
