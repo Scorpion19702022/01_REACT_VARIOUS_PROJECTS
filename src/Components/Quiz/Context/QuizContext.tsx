@@ -51,26 +51,38 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 
 	const handleChangeQuiz = (selectedAnswer: string) => {
 		const goodAnswer = quizList[changeID].goodAnswer
-		if (selectedAnswer === goodAnswer) {
-			setAnswerIsWell([...answerIsWell, selectedAnswer])
-			setAnswerInfo('Dobrze!!!')
-		} else {
-			setAnswerInfo('Żle!!!')
-		}
 
-		setPopupAnswerVisible(true)
-
-		setTimeout(() => {
-			setPopupAnswerVisible(false)
-			setAnswerInfo('')
-			if (changeID < quizList.length - 1) {
-				setChangeID(changeID + 1)
-				setProgress(progress + 10)
-				setProgressHeadig(progressHeading + 1)
+		if (changeID < quizList.length - 1) {
+			if (selectedAnswer === goodAnswer) {
+				setAnswerIsWell([...answerIsWell, selectedAnswer])
+				setAnswerInfo('Dobrze!!!')
+			} else {
+				setAnswerInfo('Źle!!!')
 			}
-		}, 1000)
 
-		if (changeID === quizList.length - 1) {
+			setPopupAnswerVisible(true)
+
+			setTimeout(() => {
+				setPopupAnswerVisible(false)
+				setAnswerInfo('')
+				setChangeID(prevID => prevID + 1)
+				setProgress(prevProgress => prevProgress + 10)
+				setProgressHeadig(prevHeading => prevHeading + 1)
+			}, 1000)
+		} else if (changeID === quizList.length - 1) {
+			if (selectedAnswer === goodAnswer) {
+				setAnswerIsWell([...answerIsWell, selectedAnswer])
+				setAnswerInfo('Dobrze!!!')
+			} else {
+				setAnswerInfo('Źle!!!')
+			}
+
+			setPopupAnswerVisible(true)
+
+			setTimeout(() => {
+				setPopupAnswerVisible(false)
+				setAnswerInfo('')
+			}, 1000)
 		}
 	}
 
