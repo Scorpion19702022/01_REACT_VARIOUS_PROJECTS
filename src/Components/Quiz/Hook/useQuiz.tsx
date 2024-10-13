@@ -66,7 +66,7 @@ const useQuiz = () => {
 		{
 			id: 9,
 			question: 'Most Karola, Hradczany, Ściana Johna Lennona i malownicze uliczki są w ...?',
-			img: 'https://cdn.pixabay.com/photo/2017/12/10/17/40/prague-3010407_960_720.jpg',
+			img: 'https://cdn.pixabay.com/photo/2020/04/13/17/02/charles-bridge-5039256_960_720.jpg',
 			answers: ['Budapeszt', 'Londyn', 'Madryt', 'Praga'],
 			goodAnswer: 'Praga',
 		},
