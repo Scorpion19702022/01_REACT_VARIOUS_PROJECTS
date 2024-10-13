@@ -32,11 +32,12 @@
 
 .box_progress {
 	width: 90%;
-	height: 20%;
+	height: 18%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 2em;
 }
 
 .progress_heading {
@@ -46,7 +47,7 @@
 
 .progress {
 	width: 100%;
-	height: 20px;
+	height: 10px;
 	border-radius: 5px;
 	background-color: var(--color-dark09);
 	border: none;
@@ -69,34 +70,44 @@
 
 .box_quiz {
 	width: 100%;
-	height: 78%;
+	height: 80%;
 	padding: 1em;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.box_question {
-	width: 100%;
-	height: 48%;
-	margin-bottom: 1em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 }
 
+.box_question {
+	width: 100%;
+	height: 50%;
+	margin-bottom: 1.4em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.box_heading_question {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 2em;
+}
+
 .heading_question {
 	width: 100%;
-	height: 100px;
 	color: var(--color-color02);
 	font-weight: 200;
-	text-align: center;
 	font-size: 1.4em;
-	margin-bottom: 0.4em;
+	text-align: center;
 }
 .box_question_img {
-	width: 70%;
+	margin-top: 0.8em;
+	width: 100%;
+	height: 70%;
 }
 
 .question_img {
@@ -167,7 +178,29 @@
 	.box_question {
 		width: 48%;
 		height: 100%;
+		padding: 0em;
 	}
+
+	.box_heading_question {
+		height: 10%;
+	}
+
+	.heading_question {
+		font-size: 2em;
+	}
+
+	.box_question_img {
+		margin-top: 0.8em;
+		width: 100%;
+		height: 88%;
+	}
+
+	.question_img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
 	.box_answers {
 		width: 48%;
 		height: 100%;

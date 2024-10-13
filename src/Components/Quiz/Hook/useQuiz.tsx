@@ -2,7 +2,7 @@ const useQuiz = () => {
 	const QuizListData = [
 		{
 			id: 0,
-			question: 'Miasto z Pałacem Kultury i Pałacem Królewskim to?',
+			question: 'Miasto z Pałacem Kultury, Syrenką i Pałacem Królewskim to?',
 			img: 'https://cdn.pixabay.com/photo/2017/09/11/17/26/warsaw-2739767_960_720.jpg',
 			answers: ['Berlin', 'Warszawa', 'Paryż', 'Wiedeń'],
 			goodAnswer: 'Warszawa',
@@ -16,7 +16,7 @@ const useQuiz = () => {
 		},
 		{
 			id: 2,
-			question: 'Brama Brandenburska znajduje się w?',
+			question: 'Brama Brandenburska, słynna wieża telewizyjna znajdują się w?',
 			img: 'https://cdn.pixabay.com/photo/2021/10/27/09/06/gate-6746517_960_720.jpg',
 			answers: ['Amsterdam', 'Budapeszt', 'Ateny', 'Berlin'],
 			goodAnswer: 'Berlin',
@@ -51,7 +51,7 @@ const useQuiz = () => {
 		},
 		{
 			id: 7,
-			question: 'Pałac Buckingham, Big Ben i Królowa kojarzą się?',
+			question: 'Pałac Buckingham, Big Ben, Tower Bridge i Królowa kojarzą się?',
 			img: 'https://cdn.pixabay.com/photo/2017/06/11/18/03/big-ben-2393098_960_720.jpg',
 			answers: ['Londyn', 'Rzym', 'Warszawa', 'Madryt'],
 			goodAnswer: 'Londyn',
@@ -65,7 +65,7 @@ const useQuiz = () => {
 		},
 		{
 			id: 9,
-			question: 'Most Karola, Hradczany i malownicze uliczki są w ...?',
+			question: 'Most Karola, Hradczany, Ściana Johna Lennona i malownicze uliczki są w ...?',
 			img: 'https://cdn.pixabay.com/photo/2017/12/10/17/40/prague-3010407_960_720.jpg',
 			answers: ['Budapeszt', 'Londyn', 'Madryt', 'Praga'],
 			goodAnswer: 'Praga',

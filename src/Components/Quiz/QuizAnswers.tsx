@@ -16,7 +16,9 @@ const QuizAnswers = () => {
 			</div>
 			<div className={styles.box_quiz}>
 				<div className={styles.box_question}>
-					<h1 className={styles.heading_question}>{answer.question}</h1>
+					<div className={styles.box_heading_question}>
+						<h1 className={styles.heading_question}>{answer.question}</h1>
+					</div>
 					<div className={styles.box_question_img}>
 						<img className={styles.question_img} src={answer.img} alt='city_pictures' />
 					</div>
