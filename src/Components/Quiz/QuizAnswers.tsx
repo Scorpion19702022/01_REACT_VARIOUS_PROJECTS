@@ -4,7 +4,8 @@ import styles from './Styles/QuizAnswers.module.css'
 import QuizContext from './Context/QuizContext'
 
 const QuizAnswers = () => {
-	const { progressHeading, progress, quizList, changeID, handleChangeQuiz } = useContext(QuizContext)
+	const { progressHeading, progress, quizList, changeID, answerInfo, popupAnswerVisible, handleChangeQuiz } =
+		useContext(QuizContext)
 
 	const answer = quizList[changeID]
 
@@ -15,6 +16,9 @@ const QuizAnswers = () => {
 				<progress className={styles.progress} max='100' value={progress}></progress>
 			</div>
 			<div className={styles.box_quiz}>
+				<div className={popupAnswerVisible ? styles.box_popup : styles.no_box_popup}>
+					<h2 className={styles.popup_info}>{answerInfo}</h2>
+				</div>
 				<div className={styles.box_question}>
 					<div className={styles.box_heading_question}>
 						<h1 className={styles.heading_question}>{answer.question}</h1>

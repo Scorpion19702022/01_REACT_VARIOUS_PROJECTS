@@ -16,6 +16,8 @@ type InitialStateType = {
 	quizList: Question[]
 	answerIsWell: string[]
 	changeID: number
+	answerInfo: string
+	popupAnswerVisible: boolean
 	handleChangeQuiz: (selectedAnswer: string) => void
 }
 
@@ -29,6 +31,8 @@ const InitialState: InitialStateType = {
 	quizList: [],
 	answerIsWell: [],
 	changeID: 0,
+	answerInfo: '',
+	popupAnswerVisible: false,
 	handleChangeQuiz: (selectedAnswer: string) => {},
 }
 
@@ -42,33 +46,48 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 	const [quizList, setQuizList] = useState<Question[]>(QuizListData)
 	const [answerIsWell, setAnswerIsWell] = useState<string[]>([])
 	const [changeID, setChangeID] = useState<number>(0)
+	const [answerInfo, setAnswerInfo] = useState<string>('')
+	const [popupAnswerVisible, setPopupAnswerVisible] = useState<boolean>(false)
 
 	const handleChangeQuiz = (selectedAnswer: string) => {
 		const goodAnswer = quizList[changeID].goodAnswer
-		if (selectedAnswer === goodAnswer && changeID - 1) {
+		if (selectedAnswer === goodAnswer) {
 			setAnswerIsWell([...answerIsWell, selectedAnswer])
+			setAnswerInfo('Dobrze!!!')
 		} else {
+			setAnswerInfo('Żle!!!')
 		}
+
+		setPopupAnswerVisible(true)
+
+		setTimeout(() => {
+			setPopupAnswerVisible(false)
+			setAnswerInfo('')
+			if (changeID < quizList.length - 1) {
+				setChangeID(changeID + 1)
+				setProgress(progress + 10)
+				setProgressHeadig(progressHeading + 1)
+			}
+		}, 700)
 
 		if (changeID === quizList.length - 1) {
-		}
-
-		if (changeID < quizList.length - 1) {
-			setChangeID(changeID + 1)
-		}
-
-		if (progress <= 100) {
-			setProgress(progress + 10)
-		}
-
-		if (progressHeading < quizList.length) {
-			setProgressHeadig(progressHeading + 1)
 		}
 	}
 	console.log(answerIsWell)
 
 	return (
-		<QuizContext.Provider value={{ progressHeading, progress, quizList, answerIsWell, changeID, handleChangeQuiz }}>
+		<QuizContext.Provider
+			value={{
+				progressHeading,
+				progress,
+				quizList,
+				answerIsWell,
+				changeID,
+				answerInfo,
+				popupAnswerVisible,
+				handleChangeQuiz,
+			}}
+		>
 			{children}
 			<Analytics />
 		</QuizContext.Provider>
