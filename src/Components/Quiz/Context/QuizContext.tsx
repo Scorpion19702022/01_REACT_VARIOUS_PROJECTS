@@ -73,6 +73,8 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 		if (changeID === quizList.length - 1) {
 		}
 	}
+
+	console.log(quizList.length)
 	console.log(answerIsWell)
 
 	return (
