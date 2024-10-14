@@ -19,7 +19,9 @@ type InitialStateType = {
 	answerInfo: string
 	popupAnswerVisible: boolean
 	quizFinished: boolean
+	resultsInfo: string
 	handleChangeQuiz: (selectedAnswer: string) => void
+	handleRestartQuiz: () => void
 }
 
 type QuizTypeProvider = {
@@ -35,7 +37,9 @@ const InitialState: InitialStateType = {
 	answerInfo: '',
 	popupAnswerVisible: false,
 	quizFinished: false,
+	resultsInfo: '',
 	handleChangeQuiz: (selectedAnswer: string) => {},
+	handleRestartQuiz: () => {},
 }
 
 const QuizContext = createContext(InitialState)
@@ -51,6 +55,7 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 	const [answerInfo, setAnswerInfo] = useState<string>('')
 	const [popupAnswerVisible, setPopupAnswerVisible] = useState<boolean>(false)
 	const [quizFinished, setQuizFinished] = useState<boolean>(false)
+	const [resultsInfo, setResultsInfo] = useState<string>('')
 
 	const handleChangeQuiz = (selectedAnswer: string) => {
 		if (quizFinished) return
@@ -91,10 +96,29 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 				setProgress(100)
 			}, 1000)
 		}
+
+		if (answerIsWell.length === 10) {
+			setResultsInfo('ZNAKOMICIE!!! Chyba często odwiedzasz stolice europejskie')
+		} else if (answerIsWell.length < 10 && answerIsWell.length >= 9) {
+			setResultsInfo('Trochę zabrakło, ale to świetny wynik')
+		} else if (answerIsWell.length <= 8 && answerIsWell.length >= 7) {
+			setResultsInfo('Prawie podium, dobra robota')
+		} else if (answerIsWell.length < 7 && answerIsWell.length >= 5) {
+			setResultsInfo('Oj. Może trzeba się wybrać na wycieczkę po Europie?')
+		} else if (answerIsWell.length < 5 && answerIsWell.length > 2) {
+			setResultsInfo('Kiepsko. Te pytania były przecież łatwe')
+		} else if (answerIsWell.length <= 2) {
+			setResultsInfo('FATALNIE!!! Spróbuj jeszcze raz bo to niemożliwe')
+		}
 	}
 
-	console.log(quizList.length)
-	console.log(answerIsWell)
+	const handleRestartQuiz = () => {
+		setProgress(10)
+		setAnswerIsWell([])
+		setChangeID(0)
+		setQuizFinished(false)
+		setResultsInfo('')
+	}
 
 	return (
 		<QuizContext.Provider
@@ -107,7 +131,9 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 				answerInfo,
 				popupAnswerVisible,
 				quizFinished,
+				resultsInfo,
 				handleChangeQuiz,
+				handleRestartQuiz,
 			}}
 		>
 			{children}

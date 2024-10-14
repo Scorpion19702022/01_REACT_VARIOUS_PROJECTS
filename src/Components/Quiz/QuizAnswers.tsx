@@ -13,7 +13,9 @@ const QuizAnswers = () => {
 		answerInfo,
 		popupAnswerVisible,
 		quizFinished,
+		resultsInfo,
 		handleChangeQuiz,
+		handleRestartQuiz,
 	} = useContext(QuizContext)
 
 	const answer = quizList[changeID]
@@ -34,8 +36,10 @@ const QuizAnswers = () => {
 						<h3 className={styles.popup_finish_result}>
 							Twój wynik: {answerIsWell.length} / {quizList.length}
 						</h3>
-						<span className={styles.popup_finish_description}>Opis wyniku twojego bum bum bum</span>
-						<button className={styles.popup_btn_finish}>Rozpocznij jeszcze raz</button>
+						<span className={styles.popup_finish_description}>{resultsInfo}</span>
+						<button className={styles.popup_btn_finish} onClick={handleRestartQuiz}>
+							Rozpocznij jeszcze raz
+						</button>
 					</div>
 				)}
 				<div className={styles.box_question}>
