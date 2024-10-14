@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import useQuiz from '../Hook/useQuiz'
 
@@ -57,6 +57,22 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 	const [quizFinished, setQuizFinished] = useState<boolean>(false)
 	const [resultsInfo, setResultsInfo] = useState<string>('')
 
+	useEffect(() => {
+		if (answerIsWell.length === 10) {
+			setResultsInfo('ZNAKOMICIE!!! Chyba często odwiedzasz stolice europejskie')
+		} else if (answerIsWell.length < 10 && answerIsWell.length >= 9) {
+			setResultsInfo('Trochę zabrakło, ale to świetny wynik')
+		} else if (answerIsWell.length <= 8 && answerIsWell.length >= 7) {
+			setResultsInfo('Prawie podium, dobra robota')
+		} else if (answerIsWell.length < 7 && answerIsWell.length >= 5) {
+			setResultsInfo('Oj. Może trzeba się wybrać na wycieczkę po Europie?')
+		} else if (answerIsWell.length < 5 && answerIsWell.length > 2) {
+			setResultsInfo('Kiepsko. Te pytania były przecież łatwe')
+		} else if (answerIsWell.length <= 2) {
+			setResultsInfo('FATALNIE!!! Spróbuj jeszcze raz bo to niemożliwe')
+		}
+	}, [answerIsWell.length])
+
 	const handleChangeQuiz = (selectedAnswer: string) => {
 		if (quizFinished) return
 
@@ -95,20 +111,6 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 				setQuizFinished(true)
 				setProgress(100)
 			}, 1000)
-		}
-
-		if (answerIsWell.length === 10) {
-			setResultsInfo('ZNAKOMICIE!!! Chyba często odwiedzasz stolice europejskie')
-		} else if (answerIsWell.length < 10 && answerIsWell.length >= 9) {
-			setResultsInfo('Trochę zabrakło, ale to świetny wynik')
-		} else if (answerIsWell.length <= 8 && answerIsWell.length >= 7) {
-			setResultsInfo('Prawie podium, dobra robota')
-		} else if (answerIsWell.length < 7 && answerIsWell.length >= 5) {
-			setResultsInfo('Oj. Może trzeba się wybrać na wycieczkę po Europie?')
-		} else if (answerIsWell.length < 5 && answerIsWell.length > 2) {
-			setResultsInfo('Kiepsko. Te pytania były przecież łatwe')
-		} else if (answerIsWell.length <= 2) {
-			setResultsInfo('FATALNIE!!! Spróbuj jeszcze raz bo to niemożliwe')
 		}
 	}
 

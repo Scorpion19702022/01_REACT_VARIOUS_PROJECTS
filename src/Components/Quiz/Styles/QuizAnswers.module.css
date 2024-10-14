@@ -129,6 +129,7 @@
 
 .popup_finish_description {
 	color: var(--color-color03);
+	text-align: center;
 }
 
 .popup_btn_finish {
