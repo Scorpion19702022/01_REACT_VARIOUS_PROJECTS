@@ -206,6 +206,12 @@
 	color: var(--color-color02);
 }
 
+.btn_answer:disabled {
+	background-color: var(--color-dark05);
+	border: 0.04em solid var(--color-dark07);
+	color: var(--color-dark09);
+}
+
 @media (min-width: 660px) {
 }
 

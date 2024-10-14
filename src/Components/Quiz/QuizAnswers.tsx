@@ -49,22 +49,38 @@ const QuizAnswers = () => {
 				<div className={styles.box_answers}>
 					<ul className={styles.answers_list}>
 						<li className={styles.answer}>
-							<button className={styles.btn_answer} onClick={() => handleChangeQuiz(answer.answers[0])}>
+							<button
+								className={styles.btn_answer}
+								onClick={() => handleChangeQuiz(answer.answers[0])}
+								disabled={quizFinished ? true : false}
+							>
 								{answer.answers[0]}
 							</button>
 						</li>
 						<li className={styles.answer}>
-							<button className={styles.btn_answer} onClick={() => handleChangeQuiz(answer.answers[1])}>
+							<button
+								className={styles.btn_answer}
+								onClick={() => handleChangeQuiz(answer.answers[1])}
+								disabled={quizFinished ? true : false}
+							>
 								{answer.answers[1]}
 							</button>
 						</li>
 						<li className={styles.answer}>
-							<button className={styles.btn_answer} onClick={() => handleChangeQuiz(answer.answers[2])}>
+							<button
+								className={styles.btn_answer}
+								onClick={() => handleChangeQuiz(answer.answers[2])}
+								disabled={quizFinished ? true : false}
+							>
 								{answer.answers[2]}
 							</button>
 						</li>
 						<li className={styles.answer}>
-							<button className={styles.btn_answer} onClick={() => handleChangeQuiz(answer.answers[3])}>
+							<button
+								className={styles.btn_answer}
+								onClick={() => handleChangeQuiz(answer.answers[3])}
+								disabled={quizFinished ? true : false}
+							>
 								{answer.answers[3]}
 							</button>
 						</li>
