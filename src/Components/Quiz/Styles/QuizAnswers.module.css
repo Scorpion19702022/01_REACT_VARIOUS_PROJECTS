@@ -133,6 +133,10 @@
 
 .popup_btn_finish {
 	width: 100%;
+	background-color: var(--color-dark08);
+	padding: 0.4em;
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color03);
 }
 
 .box_question {
