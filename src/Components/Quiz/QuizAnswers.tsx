@@ -4,8 +4,17 @@ import styles from './Styles/QuizAnswers.module.css'
 import QuizContext from './Context/QuizContext'
 
 const QuizAnswers = () => {
-	const { progressHeading, progress, quizList, changeID, answerInfo, popupAnswerVisible, handleChangeQuiz } =
-		useContext(QuizContext)
+	const {
+		progressHeading,
+		progress,
+		quizList,
+		answerIsWell,
+		changeID,
+		answerInfo,
+		popupAnswerVisible,
+		quizFinished,
+		handleChangeQuiz,
+	} = useContext(QuizContext)
 
 	const answer = quizList[changeID]
 
@@ -19,6 +28,16 @@ const QuizAnswers = () => {
 				<div className={popupAnswerVisible ? styles.box_popup : styles.no_box_popup}>
 					<h2 className={styles.popup_info}>{answerInfo}</h2>
 				</div>
+				{quizFinished && (
+					<div className={styles.box_popup_finish}>
+						<h2 className={styles.heading_popup_finish}>Koniec quizu!</h2>
+						<h3 className={styles.popup_finish_result}>
+							Twój wynik: {answerIsWell.length} / {quizList.length}
+						</h3>
+						<span className={styles.popup_finish_description}>Opis wyniku twojego bum bum bum</span>
+						<button className={styles.popup_btn_finish}>Rozpocznij jeszcze raz</button>
+					</div>
+				)}
 				<div className={styles.box_question}>
 					<div className={styles.box_heading_question}>
 						<h1 className={styles.heading_question}>{answer.question}</h1>
