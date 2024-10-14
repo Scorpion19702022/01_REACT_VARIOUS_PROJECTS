@@ -18,6 +18,7 @@ type InitialStateType = {
 	changeID: number
 	answerInfo: string
 	popupAnswerVisible: boolean
+	quizFinished: boolean
 	handleChangeQuiz: (selectedAnswer: string) => void
 }
 
@@ -33,6 +34,7 @@ const InitialState: InitialStateType = {
 	changeID: 0,
 	answerInfo: '',
 	popupAnswerVisible: false,
+	quizFinished: false,
 	handleChangeQuiz: (selectedAnswer: string) => {},
 }
 
@@ -48,8 +50,11 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 	const [changeID, setChangeID] = useState<number>(0)
 	const [answerInfo, setAnswerInfo] = useState<string>('')
 	const [popupAnswerVisible, setPopupAnswerVisible] = useState<boolean>(false)
+	const [quizFinished, setQuizFinished] = useState<boolean>(false)
 
 	const handleChangeQuiz = (selectedAnswer: string) => {
+		if (quizFinished) return
+
 		const goodAnswer = quizList[changeID].goodAnswer
 
 		if (changeID < quizList.length - 1) {
@@ -82,6 +87,8 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 			setTimeout(() => {
 				setPopupAnswerVisible(false)
 				setAnswerInfo('')
+				setQuizFinished(true)
+				setProgress(100)
 			}, 1000)
 		}
 	}
@@ -99,6 +106,7 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 				changeID,
 				answerInfo,
 				popupAnswerVisible,
+				quizFinished,
 				handleChangeQuiz,
 			}}
 		>
