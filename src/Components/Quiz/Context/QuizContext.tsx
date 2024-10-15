@@ -62,9 +62,9 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 			setResultsInfo('ZNAKOMICIE!!! Chyba często odwiedzasz stolice europejskie')
 		} else if (answerIsWell.length < 10 && answerIsWell.length >= 9) {
 			setResultsInfo('Trochę zabrakło, ale to świetny wynik')
-		} else if (answerIsWell.length <= 8 && answerIsWell.length >= 7) {
+		} else if (answerIsWell.length <= 8 && answerIsWell.length > 7) {
 			setResultsInfo('Prawie podium, dobra robota')
-		} else if (answerIsWell.length < 7 && answerIsWell.length >= 5) {
+		} else if (answerIsWell.length <= 7 && answerIsWell.length >= 5) {
 			setResultsInfo('Oj. Może trzeba się wybrać na wycieczkę po Europie?')
 		} else if (answerIsWell.length < 5 && answerIsWell.length > 2) {
 			setResultsInfo('Kiepsko. Te pytania były przecież łatwe')
@@ -115,6 +115,7 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 	}
 
 	const handleRestartQuiz = () => {
+		setProgressHeadig(1)
 		setProgress(10)
 		setAnswerIsWell([])
 		setChangeID(0)
