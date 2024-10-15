@@ -10,6 +10,7 @@ import imgSlider03 from './assets/imgSwiper03.jpg'
 import imgSlider04 from './assets/imgSwiper04.jpg'
 import imgSlider05 from './assets/imgSwiper05.jpg'
 import imgSlider06 from './assets/imgSwiper06.jpg'
+import imgSlider07 from './assets/imgSwiper07.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -122,6 +123,18 @@ const HomeSwiper = () => {
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider06} alt='photoSlider' />
+				</SwiperSlide>
+				<SwiperSlide className={styles.box_swiper}>
+					<NavLink to='./Quiz'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>Quiz</h4>
+						<p className={styles.card_text}>
+							10 pytań o stolice europejskie. Pokazuje poszczególne wyniki oraz wynik końcowy.
+						</p>
+					</div>
+					<img className={styles.card_img} src={imgSlider07} alt='photoSlider' />
 				</SwiperSlide>
 			</Swiper>
 		</section>
