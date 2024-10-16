@@ -56,7 +56,7 @@ const QuizAnswers = () => {
 							<button
 								className={styles.btn_answer}
 								onClick={() => handleChangeQuiz(answer.answers[0])}
-								disabled={quizFinished ? true : false}
+								disabled={quizFinished || popupAnswerVisible ? true : false}
 							>
 								{answer.answers[0]}
 							</button>
@@ -65,7 +65,7 @@ const QuizAnswers = () => {
 							<button
 								className={styles.btn_answer}
 								onClick={() => handleChangeQuiz(answer.answers[1])}
-								disabled={quizFinished ? true : false}
+								disabled={quizFinished || popupAnswerVisible ? true : false}
 							>
 								{answer.answers[1]}
 							</button>
@@ -74,7 +74,7 @@ const QuizAnswers = () => {
 							<button
 								className={styles.btn_answer}
 								onClick={() => handleChangeQuiz(answer.answers[2])}
-								disabled={quizFinished ? true : false}
+								disabled={quizFinished || popupAnswerVisible ? true : false}
 							>
 								{answer.answers[2]}
 							</button>
@@ -83,7 +83,7 @@ const QuizAnswers = () => {
 							<button
 								className={styles.btn_answer}
 								onClick={() => handleChangeQuiz(answer.answers[3])}
-								disabled={quizFinished ? true : false}
+								disabled={quizFinished || popupAnswerVisible ? true : false}
 							>
 								{answer.answers[3]}
 							</button>
