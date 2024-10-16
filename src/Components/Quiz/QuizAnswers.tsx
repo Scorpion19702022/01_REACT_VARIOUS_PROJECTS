@@ -14,7 +14,6 @@ const QuizAnswers = () => {
 		popupAnswerVisible,
 		quizFinished,
 		resultsInfo,
-		blockAnswer,
 		handleChangeQuiz,
 		handleRestartQuiz,
 	} = useContext(QuizContext)
@@ -57,7 +56,7 @@ const QuizAnswers = () => {
 							<button
 								className={styles.btn_answer}
 								onClick={() => handleChangeQuiz(answer.answers[0])}
-								disabled={blockAnswer ? true : false}
+								disabled={quizFinished ? true : false}
 							>
 								{answer.answers[0]}
 							</button>
@@ -66,7 +65,7 @@ const QuizAnswers = () => {
 							<button
 								className={styles.btn_answer}
 								onClick={() => handleChangeQuiz(answer.answers[1])}
-								disabled={blockAnswer ? true : false}
+								disabled={quizFinished ? true : false}
 							>
 								{answer.answers[1]}
 							</button>
@@ -75,7 +74,7 @@ const QuizAnswers = () => {
 							<button
 								className={styles.btn_answer}
 								onClick={() => handleChangeQuiz(answer.answers[2])}
-								disabled={blockAnswer ? true : false}
+								disabled={quizFinished ? true : false}
 							>
 								{answer.answers[2]}
 							</button>
@@ -84,7 +83,7 @@ const QuizAnswers = () => {
 							<button
 								className={styles.btn_answer}
 								onClick={() => handleChangeQuiz(answer.answers[3])}
-								disabled={blockAnswer ? true : false}
+								disabled={quizFinished ? true : false}
 							>
 								{answer.answers[3]}
 							</button>

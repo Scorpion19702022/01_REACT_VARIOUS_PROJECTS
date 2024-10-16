@@ -20,7 +20,6 @@ type InitialStateType = {
 	popupAnswerVisible: boolean
 	quizFinished: boolean
 	resultsInfo: string
-	blockAnswer: boolean
 	handleChangeQuiz: (selectedAnswer: string) => void
 	handleRestartQuiz: () => void
 }
@@ -39,7 +38,6 @@ const InitialState: InitialStateType = {
 	popupAnswerVisible: false,
 	quizFinished: false,
 	resultsInfo: '',
-	blockAnswer: false,
 	handleChangeQuiz: (selectedAnswer: string) => {},
 	handleRestartQuiz: () => {},
 }
@@ -58,7 +56,6 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 	const [popupAnswerVisible, setPopupAnswerVisible] = useState<boolean>(false)
 	const [quizFinished, setQuizFinished] = useState<boolean>(false)
 	const [resultsInfo, setResultsInfo] = useState<string>('')
-	const [blockAnswer, setBlockAswer] = useState<boolean>(false)
 
 	useEffect(() => {
 		if (answerIsWell.length === 10) {
@@ -77,7 +74,7 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 	}, [answerIsWell.length])
 
 	const handleChangeQuiz = (selectedAnswer: string) => {
-		if (quizFinished) return
+		if (quizFinished || popupAnswerVisible) return
 
 		const goodAnswer = quizList[changeID].goodAnswer
 
@@ -138,7 +135,6 @@ export const QuizProvider = ({ children }: QuizTypeProvider) => {
 				popupAnswerVisible,
 				quizFinished,
 				resultsInfo,
-				blockAnswer,
 				handleChangeQuiz,
 				handleRestartQuiz,
 			}}
