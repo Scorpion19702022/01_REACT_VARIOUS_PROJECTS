@@ -29,8 +29,31 @@
 	padding: 1em;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	border: 0.04em solid var(--color-color07);
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
+}
+
+.heading {
+	width: 100%;
+	color: var(--color-dark02);
+	font-size: 3em;
+	font-family: 'Tilt Warp', sans-serif;
+	text-align: center;
+}
+
+.box_img {
+	margin: 0em 1.1em;
+	width: 18%;
+}
+
+.img {
+	position: absolute;
+	top: -55%;
+	left: 28%;
+	width: 30%;
+	object-fit: cover;
+	transform: rotate(-30deg);
 }
 
 @media (min-width: 660px) {
