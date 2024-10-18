@@ -8,11 +8,11 @@ const StopwatchHeader = () => {
 		<section className={styles.wrapper}>
 			<div className={styles.box_header}>
 				<h1 className={styles.heading}>
-					ST{' '}
+					STOP{' '}
 					<span className={styles.box_img}>
 						<img className={styles.img} src={Watch} alt='stopwatch_picture' />
 					</span>
-					PER
+					WATCH
 				</h1>
 			</div>
 		</section>
