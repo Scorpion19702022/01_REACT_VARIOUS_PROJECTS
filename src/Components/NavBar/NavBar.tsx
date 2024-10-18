@@ -69,6 +69,11 @@ const NavBar = () => {
 							Quiz
 						</li>
 					</NavLink>
+					<NavLink to='./Stopwatch'>
+						<li className={styles.link} onClick={handleNavView}>
+							Stoper
+						</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>

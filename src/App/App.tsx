@@ -19,6 +19,7 @@ import SalaryCalculator from '../Components/SalaryCalculator/SalaryCalculator'
 import SnackBar from '../Components/SnackBar/SnackBar'
 import TicTacToe from '../Components/TicTacToe/TicTacToe'
 import Quiz from '../Components/Quiz/Quiz'
+import Stopwatch from '../Components/Stopwatch/Stopwatch'
 
 function App() {
 	return (
@@ -41,6 +42,7 @@ function App() {
 					<Route path='/SnackBar' Component={SnackBar} />
 					<Route path='/TicTacToe' Component={TicTacToe} />
 					<Route path='/Quiz' Component={Quiz} />
+					<Route path='/Stopwatch' Component={Stopwatch} />
 				</Routes>
 			</section>
 		</Router>
