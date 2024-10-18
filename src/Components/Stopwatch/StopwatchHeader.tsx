@@ -1,8 +1,10 @@
 import React from 'react'
 
+import styles from './Styles/StopwatchHeader.module.css'
+
 const StopwatchHeader = () => {
 	return (
-		<section>
+		<section className={styles.wrapper}>
 			<h1>Stoper</h1>
 		</section>
 	)
