@@ -46,7 +46,7 @@
 	width: 100%;
 	color: var(--color-dark02);
 	font-size: 3em;
-	font-family: 'Tilt Warp', sans-serif;
+	font-family: 'Kanit', sans-serif;
 	text-align: center;
 }
 
@@ -69,7 +69,6 @@
 		width: 100%;
 		color: var(--color-dark02);
 		font-size: 3em;
-		font-family: 'Tilt Warp', sans-serif;
 		text-align: center;
 	}
 
@@ -79,12 +78,9 @@
 	}
 
 	.img {
-		position: absolute;
 		top: -65%;
-		left: 36%;
+		left: 35.5%;
 		width: 20%;
-		object-fit: cover;
-		transform: rotate(-30deg);
 	}
 }
 
@@ -93,30 +89,19 @@
 		width: 60%;
 		height: 120px;
 		padding: 1em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 
 	.heading {
-		width: 100%;
-		color: var(--color-dark02);
 		font-size: 5em;
-		font-family: 'Tilt Warp', sans-serif;
-		text-align: center;
 	}
 
 	.box_img {
 		margin: 0em 1.2em;
-		width: 18%;
 	}
 
 	.img {
-		position: absolute;
 		top: -68%;
 		left: 37.5%;
 		width: 17%;
-		object-fit: cover;
-		transform: rotate(-30deg);
 	}
 }
