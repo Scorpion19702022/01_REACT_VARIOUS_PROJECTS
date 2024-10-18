@@ -34,6 +34,14 @@
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
 }
 
+.box_header {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .heading {
 	width: 100%;
 	color: var(--color-dark02);
@@ -93,20 +101,20 @@
 	.heading {
 		width: 100%;
 		color: var(--color-dark02);
-		font-size: 6em;
+		font-size: 5em;
 		font-family: 'Tilt Warp', sans-serif;
 		text-align: center;
 	}
 
 	.box_img {
-		margin: 0em 1em;
+		margin: 0em 1.2em;
 		width: 18%;
 	}
 
 	.img {
 		position: absolute;
 		top: -68%;
-		left: 37%;
+		left: 37.5%;
 		width: 17%;
 		object-fit: cover;
 		transform: rotate(-30deg);
