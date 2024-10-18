@@ -57,6 +57,27 @@
 }
 
 @media (min-width: 660px) {
+	.heading {
+		width: 100%;
+		color: var(--color-dark02);
+		font-size: 3em;
+		font-family: 'Tilt Warp', sans-serif;
+		text-align: center;
+	}
+
+	.box_img {
+		margin: 0em 1.4em;
+		width: 18%;
+	}
+
+	.img {
+		position: absolute;
+		top: -65%;
+		left: 36%;
+		width: 20%;
+		object-fit: cover;
+		transform: rotate(-30deg);
+	}
 }
 
 @media (min-width: 992px) {
@@ -67,5 +88,27 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.heading {
+		width: 100%;
+		color: var(--color-dark02);
+		font-size: 6em;
+		font-family: 'Tilt Warp', sans-serif;
+		text-align: center;
+	}
+
+	.box_img {
+		margin: 0em 1em;
+		width: 18%;
+	}
+
+	.img {
+		position: absolute;
+		top: -68%;
+		left: 37%;
+		width: 17%;
+		object-fit: cover;
+		transform: rotate(-30deg);
 	}
 }

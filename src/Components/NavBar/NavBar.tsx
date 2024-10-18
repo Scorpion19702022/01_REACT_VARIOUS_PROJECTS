@@ -71,7 +71,7 @@ const NavBar = () => {
 					</NavLink>
 					<NavLink to='./Stopwatch'>
 						<li className={styles.link} onClick={handleNavView}>
-							Stoper
+							Stopwatch
 						</li>
 					</NavLink>
 				</ul>
