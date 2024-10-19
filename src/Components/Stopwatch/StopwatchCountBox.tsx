@@ -14,6 +14,12 @@ const StopwatchCoutBox = () => {
 			<div className={styles.box_count}>
 				<span className={styles.count}>0:00</span>
 			</div>
+			<div className={styles.box_control}>
+				<button className={styles.btn_control}></button>
+				<button className={styles.btn_control}></button>
+				<button className={styles.btn_control}></button>
+				<button className={styles.btn_control}></button>
+			</div>
 		</section>
 	)
 }

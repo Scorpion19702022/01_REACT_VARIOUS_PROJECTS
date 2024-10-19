@@ -27,14 +27,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
 	margin: 1em 0em 2em 0em;
-	padding: 1em;
+	padding: 1.2em;
 	border: 0.04em solid var(--color-color07);
 }
 
 .box_icons {
 	width: 100%;
-	height: 15%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -48,7 +48,6 @@
 
 .box_count {
 	width: 100%;
-	height: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -56,8 +55,21 @@
 }
 
 .count {
-	font-size: 3em;
+	font-size: 4em;
 	color: var(--color-color03);
+}
+
+.box_control {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn_control {
+	width: 20%;
+	padding: 1em;
+	background-color: var(--color-dark07);
+	border: 0.04em solid var(--color-color07);
 }
 
 @media (min-width: 660px) {
