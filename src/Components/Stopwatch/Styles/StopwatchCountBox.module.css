@@ -67,9 +67,13 @@
 
 .btn_control {
 	width: 20%;
-	padding: 1em;
+	padding: 0.4em;
 	background-color: var(--color-dark07);
 	border: 0.04em solid var(--color-color07);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-color03);
 }
 
 @media (min-width: 660px) {
