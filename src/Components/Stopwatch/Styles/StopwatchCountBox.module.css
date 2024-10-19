@@ -183,6 +183,11 @@
 		height: 40%;
 	}
 
+	.no_box_modal_info {
+		right: 3%;
+		height: 40%;
+	}
+
 	.heading_info {
 		font-size: 1.6em;
 	}

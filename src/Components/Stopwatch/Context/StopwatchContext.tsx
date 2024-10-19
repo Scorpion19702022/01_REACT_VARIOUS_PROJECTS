@@ -1,19 +1,35 @@
 import { Analytics } from '@vercel/analytics/react'
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 
-type InitialStateType = {}
+type InitialStateType = {
+	modalInfo: boolean
+	handleServiceModalInfo: () => void
+	// handleOpenModalInfo: () => void
+	// handleCloseModalInfo: () => void
+}
 
 type StopwatchTypeProvider = {
 	children: React.ReactNode
 }
 
-const InitialState: InitialStateType = {}
+const InitialState: InitialStateType = {
+	modalInfo: false,
+	handleServiceModalInfo: () => void
+	// handleOpenModalInfo: () => {},
+	// handleCloseModalInfo: () => {},
+}
 
 const StopwatchCotext = createContext(InitialState)
 
 export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
+	const [modalInfo, setModalInfo] = useState<boolean>(false)
+
+	const handleServiceModalInfo = () => {
+		setModalInfo(!modalInfo)
+	}
+
 	return (
-		<StopwatchCotext.Provider value={{}}>
+		<StopwatchCotext.Provider value={{ modalInfo, handleServiceModalInfo }}>
 			{children} <Analytics />
 		</StopwatchCotext.Provider>
 	)
