@@ -29,8 +29,17 @@
 	align-items: center;
 	justify-content: space-between;
 	margin: 1em 0em 2em 0em;
-	padding: 1.2em;
+	padding: 2em;
 	border: 0.04em solid var(--color-color07);
+}
+
+.time_list {
+	width: 100%;
+	/* list-style-type: none; */
+}
+
+.time {
+	color: var(--color-color02);
 }
 
 @media (min-width: 660px) {
