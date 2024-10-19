@@ -33,8 +33,17 @@
 	border: 0.04em solid var(--color-color07);
 }
 
-.box_icons {
+.box_header {
 	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.state_info {
+	color: var(--color-color04);
+}
+
+.box_icons {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -62,6 +71,7 @@
 .box_control {
 	width: 100%;
 	display: flex;
+	padding: 0.2em 0em;
 	justify-content: space-between;
 }
 
@@ -74,6 +84,22 @@
 	justify-content: center;
 	align-items: center;
 	color: var(--color-color03);
+}
+
+.box_archives {
+	width: 100%;
+	padding: 0.8em 0em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn_archives {
+	width: 100%;
+	padding: 0.4em;
+	background-color: var(--color-dark08);
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color04);
 }
 
 @media (min-width: 660px) {

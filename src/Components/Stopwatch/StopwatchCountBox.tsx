@@ -11,26 +11,32 @@ import styles from './Styles/StopwatchCountBox.module.css'
 const StopwatchCoutBox = () => {
 	return (
 		<section className={styles.wrapper}>
-			<div className={styles.box_icons}>
-				<AiFillInfoCircle className={styles.icon_info} />
-				<IoColorPalette className={styles.icon_info} />
+			<div className={styles.box_header}>
+				<h4 className={styles.state_info}> STAN</h4>
+				<div className={styles.box_icons}>
+					<AiFillInfoCircle className={styles.icon_info} />
+					<IoColorPalette className={styles.icon_info} />
+				</div>
 			</div>
 			<div className={styles.box_count}>
 				<span className={styles.count}>0:00</span>
+				<div className={styles.box_control}>
+					<button className={styles.btn_control}>
+						<FaPlay />
+					</button>
+					<button className={styles.btn_control}>
+						<FaPause />
+					</button>
+					<button className={styles.btn_control}>
+						<FaStop />
+					</button>
+					<button className={styles.btn_control}>
+						<ImCross />
+					</button>
+				</div>
 			</div>
-			<div className={styles.box_control}>
-				<button className={styles.btn_control}>
-					<FaPlay />
-				</button>
-				<button className={styles.btn_control}>
-					<FaPause />
-				</button>
-				<button className={styles.btn_control}>
-					<FaStop />
-				</button>
-				<button className={styles.btn_control}>
-					<ImCross />
-				</button>
+			<div className={styles.box_archives}>
+				<button className={styles.btn_archives}>archiwum</button>
 			</div>
 		</section>
 	)
