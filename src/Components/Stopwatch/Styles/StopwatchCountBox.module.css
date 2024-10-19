@@ -63,6 +63,23 @@
 
 .box_modal_info {
 	position: absolute;
+	visibility: visible;
+	top: 3%;
+	right: 5%;
+	width: 50%;
+	height: 95%;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var(--color-dark09);
+	border: 0.04em solid var(--color-color07);
+	box-shadow: 0.04em 0.04em 1em var(--color-dark09);
+}
+
+.no_box_modal_info {
+	position: absolute;
+	visibility: hidden;
 	top: 3%;
 	right: 5%;
 	width: 50%;
@@ -159,6 +176,30 @@
 
 	.state_info {
 		font-size: 2em;
+	}
+
+	.box_modal_info {
+		right: 3%;
+		height: 40%;
+	}
+
+	.heading_info {
+		font-size: 1.6em;
+	}
+
+	.text_info {
+		font-size: 1.2em;
+		padding: 0.1em 0em;
+	}
+
+	.btn_close_modal_info {
+		padding: 0.6em;
+		cursor: pointer;
+		transition: background-color 0.3s ease-in-out;
+	}
+
+	.btn_close_modal_info:hover {
+		background-color: var(--color-dark09);
 	}
 
 	.icon_info {
