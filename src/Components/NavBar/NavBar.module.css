@@ -121,6 +121,17 @@ a {
 	color: var(--color-color03);
 }
 
+@media (min-width: 660px) {
+	.link {
+		margin-bottom: 0.2em;
+	}
+
+	a {
+		padding: 0.08em 0em;
+		margin-bottom: 0.04em;
+	}
+}
+
 @media (min-width: 992px) {
 	.nav_btn {
 		opacity: 0;
@@ -139,5 +150,14 @@ a {
 		height: 100vh;
 		transform: translateX(0%);
 		border-right: 0.04em solid var(--color-dark04);
+	}
+
+	.link {
+		margin-bottom: 0.6em;
+	}
+
+	a {
+		padding: 0.2em 0em;
+		margin-bottom: 0.2em;
 	}
 }
