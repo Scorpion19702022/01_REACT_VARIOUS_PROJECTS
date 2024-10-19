@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { AiFillInfoCircle } from 'react-icons/ai'
 import { IoColorPalette } from 'react-icons/io5'
 import { FaPlay } from 'react-icons/fa6'
@@ -7,14 +7,17 @@ import { FaStop } from 'react-icons/fa6'
 import { ImCross } from 'react-icons/im'
 
 import styles from './Styles/StopwatchCountBox.module.css'
+import StopwatchCotext from './Context/StopwatchContext'
 
 const StopwatchCoutBox = () => {
+	const { modalInfo, handleServiceModalInfo } = useContext(StopwatchCotext)
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_header}>
 				<h4 className={styles.state_info}> STAN</h4>
 				<div className={styles.box_icons}>
-					<button className={styles.btn_icon}>
+					<button className={styles.btn_icon} onClick={handleServiceModalInfo}>
 						<AiFillInfoCircle className={styles.icon_info} />
 					</button>
 					<button className={styles.btn_icon}>
@@ -22,7 +25,7 @@ const StopwatchCoutBox = () => {
 					</button>
 				</div>
 			</div>
-			<div className={styles.box_modal_info}>
+			<div className={modalInfo ? styles.box_modal_info : styles.no_box_modal_info}>
 				<h3 className={styles.heading_info}>Instrukcja:</h3>
 				<div className={styles.box_text_info}>
 					<p className={styles.text_info}>
@@ -35,10 +38,12 @@ const StopwatchCoutBox = () => {
 						<FaStop /> <span className={styles.span_info}> - stop</span>
 					</p>
 					<p className={styles.text_info}>
-						<ImCross /> <span className={styles.span_info}> - skazuj wszystko</span>
+						<ImCross /> <span className={styles.span_info}> - skasuj wszystko</span>
 					</p>
 				</div>
-				<button className={styles.btn_close_modal_info}>zamknij</button>
+				<button className={styles.btn_close_modal_info} onClick={handleServiceModalInfo}>
+					zamknij
+				</button>
 			</div>
 			<div className={styles.box_count}>
 				<span className={styles.count}>0:00</span>

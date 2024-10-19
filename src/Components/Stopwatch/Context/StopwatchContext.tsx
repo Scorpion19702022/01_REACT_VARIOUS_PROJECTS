@@ -14,7 +14,7 @@ type StopwatchTypeProvider = {
 
 const InitialState: InitialStateType = {
 	modalInfo: false,
-	handleServiceModalInfo: () => void
+	handleServiceModalInfo: () => {},
 	// handleOpenModalInfo: () => {},
 	// handleCloseModalInfo: () => {},
 }
