@@ -111,4 +111,46 @@
 		height: 600px;
 		margin-top: 2em;
 	}
+
+	.state_info {
+		font-size: 2em;
+	}
+
+	.icon_info {
+		font-size: 2em;
+		cursor: pointer;
+		transition: color 0.3s ease-in-out;
+	}
+
+	.icon_info:hover {
+		color: var(--color-color06);
+	}
+
+	.count {
+		font-size: 8em;
+	}
+
+	.box_control {
+		padding: 0.6em 0em;
+	}
+
+	.btn_control {
+		font-size: 2em;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn_control:hover {
+		background-color: var(--color-dark09);
+	}
+
+	.btn_archives {
+		font-size: 1.4em;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn_archives:hover {
+		background-color: var(--color-dark09);
+	}
 }
