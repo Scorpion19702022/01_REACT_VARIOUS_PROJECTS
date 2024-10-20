@@ -110,7 +110,11 @@
 }
 
 .btn_change_color:nth-child(2) {
-	background-color: red;
+	background-color: #702963;
+}
+
+.btn_change_color:nth-child(3) {
+	background-color: #458b00;
 }
 
 .heading_info {
@@ -198,14 +202,25 @@
 		font-size: 2em;
 	}
 
-	.box_modal_info {
+	.box_modal_info,
+	.box_modal_change_color {
 		right: 3%;
 		height: 40%;
 	}
 
-	.no_box_modal_info {
+	.no_box_modal_info,
+	.no_box_modal_change_color {
 		right: 3%;
 		height: 40%;
+	}
+
+	.btn_change_color {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		border: 0.04em solid #ffffff;
+		background-color: #29809c;
+		box-shadow: 0.04em 0.04em 1em var(--color-dark02);
 	}
 
 	.heading_info {
