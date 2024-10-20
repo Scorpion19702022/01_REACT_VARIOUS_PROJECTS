@@ -96,13 +96,13 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 
 	useEffect(() => {
 		let interval: any
-		if (startCount && seconds < 9) {
+		if (startCount) {
 			interval = setInterval(() => {
 				setSeconds(prevSeconds => prevSeconds + 1)
 			}, 1000)
 		}
 		return () => clearInterval(interval)
-	}, [startCount, seconds])
+	}, [startCount])
 
 	const handleStart = () => {
 		setStartCount(true)
