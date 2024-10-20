@@ -8,15 +8,15 @@
 	--color-dark07: #1d1e1b;
 	--color-dark08: #121311;
 	--color-dark09: #050605;
-	--color-blue01: #d6ecf3;
-	--color-blue02: #add9e7;
-	--color-blue03: #85c6db;
-	--color-blue04: #5cb3cf;
-	--color-blue05: #34a0c4;
-	--color-blue06: #29809c;
-	--color-blue07: #1f6075;
-	--color-blue08: #14404e;
-	--color-blue09: #0a2027;
+	--color-theme01: #d6ecf3;
+	--color-theme02: #add9e7;
+	--color-theme03: #85c6db;
+	--color-theme04: #5cb3cf;
+	--color-theme05: #34a0c4;
+	--color-theme06: #29809c;
+	--color-theme07: #1f6075;
+	--color-theme08: #14404e;
+	--color-theme09: #0a2027;
 
 	--color-error: #ff0000;
 }
