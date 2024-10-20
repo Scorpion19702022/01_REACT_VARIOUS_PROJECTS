@@ -179,6 +179,17 @@
 	color: var(--color-theme02);
 }
 
+.btn_control_active {
+	width: 20%;
+	padding: 0.4em;
+	background-color: var(--color-theme07);
+	border: 0.04em solid var(--color-theme07);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-theme02);
+}
+
 .box_archives {
 	width: 100%;
 	padding: 0.8em 0em;
@@ -278,7 +289,17 @@
 		transition: background-color 0.2s ease-in-out;
 	}
 
+	.btn_control_active {
+		font-size: 2em;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
 	.btn_control:hover {
+		background-color: var(--color-dark09);
+	}
+
+	.btn_control_active:hover {
 		background-color: var(--color-dark09);
 	}
 

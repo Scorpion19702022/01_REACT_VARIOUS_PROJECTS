@@ -14,6 +14,7 @@ const StopwatchCoutBox = () => {
 		modalInfo,
 		modalColor,
 		stateStopwatch,
+		startCount,
 		minutes,
 		seconds,
 		handleServiceModalInfo,
@@ -69,10 +70,12 @@ const StopwatchCoutBox = () => {
 				<button className={styles.btn_change_color} onClick={() => handleServiceChangeColor('green')}></button>
 			</div>
 			<div className={styles.box_count}>
-				<span className={styles.count}>0:0{seconds}</span>
+				<span className={styles.count}>
+					{minutes}:0{seconds}
+				</span>
 				<span className={styles.time}>0:00</span>
 				<div className={styles.box_control}>
-					<button className={styles.btn_control} onClick={handleStart}>
+					<button className={!startCount ? styles.btn_control : styles.btn_control_active} onClick={handleStart}>
 						<FaPlay />
 					</button>
 					<button className={styles.btn_control}>
