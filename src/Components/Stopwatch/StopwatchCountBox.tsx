@@ -45,6 +45,11 @@ const StopwatchCoutBox = () => {
 					zamknij
 				</button>
 			</div>
+			<div className={styles.box_modal_change_color}>
+				<button className={styles.btn_change_color}></button>
+				<button className={styles.btn_change_color}></button>
+				<button className={styles.btn_change_color}></button>
+			</div>
 			<div className={styles.box_count}>
 				<span className={styles.count}>0:00</span>
 				{/* <span className={styles.count}>0:00</span> */}
