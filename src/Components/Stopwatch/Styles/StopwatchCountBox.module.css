@@ -24,7 +24,7 @@
 .wrapper {
 	position: relative;
 	width: 90%;
-	height: 200px;
+	height: 280px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -154,6 +154,13 @@
 	color: var(--color-theme02);
 }
 
+.time {
+	visibility: hidden;
+	font-size: 2em;
+	margin-bottom: 0.8em;
+	color: var(--color-theme02);
+}
+
 .box_control {
 	width: 100%;
 	display: flex;
@@ -255,6 +262,10 @@
 
 	.count {
 		font-size: 8em;
+	}
+
+	.time {
+		font-size: 4em;
 	}
 
 	.box_control {

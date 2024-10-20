@@ -1,13 +1,18 @@
 import { Analytics } from '@vercel/analytics/react'
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 type InitialStateType = {
 	modalInfo: boolean
 	modalColor: boolean
+	startCount: boolean
 	currentColor: string
+	stateStopwatch: string
+	minutes: number
+	seconds: number
 	handleServiceModalInfo: () => void
 	handleServiceModalChangeColor: () => void
 	handleServiceChangeColor: (color: string) => void
+	handleStart: () => void
 }
 
 type StopwatchTypeProvider = {
@@ -17,10 +22,15 @@ type StopwatchTypeProvider = {
 const InitialState: InitialStateType = {
 	modalInfo: false,
 	modalColor: false,
+	startCount: false,
 	currentColor: 'blue',
+	stateStopwatch: '',
+	minutes: 0,
+	seconds: 0,
 	handleServiceModalInfo: () => {},
 	handleServiceModalChangeColor: () => {},
 	handleServiceChangeColor: (color: string) => {},
+	handleStart: () => {},
 }
 
 const StopwatchCotext = createContext(InitialState)
@@ -29,6 +39,13 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	const [modalInfo, setModalInfo] = useState<boolean>(false)
 	const [modalColor, setModalColor] = useState<boolean>(false)
 	const [currentColor, setCurrentColor] = useState<string>('blue')
+
+	const [stateStopwatch, setStateStopwatch] = useState<string>('STAN')
+
+	const [startCount, setStartCount] = useState<boolean>(false)
+
+	const [minutes, setMinutes] = useState<number>(0)
+	const [seconds, setSeconds] = useState<number>(0)
 
 	const handleServiceModalInfo = () => {
 		setModalInfo(!modalInfo)
@@ -77,15 +94,35 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		}
 	}
 
+	useEffect(() => {
+		let interval: any
+		if (startCount) {
+			interval = setInterval(() => {
+				setSeconds(prevSeconds => prevSeconds + 1)
+			}, 1000)
+		}
+		return () => clearInterval(interval)
+	}, [startCount])
+
+	const handleStart = () => {
+		setStartCount(true)
+		setStateStopwatch('PLAY')
+	}
+
 	return (
 		<StopwatchCotext.Provider
 			value={{
 				modalInfo,
 				modalColor,
+				startCount,
 				currentColor,
+				stateStopwatch,
+				minutes,
+				seconds,
 				handleServiceModalInfo,
 				handleServiceModalChangeColor,
 				handleServiceChangeColor,
+				handleStart,
 			}}
 		>
 			{children} <Analytics />

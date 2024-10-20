@@ -10,13 +10,22 @@ import styles from './Styles/StopwatchCountBox.module.css'
 import StopwatchCotext from './Context/StopwatchContext'
 
 const StopwatchCoutBox = () => {
-	const { modalInfo, modalColor, handleServiceModalInfo, handleServiceModalChangeColor, handleServiceChangeColor } =
-		useContext(StopwatchCotext)
+	const {
+		modalInfo,
+		modalColor,
+		stateStopwatch,
+		minutes,
+		seconds,
+		handleServiceModalInfo,
+		handleServiceModalChangeColor,
+		handleServiceChangeColor,
+		handleStart,
+	} = useContext(StopwatchCotext)
 
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_header}>
-				<h4 className={styles.state_info}> STAN</h4>
+				<h4 className={styles.state_info}>{stateStopwatch}</h4>
 				<div className={styles.box_icons}>
 					<button className={styles.btn_icon} onClick={handleServiceModalInfo}>
 						<AiFillInfoCircle className={styles.icon_info} />
@@ -60,10 +69,10 @@ const StopwatchCoutBox = () => {
 				<button className={styles.btn_change_color} onClick={() => handleServiceChangeColor('green')}></button>
 			</div>
 			<div className={styles.box_count}>
-				<span className={styles.count}>0:00</span>
-				{/* <span className={styles.count}>0:00</span> */}
+				<span className={styles.count}>0:0{seconds}</span>
+				<span className={styles.time}>0:00</span>
 				<div className={styles.box_control}>
-					<button className={styles.btn_control}>
+					<button className={styles.btn_control} onClick={handleStart}>
 						<FaPlay />
 					</button>
 					<button className={styles.btn_control}>
