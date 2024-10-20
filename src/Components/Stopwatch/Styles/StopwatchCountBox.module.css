@@ -8,15 +8,15 @@
 	--color-dark07: #1d1e1b;
 	--color-dark08: #121311;
 	--color-dark09: #050605;
-	--color-color01: #d6ecf3;
-	--color-color02: #add9e7;
-	--color-color03: #85c6db;
-	--color-color04: #5cb3cf;
-	--color-color05: #34a0c4;
-	--color-color06: #29809c;
-	--color-color07: #1f6075;
-	--color-color08: #14404e;
-	--color-color09: #0a2027;
+	--color-blue01: #d6ecf3;
+	--color-blue02: #add9e7;
+	--color-blue03: #85c6db;
+	--color-blue04: #5cb3cf;
+	--color-blue05: #34a0c4;
+	--color-blue06: #29809c;
+	--color-blue07: #1f6075;
+	--color-blue08: #14404e;
+	--color-blue09: #0a2027;
 
 	--color-error: #ff0000;
 }
@@ -31,7 +31,7 @@
 	justify-content: space-between;
 	margin: 1em 0em 2em 0em;
 	padding: 1.2em;
-	border: 0.04em solid var(--color-color07);
+	border: 0.04em solid var(--color-blue07);
 }
 
 .box_header {
@@ -41,7 +41,7 @@
 }
 
 .state_info {
-	color: var(--color-color04);
+	color: var(--color-blue04);
 }
 
 .box_icons {
@@ -57,7 +57,7 @@
 
 .icon_info {
 	font-size: 1.2em;
-	color: var(--color-color04);
+	color: var(--color-blue04);
 	margin: 0em 0.2em;
 }
 
@@ -74,7 +74,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	background-color: var(--color-dark09);
-	border: 0.04em solid var(--color-color07);
+	border: 0.04em solid var(--color-blue07);
 	box-shadow: 0.04em 0.04em 1em var(--color-dark09);
 }
 
@@ -91,7 +91,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	background-color: var(--color-dark09);
-	border: 0.04em solid var(--color-color07);
+	border: 0.04em solid var(--color-blue07);
 	box-shadow: 0.04em 0.04em 1em var(--color-dark09);
 }
 
@@ -118,12 +118,12 @@
 }
 
 .heading_info {
-	color: var(--color-color04);
+	color: var(--color-blue04);
 	font-weight: 200;
 }
 
 .text_info {
-	color: var(--color-color04);
+	color: var(--color-blue04);
 	display: flex;
 	align-items: center;
 }
@@ -137,8 +137,8 @@
 	width: 100%;
 	padding: 0.2em;
 	background-color: var(--color-dark08);
-	border: 0.04em solid var(--color-color07);
-	color: var(--color-color04);
+	border: 0.04em solid var(--color-blue07);
+	color: var(--color-blue04);
 }
 
 .box_count {
@@ -151,7 +151,7 @@
 
 .count {
 	font-size: 4em;
-	color: var(--color-color03);
+	color: var(--color-blue03);
 }
 
 .box_control {
@@ -165,11 +165,11 @@
 	width: 20%;
 	padding: 0.4em;
 	background-color: var(--color-dark07);
-	border: 0.04em solid var(--color-color07);
+	border: 0.04em solid var(--color-blue07);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: var(--color-color03);
+	color: var(--color-blue03);
 }
 
 .box_archives {
@@ -184,8 +184,8 @@
 	width: 100%;
 	padding: 0.4em;
 	background-color: var(--color-dark08);
-	border: 0.04em solid var(--color-color07);
-	color: var(--color-color04);
+	border: 0.04em solid var(--color-blue07);
+	color: var(--color-blue04);
 }
 
 @media (min-width: 660px) {
@@ -250,7 +250,7 @@
 	}
 
 	.icon_info:hover {
-		color: var(--color-color06);
+		color: var(--color-blue06);
 	}
 
 	.count {

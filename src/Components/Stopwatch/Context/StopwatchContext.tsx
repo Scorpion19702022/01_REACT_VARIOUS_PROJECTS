@@ -4,6 +4,7 @@ import React, { createContext, useState } from 'react'
 type InitialStateType = {
 	modalInfo: boolean
 	modalColor: boolean
+	currentColor: string
 	handleServiceModalInfo: () => void
 	handleServiceModalChangeColor: () => void
 	handleServiceChangeColor: (color: string) => void
@@ -16,6 +17,7 @@ type StopwatchTypeProvider = {
 const InitialState: InitialStateType = {
 	modalInfo: false,
 	modalColor: false,
+	currentColor: 'blue',
 	handleServiceModalInfo: () => {},
 	handleServiceModalChangeColor: () => {},
 	handleServiceChangeColor: (color: string) => {},
@@ -26,6 +28,7 @@ const StopwatchCotext = createContext(InitialState)
 export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	const [modalInfo, setModalInfo] = useState<boolean>(false)
 	const [modalColor, setModalColor] = useState<boolean>(false)
+	const [currentColor, setCurrentColor] = useState<string>('blue')
 
 	const handleServiceModalInfo = () => {
 		setModalInfo(!modalInfo)
@@ -37,11 +40,23 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 
 	const handleServiceChangeColor = (color: string) => {
 		setModalColor(false)
+		setCurrentColor(color)
+
+		const root = document.documentElement
+
+		console.log(root)
 	}
 
 	return (
 		<StopwatchCotext.Provider
-			value={{ modalInfo, modalColor, handleServiceModalInfo, handleServiceModalChangeColor, handleServiceChangeColor }}
+			value={{
+				modalInfo,
+				modalColor,
+				currentColor,
+				handleServiceModalInfo,
+				handleServiceModalChangeColor,
+				handleServiceChangeColor,
+			}}
 		>
 			{children} <Analytics />
 		</StopwatchCotext.Provider>
