@@ -4,8 +4,6 @@ import React, { createContext, useState } from 'react'
 type InitialStateType = {
 	modalInfo: boolean
 	handleServiceModalInfo: () => void
-	// handleOpenModalInfo: () => void
-	// handleCloseModalInfo: () => void
 }
 
 type StopwatchTypeProvider = {
@@ -15,8 +13,6 @@ type StopwatchTypeProvider = {
 const InitialState: InitialStateType = {
 	modalInfo: false,
 	handleServiceModalInfo: () => {},
-	// handleOpenModalInfo: () => {},
-	// handleCloseModalInfo: () => {},
 }
 
 const StopwatchCotext = createContext(InitialState)
