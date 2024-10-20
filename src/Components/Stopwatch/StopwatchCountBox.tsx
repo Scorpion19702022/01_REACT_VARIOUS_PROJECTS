@@ -28,6 +28,14 @@ const StopwatchCoutBox = () => {
 			</div>
 			<div className={modalInfo ? styles.box_modal_info : styles.no_box_modal_info}>
 				<h3 className={styles.heading_info}>Instrukcja:</h3>
+				<div className={styles.box_action_info}>
+					<p className={styles.text_info}>
+						<AiFillInfoCircle /> <span className={styles.span_info}> - obsługa</span>
+					</p>
+					<p className={styles.text_info}>
+						<IoColorPalette /> <span className={styles.span_info}> - zmień kolorystykę</span>
+					</p>
+				</div>
 				<div className={styles.box_text_info}>
 					<p className={styles.text_info}>
 						<FaPlay /> <span className={styles.span_info}> - start</span>
