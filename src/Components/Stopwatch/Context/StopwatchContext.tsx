@@ -5,6 +5,7 @@ type InitialStateType = {
 	modalInfo: boolean
 	modalColor: boolean
 	handleServiceModalInfo: () => void
+	handleServiceModalChangeColor: () => void
 	handleServiceChangeColor: (color: string) => void
 }
 
@@ -16,6 +17,7 @@ const InitialState: InitialStateType = {
 	modalInfo: false,
 	modalColor: false,
 	handleServiceModalInfo: () => {},
+	handleServiceModalChangeColor: () => {},
 	handleServiceChangeColor: (color: string) => {},
 }
 
@@ -29,12 +31,18 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		setModalInfo(!modalInfo)
 	}
 
-	const handleServiceChangeColor = (color: string) => {
+	const handleServiceModalChangeColor = () => {
 		setModalColor(!modalColor)
 	}
 
+	const handleServiceChangeColor = (color: string) => {
+		setModalColor(false)
+	}
+
 	return (
-		<StopwatchCotext.Provider value={{ modalInfo, modalColor, handleServiceModalInfo, handleServiceChangeColor }}>
+		<StopwatchCotext.Provider
+			value={{ modalInfo, modalColor, handleServiceModalInfo, handleServiceModalChangeColor, handleServiceChangeColor }}
+		>
 			{children} <Analytics />
 		</StopwatchCotext.Provider>
 	)

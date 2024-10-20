@@ -10,7 +10,8 @@ import styles from './Styles/StopwatchCountBox.module.css'
 import StopwatchCotext from './Context/StopwatchContext'
 
 const StopwatchCoutBox = () => {
-	const { modalInfo, handleServiceModalInfo } = useContext(StopwatchCotext)
+	const { modalInfo, modalColor, handleServiceModalInfo, handleServiceModalChangeColor, handleServiceChangeColor } =
+		useContext(StopwatchCotext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -20,7 +21,7 @@ const StopwatchCoutBox = () => {
 					<button className={styles.btn_icon} onClick={handleServiceModalInfo}>
 						<AiFillInfoCircle className={styles.icon_info} />
 					</button>
-					<button className={styles.btn_icon}>
+					<button className={styles.btn_icon} onClick={handleServiceModalChangeColor}>
 						<IoColorPalette className={styles.icon_info} />
 					</button>
 				</div>
@@ -45,10 +46,10 @@ const StopwatchCoutBox = () => {
 					zamknij
 				</button>
 			</div>
-			<div className={styles.box_modal_change_color}>
-				<button className={styles.btn_change_color}></button>
-				<button className={styles.btn_change_color}></button>
-				<button className={styles.btn_change_color}></button>
+			<div className={modalColor ? styles.box_modal_change_color : styles.no_box_modal_change_color}>
+				<button className={styles.btn_change_color} onClick={() => handleServiceChangeColor('blue')}></button>
+				<button className={styles.btn_change_color} onClick={() => handleServiceChangeColor('purple')}></button>
+				<button className={styles.btn_change_color} onClick={() => handleServiceChangeColor('green')}></button>
 			</div>
 			<div className={styles.box_count}>
 				<span className={styles.count}>0:00</span>

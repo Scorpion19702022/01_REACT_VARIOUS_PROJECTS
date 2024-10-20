@@ -221,6 +221,7 @@
 		border: 0.04em solid #ffffff;
 		background-color: #29809c;
 		box-shadow: 0.04em 0.04em 1em var(--color-dark02);
+		cursor: pointer;
 	}
 
 	.heading_info {
