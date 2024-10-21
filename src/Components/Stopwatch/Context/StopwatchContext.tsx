@@ -85,15 +85,15 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 			root.style.setProperty('--color-theme08', '#4c1866')
 			root.style.setProperty('--color-theme09', '#260c33')
 		} else if (color === 'green') {
-			root.style.setProperty('--color-theme01', '#e0f5cc')
-			root.style.setProperty('--color-theme02', '#c1eb99')
-			root.style.setProperty('--color-theme03', '#a3e166')
-			root.style.setProperty('--color-theme04', '#84d732')
-			root.style.setProperty('--color-theme05', '#66cd00')
-			root.style.setProperty('--color-theme06', '#51a400')
-			root.style.setProperty('--color-theme07', '#3d7b00')
-			root.style.setProperty('--color-theme08', '#285200')
-			root.style.setProperty('--color-theme09', '#142900')
+			root.style.setProperty('--color-theme01', '#e0ffcc')
+			root.style.setProperty('--color-theme02', '#c1ff99')
+			root.style.setProperty('--color-theme03', '#a3ff66')
+			root.style.setProperty('--color-theme04', '#84ff32')
+			root.style.setProperty('--color-theme05', '#66ff00')
+			root.style.setProperty('--color-theme06', '#51cc00')
+			root.style.setProperty('--color-theme07', '#3d9900')
+			root.style.setProperty('--color-theme08', '#286600')
+			root.style.setProperty('--color-theme09', '#143300')
 		}
 	}
 
