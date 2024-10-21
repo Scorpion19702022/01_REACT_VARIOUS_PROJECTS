@@ -72,11 +72,9 @@ const StopwatchCoutBox = () => {
 			</div>
 			<div className={styles.box_count}>
 				<span className={styles.count}>
-					{milliseconds < 10
-						? `${minutes}:0${seconds}:0${milliseconds}`
-						: milliseconds >= 10 && milliseconds <= 59
-						? `${minutes}:0${seconds}:${milliseconds}`
-						: '0:00:00'}
+					<span className={styles.timePart}>{minutes < 10 ? `0${minutes}` : minutes}</span>:
+					<span className={styles.timePart}>{seconds < 10 ? `0${seconds}` : seconds}</span>:
+					<span className={styles.timePart}>{milliseconds < 10 ? `0${milliseconds}` : milliseconds}</span>
 				</span>
 				<span className={styles.time}>0:00</span>
 				<div className={styles.box_control}>

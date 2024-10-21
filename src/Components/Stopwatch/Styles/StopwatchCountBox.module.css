@@ -150,8 +150,16 @@
 }
 
 .count {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 	font-size: 4em;
 	color: var(--color-theme02);
+}
+.timePart {
+	display: inline-block;
+	min-width: 20%;
+	text-align: center;
 }
 
 .time {

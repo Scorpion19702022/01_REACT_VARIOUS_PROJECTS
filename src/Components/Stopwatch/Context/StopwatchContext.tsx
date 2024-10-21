@@ -101,10 +101,25 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		let interval: any
 		if (startCount) {
 			interval = setInterval(() => {
-				setMilliseconds(prevSeconds => prevSeconds + 1)
-			}, 100)
+				setMilliseconds(prevMilliseconds => {
+					if (prevMilliseconds < 99) {
+						return prevMilliseconds + 1
+					} else {
+						setSeconds(prevSeconds => {
+							if (prevSeconds < 59) {
+								return prevSeconds + 1
+							} else {
+								setMinutes(prevMinutes => prevMinutes + 1)
+								return 0
+							}
+						})
+						return 0
+					}
+				})
+			}, 10)
 		}
-		return () => clearInterval(interval)
+
+		return () => clearInterval(interval) // Czyszczenie interwału przy zatrzymaniu stopera
 	}, [startCount])
 
 	const handleStart = () => {
