@@ -71,11 +71,16 @@ const StopwatchCoutBox = () => {
 				<button className={styles.btn_change_color} onClick={() => handleServiceChangeColor('green')}></button>
 			</div>
 			<div className={styles.box_count}>
-				<span className={styles.count}>
+				<div className={styles.count}>
 					<span className={styles.timePart}>{minutes < 10 ? `0${minutes}` : minutes}</span>:
 					<span className={styles.timePart}>{seconds < 10 ? `0${seconds}` : seconds}</span>:
 					<span className={styles.timePart}>{milliseconds < 10 ? `0${milliseconds}` : milliseconds}</span>
-				</span>
+				</div>
+				<div className={styles.box_meassures}>
+					<span className={styles.meassure}>minuty</span>
+					<span className={styles.meassure}>sekundy</span>
+					<span className={styles.meassure}>milisekundy</span>
+				</div>
 				<span className={styles.time}>0:00</span>
 				<div className={styles.box_control}>
 					<button className={!startCount ? styles.btn_control : styles.btn_control_active} onClick={handleStart}>

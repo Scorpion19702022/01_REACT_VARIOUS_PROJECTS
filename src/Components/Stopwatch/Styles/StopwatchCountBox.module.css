@@ -24,7 +24,7 @@
 .wrapper {
 	position: relative;
 	width: 90%;
-	height: 280px;
+	height: 300px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -162,6 +162,18 @@
 	text-align: center;
 }
 
+.box_meassures {
+	width: 100%;
+	padding: 0em 4em;
+	display: flex;
+	justify-content: space-around;
+}
+
+.meassure {
+	font-style: italic;
+	color: var(--color-theme06);
+}
+
 .time {
 	visibility: hidden;
 	font-size: 2em;
@@ -281,6 +293,13 @@
 
 	.count {
 		font-size: 8em;
+	}
+
+	.box_meassures {
+		width: 65%;
+		padding: 0.2em 1em;
+		border-top: 0.04em solid var(--color-theme06);
+		justify-content: space-between;
 	}
 
 	.time {
