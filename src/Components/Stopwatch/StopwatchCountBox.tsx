@@ -17,6 +17,7 @@ const StopwatchCoutBox = () => {
 		startCount,
 		minutes,
 		seconds,
+		milliseconds,
 		handleServiceModalInfo,
 		handleServiceModalChangeColor,
 		handleServiceChangeColor,
@@ -71,7 +72,11 @@ const StopwatchCoutBox = () => {
 			</div>
 			<div className={styles.box_count}>
 				<span className={styles.count}>
-					{seconds < 10 ? `${minutes}:0${seconds}` : seconds >= 10 && seconds <= 59 ? `${minutes}:${seconds}` : '0:00'}
+					{milliseconds < 10
+						? `${minutes}:0${seconds}:0${milliseconds}`
+						: milliseconds >= 10 && milliseconds <= 59
+						? `${minutes}:0${seconds}:${milliseconds}`
+						: '0:00:00'}
 				</span>
 				<span className={styles.time}>0:00</span>
 				<div className={styles.box_control}>

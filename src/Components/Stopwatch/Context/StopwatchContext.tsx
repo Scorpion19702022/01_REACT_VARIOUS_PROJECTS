@@ -9,6 +9,7 @@ type InitialStateType = {
 	stateStopwatch: string
 	minutes: number
 	seconds: number
+	milliseconds: number
 	handleServiceModalInfo: () => void
 	handleServiceModalChangeColor: () => void
 	handleServiceChangeColor: (color: string) => void
@@ -27,6 +28,7 @@ const InitialState: InitialStateType = {
 	stateStopwatch: '',
 	minutes: 0,
 	seconds: 0,
+	milliseconds: 0,
 	handleServiceModalInfo: () => {},
 	handleServiceModalChangeColor: () => {},
 	handleServiceChangeColor: (color: string) => {},
@@ -46,6 +48,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 
 	const [minutes, setMinutes] = useState<number>(0)
 	const [seconds, setSeconds] = useState<number>(0)
+	const [milliseconds, setMilliseconds] = useState<number>(0)
 
 	const handleServiceModalInfo = () => {
 		setModalInfo(!modalInfo)
@@ -98,8 +101,8 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		let interval: any
 		if (startCount) {
 			interval = setInterval(() => {
-				setSeconds(prevSeconds => prevSeconds + 1)
-			}, 1000)
+				setMilliseconds(prevSeconds => prevSeconds + 1)
+			}, 100)
 		}
 		return () => clearInterval(interval)
 	}, [startCount])
@@ -119,6 +122,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 				stateStopwatch,
 				minutes,
 				seconds,
+				milliseconds,
 				handleServiceModalInfo,
 				handleServiceModalChangeColor,
 				handleServiceChangeColor,
