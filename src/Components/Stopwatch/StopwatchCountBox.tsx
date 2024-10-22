@@ -37,6 +37,15 @@ const StopwatchCoutBox = () => {
 					</button>
 				</div>
 			</div>
+			<div className={styles.box_gamer}>
+				<div className={styles.box_inputs}>
+					<label className={styles.label}>Podaj nazwę gracza</label>
+					<input type='text' />
+				</div>
+				<div className={styles.box_btn_gamer}>
+					<button className={styles.btn_gamer}>zapisz</button>
+				</div>
+			</div>
 			<div className={modalInfo ? styles.box_modal_info : styles.no_box_modal_info}>
 				<h3 className={styles.heading_info}>Instrukcja:</h3>
 				<div className={styles.box_action_info}>
