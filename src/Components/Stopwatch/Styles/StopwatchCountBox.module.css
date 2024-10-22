@@ -165,7 +165,7 @@
 	background: none;
 	border: none;
 	border-bottom: 0.04em solid var(--color-theme02);
-	padding: 0.6em;
+	padding: 0.2em;
 	color: var(--color-dark02);
 	outline: none;
 	font-size: 1.2em;
@@ -336,8 +336,16 @@
 		color: var(--color-theme06);
 	}
 
+	.btn_gamer {
+		cursor: pointer;
+	}
+
+	.btn_gamer:hover {
+		background-color: var(--color-dark09);
+	}
+
 	.count {
-		font-size: 8em;
+		font-size: 6em;
 	}
 
 	.box_meassures {
@@ -348,15 +356,11 @@
 	}
 
 	.time {
-		font-size: 4em;
-	}
-
-	.box_control {
-		padding: 0.6em 0em;
+		font-size: 2em;
 	}
 
 	.btn_control {
-		font-size: 2em;
+		font-size: 1em;
 		cursor: pointer;
 		transition: background-color 0.2s ease-in-out;
 	}
