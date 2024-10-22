@@ -13,6 +13,8 @@ const StopwatchCoutBox = () => {
 	const {
 		modalInfo,
 		modalColor,
+		inputName,
+		gamerName,
 		stateStopwatch,
 		startCount,
 		minutes,
@@ -21,6 +23,8 @@ const StopwatchCoutBox = () => {
 		handleServiceModalInfo,
 		handleServiceModalChangeColor,
 		handleServiceChangeColor,
+		handleChangeInput,
+		handleAddedNameGamer,
 		handleStart,
 	} = useContext(StopwatchCotext)
 
@@ -40,14 +44,21 @@ const StopwatchCoutBox = () => {
 			<div className={styles.box_gamer}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>Podaj nazwę gracza</label>
-					<input className={styles.input} type='text' />
+					<input
+						className={styles.input}
+						type='text'
+						value={inputName}
+						onChange={e => handleChangeInput(e.target.value)}
+					/>
 				</div>
 				<div className={styles.box_btn_gamer}>
-					<button className={styles.btn_gamer}>zapisz</button>
+					<button className={styles.btn_gamer} onClick={handleAddedNameGamer}>
+						zapisz
+					</button>
 				</div>
 			</div>
 			<div className={styles.box_name_gamer}>
-				<span className={styles.name_gamer}>Jacek</span>
+				<span className={styles.name_gamer}>{gamerName}</span>
 			</div>
 			<div className={modalInfo ? styles.box_modal_info : styles.no_box_modal_info}>
 				<h3 className={styles.heading_info}>Instrukcja:</h3>

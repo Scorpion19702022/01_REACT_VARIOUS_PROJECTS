@@ -4,6 +4,8 @@ import React, { createContext, useEffect, useState } from 'react'
 type InitialStateType = {
 	modalInfo: boolean
 	modalColor: boolean
+	inputName: string
+	gamerName: string
 	startCount: boolean
 	currentColor: string
 	stateStopwatch: string
@@ -13,6 +15,8 @@ type InitialStateType = {
 	handleServiceModalInfo: () => void
 	handleServiceModalChangeColor: () => void
 	handleServiceChangeColor: (color: string) => void
+	handleChangeInput: (e: string) => void
+	handleAddedNameGamer: () => void
 	handleStart: () => void
 }
 
@@ -23,6 +27,8 @@ type StopwatchTypeProvider = {
 const InitialState: InitialStateType = {
 	modalInfo: false,
 	modalColor: false,
+	inputName: '',
+	gamerName: '',
 	startCount: false,
 	currentColor: 'blue',
 	stateStopwatch: '',
@@ -32,6 +38,8 @@ const InitialState: InitialStateType = {
 	handleServiceModalInfo: () => {},
 	handleServiceModalChangeColor: () => {},
 	handleServiceChangeColor: (color: string) => {},
+	handleChangeInput: (e: string) => {},
+	handleAddedNameGamer: () => {},
 	handleStart: () => {},
 }
 
@@ -40,6 +48,10 @@ const StopwatchCotext = createContext(InitialState)
 export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	const [modalInfo, setModalInfo] = useState<boolean>(false)
 	const [modalColor, setModalColor] = useState<boolean>(false)
+
+	const [inputName, setInputName] = useState<string>('')
+	const [gamerName, setGamerName] = useState<string>('')
+
 	const [currentColor, setCurrentColor] = useState<string>('blue')
 
 	const [stateStopwatch, setStateStopwatch] = useState<string>('STAN')
@@ -97,6 +109,21 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		}
 	}
 
+	const handleChangeInput = (e: string) => {
+		const invalid = [' ', '.', ',']
+		if (!invalid.includes(e)) {
+			setInputName(e)
+		}
+	}
+
+	const handleAddedNameGamer = () => {
+		if (inputName !== '') {
+			setGamerName(inputName)
+		} else {
+			setGamerName('musisz podać nazwę gracza')
+		}
+	}
+
 	useEffect(() => {
 		let interval: any
 		if (startCount) {
@@ -132,6 +159,8 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 			value={{
 				modalInfo,
 				modalColor,
+				inputName,
+				gamerName,
 				startCount,
 				currentColor,
 				stateStopwatch,
@@ -141,6 +170,8 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 				handleServiceModalInfo,
 				handleServiceModalChangeColor,
 				handleServiceChangeColor,
+				handleChangeInput,
+				handleAddedNameGamer,
 				handleStart,
 			}}
 		>
