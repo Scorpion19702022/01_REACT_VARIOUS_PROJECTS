@@ -40,7 +40,7 @@ const StopwatchCoutBox = () => {
 			<div className={styles.box_gamer}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>Podaj nazwę gracza</label>
-					<input type='text' />
+					<input className={styles.input} type='text' />
 				</div>
 				<div className={styles.box_btn_gamer}>
 					<button className={styles.btn_gamer}>zapisz</button>
