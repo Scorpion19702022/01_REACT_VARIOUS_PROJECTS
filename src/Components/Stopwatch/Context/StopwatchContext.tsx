@@ -121,6 +121,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	const handleAddedNameGamer = () => {
 		if (inputName !== '') {
 			setGamerName(inputName)
+			setInputName('')
 		} else {
 			setGamerName('musisz podać nazwę gracza')
 		}
@@ -159,8 +160,14 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	}, [startCount])
 
 	const handleStart = () => {
-		setStartCount(true)
-		setStateStopwatch('PLAY')
+		if (gamerName !== '' && gamerName !== 'musisz podać nazwę gracza') {
+			setStartCount(true)
+			setStateStopwatch('PLAY')
+		} else {
+			setStartCount(false)
+			setStateStopwatch('STAN')
+			setGamerName('nie wystartujesz zanim nie podasz gracza')
+		}
 	}
 
 	return (
