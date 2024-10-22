@@ -17,6 +17,7 @@ type InitialStateType = {
 	handleServiceChangeColor: (color: string) => void
 	handleChangeInput: (e: string) => void
 	handleAddedNameGamer: () => void
+	handleUseEnter: (e: any) => void
 	handleStart: () => void
 }
 
@@ -40,6 +41,7 @@ const InitialState: InitialStateType = {
 	handleServiceChangeColor: (color: string) => {},
 	handleChangeInput: (e: string) => {},
 	handleAddedNameGamer: () => {},
+	handleUseEnter: (e: any) => {},
 	handleStart: () => {},
 }
 
@@ -124,6 +126,13 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		}
 	}
 
+	const handleUseEnter = (e: any) => {
+		if (e.key === 'Enter') {
+			handleAddedNameGamer()
+			e.preventDefault()
+		}
+	}
+
 	useEffect(() => {
 		let interval: any
 		if (startCount) {
@@ -172,6 +181,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 				handleServiceChangeColor,
 				handleChangeInput,
 				handleAddedNameGamer,
+				handleUseEnter,
 				handleStart,
 			}}
 		>

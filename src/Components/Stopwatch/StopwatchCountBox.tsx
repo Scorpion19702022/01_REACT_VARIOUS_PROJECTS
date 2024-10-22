@@ -25,11 +25,12 @@ const StopwatchCoutBox = () => {
 		handleServiceChangeColor,
 		handleChangeInput,
 		handleAddedNameGamer,
+		handleUseEnter,
 		handleStart,
 	} = useContext(StopwatchCotext)
 
 	return (
-		<section className={styles.wrapper}>
+		<section className={styles.wrapper} onKeyDown={handleUseEnter}>
 			<div className={styles.box_header}>
 				<h4 className={styles.state_info}>{stateStopwatch}</h4>
 				<div className={styles.box_icons}>
