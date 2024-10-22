@@ -68,7 +68,7 @@
 	top: 3%;
 	right: 5%;
 	width: 50%;
-	height: 260px;
+	height: 300px;
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
@@ -85,7 +85,7 @@
 	top: 3%;
 	right: 5%;
 	width: 50%;
-	height: 260px;
+	height: 300px;
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
@@ -186,6 +186,20 @@
 	color: var(--color-theme04);
 }
 
+.box_name_gamer {
+	width: 100%;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 0.04em dotted var(--color-theme08);
+}
+
+.name_gamer {
+	color: var(--color-theme05);
+	font-size: 1.2em;
+}
+
 .box_count {
 	width: 100%;
 	display: flex;
@@ -247,7 +261,7 @@
 .btn_control_active {
 	width: 20%;
 	padding: 0.4em;
-	background-color: var(--color-theme07);
+	background-color: var(--color-theme09);
 	border: 0.04em solid var(--color-theme07);
 	display: flex;
 	justify-content: center;
@@ -366,7 +380,7 @@
 	}
 
 	.btn_control_active {
-		font-size: 2em;
+		font-size: 1em;
 		cursor: pointer;
 		transition: background-color 0.2s ease-in-out;
 	}
