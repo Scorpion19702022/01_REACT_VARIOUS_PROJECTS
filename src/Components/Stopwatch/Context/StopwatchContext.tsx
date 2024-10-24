@@ -136,6 +136,8 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 			setSeconds(0)
 			setMilliseconds(0)
 			setStartCount(false)
+			setPauseCout(false)
+			setResetCount(false)
 		} else {
 			setGamerName('musisz podać nazwę gracza')
 		}
@@ -204,7 +206,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	}
 
 	const handleReset = () => {
-		if (gamerName !== '') {
+		if (gamerName !== '' && gamerName !== 'musisz podać nazwę gracza') {
 			setMinutes(0)
 			setSeconds(0)
 			setMilliseconds(0)
