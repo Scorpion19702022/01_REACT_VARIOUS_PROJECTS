@@ -248,6 +248,9 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 
 	const handleViewGamers = () => {
 		setViewListGamers(true)
+		setStartCount(false)
+		setPauseCout(false)
+		setResetCount(false)
 	}
 
 	console.log(gamersList)

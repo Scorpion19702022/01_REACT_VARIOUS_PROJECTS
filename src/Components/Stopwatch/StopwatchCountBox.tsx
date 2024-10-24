@@ -31,6 +31,7 @@ const StopwatchCoutBox = () => {
 		handleStart,
 		handlePause,
 		handleReset,
+		handleViewGamers,
 	} = useContext(StopwatchCotext)
 
 	return (
@@ -128,7 +129,9 @@ const StopwatchCoutBox = () => {
 				</div>
 			</div>
 			<div className={styles.box_archives}>
-				<button className={styles.btn_archives}>pokaż czasy</button>
+				<button className={styles.btn_archives} onClick={handleViewGamers}>
+					pokaż czasy
+				</button>
 			</div>
 		</section>
 	)
