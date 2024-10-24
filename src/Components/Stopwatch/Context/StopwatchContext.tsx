@@ -153,6 +153,12 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 			setResetCount(false)
 		} else {
 			setGamerName('musisz podać nazwę gracza')
+			setMinutes(0)
+			setSeconds(0)
+			setMilliseconds(0)
+			setStartCount(false)
+			setPauseCout(false)
+			setResetCount(false)
 		}
 	}
 
@@ -189,6 +195,8 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	}, [startCount])
 
 	const handleStart = () => {
+		if (resetCount) return setStartCount(false)
+
 		if (gamerName !== '' && gamerName !== 'musisz podać nazwę gracza') {
 			setStartCount(true)
 			setPauseCout(false)
@@ -204,6 +212,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	}
 
 	const handlePause = () => {
+		if (resetCount) return setPauseCout(false)
 		if (gamerName !== '' && gamerName !== 'musisz podać nazwę gracza') {
 			setPauseCout(true)
 			setStartCount(false)
@@ -229,14 +238,10 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 
 		if (gamerName !== '' && gamerName !== 'musisz podać nazwę gracza') {
 			setGamersList(prevState => [...prevState, gamer])
-			setMinutes(0)
-			setSeconds(0)
-			setMilliseconds(0)
 			setResetCount(true)
 			setStartCount(false)
 			setPauseCout(false)
-			setStateStopwatch('RESET')
-			setGamerName('')
+			setStateStopwatch('STOP')
 		} else {
 			setStartCount(false)
 			setPauseCout(false)
