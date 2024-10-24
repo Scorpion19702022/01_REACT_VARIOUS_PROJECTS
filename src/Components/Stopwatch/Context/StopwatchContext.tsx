@@ -7,6 +7,7 @@ type InitialStateType = {
 	inputName: string
 	gamerName: string
 	startCount: boolean
+	pauseCount: boolean
 	currentColor: string
 	stateStopwatch: string
 	minutes: number
@@ -19,6 +20,7 @@ type InitialStateType = {
 	handleAddedNameGamer: () => void
 	handleUseEnter: (e: any) => void
 	handleStart: () => void
+	handlePause: () => void
 }
 
 type StopwatchTypeProvider = {
@@ -31,6 +33,7 @@ const InitialState: InitialStateType = {
 	inputName: '',
 	gamerName: '',
 	startCount: false,
+	pauseCount: false,
 	currentColor: 'blue',
 	stateStopwatch: '',
 	minutes: 0,
@@ -43,6 +46,7 @@ const InitialState: InitialStateType = {
 	handleAddedNameGamer: () => {},
 	handleUseEnter: (e: any) => {},
 	handleStart: () => {},
+	handlePause: () => {},
 }
 
 const StopwatchCotext = createContext(InitialState)
@@ -59,6 +63,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	const [stateStopwatch, setStateStopwatch] = useState<string>('STAN')
 
 	const [startCount, setStartCount] = useState<boolean>(false)
+	const [pauseCount, setPauseCout] = useState<boolean>(false)
 
 	const [minutes, setMinutes] = useState<number>(0)
 	const [seconds, setSeconds] = useState<number>(0)
@@ -166,12 +171,19 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	const handleStart = () => {
 		if (gamerName !== '' && gamerName !== 'musisz podać nazwę gracza') {
 			setStartCount(true)
+			setPauseCout(false)
 			setStateStopwatch('PLAY')
 		} else {
 			setStartCount(false)
 			setStateStopwatch('STAN')
 			setGamerName('musisz podać nazwę gracza')
 		}
+	}
+
+	const handlePause = () => {
+		setPauseCout(true)
+		setStartCount(false)
+		setStateStopwatch('PAUSE')
 	}
 
 	return (
@@ -182,6 +194,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 				inputName,
 				gamerName,
 				startCount,
+				pauseCount,
 				currentColor,
 				stateStopwatch,
 				minutes,
@@ -194,6 +207,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 				handleAddedNameGamer,
 				handleUseEnter,
 				handleStart,
+				handlePause,
 			}}
 		>
 			{children} <Analytics />

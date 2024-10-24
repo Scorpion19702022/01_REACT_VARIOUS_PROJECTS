@@ -17,6 +17,7 @@ const StopwatchCoutBox = () => {
 		gamerName,
 		stateStopwatch,
 		startCount,
+		pauseCount,
 		minutes,
 		seconds,
 		milliseconds,
@@ -27,6 +28,7 @@ const StopwatchCoutBox = () => {
 		handleAddedNameGamer,
 		handleUseEnter,
 		handleStart,
+		handlePause,
 	} = useContext(StopwatchCotext)
 
 	return (
@@ -111,7 +113,7 @@ const StopwatchCoutBox = () => {
 					<button className={!startCount ? styles.btn_control : styles.btn_control_active} onClick={handleStart}>
 						<FaPlay />
 					</button>
-					<button className={styles.btn_control}>
+					<button className={!pauseCount ? styles.btn_control : styles.btn_control_active} onClick={handlePause}>
 						<FaPause />
 					</button>
 					<button className={styles.btn_control}>
