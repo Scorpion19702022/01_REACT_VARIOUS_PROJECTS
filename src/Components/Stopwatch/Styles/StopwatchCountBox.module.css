@@ -68,7 +68,7 @@
 	top: 3%;
 	right: 5%;
 	width: 50%;
-	height: 300px;
+	height: 360px;
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
@@ -85,7 +85,7 @@
 	top: 3%;
 	right: 5%;
 	width: 50%;
-	height: 300px;
+	height: 360px;
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
@@ -302,13 +302,13 @@
 	.box_modal_info,
 	.box_modal_change_color {
 		right: 3%;
-		height: 360px;
+		height: 420px;
 	}
 
 	.no_box_modal_info,
 	.no_box_modal_change_color {
 		right: 3%;
-		height: 360px;
+		height: 420px;
 	}
 
 	.btn_change_color {

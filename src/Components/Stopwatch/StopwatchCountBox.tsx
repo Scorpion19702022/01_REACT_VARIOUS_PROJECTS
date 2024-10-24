@@ -90,6 +90,7 @@ const StopwatchCoutBox = () => {
 						<ImCross /> <span className={styles.span_info}> - skasuj wszystko</span>
 					</p>
 				</div>
+				<p className={styles.text_info}>przycisk "pokaż czasy" pokazuje poszczególne pomiary</p>
 				<button className={styles.btn_close_modal_info} onClick={handleServiceModalInfo}>
 					zamknij
 				</button>
@@ -127,7 +128,7 @@ const StopwatchCoutBox = () => {
 				</div>
 			</div>
 			<div className={styles.box_archives}>
-				<button className={styles.btn_archives}>archiwum</button>
+				<button className={styles.btn_archives}>pokaż czasy</button>
 			</div>
 		</section>
 	)
