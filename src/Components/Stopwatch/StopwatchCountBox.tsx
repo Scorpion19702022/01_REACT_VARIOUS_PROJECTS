@@ -18,6 +18,7 @@ const StopwatchCoutBox = () => {
 		stateStopwatch,
 		startCount,
 		pauseCount,
+		resetCount,
 		minutes,
 		seconds,
 		milliseconds,
@@ -29,6 +30,7 @@ const StopwatchCoutBox = () => {
 		handleUseEnter,
 		handleStart,
 		handlePause,
+		handleReset,
 	} = useContext(StopwatchCotext)
 
 	return (
@@ -116,7 +118,7 @@ const StopwatchCoutBox = () => {
 					<button className={!pauseCount ? styles.btn_control : styles.btn_control_active} onClick={handlePause}>
 						<FaPause />
 					</button>
-					<button className={styles.btn_control}>
+					<button className={!resetCount ? styles.btn_control : styles.btn_control_active} onClick={handleReset}>
 						<FaStop />
 					</button>
 					<button className={styles.btn_control}>
