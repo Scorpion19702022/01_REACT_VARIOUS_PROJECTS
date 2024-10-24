@@ -13,6 +13,7 @@ type InitialStateType = {
 	startCount: boolean
 	pauseCount: boolean
 	resetCount: boolean
+	viewListGamers: boolean
 	currentColor: string
 	stateStopwatch: string
 	minutes: number
@@ -27,6 +28,7 @@ type InitialStateType = {
 	handleStart: () => void
 	handlePause: () => void
 	handleReset: () => void
+	handleViewGamers: () => void
 }
 
 type StopwatchTypeProvider = {
@@ -42,6 +44,7 @@ const InitialState: InitialStateType = {
 	startCount: false,
 	pauseCount: false,
 	resetCount: false,
+	viewListGamers: false,
 	currentColor: 'blue',
 	stateStopwatch: '',
 	minutes: 0,
@@ -56,6 +59,7 @@ const InitialState: InitialStateType = {
 	handleStart: () => {},
 	handlePause: () => {},
 	handleReset: () => {},
+	handleViewGamers: () => {},
 }
 
 const StopwatchCotext = createContext(InitialState)
@@ -76,6 +80,8 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	const [startCount, setStartCount] = useState<boolean>(false)
 	const [pauseCount, setPauseCout] = useState<boolean>(false)
 	const [resetCount, setResetCount] = useState<boolean>(false)
+
+	const [viewListGamers, setViewListGamers] = useState<boolean>(false)
 
 	const [minutes, setMinutes] = useState<number>(0)
 	const [seconds, setSeconds] = useState<number>(0)
@@ -240,6 +246,10 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		}
 	}
 
+	const handleViewGamers = () => {
+		setViewListGamers(true)
+	}
+
 	console.log(gamersList)
 
 	return (
@@ -253,6 +263,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 				startCount,
 				pauseCount,
 				resetCount,
+				viewListGamers,
 				currentColor,
 				stateStopwatch,
 				minutes,
@@ -267,6 +278,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 				handleStart,
 				handlePause,
 				handleReset,
+				handleViewGamers,
 			}}
 		>
 			{children} <Analytics />
