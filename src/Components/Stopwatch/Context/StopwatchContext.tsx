@@ -1,7 +1,11 @@
 import { Analytics } from '@vercel/analytics/react'
 import React, { createContext, useEffect, useState } from 'react'
 
+import { v4 as uuidv4 } from 'uuid'
+import { TypeForGamer } from '../Types/TypeForGamer'
+
 type InitialStateType = {
+	gamersList: TypeForGamer[]
 	modalInfo: boolean
 	modalColor: boolean
 	inputName: string
@@ -30,6 +34,7 @@ type StopwatchTypeProvider = {
 }
 
 const InitialState: InitialStateType = {
+	gamersList: [],
 	modalInfo: false,
 	modalColor: false,
 	inputName: '',
@@ -56,6 +61,8 @@ const InitialState: InitialStateType = {
 const StopwatchCotext = createContext(InitialState)
 
 export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
+	const [gamersList, setGamersList] = useState<TypeForGamer[]>([])
+
 	const [modalInfo, setModalInfo] = useState<boolean>(false)
 	const [modalColor, setModalColor] = useState<boolean>(false)
 
@@ -206,7 +213,16 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	}
 
 	const handleReset = () => {
+		const gamer: TypeForGamer = {
+			id: uuidv4(),
+			name: gamerName,
+			minutes: minutes,
+			seconds: seconds,
+			milliseconds: milliseconds,
+		}
+
 		if (gamerName !== '' && gamerName !== 'musisz podać nazwę gracza') {
+			setGamersList(prevState => [...prevState, gamer])
 			setMinutes(0)
 			setSeconds(0)
 			setMilliseconds(0)
@@ -224,9 +240,12 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		}
 	}
 
+	console.log(gamersList)
+
 	return (
 		<StopwatchCotext.Provider
 			value={{
+				gamersList,
 				modalInfo,
 				modalColor,
 				inputName,
