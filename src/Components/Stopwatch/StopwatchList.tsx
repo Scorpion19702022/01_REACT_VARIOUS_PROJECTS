@@ -10,9 +10,12 @@ const StopwatchList = () => {
 
 	if (viewListGamers) {
 		listGamer = gamerListView.map(item => (
-			<li key={item.id}>
-				<p>
-					{item.name} - {item.minutes}:{item.seconds}:{item.milliseconds}
+			<li className={styles.gamer} key={item.id}>
+				<p className={styles.gamer_time}>
+					<span className={styles.gamer_name}>{item.name}</span>
+					<span className={styles.gamer_time}>
+						- {item.minutes}:{item.seconds}:{item.milliseconds}
+					</span>
 				</p>
 			</li>
 		))
@@ -20,7 +23,13 @@ const StopwatchList = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<ol>{listGamer}</ol>
+			<div className={styles.box_info}>
+				<span className={styles.info}>Nazwa Gracza</span>
+				<span className={styles.info}>Czas</span>
+			</div>
+			<div className={styles.box_gamers}>
+				<ol className={styles.gamers_list}>{listGamer}</ol>
+			</div>
 		</section>
 	)
 }
