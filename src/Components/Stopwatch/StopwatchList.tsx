@@ -12,9 +12,11 @@ const StopwatchList = () => {
 		listGamer = gamerListView.map(item => (
 			<li className={styles.gamer} key={item.id}>
 				<p className={styles.gamer_time}>
-					<span className={styles.gamer_name}>{item.name}</span>
-					<span className={styles.gamer_time}>
-						- {item.minutes}:{item.seconds}:{item.milliseconds}
+					<span className={styles.name}>{item.name}</span>
+					<span className={styles.times}>
+						<span className={styles.time}>{item.minutes}:</span>
+						<span className={styles.time}>{item.seconds}:</span>
+						<span className={styles.time}>{item.milliseconds}</span>
 					</span>
 				</p>
 			</li>
