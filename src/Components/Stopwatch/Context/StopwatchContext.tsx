@@ -234,9 +234,9 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		const gamer: TypeForGamer = {
 			id: uuidv4(),
 			name: gamerName,
-			minutes: minutes,
-			seconds: seconds,
-			milliseconds: milliseconds,
+			minutes: minutes < 10 ? `0${minutes}` : minutes,
+			seconds: seconds < 10 ? `0${seconds}` : seconds,
+			milliseconds: milliseconds < 10 ? `0${milliseconds}` : milliseconds,
 		}
 
 		if (gamerName !== '' && gamerName !== 'musisz podać nazwę gracza') {

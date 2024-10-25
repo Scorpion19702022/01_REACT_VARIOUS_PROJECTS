@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Styles/StopwatchList.module.css'
+import StopwatchContext from './Context/StopwatchContext'
 
 const StopwatchList = () => {
-	return (
-		<section className={styles.wrapper}>
-			<ol className={styles.time_list}>
-				<li className={styles.time}>czas</li>
+	const { gamersList, viewListGamers } = useContext(StopwatchContext)
+
+	let listGamer
+
+	if (viewListGamers) {
+		listGamer = gamersList.map(item => (
+			<ol key={item.id}>
+				<li>
+					{item.name} - {item.minutes}:{item.seconds}:{item.milliseconds}
+				</li>
 			</ol>
-		</section>
-	)
+		))
+	}
+
+	return <section className={styles.wrapper}>{listGamer}</section>
 }
 
 export default StopwatchList
