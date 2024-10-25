@@ -29,6 +29,7 @@ type InitialStateType = {
 	handlePause: () => void
 	handleReset: () => void
 	handleViewGamers: () => void
+	handleCleanAll: () => void
 }
 
 type StopwatchTypeProvider = {
@@ -60,6 +61,7 @@ const InitialState: InitialStateType = {
 	handlePause: () => {},
 	handleReset: () => {},
 	handleViewGamers: () => {},
+	handleCleanAll: () => {},
 }
 
 const StopwatchCotext = createContext(InitialState)
@@ -151,6 +153,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 			setStartCount(false)
 			setPauseCout(false)
 			setResetCount(false)
+			setStateStopwatch('STAN')
 		} else {
 			setGamerName('musisz podać nazwę gracza')
 			setMinutes(0)
@@ -191,7 +194,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 			}, 10)
 		}
 
-		return () => clearInterval(interval) // Czyszczenie interwału przy zatrzymaniu stopera
+		return () => clearInterval(interval)
 	}, [startCount])
 
 	const handleStart = () => {
@@ -258,6 +261,20 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		setResetCount(false)
 	}
 
+	const handleCleanAll = () => {
+		setGamersList([])
+		setInputName('')
+		setGamerName('')
+		setStateStopwatch('STAN')
+		setStartCount(false)
+		setPauseCout(false)
+		setResetCount(false)
+		setViewListGamers(false)
+		setMinutes(0)
+		setSeconds(0)
+		setMilliseconds(0)
+	}
+
 	console.log(gamersList)
 
 	return (
@@ -287,6 +304,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 				handlePause,
 				handleReset,
 				handleViewGamers,
+				handleCleanAll,
 			}}
 		>
 			{children} <Analytics />

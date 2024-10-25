@@ -31,6 +31,7 @@ const StopwatchCoutBox = () => {
 		handlePause,
 		handleReset,
 		handleViewGamers,
+		handleCleanAll,
 	} = useContext(StopwatchCotext)
 
 	return (
@@ -130,7 +131,7 @@ const StopwatchCoutBox = () => {
 				<button className={styles.btn_archives} onClick={handleViewGamers}>
 					pokaż czasy
 				</button>
-				<button className={styles.btn_reset} onClick={handleViewGamers}>
+				<button className={styles.btn_reset} onClick={handleCleanAll}>
 					wyczyść wszystko
 				</button>
 			</div>
