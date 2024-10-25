@@ -6,6 +6,7 @@ import { TypeForGamer } from '../Types/TypeForGamer'
 
 type InitialStateType = {
 	gamersList: TypeForGamer[]
+	gamerListView: TypeForGamer[]
 	modalInfo: boolean
 	modalColor: boolean
 	inputName: string
@@ -38,6 +39,7 @@ type StopwatchTypeProvider = {
 
 const InitialState: InitialStateType = {
 	gamersList: [],
+	gamerListView: [],
 	modalInfo: false,
 	modalColor: false,
 	inputName: '',
@@ -68,6 +70,7 @@ const StopwatchCotext = createContext(InitialState)
 
 export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	const [gamersList, setGamersList] = useState<TypeForGamer[]>([])
+	const [gamerListView, setGamerListView] = useState<TypeForGamer[]>([])
 
 	const [modalInfo, setModalInfo] = useState<boolean>(false)
 	const [modalColor, setModalColor] = useState<boolean>(false)
@@ -255,6 +258,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 	}
 
 	const handleViewGamers = () => {
+		setGamerListView(gamersList)
 		setViewListGamers(true)
 		setStartCount(false)
 		setPauseCout(false)
@@ -275,12 +279,13 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		setMilliseconds(0)
 	}
 
-	console.log(gamersList)
+	console.log(gamerListView)
 
 	return (
 		<StopwatchCotext.Provider
 			value={{
 				gamersList,
+				gamerListView,
 				modalInfo,
 				modalColor,
 				inputName,
