@@ -4,7 +4,6 @@ import { IoColorPalette } from 'react-icons/io5'
 import { FaPlay } from 'react-icons/fa6'
 import { FaPause } from 'react-icons/fa6'
 import { FaStop } from 'react-icons/fa6'
-import { ImCross } from 'react-icons/im'
 
 import styles from './Styles/StopwatchCountBox.module.css'
 import StopwatchCotext from './Context/StopwatchContext'
@@ -85,13 +84,15 @@ const StopwatchCoutBox = () => {
 						<FaPause /> <span className={styles.span_info}> - pauza</span>
 					</p>
 					<p className={styles.text_info}>
-						<FaStop /> <span className={styles.span_info}> - stop</span>
-					</p>
-					<p className={styles.text_info}>
-						<ImCross /> <span className={styles.span_info}> - skasuj wszystko</span>
+						<FaStop /> <span className={styles.span_info}> - stop (zapisuje też gracza)</span>
 					</p>
 				</div>
-				<p className={styles.text_info}>przycisk "pokaż czasy" pokazuje poszczególne pomiary</p>
+				<ul className={styles.box_list_text_info}>
+					<li className={styles.text_list_info}>przycisk "pokaż czasy" pokazuje listę poszczególnych pomiarów</li>
+					<li className={styles.text_list_info}>
+						przycisk "wyczyść wszystko" kasuje czasy, gracza i listę z pomiarami
+					</li>
+				</ul>
 				<button className={styles.btn_close_modal_info} onClick={handleServiceModalInfo}>
 					zamknij
 				</button>
@@ -123,14 +124,14 @@ const StopwatchCoutBox = () => {
 					<button className={!resetCount ? styles.btn_control : styles.btn_control_active} onClick={handleReset}>
 						<FaStop />
 					</button>
-					<button className={styles.btn_control}>
-						<ImCross />
-					</button>
 				</div>
 			</div>
-			<div className={styles.box_archives}>
+			<div className={styles.box_btns}>
 				<button className={styles.btn_archives} onClick={handleViewGamers}>
 					pokaż czasy
+				</button>
+				<button className={styles.btn_reset} onClick={handleViewGamers}>
+					wyczyść wszystko
 				</button>
 			</div>
 		</section>
