@@ -100,6 +100,10 @@
 	align-items: center;
 }
 
+.box_modal_change_color {
+	padding: 2em;
+}
+
 .btn_change_color {
 	width: 100px;
 	height: 100px;
@@ -324,8 +328,6 @@
 	}
 
 	.btn_change_color {
-		width: 80px;
-		height: 80px;
 		border-radius: 50%;
 		border: 0.04em solid #ffffff;
 		background-color: #29809c;
@@ -405,13 +407,18 @@
 		background-color: var(--color-dark09);
 	}
 
-	.btn_archives {
+	.btn_archives,
+	.btn_reset {
 		font-size: 1.4em;
 		cursor: pointer;
 		transition: background-color 0.2s ease-in-out;
 	}
 
 	.btn_archives:hover {
+		background-color: var(--color-dark09);
+	}
+
+	.btn_reset:hover {
 		background-color: var(--color-dark09);
 	}
 }
