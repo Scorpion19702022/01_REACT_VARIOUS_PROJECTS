@@ -101,7 +101,7 @@ const StopwatchCoutBox = () => {
 			<div className={modalColor ? styles.box_modal_change_color : styles.no_box_modal_change_color}>
 				<button className={styles.btn_change_color} onClick={() => handleServiceChangeColor('blue')}></button>
 				<button className={styles.btn_change_color} onClick={() => handleServiceChangeColor('purple')}></button>
-				<button className={styles.btn_change_color} onClick={() => handleServiceChangeColor('green')}></button>
+				<button className={styles.btn_change_color} onClick={() => handleServiceChangeColor('orange')}></button>
 			</div>
 			<div className={styles.box_count}>
 				<div className={styles.count}>
