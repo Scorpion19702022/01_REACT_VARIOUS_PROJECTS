@@ -141,8 +141,12 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 
 	const handleChangeInput = (e: string) => {
 		const invalid = [' ', '.', ',']
-		if (!invalid.includes(e)) {
+		if (!invalid.includes(e) && e.length <= 18) {
 			setInputName(e)
+		}
+
+		if (e.length > 18) {
+			setGamerName('za długa nazwa gracza')
 		}
 	}
 
