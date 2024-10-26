@@ -11,6 +11,7 @@ import imgSlider04 from './assets/imgSwiper04.jpg'
 import imgSlider05 from './assets/imgSwiper05.jpg'
 import imgSlider06 from './assets/imgSwiper06.jpg'
 import imgSlider07 from './assets/imgSwiper07.jpg'
+import imgSlider08 from './assets/imgSwiper08.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -135,6 +136,18 @@ const HomeSwiper = () => {
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider07} alt='photoSlider' />
+				</SwiperSlide>
+				<SwiperSlide className={styles.box_swiper}>
+					<NavLink to='./Stopwatch'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>Stopwatch/Stoper</h4>
+						<p className={styles.card_text}>
+							Zaawansoway stoper z zapisem listy zmierzonych czasów. Można zmienić kolor layoutu.
+						</p>
+					</div>
+					<img className={styles.card_img} src={imgSlider08} alt='photoSlider' />
 				</SwiperSlide>
 			</Swiper>
 		</section>
