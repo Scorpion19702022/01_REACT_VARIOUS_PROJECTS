@@ -28,7 +28,7 @@ type InitialStateType = {
 	handleUseEnter: (e: any) => void
 	handleStart: () => void
 	handlePause: () => void
-	handleReset: () => void
+	handleStop: () => void
 	handleViewGamers: () => void
 	handleCleanAll: () => void
 }
@@ -61,7 +61,7 @@ const InitialState: InitialStateType = {
 	handleUseEnter: (e: any) => {},
 	handleStart: () => {},
 	handlePause: () => {},
-	handleReset: () => {},
+	handleStop: () => {},
 	handleViewGamers: () => {},
 	handleCleanAll: () => {},
 }
@@ -233,7 +233,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		}
 	}
 
-	const handleReset = () => {
+	const handleStop = () => {
 		const gamer: TypeForGamer = {
 			id: uuidv4(),
 			name: gamerName,
@@ -313,7 +313,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 				handleUseEnter,
 				handleStart,
 				handlePause,
-				handleReset,
+				handleStop,
 				handleViewGamers,
 				handleCleanAll,
 			}}
