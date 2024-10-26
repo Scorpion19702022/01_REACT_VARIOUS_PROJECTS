@@ -144,7 +144,8 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Stopwatch/Stoper</h4>
 						<p className={styles.card_text}>
-							Zaawansoway stoper z zapisem listy zmierzonych czasów. Można zmienić kolor layoutu.
+							Zaawansoway stoper z zapisem sortowanej listy zmierzonych czasów od najszybszego. Można zmienić kolor
+							layoutu.
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider08} alt='photoSlider' />
