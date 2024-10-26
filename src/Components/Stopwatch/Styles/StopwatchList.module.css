@@ -42,7 +42,7 @@
 
 .info {
 	color: var(--color-theme05);
-	padding-right: 2.5em;
+	padding-right: 3em;
 }
 
 .box_gamers {
@@ -58,7 +58,7 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	padding: 0.1em 1.4em;
+	padding: 0.1em 2em;
 	overflow: auto;
 }
 
@@ -75,9 +75,14 @@
 }
 
 .times {
-	width: 30%;
+	width: 35%;
 	display: flex;
 	justify-content: space-between;
+}
+
+.time {
+	width: 15%;
+	text-align: center;
 }
 
 @media (min-width: 660px) {
