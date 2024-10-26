@@ -14,9 +14,11 @@ const StopwatchList = () => {
 				<p className={styles.gamer_time}>
 					<span className={styles.name}>{item.name}</span>
 					<span className={styles.times}>
-						<span className={styles.time}>{item.minutes}:</span>
-						<span className={styles.time}>{item.seconds}:</span>
-						<span className={styles.time}>{item.milliseconds}</span>
+						<span className={styles.time}>{item.minutes}</span>
+						<span>:</span>
+						<span className={styles.time}> {item.seconds}</span>
+						<span>:</span>
+						<span className={styles.time}> {item.milliseconds}</span>
 					</span>
 				</p>
 			</li>
