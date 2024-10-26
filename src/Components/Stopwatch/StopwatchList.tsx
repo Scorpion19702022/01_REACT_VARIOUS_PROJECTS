@@ -28,8 +28,7 @@ const StopwatchList = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_info}>
-				<span className={styles.info}>Nazwa Gracza</span>
-				<span className={styles.info}>Czas</span>
+				<span className={styles.info}>Lista pomiaru czasu</span>
 			</div>
 			<div className={styles.box_gamers}>
 				<ol className={styles.gamers_list}>{listGamer}</ol>

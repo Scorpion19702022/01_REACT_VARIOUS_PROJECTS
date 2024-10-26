@@ -35,14 +35,15 @@
 	width: 100%;
 	height: 10%;
 	display: flex;
-	justify-content: space-between;
-	padding-bottom: 0.6em;
-	border-bottom: 0.04em solid var(--color-theme07);
+	justify-content: center;
 }
 
 .info {
+	width: 100%;
 	color: var(--color-theme05);
-	padding-right: 3em;
+	text-align: center;
+	padding-bottom: 0.6em;
+	border-bottom: 0.04em solid var(--color-theme07);
 }
 
 .box_gamers {
@@ -93,5 +94,13 @@
 		width: 35%;
 		height: 600px;
 		margin-top: 2em;
+	}
+
+	.box_info {
+		height: 5%;
+	}
+
+	.gamer {
+		font-size: 1.4em;
 	}
 }
