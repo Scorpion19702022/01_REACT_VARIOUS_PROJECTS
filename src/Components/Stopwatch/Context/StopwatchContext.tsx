@@ -259,7 +259,7 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 			setResetCount(true)
 			setStartCount(false)
 			setPauseCout(false)
-			setStateStopwatch('STOP')
+			setStateStopwatch('STOP/ZAPIS CZASU')
 		} else {
 			setStartCount(false)
 			setPauseCout(false)
