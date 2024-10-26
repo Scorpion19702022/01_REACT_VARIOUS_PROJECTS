@@ -59,13 +59,12 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	padding: 0.1em 2em;
+	padding: 0.1em 1.4em;
 	overflow: auto;
 }
 
 .gamer {
 	width: 100%;
-	font-size: 1.2em;
 	color: var(--color-theme02);
 }
 
@@ -100,7 +99,11 @@
 		height: 5%;
 	}
 
+	.gamers_list {
+		padding: 0.1em 1.6em;
+	}
+
 	.gamer {
-		font-size: 1.4em;
+		font-size: 1.2em;
 	}
 }

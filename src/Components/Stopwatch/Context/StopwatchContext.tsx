@@ -243,7 +243,15 @@ export const StopwatchProvider = ({ children }: StopwatchTypeProvider) => {
 		}
 
 		if (gamerName !== '' && gamerName !== 'musisz podać nazwę gracza') {
-			setGamersList(prevState => [...prevState, gamer])
+			setGamersList(prevState =>
+				[...prevState, gamer].sort((a, b) => {
+					const timeA =
+						parseInt(String(a.minutes)) * 60000 + parseInt(String(a.seconds)) * 1000 + parseInt(String(a.milliseconds))
+					const timeB =
+						parseInt(String(b.minutes)) * 60000 + parseInt(String(b.seconds)) * 1000 + parseInt(String(b.milliseconds))
+					return timeA - timeB
+				})
+			)
 			setResetCount(true)
 			setStartCount(false)
 			setPauseCout(false)
