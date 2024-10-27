@@ -69,14 +69,14 @@ const NavBar = () => {
 							Quiz
 						</li>
 					</NavLink>
-					<NavLink to='./Stopwatch'>
+					<NavLink to='./Stoper'>
 						<li className={styles.link} onClick={handleNavView}>
-							Stopwatch
+							Stoper
 						</li>
 					</NavLink>
 					<NavLink to='./CountdownTime'>
 						<li className={styles.link} onClick={handleNavView}>
-							Countdown Time
+							Odliczanie czasu
 						</li>
 					</NavLink>
 				</ul>

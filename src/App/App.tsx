@@ -43,7 +43,7 @@ function App() {
 					<Route path='/SnackBar' Component={SnackBar} />
 					<Route path='/TicTacToe' Component={TicTacToe} />
 					<Route path='/Quiz' Component={Quiz} />
-					<Route path='/Stopwatch' Component={Stopwatch} />
+					<Route path='/Stoper' Component={Stopwatch} />
 					<Route path='/CountdownTime' Component={CountdownTime} />
 				</Routes>
 			</section>
