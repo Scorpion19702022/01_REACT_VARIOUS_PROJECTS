@@ -1,11 +1,12 @@
 import React from 'react'
 
 import styles from './Styles/CountdownTime.module.css'
+import CoutdownTimeHeader from './CoutdownTimeHeader'
 
 const CountdownTime = () => {
 	return (
 		<main className={styles.wrapper}>
-			<h1>Czaso odliczator</h1>
+			<CoutdownTimeHeader />
 		</main>
 	)
 }
