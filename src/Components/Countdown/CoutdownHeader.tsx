@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Styles/CountdownTimeHeader.module.css'
+import styles from './Styles/CountdownHeader.module.css'
 
 import Time from './assets/time.png'
 

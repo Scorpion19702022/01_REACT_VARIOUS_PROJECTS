@@ -20,7 +20,7 @@ import SnackBar from '../Components/SnackBar/SnackBar'
 import TicTacToe from '../Components/TicTacToe/TicTacToe'
 import Quiz from '../Components/Quiz/Quiz'
 import Stopwatch from '../Components/Stopwatch/Stopwatch'
-import CountdownTime from '../Components/CountdownTime/CountdownTime'
+import Countdown from '../Components/Countdown/Countdown'
 
 function App() {
 	return (
@@ -44,7 +44,7 @@ function App() {
 					<Route path='/TicTacToe' Component={TicTacToe} />
 					<Route path='/Quiz' Component={Quiz} />
 					<Route path='/Stoper' Component={Stopwatch} />
-					<Route path='/CountdownTime' Component={CountdownTime} />
+					<Route path='/Countdown' Component={Countdown} />
 				</Routes>
 			</section>
 		</Router>
