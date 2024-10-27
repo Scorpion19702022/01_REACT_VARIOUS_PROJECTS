@@ -74,6 +74,11 @@ const NavBar = () => {
 							Stopwatch
 						</li>
 					</NavLink>
+					<NavLink to='./CountdownTime'>
+						<li className={styles.link} onClick={handleNavView}>
+							Countdown Time
+						</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>
