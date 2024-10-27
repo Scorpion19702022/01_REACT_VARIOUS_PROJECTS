@@ -21,8 +21,8 @@ const CountdownTimer = () => {
 						<button className={styles.btn_theme}>zapisz</button>
 					</div>
 				</div>
-				<div className={styles.box_your_theme}>
-					<span className={styles.your_theme}>ZDARZENIE</span>
+				<div className={styles.box_your_event}>
+					<span className={styles.your_event}>ZDARZENIE</span>
 				</div>
 			</div>
 		</section>

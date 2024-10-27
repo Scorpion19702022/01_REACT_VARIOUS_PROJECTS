@@ -92,7 +92,7 @@
 	color: var(--color-color04);
 }
 
-.box_your_theme {
+.box_your_event {
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -102,7 +102,7 @@
 	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
 }
 
-.your_theme {
+.your_event {
 	color: var(--color-color04);
 }
 
@@ -133,5 +133,23 @@
 
 	.box_count {
 		width: 70%;
+	}
+
+	.btn_theme {
+		padding: 0.6em;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn_theme:hover {
+		background-color: var(--color-dark09);
+	}
+
+	.box_your_event {
+		padding: 1em;
+	}
+
+	.your_event {
+		font-size: 1.6em;
 	}
 }
