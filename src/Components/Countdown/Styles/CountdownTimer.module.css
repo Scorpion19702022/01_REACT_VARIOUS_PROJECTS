@@ -92,6 +92,20 @@
 	color: var(--color-color04);
 }
 
+.box_your_theme {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: var(--color-dark09);
+	padding: 0.4em;
+	border: 0.04em solid var(--color-color07);
+	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
+}
+
+.your_theme {
+	color: var(--color-color04);
+}
+
 @media (min-width: 660px) {
 }
 
