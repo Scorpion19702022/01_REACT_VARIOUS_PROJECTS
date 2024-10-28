@@ -92,6 +92,12 @@
 	color: var(--color-color04);
 }
 
+.btn_theme:disabled {
+	background-color: var(--color-dark06);
+	border: 0.04em solid var(--color-dark07);
+	color: var(--color-dark09);
+}
+
 .box_your_event {
 	width: 100%;
 	height: 40px;
@@ -145,6 +151,13 @@
 
 	.btn_theme:hover {
 		background-color: var(--color-dark09);
+	}
+
+	.btn_theme:disabled {
+		background-color: var(--color-dark06);
+		border: 0.04em solid var(--color-dark07);
+		color: var(--color-dark09);
+		cursor: auto;
 	}
 
 	.box_your_event {

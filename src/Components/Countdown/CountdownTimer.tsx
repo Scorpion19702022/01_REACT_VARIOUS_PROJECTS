@@ -38,7 +38,7 @@ const CountdownTimer = () => {
 						<button className={styles.btn_theme} onClick={handleAddEvent}>
 							zapisz
 						</button>
-						<button className={styles.btn_theme} onClick={handleClearAll}>
+						<button className={styles.btn_theme} onClick={handleClearAll} disabled={event === '' ? true : false}>
 							wyczyść
 						</button>
 					</div>
