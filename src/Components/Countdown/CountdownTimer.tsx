@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Styles/CountdownTimer.module.css'
 
 import Joy from './assets/joy.png'
+import CountdownContext from './Context/CountdownContext'
 
 const CountdownTimer = () => {
+	const { eventInput, handleChangeEvent } = useContext(CountdownContext)
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_img}>
@@ -15,7 +18,12 @@ const CountdownTimer = () => {
 				<div className={styles.box_theme}>
 					<div className={styles.box_inputs}>
 						<label className={styles.label}>Podaj zdarzenie</label>
-						<input className={styles.input} type='text' />
+						<input
+							className={styles.input}
+							type='text'
+							value={eventInput}
+							onChange={e => handleChangeEvent(e.target.value)}
+						/>
 					</div>
 					<div className={styles.box_btn_theme}>
 						<button className={styles.btn_theme}>zapisz</button>
