@@ -6,11 +6,19 @@ import Joy from './assets/joy.png'
 import CountdownContext from './Context/CountdownContext'
 
 const CountdownTimer = () => {
-	const { eventInput, eventEmpty, event, eventError, handleChangeEvent, handleAddEvent, handleClearAll } =
-		useContext(CountdownContext)
+	const {
+		eventInput,
+		eventEmpty,
+		event,
+		eventError,
+		handleChangeEvent,
+		handleAddEvent,
+		handleClearAll,
+		handleUseEnter,
+	} = useContext(CountdownContext)
 
 	return (
-		<section className={styles.wrapper}>
+		<section className={styles.wrapper} onKeyDown={handleUseEnter}>
 			<div className={styles.box_img}>
 				<img className={styles.img} src={Joy} alt='woman_is_joy' />
 			</div>

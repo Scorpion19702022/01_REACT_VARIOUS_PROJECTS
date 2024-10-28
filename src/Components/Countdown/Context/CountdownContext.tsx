@@ -9,6 +9,7 @@ type InitialStateType = {
 	handleChangeEvent: (e: string) => void
 	handleAddEvent: () => void
 	handleClearAll: () => void
+	handleUseEnter: (e: any) => void
 }
 
 type CountdownTypeProvider = {
@@ -23,6 +24,7 @@ const InitialState: InitialStateType = {
 	handleChangeEvent: (e: string) => {},
 	handleAddEvent: () => {},
 	handleClearAll: () => {},
+	handleUseEnter: (e: any) => {},
 }
 
 const CountdownContext = createContext(InitialState)
@@ -52,6 +54,13 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 		}
 	}
 
+	const handleUseEnter = (e: any) => {
+		if (e.key === 'Enter') {
+			handleAddEvent()
+			e.preventDefault()
+		}
+	}
+
 	const handleClearAll = () => {
 		setEventInput('')
 		setEventEmpty(false)
@@ -61,7 +70,16 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 
 	return (
 		<CountdownContext.Provider
-			value={{ eventInput, eventEmpty, event, eventError, handleChangeEvent, handleAddEvent, handleClearAll }}
+			value={{
+				eventInput,
+				eventEmpty,
+				event,
+				eventError,
+				handleChangeEvent,
+				handleAddEvent,
+				handleClearAll,
+				handleUseEnter,
+			}}
 		>
 			{children}
 			<Analytics />
