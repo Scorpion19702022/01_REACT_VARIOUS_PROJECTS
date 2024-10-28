@@ -6,7 +6,8 @@ import Joy from './assets/joy.png'
 import CountdownContext from './Context/CountdownContext'
 
 const CountdownTimer = () => {
-	const { eventInput, eventEmpty, event, eventError, handleChangeEvent, handleAddEvent } = useContext(CountdownContext)
+	const { eventInput, eventEmpty, event, eventError, handleChangeEvent, handleAddEvent, handleClearAll } =
+		useContext(CountdownContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -28,6 +29,9 @@ const CountdownTimer = () => {
 					<div className={styles.box_btn_theme}>
 						<button className={styles.btn_theme} onClick={handleAddEvent}>
 							zapisz
+						</button>
+						<button className={styles.btn_theme} onClick={handleClearAll}>
+							wyczyść
 						</button>
 					</div>
 				</div>

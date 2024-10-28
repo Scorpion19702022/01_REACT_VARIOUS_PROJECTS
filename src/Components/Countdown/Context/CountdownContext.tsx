@@ -8,6 +8,7 @@ type InitialStateType = {
 	eventError: string
 	handleChangeEvent: (e: string) => void
 	handleAddEvent: () => void
+	handleClearAll: () => void
 }
 
 type CountdownTypeProvider = {
@@ -21,6 +22,7 @@ const InitialState: InitialStateType = {
 	eventError: '',
 	handleChangeEvent: (e: string) => {},
 	handleAddEvent: () => {},
+	handleClearAll: () => {},
 }
 
 const CountdownContext = createContext(InitialState)
@@ -50,8 +52,17 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 		}
 	}
 
+	const handleClearAll = () => {
+		setEventInput('')
+		setEventEmpty(false)
+		setEvent('')
+		setEvetError('')
+	}
+
 	return (
-		<CountdownContext.Provider value={{ eventInput, eventEmpty, event, eventError, handleChangeEvent, handleAddEvent }}>
+		<CountdownContext.Provider
+			value={{ eventInput, eventEmpty, event, eventError, handleChangeEvent, handleAddEvent, handleClearAll }}
+		>
 			{children}
 			<Analytics />
 		</CountdownContext.Provider>
