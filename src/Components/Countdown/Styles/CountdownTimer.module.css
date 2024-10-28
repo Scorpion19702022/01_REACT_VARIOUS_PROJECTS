@@ -94,6 +94,7 @@
 
 .box_your_event {
 	width: 100%;
+	height: 40px;
 	display: flex;
 	justify-content: center;
 	background-color: var(--color-dark09);
@@ -147,6 +148,7 @@
 
 	.box_your_event {
 		padding: 1em;
+		height: 60px;
 	}
 
 	.your_event {
