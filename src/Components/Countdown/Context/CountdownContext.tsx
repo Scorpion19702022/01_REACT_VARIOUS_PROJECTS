@@ -43,7 +43,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 
 	const handleChangeEvent = (e: string) => {
 		const invalid = [' ', '.', ',']
-		if (!invalid.includes(e) && e.length < 35) {
+		if (!invalid.includes(e) && e.length < 30) {
 			setEventInput(e)
 		}
 	}
