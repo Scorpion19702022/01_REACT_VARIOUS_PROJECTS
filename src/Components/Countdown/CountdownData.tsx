@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import styles from './Styles/CountdownTimer.module.css'
+import styles from './Styles/CountdownData.module.css'
 
 import Joy from './assets/joy.png'
 import CountdownContext from './Context/CountdownContext'
