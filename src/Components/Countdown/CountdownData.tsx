@@ -48,7 +48,8 @@ const CountdownData = () => {
 					<input className={styles.input_date} type='date' />
 				</div>
 				<div className={styles.box_your_event}>
-					<span className={styles.your_event}>{!eventEmpty ? eventError : event}</span>
+					<span className={styles.your_event}>Zdarzenie: {!eventEmpty ? eventError : event}</span>
+					<span className={styles.your_event_date}>Data zdarzenia:</span>
 				</div>
 			</div>
 		</section>
