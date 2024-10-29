@@ -108,7 +108,7 @@
 .input_date {
 	padding: 0.2em 1em;
 	background-color: var(--color-color07);
-	border: 0.04em solid var(--color-color01);
+	border: 0.04em solid var(--color-dark09);
 	color: var(--color-dark02);
 }
 
@@ -117,19 +117,27 @@
 	height: 60px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
 	background-color: var(--color-dark09);
 	padding: 0.6em;
 	border: 0.04em solid var(--color-color07);
 	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
 }
 
+.title_event {
+	color: var(--color-color05);
+}
+
 .your_event {
-	color: var(--color-color04);
+	display: flex;
+	justify-content: space-between;
+	color: var(--color-color02);
+	padding-bottom: 0.04em;
+	border-bottom: 0.04em dotted var(--color-color07);
 }
 
 .your_event_date {
+	display: flex;
+	justify-content: space-between;
 	color: var(--color-color02);
 }
 
@@ -181,10 +189,11 @@
 
 	.box_your_event {
 		padding: 1em;
-		height: 60px;
+		height: 100px;
 	}
 
-	.your_event {
+	.your_event,
+	.your_event_date {
 		font-size: 1.6em;
 	}
 }
