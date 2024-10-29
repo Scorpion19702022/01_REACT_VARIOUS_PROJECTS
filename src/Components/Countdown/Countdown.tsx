@@ -5,7 +5,7 @@ import CoutdownHeader from './CoutdownHeader'
 import { CountdownProvider } from './Context/CountdownContext'
 import CountdownData from './CountdownData'
 
-const CountdownTime = () => {
+const Countdown = () => {
 	return (
 		<main className={styles.wrapper}>
 			<CountdownProvider>
@@ -16,4 +16,4 @@ const CountdownTime = () => {
 	)
 }
 
-export default CountdownTime
+export default Countdown

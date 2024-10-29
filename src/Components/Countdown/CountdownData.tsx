@@ -5,7 +5,7 @@ import styles from './Styles/CountdownData.module.css'
 import Joy from './assets/joy.png'
 import CountdownContext from './Context/CountdownContext'
 
-const CountdownTimer = () => {
+const CountdownData = () => {
 	const {
 		eventInput,
 		eventEmpty,
@@ -43,6 +43,10 @@ const CountdownTimer = () => {
 						</button>
 					</div>
 				</div>
+				<div className={styles.box_date}>
+					<label className={styles.label}> wybierz datę zdarzenia:</label>
+					<input className={styles.input_date} type='date' />
+				</div>
 				<div className={styles.box_your_event}>
 					<span className={styles.your_event}>{!eventEmpty ? eventError : event}</span>
 				</div>
@@ -51,4 +55,4 @@ const CountdownTimer = () => {
 	)
 }
 
-export default CountdownTimer
+export default CountdownData
