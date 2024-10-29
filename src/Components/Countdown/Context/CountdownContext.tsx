@@ -6,10 +6,12 @@ type InitialStateType = {
 	eventEmpty: boolean
 	event: string
 	eventError: string
+	eventDate: any
 	handleChangeEvent: (e: string) => void
 	handleAddEvent: () => void
 	handleClearAll: () => void
 	handleUseEnter: (e: any) => void
+	handleChangeDate: (e: any) => void
 }
 
 type CountdownTypeProvider = {
@@ -21,25 +23,33 @@ const InitialState: InitialStateType = {
 	eventEmpty: false,
 	event: '',
 	eventError: '',
+	eventDate: '',
 	handleChangeEvent: (e: string) => {},
 	handleAddEvent: () => {},
 	handleClearAll: () => {},
 	handleUseEnter: (e: any) => {},
+	handleChangeDate: (e: any) => {},
 }
 
 const CountdownContext = createContext(InitialState)
 
 export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
+	let currentDate = new Date().toISOString().slice(0, 10)
 	const [eventInput, setEventInput] = useState<string>('')
 	const [eventEmpty, setEventEmpty] = useState<boolean>(false)
 	const [event, setEvent] = useState<string>('')
 	const [eventError, setEvetError] = useState<string>('')
+	const [eventDate, setEventDate] = useState<any>(currentDate)
 
 	const handleChangeEvent = (e: string) => {
 		const invalid = [' ', '.', ',']
 		if (!invalid.includes(e) && e.length < 35) {
 			setEventInput(e)
 		}
+	}
+
+	const handleChangeDate = (e: any) => {
+		setEventDate(e)
 	}
 
 	const handleAddEvent = () => {
@@ -66,6 +76,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 		setEventEmpty(false)
 		setEvent('')
 		setEvetError('')
+		setEventDate(currentDate)
 	}
 
 	return (
@@ -75,10 +86,12 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 				eventEmpty,
 				event,
 				eventError,
+				eventDate,
 				handleChangeEvent,
 				handleAddEvent,
 				handleClearAll,
 				handleUseEnter,
+				handleChangeDate,
 			}}
 		>
 			{children}

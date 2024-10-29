@@ -11,10 +11,12 @@ const CountdownData = () => {
 		eventEmpty,
 		event,
 		eventError,
+		eventDate,
 		handleChangeEvent,
 		handleAddEvent,
 		handleClearAll,
 		handleUseEnter,
+		handleChangeDate,
 	} = useContext(CountdownContext)
 
 	return (
@@ -45,14 +47,21 @@ const CountdownData = () => {
 				</div>
 				<div className={styles.box_date}>
 					<label className={styles.label}> wybierz datę zdarzenia:</label>
-					<input className={styles.input_date} type='date' />
+					<input
+						className={styles.input_date}
+						type='date'
+						value={eventDate}
+						min={eventDate}
+						onChange={e => handleChangeDate(e.target.value)}
+					/>
 				</div>
 				<div className={styles.box_your_event}>
 					<span className={styles.your_event}>
 						<span className={styles.title_event}>Zdarzenie:</span> {!eventEmpty ? eventError : event}
 					</span>
 					<span className={styles.your_event_date}>
-						<span className={styles.title_event}>Data zdarzenia:</span>data
+						<span className={styles.title_event}>Data zdarzenia:</span>
+						{!eventEmpty ? '' : eventDate}
 					</span>
 				</div>
 			</div>
