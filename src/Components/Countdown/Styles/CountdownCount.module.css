@@ -65,10 +65,27 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 60%;
-		height: 600px;
-		margin-top: 2em;
-		flex-direction: row;
-		justify-content: flex-end;
+		width: 70%;
+	}
+
+	.heading {
+		font-size: 2.6em;
+	}
+
+	.box_count {
+		margin-bottom: 1em;
+	}
+
+	.count {
+		height: 120px;
+	}
+
+	.count_heading {
+		font-size: 1.6em;
+		font-weight: 100;
+	}
+
+	.count_timer {
+		font-size: 2em;
 	}
 }
