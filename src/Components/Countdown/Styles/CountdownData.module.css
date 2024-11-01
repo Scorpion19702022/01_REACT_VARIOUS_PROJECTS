@@ -149,8 +149,7 @@
 		width: 60%;
 		height: 600px;
 		margin-top: 2em;
-		flex-direction: row;
-		justify-content: flex-end;
+		align-items: flex-end;
 	}
 
 	.box_img {
