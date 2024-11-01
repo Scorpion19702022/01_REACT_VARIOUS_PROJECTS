@@ -82,7 +82,7 @@ const InitialState: InitialStateType = {
 const ToDoContext = createContext(InitialState)
 
 export const ToDoProvider = ({ children }: ToDoProviderType) => {
-	let currentDate = new Date().toISOString().slice(0, 10)
+	let currentDate = new Date().toLocaleString('en-CA').slice(0, 10)
 
 	const [taskInput, setTaskInput] = useState<string>('')
 	const [quantitySign, setQuantitySign] = useState<number>(0)
