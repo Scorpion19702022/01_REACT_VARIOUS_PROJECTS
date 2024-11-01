@@ -187,6 +187,14 @@
 		cursor: auto;
 	}
 
+	.box_date {
+		justify-content: flex-end;
+	}
+
+	.input_date {
+		margin-left: 1em;
+	}
+
 	.box_your_event {
 		padding: 1em;
 		height: 100px;
