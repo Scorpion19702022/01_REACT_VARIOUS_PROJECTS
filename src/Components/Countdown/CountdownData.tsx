@@ -4,6 +4,7 @@ import styles from './Styles/CountdownData.module.css'
 
 import Joy from './assets/joy.png'
 import CountdownContext from './Context/CountdownContext'
+import CountdownCount from './CountdownCount'
 
 const CountdownData = () => {
 	const {
@@ -65,6 +66,7 @@ const CountdownData = () => {
 					</span>
 				</div>
 			</div>
+			<CountdownCount />
 		</section>
 	)
 }
