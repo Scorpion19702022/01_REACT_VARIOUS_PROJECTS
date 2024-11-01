@@ -34,7 +34,7 @@ const InitialState: InitialStateType = {
 const CountdownContext = createContext(InitialState)
 
 export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
-	let currentDate = new Date().toISOString().slice(0, 10)
+	let currentDate = new Date().toLocaleString('en-CA').slice(0, 10)
 	const [eventInput, setEventInput] = useState<string>('')
 	const [eventEmpty, setEventEmpty] = useState<boolean>(false)
 	const [event, setEvent] = useState<string>('')
