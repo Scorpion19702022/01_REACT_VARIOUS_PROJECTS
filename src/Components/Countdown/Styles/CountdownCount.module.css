@@ -23,11 +23,33 @@
 
 .wrapper {
 	width: 100%;
+	display: flex;
+}
+
+.box_count {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.count {
+	width: 23%;
+	height: 80px;
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
-	border: 0.04em solid var(--color-color07);
+	border: 0.04em solid var(--color-color08);
+}
+
+.count_heading {
+	font-weight: 200;
+	color: var(--color-color04);
+}
+
+.count_timer {
+	color: var(--color-color02);
 }
 
 @media (min-width: 660px) {
