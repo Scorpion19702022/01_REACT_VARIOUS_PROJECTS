@@ -5,6 +5,7 @@ import styles from './Styles/CountdownCount.module.css'
 const CountdownCount = () => {
 	return (
 		<section className={styles.wrapper}>
+			<h2 className={styles.heading}>Pozostało:</h2>
 			<div className={styles.box_count}>
 				<div className={styles.count}>
 					<h4 className={styles.count_heading}>dni</h4>

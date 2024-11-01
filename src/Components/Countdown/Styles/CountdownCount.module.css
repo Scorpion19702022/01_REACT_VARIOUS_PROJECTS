@@ -24,6 +24,13 @@
 .wrapper {
 	width: 100%;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.heading {
+	color: var(--color-color03);
+	margin-bottom: 0.4em;
 }
 
 .box_count {
@@ -40,7 +47,8 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	border: 0.04em solid var(--color-color08);
+	border: 0.04em solid var(--color-color09);
+	box-shadow: 0.04em 0.04em 0.4em var(--color-dark09);
 }
 
 .count_heading {
