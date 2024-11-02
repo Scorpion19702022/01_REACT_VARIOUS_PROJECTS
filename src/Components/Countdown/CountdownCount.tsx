@@ -20,11 +20,15 @@ const CountdownCount = () => {
 				</div>
 				<div className={styles.count}>
 					<h4 className={styles.count_heading}>minut</h4>
-					<span className={styles.count_timer}>{countdown.minutes}</span>
+					<span className={styles.count_timer}>
+						{countdown.minutes < 10 ? `0${countdown.minutes}` : countdown.minutes}
+					</span>
 				</div>
 				<div className={styles.count}>
 					<h4 className={styles.count_heading}>sekund</h4>
-					<span className={styles.count_timer}>{countdown.seconds}</span>
+					<span className={styles.count_timer}>
+						{countdown.seconds < 10 ? `0${countdown.seconds}` : countdown.seconds}
+					</span>
 				</div>
 			</div>
 		</section>
