@@ -63,7 +63,7 @@ const CountdownData = () => {
 					</span>
 					<span className={styles.your_event_date}>
 						<span className={styles.title_event}>Data zdarzenia:</span>
-						{!eventEmpty ? '' : eventDate}
+						{eventDate}
 					</span>
 				</div>
 			</div>

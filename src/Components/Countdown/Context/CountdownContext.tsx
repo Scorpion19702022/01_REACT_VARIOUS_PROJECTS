@@ -82,7 +82,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 			setEventEmpty(false)
 			setEvetError('musisz podać zdarzenie')
 			setChangeDate(currentDate)
-			setEventDate('wybierz datę zdarzenia')
+			setEventDate('nie podałeś zdarzenia')
 		}
 	}
 
