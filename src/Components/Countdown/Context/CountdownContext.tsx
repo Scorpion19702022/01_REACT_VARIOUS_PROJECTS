@@ -89,7 +89,6 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	const handleAddEvent = () => {
 		if (eventInput !== '' && changeDate !== currentDate) {
 			setEventEmpty(true)
-			// setChangeDate(currentDate)
 			setEvent(eventInput)
 			setEventDate(changeDate)
 			setEvetError('')
