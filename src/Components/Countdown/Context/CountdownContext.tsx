@@ -53,7 +53,9 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	}
 
 	const handleChangeDate = (e: any) => {
-		setEventDate(e)
+		if (event !== '') {
+			setEventDate(e)
+		}
 	}
 
 	useEffect(() => {
@@ -72,8 +74,8 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 		if (eventInput !== '') {
 			setEventEmpty(true)
 			setEvent(eventInput)
-			setEventInput('')
 			setEvetError('')
+			setEventInput('')
 		} else {
 			setEventEmpty(false)
 			setEvetError('musisz podać zdarzenie')
