@@ -78,9 +78,9 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 			const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
 			const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
-			setCountdown({ days, hours, minutes, seconds })
-
-			console.log(distance)
+			if (!isNaN(days) && !isNaN(hours) && !isNaN(minutes) && !isNaN(seconds)) {
+				setCountdown({ days, hours, minutes, seconds })
+			}
 		}, 1000)
 
 		return () => clearInterval(interval)
