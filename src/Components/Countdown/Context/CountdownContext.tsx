@@ -94,14 +94,14 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 			setEvetError('')
 		} else if (eventInput !== '' && changeDate === currentDate) {
 			setEventEmpty(false)
-			setEvetError('wybierz zdarzenie inne niż dzisiaj')
+			setEvetError('musisz wybrać datę inną niż dzisiejsza')
 			setChangeDate(currentDate)
-			setEventDate('wybierz zdarzenie inne niż dzisiaj')
+			setEventDate('musisz wybrać datę inną niż dzisiejsza')
 		} else if (eventInput === '' && changeDate === currentDate) {
 			setEventEmpty(false)
 			setEvetError('musisz podać zdarzenie')
 			setChangeDate(currentDate)
-			setEventDate('wybierz zdarzenie inne niż dzisiaj')
+			setEventDate('musisz wybrać datę inną niż dzisiejsza')
 		}
 	}
 
