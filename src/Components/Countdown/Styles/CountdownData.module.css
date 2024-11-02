@@ -62,7 +62,8 @@
 	flex-direction: column;
 }
 
-.label {
+.label,
+.label_date {
 	color: var(--color-color05);
 	padding-bottom: 0.4em;
 }
@@ -107,7 +108,7 @@
 
 .input_date {
 	padding: 0.2em 1em;
-	background-color: var(--color-color07);
+	background-color: var(--color-color08);
 	border: 0.04em solid var(--color-dark09);
 	color: var(--color-dark02);
 }
@@ -190,8 +191,14 @@
 		justify-content: flex-end;
 	}
 
+	.label_date {
+		font-size: 1.4em;
+	}
+
 	.input_date {
 		margin-left: 1em;
+		padding: 0.4em 2.7em;
+		font-size: 1.2em;
 	}
 
 	.box_your_event {

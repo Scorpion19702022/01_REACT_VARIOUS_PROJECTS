@@ -47,7 +47,7 @@ const CountdownData = () => {
 					</div>
 				</div>
 				<div className={styles.box_date}>
-					<label className={styles.label}> wybierz datę zdarzenia:</label>
+					<label className={styles.label_date}> wybierz datę zdarzenia:</label>
 					<input
 						className={styles.input_date}
 						type='date'
