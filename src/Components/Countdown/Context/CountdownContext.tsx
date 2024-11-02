@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 
 type InitialStateType = {
@@ -55,6 +55,17 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	const handleChangeDate = (e: any) => {
 		setEventDate(e)
 	}
+
+	useEffect(() => {
+		if (!eventDate) return
+
+		const interval = setInterval(() => {
+			const now = new Date().getTime()
+			const distance = eventDate.getTime() - now
+		}, 1000)
+
+		return () => clearInterval(interval)
+	}, [eventDate])
 
 	const handleAddEvent = () => {
 		if (eventInput !== '') {
