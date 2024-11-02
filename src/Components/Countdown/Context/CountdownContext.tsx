@@ -57,11 +57,12 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	}
 
 	useEffect(() => {
-		if (!eventDate) return
+		if (!eventDate || eventDate === currentDate) return
 
 		const interval = setInterval(() => {
 			const now = new Date().getTime()
-			const distance = eventDate.getTime() - now
+			const targetDate = new Date(eventDate).getTime()
+			const distance = targetDate - now
 		}, 1000)
 
 		return () => clearInterval(interval)
