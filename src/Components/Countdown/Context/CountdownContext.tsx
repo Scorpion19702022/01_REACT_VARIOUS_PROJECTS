@@ -60,7 +60,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	}
 
 	useEffect(() => {
-		if (!eventDate || eventDate === 'nie podałeś zdarzenia') return
+		if (!eventDate || eventDate === 'musisz podać zdarzenie') return
 
 		const interval = setInterval(() => {
 			const now = new Date().getTime()
@@ -87,17 +87,22 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	}, [eventDate])
 
 	const handleAddEvent = () => {
-		if (eventInput !== '') {
+		if (eventInput !== '' && changeDate !== currentDate) {
 			setEventEmpty(true)
-			setChangeDate(currentDate)
+			// setChangeDate(currentDate)
 			setEvent(eventInput)
 			setEventDate(changeDate)
 			setEvetError('')
-		} else if (eventInput === '') {
+		} else if (eventInput !== '' && changeDate === currentDate) {
+			setEventEmpty(false)
+			setEvetError('wybierz zdarzenie inne niż dzisiaj')
+			setChangeDate(currentDate)
+			setEventDate('wybierz zdarzenie inne niż dzisiaj')
+		} else if (eventInput === '' && changeDate === currentDate) {
 			setEventEmpty(false)
 			setEvetError('musisz podać zdarzenie')
 			setChangeDate(currentDate)
-			setEventDate('musisz podać zdarzenie')
+			setEventDate('wybierz zdarzenie inne niż dzisiaj')
 		}
 	}
 
