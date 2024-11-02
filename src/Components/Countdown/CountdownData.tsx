@@ -12,6 +12,7 @@ const CountdownData = () => {
 		eventEmpty,
 		event,
 		eventError,
+		changeDate,
 		eventDate,
 		handleChangeEvent,
 		handleAddEvent,
@@ -51,8 +52,8 @@ const CountdownData = () => {
 					<input
 						className={styles.input_date}
 						type='date'
-						value={eventDate}
-						min={eventDate}
+						value={changeDate}
+						min={changeDate}
 						onChange={e => handleChangeDate(e.target.value)}
 					/>
 				</div>

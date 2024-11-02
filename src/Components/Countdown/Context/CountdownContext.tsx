@@ -6,6 +6,7 @@ type InitialStateType = {
 	eventEmpty: boolean
 	event: string
 	eventError: string
+	changeDate: any
 	eventDate: any
 	countdown: { days: number; hours: number; minutes: number; seconds: number }
 	handleChangeEvent: (e: string) => void
@@ -24,6 +25,7 @@ const InitialState: InitialStateType = {
 	eventEmpty: false,
 	event: '',
 	eventError: '',
+	changeDate: '',
 	eventDate: '',
 	countdown: { days: 0, hours: 0, minutes: 0, seconds: 0 },
 	handleChangeEvent: (e: string) => {},
@@ -41,7 +43,8 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	const [eventEmpty, setEventEmpty] = useState<boolean>(false)
 	const [event, setEvent] = useState<string>('')
 	const [eventError, setEvetError] = useState<string>('')
-	const [eventDate, setEventDate] = useState<any>(currentDate)
+	const [changeDate, setChangeDate] = useState<any>(currentDate)
+	const [eventDate, setEventDate] = useState<any>('')
 
 	const [countdown, setCountdown] = useState<any>({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
@@ -53,34 +56,37 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	}
 
 	const handleChangeDate = (e: any) => {
-		if (event !== '') {
-			setEventDate(e)
-		}
+		setChangeDate(e)
 	}
 
-	useEffect(() => {
-		if (!eventDate || eventDate === currentDate) return
+	// useEffect(() => {
+	// 	if (eventDate === currentDate) return
 
-		const interval = setInterval(() => {
-			const now = new Date().getTime()
-			const targetDate = new Date(eventDate).getTime()
-			const distance = targetDate - now
-		}, 1000)
+	// 	const interval = setInterval(() => {
+	// 		const now = new Date().getTime()
+	// 		const targetDate = new Date(eventDate).getTime()
+	// 		const distance = targetDate - now
+	// 	}, 1000)
 
-		return () => clearInterval(interval)
-	}, [eventDate])
+	// 	return () => clearInterval(interval)
+	// }, [eventDate])
 
 	const handleAddEvent = () => {
 		if (eventInput !== '') {
 			setEventEmpty(true)
 			setEvent(eventInput)
+			setEventDate(changeDate)
 			setEvetError('')
 			setEventInput('')
-		} else {
+		} else if (eventInput === '') {
 			setEventEmpty(false)
 			setEvetError('musisz podać zdarzenie')
+			setChangeDate(currentDate)
+			setEventDate('wybierz datę zdarzenia')
 		}
 	}
+
+	console.log(eventDate)
 
 	const handleUseEnter = (e: any) => {
 		if (e.key === 'Enter') {
@@ -94,7 +100,8 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 		setEventEmpty(false)
 		setEvent('')
 		setEvetError('')
-		setEventDate(currentDate)
+		setChangeDate(currentDate)
+		setEventDate('')
 	}
 
 	return (
@@ -105,6 +112,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 				event,
 				eventError,
 				eventDate,
+				changeDate,
 				countdown,
 				handleChangeEvent,
 				handleAddEvent,
