@@ -7,6 +7,7 @@ type InitialStateType = {
 	event: string
 	eventError: string
 	eventDate: any
+	countdown: { days: number; hours: number; minutes: number; seconds: number }
 	handleChangeEvent: (e: string) => void
 	handleAddEvent: () => void
 	handleClearAll: () => void
@@ -24,6 +25,7 @@ const InitialState: InitialStateType = {
 	event: '',
 	eventError: '',
 	eventDate: '',
+	countdown: { days: 0, hours: 0, minutes: 0, seconds: 0 },
 	handleChangeEvent: (e: string) => {},
 	handleAddEvent: () => {},
 	handleClearAll: () => {},
@@ -40,6 +42,8 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	const [event, setEvent] = useState<string>('')
 	const [eventError, setEvetError] = useState<string>('')
 	const [eventDate, setEventDate] = useState<any>(currentDate)
+
+	const [countdown, setCountdown] = useState<any>({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
 	const handleChangeEvent = (e: string) => {
 		const invalid = [' ', '.', ',']
@@ -87,6 +91,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 				event,
 				eventError,
 				eventDate,
+				countdown,
 				handleChangeEvent,
 				handleAddEvent,
 				handleClearAll,
