@@ -59,6 +59,26 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 		setChangeDate(e)
 	}
 
+	useEffect(() => {
+		if (!eventDate || eventDate === 'nie podałeś zdarzenia') return
+
+		const interval = setInterval(() => {
+			const now = new Date().getTime()
+			const targetDate = new Date(eventDate).getTime()
+			const distance = targetDate - now
+
+			if (distance < 0) {
+				clearInterval(interval)
+				setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+				return
+			}
+
+			console.log(distance)
+		}, 1000)
+
+		return () => clearInterval(interval)
+	}, [eventDate])
+
 	const handleAddEvent = () => {
 		if (eventInput !== '') {
 			setEventEmpty(true)
@@ -70,11 +90,9 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 			setEventEmpty(false)
 			setEvetError('musisz podać zdarzenie')
 			setChangeDate(currentDate)
-			setEventDate('nie podałeś zdarzenia')
+			setEventDate('musisz podać zdarzenie')
 		}
 	}
-
-	console.log(eventDate)
 
 	const handleUseEnter = (e: any) => {
 		if (e.key === 'Enter') {
