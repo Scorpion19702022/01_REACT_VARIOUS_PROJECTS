@@ -28,9 +28,21 @@
 	align-items: center;
 }
 
+.box_heading {
+	width: 100%;
+	display: flex;
+}
+
 .heading {
+	width: 50%;
 	color: var(--color-color03);
 	margin-bottom: 0.4em;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.heading:nth-child(2) {
+	font-weight: 100;
 }
 
 .box_count {

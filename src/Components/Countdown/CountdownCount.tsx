@@ -8,7 +8,10 @@ const CountdownCount = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h2 className={styles.heading}>Pozostało:</h2>
+			<div className={styles.box_heading}>
+				<h2 className={styles.heading}>Pozostało:</h2>
+				<h2 className={styles.heading}>Czas jednostkowy:</h2>
+			</div>
 			<div className={styles.box_count}>
 				<div className={styles.count}>
 					<h4 className={styles.count_heading}>dni</h4>
