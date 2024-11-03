@@ -33,7 +33,7 @@ const CountdownData = () => {
 				<p className={styles.popup_text}>Musisz podać nazwę zdarzenia i wybrać czas w przyszłości.</p>
 				<p className={styles.popup_text}>
 					Czas jest liczony od godziny 00:00 dnia następnego. Jeżeli chcesz sprawdzić ile pozostało czasu do końca
-					bierzącego dnia wybierz datę dnia kolejnego. W przypadku innego czasu w przyszłości czas będzie odliczany od
+					bieżącego dnia wybierz datę dnia kolejnego. W przypadku innego czasu w przyszłości czas będzie odliczany od
 					rozpoczęcia wybranego dnia.
 				</p>
 				<p className={styles.popup_text}>

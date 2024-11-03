@@ -14,11 +14,11 @@ const CountdownCount = () => {
 			</div>
 			<div className={styles.box_count}>
 				<div className={styles.count}>
-					<h4 className={styles.count_heading}>dni</h4>
+					<h4 className={styles.count_heading}>dni do:</h4>
 					<span className={styles.count_timer}>{countdown.days}</span>
 				</div>
 				<div className={styles.count}>
-					<h4 className={styles.count_heading}>godzin</h4>
+					<h4 className={styles.count_heading}>godzin do:</h4>
 					<span className={styles.count_timer}>{countdown.hours}</span>
 				</div>
 				<div className={styles.count}>
