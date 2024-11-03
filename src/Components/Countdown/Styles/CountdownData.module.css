@@ -216,6 +216,35 @@
 		object-fit: cover;
 	}
 
+	.box_popup {
+		right: 10%;
+		width: 50%;
+	}
+
+	.no_box_popup {
+		right: 10%;
+		width: 50%;
+	}
+
+	.popup_heading {
+		font-size: 3rem;
+	}
+
+	.popup_text {
+		font-size: 1.5em;
+		font-weight: 200;
+	}
+
+	.popup_btn {
+		font-size: 1.2em;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.popup_btn:hover {
+		background-color: var(--color-dark09);
+	}
+
 	.box_count {
 		width: 70%;
 	}
