@@ -14,6 +14,7 @@ const CountdownData = () => {
 		eventError,
 		changeDate,
 		eventDate,
+		popupOpen,
 		handleChangeEvent,
 		handleAddEvent,
 		handleClearAll,
@@ -26,16 +27,16 @@ const CountdownData = () => {
 			<div className={styles.box_img}>
 				<img className={styles.img} src={Joy} alt='woman_is_joy' />
 			</div>
-			<div className={styles.box_popup}>
+			<div className={popupOpen ? styles.box_popup : styles.no_box_popup}>
 				<h2 className={styles.popup_heading}>UWAGA!!!</h2>
+				<p className={styles.popup_text}>Musisz podać nazwę zdarzenia i wybrać czas w przyszłości.</p>
 				<p className={styles.popup_text}>
 					Czas jest liczony od godziny 00:00 dnia następnego. Jeżeli chcesz sprawdzić ile pozostało czasu do końca
 					bierzącego dnia wybierz datę dnia kolejnego. W przypadku innego czasu w przyszłości czas będzie odliczany od
 					rozpoczęcia wybranego dnia.
 				</p>
 				<p className={styles.popup_text}>
-					Odliczanie pokazuje i odlicza w dniach i godzinach łączny czas do rozpoczęcia dnia ze zdarzeniem. Minuty i
-					sekundy pokazują rzeczywiste odliczanie.
+					Odliczanie pokazuje i odlicza w dniach i godzinach łączny czas do rozpoczęcia dnia ze zdarzeniem.
 				</p>
 				<button className={styles.popup_btn}>zamknij</button>
 			</div>

@@ -8,6 +8,7 @@ type InitialStateType = {
 	eventError: string
 	changeDate: any
 	eventDate: any
+	popupOpen: boolean
 	countdown: { days: number; hours: number; minutes: number; seconds: number }
 	handleChangeEvent: (e: string) => void
 	handleAddEvent: () => void
@@ -27,6 +28,7 @@ const InitialState: InitialStateType = {
 	eventError: '',
 	changeDate: '',
 	eventDate: '',
+	popupOpen: false,
 	countdown: { days: 0, hours: 0, minutes: 0, seconds: 0 },
 	handleChangeEvent: (e: string) => {},
 	handleAddEvent: () => {},
@@ -45,6 +47,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	const [eventError, setEvetError] = useState<string>('')
 	const [changeDate, setChangeDate] = useState<any>(currentDate)
 	const [eventDate, setEventDate] = useState<any>('')
+	const [popupOpen, setPopupOpen] = useState<boolean>(false)
 
 	const [countdown, setCountdown] = useState<any>({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
@@ -87,6 +90,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	}, [eventDate])
 
 	const handleAddEvent = () => {
+		setPopupOpen(true)
 		if (eventInput !== '' && changeDate !== currentDate) {
 			setEventEmpty(true)
 			setEvent(eventInput)
@@ -134,6 +138,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 				eventError,
 				eventDate,
 				changeDate,
+				popupOpen,
 				countdown,
 				handleChangeEvent,
 				handleAddEvent,
