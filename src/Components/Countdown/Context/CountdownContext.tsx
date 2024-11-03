@@ -149,6 +149,3 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 }
 
 export default CountdownContext
-function preventDefault() {
-	throw new Error('Function not implemented.')
-}
