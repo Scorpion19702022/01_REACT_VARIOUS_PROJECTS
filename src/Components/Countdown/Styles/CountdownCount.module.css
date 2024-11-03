@@ -31,13 +31,13 @@
 .box_heading {
 	width: 100%;
 	display: flex;
+	margin-bottom: 0.8em;
 }
 
 .heading {
 	width: 50%;
 	color: var(--color-color03);
-	margin-bottom: 0.4em;
-	font-size: 1.2em;
+	font-size: 0.8em;
 	text-align: center;
 }
 
@@ -89,7 +89,7 @@
 	}
 
 	.heading {
-		font-size: 2.6em;
+		font-size: 2em;
 	}
 
 	.box_count {
