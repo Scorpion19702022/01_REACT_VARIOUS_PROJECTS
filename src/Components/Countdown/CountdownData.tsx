@@ -20,6 +20,7 @@ const CountdownData = () => {
 		handleClearAll,
 		handleUseEnter,
 		handleChangeDate,
+		handleClosePopup,
 	} = useContext(CountdownContext)
 
 	return (
@@ -38,7 +39,9 @@ const CountdownData = () => {
 				<p className={styles.popup_text}>
 					Odliczanie pokazuje i odlicza w dniach i godzinach łączny czas do rozpoczęcia dnia ze zdarzeniem.
 				</p>
-				<button className={styles.popup_btn}>zamknij</button>
+				<button className={styles.popup_btn} onClick={handleClosePopup}>
+					zamknij
+				</button>
 			</div>
 			<div className={styles.box_count}>
 				<h2 className={styles.heading_count}>Ile zostało do... ?</h2>

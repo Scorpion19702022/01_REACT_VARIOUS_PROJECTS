@@ -15,6 +15,7 @@ type InitialStateType = {
 	handleClearAll: () => void
 	handleUseEnter: (e: any) => void
 	handleChangeDate: (e: any) => void
+	handleClosePopup: () => void
 }
 
 type CountdownTypeProvider = {
@@ -35,6 +36,7 @@ const InitialState: InitialStateType = {
 	handleClearAll: () => {},
 	handleUseEnter: (e: any) => {},
 	handleChangeDate: (e: any) => {},
+	handleClosePopup: () => {},
 }
 
 const CountdownContext = createContext(InitialState)
@@ -129,6 +131,10 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 		setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 	}
 
+	const handleClosePopup = () => {
+		setPopupOpen(false)
+	}
+
 	return (
 		<CountdownContext.Provider
 			value={{
@@ -145,6 +151,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 				handleClearAll,
 				handleUseEnter,
 				handleChangeDate,
+				handleClosePopup,
 			}}
 		>
 			{children}
