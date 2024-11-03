@@ -47,8 +47,16 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	background-color: var(--color-dark08);
 	border: 0.04em solid var(--color-color09);
 	box-shadow: 0.04em 0.04em 0.4em var(--color-dark09);
+}
+
+.count:nth-child(1),
+.count:nth-child(2) {
+	background-color: var(--color-dark09);
+	border: 0.1em solid var(--color-color08);
+	box-shadow: 0.08em 0.08em 0.8em var(--color-dark09);
 }
 
 .count_heading {

@@ -74,7 +74,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 			}
 
 			const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-			const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+			const hours = Math.floor(distance / 1000 / 60 / 60)
 			const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
 			const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
@@ -91,17 +91,20 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 			setEventEmpty(true)
 			setEvent(eventInput)
 			setEventDate(changeDate)
+			setChangeDate(currentDate)
 			setEvetError('')
 		} else if (eventInput !== '' && changeDate === currentDate) {
 			setEventEmpty(false)
 			setEvetError('musisz wybrać datę inną niż dzisiejsza')
 			setChangeDate(currentDate)
 			setEventDate('musisz wybrać datę inną niż dzisiejsza')
+			setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 		} else if (eventInput === '' && changeDate === currentDate) {
 			setEventEmpty(false)
 			setEvetError('musisz podać zdarzenie')
 			setChangeDate(currentDate)
 			setEventDate('musisz wybrać datę inną niż dzisiejsza')
+			setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 		}
 	}
 
@@ -119,6 +122,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 		setEvetError('')
 		setChangeDate(currentDate)
 		setEventDate('')
+		setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 	}
 
 	return (
