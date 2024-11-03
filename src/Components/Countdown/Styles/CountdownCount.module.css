@@ -22,23 +22,10 @@
 }
 
 .wrapper {
-	position: relative;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-
-.box_popup {
-	position: absolute;
-	top: 0;
-	width: 90%;
-	height: 400px;
-	padding: 1em;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
 }
 
 .box_heading {
