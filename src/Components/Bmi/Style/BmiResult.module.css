@@ -114,7 +114,7 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
 	.wrapper {
 		width: 100%;
 		display: flex;

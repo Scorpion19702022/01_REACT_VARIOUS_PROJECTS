@@ -142,8 +142,7 @@
 @media (min-width: 992px) {
 	.wrapper {
 		padding-left: 10em;
-		max-width: 100vw;
-		max-height: 100vh;
+		min-height: 100vh;
 	}
 
 	.box_btns {
@@ -181,8 +180,8 @@
 	}
 
 	.box_content {
-		max-width: 50%;
-		max-height: 180px;
+		width: 50%;
+		height: 200px;
 		padding: 1.4em;
 		border: 0.04em solid var(--color-color07);
 		text-align: center;
@@ -191,13 +190,13 @@
 
 	.text {
 		color: var(--color-color01);
-		font-size: 1.4em;
+		font-size: 1.6em;
 	}
 
 	.swiper {
 		position: relative;
-		min-width: 1500px;
-		min-height: 340px;
+		width: 1500px;
+		height: 340px;
 	}
 
 	.box_swiper {
