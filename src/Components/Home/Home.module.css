@@ -142,6 +142,7 @@
 @media (min-width: 992px) {
 	.wrapper {
 		padding-left: 10em;
+		min-width: 100vh;
 		min-height: 100vh;
 	}
 
@@ -180,8 +181,8 @@
 	}
 
 	.box_content {
-		width: 50%;
-		height: 200px;
+		max-width: 50%;
+		max-height: 200px;
 		padding: 1.4em;
 		border: 0.04em solid var(--color-color07);
 		text-align: center;
