@@ -53,12 +53,6 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.btn_pl:hover,
-.btn_en:hover {
-	background-color: var(--color-color07);
-	color: var(--color-color01);
-}
-
 .btn_pl_active,
 .btn_en_active {
 	width: 25%;
@@ -137,6 +131,36 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+@media (min-width: 992px) {
+	.btn_pl,
+	.btn_en {
+		padding: 0.8em;
+	}
+
+	.btn_pl_active,
+	.btn_en_active {
+		padding: 0.8em;
+	}
+
+	.box_content {
+		height: 200px;
+	}
+
+	.text {
+		font-size: 1.6em;
+	}
+
+	.swiper {
+		width: 660px;
+		height: 320px;
+	}
+
+	.card_heading {
+		color: var(--color-color01);
+		font-weight: 100;
+	}
 }
 
 @media (min-width: 1200px) {
