@@ -139,7 +139,7 @@
 	object-fit: cover;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
 	.wrapper {
 		padding-left: 10em;
 		min-height: 100vh;
