@@ -197,7 +197,7 @@
 	.swiper {
 		position: relative;
 		min-width: 1500px;
-		height: 340px;
+		min-height: 340px;
 	}
 
 	.box_swiper {
