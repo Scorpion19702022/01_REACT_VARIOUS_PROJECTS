@@ -32,9 +32,9 @@
 }
 
 body {
-	width: 100%;
-	height: 100vh;
-	/* overflow: hidden; */
+	max-width: 100vw;
+	max-height: 100vh;
+	overflow: hidden;
 	/* margin: 0; */
 	font-family: 'Barlow Condensed', sans-serif;
 	-webkit-font-smoothing: antialiased;
