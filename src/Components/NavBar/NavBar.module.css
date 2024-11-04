@@ -121,7 +121,7 @@ a {
 	color: var(--color-color03);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 660px) {
 	.list_links {
 		width: 100%;
 		height: 100vh;
@@ -145,31 +145,7 @@ a {
 	}
 }
 
-@media (min-width: 1200px) {
-	.list_links {
-		width: 100%;
-		height: 100vh;
-		padding: 4em 0em;
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
-		list-style-type: none;
-	}
-
-	.link {
-		margin-bottom: 0.2em;
-		padding: 0.2em 2em;
-	}
-
-	a {
-		padding: 0.08em 0em;
-		margin-bottom: 0.04em;
-	}
-}
-
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
 	.nav_btn {
 		opacity: 0;
 	}
