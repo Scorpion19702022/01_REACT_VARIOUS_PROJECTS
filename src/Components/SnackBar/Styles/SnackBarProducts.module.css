@@ -184,6 +184,15 @@
 	font-size: 1.6em;
 }
 
+@media (min-width: 992px) {
+	.product {
+		margin-bottom: 2em;
+		width: 45%;
+		height: 260px;
+		border: 0.04em solid var(--color-color07);
+	}
+}
+
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 90%;
