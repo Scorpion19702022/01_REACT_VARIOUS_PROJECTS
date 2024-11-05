@@ -108,7 +108,7 @@
 	object-fit: cover;
 }
 
-@media (min-width: 660px) {
+@media (min-width: 992px) {
 	.wrapper {
 		margin-bottom: 2em;
 	}
