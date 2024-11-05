@@ -39,6 +39,12 @@
 
 @media (min-width: 992px) {
 	.wrapper {
+		min-height: 100%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.wrapper {
 		width: 100%;
 		height: 100vh;
 		padding: 2em 2em 2em 10em;
