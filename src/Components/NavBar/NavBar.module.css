@@ -146,6 +146,34 @@ a {
 }
 
 @media (min-width: 992px) {
+	.nav_links_view,
+	.nav_links_no_view {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.list_links {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		list-style-type: none;
+	}
+
+	.link {
+		margin-bottom: 0.6em;
+	}
+
+	a {
+		padding: 0.2em 0em;
+		margin-bottom: 0.2em;
+	}
+}
+
+@media (min-width: 1200px) {
 	.nav_btn {
 		opacity: 0;
 	}
@@ -166,7 +194,7 @@ a {
 	}
 
 	.list_links {
-		width: 100%;
+		max-width: 100%;
 		height: 100vh;
 		display: flex;
 		flex-direction: column;
@@ -180,7 +208,12 @@ a {
 	}
 
 	a {
-		padding: 0.2em 0em;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		/* padding: 0.2em 0em; */
 		margin-bottom: 0.2em;
 	}
 }
