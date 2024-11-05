@@ -81,6 +81,12 @@
 }
 
 @media (min-width: 992px) {
+	.nav_links {
+		top: 8%;
+	}
+}
+
+@media (min-width: 1200px) {
 	.wrapper {
 		padding-left: 10em;
 	}
