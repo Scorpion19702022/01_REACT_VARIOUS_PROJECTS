@@ -166,6 +166,7 @@
 	font-size: 1.4em;
 	text-align: center;
 }
+
 .box_question_img {
 	margin-top: 0.8em;
 	width: 100%;
@@ -213,50 +214,22 @@
 	color: var(--color-dark09);
 }
 
-@media (min-width: 660px) {
-}
-
 @media (min-width: 992px) {
-	.wrapper {
-		width: 60%;
-		height: 600px;
-		margin-top: 2em;
-		padding: 1em;
-		border: 0.04em solid var(--color-color07);
-	}
-
-	.box_progress {
-		height: 12%;
-	}
-
 	.progress {
 		width: 50%;
 		height: 20px;
-		border-radius: 5px;
-		background-color: var(--color-dark09);
-		border: none;
-		overflow: hidden;
 	}
 
 	.box_quiz {
-		width: 100%;
-		height: 80%;
-		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		margin-top: 2em;
 	}
 
 	.box_popup {
-		top: -5%;
+		top: 5%;
 		right: 1.2%;
 		width: 47%;
-		height: 80px;
-	}
-
-	.popup_info {
-		color: var(--color-color03);
-		font-weight: 200;
 	}
 
 	.box_popup_finish {
@@ -267,23 +240,14 @@
 
 	.popup_btn_finish {
 		padding: 0.8em;
-		cursor: pointer;
 		font-size: 1em;
+		cursor: pointer;
 		transition: background-color 0.2s ease-in-out;
-	}
-
-	.popup_btn_finish:hover {
-		background-color: var(--color-dark09);
 	}
 
 	.box_question {
 		width: 48%;
 		height: 100%;
-		margin-bottom: 1em;
-	}
-
-	.box_heading_question {
-		height: 10%;
 	}
 
 	.heading_question {
@@ -291,21 +255,13 @@
 	}
 
 	.box_question_img {
-		margin-top: 0.8em;
-		width: 100%;
 		height: 82%;
-	}
-
-	.question_img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
 	}
 
 	.box_answers {
 		width: 48%;
 		height: 100%;
-		margin-bottom: 0.4em;
+		margin-bottom: 0.8em;
 	}
 
 	.answers_list {
@@ -321,14 +277,29 @@
 		transition: background-color 0.2s ease-in-out;
 	}
 
-	.btn_answer:hover {
+	.btn_answer:disabled {
+		cursor: auto;
+	}
+}
+
+@media (min-width: 1200px) {
+	.wrapper {
+		width: 60%;
+		height: 600px;
+		margin-top: 2em;
+		padding: 1em;
+		border: 0.04em solid var(--color-color07);
+	}
+
+	.box_popup {
+		top: -5%;
+	}
+
+	.popup_btn_finish:hover {
 		background-color: var(--color-dark09);
 	}
 
-	.btn_answer:disabled {
-		background-color: var(--color-dark05);
-		border: 0.04em solid var(--color-dark07);
-		color: var(--color-dark09);
-		cursor: auto;
+	.btn_answer:hover {
+		background-color: var(--color-dark09);
 	}
 }

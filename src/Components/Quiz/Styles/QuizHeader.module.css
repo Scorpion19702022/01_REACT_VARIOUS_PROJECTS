@@ -98,6 +98,23 @@
 }
 
 @media (min-width: 992px) {
+	.header_img {
+		top: -55%;
+		left: 0%;
+		width: 15%;
+		height: 15%;
+	}
+
+	.img {
+		width: 100%;
+		object-fit: cover;
+	}
+	.back {
+		display: none;
+	}
+}
+
+@media (min-width: 1200px) {
 	.wrapper {
 		width: 60%;
 		height: 120px;
@@ -119,6 +136,7 @@
 	}
 
 	.back {
+		display: block;
 		width: 62%;
 		height: 200px;
 		top: 0%;
