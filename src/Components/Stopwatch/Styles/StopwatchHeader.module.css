@@ -52,7 +52,6 @@
 
 .box_img {
 	margin: 0em 1em;
-	/* width: 18%; */
 }
 
 .img {
@@ -85,6 +84,20 @@
 }
 
 @media (min-width: 992px) {
+	.box_img {
+		margin: 0em 1.6em;
+	}
+
+	.img {
+		top: -60%;
+		left: 41%;
+		width: 12%;
+		object-fit: cover;
+		transform: rotate(-30deg);
+	}
+}
+
+@media (min-width: 1200px) {
 	.wrapper {
 		width: 60%;
 		height: 120px;
