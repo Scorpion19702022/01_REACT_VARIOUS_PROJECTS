@@ -46,7 +46,7 @@
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 100%;
-		min-height: 100vh;
+		height: 100vh;
 		padding: 2em 2em 0em 10em;
 		justify-content: space-around;
 	}
