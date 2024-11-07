@@ -105,8 +105,17 @@
 
 @media (min-width: 660px) {
 }
-
 @media (min-width: 992px) {
+	.box_game {
+		position: relative;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+@media (min-width: 1200px) {
 	.box_players {
 		width: 67%;
 		height: 80px;

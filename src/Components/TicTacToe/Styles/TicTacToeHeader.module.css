@@ -98,6 +98,13 @@
 }
 
 @media (min-width: 992px) {
+	.header_img {
+		width: 20%;
+		height: 20%;
+	}
+}
+
+@media (min-width: 1200px) {
 	.wrapper {
 		width: 60%;
 		height: 120px;
