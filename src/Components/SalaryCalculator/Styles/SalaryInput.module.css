@@ -145,8 +145,14 @@
 	.input_img_mobile {
 		top: 7%;
 		left: 3%;
-		width: 27%;
+		width: 20%;
 		object-fit: cover;
+	}
+}
+
+@media (min-width: 992px) {
+	.input_img_mobile {
+		width: 16%;
 	}
 
 	.heading {
@@ -158,7 +164,7 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
 	.wrapper {
 		width: 60%;
 		height: 350px;
