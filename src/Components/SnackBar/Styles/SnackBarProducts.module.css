@@ -199,6 +199,7 @@
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 90%;
+		padding-bottom: 2em;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
