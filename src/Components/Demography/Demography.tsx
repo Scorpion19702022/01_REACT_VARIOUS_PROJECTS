@@ -1,13 +1,12 @@
 import React from 'react'
 
 import styles from './Styles/Demography.module.css'
+import DemographyHeader from './DemographyHeader'
 
 const Demography = () => {
 	return (
 		<main className={styles.wrapper}>
-			<div>
-				<h1>Demografia</h1>
-			</div>
+			<DemographyHeader />
 		</main>
 	)
 }
