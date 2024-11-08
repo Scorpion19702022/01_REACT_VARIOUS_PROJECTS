@@ -101,8 +101,8 @@
 	.header_img {
 		top: -55%;
 		left: 0%;
-		width: 15%;
-		height: 15%;
+		width: 25%;
+		height: 25%;
 	}
 
 	.img {
@@ -112,10 +112,10 @@
 
 	.back {
 		top: -20%;
-		left: -17em;
-		width: 80%;
+		left: -23em;
+		width: 68%;
 		height: 180px;
-		transform: rotate(-25deg);
+		transform: rotate(-10deg);
 	}
 }
 
@@ -130,8 +130,8 @@
 	}
 
 	.header_img {
-		width: 27%;
-		height: 27%;
+		width: 47%;
+		height: 47%;
 		top: -45%;
 		left: -3%;
 	}
@@ -142,11 +142,11 @@
 
 	.back {
 		display: block;
-		width: 62%;
+		width: 79%;
 		height: 200px;
 		top: 0%;
-		left: -40%;
-		transform: rotate(-15deg);
+		left: -50%;
+		transform: rotate(-5deg);
 	}
 
 	.header {
