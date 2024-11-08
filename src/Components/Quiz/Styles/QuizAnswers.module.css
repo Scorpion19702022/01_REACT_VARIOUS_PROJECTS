@@ -302,4 +302,9 @@
 	.btn_answer:hover {
 		background-color: var(--color-dark09);
 	}
+
+	.btn_answer:disabled {
+		background-color: var(--color-dark05);
+		cursor: auto;
+	}
 }
