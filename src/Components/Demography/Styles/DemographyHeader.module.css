@@ -150,6 +150,10 @@
 	}
 
 	.header {
-		font-size: 4em;
+		font-size: 3.2em;
+	}
+
+	.text {
+		font-size: 1.2em;
 	}
 }
