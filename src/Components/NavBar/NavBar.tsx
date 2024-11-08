@@ -79,6 +79,11 @@ const NavBar = () => {
 							Odliczanie czasu
 						</li>
 					</NavLink>
+					<NavLink to='./Demography'>
+						<li className={styles.link} onClick={handleNavView}>
+							Demografia
+						</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>

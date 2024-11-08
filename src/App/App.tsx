@@ -21,6 +21,7 @@ import TicTacToe from '../Components/TicTacToe/TicTacToe'
 import Quiz from '../Components/Quiz/Quiz'
 import Stopwatch from '../Components/Stopwatch/Stopwatch'
 import Countdown from '../Components/Countdown/Countdown'
+import Demography from '../Components/Demography/Demography'
 
 function App() {
 	return (
@@ -45,6 +46,7 @@ function App() {
 					<Route path='/Quiz' Component={Quiz} />
 					<Route path='/Stoper' Component={Stopwatch} />
 					<Route path='/Countdown' Component={Countdown} />
+					<Route path='/Demography' Component={Demography} />
 				</Routes>
 			</section>
 		</Router>
