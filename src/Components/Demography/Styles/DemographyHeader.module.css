@@ -37,8 +37,8 @@
 	position: absolute;
 	top: -30%;
 	left: -2%;
-	width: 35%;
-	height: 35%;
+	width: 55%;
+	height: 55%;
 	z-index: 1;
 }
 
@@ -51,7 +51,7 @@
 	position: absolute;
 	top: -20%;
 	left: -6em;
-	width: 50%;
+	width: 80%;
 	height: 120px;
 	background-color: var(--color-dark08);
 	filter: blur(0.6em);
@@ -109,8 +109,13 @@
 		width: 100%;
 		object-fit: cover;
 	}
+
 	.back {
-		display: none;
+		top: -20%;
+		left: -17em;
+		width: 80%;
+		height: 180px;
+		transform: rotate(-25deg);
 	}
 }
 
