@@ -20,6 +20,7 @@
 }
 
 .wrapper {
+	position: relative;
 	width: 90%;
 	min-height: 18vh;
 	display: flex;
@@ -30,6 +31,11 @@
 	background-color: var(--color-dark08);
 	border: 0.04em solid var(--color-color07);
 	z-index: 1;
+}
+
+.box_img {
+	position: absolute;
+	display: none;
 }
 
 .heading {
@@ -57,9 +63,24 @@
 }
 
 @media (min-width: 660px) {
+	.wrapper {
+		min-height: 30vh;
+	}
+
+	.box_select {
+		width: 50%;
+	}
 }
 
 @media (min-width: 992px) {
+	.wrapper {
+		min-height: 12vh;
+		align-items: flex-end;
+	}
+
+	.box_select {
+		width: 30%;
+	}
 }
 
 @media (min-width: 1200px) {
