@@ -60,6 +60,7 @@
 	padding: 0.2em;
 	border: 0.04em solid var(--color-color07);
 	color: var(--color-color01);
+	outline: none;
 }
 
 @media (min-width: 660px) {
@@ -109,4 +110,29 @@
 }
 
 @media (min-width: 1200px) {
+	.wrapper {
+		min-height: 15vh;
+	}
+
+	.box_img {
+		width: 28%;
+	}
+
+	.heading {
+		font-size: 2em;
+	}
+
+	.box_select {
+		width: 30%;
+		align-items: flex-end;
+	}
+
+	.label_city {
+		font-size: 1.4em;
+	}
+
+	.select_city {
+		padding: 0.4em 1em;
+		font-size: 1.2em;
+	}
 }
