@@ -75,15 +75,15 @@
 @media (min-width: 992px) {
 	.wrapper {
 		min-height: 12vh;
-		align-items: flex-end;
+		align-items: flex-start;
 	}
 
 	.box_img {
-		bottom: -65%;
-		left: -8%;
+		bottom: -12%;
+		right: 2%;
 		display: block;
-		width: 45%;
-		transform: rotate(5deg);
+		width: 32%;
+		transform: rotate(3deg);
 	}
 
 	.img {
