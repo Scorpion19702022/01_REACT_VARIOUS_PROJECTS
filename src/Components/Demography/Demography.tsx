@@ -4,6 +4,7 @@ import styles from './Styles/Demography.module.css'
 import DemographyHeader from './DemographyHeader'
 import DemographySelect from './DemographySelect'
 import { DemographyProvider } from './Context/DemographyContext'
+import DemographyInfo from './DemographyInfo'
 
 const Demography = () => {
 	return (
@@ -11,6 +12,7 @@ const Demography = () => {
 			<DemographyProvider>
 				<DemographyHeader />
 				<DemographySelect />
+				<DemographyInfo />
 			</DemographyProvider>
 		</main>
 	)
