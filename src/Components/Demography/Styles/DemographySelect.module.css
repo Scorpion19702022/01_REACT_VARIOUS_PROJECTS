@@ -21,14 +21,39 @@
 
 .wrapper {
 	width: 90%;
+	min-height: 18vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	padding: 1%;
+	padding: 1em;
 	background-color: var(--color-dark08);
 	border: 0.04em solid var(--color-color07);
 	z-index: 1;
+}
+
+.heading {
+	font-size: 1.2em;
+	text-align: center;
+	color: var(--color-color01);
+	font-weight: 200;
+}
+
+.box_select {
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.label_city {
+	color: var(--color-color04);
+}
+
+.select_city {
+	background-color: var(--color-dark09);
+	padding: 0.2em;
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color01);
 }
 
 @media (min-width: 660px) {

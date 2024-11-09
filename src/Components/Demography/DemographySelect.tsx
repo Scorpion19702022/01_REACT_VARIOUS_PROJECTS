@@ -32,13 +32,10 @@ const DemographySelect = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h2 className={styles.heading}>Wybierz miasto i wyświetl informacje i dane demograficzne</h2>
-			<div className={styles.box_choose}>
-				<div className={styles.box_select}>
-					<label className={styles.label_city}>wybierz miasto</label>
-					<select className={styles.select_city}>{selectCities}</select>
-				</div>
-				<button className={styles.btn_data_city}>wyświetl dane</button>
+			<h2 className={styles.heading}>Po wybraniu miasta wyświetlisz informacje i dane demograficzne</h2>
+			<div className={styles.box_select}>
+				<label className={styles.label_city}>wybierz miasto:</label>
+				<select className={styles.select_city}>{selectCities}</select>
 			</div>
 		</section>
 	)
