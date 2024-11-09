@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Styles/DemographySelect.module.css'
 
 import trend from './assets/trend.png'
+import DemographyContext from './Context/DemographyContext'
 
 const DemographySelect = () => {
+	const { selectCity, handleChangeCity } = useContext(DemographyContext)
+
 	const typeOfCities = {
 		city01: 'Warszawa',
 		city02: 'Białystok',
@@ -40,7 +43,9 @@ const DemographySelect = () => {
 			<h2 className={styles.heading}>Po wybraniu miasta wyświetlisz informacje i dane demograficzne</h2>
 			<div className={styles.box_select}>
 				<label className={styles.label_city}>wybierz miasto:</label>
-				<select className={styles.select_city}>{selectCities}</select>
+				<select className={styles.select_city} value={selectCity} onChange={e => handleChangeCity(e.target.value)}>
+					{selectCities}
+				</select>
 			</div>
 		</section>
 	)
