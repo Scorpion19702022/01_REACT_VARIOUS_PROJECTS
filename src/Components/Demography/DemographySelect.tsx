@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './Styles/DemographySelect.module.css'
 
-import school from './assets/school.png'
+import trend from './assets/trend.png'
 
 const DemographySelect = () => {
 	const typeOfCities = {
@@ -35,7 +35,7 @@ const DemographySelect = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_img}>
-				<img className={styles.img} src={school} alt='image_school' />
+				<img className={styles.img} src={trend} alt='image_trend' />
 			</div>
 			<h2 className={styles.heading}>Po wybraniu miasta wyświetlisz informacje i dane demograficzne</h2>
 			<div className={styles.box_select}>
