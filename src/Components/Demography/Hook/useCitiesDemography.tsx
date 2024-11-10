@@ -1,5 +1,7 @@
+import { CitiesDemography } from '../Types/TypeForCitiesData'
+
 const useCitiesDemography = () => {
-	const ListCitiesDemography = [
+	const ListCitiesDemography: CitiesDemography = [
 		{
 			id: 0,
 			city: 'Warszawa',
