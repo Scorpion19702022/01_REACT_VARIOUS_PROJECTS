@@ -44,4 +44,7 @@
 }
 
 @media (min-width: 1200px) {
+	.wrapper {
+		min-height: 56vh;
+	}
 }
