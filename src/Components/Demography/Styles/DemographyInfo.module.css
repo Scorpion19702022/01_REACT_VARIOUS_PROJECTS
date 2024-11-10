@@ -23,14 +23,18 @@
 	position: relative;
 	width: 90%;
 	min-height: 60vh;
+	padding: 2em 0em;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	align-items: center;
-	padding: 1em;
 	background-color: var(--color-dark08);
-	border: 0.04em solid var(--color-color07);
 	z-index: 1;
+}
+
+.heading {
+	color: var(--color-color03);
+	padding-bottom: 0.2em;
+	border-bottom: 0.04em solid var(--color-color03);
 }
 
 @media (min-width: 660px) {
