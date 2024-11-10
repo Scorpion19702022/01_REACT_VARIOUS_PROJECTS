@@ -27,14 +27,18 @@ const DemographyContext = createContext(InitialState)
 export const DemographyProvider = ({ children }: DemographyTypeProvider) => {
 	const { ListCitiesDemography } = useCitiesDemography()
 
-	console.log(ListCitiesDemography)
-
 	const [selectCity, setSelectCity] = useState('Warszawa')
 	const [cityDemography, setCityDemography] = useState<any>([])
 
 	const handleChangeCity = (e: string) => {
 		setSelectCity(e)
+		const changeCity = ListCitiesDemography.find(item => item.city === e)
+		if (changeCity?.city === e) {
+			setCityDemography([changeCity])
+		}
 	}
+
+	console.log(cityDemography)
 
 	return (
 		<DemographyContext.Provider value={{ selectCity, handleChangeCity, ListCitiesDemography, cityDemography }}>
