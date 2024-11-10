@@ -37,6 +37,13 @@
 	border-bottom: 0.04em solid var(--color-color03);
 }
 
+.box_population_data {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
 @media (min-width: 660px) {
 }
 
