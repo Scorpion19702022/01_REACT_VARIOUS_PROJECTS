@@ -12,11 +12,13 @@ const DemographyInfo = () => {
 		<section className={styles.wrapper}>
 			<h2 className={styles.heading}>{selectCity}</h2>
 			{cityData ? (
-				<div className={styles.populationData}>
+				<div className={styles.box_population_data}>
 					{Object.entries(cityData.population).map(([year, population]) => (
-						<p key={year}>
-							<strong>Rok: {year}:</strong> {population?.toLocaleString()}
-						</p>
+						<div key={year}>
+							<p>
+								<strong>Rok: {year}:</strong> {population?.toLocaleString()} mieszkańców
+							</p>
+						</div>
 					))}
 				</div>
 			) : (
