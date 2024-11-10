@@ -45,8 +45,6 @@ export const DemographyProvider = ({ children }: DemographyTypeProvider) => {
 		}
 	}, [])
 
-	console.log(cityDemography)
-
 	return (
 		<DemographyContext.Provider value={{ selectCity, handleChangeCity, ListCitiesDemography, cityDemography }}>
 			{children}
