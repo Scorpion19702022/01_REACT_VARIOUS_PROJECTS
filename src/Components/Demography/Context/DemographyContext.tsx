@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
 import { CitiesDemography } from '../Types/TypeForCitiesData'
@@ -37,6 +37,13 @@ export const DemographyProvider = ({ children }: DemographyTypeProvider) => {
 			setCityDemography([changeCity])
 		}
 	}
+
+	useEffect(() => {
+		const changeCity = ListCitiesDemography.find(item => item.city === 'Warszawa')
+		if (changeCity?.city === 'Warszawa') {
+			setCityDemography([changeCity])
+		}
+	}, [])
 
 	console.log(cityDemography)
 
