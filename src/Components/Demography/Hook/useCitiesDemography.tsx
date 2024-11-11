@@ -121,6 +121,62 @@ const useCitiesDemography = () => {
 				'2023': 0,
 			},
 		},
+		{
+			id: 8,
+			city: 'Łódź',
+			img: 'https://cdn.pixabay.com/photo/2020/02/10/21/23/poland-4837733_960_720.jpg',
+			description: 'Dane w trakcie uzupełniania',
+			population: {
+				'1900': 0,
+				'1925': 0,
+				'1950': 0,
+				'1975': 0,
+				'2000': 0,
+				'2023': 0,
+			},
+		},
+		{
+			id: 9,
+			city: 'Olsztyn',
+			img: 'https://upload.wikimedia.org/wikipedia/commons/b/bf/Olsztyn%2C_stary_ratusz..jpg',
+			description: 'Dane w trakcie uzupełniania',
+			population: {
+				'1900': 0,
+				'1925': 0,
+				'1950': 0,
+				'1975': 0,
+				'2000': 0,
+				'2023': 0,
+			},
+		},
+		{
+			id: 10,
+			city: 'Opole',
+			img: 'https://cdn.pixabay.com/photo/2019/05/22/23/13/opole-4222852_960_720.jpg',
+			description: 'Dane w trakcie uzupełniania',
+			population: {
+				'1900': 0,
+				'1925': 0,
+				'1950': 0,
+				'1975': 0,
+				'2000': 0,
+				'2023': 0,
+			},
+		},
+		{
+			id: 11,
+			city: 'Poznań',
+			img: 'https://cdn.pixabay.com/photo/2018/08/10/16/35/poznan-3597198_960_720.jpg',
+			description: 'Dane w trakcie uzupełniania',
+			population: {
+				'1900': 0,
+				'1925': 0,
+				'1950': 0,
+				'1975': 0,
+				'2000': 0,
+				'2023': 0,
+			},
+		},
 	]
 
 	return { ListCitiesDemography }
