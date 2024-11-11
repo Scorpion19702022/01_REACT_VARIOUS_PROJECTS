@@ -5,6 +5,8 @@ export type PopulationByYear = {
 export type CityDemography = {
 	id: number
 	city: string
+	img: string
+	description: string
 	population: PopulationByYear
 }
 
