@@ -47,6 +47,35 @@ const useCitiesDemography = () => {
 				'2023': 326434,
 			},
 		},
+		{
+			id: 3,
+			city: 'Gdańsk',
+			img: 'https://cdn.pixabay.com/photo/2021/08/18/09/25/river-6555127_960_720.jpg',
+			description:
+				'Pierwsza wzmianka o Gdańsku pochodzi z 999 roku. Jako Gdańsk prawa miejskie uzyskał w 1457 roku. Wcześniej prawa miejskie uzyskiwał pod innymi nazwami',
+			population: {
+				'1900': 170337,
+				'1925': 206458,
+				'1950': 194633,
+				'1975': 420977,
+				'2000': 462995,
+				'2023': 470907,
+			},
+		},
+		{
+			id: 4,
+			city: 'Katowice',
+			img: 'https://cdn.pixabay.com/photo/2017/04/03/17/46/city-2199041_960_720.jpg',
+			description: 'Prawa miejskie Gorzów Wielkopolski otrzymał w 1257 roku.',
+			population: {
+				'1900': 31738,
+				'1925': 112657,
+				'1950': 175496,
+				'1975': 343723,
+				'2000': 330625,
+				'2023': 279200,
+			},
+		},
 	]
 
 	return { ListCitiesDemography }
