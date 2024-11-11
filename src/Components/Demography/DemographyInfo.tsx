@@ -8,22 +8,22 @@ const DemographyInfo = () => {
 
 	const cityData = cityDemography[0]
 
+	if (!cityDemography.length) {
+		return <p>Brak danych demograficznych dla wybranego miasta.</p>
+	}
+
+	const cityViewData = Object.entries(cityData.population).map(([year, population]) => (
+		<div key={year}>
+			<p>
+				<strong>Rok: {year}:</strong> {population?.toLocaleString()} mieszkańców
+			</p>
+		</div>
+	))
+
 	return (
 		<section className={styles.wrapper}>
 			<h2 className={styles.heading}>{selectCity}</h2>
-			{cityData ? (
-				<div className={styles.box_population_data}>
-					{Object.entries(cityData.population).map(([year, population]) => (
-						<div key={year}>
-							<p>
-								<strong>Rok: {year}:</strong> {population?.toLocaleString()} mieszkańców
-							</p>
-						</div>
-					))}
-				</div>
-			) : (
-				<p>Brak danych demograficznych dla wybranego miasta.</p>
-			)}
+			<div className={styles.box_population_data}>{cityViewData}</div>
 		</section>
 	)
 }
