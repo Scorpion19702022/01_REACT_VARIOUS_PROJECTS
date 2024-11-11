@@ -1,14 +1,14 @@
 import React, { createContext, useEffect, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
-import { CitiesDemography } from '../Types/TypeForCitiesData'
+import { CitiesDemography, CityDemography } from '../Types/TypeForCitiesData'
 import useCitiesDemography from '../Hook/useCitiesDemography'
 
 type InitialStageType = {
 	selectCity: string
 	handleChangeCity: (e: string) => void
 	ListCitiesDemography: CitiesDemography
-	cityDemography: any[]
+	cityDemography: CityDemography[]
 }
 
 type DemographyTypeProvider = {
@@ -28,7 +28,7 @@ export const DemographyProvider = ({ children }: DemographyTypeProvider) => {
 	const { ListCitiesDemography } = useCitiesDemography()
 
 	const [selectCity, setSelectCity] = useState('Warszawa')
-	const [cityDemography, setCityDemography] = useState<any>([])
+	const [cityDemography, setCityDemography] = useState<CityDemography[]>([])
 
 	const handleChangeCity = (e: string) => {
 		setSelectCity(e)
