@@ -191,6 +191,48 @@ const useCitiesDemography = () => {
 				'2023': 0,
 			},
 		},
+		{
+			id: 13,
+			city: 'Rzeszów',
+			img: 'https://cdn.pixabay.com/photo/2018/09/11/10/14/city-3669040_960_720.jpg',
+			description: 'Dane w trakcie uzupełniania',
+			population: {
+				'1900': 0,
+				'1925': 0,
+				'1950': 0,
+				'1975': 0,
+				'2000': 0,
+				'2023': 0,
+			},
+		},
+		{
+			id: 14,
+			city: 'Szczecin',
+			img: 'https://cdn.pixabay.com/photo/2022/05/25/09/42/szczecin-7220179_960_720.jpg',
+			description: 'Dane w trakcie uzupełniania',
+			population: {
+				'1900': 0,
+				'1925': 0,
+				'1950': 0,
+				'1975': 0,
+				'2000': 0,
+				'2023': 0,
+			},
+		},
+		{
+			id: 15,
+			city: 'Toruń',
+			img: 'https://cdn.pixabay.com/photo/2018/09/29/09/33/torun-3711031_960_720.jpg',
+			description: 'Dane w trakcie uzupełniania',
+			population: {
+				'1900': 0,
+				'1925': 0,
+				'1950': 0,
+				'1975': 0,
+				'2000': 0,
+				'2023': 0,
+			},
+		},
 	]
 
 	return { ListCitiesDemography }
