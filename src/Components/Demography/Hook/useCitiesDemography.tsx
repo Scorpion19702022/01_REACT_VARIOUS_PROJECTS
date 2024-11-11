@@ -233,6 +233,34 @@ const useCitiesDemography = () => {
 				'2023': 0,
 			},
 		},
+		{
+			id: 16,
+			city: 'Wrocław',
+			img: 'https://cdn.pixabay.com/photo/2016/09/12/09/55/wrocaw-1663406_960_720.jpg',
+			description: 'Dane w trakcie uzupełniania',
+			population: {
+				'1900': 0,
+				'1925': 0,
+				'1950': 0,
+				'1975': 0,
+				'2000': 0,
+				'2023': 0,
+			},
+		},
+		{
+			id: 17,
+			city: 'Zielona Góra',
+			img: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/RatuszZG.jpg',
+			description: 'Dane w trakcie uzupełniania',
+			population: {
+				'1900': 0,
+				'1925': 0,
+				'1950': 0,
+				'1975': 0,
+				'2000': 0,
+				'2023': 0,
+			},
+		},
 	]
 
 	return { ListCitiesDemography }
