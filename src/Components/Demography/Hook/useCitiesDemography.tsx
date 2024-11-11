@@ -64,6 +64,20 @@ const useCitiesDemography = () => {
 		},
 		{
 			id: 4,
+			city: 'Gorzów Wielkopolski',
+			img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Bulwar_i_mural_z_kaset%C4%85_BN.jpg/1280px-Bulwar_i_mural_z_kaset%C4%85_BN.jpg',
+			description: 'Prawa miejskie Gorzów Wielkopolski otrzymał w 1257 roku.',
+			population: {
+				'1900': 33598,
+				'1925': 43303,
+				'1950': 32825,
+				'1975': 87179,
+				'2000': 126285,
+				'2023': 115247,
+			},
+		},
+		{
+			id: 5,
 			city: 'Katowice',
 			img: 'https://cdn.pixabay.com/photo/2017/04/03/17/46/city-2199041_960_720.jpg',
 			description:
@@ -78,7 +92,7 @@ const useCitiesDemography = () => {
 			},
 		},
 		{
-			id: 5,
+			id: 6,
 			city: 'Kielce',
 			img: 'https://cdn.pixabay.com/photo/2018/10/27/15/30/kielce-3776754_960_720.jpg',
 			description:
@@ -93,7 +107,7 @@ const useCitiesDemography = () => {
 			},
 		},
 		{
-			id: 6,
+			id: 7,
 			city: 'Kraków',
 			img: 'https://cdn.pixabay.com/photo/2019/08/29/19/31/krakow-4439817_960_720.jpg',
 			description:
@@ -108,7 +122,7 @@ const useCitiesDemography = () => {
 			},
 		},
 		{
-			id: 7,
+			id: 8,
 			city: 'Lublin',
 			img: 'https://cdn.pixabay.com/photo/2015/10/18/12/00/view-of-the-city-994220_960_720.jpg',
 			description: 'Dane w trakcie uzupełniania',
@@ -122,7 +136,7 @@ const useCitiesDemography = () => {
 			},
 		},
 		{
-			id: 8,
+			id: 9,
 			city: 'Łódź',
 			img: 'https://cdn.pixabay.com/photo/2020/02/10/21/23/poland-4837733_960_720.jpg',
 			description: 'Dane w trakcie uzupełniania',
@@ -136,7 +150,7 @@ const useCitiesDemography = () => {
 			},
 		},
 		{
-			id: 9,
+			id: 10,
 			city: 'Olsztyn',
 			img: 'https://upload.wikimedia.org/wikipedia/commons/b/bf/Olsztyn%2C_stary_ratusz..jpg',
 			description: 'Dane w trakcie uzupełniania',
@@ -150,7 +164,7 @@ const useCitiesDemography = () => {
 			},
 		},
 		{
-			id: 10,
+			id: 11,
 			city: 'Opole',
 			img: 'https://cdn.pixabay.com/photo/2019/05/22/23/13/opole-4222852_960_720.jpg',
 			description: 'Dane w trakcie uzupełniania',
@@ -164,7 +178,7 @@ const useCitiesDemography = () => {
 			},
 		},
 		{
-			id: 11,
+			id: 12,
 			city: 'Poznań',
 			img: 'https://cdn.pixabay.com/photo/2018/08/10/16/35/poznan-3597198_960_720.jpg',
 			description: 'Dane w trakcie uzupełniania',
