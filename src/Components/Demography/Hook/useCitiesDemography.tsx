@@ -7,7 +7,7 @@ const useCitiesDemography = () => {
 			city: 'Warszawa',
 			img: 'https://cdn.pixabay.com/photo/2021/08/07/18/36/city-6529111_960_720.jpg',
 			description:
-				'Warszawa uzyskała prawa miejskie przed 1300 rokiem. Jest największym polskim miastem pod względem liczby ludności. Liczba osób zameldowanych w mieście jest jednak niższa niż liczba osób podawana przez GUS.',
+				'Warszawa uzyskała prawa miejskie przed 1300 rokiem. Jest największym polskim miastem pod względem liczby ludności.',
 			population: {
 				'1900': 686000,
 				'1925': 1103000,

@@ -14,8 +14,13 @@ const DemographyInfo = () => {
 
 	const cityViewData = Object.entries(cityData.population).map(([year, population]) => (
 		<div key={year} className={styles.box_population}>
-			<h4 className={styles.year}>Rok: {year}</h4>
-			<p className={styles.population}>{population} mieszkańców</p>
+			<h4 className={styles.year}>
+				<span className={styles.span}>Rok:</span> {year}
+			</h4>
+			<p className={styles.population}>
+				{' '}
+				<span className={styles.span}>mieszkańców:</span> {population.toLocaleString('pl-PL')}
+			</p>
 		</div>
 	))
 
@@ -24,7 +29,7 @@ const DemographyInfo = () => {
 			<h2 className={styles.heading}>{selectCity}</h2>
 			<div className={styles.box_description}>
 				<div className={styles.box_img}>
-					<img src={cityData.img} alt='zdjęcie miasta' />
+					<img className={styles.img} src={cityData.img} alt='zdjęcie miasta' />
 				</div>
 				<div className={styles.box_text}>
 					<p className={styles.text}>{cityData.description}</p>
