@@ -115,6 +115,11 @@
 		justify-content: space-around;
 	}
 
+	.heading {
+		font-size: 2em;
+		margin-bottom: 0.8em;
+	}
+
 	.box_description {
 		height: 55%;
 	}
