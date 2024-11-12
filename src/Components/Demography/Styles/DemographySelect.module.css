@@ -80,11 +80,12 @@
 	}
 
 	.box_img {
-		bottom: -12%;
+		bottom: -8%;
 		right: 2%;
 		display: block;
-		width: 32%;
+		width: 16%;
 		transform: rotate(3deg);
+		z-index: 1;
 	}
 
 	.img {
@@ -111,11 +112,13 @@
 
 @media (min-width: 1200px) {
 	.wrapper {
+		width: 60%;
 		min-height: 15vh;
 	}
 
 	.box_img {
-		width: 28%;
+		width: 17%;
+		bottom: -6%;
 	}
 
 	.heading {
@@ -123,7 +126,7 @@
 	}
 
 	.box_select {
-		width: 30%;
+		width: 35%;
 		align-items: flex-end;
 	}
 
@@ -133,6 +136,6 @@
 
 	.select_city {
 		padding: 0.4em 1em;
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 }
