@@ -22,7 +22,7 @@ const useCitiesDemography = () => {
 			city: 'Białystok',
 			img: 'https://cdn.pixabay.com/photo/2022/01/07/11/34/krasnoyarsk-6921747_960_720.jpg',
 			description:
-				'Osada Białystok powstała między 1440 a 1444 rokiem. Prawa miejskie Białystok otrzymał  około 1691 roku. ',
+				'Osada Białystok powstała między 1440 a 1444 rokiem. Prawa miejskie Białystok otrzymał  około 1691 roku.',
 			population: {
 				'1900': 66654,
 				'1925': 89802,
@@ -35,9 +35,9 @@ const useCitiesDemography = () => {
 		{
 			id: 2,
 			city: 'Bydgoszcz',
-			img: 'https://cdn.pixabay.com/photo/2015/08/24/01/47/market-square-904233_960_720.jpg',
+			img: 'https://cdn.pixabay.com/photo/2019/05/12/00/39/bydgoszcz-4196936_960_720.jpg',
 			description:
-				'Gród bydgoski zbudowano w 1038 roku. Prawa miejskie Bydgoszcz uzyskała 19 kwietnia 1346 roku. W ostatnich kilkunastu latach występuje stała tendencja wyludniania się miasta.',
+				'Gród bydgoski zbudowano w 1038 roku. Prawa miejskie uzyskała 19 kwietnia 1346 roku. Ostatie lata to tendencja wyludniania.',
 			population: {
 				'1900': 52204,
 				'1925': 104000,
@@ -51,8 +51,7 @@ const useCitiesDemography = () => {
 			id: 3,
 			city: 'Gdańsk',
 			img: 'https://cdn.pixabay.com/photo/2021/08/18/09/25/river-6555127_960_720.jpg',
-			description:
-				'Pierwsza wzmianka o Gdańsku pochodzi z 999 roku. Jako Gdańsk prawa miejskie uzyskał w 1457 roku. Wcześniej prawa miejskie uzyskiwał pod innymi nazwami',
+			description: 'Pierwsza wzmianka pochodzi z 999 roku. Jako Gdańsk prawa miejskie uzyskał w 1457 roku.',
 			population: {
 				'1900': 170337,
 				'1925': 206458,
@@ -79,9 +78,9 @@ const useCitiesDemography = () => {
 		{
 			id: 5,
 			city: 'Katowice',
-			img: 'https://cdn.pixabay.com/photo/2017/04/03/17/46/city-2199041_960_720.jpg',
+			img: 'https://cdn.pixabay.com/photo/2015/09/09/17/31/city-932032_960_720.jpg',
 			description:
-				'Katowice powstały jako wieś zagrodnicza pod koniec XVI wieku pod nazwą Kuźnica Bogucka. Prawa miejskie otrzymały 11 września 1865 roku.',
+				'Katowice powstały jako wieś zagrodnicza pod koniec XVI wieku. Prawa miejskie otrzymały 11 września 1865 roku.',
 			population: {
 				'1900': 31738,
 				'1925': 112657,
@@ -96,7 +95,7 @@ const useCitiesDemography = () => {
 			city: 'Kielce',
 			img: 'https://cdn.pixabay.com/photo/2018/10/27/15/30/kielce-3776754_960_720.jpg',
 			description:
-				'Kielce prawa miejskie otrzymały przed 1259 rokiem. Będąc niewielką osadą pozostawały jednak na uboczu historii aż do XVIII wieku.',
+				'Kielce prawa miejskie otrzymały przed 1259 rokiem. Jako niewielka osada pozostawały na uboczu historii do XVIII w.',
 			population: {
 				'1900': 14270,
 				'1925': 41346,
@@ -111,7 +110,7 @@ const useCitiesDemography = () => {
 			city: 'Kraków',
 			img: 'https://cdn.pixabay.com/photo/2019/08/29/19/31/krakow-4439817_960_720.jpg',
 			description:
-				'Kraków jest jednym z najstarszych miast Polski. Do 1795 roku był formalnie stolicą Polski, a do 1611 roku siedzibą władców państwa polskiego. Prawa miejskie przed 1228 rokiem.',
+				'Kraków jest jednym z najstarszych miast Polski. Do 1795 roku był formalnie stolicą Polski. Prawa miejskie przed 1228 rokiem.',
 			population: {
 				'1900': 85300,
 				'1925': 206809,
@@ -125,28 +124,29 @@ const useCitiesDemography = () => {
 			id: 8,
 			city: 'Lublin',
 			img: 'https://cdn.pixabay.com/photo/2015/10/18/12/00/view-of-the-city-994220_960_720.jpg',
-			description: 'Dane w trakcie uzupełniania',
+			description:
+				'Początki ośrodka osadniczego sięgają VI wieku. Prawa miejskie Lublin uzyskał 15 sierpnia 1317 roku.',
 			population: {
-				'1900': 0,
-				'1925': 0,
-				'1950': 0,
-				'1975': 0,
-				'2000': 0,
-				'2023': 0,
+				'1900': 57237,
+				'1925': 103206,
+				'1950': 116629,
+				'1975': 271955,
+				'2000': 358933,
+				'2023': 332852,
 			},
 		},
 		{
 			id: 9,
 			city: 'Łódź',
 			img: 'https://cdn.pixabay.com/photo/2020/02/10/21/23/poland-4837733_960_720.jpg',
-			description: 'Dane w trakcie uzupełniania',
+			description: 'Łódź ma metrykę średniowieczną. Prawa miejskie nadane zostały w Przedborzu 29 lipca 1423 roku.',
 			population: {
-				'1900': 0,
-				'1925': 0,
-				'1950': 0,
-				'1975': 0,
-				'2000': 0,
-				'2023': 0,
+				'1900': 314020,
+				'1925': 452000,
+				'1950': 620273,
+				'1975': 798263,
+				'2000': 793217,
+				'2023': 655279,
 			},
 		},
 		{
