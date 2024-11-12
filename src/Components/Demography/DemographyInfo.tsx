@@ -19,7 +19,7 @@ const DemographyInfo = () => {
 			</h4>
 			<p className={styles.population}>
 				{' '}
-				<span className={styles.span}>mieszkańców:</span> {population.toLocaleString('pl-PL')}
+				<span className={styles.span}>mieszkańców:</span> {population > 0 ? population.toLocaleString('pl-PL') : 'bd'}
 			</p>
 		</div>
 	))
