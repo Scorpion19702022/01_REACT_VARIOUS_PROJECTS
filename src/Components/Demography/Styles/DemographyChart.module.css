@@ -20,23 +20,15 @@
 }
 
 .wrapper {
-	width: 100%;
-	min-height: 100vh;
+	position: relative;
+	width: 90%;
+	min-height: 60vh;
+	padding: 2em 0em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
 	background-color: var(--color-dark08);
-}
-
-.box_demography_info {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-@media (min-width: 660px) {
+	z-index: 1;
 }
 
 @media (min-width: 992px) {
@@ -44,10 +36,9 @@
 
 @media (min-width: 1200px) {
 	.wrapper {
-		width: 100%;
-		height: 100vh;
-		display: flex;
-		padding-left: 10em;
-		padding-bottom: 2em;
+		width: 45%;
+		min-height: 400px;
+		margin-bottom: 2em;
+		justify-content: space-around;
 	}
 }
