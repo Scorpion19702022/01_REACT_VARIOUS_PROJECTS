@@ -27,8 +27,8 @@ const DemographyInfo = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h2 className={styles.heading}>{selectCity}</h2>
 			<div className={styles.box_description}>
+				<h2 className={styles.heading}>{selectCity}</h2>
 				<div className={styles.description}>
 					<div className={styles.box_img}>
 						<img className={styles.img} src={cityData.img} alt='zdjęcie miasta' />
