@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 
 import styles from './Styles/DemographyInfo.module.css'
 import DemographyContext from './Context/DemographyContext'
+import DemographyChart from './DemographyChart'
 
 const DemographyInfo = () => {
 	const { selectCity, cityDemography } = useContext(DemographyContext)
@@ -28,14 +29,17 @@ const DemographyInfo = () => {
 		<section className={styles.wrapper}>
 			<h2 className={styles.heading}>{selectCity}</h2>
 			<div className={styles.box_description}>
-				<div className={styles.box_img}>
-					<img className={styles.img} src={cityData.img} alt='zdjęcie miasta' />
+				<div className={styles.description}>
+					<div className={styles.box_img}>
+						<img className={styles.img} src={cityData.img} alt='zdjęcie miasta' />
+					</div>
+					<div className={styles.box_text}>
+						<p className={styles.text}>{cityData.description}</p>
+					</div>
 				</div>
-				<div className={styles.box_text}>
-					<p className={styles.text}>{cityData.description}</p>
-				</div>
+				<div className={styles.box_population_data}>{cityViewData}</div>
 			</div>
-			<div className={styles.box_population_data}>{cityViewData}</div>
+			<DemographyChart />
 		</section>
 	)
 }

@@ -29,14 +29,6 @@
 	background-color: var(--color-dark08);
 }
 
-.box_demography_info {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-bottom: 2em;
-}
-
 @media (min-width: 660px) {
 }
 
@@ -50,11 +42,5 @@
 		display: flex;
 		padding-left: 10em;
 		padding-bottom: 2em;
-	}
-
-	.box_demography_info {
-		flex-direction: row;
-		justify-content: center;
-		height: 100%;
 	}
 }

@@ -5,7 +5,6 @@ import DemographyHeader from './DemographyHeader'
 import DemographySelect from './DemographySelect'
 import { DemographyProvider } from './Context/DemographyContext'
 import DemographyInfo from './DemographyInfo'
-import DemographyChart from './DemographyChart'
 
 const Demography = () => {
 	return (
@@ -13,10 +12,7 @@ const Demography = () => {
 			<DemographyProvider>
 				<DemographyHeader />
 				<DemographySelect />
-				<div className={styles.box_demography_info}>
-					<DemographyInfo />
-					<DemographyChart />
-				</div>
+				<DemographyInfo />
 			</DemographyProvider>
 		</main>
 	)
