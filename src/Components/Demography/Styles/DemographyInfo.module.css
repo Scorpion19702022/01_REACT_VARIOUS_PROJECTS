@@ -127,14 +127,12 @@
 	.wrapper {
 		width: 90%;
 		min-height: 280px;
-		margin-bottom: 2em;
 		padding-top: 2em;
 		justify-content: space-around;
 	}
 
 	.heading {
 		font-size: 2em;
-		margin-bottom: 0.8em;
 	}
 
 	.box_information {
