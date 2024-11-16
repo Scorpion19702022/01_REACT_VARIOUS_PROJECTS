@@ -27,19 +27,21 @@ const DemographyInfo = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<div className={styles.box_description}>
-				<h2 className={styles.heading}>{selectCity}</h2>
-				<div className={styles.description}>
-					<div className={styles.box_img}>
-						<img className={styles.img} src={cityData.img} alt='zdjęcie miasta' />
+			<h2 className={styles.heading}>{selectCity}</h2>
+			<div className={styles.box_information}>
+				<div className={styles.box_description}>
+					<div className={styles.description}>
+						<div className={styles.box_img}>
+							<img className={styles.img} src={cityData.img} alt='zdjęcie miasta' />
+						</div>
+						<div className={styles.box_text}>
+							<p className={styles.text}>{cityData.description}</p>
+						</div>
 					</div>
-					<div className={styles.box_text}>
-						<p className={styles.text}>{cityData.description}</p>
-					</div>
+					<div className={styles.box_population_data}>{cityViewData}</div>
 				</div>
-				<div className={styles.box_population_data}>{cityViewData}</div>
+				<DemographyChart />
 			</div>
-			<DemographyChart />
 		</section>
 	)
 }
