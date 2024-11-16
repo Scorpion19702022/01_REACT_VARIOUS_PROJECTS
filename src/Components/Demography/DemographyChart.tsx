@@ -43,7 +43,7 @@ const DemographyChart = () => {
 		plugins: {
 			title: {
 				display: true,
-				text: `Wykres demografii dla miasta ${selectCity}`,
+				text: `Wykres pokazujący przyrost ludności dla miasta ${selectCity}`,
 				color: 'white',
 			},
 			tooltip: {
@@ -81,7 +81,7 @@ const DemographyChart = () => {
 				},
 				ticks: {
 					color: '#85c6db',
-					// stepSize: 400000,
+					// stepSize: 100000,
 				},
 				grid: {
 					color: '#2f302b',
