@@ -36,8 +36,7 @@
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 45%;
-		height: 100%;
-		margin-bottom: 2em;
+		height: 400px;
 		justify-content: space-around;
 	}
 }
