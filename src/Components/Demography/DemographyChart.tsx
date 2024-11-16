@@ -31,7 +31,7 @@ const DemographyChart = () => {
 				data: dataPopulation.map(([_, population]) => population),
 				borderColor: 'red',
 				backgroundColor: 'red',
-				pointBackgroundColor: 'white',
+				pointBackgroundColor: 'yellow',
 				fill: false,
 				tension: 0,
 			},
@@ -53,22 +53,42 @@ const DemographyChart = () => {
 					},
 				},
 			},
+			legend: {
+				labels: {
+					color: '#c4c4c2',
+				},
+			},
 		},
 		scales: {
 			x: {
 				title: {
 					display: true,
 					text: 'Rok',
-					color: 'red',
+					color: '#898a86',
+				},
+				ticks: {
+					color: '#85c6db',
+				},
+				grid: {
+					color: '#62625e',
 				},
 			},
 			y: {
 				title: {
 					display: true,
 					text: 'Populacja',
-					color: 'red',
+					color: '#898a86',
+				},
+				ticks: {
+					color: '#85c6db',
+					stepSize: 400000,
+				},
+				grid: {
+					color: '#62625e',
 				},
 				beginAtZero: false,
+				min: 0,
+				max: 2400000,
 			},
 		},
 	}
