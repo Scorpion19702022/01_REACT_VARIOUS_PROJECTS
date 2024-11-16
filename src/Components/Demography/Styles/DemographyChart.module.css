@@ -22,7 +22,7 @@
 .wrapper {
 	position: relative;
 	width: 100%;
-	min-height: 40vh;
+	height: 100%;
 	padding: 2em 0em;
 	display: flex;
 	flex-direction: column;
