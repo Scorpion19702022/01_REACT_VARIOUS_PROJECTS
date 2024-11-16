@@ -81,14 +81,14 @@ const DemographyChart = () => {
 				},
 				ticks: {
 					color: '#85c6db',
-					stepSize: 400000,
+					// stepSize: 400000,
 				},
 				grid: {
 					color: '#2f302b',
 				},
 				beginAtZero: false,
-				min: 0,
-				max: 2400000,
+				// min: 0,
+				// max: 2400000,
 			},
 		},
 	}
