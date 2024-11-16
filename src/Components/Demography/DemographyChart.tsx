@@ -20,9 +20,23 @@ const DemographyChart = () => {
 
 	const dataPopulation = Object.entries(cityDemography[0].population)
 
-	console.log(dataPopulation)
-
 	ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
+
+	const chartData = {
+		labels: dataPopulation.map(([year, _]) => year),
+		datasets: [
+			{
+				label: 'Populacja',
+				data: dataPopulation.map(([_, population]) => population),
+				borderColor: 'red',
+				backgroundColor: 'yellow',
+				fill: true,
+				tension: 0.4,
+			},
+		],
+	}
+
+	console.log(chartData)
 
 	return (
 		<section className={styles.wrapper}>
