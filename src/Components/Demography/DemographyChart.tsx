@@ -14,6 +14,7 @@ import {
 	Legend,
 } from 'chart.js'
 import DemographyContext from './Context/DemographyContext'
+import { callback } from 'chart.js/dist/helpers/helpers.core'
 
 const DemographyChart = () => {
 	const { selectCity, cityDemography } = useContext(DemographyContext)
@@ -31,16 +32,48 @@ const DemographyChart = () => {
 				borderColor: 'red',
 				backgroundColor: 'yellow',
 				fill: true,
-				tension: 0.4,
+				tension: 0,
 			},
 		],
 	}
 
-	console.log(chartData)
+	const chartOptions = {
+		responsive: true,
+		plugin: {
+			title: {
+				display: true,
+				text: `wykres demografii dla miasta ${selectCity}`,
+			},
+			tooltip: {
+				callbacks: {
+					label: (content: any) => {
+						return `Populacja: ${content.raw}`
+					},
+				},
+			},
+		},
+		scales: {
+			x: {
+				title: {
+					display: true,
+					text: 'Rok',
+					color: 'red',
+				},
+			},
+			y: {
+				title: {
+					display: true,
+					text: 'Populacja',
+					color: 'red',
+				},
+				beginAtZero: false,
+			},
+		},
+	}
 
 	return (
 		<section className={styles.wrapper}>
-			<h2>Wykresy</h2>
+			<Line data={chartData} options={chartOptions} />
 		</section>
 	)
 }
