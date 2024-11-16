@@ -30,7 +30,7 @@ const DemographyChart = () => {
 				label: 'Populacja',
 				data: dataPopulation.map(([_, population]) => population),
 				borderColor: 'red',
-				backgroundColor: 'red',
+				backgroundColor: 'yellow',
 				pointBackgroundColor: 'yellow',
 				fill: false,
 				tension: 0,
@@ -70,7 +70,7 @@ const DemographyChart = () => {
 					color: '#85c6db',
 				},
 				grid: {
-					color: '#62625e',
+					color: '#2f302b',
 				},
 			},
 			y: {
@@ -84,7 +84,7 @@ const DemographyChart = () => {
 					stepSize: 400000,
 				},
 				grid: {
-					color: '#62625e',
+					color: '#2f302b',
 				},
 				beginAtZero: false,
 				min: 0,
