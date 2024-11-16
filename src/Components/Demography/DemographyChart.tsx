@@ -49,7 +49,7 @@ const DemographyChart = () => {
 			tooltip: {
 				callbacks: {
 					label: (context: any) => {
-						return context.raw === 0 ? 'Brak danych' : `Populacja: ${context.raw}`
+						return context.raw === 0 ? 'Brak danych' : `Populacja: ${context.raw.toLocaleString('pl-PL')}`
 					},
 				},
 			},
