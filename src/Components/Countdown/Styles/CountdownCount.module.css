@@ -74,6 +74,7 @@
 .count_heading {
 	font-weight: 200;
 	color: var(--color-color04);
+	font-size: 0.6em;
 }
 
 .count_timer {
@@ -81,6 +82,9 @@
 }
 
 @media (min-width: 660px) {
+	.count_heading {
+		font-size: 1em;
+	}
 }
 
 @media (min-width: 1200px) {
