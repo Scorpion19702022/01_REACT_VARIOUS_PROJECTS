@@ -40,6 +40,7 @@ const DemographyChart = () => {
 
 	const chartOptions = {
 		responsive: true,
+		maintainAspectRatio: false,
 		plugins: {
 			title: {
 				display: true,
