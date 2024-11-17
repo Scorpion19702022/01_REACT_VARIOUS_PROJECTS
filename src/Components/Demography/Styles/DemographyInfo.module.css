@@ -98,12 +98,14 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	background-color: var(--color-dark09);
 	border: 0.04em solid var(--color-color08);
 	box-shadow: 0.4em 0.4em 0.6em var(--color-dark09);
 }
 
 .year {
 	color: var(--color-color03);
+	font-size: 0.9em;
 }
 
 .span {
@@ -112,6 +114,7 @@
 
 .population {
 	color: var(--color-color02);
+	font-size: 0.9em;
 }
 
 @media (min-width: 660px) {
