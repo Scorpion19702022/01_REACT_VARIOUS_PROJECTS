@@ -128,10 +128,9 @@
 	}
 	.current_data {
 		display: block;
-		padding: 0.4em 0em;
-		border-bottom: 0.04em solid var(--color-color08);
+		padding-top: 0.4em;
 		border-top: 0.04em solid var(--color-color08);
-		color: var(--color-color06);
+		color: var(--color-color03);
 	}
 }
 
@@ -171,7 +170,13 @@
 	.box_text {
 		height: 100%;
 		display: flex;
-		align-items: flex-end;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
+	.current_data {
+		font-size: 1.2em;
+		color: var(--color-color06);
 	}
 
 	.box_population_data {

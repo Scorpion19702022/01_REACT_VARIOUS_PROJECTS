@@ -39,7 +39,7 @@ const DemographyInfo = () => {
 						<div className={styles.box_text}>
 							<p className={styles.text}>{cityData.description}</p>
 							<p className={styles.current_data}>
-								{lastYearData[5].toLocaleString('pl-PL')} <span className={styles.current_data_span}>mieszkaców</span>
+								{lastYearData[5].toLocaleString('pl-PL')} <span className={styles.current_data_span}>mieszkańców</span>
 							</p>
 						</div>
 					</div>
