@@ -95,7 +95,9 @@ const DemographyChart = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<Line data={chartData} options={chartOptions} />
+			<div className={styles.box_chart}>
+				<Line data={chartData} options={chartOptions} />
+			</div>
 		</section>
 	)
 }
