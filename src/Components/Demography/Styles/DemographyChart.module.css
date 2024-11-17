@@ -22,7 +22,7 @@
 .wrapper {
 	position: relative;
 	width: 100%;
-	height: 100%;
+	height: 400px;
 	padding: 2em 0em;
 	display: flex;
 	flex-direction: column;
@@ -30,10 +30,15 @@
 	z-index: 1;
 }
 
+.box_chart {
+	width: 100%;
+	height: 300px;
+}
+
 @media (min-width: 992px) {
 	.box_chart {
-		width: 90%;
-		height: 300px;
+		width: 100%;
+		height: 380px;
 	}
 }
 
