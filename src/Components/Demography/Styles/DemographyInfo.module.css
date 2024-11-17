@@ -124,9 +124,14 @@
 @media (min-width: 660px) {
 	.text {
 		font-size: 1.4em;
+		margin-bottom: 1em;
 	}
 	.current_data {
 		display: block;
+		padding: 0.4em 0em;
+		border-bottom: 0.04em solid var(--color-color08);
+		border-top: 0.04em solid var(--color-color08);
+		color: var(--color-color06);
 	}
 }
 
