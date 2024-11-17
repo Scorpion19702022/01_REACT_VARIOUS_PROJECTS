@@ -13,6 +13,7 @@ import imgSlider06 from './assets/imgSwiper06.jpg'
 import imgSlider07 from './assets/imgSwiper07.jpg'
 import imgSlider08 from './assets/imgSwiper08.jpg'
 import imgSlider09 from './assets/imgSwiper09.jpg'
+import imgSlider10 from './assets/imgSwiper10.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -162,6 +163,16 @@ const HomeSwiper = () => {
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider09} alt='photoSlider' />
+				</SwiperSlide>
+				<SwiperSlide className={styles.box_swiper}>
+					<NavLink to='./Demography'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>Demografia miast Polski</h4>
+						<p className={styles.card_text}>Przedstawia liczbowo i na wykresie przyrost mieszkańców miast w Polsce</p>
+					</div>
+					<img className={styles.card_img} src={imgSlider10} alt='photoSlider' />
 				</SwiperSlide>
 			</Swiper>
 		</section>
