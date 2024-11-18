@@ -39,6 +39,11 @@ const NavBar = () => {
 							WeatherApp
 						</li>
 					</NavLink>
+					<NavLink to='./Conventer'>
+						<li className={styles.link} onClick={handleNavView}>
+							Konwenter stopni
+						</li>
+					</NavLink>
 					<NavLink to='./ToDoList'>
 						<li className={styles.link} onClick={handleNavView}>
 							ToDoList

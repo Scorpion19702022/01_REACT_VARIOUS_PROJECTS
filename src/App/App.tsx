@@ -22,6 +22,7 @@ import Quiz from '../Components/Quiz/Quiz'
 import Stopwatch from '../Components/Stopwatch/Stopwatch'
 import Countdown from '../Components/Countdown/Countdown'
 import Demography from '../Components/Demography/Demography'
+import Conventer from '../Components/Conventer/Conventer'
 
 function App() {
 	return (
@@ -31,6 +32,7 @@ function App() {
 				<Routes>
 					<Route path='/' Component={Home} />
 					<Route path='/WeatherApp' Component={WeatherApp} />
+					<Route path='/Conventer' Component={Conventer} />
 					<Route path='/WeatherApp/Poland' Component={Poland} />
 					<Route path='/WeatherApp/Europe' Component={Europe} />
 					<Route path='/WeatherApp/Asia' Component={Asia} />
