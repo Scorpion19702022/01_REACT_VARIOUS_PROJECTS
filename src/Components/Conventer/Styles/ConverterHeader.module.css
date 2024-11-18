@@ -35,20 +35,22 @@
 
 .header_img_one {
 	position: absolute;
-	top: -30%;
-	left: -2%;
-	width: 10%;
-	height: 10%;
+	top: -48%;
+	left: 24%;
+	width: 20%;
+	height: 20%;
 	z-index: 1;
+	transform: rotate(20deg);
 }
 
 .header_img_two {
 	position: absolute;
-	top: -30%;
+	top: -20%;
 	left: -2%;
-	width: 10%;
-	height: 10%;
+	width: 20%;
+	height: 20%;
 	z-index: 1;
+	transform: rotate(-20deg);
 }
 
 .img_one,
@@ -61,7 +63,7 @@
 	position: absolute;
 	top: -20%;
 	left: -6em;
-	width: 80%;
+	width: 50%;
 	height: 120px;
 	background-color: var(--color-dark08);
 	filter: blur(0.6em);
