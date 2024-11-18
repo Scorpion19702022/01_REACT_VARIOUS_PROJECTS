@@ -16,7 +16,7 @@ const ConverterHeader = () => {
 			</div>
 			<div className={styles.back}></div>
 			<div className={styles.header_text}>
-				<h1 className={styles.header}>Konwenter stopni</h1>
+				<h1 className={styles.header}>Konwerter stopni</h1>
 				<span className={styles.text}>sprawdź ile stopni ℃ to stopni ℉</span>
 			</div>
 		</section>
