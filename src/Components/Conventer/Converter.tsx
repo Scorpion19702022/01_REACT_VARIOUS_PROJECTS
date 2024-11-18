@@ -1,8 +1,8 @@
 import React from 'react'
 
-import styles from './Styles/Conventer.module.css'
+import styles from './Styles/Converter.module.css'
 
-const Conventer = () => {
+const Converter = () => {
 	return (
 		<main className={styles.wrapper}>
 			<div>Konwenter</div>
@@ -10,4 +10,4 @@ const Conventer = () => {
 	)
 }
 
-export default Conventer
+export default Converter
