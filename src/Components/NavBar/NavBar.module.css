@@ -114,7 +114,7 @@ a {
 	padding: 0.2em 0em;
 	text-decoration: none;
 	margin-bottom: 0.4em;
-	font-size: 1.2em;
+	font-size: 1em;
 	color: var(--color-dark03);
 }
 .link:hover {
@@ -170,6 +170,7 @@ a {
 	a {
 		padding: 0.2em 0em;
 		margin-bottom: 0.2em;
+		font-size: 1.2em;
 	}
 }
 
@@ -213,7 +214,7 @@ a {
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		/* padding: 0.2em 0em; */
+		font-size: 1.1em;
 		margin-bottom: 0.2em;
 	}
 }
