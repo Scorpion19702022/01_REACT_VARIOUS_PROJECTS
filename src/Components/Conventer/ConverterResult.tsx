@@ -19,6 +19,13 @@ const ConverterResult = () => {
 					<button className={styles.btn}>resetuj</button>
 				</div>
 			</div>
+			<div className={styles.box_result}>
+				<h2 className={styles.heading_result}>Wynik:</h2>
+				<p className={styles.result}>
+					{' '}
+					℃ <span className={styles.span_result}>to:</span> ℉
+				</p>
+			</div>
 		</section>
 	)
 }
