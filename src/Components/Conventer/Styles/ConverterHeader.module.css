@@ -35,20 +35,20 @@
 
 .header_img_one {
 	position: absolute;
-	top: -48%;
-	left: 24%;
-	width: 20%;
-	height: 20%;
+	top: -28%;
+	left: 18%;
+	width: 15%;
+	height: 15%;
 	z-index: 1;
-	transform: rotate(20deg);
+	transform: rotate(17deg);
 }
 
 .header_img_two {
 	position: absolute;
-	top: -20%;
+	top: -12%;
 	left: -2%;
-	width: 20%;
-	height: 20%;
+	width: 15%;
+	height: 15%;
 	z-index: 1;
 	transform: rotate(-20deg);
 }
@@ -57,6 +57,12 @@
 .img_two {
 	width: 100%;
 	object-fit: cover;
+}
+
+.icon_c,
+.icon_f {
+	position: absolute;
+	visibility: hidden;
 }
 
 .back {
@@ -90,47 +96,47 @@
 
 @media (min-width: 660px) {
 	.header_img_one {
-		top: -48%;
-		left: 24%;
-		width: 12%;
-		height: 12%;
+		top: -40%;
+		left: 14%;
+		width: 10%;
+		height: 10%;
 	}
 
 	.header_img_two {
 		top: -20%;
-		left: 7%;
-		width: 12%;
-		height: 12%;
+		left: 0%;
+		width: 10%;
+		height: 10%;
 	}
 
 	.back {
 		top: -20%;
 		left: -17em;
-		width: 80%;
+		width: 70%;
 		height: 180px;
-		transform: rotate(-25deg);
+		transform: rotate(-28deg);
 	}
 }
 
 @media (min-width: 992px) {
 	.header_img_one {
-		top: -51%;
-		left: 24%;
-		width: 10%;
-		height: 10%;
+		top: -48%;
+		left: 14%;
+		width: 7%;
+		height: 7%;
 	}
 
 	.header_img_two {
 		top: -23%;
-		left: 10%;
-		width: 10%;
-		height: 10%;
+		left: 3%;
+		width: 7%;
+		height: 7%;
 	}
 
 	.back {
 		top: -20%;
 		left: -17em;
-		width: 60%;
+		width: 55%;
 		height: 180px;
 		transform: rotate(-25deg);
 	}
@@ -148,25 +154,49 @@
 	}
 
 	.header_img_one {
-		top: -40%;
-		left: 24%;
-		width: 10%;
-		height: 10%;
+		top: -35%;
+		left: 14%;
+		width: 8%;
+		height: 8%;
 	}
 
 	.header_img_two {
 		top: -23%;
-		left: 10%;
-		width: 10%;
-		height: 10%;
+		left: 2%;
+		width: 8%;
+		height: 8%;
+	}
+
+	.icon_c,
+	.icon_f {
+		position: absolute;
+		visibility: visible;
+	}
+
+	.icon_c {
+		top: -26%;
+		left: 18%;
+		z-index: 1;
+		transform: rotate(-9deg);
+		font-size: 6em;
+		color: red;
+	}
+
+	.icon_f {
+		top: 17%;
+		left: 24%;
+		z-index: 1;
+		transform: rotate(9deg);
+		font-size: 7em;
+		color: var(--color-color05);
 	}
 
 	.back {
-		width: 70%;
+		width: 78%;
 		height: 200px;
-		top: 0%;
-		left: -40%;
-		transform: rotate(-15deg);
+		top: -28%;
+		left: -45%;
+		transform: rotate(4deg);
 	}
 
 	.header {
