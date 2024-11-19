@@ -12,6 +12,7 @@ const ConverterResult = () => {
 					<input className={styles.input} type='number' />
 					<p className={styles.degrees}>℃</p>
 				</div>
+				<p className={styles.error}>error</p>
 				<div className={styles.box_btns}>
 					<button className={styles.btn}>konwertuj</button>
 					<button className={styles.btn}>zmień</button>
