@@ -8,6 +8,7 @@ type InitialStateType = {
 	error: boolean
 	isError: string
 	handleChangeInput: (e: string) => void
+	handleChangeDegrees: () => void
 }
 
 type ConverterTypeProvider = {
@@ -21,6 +22,7 @@ const InitialState: InitialStateType = {
 	error: false,
 	isError: '',
 	handleChangeInput: (e: string) => {},
+	handleChangeDegrees: () => {},
 }
 
 const ConverterContext = createContext(InitialState)
@@ -45,8 +47,18 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 		}
 	}
 
+	const handleChangeDegrees = () => {
+		if (degreesIn === '℃') {
+			setDegreesOut('℉')
+		} else if (degreesOut === '℉') {
+			setDegreesIn('℃')
+		}
+	}
+
 	return (
-		<ConverterContext.Provider value={{ degreesIn, degreesOut, valueInput, error, isError, handleChangeInput }}>
+		<ConverterContext.Provider
+			value={{ degreesIn, degreesOut, valueInput, error, isError, handleChangeInput, handleChangeDegrees }}
+		>
 			<Analytics />
 			{children}
 		</ConverterContext.Provider>
