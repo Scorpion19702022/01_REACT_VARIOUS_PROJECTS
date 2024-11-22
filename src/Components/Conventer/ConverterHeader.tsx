@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Styles/ConverterHeader.module.css'
 
@@ -7,8 +7,11 @@ import thermometrF from './assets/thermometer_F.png'
 
 import { RiCelsiusFill } from 'react-icons/ri'
 import { RiFahrenheitFill } from 'react-icons/ri'
+import ConverterContext from './Context/ConverterContext'
 
 const ConverterHeader = () => {
+	const { degreesIn, degreesOut } = useContext(ConverterContext)
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.header_img_one}>
@@ -22,7 +25,9 @@ const ConverterHeader = () => {
 			<div className={styles.back}></div>
 			<div className={styles.header_text}>
 				<h1 className={styles.header}>Konwerter stopni</h1>
-				<span className={styles.text}>sprawdź ile stopni ℃ to stopni ℉</span>
+				<span className={styles.text}>
+					sprawdź ile stopni {degreesIn} to stopni {degreesOut}
+				</span>
 			</div>
 		</section>
 	)
