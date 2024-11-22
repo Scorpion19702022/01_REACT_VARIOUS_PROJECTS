@@ -9,7 +9,9 @@ const ConverterResult = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h1 className={styles.heading}>Sprawdż ile stopni ℃ to stopni ℉ i odwrotnie</h1>
+			<h1 className={styles.heading}>
+				Sprawdż ile {degreesIn} to {degreesOut}
+			</h1>
 			<div className={styles.box_data}>
 				<label className={styles.label}>Konvertuj z na</label>
 				<div className={styles.box_input}>
