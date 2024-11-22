@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Styles/ConverterResult.module.css'
+import ConverterContext from './Context/ConverterContext'
 
 const ConverterResult = () => {
+	const { valueInput, handleChangeInput } = useContext(ConverterContext)
+
 	return (
 		<section className={styles.wrapper}>
 			<h1 className={styles.heading}>Sprawdż ile stopni ℃ to stopni ℉ i odwrotnie</h1>
 			<div className={styles.box_data}>
 				<label className={styles.label}>Konvertuj z na</label>
 				<div className={styles.box_input}>
-					<input className={styles.input} type='number' />
+					<input
+						className={styles.input}
+						value={Number(valueInput) || ''}
+						type='number'
+						onChange={e => handleChangeInput(e.target.value)}
+					/>
 					<p className={styles.degrees}>℃</p>
 				</div>
 				<p className={styles.error}>error</p>
