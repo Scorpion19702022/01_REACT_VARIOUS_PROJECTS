@@ -32,10 +32,18 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 	const [error, setError] = useState<boolean>(false)
 	const [isError, setIsError] = useState<string>('')
 
+	// T(F) = T(C) * 1.8 + 32
+	// T(C) = (T(F) - 32) / 1.8
+
 	const handleChangeInput = (e: string) => {
-		setValueInput(e)
+		if (e.length <= 5) {
+			setValueInput(e)
+			setError(false)
+		} else if (e.length > 5) {
+			setError(true)
+			setIsError('maksymalna liczba osiągnięta')
+		}
 	}
-	console.log(valueInput)
 
 	return (
 		<ConverterContext.Provider value={{ celsius, fare, valueInput, error, isError, handleChangeInput }}>

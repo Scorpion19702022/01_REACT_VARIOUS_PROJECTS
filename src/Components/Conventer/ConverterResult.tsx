@@ -4,7 +4,7 @@ import styles from './Styles/ConverterResult.module.css'
 import ConverterContext from './Context/ConverterContext'
 
 const ConverterResult = () => {
-	const { valueInput, handleChangeInput } = useContext(ConverterContext)
+	const { celsius, fare, valueInput, error, isError, handleChangeInput } = useContext(ConverterContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -18,9 +18,9 @@ const ConverterResult = () => {
 						type='number'
 						onChange={e => handleChangeInput(e.target.value)}
 					/>
-					<p className={styles.degrees}>℃</p>
+					<p className={styles.degrees}>{celsius}</p>
 				</div>
-				<p className={styles.error}>error</p>
+				<p className={error ? styles.error : styles.no_error}>{isError}</p>
 				<div className={styles.box_btns}>
 					<button className={styles.btn}>konwertuj</button>
 					<button className={styles.btn}>zmień</button>
@@ -31,7 +31,7 @@ const ConverterResult = () => {
 				<h2 className={styles.heading_result}>Wynik:</h2>
 				<p className={styles.result}>
 					{' '}
-					℃ <span className={styles.span_result}>to:</span> ℉
+					{celsius} <span className={styles.span_result}>to:</span> {fare}
 				</p>
 			</div>
 		</section>
