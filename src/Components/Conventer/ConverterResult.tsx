@@ -13,7 +13,9 @@ const ConverterResult = () => {
 				Sprawdż ile {degreesIn} to {degreesOut}
 			</h1>
 			<div className={styles.box_data}>
-				<label className={styles.label}>Konvertuj z na</label>
+				<label className={styles.label}>
+					Konvertuj z {degreesIn} na {degreesOut}
+				</label>
 				<div className={styles.box_input}>
 					<input
 						className={styles.input}
