@@ -4,8 +4,17 @@ import styles from './Styles/ConverterResult.module.css'
 import ConverterContext from './Context/ConverterContext'
 
 const ConverterResult = () => {
-	const { degreesIn, degreesOut, valueInput, error, isError, handleChangeInput, handleChangeDegrees } =
-		useContext(ConverterContext)
+	const {
+		degreesIn,
+		degreesOut,
+		valueInput,
+		error,
+		isError,
+		degreesResult,
+		handleChangeInput,
+		handleCountDegrees,
+		handleChangeDegrees,
+	} = useContext(ConverterContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -27,7 +36,9 @@ const ConverterResult = () => {
 				</div>
 				<p className={error ? styles.error : styles.no_error}>{isError}</p>
 				<div className={styles.box_btns}>
-					<button className={styles.btn}>konwertuj</button>
+					<button className={styles.btn} onClick={handleCountDegrees}>
+						konwertuj
+					</button>
 					<button className={styles.btn} onClick={handleChangeDegrees}>
 						zmień
 					</button>
@@ -37,8 +48,11 @@ const ConverterResult = () => {
 			<div className={styles.box_result}>
 				<h2 className={styles.heading_result}>Wynik:</h2>
 				<p className={styles.result}>
-					{' '}
-					{degreesIn} <span className={styles.span_result}>to:</span> {degreesOut}
+					<span className={styles.degrees_in}>{valueInput}</span> {degreesIn}{' '}
+					<span className={styles.span_result}>
+						to: <span className={styles.degrees_result}>{degreesResult}</span>
+					</span>{' '}
+					{degreesOut}
 				</p>
 			</div>
 		</section>

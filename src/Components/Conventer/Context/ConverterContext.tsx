@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 type InitialStateType = {
 	degreesIn: string
 	degreesOut: string
-	valueInput: string | number | null
+	valueInput: string
 	error: boolean
 	isError: string
 	changeDegrees: boolean
@@ -36,7 +36,7 @@ const ConverterContext = createContext(InitialState)
 export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 	const [degreesIn, setDegreesIn] = useState<string>('℃')
 	const [degreesOut, setDegreesOut] = useState<string>('℉')
-	const [valueInput, setValueInput] = useState<string | number | null>(null)
+	const [valueInput, setValueInput] = useState<string>('')
 	const [error, setError] = useState<boolean>(false)
 	const [isError, setIsError] = useState<string>('')
 	const [changeDegrees, setChangeDegrees] = useState<boolean>(false)
@@ -53,6 +53,17 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 		} else if (e.length > 5) {
 			setError(true)
 			setIsError('maksymalna liczba osiągnięta')
+		}
+	}
+
+	const handleCountDegrees = () => {
+		if (valueInput === '') {
+			setIsError('musisz podać wartość')
+		}
+		if (degreesIn === '℃' && valueInput !== '') {
+			setDegreesResult(Number(valueInput) * 1.8 + 32)
+		} else if (degreesIn === '℃' && valueInput !== '') {
+			setDegreesResult((Number(valueInput) - 32) / 1.8)
 		}
 	}
 
