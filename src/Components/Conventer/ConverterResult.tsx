@@ -11,6 +11,7 @@ const ConverterResult = () => {
 		error,
 		isError,
 		degreesResult,
+		valueFromInput,
 		handleChangeInput,
 		handleCountDegrees,
 		handleChangeDegrees,
@@ -48,7 +49,7 @@ const ConverterResult = () => {
 			<div className={styles.box_result}>
 				<h2 className={styles.heading_result}>Wynik:</h2>
 				<p className={styles.result}>
-					<span className={styles.degrees_in}>{valueInput}</span> {degreesIn}{' '}
+					<span className={styles.degrees_in}>{valueFromInput}</span> {degreesIn}{' '}
 					<span className={styles.span_result}>
 						to: <span className={styles.degrees_result}>{degreesResult}</span>
 					</span>{' '}

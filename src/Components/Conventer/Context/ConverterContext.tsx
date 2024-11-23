@@ -9,6 +9,7 @@ type InitialStateType = {
 	isError: string
 	changeDegrees: boolean
 	degreesResult: number | string
+	valueFromInput: number | string
 	handleChangeInput: (e: string) => void
 	handleCountDegrees: () => void
 	handleChangeDegrees: () => void
@@ -26,6 +27,7 @@ const InitialState: InitialStateType = {
 	isError: '',
 	changeDegrees: false,
 	degreesResult: '',
+	valueFromInput: '',
 	handleChangeInput: (e: string) => {},
 	handleCountDegrees: () => {},
 	handleChangeDegrees: () => {},
@@ -40,6 +42,7 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 	const [error, setError] = useState<boolean>(false)
 	const [isError, setIsError] = useState<string>('')
 	const [changeDegrees, setChangeDegrees] = useState<boolean>(false)
+	const [valueFromInput, setValueFromInput] = useState<number | string>('')
 
 	const [degreesResult, setDegreesResult] = useState<number | string>('')
 
@@ -57,13 +60,17 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 	}
 
 	const handleCountDegrees = () => {
-		if (valueInput === '') {
-			setIsError('musisz podać wartość')
-		}
 		if (degreesIn === '℃' && valueInput !== '') {
+			setError(false)
 			setDegreesResult(Number(valueInput) * 1.8 + 32)
+			setValueFromInput(valueInput)
 		} else if (degreesIn === '℃' && valueInput !== '') {
+			setError(false)
 			setDegreesResult((Number(valueInput) - 32) / 1.8)
+			setValueFromInput(valueInput)
+		} else if (valueInput === '') {
+			setError(true)
+			setIsError('musisz podać wartość')
 		}
 	}
 
@@ -88,6 +95,7 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 				isError,
 				changeDegrees,
 				degreesResult,
+				valueFromInput,
 				handleChangeInput,
 				handleCountDegrees,
 				handleChangeDegrees,
