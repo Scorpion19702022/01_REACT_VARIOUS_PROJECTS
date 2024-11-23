@@ -11,7 +11,7 @@ type InitialStateType = {
 	degreesResult: number | string
 	valueFromInput: number | string
 	handleChangeInput: (e: string) => void
-	handleCountDegrees: () => void
+	handleCountDegrees: (degrees: string) => void
 	handleChangeDegrees: () => void
 }
 
@@ -29,7 +29,7 @@ const InitialState: InitialStateType = {
 	degreesResult: '',
 	valueFromInput: '',
 	handleChangeInput: (e: string) => {},
-	handleCountDegrees: () => {},
+	handleCountDegrees: (degrees: string) => {},
 	handleChangeDegrees: () => {},
 }
 
@@ -59,15 +59,15 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 		}
 	}
 
-	const handleCountDegrees = () => {
-		if (degreesIn === '℃' && valueInput !== '') {
+	const handleCountDegrees = (degrees: string) => {
+		if (degrees === '℃' && valueInput !== '') {
+			setValueFromInput(valueInput)
 			setError(false)
 			setDegreesResult((Number(valueInput) * 1.8 + 32).toFixed(0))
+		} else if (degrees === '℉' && valueInput !== '') {
 			setValueFromInput(valueInput)
-		} else if (degreesIn === '℃' && valueInput !== '') {
 			setError(false)
 			setDegreesResult(((Number(valueInput) - 32) / 1.8).toFixed(0))
-			setValueFromInput(valueInput)
 		} else if (valueInput === '') {
 			setError(true)
 			setIsError('musisz podać wartość')
@@ -77,11 +77,11 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 	const handleChangeDegrees = () => {
 		setChangeDegrees(!changeDegrees)
 		if (changeDegrees) {
-			setDegreesResult((Number(valueInput) * 1.8 + 32).toFixed(0))
+			setDegreesResult((Number(valueFromInput) * 1.8 + 32).toFixed(0))
 			setDegreesIn('℃')
 			setDegreesOut('℉')
 		} else if (!changeDegrees) {
-			setDegreesResult(((Number(valueInput) - 32) / 1.8).toFixed(0))
+			setDegreesResult(((Number(valueFromInput) - 32) / 1.8).toFixed(0))
 			setDegreesIn('℉')
 			setDegreesOut('℃')
 		}

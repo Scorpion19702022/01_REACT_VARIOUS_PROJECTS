@@ -37,7 +37,7 @@ const ConverterResult = () => {
 				</div>
 				<p className={error ? styles.error : styles.no_error}>{isError}</p>
 				<div className={styles.box_btns}>
-					<button className={styles.btn} onClick={handleCountDegrees}>
+					<button className={styles.btn} onClick={() => handleCountDegrees(degreesIn)}>
 						konwertuj
 					</button>
 					<button className={styles.btn} onClick={handleChangeDegrees}>
