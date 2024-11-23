@@ -30,7 +30,7 @@ const ConverterResult = () => {
 				<div className={styles.box_input}>
 					<input
 						className={styles.input}
-						value={Number(valueInput) || ''}
+						value={valueInput}
 						type='number'
 						onChange={e => handleChangeInput(e.target.value)}
 					/>

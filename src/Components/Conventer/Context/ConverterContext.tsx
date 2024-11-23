@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 type InitialStateType = {
 	degreesIn: string
 	degreesOut: string
-	valueInput: string
+	valueInput: string | number
 	error: boolean
 	isError: string
 	changeDegrees: boolean
@@ -40,7 +40,7 @@ const ConverterContext = createContext(InitialState)
 export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 	const [degreesIn, setDegreesIn] = useState<string>('℃')
 	const [degreesOut, setDegreesOut] = useState<string>('℉')
-	const [valueInput, setValueInput] = useState<string>('')
+	const [valueInput, setValueInput] = useState<string | number>('')
 	const [error, setError] = useState<boolean>(false)
 	const [isError, setIsError] = useState<string>('')
 	const [changeDegrees, setChangeDegrees] = useState<boolean>(false)
