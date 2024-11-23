@@ -14,6 +14,7 @@ import imgSlider07 from './assets/imgSwiper07.jpg'
 import imgSlider08 from './assets/imgSwiper08.jpg'
 import imgSlider09 from './assets/imgSwiper09.jpg'
 import imgSlider10 from './assets/imgSwiper10.jpg'
+import imgSlider11 from './assets/imgSwiper11.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -61,6 +62,18 @@ const HomeSwiper = () => {
 					<img className={styles.card_img} src={imgSlider01} alt='photoSlider' />
 				</SwiperSlide>
 				<SwiperSlide className={styles.box_swiper}>
+					<NavLink to='./Converter'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>Konwerter stopni</h4>
+						<p className={styles.card_text}>
+							Konwerter stopni. Sprawdż ile stopni ℃ to stopni ℉. Zmień i sprawdż ile ℉ to ℃
+						</p>
+					</div>
+					<img className={styles.card_img} src={imgSlider02} alt='photoSlider' />
+				</SwiperSlide>
+				<SwiperSlide className={styles.box_swiper}>
 					<NavLink to='./ToDoList'>
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
@@ -71,7 +84,7 @@ const HomeSwiper = () => {
 							urządzeiu.
 						</p>
 					</div>
-					<img className={styles.card_img} src={imgSlider02} alt='photoSlider' />
+					<img className={styles.card_img} src={imgSlider03} alt='photoSlider' />
 				</SwiperSlide>
 
 				<SwiperSlide className={styles.box_swiper}>
@@ -85,7 +98,7 @@ const HomeSwiper = () => {
 							do wskaźnika.
 						</p>
 					</div>
-					<img className={styles.card_img} src={imgSlider03} alt='photoSlider' />
+					<img className={styles.card_img} src={imgSlider04} alt='photoSlider' />
 				</SwiperSlide>
 
 				<SwiperSlide className={styles.box_swiper}>
@@ -99,7 +112,7 @@ const HomeSwiper = () => {
 							i podatek.
 						</p>
 					</div>
-					<img className={styles.card_img} src={imgSlider04} alt='photoSlider' />
+					<img className={styles.card_img} src={imgSlider05} alt='photoSlider' />
 				</SwiperSlide>
 
 				<SwiperSlide className={styles.box_swiper}>
@@ -112,7 +125,7 @@ const HomeSwiper = () => {
 							Zamawiaie produktów. Sprawdzenie ilości zamówienia i ceny. Wysłanie zamówienia i czas oczekiwania.
 						</p>
 					</div>
-					<img className={styles.card_img} src={imgSlider05} alt='photoSlider' />
+					<img className={styles.card_img} src={imgSlider06} alt='photoSlider' />
 				</SwiperSlide>
 
 				<SwiperSlide className={styles.box_swiper}>
@@ -125,7 +138,7 @@ const HomeSwiper = () => {
 							Popularna gra w kółko i krzyżyk. Edycja nazwy graczy, lista wykonanych ruchów i info o wyniku gry.
 						</p>
 					</div>
-					<img className={styles.card_img} src={imgSlider06} alt='photoSlider' />
+					<img className={styles.card_img} src={imgSlider07} alt='photoSlider' />
 				</SwiperSlide>
 				<SwiperSlide className={styles.box_swiper}>
 					<NavLink to='./Quiz'>
@@ -137,7 +150,7 @@ const HomeSwiper = () => {
 							10 pytań o stolice europejskie. Pokazuje poszczególne wyniki oraz wynik końcowy.
 						</p>
 					</div>
-					<img className={styles.card_img} src={imgSlider07} alt='photoSlider' />
+					<img className={styles.card_img} src={imgSlider08} alt='photoSlider' />
 				</SwiperSlide>
 				<SwiperSlide className={styles.box_swiper}>
 					<NavLink to='./Stopwatch'>
@@ -150,7 +163,7 @@ const HomeSwiper = () => {
 							layoutu.
 						</p>
 					</div>
-					<img className={styles.card_img} src={imgSlider08} alt='photoSlider' />
+					<img className={styles.card_img} src={imgSlider09} alt='photoSlider' />
 				</SwiperSlide>
 				<SwiperSlide className={styles.box_swiper}>
 					<NavLink to='./Countdown'>
@@ -162,7 +175,7 @@ const HomeSwiper = () => {
 							Pokazuje czas w godzinach i dniach jaki został do zdarzenia w przyszłości
 						</p>
 					</div>
-					<img className={styles.card_img} src={imgSlider09} alt='photoSlider' />
+					<img className={styles.card_img} src={imgSlider10} alt='photoSlider' />
 				</SwiperSlide>
 				<SwiperSlide className={styles.box_swiper}>
 					<NavLink to='./Demography'>
@@ -172,7 +185,7 @@ const HomeSwiper = () => {
 						<h4 className={styles.card_heading}>Demografia miast Polski</h4>
 						<p className={styles.card_text}>Przedstawia liczbowo i na wykresie przyrost mieszkańców miast w Polsce</p>
 					</div>
-					<img className={styles.card_img} src={imgSlider10} alt='photoSlider' />
+					<img className={styles.card_img} src={imgSlider11} alt='photoSlider' />
 				</SwiperSlide>
 			</Swiper>
 		</section>
