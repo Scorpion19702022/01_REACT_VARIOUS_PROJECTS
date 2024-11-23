@@ -131,12 +131,22 @@
 }
 
 .result {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 	font-size: 2em;
-	font-weight: 600;
+}
+
+.degrees_in,
+.degrees_result {
+	text-align: right;
+	width: 25%;
 	color: var(--color-color02);
 }
 
 .span_result {
+	text-align: center;
+	width: 20%;
 	color: var(--color-color04);
 	font-weight: 100;
 }

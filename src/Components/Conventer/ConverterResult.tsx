@@ -49,11 +49,15 @@ const ConverterResult = () => {
 			<div className={styles.box_result}>
 				<h2 className={styles.heading_result}>Wynik:</h2>
 				<p className={styles.result}>
-					<span className={styles.degrees_in}>{valueFromInput}</span> {degreesIn}{' '}
-					<span className={styles.span_result}>
-						to: <span className={styles.degrees_result}>{degreesResult}</span>
-					</span>{' '}
-					{degreesOut}
+					<span className={styles.degrees_in}>
+						{valueFromInput}
+						{degreesIn}
+					</span>
+					<span className={styles.span_result}>to: </span>
+					<span className={styles.degrees_result}>
+						{degreesResult}
+						{degreesOut}
+					</span>
 				</p>
 			</div>
 		</section>
