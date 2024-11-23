@@ -8,7 +8,9 @@ type InitialStateType = {
 	error: boolean
 	isError: string
 	changeDegrees: boolean
+	degreesResult: number | string
 	handleChangeInput: (e: string) => void
+	handleCountDegrees: () => void
 	handleChangeDegrees: () => void
 }
 
@@ -23,7 +25,9 @@ const InitialState: InitialStateType = {
 	error: false,
 	isError: '',
 	changeDegrees: false,
+	degreesResult: '',
 	handleChangeInput: (e: string) => {},
+	handleCountDegrees: () => {},
 	handleChangeDegrees: () => {},
 }
 
@@ -36,6 +40,8 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 	const [error, setError] = useState<boolean>(false)
 	const [isError, setIsError] = useState<string>('')
 	const [changeDegrees, setChangeDegrees] = useState<boolean>(false)
+
+	const [degreesResult, setDegreesResult] = useState<number | string>('')
 
 	// T(F) = T(C) * 1.8 + 32
 	// T(C) = (T(F) - 32) / 1.8
@@ -70,7 +76,9 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 				error,
 				isError,
 				changeDegrees,
+				degreesResult,
 				handleChangeInput,
+				handleCountDegrees,
 				handleChangeDegrees,
 			}}
 		>
