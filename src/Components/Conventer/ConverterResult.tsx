@@ -15,6 +15,7 @@ const ConverterResult = () => {
 		handleChangeInput,
 		handleCountDegrees,
 		handleChangeDegrees,
+		handleClean,
 	} = useContext(ConverterContext)
 
 	return (
@@ -43,7 +44,9 @@ const ConverterResult = () => {
 					<button className={styles.btn} onClick={handleChangeDegrees}>
 						zmień
 					</button>
-					<button className={styles.btn}>resetuj</button>
+					<button className={styles.btn} onClick={handleClean}>
+						resetuj
+					</button>
 				</div>
 			</div>
 			<div className={styles.box_result}>

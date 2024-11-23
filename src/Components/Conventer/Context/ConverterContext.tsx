@@ -13,6 +13,7 @@ type InitialStateType = {
 	handleChangeInput: (e: string) => void
 	handleCountDegrees: (degrees: string) => void
 	handleChangeDegrees: () => void
+	handleClean: () => void
 }
 
 type ConverterTypeProvider = {
@@ -31,6 +32,7 @@ const InitialState: InitialStateType = {
 	handleChangeInput: (e: string) => {},
 	handleCountDegrees: (degrees: string) => {},
 	handleChangeDegrees: () => {},
+	handleClean: () => {},
 }
 
 const ConverterContext = createContext(InitialState)
@@ -87,6 +89,17 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 		}
 	}
 
+	const handleClean = () => {
+		setDegreesIn('℃')
+		setDegreesOut('℉')
+		setValueInput('')
+		setValueFromInput('')
+		setError(false)
+		setIsError('')
+		setChangeDegrees(false)
+		setDegreesResult('')
+	}
+
 	return (
 		<ConverterContext.Provider
 			value={{
@@ -101,6 +114,7 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 				handleChangeInput,
 				handleCountDegrees,
 				handleChangeDegrees,
+				handleClean,
 			}}
 		>
 			<Analytics />
