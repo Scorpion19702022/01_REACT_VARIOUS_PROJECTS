@@ -155,6 +155,14 @@
 	.wrapper {
 		margin-bottom: 2em;
 	}
+	.degrees_in,
+	.degrees_result {
+		width: 14%;
+	}
+
+	.span_result {
+		width: 12%;
+	}
 }
 
 @media (min-width: 992px) {
@@ -189,7 +197,13 @@
 		font-size: 4em;
 	}
 
+	.degrees_in,
+	.degrees_result {
+		width: 20%;
+	}
+
 	.span_result {
+		width: 20%;
 		color: var(--color-color04);
 		font-weight: 100;
 	}
@@ -224,5 +238,16 @@
 
 	.btn:hover {
 		background-color: var(--color-dark09);
+	}
+
+	.degrees_in,
+	.degrees_result {
+		width: 15%;
+	}
+
+	.span_result {
+		width: 8%;
+		color: var(--color-color04);
+		font-weight: 100;
 	}
 }
