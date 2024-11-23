@@ -118,7 +118,7 @@ a {
 	color: var(--color-dark03);
 }
 .link:hover {
-	color: var(--color-color03);
+	color: var(--color-color04);
 }
 
 @media (min-width: 660px) {
