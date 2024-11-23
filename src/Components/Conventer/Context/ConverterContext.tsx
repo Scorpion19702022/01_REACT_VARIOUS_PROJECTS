@@ -79,11 +79,15 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 	const handleChangeDegrees = () => {
 		setChangeDegrees(!changeDegrees)
 		if (changeDegrees) {
-			setDegreesResult((Number(valueFromInput) * 1.8 + 32).toFixed(0))
+			if (valueInput !== '' && valueFromInput !== '') {
+				setDegreesResult((Number(valueInput) * 1.8 + 32).toFixed(0))
+			}
 			setDegreesIn('℃')
 			setDegreesOut('℉')
 		} else if (!changeDegrees) {
-			setDegreesResult(((Number(valueFromInput) - 32) / 1.8).toFixed(0))
+			if (valueInput !== '' && valueFromInput !== '') {
+				setDegreesResult(((Number(valueInput) - 32) / 1.8).toFixed(0))
+			}
 			setDegreesIn('℉')
 			setDegreesOut('℃')
 		}
