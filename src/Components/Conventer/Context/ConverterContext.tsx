@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 
 type InitialStateType = {
@@ -62,11 +62,11 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 	const handleCountDegrees = () => {
 		if (degreesIn === '℃' && valueInput !== '') {
 			setError(false)
-			setDegreesResult(Number(valueInput) * 1.8 + 32)
+			setDegreesResult((Number(valueInput) * 1.8 + 32).toFixed(0))
 			setValueFromInput(valueInput)
 		} else if (degreesIn === '℃' && valueInput !== '') {
 			setError(false)
-			setDegreesResult((Number(valueInput) - 32) / 1.8)
+			setDegreesResult(((Number(valueInput) - 32) / 1.8).toFixed(0))
 			setValueFromInput(valueInput)
 		} else if (valueInput === '') {
 			setError(true)
@@ -74,12 +74,22 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 		}
 	}
 
+	// useEffect(() => {
+	// 	if (changeDegrees) {
+	// 		setDegreesResult((Number(valueInput) * 1.8 + 32).toFixed(0))
+	// 	} else if (!changeDegrees) {
+	// 		setDegreesResult(((Number(valueInput) - 32) / 1.8).toFixed(0))
+	// 	}
+	// }, [])
+
 	const handleChangeDegrees = () => {
 		setChangeDegrees(!changeDegrees)
 		if (changeDegrees) {
+			setDegreesResult((Number(valueInput) * 1.8 + 32).toFixed(0))
 			setDegreesIn('℃')
 			setDegreesOut('℉')
 		} else if (!changeDegrees) {
+			setDegreesResult(((Number(valueInput) - 32) / 1.8).toFixed(0))
 			setDegreesIn('℉')
 			setDegreesOut('℃')
 		}
