@@ -12,7 +12,7 @@ const ExchangeRateCurrentData = () => {
 		<div key={item.code} className={styles.box_rate}>
 			<ul className={styles.rate_list}>
 				<li className={styles.rate}>
-					<p>{item.currency}:</p> <p>{item.mid} zł</p>
+					<p>{item.currency}:</p> <p>{item.mid.toFixed(2)} zł</p>
 				</li>
 			</ul>
 		</div>

@@ -60,10 +60,11 @@
 }
 
 .rate {
-	width: 50%;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	color: var(--color-color01);
+	font-size: 1.4em;
 }
 
 @media (min-width: 660px) {
@@ -74,7 +75,7 @@
 
 @media (min-width: 1200px) {
 	.wrapper {
-		width: 90%;
+		width: 45%;
 		min-height: 280px;
 		padding-top: 2em;
 		justify-content: space-around;
