@@ -2,11 +2,14 @@ import React from 'react'
 
 import styles from './Styles/ExchangeRate.module.css'
 import ExchangeRateHeader from './ExchangeRateHeader'
+import { ExchangeRateProvider } from './Context/ExchangeRateContext'
 
 const ExchangeRate = () => {
 	return (
 		<main className={styles.wrapper}>
-			<ExchangeRateHeader />
+			<ExchangeRateProvider>
+				<ExchangeRateHeader />
+			</ExchangeRateProvider>
 		</main>
 	)
 }
