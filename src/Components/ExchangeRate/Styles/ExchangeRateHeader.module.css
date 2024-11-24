@@ -37,8 +37,8 @@
 	position: absolute;
 	top: -30%;
 	left: -1%;
-	width: 37%;
-	height: 37%;
+	width: 30%;
+	height: 30%;
 	z-index: 1;
 }
 
@@ -68,14 +68,18 @@
 @media (min-width: 660px) {
 	.header_img {
 		top: -30%;
-		left: 0%;
+		left: -2%;
 		width: 30%;
 		height: 30%;
 	}
+}
 
-	.img {
-		width: 100%;
-		object-fit: cover;
+@media (min-width: 992px) {
+	.header_img {
+		top: -52%;
+		left: -2%;
+		width: 25%;
+		height: 25%;
 	}
 }
 
@@ -90,8 +94,8 @@
 	}
 
 	.header_img {
-		width: 45%;
-		height: 45%;
+		width: 40%;
+		height: 40%;
 		top: -45%;
 		left: -3%;
 	}

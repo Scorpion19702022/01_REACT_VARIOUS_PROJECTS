@@ -12,7 +12,7 @@ const ExchangeRateHeader = () => {
 			</div>
 			<div className={styles.header_text}>
 				<h1 className={styles.header}>Kurs złotego</h1>
-				<span className={styles.text}>Aktualny kurs złotego do światowych walut</span>
+				<span className={styles.text}>Aktualny kurs złotego względem światowych walut</span>
 			</div>
 		</section>
 	)
