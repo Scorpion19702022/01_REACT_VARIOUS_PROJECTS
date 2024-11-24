@@ -1,25 +1,40 @@
-import React, { createContext } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
 import useExchangeRate from '../Hook/useExchangeRate'
+import { ExchangeRate } from '../Types/Types'
 
-type InitialStateType = {}
+type InitialStateType = {
+	todayRatesData: ExchangeRate[]
+	loading: boolean
+	error: string | null
+}
 
 type ExchangeRateTypeProvider = {
 	children: React.ReactNode
 }
 
-const InitialState: InitialStateType = {}
+const InitialState: InitialStateType = {
+	todayRatesData: [],
+	loading: true,
+	error: null,
+}
 
 const ExchangeRateContext = createContext(InitialState)
 
 export const ExchangeRateProvider = ({ children }: ExchangeRateTypeProvider) => {
-	const { todayRates } = useExchangeRate()
+	const { todayRates, loading, error } = useExchangeRate()
 
-	console.log(todayRates)
+	const [todayRatesData, setTodayRatesData] = useState<ExchangeRate[]>([])
+
+	useEffect(() => {
+		if (!loading && !error) {
+			setTodayRatesData(todayRates)
+		}
+	}, [loading, error, todayRates])
 
 	return (
-		<ExchangeRateContext.Provider value={{}}>
+		<ExchangeRateContext.Provider value={{ todayRatesData, loading, error }}>
 			<Analytics />
 			{children}
 		</ExchangeRateContext.Provider>
