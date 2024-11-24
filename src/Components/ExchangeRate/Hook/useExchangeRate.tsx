@@ -16,6 +16,8 @@ const useExchangeRate = (): UseExchangeRateReturn => {
 				if (!response.ok) throw new Error('Błąd pobierania danych')
 				const data = await response.json()
 
+				console.log(data)
+
 				const filteredRates = data[0].rates.filter(
 					(rate: ExchangeRate) =>
 						rate.code === 'USD' || rate.code === 'EUR' || rate.code === 'CHF' || rate.code === 'GBP'
