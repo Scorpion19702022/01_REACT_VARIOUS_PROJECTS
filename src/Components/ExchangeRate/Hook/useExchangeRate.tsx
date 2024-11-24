@@ -1,16 +1,5 @@
 import { useState, useEffect } from 'react'
-
-interface ExchangeRate {
-	currency: string
-	code: string
-	mid: number
-}
-
-interface UseExchangeRateReturn {
-	todayRates: ExchangeRate[]
-	loading: boolean
-	error: string | null
-}
+import { ExchangeRate, UseExchangeRateReturn } from '../Types/Types'
 
 const currentURL = 'https://api.nbp.pl/api/exchangerates/tables/A/'
 
