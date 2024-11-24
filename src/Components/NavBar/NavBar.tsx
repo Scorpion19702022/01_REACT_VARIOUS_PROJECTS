@@ -91,7 +91,7 @@ const NavBar = () => {
 					</NavLink>
 					<NavLink to='./ExchangeRate'>
 						<li className={styles.link} onClick={handleNavView}>
-							Kurs wymiany walut
+							Kursy walut
 						</li>
 					</NavLink>
 				</ul>
