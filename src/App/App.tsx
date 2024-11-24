@@ -23,6 +23,7 @@ import Stopwatch from '../Components/Stopwatch/Stopwatch'
 import Countdown from '../Components/Countdown/Countdown'
 import Demography from '../Components/Demography/Demography'
 import Converter from '../Components/Conventer/Converter'
+import ExchangeRate from '../Components/ExchangeRate/ExchangeRate'
 
 function App() {
 	return (
@@ -49,6 +50,7 @@ function App() {
 					<Route path='/Stoper' Component={Stopwatch} />
 					<Route path='/Countdown' Component={Countdown} />
 					<Route path='/Demography' Component={Demography} />
+					<Route path='/ExchangeRate' Component={ExchangeRate} />
 				</Routes>
 			</section>
 		</Router>
