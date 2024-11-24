@@ -8,20 +8,20 @@ const ExchangeRateCurrentData = () => {
 
 	console.log(todayRatesData)
 
-	const currentExchangeRate = todayRatesData.map((item, index) => (
-		<div>
-			<ul key={index}>
-				<li>{item.currency}</li>
+	const currentExchangeRate = todayRatesData.map(item => (
+		<div key={item.code} className={styles.box_rate}>
+			<ul className={styles.rate_list}>
+				<li className={styles.rate}>
+					<p>{item.currency}:</p> <p>{item.mid} zł</p>
+				</li>
 			</ul>
 		</div>
 	))
 
 	return (
 		<section className={styles.wrapper}>
-			<div>
-				<h1>Kursy walut:</h1>
-				<div>{currentExchangeRate}</div>
-			</div>
+			<h1 className={styles.header}>Kursy walut względem złotego:</h1>
+			<div className={styles.box_exchange_rate}>{currentExchangeRate}</div>
 		</section>
 	)
 }

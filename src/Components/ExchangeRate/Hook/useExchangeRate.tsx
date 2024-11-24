@@ -15,7 +15,13 @@ const useExchangeRate = (): UseExchangeRateReturn => {
 				const response = await fetch(currentURL)
 				if (!response.ok) throw new Error('Błąd pobierania danych')
 				const data = await response.json()
-				setTodayRates(data[0].rates)
+
+				const filteredRates = data[0].rates.filter(
+					(rate: ExchangeRate) =>
+						rate.code === 'USD' || rate.code === 'EUR' || rate.code === 'CHF' || rate.code === 'GBP'
+				)
+
+				setTodayRates(filteredRates)
 			} catch (err) {
 				setError((err as Error).message)
 			} finally {
