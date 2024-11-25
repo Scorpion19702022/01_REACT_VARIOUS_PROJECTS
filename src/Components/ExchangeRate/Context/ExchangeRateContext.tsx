@@ -8,6 +8,7 @@ type InitialStateType = {
 	todayRatesData: ExchangeRate[]
 	loading: boolean
 	error: string | null
+	handleRefresh: (e: any) => void
 }
 
 type ExchangeRateTypeProvider = {
@@ -18,6 +19,7 @@ const InitialState: InitialStateType = {
 	todayRatesData: [],
 	loading: true,
 	error: null,
+	handleRefresh: (e: any) => {},
 }
 
 const ExchangeRateContext = createContext(InitialState)
@@ -33,8 +35,15 @@ export const ExchangeRateProvider = ({ children }: ExchangeRateTypeProvider) => 
 		}
 	}, [loading, error, todayRates])
 
+	const handleRefresh = (e: React.MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault()
+		if (!loading && !error) {
+			setTodayRatesData(todayRates)
+		}
+	}
+
 	return (
-		<ExchangeRateContext.Provider value={{ todayRatesData, loading, error }}>
+		<ExchangeRateContext.Provider value={{ todayRatesData, loading, error, handleRefresh }}>
 			<Analytics />
 			{children}
 		</ExchangeRateContext.Provider>

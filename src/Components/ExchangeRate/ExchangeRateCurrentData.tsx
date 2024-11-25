@@ -4,7 +4,7 @@ import styles from './Styles/ExchangeRateCurrentData.module.css'
 import ExchangeRateContext from './Context/ExchangeRateContext'
 
 const ExchangeRateCurrentData = () => {
-	const { todayRatesData } = useContext(ExchangeRateContext)
+	const { todayRatesData, handleRefresh } = useContext(ExchangeRateContext)
 
 	let currentDate = new Date().toLocaleString('pl-CA').slice(0, 10)
 
@@ -23,7 +23,9 @@ const ExchangeRateCurrentData = () => {
 			<div className={styles.box_info}>
 				<h1 className={styles.header}>Kursy walut względem złotego</h1>
 				<p className={styles.info}>Aktualizacja: {currentDate} około godziny 12:00</p>
-				<button className={styles.btn_refresh}>odśwież dane</button>
+				<button type='button' className={styles.btn_refresh} onClick={handleRefresh}>
+					odśwież dane
+				</button>
 			</div>
 			<div className={styles.box_exchange_rate}>{currentExchangeRate}</div>
 		</section>
