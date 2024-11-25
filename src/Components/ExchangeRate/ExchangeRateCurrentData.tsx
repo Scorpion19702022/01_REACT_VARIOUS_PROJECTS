@@ -6,7 +6,7 @@ import ExchangeRateContext from './Context/ExchangeRateContext'
 const ExchangeRateCurrentData = () => {
 	const { todayRatesData } = useContext(ExchangeRateContext)
 
-	console.log(todayRatesData)
+	let currentDate = new Date().toLocaleString('pl-CA').slice(0, 10)
 
 	const currentExchangeRate = todayRatesData.map(item => (
 		<div key={item.code} className={styles.box_rate}>
@@ -20,7 +20,10 @@ const ExchangeRateCurrentData = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h1 className={styles.header}>Kursy walut względem złotego:</h1>
+			<div className={styles.box_info}>
+				<h1 className={styles.header}>Kursy walut względem złotego</h1>
+				<p className={styles.info}>Aktualizacja: {currentDate} około godziny 12:00</p>
+			</div>
 			<div className={styles.box_exchange_rate}>{currentExchangeRate}</div>
 		</section>
 	)
