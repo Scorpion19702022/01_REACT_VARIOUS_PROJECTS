@@ -35,7 +35,13 @@ export const ExchangeRateProvider = ({ children }: ExchangeRateTypeProvider) => 
 		}
 	}, [loading, error, todayRates])
 
-	const handleRefresh = (e: React.MouseEvent<HTMLButtonElement>) => {
+	// const handleRefresh = () => {
+	// 	if (!loading && !error) {
+	// 		setTodayRatesData(todayRates)
+	// 	}
+	// }
+
+	const handleRefresh = (e: any) => {
 		e.preventDefault()
 		window.location.reload()
 	}
