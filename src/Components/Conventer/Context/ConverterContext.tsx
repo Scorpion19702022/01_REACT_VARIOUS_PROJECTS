@@ -11,6 +11,8 @@ type InitialStateType = {
 	degreesResult: number | string
 	valueFromInput: number | string
 	handleChangeInput: (e: string) => void
+	handleKeyDown: (e: any) => void
+	handleUseEnter: (e: any) => void
 	handleCountDegrees: (degrees: string) => void
 	handleChangeDegrees: () => void
 	handleClean: () => void
@@ -30,6 +32,8 @@ const InitialState: InitialStateType = {
 	degreesResult: '',
 	valueFromInput: '',
 	handleChangeInput: (e: string) => {},
+	handleKeyDown: (e: any) => {},
+	handleUseEnter: (e: any) => {},
 	handleCountDegrees: (degrees: string) => {},
 	handleChangeDegrees: () => {},
 	handleClean: () => {},
@@ -93,6 +97,21 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 		}
 	}
 
+	const handleKeyDown = (e: any) => {
+		const invalidChars = [' ', '.', ',']
+
+		if (invalidChars.includes(e.key)) {
+			e.preventDefault()
+		}
+	}
+
+	const handleUseEnter = (e: any) => {
+		if (e.key === 'Enter') {
+			handleCountDegrees(degreesIn)
+			e.preventDefault()
+		}
+	}
+
 	const handleClean = () => {
 		setDegreesIn('℃')
 		setDegreesOut('℉')
@@ -116,6 +135,8 @@ export const ConverterProvider = ({ children }: ConverterTypeProvider) => {
 				degreesResult,
 				valueFromInput,
 				handleChangeInput,
+				handleKeyDown,
+				handleUseEnter,
 				handleCountDegrees,
 				handleChangeDegrees,
 				handleClean,

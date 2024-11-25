@@ -13,13 +13,15 @@ const ConverterResult = () => {
 		degreesResult,
 		valueFromInput,
 		handleChangeInput,
+		handleKeyDown,
+		handleUseEnter,
 		handleCountDegrees,
 		handleChangeDegrees,
 		handleClean,
 	} = useContext(ConverterContext)
 
 	return (
-		<section className={styles.wrapper}>
+		<section className={styles.wrapper} onKeyDown={handleUseEnter}>
 			<h1 className={styles.heading}>
 				Sprawdż ile {degreesIn} to {degreesOut}
 			</h1>
@@ -32,6 +34,7 @@ const ConverterResult = () => {
 						className={styles.input}
 						value={valueInput}
 						type='number'
+						onKeyDown={handleKeyDown}
 						onChange={e => handleChangeInput(e.target.value)}
 					/>
 					<p className={styles.degrees}>{degreesIn}</p>
