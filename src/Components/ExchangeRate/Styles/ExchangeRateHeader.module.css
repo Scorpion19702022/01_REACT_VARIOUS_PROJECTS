@@ -33,18 +33,44 @@
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
 }
 
-.header_img {
+.icon_dollar,
+.icon_euro,
+.icon_pound,
+.icon_franc {
 	position: absolute;
-	top: -30%;
-	left: -1%;
-	width: 30%;
-	height: 30%;
-	z-index: 1;
+	color: var(--color-color05);
 }
 
-.img {
-	width: 100%;
-	object-fit: cover;
+.icon_dollar {
+	font-size: 4em;
+	color: #66a68a;
+	top: -20%;
+	left: -7%;
+	transform: rotate(-15deg);
+}
+
+.icon_euro {
+	font-size: 4.8em;
+	color: var(--color-color03);
+	top: -45%;
+	left: 2%;
+	transform: rotate(5deg);
+}
+
+.icon_pound {
+	font-size: 3.8em;
+	color: #ad7065;
+	top: -20%;
+	left: 16%;
+	transform: rotate(-10deg);
+}
+
+.icon_franc {
+	font-size: 4em;
+	color: #3294b7;
+	top: -30%;
+	left: 23%;
+	transform: rotate(10deg);
 }
 
 .header_text {
@@ -66,21 +92,9 @@
 }
 
 @media (min-width: 660px) {
-	.header_img {
-		top: -30%;
-		left: -2%;
-		width: 30%;
-		height: 30%;
-	}
 }
 
 @media (min-width: 992px) {
-	.header_img {
-		top: -52%;
-		left: -2%;
-		width: 25%;
-		height: 25%;
-	}
 }
 
 @media (min-width: 1200px) {
@@ -91,17 +105,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
-
-	.header_img {
-		width: 40%;
-		height: 40%;
-		top: -45%;
-		left: -3%;
-	}
-
-	.img {
-		width: 70%;
 	}
 
 	.header {
