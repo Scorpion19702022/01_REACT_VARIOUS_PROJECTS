@@ -33,6 +33,14 @@
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
 }
 
+.img {
+	position: absolute;
+	z-index: 1;
+	width: 50%;
+	object-fit: cover;
+	visibility: hidden;
+}
+
 .icon_dollar,
 .icon_euro,
 .icon_pound,
