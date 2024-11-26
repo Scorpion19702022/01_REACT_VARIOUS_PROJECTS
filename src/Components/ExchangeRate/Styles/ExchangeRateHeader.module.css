@@ -34,10 +34,6 @@
 }
 
 .img {
-	position: absolute;
-	z-index: 1;
-	width: 50%;
-	object-fit: cover;
 	visibility: hidden;
 }
 
@@ -100,28 +96,37 @@
 }
 
 @media (min-width: 660px) {
+	.img {
+		position: absolute;
+		width: 50%;
+		left: -3%;
+		object-fit: cover;
+		visibility: visible;
+		z-index: 1;
+	}
+
 	.icon_dollar {
-		font-size: 8em;
-		top: -42%;
+		font-size: 6em;
+		top: -48%;
 		left: -6%;
 	}
 
 	.icon_euro {
-		font-size: 7em;
-		top: -15%;
-		left: 5%;
+		font-size: 5em;
+		top: -20%;
+		left: 3%;
 	}
 
 	.icon_pound {
 		font-size: 6em;
-		top: -27%;
-		left: 16%;
+		top: -52%;
+		left: 9%;
 	}
 
 	.icon_franc {
-		font-size: 7em;
-		top: -30%;
-		left: 23%;
+		font-size: 6em;
+		top: -58%;
+		left: 16%;
 	}
 }
 
