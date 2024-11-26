@@ -132,12 +132,7 @@
 
 @media (min-width: 992px) {
 	.img {
-		position: absolute;
 		width: 40%;
-		left: -4%;
-		object-fit: cover;
-		visibility: visible;
-		z-index: 1;
 	}
 
 	.icon_dollar {
@@ -173,6 +168,36 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.img {
+		width: 36%;
+		top: 18%;
+		left: -4%;
+	}
+
+	.icon_dollar {
+		font-size: 7em;
+		top: -34%;
+		left: -3%;
+	}
+
+	.icon_euro {
+		font-size: 7em;
+		top: -30%;
+		left: 2%;
+	}
+
+	.icon_pound {
+		font-size: 7em;
+		top: -52%;
+		left: 7%;
+	}
+
+	.icon_franc {
+		font-size: 7em;
+		top: -54%;
+		left: 11%;
 	}
 
 	.header {
