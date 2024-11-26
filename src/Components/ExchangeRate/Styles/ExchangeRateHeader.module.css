@@ -92,9 +92,59 @@
 }
 
 @media (min-width: 660px) {
+	.icon_dollar {
+		font-size: 8em;
+		top: -42%;
+		left: -6%;
+	}
+
+	.icon_euro {
+		font-size: 7em;
+		top: -15%;
+		left: 5%;
+	}
+
+	.icon_pound {
+		font-size: 6em;
+		top: -27%;
+		left: 16%;
+	}
+
+	.icon_franc {
+		font-size: 7em;
+		top: -30%;
+		left: 23%;
+	}
 }
 
 @media (min-width: 992px) {
+	.icon_dollar {
+		font-size: 10em;
+		top: -56%;
+		left: -3%;
+		transform: rotate(0deg);
+	}
+
+	.icon_euro {
+		font-size: 8em;
+		top: -32%;
+		left: 8%;
+		transform: rotate(0deg);
+	}
+
+	.icon_pound {
+		font-size: 6em;
+		top: -10%;
+		left: 17%;
+		transform: rotate(0deg);
+	}
+
+	.icon_franc {
+		font-size: 4em;
+		top: 10%;
+		left: 23%;
+		transform: rotate(0deg);
+	}
 }
 
 @media (min-width: 1200px) {
