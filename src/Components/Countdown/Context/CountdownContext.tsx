@@ -51,7 +51,10 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	const [eventDate, setEventDate] = useState<any>('')
 	const [popupOpen, setPopupOpen] = useState<boolean>(false)
 
-	const [countdown, setCountdown] = useState<any>({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+	const [countdown, setCountdown] = useState<any>(() => {
+		const saveCount = localStorage.getItem('countdown')
+		return saveCount ? JSON.parse(saveCount) : { days: 0, hours: 0, minutes: 0, seconds: 0 }
+	})
 
 	const handleChangeEvent = (e: string) => {
 		const invalid = [' ', '.', ',']
@@ -75,6 +78,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 			if (distance < 0) {
 				clearInterval(interval)
 				setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+				localStorage.setItem('countdown', JSON.stringify(countdown))
 				return
 			}
 
@@ -85,11 +89,16 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 
 			if (!isNaN(days) && !isNaN(hours) && !isNaN(minutes) && !isNaN(seconds)) {
 				setCountdown({ days, hours, minutes, seconds })
+				localStorage.setItem('countdown', JSON.stringify(countdown))
 			}
 		}, 1000)
 
 		return () => clearInterval(interval)
 	}, [eventDate])
+
+	useEffect(() => {
+		localStorage.setItem('countdown', JSON.stringify(countdown))
+	}, [countdown])
 
 	const handleAddEvent = () => {
 		setPopupOpen(true)
