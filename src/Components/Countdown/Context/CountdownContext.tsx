@@ -50,20 +50,20 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 	const [changeDate, setChangeDate] = useState<any>(currentDate)
 	const [eventDate, setEventDate] = useState<any>('')
 	const [popupOpen, setPopupOpen] = useState<boolean>(false)
-
 	const [countdown, setCountdown] = useState<any>({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
-	const handleChangeEvent = (e: string) => {
-		const invalid = [' ', '.', ',']
-		if (!invalid.includes(e) && e.length < 30) {
-			setEventInput(e)
+	// Odczyt danych z localStorage przy pierwszym renderze
+	useEffect(() => {
+		const storedData = localStorage.getItem('countdownData')
+		if (storedData) {
+			const { event, eventDate, changeDate } = JSON.parse(storedData)
+			setEvent(event)
+			setEventDate(eventDate)
+			setChangeDate(changeDate)
 		}
-	}
+	}, [])
 
-	const handleChangeDate = (e: any) => {
-		setChangeDate(e)
-	}
-
+	// Obsługa odliczania czasu
 	useEffect(() => {
 		if (!eventDate || eventDate === 'musisz podać zdarzenie') return
 
@@ -79,18 +79,22 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 			}
 
 			const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-			const hours = Math.floor(distance / 1000 / 60 / 60)
+			const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
 			const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
 			const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
-			if (!isNaN(days) && !isNaN(hours) && !isNaN(minutes) && !isNaN(seconds)) {
-				setCountdown({ days, hours, minutes, seconds })
-			}
+			setCountdown({ days, hours, minutes, seconds })
 		}, 1000)
 
 		return () => clearInterval(interval)
 	}, [eventDate])
 
+	// Funkcja zapisywania do localStorage
+	const saveToLocalStorage = (data: any) => {
+		localStorage.setItem('countdownData', JSON.stringify(data))
+	}
+
+	// Obsługa dodawania zdarzenia
 	const handleAddEvent = () => {
 		setPopupOpen(true)
 		if (eventInput !== '' && changeDate !== currentDate) {
@@ -99,6 +103,9 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 			setEventDate(changeDate)
 			setChangeDate(currentDate)
 			setEvetError('')
+
+			// Zapis do localStorage
+			saveToLocalStorage({ event: eventInput, eventDate: changeDate, changeDate: currentDate })
 		} else if (eventInput !== '' && changeDate === currentDate) {
 			setEventEmpty(false)
 			setEvetError('musisz wybrać datę inną niż dzisiejsza')
@@ -114,13 +121,7 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 		}
 	}
 
-	const handleUseEnter = (e: any) => {
-		if (e.key === 'Enter') {
-			handleAddEvent()
-			e.preventDefault()
-		}
-	}
-
+	// Obsługa czyszczenia danych
 	const handleClearAll = () => {
 		setEventInput('')
 		setEventEmpty(false)
@@ -129,6 +130,27 @@ export const CountdownProvider = ({ children }: CountdownTypeProvider) => {
 		setChangeDate(currentDate)
 		setEventDate('')
 		setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+
+		// Usunięcie danych z localStorage
+		localStorage.removeItem('countdownData')
+	}
+
+	const handleChangeEvent = (e: string) => {
+		const invalid = [' ', '.', ',']
+		if (!invalid.includes(e) && e.length < 30) {
+			setEventInput(e)
+		}
+	}
+
+	const handleChangeDate = (e: any) => {
+		setChangeDate(e)
+	}
+
+	const handleUseEnter = (e: any) => {
+		if (e.key === 'Enter') {
+			handleAddEvent()
+			e.preventDefault()
+		}
 	}
 
 	const handleClosePopup = () => {
