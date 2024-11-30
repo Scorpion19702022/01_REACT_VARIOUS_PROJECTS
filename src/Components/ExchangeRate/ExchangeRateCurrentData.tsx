@@ -42,7 +42,7 @@ const ExchangeRateCurrentData = () => {
 		<section className={styles.wrapper}>
 			<div className={styles.box_current_data}>
 				<div className={styles.box_info}>
-					<h1 className={styles.header}>Aktualny kurs walut względem złotego</h1>
+					<h2 className={styles.header}>Aktualny kurs walut względem złotego</h2>
 					<p className={styles.info}>Aktualizacja: {nextUpdateData} około godziny 12:00</p>
 					<button className={styles.btn_refresh} onClick={handleRefresh}>
 						Zaktualizuj dane
