@@ -32,7 +32,7 @@
 
 .box_info {
 	width: 100%;
-	height: 140px;
+	height: 160px;
 	padding: 1em 0em;
 	display: flex;
 	flex-direction: column;
@@ -48,6 +48,14 @@
 
 .info {
 	color: var(--color-color02);
+}
+
+.btn_refresh {
+	width: 50%;
+	padding: 0.4em;
+	background: none;
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color04);
 }
 
 .box_exchange_rate {
