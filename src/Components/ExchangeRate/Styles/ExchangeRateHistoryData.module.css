@@ -37,13 +37,12 @@
 @media (min-width: 992px) {
 	.wrapper {
 		width: 45%;
-		height: 100%;
 	}
 }
 
 @media (min-width: 1200px) {
 	.wrapper {
 		padding-top: 0em;
-		background-color: #fff;
+		height: 100%;
 	}
 }

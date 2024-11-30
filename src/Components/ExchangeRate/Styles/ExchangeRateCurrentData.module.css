@@ -100,23 +100,25 @@
 @media (min-width: 992px) {
 	.wrapper {
 		width: 90%;
-		min-height: 200px;
 		flex-direction: row;
 		justify-content: space-between;
-		background-color: red;
 	}
 
 	.box_current_data {
 		width: 45%;
+	}
+
+	.rate {
+		font-size: 1em;
 	}
 }
 
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 90%;
+		min-height: 35%;
 		padding-top: 0em;
 		justify-content: space-around;
-		background-color: red;
 	}
 
 	.btn_refresh {
@@ -128,9 +130,5 @@
 
 	.btn_refresh:hover {
 		background-color: var(--color-dark09);
-	}
-
-	.rate {
-		font-size: 1.2em;
 	}
 }
