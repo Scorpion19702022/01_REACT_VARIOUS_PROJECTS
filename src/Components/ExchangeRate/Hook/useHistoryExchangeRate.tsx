@@ -7,17 +7,19 @@ const useHistoryExchageRate = () => {
 
 	let dayOfWeek = currentDate.getDay()
 
-	if (dayOfWeek === 6) {
+	console.log(dayOfWeek)
+
+	if (dayOfWeek === 5) {
+		currentDate.setDate(currentDate.getDate() - 1)
+	} else if (dayOfWeek === 6) {
 		currentDate.setDate(currentDate.getDate() - 2)
-	} else if (dayOfWeek === 0) {
-		currentDate.setDate(currentDate.getDate() - 3)
 	}
 
 	let previousDate = currentDate.toISOString().split('T')[0]
 
 	const [historyDate, setHistoryDate] = useState<number | string>(previousDate)
 
-	console.log(historyDate)
+	// console.log(historyDate)
 
 	// const historyDataURL = 'https://api.nbp.pl/api/exchangerates/tables/A/2023-11-01/2023-11-22/'
 	return { historyDate }
