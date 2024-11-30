@@ -25,8 +25,7 @@ const useExchangeRate = (): UseExchangeRateReturn => {
 						rate.code === 'CHF' ||
 						rate.code === 'GBP' ||
 						rate.code === 'UAH' ||
-						rate.code === 'CZK' ||
-						rate.code === 'SEK'
+						rate.code === 'CZK'
 				)
 
 				setTodayRates(filteredRates)

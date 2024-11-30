@@ -92,13 +92,35 @@
 }
 
 @media (min-width: 992px) {
+	.wrapper {
+		width: 40%;
+	}
 }
 
 @media (min-width: 1200px) {
 	.wrapper {
-		width: 45%;
+		width: 25%;
 		min-height: 280px;
-		padding-top: 2em;
+		padding-top: 0em;
 		justify-content: space-around;
+	}
+
+	.btn_refresh {
+		padding: 0.6em;
+		font-size: 1.2em;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn_refresh:hover {
+		background-color: var(--color-dark09);
+	}
+
+	.box_exchange_rate {
+		min-height: 420px;
+	}
+
+	.rate {
+		font-size: 1.2em;
 	}
 }
