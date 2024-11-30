@@ -32,6 +32,9 @@ const useExchangeRate = (): UseExchangeRateReturn => {
 		}
 
 		fetchRates()
+
+		const interval = setInterval(fetchRates, 3600000)
+		return () => clearInterval(interval)
 	}, [])
 
 	return { todayRates, loading, error }
