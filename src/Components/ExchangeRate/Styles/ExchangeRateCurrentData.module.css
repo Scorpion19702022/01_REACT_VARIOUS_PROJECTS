@@ -52,8 +52,9 @@
 
 .box_exchange_rate {
 	width: 100%;
-	height: 400px;
+	max-height: 400px;
 	margin-top: 1em;
+	padding: 1em 0em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -67,6 +68,8 @@
 
 .rate_list {
 	width: 100%;
+	padding-bottom: 0.4em;
+	border-bottom: 0.04em dotted var(--color-color08);
 }
 
 .rate {
