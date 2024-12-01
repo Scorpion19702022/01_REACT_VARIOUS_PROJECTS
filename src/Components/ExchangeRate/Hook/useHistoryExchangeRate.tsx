@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const useHistoryExchageRate = () => {
 	let currentDate = new Date()
@@ -21,9 +21,12 @@ const useHistoryExchageRate = () => {
 
 	const [checkDate, setCheckDate] = useState<string>(historyDate)
 
+	const [loading, setLoading] = useState<boolean>(true)
+	const [error, setError] = useState<string | null>(null)
+
 	// console.log(historyDate)
 
-	// const historyDataURL = 'https://api.nbp.pl/api/exchangerates/tables/A/2023-11-01/2023-11-22/'
+	console.log(checkDate)
 
 	const handleChangeDate = (e: string) => {
 		setCheckDate(e)
@@ -32,7 +35,28 @@ const useHistoryExchageRate = () => {
 	const handleResetDate = () => {
 		setCheckDate(historyDate)
 	}
-	return { historyDate, checkDate, handleChangeDate, handleResetDate }
+
+	const historyDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkDate}`
+
+	useEffect(() => {
+		const fetchHistoryRates = async () => {
+			try {
+				const response = await fetch(historyDataURL)
+				if (!response.ok) throw new Error('Błąd pobrania danych')
+				const data = await response.json()
+
+				console.log(data)
+			} catch (err) {
+				setError((err as Error).message)
+			} finally {
+				setLoading(false)
+			}
+		}
+
+		fetchHistoryRates()
+	}, [])
+
+	return { historyDate, checkDate, handleChangeDate, handleResetDate, loading, error }
 }
 
 export default useHistoryExchageRate
