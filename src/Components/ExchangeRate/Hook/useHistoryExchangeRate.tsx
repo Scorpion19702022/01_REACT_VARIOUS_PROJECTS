@@ -28,7 +28,11 @@ const useHistoryExchageRate = () => {
 	const handleChangeDate = (e: string) => {
 		setCheckDate(e)
 	}
-	return { historyDate, checkDate, handleChangeDate }
+
+	const handleResetDate = () => {
+		setCheckDate(historyDate)
+	}
+	return { historyDate, checkDate, handleChangeDate, handleResetDate }
 }
 
 export default useHistoryExchageRate
