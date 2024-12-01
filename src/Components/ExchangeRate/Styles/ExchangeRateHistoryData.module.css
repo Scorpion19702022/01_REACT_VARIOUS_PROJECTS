@@ -62,7 +62,8 @@
 
 @media (min-width: 1200px) {
 	.wrapper {
+		width: 100%;
+		min-height: 30%;
 		padding-top: 0em;
-		height: 100%;
 	}
 }
