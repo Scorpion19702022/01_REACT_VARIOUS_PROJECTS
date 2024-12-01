@@ -20,12 +20,7 @@ const useExchangeRate = (): UseExchangeRateReturn => {
 
 				const filteredRates = data[0].rates.filter(
 					(rate: ExchangeRate) =>
-						rate.code === 'USD' ||
-						rate.code === 'EUR' ||
-						rate.code === 'CHF' ||
-						rate.code === 'GBP' ||
-						rate.code === 'UAH' ||
-						rate.code === 'CZK'
+						rate.code === 'USD' || rate.code === 'EUR' || rate.code === 'CHF' || rate.code === 'GBP'
 				)
 
 				setTodayRates(filteredRates)
