@@ -22,7 +22,11 @@ const useHistoryExchageRate = () => {
 	// console.log(historyDate)
 
 	// const historyDataURL = 'https://api.nbp.pl/api/exchangerates/tables/A/2023-11-01/2023-11-22/'
-	return { historyDate }
+
+	const handleChangeDate = (e: string) => {
+		setHistoryDate(e)
+	}
+	return { historyDate, handleChangeDate }
 }
 
 export default useHistoryExchageRate
