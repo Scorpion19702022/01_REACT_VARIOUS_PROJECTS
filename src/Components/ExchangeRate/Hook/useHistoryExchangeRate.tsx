@@ -36,9 +36,18 @@ const useHistoryExchageRate = () => {
 		setCheckDate(historyDate)
 	}
 
-	const historyDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkDate}`
+	// useEffect(() => {
+
+	// 	return () => {
+
+	// 	};
+	// }, []);
+
+	// const historyDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkDate}`
 
 	useEffect(() => {
+		const historyDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkDate}`
+
 		const fetchHistoryRates = async () => {
 			try {
 				const response = await fetch(historyDataURL)
@@ -54,7 +63,7 @@ const useHistoryExchageRate = () => {
 		}
 
 		fetchHistoryRates()
-	}, [])
+	}, [checkDate])
 
 	return { historyDate, checkDate, handleChangeDate, handleResetDate, loading, error }
 }
