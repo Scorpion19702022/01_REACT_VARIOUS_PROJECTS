@@ -55,16 +55,24 @@
 }
 
 .label {
-	width: 45%;
+	width: 25%;
 	color: var(--color-color04);
 }
 
 .input {
-	width: 45%;
+	width: 40%;
 	padding: 0.2em 1em;
 	background-color: var(--color-dark06);
 	color: var(--color-dark01);
 	border: 0.04em solid var(--color-color07);
+}
+
+.btn {
+	width: 30%;
+	padding: 0.2em;
+	background: none;
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color04);
 }
 
 .text {
@@ -77,10 +85,6 @@
 @media (min-width: 992px) {
 	.wrapper {
 		width: 40%;
-	}
-
-	.box_input {
-		width: 70%;
 	}
 }
 

@@ -22,6 +22,7 @@ const ExchangeRateHistoryData = () => {
 						max={historyDate}
 						onChange={e => handleChangeDate(e.target.value)}
 					/>
+					<button className={styles.btn}>resetuj</button>
 				</div>
 				<p className={styles.text}>Kurs z dnia: {checkDate}</p>
 			</div>
