@@ -19,14 +19,16 @@ const useHistoryExchageRate = () => {
 
 	const [historyDate, setHistoryDate] = useState<number | string>(previousDate)
 
+	const [checkDate, setCheckDate] = useState<string | number>(historyDate)
+
 	// console.log(historyDate)
 
 	// const historyDataURL = 'https://api.nbp.pl/api/exchangerates/tables/A/2023-11-01/2023-11-22/'
 
 	const handleChangeDate = (e: string) => {
-		setHistoryDate(e)
+		setCheckDate(e)
 	}
-	return { historyDate, handleChangeDate }
+	return { historyDate, checkDate, handleChangeDate }
 }
 
 export default useHistoryExchageRate
