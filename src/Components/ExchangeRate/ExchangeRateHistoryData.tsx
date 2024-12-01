@@ -15,6 +15,7 @@ const ExchangeRateHistoryData = () => {
 					<label className={styles.label}>Wybierz datę:</label>
 					<input className={styles.input} type='date' value={historyDate} max={historyDate} />
 				</div>
+				<p className={styles.text}>Kurs z dnia: </p>
 			</div>
 		</section>
 	)

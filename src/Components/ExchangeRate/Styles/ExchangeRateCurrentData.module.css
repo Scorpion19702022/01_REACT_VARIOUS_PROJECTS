@@ -115,7 +115,7 @@
 
 @media (min-width: 1200px) {
 	.wrapper {
-		width: 35%;
+		width: 30%;
 		min-height: 660px;
 		padding-top: 0em;
 		justify-content: space-around;
@@ -135,6 +135,10 @@
 	}
 
 	.info {
+		font-size: 1.2em;
+	}
+
+	.rate {
 		font-size: 1.2em;
 	}
 

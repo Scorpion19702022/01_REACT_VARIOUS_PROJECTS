@@ -51,6 +51,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
+	padding-bottom: 1em;
 }
 
 .label {
@@ -66,12 +67,20 @@
 	border: 0.04em solid var(--color-color07);
 }
 
+.text {
+	color: var(--color-color02);
+}
+
 @media (min-width: 660px) {
 }
 
 @media (min-width: 992px) {
 	.wrapper {
 		width: 40%;
+	}
+
+	.box_input {
+		width: 70%;
 	}
 }
 
@@ -80,5 +89,15 @@
 		width: 100%;
 		min-height: 30%;
 		padding-top: 0em;
+	}
+
+	.box_input {
+		width: 50%;
+		justify-content: center;
+	}
+
+	.label,
+	.input {
+		width: 48%;
 	}
 }
