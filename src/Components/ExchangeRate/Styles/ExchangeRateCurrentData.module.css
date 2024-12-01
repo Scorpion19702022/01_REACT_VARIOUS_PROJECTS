@@ -126,6 +126,18 @@
 		min-height: 30%;
 	}
 
+	.box_info {
+		height: 200px;
+	}
+
+	.header {
+		font-size: 1.8em;
+	}
+
+	.info {
+		font-size: 1.2em;
+	}
+
 	.btn_refresh {
 		padding: 0.6em;
 		font-size: 1.2em;

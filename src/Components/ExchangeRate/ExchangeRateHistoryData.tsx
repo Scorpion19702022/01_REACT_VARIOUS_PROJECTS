@@ -11,7 +11,10 @@ const ExchangeRateHistoryData = () => {
 		<section className={styles.wrapper}>
 			<div className={styles.box_check}>
 				<h2 className={styles.header}>Sprawdż kurs z innej daty</h2>
-				<input className={styles.input} type='date' value={historyDate} max={historyDate} />
+				<div className={styles.box_input}>
+					<label className={styles.label}>Wybierz datę:</label>
+					<input className={styles.input} type='date' value={historyDate} max={historyDate} />
+				</div>
 			</div>
 		</section>
 	)
