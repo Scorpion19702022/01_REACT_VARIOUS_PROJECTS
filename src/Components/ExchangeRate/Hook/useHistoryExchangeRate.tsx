@@ -17,9 +17,9 @@ const useHistoryExchageRate = () => {
 
 	let previousDate = currentDate.toISOString().split('T')[0]
 
-	const [historyDate, setHistoryDate] = useState<number | string>(previousDate)
+	const [historyDate, setHistoryDate] = useState<string>(previousDate)
 
-	const [checkDate, setCheckDate] = useState<string | number>(historyDate)
+	const [checkDate, setCheckDate] = useState<string>(historyDate)
 
 	// console.log(historyDate)
 

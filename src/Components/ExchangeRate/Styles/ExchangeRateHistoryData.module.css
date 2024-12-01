@@ -96,12 +96,21 @@
 	}
 
 	.box_input {
-		width: 50%;
-		justify-content: center;
+		width: 100%;
 	}
 
 	.label,
 	.input {
-		width: 48%;
+		width: 35%;
+	}
+
+	.btn {
+		width: 25%;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn:hover {
+		background-color: var(--color-dark09);
 	}
 }
