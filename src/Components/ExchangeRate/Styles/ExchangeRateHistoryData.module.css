@@ -47,29 +47,37 @@
 	padding-bottom: 1em;
 }
 
-.box_input {
+.box_inputs {
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+	align-items: center;
 	padding-bottom: 1em;
 }
 
+.box_input {
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .label {
-	width: 25%;
+	width: 35%;
 	color: var(--color-color04);
 }
 
 .input {
-	width: 40%;
-	padding: 0.2em 1em;
+	width: 60%;
+	padding: 0.4em;
 	background-color: var(--color-dark06);
 	color: var(--color-dark01);
 	border: 0.04em solid var(--color-color07);
 }
 
 .btn {
-	width: 30%;
-	padding: 0.2em;
+	width: 25%;
+	padding: 0.5em;
 	background: none;
 	border: 0.04em solid var(--color-color07);
 	color: var(--color-color04);
@@ -95,13 +103,20 @@
 		padding-top: 0em;
 	}
 
-	.box_input {
+	.box_inputs {
 		width: 100%;
 	}
 
-	.label,
+	.box_input {
+		width: 45%;
+	}
+
+	.label {
+		width: 40%;
+	}
+
 	.input {
-		width: 35%;
+		width: 55%;
 	}
 
 	.btn {
