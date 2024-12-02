@@ -17,6 +17,8 @@
 	--color-color07: #1f6075;
 	--color-color08: #14404e;
 	--color-color09: #0a2027;
+
+	--color-error: #ff0000;
 }
 
 .wrapper {
@@ -87,12 +89,20 @@
 	color: var(--color-color02);
 }
 
+.error_date {
+	width: 100%;
+	height: 20px;
+	padding-top: 0.2em;
+	color: var(--color-error);
+	text-align: center;
+}
+
 @media (min-width: 660px) {
 }
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 40%;
+		width: 100%;
 	}
 }
 

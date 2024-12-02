@@ -34,14 +34,13 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 1em;
 	border-bottom: 0.4em solid var(--color-color07);
 }
 
 .box_info {
 	width: 100%;
-	height: 160px;
-	padding: 1em 0em;
+	height: 120px;
+	padding: 0.4em 0em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -56,11 +55,12 @@
 
 .info {
 	color: var(--color-color02);
+	font-size: 0.8em;
 }
 
 .btn_refresh {
 	width: 50%;
-	padding: 0.4em;
+	padding: 0.2em;
 	background: none;
 	border: 0.04em solid var(--color-color07);
 	color: var(--color-color04);
@@ -68,9 +68,7 @@
 
 .box_exchange_rate {
 	width: 100%;
-	max-height: 400px;
-	margin-top: 1em;
-	padding: 1em 0em;
+	padding: 0.6em 0em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -87,13 +85,12 @@
 	padding-bottom: 0.4em;
 	border-bottom: 0.04em dotted var(--color-color08);
 }
-
 .rate {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	color: var(--color-color01);
-	font-size: 1.4em;
+	font-size: 1em;
 }
 
 @media (min-width: 660px) {
@@ -101,11 +98,16 @@
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 90%;
+		width: 35%;
 	}
 
 	.box_current_data {
-		width: 40%;
+		width: 100%;
+		max-height: 40%;
+	}
+
+	.box_info {
+		height: 120px;
 	}
 
 	.rate {
@@ -123,7 +125,6 @@
 
 	.box_current_data {
 		width: 100%;
-		min-height: 30%;
 	}
 
 	.box_info {
@@ -131,11 +132,11 @@
 	}
 
 	.header {
-		font-size: 1.8em;
+		font-size: 1.4em;
 	}
 
 	.info {
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 
 	.rate {
@@ -143,8 +144,7 @@
 	}
 
 	.btn_refresh {
-		padding: 0.6em;
-		font-size: 1.2em;
+		padding: 0.4em;
 		cursor: pointer;
 		transition: background-color 0.2s ease-in-out;
 	}
