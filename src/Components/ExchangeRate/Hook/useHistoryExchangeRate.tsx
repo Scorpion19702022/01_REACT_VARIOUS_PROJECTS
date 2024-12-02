@@ -6,9 +6,7 @@ const useHistoryExchageRate = () => {
 	currentDate.setDate(currentDate.getDate() - 1)
 
 	let dayOfWeek = currentDate.getDay()
-	let currentHour = currentDate.getHours()
-
-	console.log(currentHour)
+	let hour = currentDate.getHours()
 
 	console.log(dayOfWeek)
 
@@ -16,9 +14,9 @@ const useHistoryExchageRate = () => {
 		currentDate.setDate(currentDate.getDate() - 1)
 	} else if (dayOfWeek === 6) {
 		currentDate.setDate(currentDate.getDate() - 2)
-	} else if (dayOfWeek === 0 && currentHour > 12) {
+	} else if (dayOfWeek === 0 && hour > 12) {
 		currentDate.setDate(currentDate.getDate() - 2)
-	} else if (dayOfWeek === 0 && currentHour <= 12) {
+	} else if (dayOfWeek === 0 && hour <= 12) {
 		currentDate.setDate(currentDate.getDate() - 3)
 	}
 
@@ -30,10 +28,7 @@ const useHistoryExchageRate = () => {
 
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
-
-	// console.log(historyDate)
-
-	console.log(checkDate)
+	const [noDataMessage, setNoDataMessage] = useState<string | null>(null)
 
 	const handleChangeDate = (e: string) => {
 		setCheckDate(e)
@@ -43,22 +38,19 @@ const useHistoryExchageRate = () => {
 		setCheckDate(historyDate)
 	}
 
-	// useEffect(() => {
-
-	// 	return () => {
-
-	// 	};
-	// }, []);
-
-	// const historyDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkDate}`
-
 	useEffect(() => {
 		const historyDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkDate}`
 
 		const fetchHistoryRates = async () => {
 			try {
 				const response = await fetch(historyDataURL)
-				if (!response.ok) throw new Error('Błąd pobrania danych')
+				if (!response.ok) {
+					if (response.status === 404) {
+						setNoDataMessage(`Brak danych dla wybranej daty: ${checkDate}`)
+						return
+					}
+					throw new Error('Błąd pobrania danych')
+				}
 				const data = await response.json()
 
 				console.log(data)
@@ -72,7 +64,9 @@ const useHistoryExchageRate = () => {
 		fetchHistoryRates()
 	}, [checkDate])
 
-	return { historyDate, checkDate, handleChangeDate, handleResetDate, loading, error }
+	console.log(noDataMessage)
+
+	return { historyDate, checkDate, handleChangeDate, handleResetDate, loading, error, noDataMessage }
 }
 
 export default useHistoryExchageRate

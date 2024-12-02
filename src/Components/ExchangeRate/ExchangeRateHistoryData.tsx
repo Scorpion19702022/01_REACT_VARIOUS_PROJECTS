@@ -7,7 +7,8 @@ import useHistoryExchageRate from './Hook/useHistoryExchangeRate'
 const ExchangeRateHistoryData = () => {
 	// const { historyDate } = useContext(ExchangeRateContext)
 
-	const { historyDate, checkDate, handleChangeDate, handleResetDate } = useHistoryExchageRate()
+	const { historyDate, checkDate, noDataMessage, error, loading, handleChangeDate, handleResetDate } =
+		useHistoryExchageRate()
 
 	return (
 		<section className={styles.wrapper}>
@@ -29,6 +30,7 @@ const ExchangeRateHistoryData = () => {
 					</button>
 				</div>
 				<p className={styles.text}>Kurs z dnia: {checkDate}</p>
+				<p>{!error && noDataMessage}</p>
 			</div>
 		</section>
 	)
