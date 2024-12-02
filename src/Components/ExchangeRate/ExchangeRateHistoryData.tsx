@@ -30,7 +30,7 @@ const ExchangeRateHistoryData = () => {
 					</button>
 				</div>
 				<p className={styles.text}>Kurs z dnia: {checkDate}</p>
-				<p>{!error && noDataMessage}</p>
+				<p className={styles.error_date}>{!error && noDataMessage}</p>
 			</div>
 		</section>
 	)

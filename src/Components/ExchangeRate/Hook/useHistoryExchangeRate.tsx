@@ -32,10 +32,14 @@ const useHistoryExchageRate = () => {
 
 	const handleChangeDate = (e: string) => {
 		setCheckDate(e)
+		setNoDataMessage(null)
+		setError(null)
 	}
 
 	const handleResetDate = () => {
 		setCheckDate(historyDate)
+		setNoDataMessage(null)
+		setError(null)
 	}
 
 	useEffect(() => {
