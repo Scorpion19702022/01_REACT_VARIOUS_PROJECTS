@@ -24,7 +24,7 @@
 .wrapper {
 	position: relative;
 	width: 100%;
-	min-height: 100%;
+	max-height: 100%;
 	padding: 1em 0em;
 	display: flex;
 	flex-direction: column;
@@ -109,7 +109,7 @@
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 100%;
-		min-height: 30%;
+		max-height: 45%;
 		padding-top: 0em;
 	}
 
