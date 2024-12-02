@@ -6,6 +6,7 @@ const useHistoryExchageRate = () => {
 	currentDate.setDate(currentDate.getDate() - 1)
 
 	let dayOfWeek = currentDate.getDay()
+	let currentHour = currentDate.getHours()
 
 	console.log(dayOfWeek)
 
@@ -13,6 +14,8 @@ const useHistoryExchageRate = () => {
 		currentDate.setDate(currentDate.getDate() - 1)
 	} else if (dayOfWeek === 6) {
 		currentDate.setDate(currentDate.getDate() - 2)
+	} else if (dayOfWeek === 0) {
+		currentDate.setDate(currentDate.getDate() - 3)
 	}
 
 	let previousDate = currentDate.toISOString().split('T')[0]
