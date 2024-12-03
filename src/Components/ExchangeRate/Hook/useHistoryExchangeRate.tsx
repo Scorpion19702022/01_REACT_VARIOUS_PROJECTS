@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ExchangeRate } from '../Types/Types'
 
 const useHistoryExchageRate = () => {
 	let currentDate = new Date()
@@ -7,8 +8,6 @@ const useHistoryExchageRate = () => {
 
 	let dayOfWeek = currentDate.getDay()
 	let hour = currentDate.getHours()
-
-	console.log(dayOfWeek)
 
 	if (dayOfWeek === 5) {
 		currentDate.setDate(currentDate.getDate() - 1)
@@ -29,6 +28,8 @@ const useHistoryExchageRate = () => {
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
 	const [noDataMessage, setNoDataMessage] = useState<string | null>(null)
+
+	const [historyRate, setHistoryRate] = useState<ExchangeRate[]>([])
 
 	const handleChangeDate = (e: string) => {
 		setCheckDate(e)
@@ -57,7 +58,12 @@ const useHistoryExchageRate = () => {
 				}
 				const data = await response.json()
 
-				console.log(data)
+				const filteredHistoryRates = data[0].rates.filter(
+					(rate: ExchangeRate) =>
+						rate.code === 'USD' || rate.code === 'EUR' || rate.code === 'CHF' || rate.code === 'GBP'
+				)
+
+				setHistoryRate(filteredHistoryRates)
 			} catch (err) {
 				setError((err as Error).message)
 			} finally {
@@ -68,9 +74,9 @@ const useHistoryExchageRate = () => {
 		fetchHistoryRates()
 	}, [checkDate])
 
-	console.log(noDataMessage)
+	console.log(historyRate)
 
-	return { historyDate, checkDate, handleChangeDate, handleResetDate, loading, error, noDataMessage }
+	return { historyDate, checkDate, handleChangeDate, handleResetDate, loading, error, noDataMessage, historyRate }
 }
 
 export default useHistoryExchageRate

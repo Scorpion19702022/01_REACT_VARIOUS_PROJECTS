@@ -31,12 +31,7 @@ const ExchangeRateHistoryData = () => {
 				<p className={styles.text}>Kurs z dnia: {checkDate}</p>
 				<p className={styles.error_date}>{!error && noDataMessage}</p>
 			</div>
-			<div>
-				<p>jeden</p>
-				<p>jede</p>
-				<p>jede</p>
-				<p>jeden</p>
-			</div>
+			<div className={styles.box_exchange_history_rate}></div>
 		</section>
 	)
 }
