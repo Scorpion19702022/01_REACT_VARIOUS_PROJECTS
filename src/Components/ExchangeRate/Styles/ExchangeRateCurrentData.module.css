@@ -119,7 +119,7 @@
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 30%;
-		min-height: 660px;
+		min-height: 600px;
 		padding: 0em 0em;
 		padding: 1em;
 		background-color: var(--color-dark09);
