@@ -122,6 +122,7 @@
 		min-height: 660px;
 		padding: 0em 0em;
 		padding: 1em;
+		background-color: var(--color-dark09);
 		justify-content: space-around;
 		border: 0.04em solid var(--color-color08);
 		box-shadow: 0.4em 0.4em 1em var(--color-dark09);
