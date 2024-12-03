@@ -104,7 +104,7 @@
 
 	.box_current_data {
 		width: 100%;
-		max-height: 45%;
+		max-height: 48%;
 	}
 
 	.box_info {
@@ -120,10 +120,9 @@
 	.wrapper {
 		width: 30%;
 		min-height: 600px;
-		padding: 0em 0em;
 		padding: 1em;
 		background-color: var(--color-dark09);
-		justify-content: space-around;
+		justify-content: space-between;
 		border: 0.04em solid var(--color-color08);
 		box-shadow: 0.4em 0.4em 1em var(--color-dark09);
 	}
