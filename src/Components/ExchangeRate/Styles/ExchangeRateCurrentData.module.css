@@ -22,7 +22,7 @@
 .wrapper {
 	width: 90%;
 	min-height: 100%;
-	padding: 1em 0em;
+	/* padding: 1em 0em; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -120,7 +120,9 @@
 		width: 30%;
 		min-height: 660px;
 		padding-top: 0em;
+		padding: 1em;
 		justify-content: space-around;
+		border: 0.04em solid var(--color-color08);
 	}
 
 	.box_current_data {
