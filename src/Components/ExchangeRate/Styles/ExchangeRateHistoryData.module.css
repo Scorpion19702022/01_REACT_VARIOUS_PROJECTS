@@ -75,12 +75,13 @@
 	background-color: var(--color-dark06);
 	color: var(--color-dark01);
 	border: 0.04em solid var(--color-color07);
+	outline: none;
 }
 
 .btn {
 	width: 25%;
 	padding: 0.5em;
-	background: none;
+	background-color: var(--color-dark08);
 	border: 0.04em solid var(--color-color07);
 	color: var(--color-color04);
 }

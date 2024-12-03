@@ -60,7 +60,7 @@
 .btn_refresh {
 	width: 50%;
 	padding: 0.2em;
-	background: none;
+	background-color: var(--color-dark08);
 	border: 0.04em solid var(--color-color07);
 	color: var(--color-color04);
 }
