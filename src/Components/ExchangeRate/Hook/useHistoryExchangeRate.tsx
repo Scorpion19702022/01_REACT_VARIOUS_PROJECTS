@@ -51,7 +51,7 @@ const useHistoryExchageRate = () => {
 				const response = await fetch(historyDataURL)
 				if (!response.ok) {
 					if (response.status === 404) {
-						setNoDataMessage(`Brak danych dla wybranej daty: ${checkDate}`)
+						setNoDataMessage(`${checkDate} był dniem światecznym. Kurs z dnia ostatniej publikacji`)
 						return
 					}
 					throw new Error('Błąd pobrania danych')
