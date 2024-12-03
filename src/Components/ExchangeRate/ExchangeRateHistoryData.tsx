@@ -7,7 +7,18 @@ import useHistoryExchageRate from './Hook/useHistoryExchangeRate'
 const ExchangeRateHistoryData = () => {
 	// const { historyDate } = useContext(ExchangeRateContext)
 
-	const { historyDate, checkDate, noDataMessage, error, handleChangeDate, handleResetDate } = useHistoryExchageRate()
+	const { historyDate, checkDate, noDataMessage, error, handleChangeDate, handleResetDate, historyRate } =
+		useHistoryExchageRate()
+
+	const historyExchangeRate = historyRate.map(item => (
+		<div className={styles.box_rate} key={item.code}>
+			<ul className={styles.rate_list}>
+				<li className={styles.rate}>
+					<p>{item.currency}:</p> <p>{item.mid.toFixed(2)} zł</p>
+				</li>
+			</ul>
+		</div>
+	))
 
 	return (
 		<section className={styles.wrapper}>
@@ -31,7 +42,7 @@ const ExchangeRateHistoryData = () => {
 				<p className={styles.text}>Kurs z dnia: {checkDate}</p>
 				<p className={styles.error_date}>{!error && noDataMessage}</p>
 			</div>
-			<div className={styles.box_exchange_history_rate}></div>
+			<div className={styles.box_exchange_rate}>{historyExchangeRate}</div>
 		</section>
 	)
 }
