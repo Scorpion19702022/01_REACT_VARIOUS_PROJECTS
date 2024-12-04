@@ -35,20 +35,22 @@ const useHistoryExchageRate = () => {
 
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
-	const [noDataMessage, setNoDataMessage] = useState<string | null>(null)
 
 	const [historyRate, setHistoryRate] = useState<ExchangeRate[]>([])
 
 	useEffect(() => {
-		const historyDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkDate}
-		`
+		const fetchHistoryRates = async (date: string) => {
+			const historyDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${date}/`
 
-		const fetchHistoryRates = async () => {
 			try {
 				const response = await fetch(historyDataURL)
 				if (!response.ok) {
 					if (response.status === 404) {
-						setNoDataMessage(`${checkDate} był dniem światecznym. Kurs z dnia ostatniej publikacji`)
+						const newDate = new Date(date)
+						newDate.setDate(newDate.getDate() - 1)
+						const fallbackDate = newDate.toISOString().split('T')[0]
+						setCheckDate(fallbackDate)
+						fetchHistoryRates(fallbackDate)
 						return
 					}
 					throw new Error('Błąd pobrania danych')
@@ -68,22 +70,20 @@ const useHistoryExchageRate = () => {
 			}
 		}
 
-		fetchHistoryRates()
+		fetchHistoryRates(checkDate)
 	}, [checkDate])
 
 	const handleChangeDate = (e: string) => {
 		setCheckDate(e)
-		setNoDataMessage(null)
 		setError(null)
 	}
 
 	const handleResetDate = () => {
 		setCheckDate(historyDate)
-		setNoDataMessage(null)
 		setError(null)
 	}
 
-	return { historyDate, checkDate, handleChangeDate, handleResetDate, loading, error, noDataMessage, historyRate }
+	return { historyDate, checkDate, handleChangeDate, handleResetDate, loading, error, historyRate }
 }
 
 export default useHistoryExchageRate
