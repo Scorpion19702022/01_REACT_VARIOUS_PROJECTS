@@ -4,12 +4,14 @@ import { ExchangeRate } from '../Types/Types'
 const useHistoryExchageRate = () => {
 	let currentDate = new Date()
 
-	currentDate.setDate(currentDate.getDate() - 1)
-
 	let dayOfWeek = currentDate.getDay()
 	let hour = currentDate.getHours()
 
-	if (dayOfWeek === 5) {
+	currentDate.setDate(currentDate.getDate() - 1)
+
+	if (hour <= 12) {
+		currentDate.setDate(currentDate.getDate() - 1)
+	} else if (dayOfWeek === 5) {
 		currentDate.setDate(currentDate.getDate() - 1)
 	} else if (dayOfWeek === 6) {
 		currentDate.setDate(currentDate.getDate() - 2)
