@@ -38,8 +38,10 @@ const ExchangeRateHistoryData = () => {
 						resetuj
 					</button>
 				</div>
+				<p className={styles.error_date}>
+					Po wybraniu dnia świateczego wyświetli się kurs i data z dnia ostatnich publikowanych danych
+				</p>
 				<p className={styles.text}>Kurs z dnia: {checkDate}</p>
-				<p className={styles.error_date}></p>
 			</div>
 			<div className={styles.box_exchange_rate}>{historyExchangeRate}</div>
 		</section>
