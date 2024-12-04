@@ -7,8 +7,6 @@ const useHistoryExchageRate = () => {
 	let dayOfWeek = currentDate.getDay()
 	let hour = currentDate.getHours()
 
-	currentDate.setDate(currentDate.getDate() - 1)
-
 	if (hour <= 12) {
 		currentDate.setDate(currentDate.getDate() - 1)
 	} else if (dayOfWeek === 5) {
@@ -19,6 +17,8 @@ const useHistoryExchageRate = () => {
 		currentDate.setDate(currentDate.getDate() - 2)
 	} else if (dayOfWeek === 0 && hour <= 12) {
 		currentDate.setDate(currentDate.getDate() - 3)
+	} else {
+		currentDate.setDate(currentDate.getDate() - 1)
 	}
 
 	let previousDate = currentDate.toISOString().split('T')[0]
@@ -33,20 +33,9 @@ const useHistoryExchageRate = () => {
 
 	const [historyRate, setHistoryRate] = useState<ExchangeRate[]>([])
 
-	const handleChangeDate = (e: string) => {
-		setCheckDate(e)
-		setNoDataMessage(null)
-		setError(null)
-	}
-
-	const handleResetDate = () => {
-		setCheckDate(historyDate)
-		setNoDataMessage(null)
-		setError(null)
-	}
-
 	useEffect(() => {
-		const historyDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkDate}`
+		const historyDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkDate}
+		`
 
 		const fetchHistoryRates = async () => {
 			try {
@@ -77,6 +66,18 @@ const useHistoryExchageRate = () => {
 	}, [checkDate])
 
 	console.log(historyRate)
+
+	const handleChangeDate = (e: string) => {
+		setCheckDate(e)
+		setNoDataMessage(null)
+		setError(null)
+	}
+
+	const handleResetDate = () => {
+		setCheckDate(historyDate)
+		setNoDataMessage(null)
+		setError(null)
+	}
 
 	return { historyDate, checkDate, handleChangeDate, handleResetDate, loading, error, noDataMessage, historyRate }
 }
