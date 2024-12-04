@@ -7,7 +7,7 @@ import useHistoryExchageRate from './Hook/useHistoryExchangeRate'
 const ExchangeRateHistoryData = () => {
 	// const { historyDate } = useContext(ExchangeRateContext)
 
-	const { historyDate, checkDate, error, handleChangeDate, handleResetDate, historyRate } = useHistoryExchageRate()
+	const { historyDate, checkDate, handleChangeDate, handleResetDate, historyRate } = useHistoryExchageRate()
 
 	const historyExchangeRate = historyRate.map(item => (
 		<div className={styles.box_rate} key={item.code}>
