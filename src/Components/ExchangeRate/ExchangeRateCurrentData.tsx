@@ -10,11 +10,11 @@ const ExchangeRateCurrentData = () => {
 	let currentDate = new Date()
 	let currentHour = currentDate.getHours()
 
-	currentDate.setDate(currentDate.getDate() + 1)
+	// currentDate.setDate(currentDate.getDate() + 1)
 
-	if (currentHour >= 12) {
-		currentDate.setDate(currentDate.getDate() + 1)
-	}
+	// if (currentHour >= 12) {
+	// 	currentDate.setDate(currentDate.getDate() + 1)
+	// }
 
 	let dayOfWeek = currentDate.getDay()
 
@@ -25,8 +25,12 @@ const ExchangeRateCurrentData = () => {
 		currentDate.setDate(currentDate.getDate() + 1)
 	} else if (dayOfWeek === 6) {
 		currentDate.setDate(currentDate.getDate() + 2)
-	} else if (dayOfWeek === 5) {
+	} else if (dayOfWeek === 5 && currentHour >= 12) {
 		currentDate.setDate(currentDate.getDate() + 3)
+	} else if (currentHour >= 12) {
+		currentDate.setDate(currentDate.getDate() + 1)
+	} else {
+		currentDate.setDate(currentDate.getDate() + 1)
 	}
 
 	let nextUpdateData = currentDate.toLocaleString().slice(0, 10)
