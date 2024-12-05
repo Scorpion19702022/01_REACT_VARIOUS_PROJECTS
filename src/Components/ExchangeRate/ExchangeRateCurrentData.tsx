@@ -20,6 +20,7 @@ const ExchangeRateCurrentData = () => {
 
 	console.log(dayOfWeek)
 	console.log(currentDate)
+	console.log(currentHour)
 
 	if (dayOfWeek === 0) {
 		currentDate.setDate(currentDate.getDate() + 1)
@@ -28,8 +29,6 @@ const ExchangeRateCurrentData = () => {
 	} else if (dayOfWeek === 5 && currentHour >= 12) {
 		currentDate.setDate(currentDate.getDate() + 3)
 	} else if (currentHour >= 12) {
-		currentDate.setDate(currentDate.getDate() + 1)
-	} else {
 		currentDate.setDate(currentDate.getDate() + 1)
 	}
 
