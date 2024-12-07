@@ -39,6 +39,7 @@
 	background: none;
 	border: 0.04em solid var(--color-dark02);
 	cursor: pointer;
+	background-color: var(--color-dark09);
 }
 
 .line {
