@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
 const useExchangeRateTrendData = () => {
-	const endDate = new Date()
-	const startDate = new Date()
+	const currentDate = new Date()
 
-	startDate.setDate(endDate.getDate() - 14)
+	let endDateTrend = currentDate.toISOString().split('T')[0]
+	let startDate = currentDate.setDate(currentDate.getDate() - 14)
 
-	let endDateTrend = endDate.toISOString().split('T')[0]
+	console.log(startDate)
 
 	const [useEndDate, setUseEndDate] = useState<string>(endDateTrend)
 
