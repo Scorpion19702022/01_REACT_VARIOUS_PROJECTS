@@ -100,6 +100,10 @@
 		width: 34%;
 		min-height: 660px;
 		justify-content: space-around;
+		padding: 1em;
+		background-color: var(--color-dark09);
+		border: 0.04em solid var(--color-color08);
+		box-shadow: 0.4em 0.4em 1em var(--color-dark09);
 	}
 
 	.box_current_data {
@@ -122,13 +126,8 @@
 
 @media (min-width: 1200px) {
 	.wrapper {
-		width: 30%;
 		min-height: 600px;
-		padding: 1em;
-		background-color: var(--color-dark09);
 		justify-content: space-between;
-		border: 0.04em solid var(--color-color08);
-		box-shadow: 0.4em 0.4em 1em var(--color-dark09);
 	}
 
 	.box_current_data {
