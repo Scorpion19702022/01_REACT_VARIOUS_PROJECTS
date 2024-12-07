@@ -44,7 +44,7 @@
 }
 
 .header {
-	color: var(--color-color03);
+	color: var(--color-color04);
 	font-size: 1.4em;
 	padding-bottom: 0.6em;
 }
@@ -136,6 +136,14 @@
 		width: 100%;
 	}
 
+	.header {
+		font-size: 1.2em;
+	}
+
+	.label {
+		font-size: 0.8em;
+	}
+
 	.rate {
 		font-size: 1em;
 	}
@@ -158,6 +166,7 @@
 
 	.label {
 		width: 40%;
+		font-size: 1em;
 	}
 
 	.input {
@@ -176,6 +185,7 @@
 
 	.error_date {
 		height: 35px;
+		font-size: 0.8em;
 	}
 
 	.rate {
