@@ -5,7 +5,7 @@ import styles from './Styles/ExchangeRateTrendData.module.css'
 const ExchangeRateTrendData = () => {
 	return (
 		<section className={styles.wrapper}>
-			<h2>Trend</h2>
+			<h2 className={styles.heading}>Trend</h2>
 		</section>
 	)
 }

@@ -22,8 +22,18 @@
 .wrapper {
 	width: 90%;
 	min-height: 100%;
+	padding: 1em;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.heading {
+	font-size: 2em;
+	color: var(--color-color02);
+	padding-bottom: 0.1em;
+	border-bottom: 0.04em solid var(--color-color02);
 }
 
 @media (min-width: 660px) {
