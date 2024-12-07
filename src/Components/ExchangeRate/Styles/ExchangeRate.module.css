@@ -31,7 +31,22 @@
 	background-color: var(--color-dark08);
 }
 
+.box_exchange_rate {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 @media (min-width: 660px) {
+}
+
+@media (min-width: 992px) {
+	.box_exchange_rate {
+		display: flex;
+		flex-direction: row;
+		padding: 0em 4em;
+	}
 }
 
 @media (min-width: 1200px) {

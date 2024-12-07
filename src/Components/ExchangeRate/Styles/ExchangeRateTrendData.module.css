@@ -30,6 +30,13 @@
 }
 
 @media (min-width: 992px) {
+	.wrapper {
+		width: 50%;
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 @media (min-width: 1200px) {
