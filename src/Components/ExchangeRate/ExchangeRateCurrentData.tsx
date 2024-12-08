@@ -24,7 +24,7 @@ const ExchangeRateCurrentData = () => {
 
 	let nextUpdateData = currentDate.toLocaleString().slice(0, 10)
 
-	console.log(nextUpdateData)
+	// let currentDate = new Date().toLocaleString('pl-CA').slice(0, 10)
 
 	const currentExchangeRate = todayRatesData.map(item => (
 		<div key={item.code} className={styles.box_rate}>
