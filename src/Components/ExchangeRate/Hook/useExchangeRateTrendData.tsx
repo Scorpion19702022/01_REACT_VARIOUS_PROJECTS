@@ -1,24 +1,22 @@
 import { useEffect, useState } from 'react'
 
 const useExchangeRateTrendData = () => {
-	const currentDate = new Date()
-
-	let startDate = new Date()
-
-	let endDateTrend = currentDate.toISOString().split('T')[0]
-	let startDateTrend = startDate.toISOString().split('T')[0]
-
-	const [useEndDate, setUseEndDate] = useState<string>(endDateTrend)
+	const [useEndDate, setUseEndDate] = useState<string>('')
 	const [useStartDate, setUseStartDate] = useState<string>('')
 
-	if (startDateTrend === endDateTrend) {
-		startDate.setDate(startDate.getDate() - 12)
+	useEffect(() => {
+		const currentDate = new Date()
+		const startDate = new Date()
+		startDate.setDate(currentDate.getDate() - 14)
+
+		const endDateTrend = currentDate.toISOString().split('T')[0]
+		const startDateTrend = startDate.toISOString().split('T')[0]
+
+		setUseEndDate(endDateTrend)
 		setUseStartDate(startDateTrend)
-	}
+	}, [])
 
-	console.log(useStartDate)
-
-	return { useEndDate }
+	return { useEndDate, useStartDate }
 }
 
 export default useExchangeRateTrendData
