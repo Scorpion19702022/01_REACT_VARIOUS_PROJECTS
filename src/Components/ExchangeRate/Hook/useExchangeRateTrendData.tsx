@@ -30,14 +30,7 @@ const useExchangeRateTrendData = () => {
 				const response = await fetch(trendDateURL)
 				if (!response.ok) throw new Error('błąd pbierania danych')
 				const data = await response.json()
-				// console.log(data)
-
-				const filteredRates = data[0].rates.filter(
-					(rate: ExchangeRate) =>
-						rate.code === 'USD' || rate.code === 'EUR' || rate.code === 'CHF' || rate.code === 'GBP'
-				)
-
-				setTrendDate(filteredRates)
+				console.log(data)
 			} catch (err) {
 				setError((err as Error).message)
 			} finally {
