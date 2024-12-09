@@ -4,6 +4,9 @@ const useExchangeRateTrendData = () => {
 	const [useEndDate, setUseEndDate] = useState<string>('')
 	const [useStartDate, setUseStartDate] = useState<string>('')
 
+	const [loading, setLoading] = useState<boolean>(true)
+	const [error, setError] = useState<string | null>(null)
+
 	useEffect(() => {
 		const currentDate = new Date()
 		const startDate = new Date()
@@ -16,7 +19,26 @@ const useExchangeRateTrendData = () => {
 		setUseStartDate(startDateTrend)
 	}, [])
 
-	return { useEndDate, useStartDate }
+	useEffect(() => {
+		const fetchTrendDate = async () => {
+			const trendDateURL = `https://api.nbp.pl/api/exchangerates/tables/A/${useStartDate}/${useEndDate}/`
+
+			try {
+				const response = await fetch(trendDateURL)
+				if (!response.ok) throw new Error('błąd pbierania danych')
+				const data = await response.json()
+				console.log(data)
+			} catch (err) {
+				setError((err as Error).message)
+			} finally {
+				setLoading(false)
+			}
+		}
+
+		fetchTrendDate()
+	}, [])
+
+	return { useEndDate, useStartDate, loading, error }
 }
 
 export default useExchangeRateTrendData
