@@ -15,7 +15,7 @@ const useHistoryExchageRate = () => {
 		currentDate.setDate(currentDate.getDate() - 2)
 	} else if (dayOfWeek === 0) {
 		currentDate.setDate(currentDate.getDate() - 3)
-	} else if (dayOfWeek === 1 && hour <= 12) {
+	} else if (dayOfWeek === 1) {
 		currentDate.setDate(currentDate.getDate() - 4)
 	} else {
 		currentDate.setDate(currentDate.getDate() - 1)
