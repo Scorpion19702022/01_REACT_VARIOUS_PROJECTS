@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ExchangeRate } from '../Types/Types'
 
 const useExchangeRateTrendData = () => {
 	const [useEndDate, setUseEndDate] = useState<string>('')
@@ -6,6 +7,8 @@ const useExchangeRateTrendData = () => {
 
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
+
+	const [trendDate, setTrendDate] = useState<ExchangeRate[]>([])
 
 	useEffect(() => {
 		const currentDate = new Date()
@@ -27,7 +30,14 @@ const useExchangeRateTrendData = () => {
 				const response = await fetch(trendDateURL)
 				if (!response.ok) throw new Error('błąd pbierania danych')
 				const data = await response.json()
-				console.log(data)
+				// console.log(data)
+
+				const filteredRates = data[0].rates.filter(
+					(rate: ExchangeRate) =>
+						rate.code === 'USD' || rate.code === 'EUR' || rate.code === 'CHF' || rate.code === 'GBP'
+				)
+
+				setTrendDate(filteredRates)
 			} catch (err) {
 				setError((err as Error).message)
 			} finally {
@@ -37,6 +47,8 @@ const useExchangeRateTrendData = () => {
 
 		fetchTrendDate()
 	}, [])
+
+	console.log(trendDate)
 
 	return { useEndDate, useStartDate, loading, error }
 }
