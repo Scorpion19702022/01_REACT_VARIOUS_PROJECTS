@@ -8,7 +8,7 @@ const useExchangeRateTrendData = () => {
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
 
-	const [trendDate, setTrendDate] = useState<ExchangeRate[]>([])
+	// const [trendDate, setTrendDate] = useState<ExchangeRate[]>([])
 
 	useEffect(() => {
 		const currentDate = new Date()
@@ -40,8 +40,6 @@ const useExchangeRateTrendData = () => {
 
 		fetchTrendDate()
 	}, [])
-
-	console.log(trendDate)
 
 	return { useEndDate, useStartDate, loading, error }
 }
