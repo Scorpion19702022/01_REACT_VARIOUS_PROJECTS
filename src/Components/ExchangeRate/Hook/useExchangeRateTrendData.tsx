@@ -13,7 +13,7 @@ const useExchangeRateTrendData = () => {
 	useEffect(() => {
 		const currentDate = new Date()
 		const startDate = new Date()
-		startDate.setDate(currentDate.getDate() - 14)
+		startDate.setDate(currentDate.getDate() - 7)
 
 		const endDateTrend = currentDate.toISOString().split('T')[0]
 		const startDateTrend = startDate.toISOString().split('T')[0]
@@ -30,7 +30,7 @@ const useExchangeRateTrendData = () => {
 				const response = await fetch(trendDateURL)
 				if (!response.ok) throw new Error('błąd pbierania danych')
 				const data = await response.json()
-				console.log(data)
+				console.log(Object.values(data))
 			} catch (err) {
 				setError((err as Error).message)
 			} finally {
@@ -39,7 +39,7 @@ const useExchangeRateTrendData = () => {
 		}
 
 		fetchTrendDate()
-	}, [])
+	}, [useEndDate, useStartDate])
 
 	return { useEndDate, useStartDate, loading, error }
 }
