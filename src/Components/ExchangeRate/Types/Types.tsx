@@ -10,7 +10,9 @@ export interface UseExchangeRateReturn {
 	error: string | null
 }
 
-export interface TrendDate {
+export interface TrendData {
 	effectiveData: string
 	rates: ExchangeRate[]
 }
+
+export type FilteredTrendData = Record<string, { date: string; value: number }[]>

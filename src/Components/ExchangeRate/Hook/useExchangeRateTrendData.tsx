@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { TrendDate } from '../Types/Types'
+import { TrendData } from '../Types/Types'
 
 const useExchangeRateTrendData = () => {
 	const [endDate, setEndDate] = useState<string>('')
@@ -8,8 +8,8 @@ const useExchangeRateTrendData = () => {
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
 
-	const [trendDate, setTrendDate] = useState<TrendDate[]>([])
-	const [filteredTrendDate, setFilteredTrendDate] = useState<Record<string, number[]>>({
+	const [trendData, setTrendData] = useState<TrendData[]>([])
+	const [filteredTrendData, setFilteredTrendData] = useState<Record<string, number[]>>({
 		USD: [],
 		EUR: [],
 		CHF: [],
@@ -31,14 +31,27 @@ const useExchangeRateTrendData = () => {
 	useEffect(() => {
 		if (!startDate || !endDate) return
 
-		const fetchTrendDate = async () => {
-			const trendDateURL = `https://api.nbp.pl/api/exchangerates/tables/A/${startDate}/${endDate}/`
+		const fetchTrendData = async () => {
+			const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${startDate}/${endDate}/?format=json`
 
 			try {
-				const response = await fetch(trendDateURL)
-				if (!response.ok) throw new Error('błąd pbierania danych')
-				const data = await response.json()
-				console.log(data)
+				const response = await fetch(trendDataURL)
+				if (!response.ok) throw new Error('Błąd pobierania danych')
+				const data: TrendData[] = await response.json()
+				setTrendData(data)
+
+				const currencies = ['USD', 'EUR', 'CHF', 'GBP']
+				const preparedData = currencies.reduce((acc, code) => {
+					acc[code] = data
+						.map(entry => {
+							const rate = entry.rates.find(r => r.code === code)
+							return rate ? rate.mid : null
+						})
+						.filter((rate): rate is number => rate !== null)
+					return acc
+				}, {} as Record<string, number[]>)
+
+				setFilteredTrendData(preparedData)
 			} catch (err) {
 				setError((err as Error).message)
 			} finally {
@@ -46,10 +59,12 @@ const useExchangeRateTrendData = () => {
 			}
 		}
 
-		fetchTrendDate()
-	}, [endDate, startDate])
+		fetchTrendData()
+	}, [startDate, endDate])
 
-	return { startDate, endDate, loading, error, trendDate, filteredTrendDate }
+	console.log(filteredTrendData)
+
+	return { startDate, endDate, loading, error, trendData, filteredTrendData }
 }
 
 export default useExchangeRateTrendData
