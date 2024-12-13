@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ExchangeRate } from '../Types/Types'
+import { TrendDate } from '../Types/Types'
 
 const useExchangeRateTrendData = () => {
 	const [endDate, setEndDate] = useState<string>('')
@@ -8,7 +8,13 @@ const useExchangeRateTrendData = () => {
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
 
-	const [trendDate, setTrendDate] = useState<any[]>([])
+	const [trendDate, setTrendDate] = useState<TrendDate[]>([])
+	const [filteredTrendDate, setFilteredTrendDate] = useState<Record<string, number[]>>({
+		USD: [],
+		EUR: [],
+		CHF: [],
+		GBP: [],
+	})
 
 	useEffect(() => {
 		const currentDate = new Date()
@@ -23,6 +29,8 @@ const useExchangeRateTrendData = () => {
 	}, [])
 
 	useEffect(() => {
+		if (!startDate || !endDate) return
+
 		const fetchTrendDate = async () => {
 			const trendDateURL = `https://api.nbp.pl/api/exchangerates/tables/A/${startDate}/${endDate}/`
 
@@ -41,7 +49,7 @@ const useExchangeRateTrendData = () => {
 		fetchTrendDate()
 	}, [endDate, startDate])
 
-	return { startDate, endDate, loading, error }
+	return { startDate, endDate, loading, error, trendDate, filteredTrendDate }
 }
 
 export default useExchangeRateTrendData
