@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { TrendData } from '../Types/Types'
+import { FilteredTrendData, TrendData } from '../Types/Types'
 
 const useExchangeRateTrendData = () => {
 	const [endDate, setEndDate] = useState<string>('')
@@ -9,7 +9,7 @@ const useExchangeRateTrendData = () => {
 	const [error, setError] = useState<string | null>(null)
 
 	const [trendData, setTrendData] = useState<TrendData[]>([])
-	const [filteredTrendData, setFilteredTrendData] = useState<Record<string, number[]>>({
+	const [filteredTrendData, setFilteredTrendData] = useState<FilteredTrendData>({
 		USD: [],
 		EUR: [],
 		CHF: [],
@@ -42,14 +42,12 @@ const useExchangeRateTrendData = () => {
 
 				const currencies = ['USD', 'EUR', 'CHF', 'GBP']
 				const preparedData = currencies.reduce((acc, code) => {
-					acc[code] = data
-						.map(entry => {
-							const rate = entry.rates.find(r => r.code === code)
-							return rate ? rate.mid : null
-						})
-						.filter((rate): rate is number => rate !== null)
+					acc[code] = data.flatMap(entry => {
+						const rate = entry.rates.find(r => r.code === code)
+						return rate ? [{ date: entry.effectiveDate, value: rate.mid }] : []
+					})
 					return acc
-				}, {} as Record<string, number[]>)
+				}, {} as FilteredTrendData)
 
 				setFilteredTrendData(preparedData)
 			} catch (err) {
