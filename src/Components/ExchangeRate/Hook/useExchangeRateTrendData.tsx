@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { ExchangeRate } from '../Types/Types'
 
 const useExchangeRateTrendData = () => {
-	const [useEndDate, setUseEndDate] = useState<string>('')
-	const [useStartDate, setUseStartDate] = useState<string>('')
+	const [endDate, setEndDate] = useState<string>('')
+	const [startDate, setStartDate] = useState<string>('')
 
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
@@ -18,13 +18,13 @@ const useExchangeRateTrendData = () => {
 		const endDateTrend = currentDate.toISOString().split('T')[0]
 		const startDateTrend = startDate.toISOString().split('T')[0]
 
-		setUseEndDate(endDateTrend)
-		setUseStartDate(startDateTrend)
+		setEndDate(endDateTrend)
+		setStartDate(startDateTrend)
 	}, [])
 
 	useEffect(() => {
 		const fetchTrendDate = async () => {
-			const trendDateURL = `https://api.nbp.pl/api/exchangerates/tables/A/${useStartDate}/${useEndDate}/`
+			const trendDateURL = `https://api.nbp.pl/api/exchangerates/tables/A/${startDate}/${endDate}/`
 
 			try {
 				const response = await fetch(trendDateURL)
@@ -39,9 +39,9 @@ const useExchangeRateTrendData = () => {
 		}
 
 		fetchTrendDate()
-	}, [useEndDate, useStartDate])
+	}, [endDate, startDate])
 
-	return { useEndDate, useStartDate, loading, error }
+	return { startDate, endDate, loading, error }
 }
 
 export default useExchangeRateTrendData
