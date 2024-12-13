@@ -9,3 +9,8 @@ export interface UseExchangeRateReturn {
 	loading: boolean
 	error: string | null
 }
+
+export interface TrendDate {
+	effectiveData: string
+	rates: ExchangeRate[]
+}

@@ -30,10 +30,7 @@ const useExchangeRateTrendData = () => {
 				const response = await fetch(trendDateURL)
 				if (!response.ok) throw new Error('błąd pbierania danych')
 				const data = await response.json()
-				// console.log(data)
-				// const rates = [data][0]
-				// console.log(rates)
-				setTrendDate(data[0].rates)
+				console.log(data)
 			} catch (err) {
 				setError((err as Error).message)
 			} finally {
@@ -43,8 +40,6 @@ const useExchangeRateTrendData = () => {
 
 		fetchTrendDate()
 	}, [useEndDate, useStartDate])
-
-	console.log(trendDate, 'test')
 
 	return { useEndDate, useStartDate, loading, error }
 }
