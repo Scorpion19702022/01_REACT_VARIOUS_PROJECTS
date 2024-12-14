@@ -23,6 +23,10 @@ const ExchangeRateChart = () => {
 
 	ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
+	const chartData = {}
+
+	const chartOptions = {}
+
 	return (
 		<section className={styles.wrapper}>
 			<h3 className={styles.heading}>Wykres</h3>
