@@ -17,7 +17,7 @@ const ExchangeRateHeader = () => {
 			<MdCurrencyPound className={styles.icon_pound} />
 			<MdCurrencyFranc className={styles.icon_franc} />
 			<div className={styles.header_text}>
-				<h1 className={styles.header}>Kurs złotego</h1>
+				<h1 className={styles.header}>Kurs walut NBP</h1>
 				<span className={styles.text}>Aktualny kurs złotego względem światowych walut</span>
 			</div>
 		</section>

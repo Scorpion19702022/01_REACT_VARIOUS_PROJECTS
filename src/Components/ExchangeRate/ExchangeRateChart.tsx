@@ -112,7 +112,7 @@ const ExchangeRateChart = () => {
 			y: {
 				title: {
 					display: true,
-					text: 'Wartość',
+					text: 'Wartość w zł',
 					color: '#898a86',
 				},
 				ticks: {

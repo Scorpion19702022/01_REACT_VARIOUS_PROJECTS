@@ -5,7 +5,7 @@ const useExchangeRateTrendData = () => {
 	const [endDate, setEndDate] = useState<string>('')
 	const [startDate, setStartDate] = useState<string>('')
 
-	const [quantityDays, setQuantityDays] = useState<number>(21)
+	const quantityDays = 21
 
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)

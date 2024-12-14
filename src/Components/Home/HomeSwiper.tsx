@@ -15,6 +15,7 @@ import imgSlider08 from './assets/imgSwiper08.jpg'
 import imgSlider09 from './assets/imgSwiper09.jpg'
 import imgSlider10 from './assets/imgSwiper10.jpg'
 import imgSlider11 from './assets/imgSwiper11.jpg'
+import imgSlider12 from './assets/imgSwiper12.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -186,6 +187,18 @@ const HomeSwiper = () => {
 						<p className={styles.card_text}>Przedstawia liczbowo i na wykresie przyrost mieszkańców miast w Polsce</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider11} alt='photoSlider' />
+				</SwiperSlide>
+				<SwiperSlide className={styles.box_swiper}>
+					<NavLink to='./ExchangeRate'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>Kurs walut NBP</h4>
+						<p className={styles.card_text}>
+							Przedstawia aktualny kurs walut. Kurs z dnia poprzedniego oraz wykres z trendem kursów
+						</p>
+					</div>
+					<img className={styles.card_img} src={imgSlider12} alt='photoSlider' />
 				</SwiperSlide>
 			</Swiper>
 		</section>
