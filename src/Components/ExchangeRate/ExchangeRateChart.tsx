@@ -71,6 +71,12 @@ const ExchangeRateChart = () => {
 	const chartOptions = {
 		responsive: true,
 		maintainAspectRatio: false,
+		layout: {
+			padding: {
+				top: 20,
+				bottom: 20,
+			},
+		},
 		plugins: {
 			title: {
 				display: true,
