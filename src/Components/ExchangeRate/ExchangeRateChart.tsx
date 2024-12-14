@@ -38,7 +38,7 @@ const ExchangeRateChart = () => {
 				pointBackgroundColor: '#bcdcbc',
 				fill: false,
 				tension: 0,
-				borderWidth: 1,
+				borderWidth: 2,
 			},
 			{
 				label: 'EUR',
@@ -48,7 +48,7 @@ const ExchangeRateChart = () => {
 				pointBackgroundColor: '#ccf5f5',
 				fill: false,
 				tension: 0,
-				borderWidth: 1,
+				borderWidth: 2,
 			},
 			{
 				label: 'CHF',
@@ -58,7 +58,7 @@ const ExchangeRateChart = () => {
 				pointBackgroundColor: '#b2c8ea',
 				fill: false,
 				tension: 0,
-				borderWidth: 1,
+				borderWidth: 2,
 			},
 			{
 				label: 'GBP',
@@ -68,7 +68,7 @@ const ExchangeRateChart = () => {
 				pointBackgroundColor: '#edbcc8',
 				fill: false,
 				tension: 0,
-				borderWidth: 1,
+				borderWidth: 2,
 			},
 		],
 	}
