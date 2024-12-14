@@ -17,7 +17,7 @@ import {
 import useExchangeRateTrendData from './Hook/useExchangeRateTrendData'
 
 const ExchangeRateChart = () => {
-	const { filteredTrendData } = useExchangeRateTrendData()
+	const { startDate, endDate, filteredTrendData } = useExchangeRateTrendData()
 
 	console.log(filteredTrendData)
 
@@ -68,11 +68,64 @@ const ExchangeRateChart = () => {
 		],
 	}
 
-	const chartOptions = {}
+	const chartOptions = {
+		responsive: true,
+		maintainAspectRatio: false,
+		plugins: {
+			title: {
+				display: true,
+				text: `wykres pokazujący trend od ${startDate} do ${endDate}`,
+				color: 'white',
+			},
+			tooltip: {
+				callbacks: {
+					label: (context: any) => {
+						return `${context.dataset.label}: ${context.raw.toFixed(2)}`
+					},
+				},
+			},
+			legend: {
+				labels: {
+					color: '#c4c4c2',
+				},
+			},
+		},
+		scales: {
+			x: {
+				title: {
+					display: true,
+					text: 'Rok',
+					color: '#898a86',
+				},
+				ticks: {
+					color: '#85c6db',
+				},
+				grid: {
+					color: '#2f302b',
+				},
+			},
+			y: {
+				title: {
+					display: true,
+					text: 'Wartość',
+					color: '#898a86',
+				},
+				ticks: {
+					color: '#85c6db',
+					stepSize: 0.5,
+				},
+				grid: {
+					color: '#2f302b',
+				},
+				beginAtZero: false,
+				min: 0,
+				max: 6,
+			},
+		},
+	}
 
 	return (
 		<section className={styles.wrapper}>
-			<h3 className={styles.heading}>Wykres</h3>
 			<div className={styles.box_chart}>
 				<Line data={chartData} options={chartOptions} />
 			</div>
