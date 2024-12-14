@@ -38,6 +38,7 @@ const ExchangeRateChart = () => {
 				pointBackgroundColor: '#bcdcbc',
 				fill: false,
 				tension: 0,
+				borderWidth: 1,
 			},
 			{
 				label: 'EUR',
@@ -47,6 +48,7 @@ const ExchangeRateChart = () => {
 				pointBackgroundColor: '#ccf5f5',
 				fill: false,
 				tension: 0,
+				borderWidth: 1,
 			},
 			{
 				label: 'CHF',
@@ -56,6 +58,7 @@ const ExchangeRateChart = () => {
 				pointBackgroundColor: '#b2c8ea',
 				fill: false,
 				tension: 0,
+				borderWidth: 1,
 			},
 			{
 				label: 'GBP',
@@ -65,6 +68,7 @@ const ExchangeRateChart = () => {
 				pointBackgroundColor: '#edbcc8',
 				fill: false,
 				tension: 0,
+				borderWidth: 1,
 			},
 		],
 	}
@@ -72,15 +76,10 @@ const ExchangeRateChart = () => {
 	const chartOptions = {
 		responsive: true,
 		maintainAspectRatio: false,
-		layout: {
-			padding: {
-				bottom: 20,
-			},
-		},
 		plugins: {
 			title: {
 				display: true,
-				text: `wykres pokazujący trend od ${startDate} do ${endDate}`,
+				text: `Trend kursów od ${startDate} do ${endDate}`,
 				color: 'white',
 			},
 			tooltip: {
@@ -118,14 +117,14 @@ const ExchangeRateChart = () => {
 				},
 				ticks: {
 					color: '#85c6db',
-					stepSize: 0.5,
+					stepSize: 0.2,
 				},
 				grid: {
 					color: '#2f302b',
 				},
 				beginAtZero: false,
-				min: 3,
-				max: 6,
+				min: 3.8,
+				max: 5.6,
 			},
 		},
 	}
