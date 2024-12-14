@@ -28,6 +28,7 @@ const ExchangeRateChart = () => {
 	console.log(labels)
 
 	const chartData = {
+		labels,
 		datasets: [
 			{
 				label: 'USD',
@@ -73,7 +74,6 @@ const ExchangeRateChart = () => {
 		maintainAspectRatio: false,
 		layout: {
 			padding: {
-				top: 20,
 				bottom: 20,
 			},
 		},
@@ -100,7 +100,7 @@ const ExchangeRateChart = () => {
 			x: {
 				title: {
 					display: true,
-					text: 'Rok',
+					text: 'Data',
 					color: '#898a86',
 				},
 				ticks: {
@@ -124,7 +124,7 @@ const ExchangeRateChart = () => {
 					color: '#2f302b',
 				},
 				beginAtZero: false,
-				min: 0,
+				min: 3,
 				max: 6,
 			},
 		},

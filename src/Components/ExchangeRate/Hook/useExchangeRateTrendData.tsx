@@ -19,7 +19,7 @@ const useExchangeRateTrendData = () => {
 	useEffect(() => {
 		const currentDate = new Date()
 		const startDate = new Date()
-		startDate.setDate(currentDate.getDate() - 7)
+		startDate.setDate(currentDate.getDate() - 14)
 
 		const endDateTrend = currentDate.toISOString().split('T')[0]
 		const startDateTrend = startDate.toISOString().split('T')[0]
