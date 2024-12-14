@@ -60,8 +60,6 @@ const useExchangeRateTrendData = () => {
 		fetchTrendData()
 	}, [startDate, endDate])
 
-	console.log(filteredTrendData)
-
 	return { startDate, endDate, loading, error, trendData, filteredTrendData }
 }
 
