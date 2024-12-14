@@ -2,6 +2,7 @@ import React from 'react'
 
 import styles from './Styles/ExchangeRateTrendData.module.css'
 import useExchangeRateTrendData from './Hook/useExchangeRateTrendData'
+import ExchangeRateChart from './ExchangeRateChart'
 
 const ExchangeRateTrendData = () => {
 	const { startDate, endDate } = useExchangeRateTrendData()
@@ -14,6 +15,7 @@ const ExchangeRateTrendData = () => {
 					Wykres pokazuje trend kursów walut w przedziale czasowym od {startDate} do {endDate}
 				</p>
 			</div>
+			<ExchangeRateChart />
 		</section>
 	)
 }
