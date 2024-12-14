@@ -23,14 +23,59 @@ const ExchangeRateChart = () => {
 
 	ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
-	const chartData = {}
+	const labels = filteredTrendData.USD.map(item => item.date)
+
+	console.log(labels)
+
+	const chartData = {
+		datasets: [
+			{
+				label: 'USD',
+				data: filteredTrendData.USD.map(item => item.value),
+				borderColor: '#228b22',
+				backgroundColor: '#bcdcbc',
+				pointBackgroundColor: '#bcdcbc',
+				fill: false,
+				tension: 0,
+			},
+			{
+				label: 'EUR',
+				data: filteredTrendData.EUR.map(item => item.value),
+				borderColor: 'green',
+				backgroundColor: 'yellow',
+				pointBackgroundColor: 'yellow',
+				fill: false,
+				tension: 0,
+			},
+			{
+				label: 'CHF',
+				data: filteredTrendData.CHF.map(item => item.value),
+				borderColor: 'green',
+				backgroundColor: 'yellow',
+				pointBackgroundColor: 'yellow',
+				fill: false,
+				tension: 0,
+			},
+			{
+				label: 'GBP',
+				data: filteredTrendData.GBP.map(item => item.value),
+				borderColor: 'green',
+				backgroundColor: 'yellow',
+				pointBackgroundColor: 'yellow',
+				fill: false,
+				tension: 0,
+			},
+		],
+	}
 
 	const chartOptions = {}
 
 	return (
 		<section className={styles.wrapper}>
 			<h3 className={styles.heading}>Wykres</h3>
-			<div className={styles.box_chart}>{/* <Line data={chartData} options={chartOptions} /> */}</div>
+			<div className={styles.box_chart}>
+				<Line data={chartData} options={chartOptions} />
+			</div>
 		</section>
 	)
 }
