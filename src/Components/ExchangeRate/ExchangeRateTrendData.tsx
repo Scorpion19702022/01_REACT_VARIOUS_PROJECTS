@@ -19,6 +19,7 @@ const ExchangeRateTrendData = () => {
 						aktualizacji
 					</p>
 				</div>
+				<div className={styles.line}></div>
 				<div className={styles.box_change_date}>
 					<p className={styles.info_input}>Wybierz datę z przeszłości i sprawdż trend do obecnego kursu</p>
 					<div className={styles.box_inputs}>

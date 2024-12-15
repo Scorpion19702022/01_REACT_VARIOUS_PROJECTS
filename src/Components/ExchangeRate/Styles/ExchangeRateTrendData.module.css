@@ -77,13 +77,17 @@
 }
 
 .info_input {
-	font-size: 0.8em;
+	font-size: 0.9em;
 	color: var(--color-color02);
 	text-align: center;
 }
 
 .box_inputs {
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .box_input {
@@ -91,6 +95,7 @@
 	padding: 0.6em 0em;
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
 }
 
 .label {
@@ -112,7 +117,7 @@
 }
 
 .btn {
-	width: 25%;
+	width: 45%;
 	padding: 0.5em;
 	background-color: var(--color-dark08);
 	border: 0.04em solid var(--color-color07);
@@ -120,23 +125,51 @@
 }
 
 @media (min-width: 660px) {
+	.box_input {
+		width: 50%;
+	}
+
+	.box_btns {
+		width: 50%;
+	}
 }
 
 @media (min-width: 992px) {
 	.wrapper {
-		width: 50%;
+		width: 60%;
 		min-height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
+	.box_navigation {
+		width: 100%;
+		height: 140px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.box_info_text,
+	.box_change_date {
+		width: 48%;
+		border-bottom: none;
+	}
+
 	.text_info {
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 
 	.text_info:nth-child(odd) {
-		font-size: 1em;
+		font-size: 0.8em;
+	}
+
+	.line {
+		width: 1px;
+		height: 100%;
+		background-color: var(--color-color07);
 	}
 }
 
