@@ -5,7 +5,7 @@ import useExchangeRateTrendData from './Hook/useExchangeRateTrendData'
 import ExchangeRateChart from './ExchangeRateChart'
 
 const ExchangeRateTrendData = () => {
-	const { quantityDays } = useExchangeRateTrendData()
+	const { quantityDays, startDate } = useExchangeRateTrendData()
 
 	return (
 		<section className={styles.wrapper}>
@@ -22,7 +22,14 @@ const ExchangeRateTrendData = () => {
 				<div className={styles.box_change_date}>
 					<p className={styles.info_input}>Wybierz datę z przeszłości i sprawdż trend do obecnego kursu</p>
 					<div className={styles.box_inputs}>
-						<div className={styles.box_input}></div>
+						<div className={styles.box_input}>
+							<label className={styles.label}>Wybierz datę</label>
+							<input className={styles.input} type='date' value={startDate} max={startDate} />
+						</div>
+						<div className={styles.btns}>
+							<button className={styles.btn}>sprawdź</button>
+							<button className={styles.btn}>wyczyść</button>
+						</div>
 					</div>
 				</div>
 			</div>
