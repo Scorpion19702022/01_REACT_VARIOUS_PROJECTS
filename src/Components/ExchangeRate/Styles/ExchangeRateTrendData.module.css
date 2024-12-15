@@ -171,6 +171,11 @@
 		height: 100%;
 		background-color: var(--color-color07);
 	}
+
+	.box_input,
+	.box_btns {
+		width: 100%;
+	}
 }
 
 @media (min-width: 1200px) {
@@ -189,5 +194,18 @@
 
 	.text_info:nth-child(odd) {
 		font-size: 1.2em;
+	}
+
+	.box_input {
+		width: 50%;
+	}
+
+	.btn {
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.btn:hover {
+		background-color: var(--color-dark09);
 	}
 }
