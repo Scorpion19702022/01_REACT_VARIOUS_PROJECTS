@@ -38,7 +38,7 @@
 
 .box_navigation {
 	width: 100%;
-	height: 220px;
+	height: 180px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -55,16 +55,15 @@
 	border-bottom: 0.04em solid var(--color-color08);
 }
 
-.text_info {
-	text-align: center;
-	color: var(--color-color02);
-	padding: 0.2em 0em;
+.text_info_trend {
+	color: var(--color-color01);
 }
 
-.text_info:nth-child(odd) {
-	color: var(--color-dark01);
+.text_info {
+	text-align: center;
 	font-size: 0.8em;
-	font-weight: 100;
+	color: var(--color-color03);
+	padding: 0.2em 0em;
 }
 
 .box_change_date {
@@ -146,6 +145,7 @@
 	.box_navigation {
 		width: 100%;
 		height: 140px;
+		padding: 2em 0em;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -160,10 +160,6 @@
 
 	.text_info {
 		font-size: 1em;
-	}
-
-	.text_info:nth-child(odd) {
-		font-size: 0.8em;
 	}
 
 	.line {
@@ -190,10 +186,6 @@
 
 	.text_info {
 		font-size: 1.4em;
-	}
-
-	.text_info:nth-child(odd) {
-		font-size: 1.2em;
 	}
 
 	.info_input {

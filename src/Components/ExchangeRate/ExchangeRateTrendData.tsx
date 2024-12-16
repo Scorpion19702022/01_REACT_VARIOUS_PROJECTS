@@ -11,9 +11,11 @@ const ExchangeRateTrendData = () => {
 		<section className={styles.wrapper}>
 			<h2 className={styles.heading}>Trend</h2>
 
+			<p className={styles.text_info_trend}>
+				Wstępnie wykres pokazuje trend kursów walut z ostatich {quantityDays} dni
+			</p>
 			<div className={styles.box_navigation}>
 				<div className={styles.box_info_text}>
-					<p className={styles.text_info}>Wykres pokazuje trend kursów walut z ostatich {quantityDays} dni</p>
 					<p className={styles.text_info}>
 						Gdy w danym okresie wystąpił dzień wolny, data nie będzie wyświetlana, a dane kursów będą z dnia ostatniej
 						aktualizacji
