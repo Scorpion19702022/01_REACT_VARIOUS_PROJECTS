@@ -7,6 +7,14 @@ import ExchangeRateChart from './ExchangeRateChart'
 const ExchangeRateTrendData = () => {
 	const { quantityDays, startDate } = useExchangeRateTrendData()
 
+	let currentDate = new Date()
+
+	currentDate.setDate(currentDate.getDate() - 14)
+
+	let previousDate = currentDate.toISOString().split('T')[0]
+
+	console.log(previousDate)
+
 	return (
 		<section className={styles.wrapper}>
 			<h2 className={styles.heading}>Trend</h2>
