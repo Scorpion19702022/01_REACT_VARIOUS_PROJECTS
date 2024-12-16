@@ -24,15 +24,15 @@ const useExchangeRateTrendData = () => {
 
 	let previousDate = currentDateForHistory.toISOString().split('T')[0]
 
-	console.log(previousDate, 'data')
-
 	const [chooseStartDate, setChooseStartDate] = useState<string>(previousDate)
 
-	const [checkStartDate, setCheckStartkDate] = useState<string>(chooseStartDate)
+	const [checkStartDate, setCheckStartkDate] = useState<string>('')
 
 	const handleChangeDate = (e: string) => {
 		setCheckStartkDate(e)
 	}
+
+	console.log(checkStartDate)
 
 	useEffect(() => {
 		const currentDate = new Date()
