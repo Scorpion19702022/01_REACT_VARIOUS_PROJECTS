@@ -18,6 +18,22 @@ const useExchangeRateTrendData = () => {
 		GBP: [],
 	})
 
+	let currentDateForHistory = new Date()
+
+	currentDateForHistory.setDate(currentDateForHistory.getDate() - 75)
+
+	let previousDate = currentDateForHistory.toISOString().split('T')[0]
+
+	console.log(previousDate, 'data')
+
+	const [chooseStartDate, setChooseStartDate] = useState<string>(previousDate)
+
+	const [checkStartDate, setCheckStartkDate] = useState<string>(chooseStartDate)
+
+	const handleChangeDate = (e: string) => {
+		setCheckStartkDate(e)
+	}
+
 	useEffect(() => {
 		const currentDate = new Date()
 		const startDate = new Date()
@@ -62,7 +78,18 @@ const useExchangeRateTrendData = () => {
 		fetchTrendData()
 	}, [startDate, endDate])
 
-	return { startDate, endDate, quantityDays, loading, error, trendData, filteredTrendData }
+	return {
+		startDate,
+		endDate,
+		quantityDays,
+		loading,
+		error,
+		trendData,
+		filteredTrendData,
+		chooseStartDate,
+		checkStartDate,
+		handleChangeDate,
+	}
 }
 
 export default useExchangeRateTrendData

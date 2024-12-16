@@ -5,15 +5,7 @@ import useExchangeRateTrendData from './Hook/useExchangeRateTrendData'
 import ExchangeRateChart from './ExchangeRateChart'
 
 const ExchangeRateTrendData = () => {
-	const { quantityDays, startDate } = useExchangeRateTrendData()
-
-	let currentDate = new Date()
-
-	currentDate.setDate(currentDate.getDate() - 14)
-
-	let previousDate = currentDate.toISOString().split('T')[0]
-
-	console.log(previousDate)
+	const { quantityDays, startDate, chooseStartDate, handleChangeDate } = useExchangeRateTrendData()
 
 	return (
 		<section className={styles.wrapper}>
@@ -33,7 +25,14 @@ const ExchangeRateTrendData = () => {
 					<div className={styles.box_inputs}>
 						<div className={styles.box_input}>
 							<label className={styles.label}>Wybierz datę:</label>
-							<input className={styles.input} type='date' value={startDate} max={startDate} />
+							<input
+								className={styles.input}
+								type='date'
+								value={startDate}
+								max={startDate}
+								min={chooseStartDate}
+								onChange={e => handleChangeDate(e.target.value)}
+							/>
 						</div>
 						<div className={styles.box_btns}>
 							<button className={styles.btn}>sprawdź</button>
