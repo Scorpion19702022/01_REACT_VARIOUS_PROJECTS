@@ -34,16 +34,24 @@ const useExchangeRateTrendData = () => {
 
 	console.log(checkStartDate)
 
-	useEffect(() => {
-		const currentDate = new Date()
-		const startDate = new Date()
-		startDate.setDate(currentDate.getDate() - quantityDays)
+	const currentDate = new Date()
+	const startNewDate = new Date()
+	startNewDate.setDate(currentDate.getDate() - quantityDays)
 
-		const endDateTrend = currentDate.toISOString().split('T')[0]
-		const startDateTrend = startDate.toISOString().split('T')[0]
+	const endDateTrend = currentDate.toISOString().split('T')[0]
+	const startDateTrend = startNewDate.toISOString().split('T')[0]
+
+	useEffect(() => {
+		// const currentDate = new Date()
+		// const startDate = new Date()
+		// startDate.setDate(currentDate.getDate() - quantityDays)
+
+		// const endDateTrend = currentDate.toISOString().split('T')[0]
+		// const startDateTrend = startDate.toISOString().split('T')[0]
 
 		setEndDate(endDateTrend)
 		setStartDate(startDateTrend)
+		setCheckStartkDate(startDateTrend)
 	}, [])
 
 	useEffect(() => {
