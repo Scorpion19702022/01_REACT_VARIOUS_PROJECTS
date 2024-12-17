@@ -49,7 +49,7 @@ const useExchangeRateTrendData = () => {
 		setStartDate(checkStartDate)
 	}
 
-	console.log(checkStartDate)
+	console.log(startDate)
 
 	useEffect(() => {
 		if (!startDate || !endDate) return
