@@ -2,10 +2,23 @@ import { useEffect, useState } from 'react'
 import { FilteredTrendData, TrendData } from '../Types/Types'
 
 const useExchangeRateTrendData = () => {
-	const [endDate, setEndDate] = useState<string>('')
-	const [startDate, setStartDate] = useState<string>('')
-
 	let quantityDays = 14
+
+	let currentDateForHistory = new Date()
+
+	currentDateForHistory.setDate(currentDateForHistory.getDate() - 75)
+
+	let previousDate = currentDateForHistory.toISOString().split('T')[0]
+
+	const currentDate = new Date()
+	const startNewDate = new Date()
+	startNewDate.setDate(currentDate.getDate() - quantityDays)
+
+	const endDateTrend = currentDate.toISOString().split('T')[0]
+	const startDateTrend = startNewDate.toISOString().split('T')[0]
+
+	const [endDate, setEndDate] = useState<string>(endDateTrend)
+	const [startDate, setStartDate] = useState<string>(startDateTrend)
 
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
@@ -18,28 +31,15 @@ const useExchangeRateTrendData = () => {
 		GBP: [],
 	})
 
-	let currentDateForHistory = new Date()
-
-	currentDateForHistory.setDate(currentDateForHistory.getDate() - 75)
-
-	let previousDate = currentDateForHistory.toISOString().split('T')[0]
-
 	const [chooseStartDate, setChooseStartDate] = useState<string>(previousDate)
 
-	const [checkStartDate, setCheckStartkDate] = useState<string>('')
+	const [checkStartDate, setCheckStartkDate] = useState<string>(startDateTrend)
 
-	const currentDate = new Date()
-	const startNewDate = new Date()
-	startNewDate.setDate(currentDate.getDate() - quantityDays)
-
-	const endDateTrend = currentDate.toISOString().split('T')[0]
-	const startDateTrend = startNewDate.toISOString().split('T')[0]
-
-	useEffect(() => {
-		setEndDate(endDateTrend)
-		setStartDate(startDateTrend)
-		setCheckStartkDate(startDateTrend)
-	}, [])
+	// useEffect(() => {
+	// 	setEndDate(endDateTrend)
+	// 	setStartDate(startDateTrend)
+	// 	setCheckStartkDate(startDateTrend)
+	// }, [])
 
 	const handleChangeDate = (e: string) => {
 		setCheckStartkDate(e)
@@ -49,12 +49,12 @@ const useExchangeRateTrendData = () => {
 		setStartDate(checkStartDate)
 	}
 
-	console.log(startDate)
-
-	const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${startDate}/${endDate}/?format=json`
+	console.log(checkStartDate)
 
 	useEffect(() => {
 		if (!startDate || !endDate) return
+
+		const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${startDate}/${endDate}/?format=json`
 
 		const fetchTrendData = async () => {
 			try {
