@@ -19,13 +19,9 @@ import useExchangeRateTrendData from './Hook/useExchangeRateTrendData'
 const ExchangeRateChart = () => {
 	const { startDate, endDate, filteredTrendData } = useExchangeRateTrendData()
 
-	console.log(filteredTrendData)
-
 	ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 	const labels = filteredTrendData.USD.map(item => item.date)
-
-	console.log(labels)
 
 	const chartData = {
 		labels,

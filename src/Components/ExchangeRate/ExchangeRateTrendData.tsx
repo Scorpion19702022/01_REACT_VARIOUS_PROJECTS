@@ -5,7 +5,8 @@ import useExchangeRateTrendData from './Hook/useExchangeRateTrendData'
 import ExchangeRateChart from './ExchangeRateChart'
 
 const ExchangeRateTrendData = () => {
-	const { quantityDays, startDate, chooseStartDate, checkStartDate, handleChangeDate } = useExchangeRateTrendData()
+	const { quantityDays, startDate, chooseStartDate, checkStartDate, handleChangeDate, handleChooseTrendDate } =
+		useExchangeRateTrendData()
 
 	return (
 		<section className={styles.wrapper}>
@@ -37,7 +38,9 @@ const ExchangeRateTrendData = () => {
 							/>
 						</div>
 						<div className={styles.box_btns}>
-							<button className={styles.btn}>sprawdź</button>
+							<button className={styles.btn} onClick={handleChooseTrendDate}>
+								sprawdź
+							</button>
 							<button className={styles.btn}>wyczyść</button>
 						</div>
 					</div>
