@@ -189,6 +189,10 @@
 		justify-content: center;
 	}
 
+	.text_info_trend {
+		font-size: 1.2em;
+	}
+
 	.text_info {
 		font-size: 1.4em;
 	}
