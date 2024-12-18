@@ -45,12 +45,10 @@ const useExchangeRateTrendData = () => {
 
 	const handleChooseTrendDate = () => {
 		setDefaultStartDate(false)
+		setStartDate(checkStartDate) // Aktualizacja startDate po kliknięciu w przycisk
 	}
 
-	const selected = new Date()
-	const diffInMilliseconds = currentDate.getTime() - selected.getTime()
-	const effect = Math.ceil(diffInMilliseconds / (1000 * 60 * 60 * 24))
-	console.log(effect)
+	console.log(startDate)
 
 	useEffect(() => {
 		// setEndDate(endDateTrend)
