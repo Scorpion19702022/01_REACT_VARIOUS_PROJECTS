@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { FilteredTrendData, TrendData } from '../Types/Types'
 
 const useExchangeRateTrendData = () => {
-	let quantityDays = 14
+	// let quantityDays = 14
+
+	const [quantityDays, setQuantityDays] = useState<number>(14)
 
 	let currentDateForHistory = new Date()
 
@@ -45,7 +47,10 @@ const useExchangeRateTrendData = () => {
 		setDefaultStartDate(false)
 	}
 
-	console.log(startDate)
+	const selected = new Date()
+	const diffInMilliseconds = currentDate.getTime() - selected.getTime()
+	const effect = Math.ceil(diffInMilliseconds / (1000 * 60 * 60 * 24))
+	console.log(effect)
 
 	useEffect(() => {
 		// setEndDate(endDateTrend)
