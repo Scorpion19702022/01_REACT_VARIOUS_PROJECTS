@@ -6,7 +6,7 @@ const useExchangeRateTrendData = () => {
 
 	let currentDateForHistory = new Date()
 
-	currentDateForHistory.setDate(currentDateForHistory.getDate() - 60)
+	currentDateForHistory.setDate(currentDateForHistory.getDate() - 75)
 
 	let previousDate = currentDateForHistory.toISOString().split('T')[0]
 
@@ -35,20 +35,27 @@ const useExchangeRateTrendData = () => {
 
 	const [checkStartDate, setCheckStartkDate] = useState<string>(startDateTrend)
 
+	const [defaultStartDate, setDefaultStartDate] = useState<boolean>(true)
+
 	const handleChangeDate = (e: string) => {
 		setCheckStartkDate(e)
 	}
 
-	const handleChooseTrendDate = () => {}
+	const handleChooseTrendDate = () => {
+		setDefaultStartDate(false)
+	}
 
 	console.log(startDate)
 
 	useEffect(() => {
 		// setEndDate(endDateTrend)
 		// setCheckStartkDate(startDateTrend)
-		setStartDate(startDateTrend)
-		setStartDate(checkStartDate)
-	}, [])
+		if (defaultStartDate) {
+			setStartDate(startDateTrend)
+		} else {
+			setStartDate(checkStartDate)
+		}
+	}, [defaultStartDate])
 
 	useEffect(() => {
 		if (!startDate || !endDate) return
@@ -94,7 +101,6 @@ const useExchangeRateTrendData = () => {
 		checkStartDate,
 		handleChangeDate,
 		handleChooseTrendDate,
-		previousDate,
 	}
 }
 
