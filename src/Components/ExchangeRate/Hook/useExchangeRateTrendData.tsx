@@ -20,7 +20,7 @@ const useExchangeRateTrendData = () => {
 	const startDateTrend = startNewDate.toISOString().split('T')[0]
 
 	const [endDate, setEndDate] = useState<string>(endDateTrend)
-	const [startDate, setStartDate] = useState<string>('')
+	const [startDate, setStartDate] = useState<string>(startDateTrend)
 
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<string | null>(null)
@@ -37,28 +37,29 @@ const useExchangeRateTrendData = () => {
 
 	const [checkStartDate, setCheckStartkDate] = useState<string>(startDateTrend)
 
-	const [defaultStartDate, setDefaultStartDate] = useState<boolean>(true)
+	// const [defaultStartDate, setDefaultStartDate] = useState<boolean>(true)
 
 	const handleChangeDate = (e: string) => {
 		setCheckStartkDate(e)
 	}
 
 	const handleChooseTrendDate = () => {
-		setDefaultStartDate(false)
-		setStartDate(checkStartDate) // Aktualizacja startDate po kliknięciu w przycisk
+		// setDefaultStartDate(false)
+		setStartDate(checkStartDate)
 	}
 
-	console.log(startDate)
+	// useEffect(() => {
+	// 	// setEndDate(endDateTrend)
+	// 	// setCheckStartkDate(startDateTrend)
+	// 	if (defaultStartDate) {
+	// 		setStartDate(startDateTrend)
+	// 	} else {
+	// 		setStartDate(checkStartDate)
+	// 	}
+	// }, [defaultStartDate])
 
-	useEffect(() => {
-		// setEndDate(endDateTrend)
-		// setCheckStartkDate(startDateTrend)
-		if (defaultStartDate) {
-			setStartDate(startDateTrend)
-		} else {
-			setStartDate(checkStartDate)
-		}
-	}, [defaultStartDate])
+	// console.log(endDate)
+	console.log(checkStartDate)
 
 	useEffect(() => {
 		if (!startDate || !endDate) return
