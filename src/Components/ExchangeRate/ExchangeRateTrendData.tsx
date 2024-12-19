@@ -5,7 +5,7 @@ import useExchangeRateTrendData from './Hook/useExchangeRateTrendData'
 import ExchangeRateChart from './ExchangeRateChart'
 
 const ExchangeRateTrendData = () => {
-	const { quantityDays, startDate, chooseStartDate, checkStartDate, handleChangeDate, handleChooseTrendDate } =
+	const { quantityDays, startDate, checkStartDate, chooseStartDate, handleChangeDate, handleChooseTrendDate } =
 		useExchangeRateTrendData()
 
 	return (
