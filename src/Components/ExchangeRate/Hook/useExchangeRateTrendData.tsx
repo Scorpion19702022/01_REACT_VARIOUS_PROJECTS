@@ -39,7 +39,9 @@ const useExchangeRateTrendData = () => {
 		setCheckStartkDate(e)
 	}
 
-	const handleChooseTrendDate = () => {}
+	const handleChooseTrendDate = () => {
+		setQuantityDays(45)
+	}
 
 	useEffect(() => {
 		if (!startDate || !endDate) return
