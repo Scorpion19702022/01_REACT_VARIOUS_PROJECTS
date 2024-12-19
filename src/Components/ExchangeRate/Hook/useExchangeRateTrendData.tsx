@@ -2,13 +2,11 @@ import { useEffect, useState } from 'react'
 import { FilteredTrendData, TrendData } from '../Types/Types'
 
 const useExchangeRateTrendData = () => {
-	// let quantityDays = 14
-
 	const [quantityDays, setQuantityDays] = useState<number>(14)
 
 	let currentDateForHistory = new Date()
 
-	currentDateForHistory.setDate(currentDateForHistory.getDate() - 75)
+	currentDateForHistory.setDate(currentDateForHistory.getDate() - 90)
 
 	let previousDate = currentDateForHistory.toISOString().split('T')[0]
 
@@ -42,16 +40,16 @@ const useExchangeRateTrendData = () => {
 	}
 
 	const handleChooseTrendDate = () => {
-		setStartDate(checkStartDate)
+		if (!checkStartDate || !startDate) return
+
+		const selectedDate = new Date(checkStartDate)
+		const startDateObj = new Date(startDate)
+
+		const diffTime = Math.abs(startDateObj.getTime() - selectedDate.getTime())
+		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+
+		setQuantityDays(diffDays)
 	}
-
-	// useEffect(() => {
-	// 	if (checkStartDate === '') {
-	// 		setCheckStartkDate(startDateTrend)
-	// 	}
-	// }, [checkStartDate])
-
-	console.log(checkStartDate)
 
 	useEffect(() => {
 		if (!startDate || !endDate) return
