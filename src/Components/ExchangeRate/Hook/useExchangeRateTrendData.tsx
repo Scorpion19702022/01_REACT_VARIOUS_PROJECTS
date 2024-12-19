@@ -39,29 +39,7 @@ const useExchangeRateTrendData = () => {
 		setCheckStartkDate(e)
 	}
 
-	const handleChooseTrendDate = () => {
-		if (!checkStartDate || !startDate) return
-
-		const selectedDate = new Date(checkStartDate)
-		const currentStartDate = new Date(startDate)
-
-		const diffTime = Math.abs(currentStartDate.getTime() - selectedDate.getTime())
-		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-
-		console.log('Nowa ilość dni:', diffDays)
-		setQuantityDays(diffDays)
-
-		// Opcjonalnie przelicz startDate w tej samej funkcji
-		const newStartDate = new Date()
-		newStartDate.setDate(currentDate.getDate() - diffDays)
-		setStartDate(newStartDate.toISOString().split('T')[0])
-	}
-
-	useEffect(() => {
-		const newStartDate = new Date()
-		newStartDate.setDate(currentDate.getDate() - quantityDays)
-		setStartDate(newStartDate.toISOString().split('T')[0])
-	}, [quantityDays])
+	const handleChooseTrendDate = () => {}
 
 	useEffect(() => {
 		if (!startDate || !endDate) return
