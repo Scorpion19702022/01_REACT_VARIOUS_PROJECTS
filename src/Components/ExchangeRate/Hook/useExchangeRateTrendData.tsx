@@ -37,8 +37,6 @@ const useExchangeRateTrendData = () => {
 
 	const [checkStartDate, setCheckStartkDate] = useState<string>(startDateTrend)
 
-	console.log(chooseStartDate)
-
 	const handleChangeDate = (e: string) => {
 		setCheckStartkDate(e)
 	}
@@ -46,6 +44,14 @@ const useExchangeRateTrendData = () => {
 	const handleChooseTrendDate = () => {
 		setStartDate(checkStartDate)
 	}
+
+	// useEffect(() => {
+	// 	if (checkStartDate === '') {
+	// 		setCheckStartkDate(startDateTrend)
+	// 	}
+	// }, [checkStartDate])
+
+	console.log(checkStartDate)
 
 	useEffect(() => {
 		if (!startDate || !endDate) return
