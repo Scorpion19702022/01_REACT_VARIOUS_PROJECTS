@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import styles from './Styles/ExchangeRateChart.module.css'
 
@@ -22,8 +22,6 @@ const ExchangeRateChart = () => {
 	ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 	const labels = filteredTrendData.USD.map(item => item.date)
-
-	console.log(checkStartDate)
 
 	const chartData = {
 		labels,
@@ -130,7 +128,7 @@ const ExchangeRateChart = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_chart}>
-				<Line key={`${checkStartDate}-${endDate}`} data={chartData} options={chartOptions} />
+				<Line data={chartData} options={chartOptions} />
 			</div>
 		</section>
 	)
