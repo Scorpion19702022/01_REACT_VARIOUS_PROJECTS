@@ -21,9 +21,11 @@ const useHistoryExchageRate = () => {
 		currentDate.setDate(currentDate.getDate() - 4)
 	} else if (hour <= 12) {
 		currentDate.setDate(currentDate.getDate() - 2)
-	} else {
+	} else if (hour > 12) {
 		currentDate.setDate(currentDate.getDate() - 1)
 	}
+
+	console.log(hour)
 
 	let previousDate = currentDate.toISOString().split('T')[0]
 

@@ -43,8 +43,6 @@ const useExchangeRateTrendData = () => {
 		setQuantityDays(45)
 	}
 
-	console.log(quantityDays)
-
 	useEffect(() => {
 		if (!startDate || !endDate) return
 
