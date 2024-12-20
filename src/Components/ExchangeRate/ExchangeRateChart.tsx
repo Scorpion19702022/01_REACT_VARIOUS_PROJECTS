@@ -23,6 +23,9 @@ const ExchangeRateChart = () => {
 
 	const labels = filteredTrendData.USD.map(item => item.date)
 
+	console.log('checkStartDate in Chart:', checkStartDate)
+	console.log('endDate in Chart:', endDate)
+
 	const chartData = {
 		labels,
 		datasets: [
@@ -128,7 +131,7 @@ const ExchangeRateChart = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_chart}>
-				<Line data={chartData} options={chartOptions} />
+				<Line key={`${checkStartDate}-${endDate}`} data={chartData} options={chartOptions} />
 			</div>
 		</section>
 	)
