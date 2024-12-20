@@ -17,7 +17,7 @@ import {
 import useExchangeRateTrendData from './Hook/useExchangeRateTrendData'
 
 const ExchangeRateChart = () => {
-	const { startDate, endDate, filteredTrendData } = useExchangeRateTrendData()
+	const { checkStartDate, endDate, filteredTrendData } = useExchangeRateTrendData()
 
 	ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
@@ -75,7 +75,7 @@ const ExchangeRateChart = () => {
 		plugins: {
 			title: {
 				display: true,
-				text: `Trend kursów od ${startDate} do ${endDate}`,
+				text: `Trend kursów od ${checkStartDate} do ${endDate}`,
 				color: 'white',
 			},
 			tooltip: {

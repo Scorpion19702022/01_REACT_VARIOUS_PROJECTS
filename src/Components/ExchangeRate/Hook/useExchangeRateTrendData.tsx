@@ -33,22 +33,22 @@ const useExchangeRateTrendData = () => {
 
 	const [chooseStartDate, setChooseStartDate] = useState<string>(previousDate)
 
-	const [checkStartDate, setCheckStartkDate] = useState<string>(startDateTrend)
+	const [checkStartDate, setCheckStartkDate] = useState<string>(startDate)
 
 	const handleChangeDate = (e: string) => {
-		setChooseStartDate(e)
+		setCheckStartkDate(e)
 	}
 
 	const handleChooseTrendDate = () => {
-		setStartDate(chooseStartDate)
+		setCheckStartkDate(checkStartDate)
 	}
 
-	console.log(startDate)
+	console.log(checkStartDate)
 
 	useEffect(() => {
-		if (!startDate || !endDate) return
+		if (!checkStartDate || !endDate) return
 
-		const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${startDate}/${endDate}/?format=json`
+		const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkStartDate}/${endDate}/?format=json`
 
 		const fetchTrendData = async () => {
 			try {
@@ -75,7 +75,7 @@ const useExchangeRateTrendData = () => {
 		}
 
 		fetchTrendData()
-	}, [startDate, endDate])
+	}, [checkStartDate, endDate])
 
 	return {
 		startDate,
