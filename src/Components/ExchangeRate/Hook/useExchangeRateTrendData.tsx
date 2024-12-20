@@ -40,17 +40,20 @@ const useExchangeRateTrendData = () => {
 	}
 
 	const handleChooseTrendDate = () => {
-		setCheckStartkDate(checkStartDate)
+		setCheckStartkDate(prev => {
+			const updatedDate = prev
+			return updatedDate
+		})
 	}
 
 	console.log(checkStartDate)
 
 	useEffect(() => {
-		if (!checkStartDate || !endDate) return
-
-		const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkStartDate}/${endDate}/?format=json`
-
 		const fetchTrendData = async () => {
+			if (!checkStartDate || !endDate) return
+
+			const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkStartDate}/${endDate}/?format=json`
+
 			try {
 				const response = await fetch(trendDataURL)
 				if (!response.ok) throw new Error('Błąd pobierania danych')
