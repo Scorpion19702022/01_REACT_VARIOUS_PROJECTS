@@ -25,8 +25,6 @@ const useHistoryExchageRate = () => {
 		currentDate.setDate(currentDate.getDate() - 1)
 	}
 
-	console.log(hour)
-
 	let previousDate = currentDate.toISOString().split('T')[0]
 
 	const [historyDate, setHistoryDate] = useState<string>(previousDate)
