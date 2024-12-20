@@ -39,7 +39,7 @@ const ExchangeRateTrendData = () => {
 							<input
 								className={styles.input}
 								type='date'
-								value={endDateTrend}
+								value={checkStartDate}
 								max={startDate}
 								min={chooseStartDate}
 								onChange={e => handleChangeDate(e.target.value)}

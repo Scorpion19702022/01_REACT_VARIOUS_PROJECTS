@@ -36,14 +36,14 @@ const useExchangeRateTrendData = () => {
 	const [checkStartDate, setCheckStartkDate] = useState<string>(startDateTrend)
 
 	const handleChangeDate = (e: string) => {
-		setCheckStartkDate(e)
+		setChooseStartDate(e)
 	}
 
 	const handleChooseTrendDate = () => {
-		setQuantityDays(45)
+		setStartDate(chooseStartDate)
 	}
 
-	console.log(checkStartDate)
+	console.log(startDate)
 
 	useEffect(() => {
 		if (!startDate || !endDate) return
