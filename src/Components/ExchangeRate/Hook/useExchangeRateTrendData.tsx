@@ -35,15 +35,11 @@ const useExchangeRateTrendData = () => {
 
 	const [checkStartDate, setCheckStartkDate] = useState<string>(startDate)
 
-	console.log(checkStartDate)
-
 	useEffect(() => {
 		const fetchTrendData = async () => {
 			if (!checkStartDate || !endDate) return
 
 			const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkStartDate}/${endDate}/?format=json`
-
-			console.log(trendDataURL)
 
 			try {
 				const response = await fetch(trendDataURL)

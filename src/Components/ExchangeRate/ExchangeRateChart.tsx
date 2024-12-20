@@ -23,6 +23,8 @@ const ExchangeRateChart = () => {
 
 	const labels = filteredTrendData.USD.map(item => item.date)
 
+	console.log(checkStartDate)
+
 	const chartData = {
 		labels,
 		datasets: [
