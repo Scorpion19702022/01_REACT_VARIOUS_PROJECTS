@@ -139,7 +139,7 @@ const ExchangeRateChart = () => {
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_chart}>
-				<Line data={chartData} options={chartOptions} />
+				<Line key={JSON.stringify(chartData)} data={chartData} options={chartOptions} />
 			</div>
 		</section>
 	)
