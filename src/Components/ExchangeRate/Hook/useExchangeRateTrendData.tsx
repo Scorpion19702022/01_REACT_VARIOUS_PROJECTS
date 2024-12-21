@@ -91,7 +91,7 @@ const useExchangeRateTrendData = () => {
 		}
 
 		fetchTrendData()
-	}, [checkStartDate, endDate])
+	}, [checkStartDate, endDate, updateTrendData])
 
 	return {
 		startDate,
