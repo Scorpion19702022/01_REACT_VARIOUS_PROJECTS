@@ -54,7 +54,7 @@ const ExchangeRateTrendData = () => {
 					</div>
 				</div>
 			</div>
-			<ExchangeRateChart />
+			<ExchangeRateChart key={checkStartDate} />
 		</section>
 	)
 }
