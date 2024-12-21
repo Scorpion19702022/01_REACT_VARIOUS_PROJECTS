@@ -54,7 +54,7 @@ const useExchangeRateTrendData = () => {
 		setUpdateTredData(false)
 	}
 
-	console.log(filteredTrendData)
+	console.log('hook', filteredTrendData)
 
 	useEffect(() => {
 		const fetchTrendData = async () => {
