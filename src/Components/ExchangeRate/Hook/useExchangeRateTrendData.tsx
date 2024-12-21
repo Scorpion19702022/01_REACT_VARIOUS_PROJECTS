@@ -71,16 +71,12 @@ const useExchangeRateTrendData = () => {
 		setCheckStartkDate(e)
 	}
 
-	console.log('Przed zmianą:', filteredTrendData)
-
 	const handleChooseTrendDate = () => {
 		setCheckStartkDate(prev => {
-			const updatedDate = new Date(prev)
-			updatedDate.setDate(updatedDate.getDate() + 1) // Przykładowa zmiana
-			return updatedDate.toISOString().split('T')[0]
+			const updatedDate = prev
+			return updatedDate
 		})
 	}
-	console.log('Po zmianie:', filteredTrendData)
 
 	return {
 		startDate,
