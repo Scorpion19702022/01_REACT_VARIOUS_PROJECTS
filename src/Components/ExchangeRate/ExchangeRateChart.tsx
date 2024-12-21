@@ -78,8 +78,6 @@ const ExchangeRateChart = () => {
 		})
 	}, [filteredTrendData])
 
-	console.log('chartData:', chartData)
-
 	const chartOptions = {
 		responsive: true,
 		maintainAspectRatio: false,
