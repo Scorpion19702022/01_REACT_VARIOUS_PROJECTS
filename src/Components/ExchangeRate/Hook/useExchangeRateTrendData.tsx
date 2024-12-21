@@ -47,6 +47,10 @@ const useExchangeRateTrendData = () => {
 				const updatedDate = prev
 				return updatedDate
 			})
+			setFilteredTrendData(prev => {
+				const updatedDate = prev
+				return updatedDate
+			})
 		}
 	}, [updateTrendData])
 
@@ -55,6 +59,7 @@ const useExchangeRateTrendData = () => {
 	}
 
 	console.log('hook', filteredTrendData)
+	console.log('hook', checkStartDate)
 
 	useEffect(() => {
 		const fetchTrendData = async () => {

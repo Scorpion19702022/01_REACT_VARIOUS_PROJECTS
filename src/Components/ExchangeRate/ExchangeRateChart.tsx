@@ -24,6 +24,7 @@ const ExchangeRateChart = () => {
 	let labels = filteredTrendData.USD.map(item => item.date)
 
 	console.log('komponent', filteredTrendData)
+	console.log('komponent', checkStartDate)
 
 	const chartData = {
 		labels,
