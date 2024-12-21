@@ -21,7 +21,9 @@ const ExchangeRateChart = () => {
 
 	ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
-	const labels = filteredTrendData.USD.map(item => item.date)
+	let labels = filteredTrendData.USD.map(item => item.date)
+
+	console.log(filteredTrendData)
 
 	const chartData = {
 		labels,
