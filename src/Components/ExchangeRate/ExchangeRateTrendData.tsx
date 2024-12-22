@@ -14,6 +14,7 @@ const ExchangeRateTrendData = () => {
 		chooseStartDate,
 		handleChangeDate,
 		handleChooseTrendDate,
+		handleCleanChooseTrendDate,
 	} = useExchangeRateTrendData()
 
 	return (
@@ -49,7 +50,9 @@ const ExchangeRateTrendData = () => {
 							<button className={styles.btn} onClick={handleChooseTrendDate}>
 								sprawdź
 							</button>
-							<button className={styles.btn}>wyczyść</button>
+							<button className={styles.btn} onClick={handleCleanChooseTrendDate}>
+								wyczyść
+							</button>
 						</div>
 					</div>
 				</div>

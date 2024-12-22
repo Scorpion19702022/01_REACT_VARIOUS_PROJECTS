@@ -58,6 +58,10 @@ const useExchangeRateTrendData = () => {
 		setUpdateTredData(false)
 	}
 
+	const handleCleanChooseTrendDate = () => {
+		setUpdateTredData(true)
+	}
+
 	console.log('hook', filteredTrendData)
 	console.log('hook', checkStartDate)
 
@@ -107,6 +111,7 @@ const useExchangeRateTrendData = () => {
 		checkStartDate,
 		handleChangeDate,
 		handleChooseTrendDate,
+		handleCleanChooseTrendDate,
 		updateTrendData,
 	}
 }
