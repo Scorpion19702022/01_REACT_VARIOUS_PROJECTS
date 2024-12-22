@@ -37,39 +37,26 @@ const useExchangeRateTrendData = () => {
 
 	const [updateTrendData, setUpdateTredData] = useState<boolean>(true)
 
-	useEffect(() => {
-		const updatedStartDate = new Date()
-		updatedStartDate.setDate(new Date().getDate() - quantityDays)
-		setStartDate(updatedStartDate.toISOString().split('T')[0])
-	}, [quantityDays])
-
 	const handleChangeDate = (e: string) => {
 		setStartDate(e)
 	}
 
-	useEffect(() => {
-		if (!updateTrendData) {
-			setStartDate(prev => {
-				const updatedDate = prev
-				return updatedDate
-			})
-			// setFilteredTrendData(prev => {
-			// 	const updatedDate = prev
-			// 	return updatedDate
-			// })
-			setFilteredTrendData(prev => ({
-				...prev,
-			}))
-		}
-	}, [updateTrendData])
-
 	const handleChooseTrendDate = () => {
 		setUpdateTredData(false)
+		if (startDate && endDate && !updateTrendData) {
+			const start = new Date(startDate)
+			const end = new Date(endDate)
+			const diffTime = Math.abs(end.getTime() - start.getTime())
+			const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+			setQuantityDays(diffDays)
+		}
 	}
 
 	const handleCleanChooseTrendDate = () => {
 		setUpdateTredData(true)
 	}
+
+	console.log(quantityDays)
 
 	useEffect(() => {
 		const fetchTrendData = async () => {
@@ -100,16 +87,10 @@ const useExchangeRateTrendData = () => {
 			}
 		}
 
-		if (updateTrendData) {
-			fetchTrendData()
+		if (updateTrendData && startDate && endDate) {
+			fetchTrendData() // Twoja funkcja do pobierania danych
 		}
-	}, [startDate, endDate, updateTrendData])
-
-	useEffect(() => {
-		console.log('Stan updateTrendData:', updateTrendData)
-		console.log('Stan checkStartDate:', startDate)
-		console.log('Stan filteredTrendData:', filteredTrendData)
-	}, [updateTrendData, startDate, filteredTrendData])
+	}, [startDate, endDate, quantityDays])
 
 	return {
 		startDate,
