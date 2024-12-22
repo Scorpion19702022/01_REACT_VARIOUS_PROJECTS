@@ -5,9 +5,7 @@ const useExchangeRateTrendData = () => {
 	const [quantityDays, setQuantityDays] = useState<number>(14)
 
 	let currentDateForHistory = new Date()
-
 	currentDateForHistory.setDate(currentDateForHistory.getDate() - 90)
-
 	let previousDate = currentDateForHistory.toISOString().split('T')[0]
 
 	const currentDate = new Date()
@@ -32,10 +30,16 @@ const useExchangeRateTrendData = () => {
 	})
 
 	const [chooseStartDate, setChooseStartDate] = useState<string>(previousDate)
-
-	// const [checkStartDate, setCheckStartkDate] = useState<string>(startDate)
-
 	const [updateTrendData, setUpdateTredData] = useState<boolean>(true)
+
+	useEffect(() => {
+		if (quantityDays) {
+			const startNewDate = new Date()
+			startNewDate.setDate(currentDate.getDate() - quantityDays)
+			setStartDate(startNewDate.toISOString().split('T')[0])
+			setEndDate(currentDate.toISOString().split('T')[0])
+		}
+	}, [quantityDays])
 
 	const handleChangeDate = (e: string) => {
 		setStartDate(e)
@@ -43,7 +47,7 @@ const useExchangeRateTrendData = () => {
 
 	const handleChooseTrendDate = () => {
 		setUpdateTredData(false)
-		if (startDate && endDate && !updateTrendData) {
+		if (startDate && endDate && updateTrendData) {
 			const start = new Date(startDate)
 			const end = new Date(endDate)
 			const diffTime = Math.abs(end.getTime() - start.getTime())
@@ -56,7 +60,7 @@ const useExchangeRateTrendData = () => {
 		setUpdateTredData(true)
 	}
 
-	console.log(quantityDays)
+	console.log(`Current quantityDays: ${quantityDays} ${startDate}`)
 
 	useEffect(() => {
 		const fetchTrendData = async () => {
@@ -65,6 +69,7 @@ const useExchangeRateTrendData = () => {
 			const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${startDate}/${endDate}/?format=json`
 
 			try {
+				setLoading(true)
 				const response = await fetch(trendDataURL)
 				if (!response.ok) throw new Error('Błąd pobierania danych')
 				const data: TrendData[] = await response.json()
@@ -88,9 +93,9 @@ const useExchangeRateTrendData = () => {
 		}
 
 		if (updateTrendData && startDate && endDate) {
-			fetchTrendData() // Twoja funkcja do pobierania danych
+			fetchTrendData()
 		}
-	}, [startDate, endDate, quantityDays])
+	}, [startDate, endDate, updateTrendData, quantityDays])
 
 	return {
 		startDate,
@@ -103,7 +108,6 @@ const useExchangeRateTrendData = () => {
 		trendData,
 		filteredTrendData,
 		chooseStartDate,
-		// checkStartDate,
 		handleChangeDate,
 		handleChooseTrendDate,
 		handleCleanChooseTrendDate,

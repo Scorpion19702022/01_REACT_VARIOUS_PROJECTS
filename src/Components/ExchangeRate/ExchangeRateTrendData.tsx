@@ -12,6 +12,7 @@ const ExchangeRateTrendData = () => {
 		endDateTrend,
 		// checkStartDate,
 		chooseStartDate,
+		filteredTrendData,
 		handleChangeDate,
 		handleChooseTrendDate,
 		handleCleanChooseTrendDate,
