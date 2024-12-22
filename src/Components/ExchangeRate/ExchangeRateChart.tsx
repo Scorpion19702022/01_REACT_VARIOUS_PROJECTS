@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import styles from './Styles/ExchangeRateChart.module.css'
 
@@ -22,8 +22,6 @@ const ExchangeRateChart = () => {
 	const { checkStartDate, endDate, filteredTrendData, updateTrendData } = useExchangeRateTrendData()
 
 	let labels = filteredTrendData.USD.map(item => item.date)
-
-	console.log(updateTrendData)
 
 	const chartData = {
 		labels,

@@ -47,10 +47,13 @@ const useExchangeRateTrendData = () => {
 				const updatedDate = prev
 				return updatedDate
 			})
-			setFilteredTrendData(prev => {
-				const updatedDate = prev
-				return updatedDate
-			})
+			// setFilteredTrendData(prev => {
+			// 	const updatedDate = prev
+			// 	return updatedDate
+			// })
+			setFilteredTrendData(prev => ({
+				...prev,
+			}))
 		}
 	}, [updateTrendData])
 
@@ -91,8 +94,16 @@ const useExchangeRateTrendData = () => {
 			}
 		}
 
-		fetchTrendData()
-	}, [checkStartDate, endDate])
+		if (updateTrendData && checkStartDate && endDate) {
+			fetchTrendData()
+		}
+	}, [checkStartDate, endDate, updateTrendData])
+
+	useEffect(() => {
+		console.log('Stan updateTrendData:', updateTrendData)
+		console.log('Stan checkStartDate:', checkStartDate)
+		console.log('Stan filteredTrendData:', filteredTrendData)
+	}, [updateTrendData, checkStartDate, filteredTrendData])
 
 	return {
 		startDate,
