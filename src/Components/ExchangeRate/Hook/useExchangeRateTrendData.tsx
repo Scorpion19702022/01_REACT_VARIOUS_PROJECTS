@@ -37,6 +37,10 @@ const useExchangeRateTrendData = () => {
 
 	const [updateTrendData, setUpdateTredData] = useState<boolean>(true)
 
+	const [trendDataURL, setTrendDataURL] = useState<string>(
+		`https://api.nbp.pl/api/exchangerates/tables/A/${checkStartDate}/${endDate}/?format=json`
+	)
+
 	const handleChangeDate = (e: string) => {
 		setCheckStartkDate(e)
 	}
@@ -51,8 +55,9 @@ const useExchangeRateTrendData = () => {
 				const updatedDate = prev
 				return updatedDate
 			})
+			setTrendDataURL(`https://api.nbp.pl/api/exchangerates/tables/A/${checkStartDate}/${endDate}/?format=json`)
 		}
-	}, [updateTrendData])
+	}, [updateTrendData, trendDataURL])
 
 	const handleChooseTrendDate = () => {
 		setUpdateTredData(false)
@@ -62,40 +67,65 @@ const useExchangeRateTrendData = () => {
 		setUpdateTredData(true)
 	}
 
-	console.log('hook', filteredTrendData)
-	console.log('hook', checkStartDate)
+	console.log(trendDataURL)
 
 	useEffect(() => {
 		const fetchTrendData = async () => {
 			if (!checkStartDate || !endDate) return
 
-			const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkStartDate}/${endDate}/?format=json`
+			// const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkStartDate}/${endDate}/?format=json`
 
-			try {
-				const response = await fetch(trendDataURL)
-				if (!response.ok) throw new Error('Błąd pobierania danych')
-				const data: TrendData[] = await response.json()
-				setTrendData(data)
+			if (updateTrendData) {
+				try {
+					const response = await fetch(trendDataURL)
+					if (!response.ok) throw new Error('Błąd pobierania danych')
+					const data: TrendData[] = await response.json()
+					setTrendData(data)
 
-				const currencies = ['USD', 'EUR', 'CHF', 'GBP']
-				const preparedData = currencies.reduce((acc, code) => {
-					acc[code] = data.flatMap(entry => {
-						const rate = entry.rates.find(r => r.code === code)
-						return rate ? [{ date: entry.effectiveDate, value: rate.mid }] : []
-					})
-					return acc
-				}, {} as FilteredTrendData)
+					const currencies = ['USD', 'EUR', 'CHF', 'GBP']
+					const preparedData = currencies.reduce((acc, code) => {
+						acc[code] = data.flatMap(entry => {
+							const rate = entry.rates.find(r => r.code === code)
+							return rate ? [{ date: entry.effectiveDate, value: rate.mid }] : []
+						})
+						return acc
+					}, {} as FilteredTrendData)
 
-				setFilteredTrendData(preparedData)
-			} catch (err) {
-				setError((err as Error).message)
-			} finally {
-				setLoading(false)
+					setFilteredTrendData(preparedData)
+				} catch (err) {
+					setError((err as Error).message)
+				} finally {
+					setLoading(false)
+				}
+			}
+
+			if (!updateTrendData) {
+				try {
+					const response = await fetch(trendDataURL)
+					if (!response.ok) throw new Error('Błąd pobierania danych')
+					const data: TrendData[] = await response.json()
+					setTrendData(data)
+
+					const currencies = ['USD', 'EUR', 'CHF', 'GBP']
+					const preparedData = currencies.reduce((acc, code) => {
+						acc[code] = data.flatMap(entry => {
+							const rate = entry.rates.find(r => r.code === code)
+							return rate ? [{ date: entry.effectiveDate, value: rate.mid }] : []
+						})
+						return acc
+					}, {} as FilteredTrendData)
+
+					setFilteredTrendData(preparedData)
+				} catch (err) {
+					setError((err as Error).message)
+				} finally {
+					setLoading(false)
+				}
 			}
 		}
 
 		fetchTrendData()
-	}, [checkStartDate, endDate])
+	}, [updateTrendData])
 
 	return {
 		startDate,
