@@ -95,9 +95,9 @@ const useExchangeRateTrendData = () => {
 		}
 
 		if (updateTrendData && startDate && endDate) {
-			fetchTrendData() // Twoja funkcja do pobierania danych
+			fetchTrendData()
 		}
-	}, [startDate, endDate])
+	}, [startDate, endDate, updateTrendData])
 
 	useEffect(() => {
 		console.log('Stan updateTrendData:', updateTrendData)
