@@ -60,8 +60,6 @@ const useExchangeRateTrendData = () => {
 		setUpdateTredData(true)
 	}
 
-	console.log(`Current quantityDays: ${quantityDays} ${startDate}`)
-
 	useEffect(() => {
 		const fetchTrendData = async () => {
 			if (!startDate || !endDate) return
@@ -84,7 +82,9 @@ const useExchangeRateTrendData = () => {
 					return acc
 				}, {} as FilteredTrendData)
 
-				setFilteredTrendData(preparedData) // Make sure to update this data
+				console.log('Dane przygotowane do ustawienia stanu:', preparedData)
+
+				setFilteredTrendData(preparedData)
 			} catch (err) {
 				setError((err as Error).message)
 			} finally {
@@ -96,6 +96,10 @@ const useExchangeRateTrendData = () => {
 			fetchTrendData()
 		}
 	}, [startDate, endDate, updateTrendData, quantityDays])
+
+	useEffect(() => {
+		console.log('Stan filteredTrendData zmieniony:', filteredTrendData)
+	}, [filteredTrendData])
 
 	return {
 		startDate,
