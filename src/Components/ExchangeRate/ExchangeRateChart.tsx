@@ -23,6 +23,10 @@ const ExchangeRateChart = () => {
 
 	let labels = filteredTrendData.USD.map(item => item.date)
 
+	useEffect(() => {
+		console.log('Data has been updated in ExchangeRateChart:', filteredTrendData)
+	}, [filteredTrendData])
+
 	const chartData = {
 		labels,
 		datasets: [

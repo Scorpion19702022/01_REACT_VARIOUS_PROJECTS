@@ -84,7 +84,7 @@ const useExchangeRateTrendData = () => {
 					return acc
 				}, {} as FilteredTrendData)
 
-				setFilteredTrendData(preparedData)
+				setFilteredTrendData(preparedData) // Make sure to update this data
 			} catch (err) {
 				setError((err as Error).message)
 			} finally {
