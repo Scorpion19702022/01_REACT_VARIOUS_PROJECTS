@@ -33,17 +33,17 @@ const useExchangeRateTrendData = () => {
 
 	const [chooseStartDate, setChooseStartDate] = useState<string>(previousDate)
 
-	const [checkStartDate, setCheckStartkDate] = useState<string>(startDate)
+	// const [checkStartDate, setCheckStartkDate] = useState<string>(startDate)
 
 	const [updateTrendData, setUpdateTredData] = useState<boolean>(true)
 
 	const handleChangeDate = (e: string) => {
-		setCheckStartkDate(e)
+		setStartDate(e)
 	}
 
 	useEffect(() => {
 		if (!updateTrendData) {
-			setCheckStartkDate(prev => {
+			setStartDate(prev => {
 				const updatedDate = prev
 				return updatedDate
 			})
@@ -67,9 +67,9 @@ const useExchangeRateTrendData = () => {
 
 	useEffect(() => {
 		const fetchTrendData = async () => {
-			if (!checkStartDate || !endDate) return
+			if (!startDate || !endDate) return
 
-			const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${checkStartDate}/${endDate}/?format=json`
+			const trendDataURL = `https://api.nbp.pl/api/exchangerates/tables/A/${startDate}/${endDate}/?format=json`
 
 			try {
 				const response = await fetch(trendDataURL)
@@ -94,16 +94,16 @@ const useExchangeRateTrendData = () => {
 			}
 		}
 
-		if (updateTrendData && checkStartDate && endDate) {
-			fetchTrendData()
+		if (updateTrendData && startDate && endDate) {
+			fetchTrendData() // Twoja funkcja do pobierania danych
 		}
-	}, [checkStartDate, endDate, updateTrendData])
+	}, [startDate, endDate])
 
 	useEffect(() => {
 		console.log('Stan updateTrendData:', updateTrendData)
-		console.log('Stan checkStartDate:', checkStartDate)
+		console.log('Stan checkStartDate:', startDate)
 		console.log('Stan filteredTrendData:', filteredTrendData)
-	}, [updateTrendData, checkStartDate, filteredTrendData])
+	}, [updateTrendData, startDate, filteredTrendData])
 
 	return {
 		startDate,
@@ -116,7 +116,7 @@ const useExchangeRateTrendData = () => {
 		trendData,
 		filteredTrendData,
 		chooseStartDate,
-		checkStartDate,
+		// checkStartDate,
 		handleChangeDate,
 		handleChooseTrendDate,
 		handleCleanChooseTrendDate,

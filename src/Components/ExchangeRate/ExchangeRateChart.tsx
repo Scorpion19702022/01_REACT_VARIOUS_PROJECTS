@@ -19,9 +19,15 @@ import useExchangeRateTrendData from './Hook/useExchangeRateTrendData'
 ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 const ExchangeRateChart = () => {
-	const { checkStartDate, endDate, filteredTrendData, updateTrendData } = useExchangeRateTrendData()
+	const { startDate, endDate, filteredTrendData, updateTrendData } = useExchangeRateTrendData()
 
 	let labels = filteredTrendData.USD.map(item => item.date)
+
+	useEffect(() => {
+		console.log('Stan updateTrendData:', updateTrendData)
+		console.log('Stan checkStartDate:', startDate)
+		console.log('Stan filteredTrendData:', filteredTrendData)
+	}, [updateTrendData, startDate, filteredTrendData])
 
 	const chartData = {
 		labels,
@@ -75,7 +81,7 @@ const ExchangeRateChart = () => {
 		plugins: {
 			title: {
 				display: true,
-				text: `Trend kursów od ${checkStartDate} do ${endDate}`,
+				text: `Trend kursów od ${startDate} do ${endDate}`,
 				color: 'white',
 			},
 			tooltip: {
