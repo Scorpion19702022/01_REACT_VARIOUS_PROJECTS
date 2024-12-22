@@ -37,6 +37,12 @@ const useExchangeRateTrendData = () => {
 
 	const [updateTrendData, setUpdateTredData] = useState<boolean>(true)
 
+	useEffect(() => {
+		const updatedStartDate = new Date()
+		updatedStartDate.setDate(new Date().getDate() - quantityDays)
+		setStartDate(updatedStartDate.toISOString().split('T')[0])
+	}, [quantityDays])
+
 	const handleChangeDate = (e: string) => {
 		setStartDate(e)
 	}
@@ -94,7 +100,7 @@ const useExchangeRateTrendData = () => {
 			}
 		}
 
-		if (updateTrendData && startDate && endDate) {
+		if (updateTrendData) {
 			fetchTrendData()
 		}
 	}, [startDate, endDate, updateTrendData])
