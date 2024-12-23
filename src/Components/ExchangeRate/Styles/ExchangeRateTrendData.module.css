@@ -56,12 +56,18 @@
 }
 
 .text_info_trend {
+	color: var(--color-color02);
+	font-size: 1.2em;
+}
+
+.text_info_trend_span {
 	color: var(--color-color01);
+	font-weight: 700;
 }
 
 .text_info {
 	text-align: center;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	color: var(--color-color03);
 	padding: 0.2em 0em;
 }

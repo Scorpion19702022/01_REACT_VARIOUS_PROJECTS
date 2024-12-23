@@ -21,13 +21,14 @@ const ExchangeRateTrendData = () => {
 			<h2 className={styles.heading}>Trend</h2>
 
 			<p className={styles.text_info_trend}>
-				Wstępnie wykres pokazuje trend kursów walut z ostatich {quantityDays} dni
+				Zakres dni na wykresie: <span className={styles.text_info_trend_span}>{quantityDays}</span>
 			</p>
 			<div className={styles.box_navigation}>
 				<div className={styles.box_info_text}>
+					<p className={styles.text_info}>Maksymalnie możesz wybrać 90 dni wstecz.</p>
 					<p className={styles.text_info}>
-						Maksymalnie możesz wybrać 90 dni wstecz. Gdy w danym okresie wystąpił dzień wolny, data nie będzie
-						wyświetlana, a dane kursów będą z dnia ostatniej aktualizacji
+						Gdy w danym okresie wystąpił dzień wolny, data nie będzie wyświetlana, a dane kursów będą z dnia ostatniej
+						aktualizacji
 					</p>
 				</div>
 				<div className={styles.line}></div>

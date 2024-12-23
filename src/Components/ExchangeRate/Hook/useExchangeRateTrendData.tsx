@@ -32,19 +32,19 @@ const useExchangeRateTrendData = () => {
 	const [chooseStartDate, setChooseStartDate] = useState<string>(previousDate)
 	const [updateTrendData, setUpdateTredData] = useState<boolean>(true)
 
-	// useEffect(() => {
-	// 	if (!updateTrendData) {
-	// 		const start = new Date(startDate)
-	// 		const end = new Date(endDate)
-	// 		const diffTime = Math.abs(end.getTime() - start.getTime())
-	// 		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-	// 		setQuantityDays(diffDays)
-	// 		const startNewDate = new Date()
-	// 		startNewDate.setDate(currentDate.getDate() - quantityDays)
-	// 		setStartDate(startNewDate.toISOString().split('T')[0])
-	// 		setEndDate(currentDate.toISOString().split('T')[0])
-	// 	}
-	// }, [updateTrendData])
+	useEffect(() => {
+		if (!updateTrendData) {
+			const start = new Date(startDate)
+			const end = new Date(endDate)
+			const diffTime = Math.abs(end.getTime() - start.getTime())
+			const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+			setQuantityDays(diffDays)
+			// const startNewDate = new Date()
+			// startNewDate.setDate(currentDate.getDate() - quantityDays)
+			// setStartDate(startNewDate.toISOString().split('T')[0])
+			// setEndDate(currentDate.toISOString().split('T')[0])
+		}
+	}, [updateTrendData])
 
 	const handleChangeDate = (e: string) => {
 		setStartDate(e)
@@ -53,11 +53,6 @@ const useExchangeRateTrendData = () => {
 	const handleChooseTrendDate = () => {
 		setUpdateTredData(false)
 		if (!updateTrendData) {
-			const start = new Date(startDate)
-			const end = new Date(endDate)
-			const diffTime = Math.abs(end.getTime() - start.getTime())
-			const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-			setQuantityDays(diffDays)
 			const startNewDate = new Date()
 			startNewDate.setDate(currentDate.getDate() - quantityDays)
 			setStartDate(startNewDate.toISOString().split('T')[0])
@@ -68,7 +63,6 @@ const useExchangeRateTrendData = () => {
 	const handleCleanChooseTrendDate = () => {
 		setUpdateTredData(true)
 		setQuantityDays(14)
-		setStartDate(startDateTrend)
 	}
 
 	useEffect(() => {
