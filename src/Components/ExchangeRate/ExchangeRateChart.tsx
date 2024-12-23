@@ -27,7 +27,7 @@ interface ExchangeRateChartProps {
 const ExchangeRateChart: React.FC<ExchangeRateChartProps> = ({ startDate, endDate, filteredTrendData }) => {
 	let labels = filteredTrendData.USD.map(item => item.date)
 
-	console.log(filteredTrendData)
+	console.log(startDate)
 
 	const chartData = {
 		labels,
