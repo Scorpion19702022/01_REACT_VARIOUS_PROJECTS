@@ -41,8 +41,10 @@ const useExchangeRateTrendData = () => {
 			setQuantityDays(diffDays)
 			const startNewDate = new Date()
 			startNewDate.setDate(currentDate.getDate() - quantityDays)
-			setStartDate(startNewDate.toISOString().split('T')[0])
-			setEndDate(currentDate.toISOString().split('T')[0])
+			// const startNewDate = new Date()
+			// startNewDate.setDate(currentDate.getDate() - quantityDays)
+			// setStartDate(startNewDate.toISOString().split('T')[0])
+			// setEndDate(currentDate.toISOString().split('T')[0])
 		}
 	}, [updateTrendData])
 
@@ -52,20 +54,23 @@ const useExchangeRateTrendData = () => {
 
 	const handleChooseTrendDate = () => {
 		setUpdateTredData(false)
-		// if (!updateTrendData) {
-		// 	const startNewDate = new Date()
-		// 	startNewDate.setDate(currentDate.getDate() - quantityDays)
-		// 	setStartDate(startNewDate.toISOString().split('T')[0])
-		// 	setEndDate(currentDate.toISOString().split('T')[0])
-		// }
+		if (!updateTrendData) {
+			// const startNewDate = new Date()
+			// startNewDate.setDate(currentDate.getDate() - quantityDays)
+			setStartDate(startNewDate.toISOString().split('T')[0])
+			setEndDate(currentDate.toISOString().split('T')[0])
+		}
 	}
+
+	useEffect(() => {
+		if (updateTrendData) {
+			setStartDate(startDateTrend)
+			setQuantityDays(14)
+		}
+	}, [updateTrendData])
 
 	const handleCleanChooseTrendDate = () => {
 		setUpdateTredData(true)
-		setQuantityDays(14)
-		if (updateTrendData) {
-			setStartDate(startDateTrend)
-		}
 	}
 
 	useEffect(() => {
@@ -105,7 +110,7 @@ const useExchangeRateTrendData = () => {
 		} else if (!updateTrendData) {
 			fetchTrendData()
 		}
-	}, [updateTrendData])
+	}, [updateTrendData, endDate])
 
 	return {
 		startDate,
