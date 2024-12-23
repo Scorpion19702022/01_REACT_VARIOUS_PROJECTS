@@ -26,7 +26,7 @@ const ExchangeRateTrendData = () => {
 			<div className={styles.box_navigation}>
 				<div className={styles.box_info_text}>
 					<p className={styles.text_info}>
-						Maksymalnie możesz wybrać 60 dni wstecz. Gdy w danym okresie wystąpił dzień wolny, data nie będzie
+						Maksymalnie możesz wybrać 90 dni wstecz. Gdy w danym okresie wystąpił dzień wolny, data nie będzie
 						wyświetlana, a dane kursów będą z dnia ostatniej aktualizacji
 					</p>
 				</div>
