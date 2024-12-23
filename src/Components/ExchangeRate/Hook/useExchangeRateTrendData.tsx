@@ -44,11 +44,6 @@ const useExchangeRateTrendData = () => {
 			setStartDate(startNewDate.toISOString().split('T')[0])
 			setEndDate(currentDate.toISOString().split('T')[0])
 		}
-
-		if (updateTrendData) {
-			setQuantityDays(14)
-			// setStartDate(startDateTrend)
-		}
 	}, [updateTrendData])
 
 	const handleChangeDate = (e: string) => {
@@ -67,6 +62,7 @@ const useExchangeRateTrendData = () => {
 
 	const handleCleanChooseTrendDate = () => {
 		setUpdateTredData(true)
+		setQuantityDays(14)
 		if (updateTrendData) {
 			setStartDate(startDateTrend)
 		}
