@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import styles from './Styles/ExchangeRateChart.module.css'
 
@@ -14,13 +14,17 @@ import {
 	Tooltip,
 	Legend,
 } from 'chart.js'
-import useExchangeRateTrendData from './Hook/useExchangeRateTrendData'
+import { FilteredTrendData } from './Types/Types'
 
 ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
-const ExchangeRateChart = () => {
-	const { startDate, endDate, filteredTrendData } = useExchangeRateTrendData()
+interface ExchangeRateChartProps {
+	startDate: string
+	endDate: string
+	filteredTrendData: FilteredTrendData
+}
 
+const ExchangeRateChart: React.FC<ExchangeRateChartProps> = ({ startDate, endDate, filteredTrendData }) => {
 	let labels = filteredTrendData.USD.map(item => item.date)
 
 	const chartData = {
