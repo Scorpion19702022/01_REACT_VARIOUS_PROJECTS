@@ -62,16 +62,17 @@ const useExchangeRateTrendData = () => {
 		// }
 	}
 
-	useEffect(() => {
-		if (updateTrendData) {
-			// setStartDate(startDateTrend)
-			setQuantityDays(14)
-		}
-	}, [updateTrendData])
+	// useEffect(() => {
+	// 	if (updateTrendData) {
+	// 		// setStartDate(startDateTrend)
+	// 		setQuantityDays(14)
+	// 	}
+	// }, [updateTrendData])
 
 	const handleCleanChooseTrendDate = () => {
 		setUpdateTredData(true)
-		setStartDate(startDateTrend)
+		setQuantityDays(14)
+		// setStartDate(startDateTrend)
 	}
 
 	useEffect(() => {
