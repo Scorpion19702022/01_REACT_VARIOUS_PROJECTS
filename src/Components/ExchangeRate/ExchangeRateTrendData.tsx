@@ -8,6 +8,7 @@ const ExchangeRateTrendData = () => {
 	const {
 		quantityDays,
 		startDate,
+		startDateTrend,
 		endDate,
 		chooseStartDate,
 		filteredTrendData,
@@ -41,7 +42,6 @@ const ExchangeRateTrendData = () => {
 							<input
 								className={styles.input}
 								type='date'
-								// value={updateTrendData ? startDate : startDate}
 								value={startDate}
 								max={startDate}
 								min={chooseStartDate}
@@ -59,7 +59,7 @@ const ExchangeRateTrendData = () => {
 					</div>
 				</div>
 			</div>
-			<ExchangeRateChart startDate={startDate} endDate={endDate} filteredTrendData={filteredTrendData} />
+			<ExchangeRateChart startDateTrend={startDateTrend} endDate={endDate} filteredTrendData={filteredTrendData} />
 		</section>
 	)
 }

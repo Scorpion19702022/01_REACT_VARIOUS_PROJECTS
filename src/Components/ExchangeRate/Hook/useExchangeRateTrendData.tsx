@@ -32,6 +32,8 @@ const useExchangeRateTrendData = () => {
 	const [chooseStartDate, setChooseStartDate] = useState<string>(previousDate)
 	const [updateTrendData, setUpdateTredData] = useState<boolean>(true)
 
+	console.log(startDateTrend)
+
 	useEffect(() => {
 		if (!updateTrendData) {
 			const start = new Date(startDate)
@@ -43,10 +45,6 @@ const useExchangeRateTrendData = () => {
 			startNewDate.setDate(currentDate.getDate() - quantityDays)
 			setStartDate(startNewDate.toISOString().split('T')[0])
 			setEndDate(currentDate.toISOString().split('T')[0])
-			// const startNewDate = new Date()
-			// startNewDate.setDate(currentDate.getDate() - quantityDays)
-			// setStartDate(startNewDate.toISOString().split('T')[0])
-			// setEndDate(currentDate.toISOString().split('T')[0])
 		}
 	}, [updateTrendData])
 
@@ -117,9 +115,9 @@ const useExchangeRateTrendData = () => {
 
 	return {
 		startDate,
+		startDateTrend,
 		endDate,
 		quantityDays,
-		startNewDate,
 		endDateTrend,
 		loading,
 		error,
