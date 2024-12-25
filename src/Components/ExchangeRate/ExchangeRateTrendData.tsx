@@ -59,13 +59,7 @@ const ExchangeRateTrendData = () => {
 					</div>
 				</div>
 			</div>
-			<ExchangeRateChart
-				startDate={startDate}
-				newTrend={startDateTrend}
-				endDate={endDate}
-				filteredTrendData={filteredTrendData}
-				updateDateTrend={updateTrendData}
-			/>
+			<ExchangeRateChart newTrend={startDateTrend} endDate={endDate} filteredTrendData={filteredTrendData} />
 		</section>
 	)
 }

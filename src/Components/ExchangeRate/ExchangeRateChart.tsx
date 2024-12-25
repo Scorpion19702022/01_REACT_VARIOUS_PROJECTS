@@ -19,20 +19,12 @@ import { FilteredTrendData } from './Types/Types'
 ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 interface ExchangeRateChartProps {
-	startDate: string
 	newTrend: string
 	endDate: string
 	filteredTrendData: FilteredTrendData
-	updateDateTrend: boolean
 }
 
-const ExchangeRateChart: React.FC<ExchangeRateChartProps> = ({
-	startDate,
-	newTrend,
-	endDate,
-	filteredTrendData,
-	updateDateTrend,
-}) => {
+const ExchangeRateChart: React.FC<ExchangeRateChartProps> = ({ newTrend, endDate, filteredTrendData }) => {
 	let labels = filteredTrendData.USD.map(item => item.date)
 
 	const chartData = {
