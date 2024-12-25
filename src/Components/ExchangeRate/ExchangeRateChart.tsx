@@ -20,12 +20,23 @@ ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, 
 
 interface ExchangeRateChartProps {
 	startDate: string
+	newTrend: string
 	endDate: string
 	filteredTrendData: FilteredTrendData
+	updateDateTrend: boolean
 }
 
-const ExchangeRateChart: React.FC<ExchangeRateChartProps> = ({ startDate, endDate, filteredTrendData }) => {
+const ExchangeRateChart: React.FC<ExchangeRateChartProps> = ({
+	startDate,
+	newTrend,
+	endDate,
+	filteredTrendData,
+	updateDateTrend,
+}) => {
 	let labels = filteredTrendData.USD.map(item => item.date)
+
+	console.log(newTrend)
+	console.log(updateDateTrend)
 
 	const chartData = {
 		labels,
@@ -79,7 +90,7 @@ const ExchangeRateChart: React.FC<ExchangeRateChartProps> = ({ startDate, endDat
 		plugins: {
 			title: {
 				display: true,
-				text: `Trend kursów od ${startDate} do ${endDate}`,
+				text: `Trend kursów od ${!updateDateTrend ? newTrend : startDate} do ${endDate}`,
 				color: 'white',
 			},
 			tooltip: {
