@@ -115,6 +115,11 @@
 	outline: none;
 }
 
+.input:disabled {
+	background-color: var(--color-dark09);
+	color: var(--color-color08);
+}
+
 .box_btns {
 	width: 100%;
 	display: flex;

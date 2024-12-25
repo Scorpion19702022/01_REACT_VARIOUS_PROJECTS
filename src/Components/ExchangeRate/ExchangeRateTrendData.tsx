@@ -41,6 +41,7 @@ const ExchangeRateTrendData = () => {
 							<label className={styles.label}>Wybierz datę:</label>
 							<input
 								className={styles.input}
+								disabled={!updateTrendData ? true : false}
 								type='date'
 								value={updateTrendData ? startDate : startDateTrend}
 								max={startDateTrend}
