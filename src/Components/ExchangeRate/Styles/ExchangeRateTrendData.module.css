@@ -68,8 +68,12 @@
 .text_info {
 	text-align: center;
 	font-size: 0.9em;
-	color: var(--color-color03);
+	color: var(--color-color04);
 	padding: 0.2em 0em;
+}
+
+.text_info:nth-child(1) {
+	color: var(--color-color02);
 }
 
 .box_change_date {
