@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from './Styles/ExchangeRateChart.module.css'
 
@@ -34,9 +34,6 @@ const ExchangeRateChart: React.FC<ExchangeRateChartProps> = ({
 	updateDateTrend,
 }) => {
 	let labels = filteredTrendData.USD.map(item => item.date)
-
-	console.log(newTrend)
-	console.log(updateDateTrend)
 
 	const chartData = {
 		labels,
@@ -90,7 +87,7 @@ const ExchangeRateChart: React.FC<ExchangeRateChartProps> = ({
 		plugins: {
 			title: {
 				display: true,
-				text: `Trend kursów od ${!updateDateTrend ? newTrend : startDate} do ${endDate}`,
+				text: `Trend kursów od ${newTrend} do ${endDate}`,
 				color: 'white',
 			},
 			tooltip: {
