@@ -46,6 +46,10 @@ const useExchangeRateTrendData = () => {
 			setStartDate(startNewDate.toISOString().split('T')[0])
 			setEndDate(currentDate.toISOString().split('T')[0])
 		}
+
+		if (!updateTrendData) {
+			setStartDate(startDateTrend)
+		}
 	}, [updateTrendData])
 
 	const handleChangeDate = (e: string) => {
@@ -96,8 +100,6 @@ const useExchangeRateTrendData = () => {
 					})
 					return acc
 				}, {} as FilteredTrendData)
-
-				console.log('Dane przygotowane do ustawienia stanu:', preparedData)
 
 				setFilteredTrendData(preparedData)
 			} catch (err) {
