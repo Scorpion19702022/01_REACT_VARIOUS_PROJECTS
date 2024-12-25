@@ -116,8 +116,9 @@
 }
 
 .input:disabled {
-	background-color: var(--color-dark09);
-	color: var(--color-color08);
+	background-color: var(--color-dark07);
+	color: var(--color-color07);
+	border: none;
 }
 
 .box_btns {
@@ -132,6 +133,12 @@
 	background-color: var(--color-dark08);
 	border: 0.04em solid var(--color-color07);
 	color: var(--color-color04);
+}
+
+.btn:disabled {
+	background-color: var(--color-dark07);
+	color: var(--color-dark04);
+	border: none;
 }
 
 @media (min-width: 660px) {
@@ -223,5 +230,11 @@
 
 	.btn:hover {
 		background-color: var(--color-dark09);
+	}
+
+	.btn:disabled {
+		background-color: var(--color-dark07);
+		color: var(--color-dark04);
+		cursor: auto;
 	}
 }

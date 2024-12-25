@@ -50,10 +50,14 @@ const ExchangeRateTrendData = () => {
 							/>
 						</div>
 						<div className={styles.box_btns}>
-							<button className={styles.btn} onClick={handleChooseTrendDate}>
+							<button className={styles.btn} disabled={!updateTrendData ? true : false} onClick={handleChooseTrendDate}>
 								sprawdź
 							</button>
-							<button className={styles.btn} onClick={handleCleanChooseTrendDate}>
+							<button
+								className={styles.btn}
+								disabled={updateTrendData ? true : false}
+								onClick={handleCleanChooseTrendDate}
+							>
 								wyczyść
 							</button>
 						</div>
