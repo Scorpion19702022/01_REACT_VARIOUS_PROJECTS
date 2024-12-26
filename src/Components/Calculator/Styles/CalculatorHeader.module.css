@@ -36,14 +36,15 @@
 .header_img {
 	position: absolute;
 	top: -30%;
-	left: -2%;
+	left: 7%;
 	width: 50%;
 	height: 50%;
 	z-index: 1;
 }
 
 .img {
-	width: 100%;
+	width: 50%;
+	transform: rotate(-15deg);
 	object-fit: cover;
 }
 
@@ -51,11 +52,11 @@
 	position: absolute;
 	top: -20%;
 	left: -6em;
-	width: 80%;
+	width: 70%;
 	height: 120px;
 	background-color: var(--color-dark08);
 	filter: blur(0.6em);
-	transform: rotate(-15deg);
+	transform: rotate(4deg);
 }
 
 .header_text {
@@ -68,12 +69,7 @@
 .header {
 	color: var(--color-color01);
 	font-family: 'Tilt Warp', sans-serif;
-	font-size: 1.4em;
-}
-
-.text {
-	font-size: 1em;
-	color: var(--color-color03);
+	font-size: 2em;
 }
 
 @media (min-width: 660px) {
