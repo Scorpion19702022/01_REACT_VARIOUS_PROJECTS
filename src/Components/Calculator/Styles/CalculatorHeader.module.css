@@ -75,21 +75,21 @@
 @media (min-width: 660px) {
 	.header_img {
 		top: -30%;
-		left: 0%;
+		left: 6%;
 		width: 30%;
 		height: 30%;
 	}
 
 	.img {
-		width: 100%;
+		width: 50%;
 		object-fit: cover;
 	}
 	.back {
 		top: -20%;
-		left: -17em;
-		width: 80%;
+		left: -12em;
+		width: 60%;
 		height: 180px;
-		transform: rotate(-25deg);
+		transform: rotate(2deg);
 	}
 }
 
@@ -97,6 +97,11 @@
 	.header_img {
 		width: 20%;
 		height: 20%;
+	}
+
+	.back {
+		left: -12em;
+		width: 40%;
 	}
 }
 
@@ -114,19 +119,19 @@
 	.header_img {
 		width: 40%;
 		height: 30%;
-		top: -45%;
+		top: -20%;
 	}
 
 	.img {
-		width: 70%;
+		width: 30%;
 	}
 
 	.back {
-		width: 70%;
+		width: 68%;
 		height: 200px;
-		top: 0%;
-		left: -40%;
-		transform: rotate(-15deg);
+		top: -15%;
+		left: -45%;
+		transform: rotate(2deg);
 	}
 
 	.header {
