@@ -69,7 +69,7 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Konwerter stopni</h4>
 						<p className={styles.card_text}>
-							Konwerter stopni. Sprawdż ile stopni ℃ to stopni ℉. Zmień i sprawdż ile ℉ to ℃
+							Konwerter stopni. Sprawdż ile stopni ℃ to stopni ℉. Zmień i sprawdż ile ℉ to ℃.
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider02} alt='photoSlider' />
@@ -173,7 +173,7 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Odliczanie czasu do ...</h4>
 						<p className={styles.card_text}>
-							Pokazuje czas w godzinach i dniach jaki został do zdarzenia w przyszłości
+							Pokazuje czas w godzinach i dniach jaki został do zdarzenia w przyszłości.
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider10} alt='photoSlider' />
@@ -184,7 +184,7 @@ const HomeSwiper = () => {
 					</NavLink>
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Demografia miast Polski</h4>
-						<p className={styles.card_text}>Przedstawia liczbowo i na wykresie przyrost mieszkańców miast w Polsce</p>
+						<p className={styles.card_text}>Przedstawia liczbowo i na wykresie przyrost mieszkańców miast w Polsce.</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider11} alt='photoSlider' />
 				</SwiperSlide>
@@ -195,7 +195,8 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Kurs walut NBP</h4>
 						<p className={styles.card_text}>
-							Przedstawia aktualny kurs walut. Kurs z dnia poprzedniego oraz wykres z trendem kursów
+							Aktualny kurs walut NBP. Kurs poprzedni z wyborem innego dnia i wykres z trendem kursów z wyborem daty
+							początkowej.
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider12} alt='photoSlider' />
