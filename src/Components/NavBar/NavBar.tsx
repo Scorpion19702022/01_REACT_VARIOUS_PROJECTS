@@ -94,6 +94,11 @@ const NavBar = () => {
 							Kursy walut
 						</li>
 					</NavLink>
+					<NavLink to='./Calculator'>
+						<li className={styles.link} onClick={handleNavView}>
+							Kalkulator
+						</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>
