@@ -17,29 +17,41 @@
 	--color-color07: #1f6075;
 	--color-color08: #14404e;
 	--color-color09: #0a2027;
+
+	--color-error: #ff0000;
 }
 
 .wrapper {
-	width: 100%;
-	min-height: 100vh;
+	width: 90%;
+	height: 400px;
+	min-height: 100%;
+	padding: 1em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	overflow: hidden;
-	justify-content: flex-start;
-	background-color: var(--color-dark08);
+	justify-content: space-between;
+	border: 0.04em solid var(--color-color07);
+	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
 }
 
 @media (min-width: 660px) {
+	.wrapper {
+		margin-bottom: 2em;
+	}
 }
 
 @media (min-width: 992px) {
+	.wrapper {
+		height: 600px;
+		z-index: 1;
+		margin-bottom: 2em;
+	}
 }
 
 @media (min-width: 1200px) {
 	.wrapper {
-		width: 100%;
-		min-height: 100vh;
-		padding-left: 10em;
+		width: 60%;
+		height: 600px;
+		border: 0.04em solid var(--color-color07);
 	}
 }
