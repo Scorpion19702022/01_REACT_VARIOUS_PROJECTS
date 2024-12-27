@@ -5,7 +5,9 @@ import styles from './Styles/CalculatorUsing.module.css'
 const CalculatorUsing = () => {
 	return (
 		<section className={styles.wrapper}>
-			<div>Kalkulator</div>
+			<div className={styles.box_calculator}>
+				<div className={styles.box_buttons}></div>
+			</div>
 		</section>
 	)
 }

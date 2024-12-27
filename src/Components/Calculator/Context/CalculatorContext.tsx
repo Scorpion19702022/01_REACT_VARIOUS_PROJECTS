@@ -2,11 +2,13 @@ import { createContext, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 
 type InitialStateType = {
-	test: string
+	content: string
+	isEquail?: boolean
 }
 
 const InitialState: InitialStateType = {
-	test: '',
+	content: '',
+	isEquail: true,
 }
 
 type CalculatorProviderType = {
@@ -16,12 +18,11 @@ type CalculatorProviderType = {
 const CalculatorContext = createContext(InitialState)
 
 export const CalculatorProvider = ({ children }: CalculatorProviderType) => {
-	const [test, setTest] = useState<string>('')
-
-	console.log(test)
+	const [content, setContent] = useState<string>('')
+	const [isEquail, setIsEquail] = useState<boolean>(true)
 
 	return (
-		<CalculatorContext.Provider value={{ test }}>
+		<CalculatorContext.Provider value={{ content, isEquail }}>
 			{children} <Analytics />
 		</CalculatorContext.Provider>
 	)
