@@ -1,11 +1,13 @@
 import { createContext, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
+import { TypeCalculatorFunction, TypeConcatenateFunction } from '../Types/TypesForCalculator'
 
 type InitialStateType = {
 	content: string
 	isEquail?: boolean
 	isLighter?: boolean
 	isMemory?: boolean
+	handleClick: TypeCalculatorFunction | TypeConcatenateFunction
 }
 
 const InitialState: InitialStateType = {
@@ -13,6 +15,7 @@ const InitialState: InitialStateType = {
 	isEquail: true,
 	isLighter: true,
 	isMemory: true,
+	handleClick: 
 }
 
 type CalculatorProviderType = {
@@ -27,8 +30,10 @@ export const CalculatorProvider = ({ children }: CalculatorProviderType) => {
 	const [isLighter, setIsLighter] = useState<boolean>(true)
 	const [isMemory, setIsMemory] = useState<boolean>(true)
 
+	const handleClick = () => {}
+
 	return (
-		<CalculatorContext.Provider value={{ content, isEquail, isLighter, isMemory }}>
+		<CalculatorContext.Provider value={{ content, isEquail, isLighter, isMemory, handleClick }}>
 			{children} <Analytics />
 		</CalculatorContext.Provider>
 	)
