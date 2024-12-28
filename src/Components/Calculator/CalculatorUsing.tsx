@@ -10,7 +10,7 @@ const CalculatorUsing = () => {
 					<span className={styles.previous_operand}>text</span>
 					<span className={styles.current_operand}>text</span>
 				</div>
-				<button className={styles.span_two}>AC</button>
+				<button className={styles.span_one}>AC</button>
 				<button className={styles.btn}>DEL</button>
 				<button className={styles.btn}>÷</button>
 				<button className={styles.btn}>1</button>
