@@ -115,6 +115,7 @@
 }
 
 .btn_added_task {
+	font-size: 1em;
 	padding: 0.4em;
 	width: 40%;
 	background-color: var(--color-dark07);

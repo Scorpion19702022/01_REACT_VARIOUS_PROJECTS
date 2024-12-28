@@ -99,6 +99,7 @@
 }
 
 .btn_popup {
+	font-size: 1em;
 	width: 30%;
 	padding: 0.4em;
 	color: var(--color-color01);
