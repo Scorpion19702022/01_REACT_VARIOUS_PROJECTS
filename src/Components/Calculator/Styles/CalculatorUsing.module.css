@@ -39,6 +39,7 @@
 	display: grid;
 	grid-template-columns: repeat(4, 4fr);
 	grid-template-rows: repeat(7, 4fr);
+	box-shadow: 0.6em 0.6em 2em var(--color-dark09);
 }
 
 .output {
@@ -47,9 +48,10 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-end;
-	padding: 1em 0.4em;
+	padding: 1em 0.6em;
 	grid-column: 1/5;
 	grid-row: 1/3;
+	border: 0.04em solid var(--color-dark02);
 }
 
 .previous_operand {
@@ -74,6 +76,13 @@
 
 .span_two {
 	grid-column: 3/5;
+}
+
+button {
+	background-color: var(--color-color09);
+	border: 0.04em solid var(--color-dark03);
+	font-size: 1.8em;
+	color: var(--color-color02);
 }
 
 @media (min-width: 660px) {
