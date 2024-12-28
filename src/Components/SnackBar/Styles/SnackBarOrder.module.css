@@ -83,8 +83,9 @@
 }
 
 .btn_clean_orders {
+	font-size: 0.8em;
 	align-self: flex-end;
-	width: 60%;
+	width: 80%;
 	padding: 0.4em;
 	background: none;
 	border: 0.04em solid var(--color-color07);
@@ -133,6 +134,7 @@
 }
 
 .order_btn {
+	font-size: 1em;
 	width: 25%;
 	padding: 0.1em;
 	background: none;
@@ -196,6 +198,7 @@
 }
 
 .btn_popup {
+	font-size: 1em;
 	width: 30%;
 	padding: 0.4em;
 	background-color: var(--color-dark08);
@@ -204,6 +207,7 @@
 }
 
 .btn_popup_close_status {
+	font-size: 1em;
 	width: 100%;
 	padding: 0.4em;
 	background-color: var(--color-dark08);
