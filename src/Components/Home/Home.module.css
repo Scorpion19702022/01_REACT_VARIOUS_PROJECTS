@@ -43,6 +43,7 @@
 
 .btn_pl,
 .btn_en {
+	font-size: 1em;
 	width: 25%;
 	padding: 0.4em;
 	margin: 0em 0.4em;
@@ -55,6 +56,7 @@
 
 .btn_pl_active,
 .btn_en_active {
+	font-size: 1em;
 	width: 25%;
 	padding: 0.4em;
 	margin: 0em 0.4em;
@@ -106,6 +108,7 @@
 }
 
 .btn_link {
+	font-size: 1em;
 	position: absolute;
 	top: 5%;
 	left: 3%;
