@@ -61,6 +61,7 @@
 }
 
 .btn_close_info {
+	font-size: 1em;
 	width: 100%;
 	padding: 0.4em;
 	background-color: var(--color-dark08);
@@ -118,6 +119,7 @@
 }
 
 .btn {
+	font-size: 1em;
 	width: 50%;
 	padding: 0.3em;
 	background: none;
