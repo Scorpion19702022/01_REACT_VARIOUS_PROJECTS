@@ -30,6 +30,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	z-index: 1;
 }
 
 .box_calculator {
@@ -44,11 +45,23 @@
 	background-color: var(--color-color08);
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: flex-end;
-	padding: 0.4em;
+	padding: 1em 0.4em;
 	grid-column: 1/5;
 	grid-row: 1/3;
+}
+
+.previous_operand {
+	color: var(--color-color03);
+	font-size: 1.2em;
+	font-weight: 100;
+}
+
+.current_operand {
+	color: var(--color-color01);
+	font-size: 2.6em;
+	font-weight: 400;
 }
 
 .span_one {
