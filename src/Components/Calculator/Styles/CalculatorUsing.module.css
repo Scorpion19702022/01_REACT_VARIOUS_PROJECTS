@@ -84,11 +84,19 @@
 		z-index: 1;
 		margin-bottom: 2em;
 	}
+
+	.box_calculator {
+		width: 50%;
+	}
 }
 
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 60%;
 		height: 600px;
+	}
+
+	.box_calculator {
+		width: 40%;
 	}
 }

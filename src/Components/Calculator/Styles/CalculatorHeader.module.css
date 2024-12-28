@@ -120,6 +120,7 @@
 		width: 40%;
 		height: 30%;
 		top: -20%;
+		left: 0%;
 	}
 
 	.img {
@@ -127,7 +128,7 @@
 	}
 
 	.back {
-		width: 68%;
+		width: 60%;
 		height: 200px;
 		top: -15%;
 		left: -45%;
