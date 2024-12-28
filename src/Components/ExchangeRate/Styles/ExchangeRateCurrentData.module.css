@@ -58,6 +58,7 @@
 }
 
 .btn_refresh {
+	font-size: 1em;
 	width: 50%;
 	padding: 0.2em;
 	background-color: var(--color-dark08);
