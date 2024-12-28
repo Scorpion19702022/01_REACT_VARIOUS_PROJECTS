@@ -107,6 +107,7 @@
 
 .btn {
 	width: 30%;
+	font-size: 1em;
 	padding: 0.4em;
 	background: none;
 	border: 0.04em solid var(--color-color07);

@@ -209,6 +209,7 @@
 }
 
 .main_btn {
+	font-size: 1em;
 	width: 50%;
 	align-self: flex-end;
 	padding: 0.4em;
