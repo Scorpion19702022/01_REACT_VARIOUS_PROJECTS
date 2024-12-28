@@ -3,14 +3,6 @@ import { Analytics } from '@vercel/analytics/react'
 import { Action, CalculatorState } from '../Types/TypeForCalculator'
 import { reducer } from '../Reducer'
 
-type InitialStateType = {
-	content: string
-}
-
-const InitialState: InitialStateType = {
-	content: '',
-}
-
 type CalculatorProviderType = {
 	children: React.ReactNode
 }
