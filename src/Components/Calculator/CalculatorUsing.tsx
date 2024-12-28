@@ -7,8 +7,8 @@ const CalculatorUsing = () => {
 		<section className={styles.wrapper}>
 			<div className={styles.box_calculator}>
 				<div className={styles.output}>
-					<div className={styles.previous_operand}></div>
-					<div className={styles.current_operand}></div>
+					<span className={styles.previous_operand}>text</span>
+					<span className={styles.current_operand}>text</span>
 				</div>
 				<button className={styles.span_two}>AC</button>
 				<button className={styles.btn}>DEL</button>

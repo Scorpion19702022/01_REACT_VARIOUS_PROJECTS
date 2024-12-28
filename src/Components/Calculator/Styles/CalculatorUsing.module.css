@@ -32,6 +32,18 @@
 	justify-content: center;
 }
 
+.box_calculator {
+}
+
+.output {
+	background-color: var(--color-color08);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 0.4em;
+}
+
 @media (min-width: 660px) {
 	.wrapper {
 		margin-bottom: 2em;
