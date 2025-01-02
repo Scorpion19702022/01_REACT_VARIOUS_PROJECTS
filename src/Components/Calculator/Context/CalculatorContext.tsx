@@ -59,6 +59,7 @@ export const reducer = (state: CalculatorState, action: Action): CalculatorState
 					currentOperand: null,
 				}
 			}
+
 			return {
 				...state,
 				operation: action.payload,
