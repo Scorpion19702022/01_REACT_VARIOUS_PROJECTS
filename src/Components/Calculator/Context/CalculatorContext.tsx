@@ -34,7 +34,7 @@ const evaluate = (state: CalculatorState): string => {
 		case '×':
 			return (prev * current).toString()
 		case '÷':
-			return current !== 0 ? (prev / current).toString() : 'Error'
+			return current !== 0 ? (prev / current).toFixed(10).replace(/\.?0+$/, '') : 'Error'
 		default:
 			return ''
 	}
@@ -44,6 +44,7 @@ export const reducer = (state: CalculatorState, action: Action): CalculatorState
 	switch (action.type) {
 		case 'ADD_DIGIT':
 			if (action.payload === '.' && state.currentOperand?.includes('.')) return state
+
 			return {
 				...state,
 				currentOperand: `${state.currentOperand || ''}${action.payload}`,
