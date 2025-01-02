@@ -90,7 +90,7 @@ export const SalaryProvider = ({ children }: SlarayProviderType) => {
 	const [info, setInfo] = useState<string>('')
 	const [showInfo, setShowInfo] = useState<boolean>(false)
 
-	let minSalary = 4300
+	let minSalary = 4666
 
 	let contributionsZUS = 0.1371
 	let contributionPension = 0.0976
