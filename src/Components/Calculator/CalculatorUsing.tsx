@@ -5,14 +5,18 @@ import styles from './Styles/CalculatorUsing.module.css'
 const CalculatorUsing = () => {
 	const { state, dispatch } = useContext(CalculatorContext)
 
+	const renderPreviousOperand = () => {
+		if (state.previousOperand == null || state.operation == null) return ''
+		if (state.currentOperand == null) return `${state.previousOperand} ${state.operation}`
+		return `${state.previousOperand} ${state.operation} ${state.currentOperand}`
+	}
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_calculator}>
 				<div className={styles.output}>
-					<span className={styles.previous_operand}>
-						{state.previousOperand} {state.operation}
-					</span>
-					<span className={styles.current_operand}>{state.currentOperand}</span>
+					<span className={styles.previous_operand}>{renderPreviousOperand()}</span>
+					<span className={styles.current_operand}>{state.currentOperand != null && state.currentOperand}</span>
 				</div>
 				<button className={styles.span_one} onClick={() => dispatch({ type: 'CLEAR' })}>
 					AC
