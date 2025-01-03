@@ -29,7 +29,7 @@ const evaluate = (state: CalculatorState): string => {
 	switch (state.operation) {
 		case '+':
 			return (prev + current).toString()
-		case '˗':
+		case '-':
 			return (prev - current).toString()
 		case '×':
 			return (prev * current).toString()

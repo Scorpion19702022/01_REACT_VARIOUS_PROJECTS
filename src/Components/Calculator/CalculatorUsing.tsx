@@ -16,7 +16,9 @@ const CalculatorUsing = () => {
 			<div className={styles.box_calculator}>
 				<div className={styles.output}>
 					<span className={styles.previous_operand}>{renderPreviousOperand()}</span>
-					<span className={styles.current_operand}>{state.currentOperand != null ? state.currentOperand : 0}</span>
+					<span className={styles.current_operand}>
+						{state.currentOperand != null ? state.currentOperand : state.previousOperand}
+					</span>
 				</div>
 				<button className={styles.span_one} onClick={() => dispatch({ type: 'CLEAR' })}>
 					AC
@@ -61,7 +63,7 @@ const CalculatorUsing = () => {
 					3
 				</button>
 				<button className={styles.btn} onClick={() => dispatch({ type: 'CHOOSE_OPERATION', payload: '-' })}>
-					˗
+					-
 				</button>
 				<button className={styles.btn} onClick={() => dispatch({ type: 'ADD_DIGIT', payload: '.' })}>
 					.
