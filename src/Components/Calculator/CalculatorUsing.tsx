@@ -60,7 +60,7 @@ const CalculatorUsing = () => {
 				<button className={styles.btn} onClick={() => dispatch({ type: 'ADD_DIGIT', payload: '3' })}>
 					3
 				</button>
-				<button className={styles.btn} onClick={() => dispatch({ type: 'CHOOSE_OPERATION', payload: '˗' })}>
+				<button className={styles.btn} onClick={() => dispatch({ type: 'CHOOSE_OPERATION', payload: '-' })}>
 					˗
 				</button>
 				<button className={styles.btn} onClick={() => dispatch({ type: 'ADD_DIGIT', payload: '.' })}>
