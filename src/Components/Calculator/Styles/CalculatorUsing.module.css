@@ -43,7 +43,7 @@
 }
 
 .output {
-	background-color: var(--color-color08);
+	background-color: var(--color-color09);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -62,7 +62,7 @@
 	font-size: 1.2em;
 	font-weight: 100;
 	padding-bottom: 0.4em;
-	border-bottom: 0.04em dotted var(--color-color06);
+	border-bottom: 0.04em dotted var(--color-dark04);
 }
 
 .current_operand {
@@ -83,10 +83,10 @@
 }
 
 button {
-	background-color: var(--color-color09);
+	background-color: var(--color-dark08);
 	border: 0.04em solid var(--color-dark03);
 	font-size: 1.8em;
-	color: var(--color-color02);
+	color: var(--color-color01);
 }
 
 @media (min-width: 660px) {
