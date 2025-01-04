@@ -1,7 +1,7 @@
 export type CalculatorState = {
 	content: number
-	currentOperand: any
-	previousOperand: any
+	currentOperand: string | null
+	previousOperand: string | null
 	operation: string | null
 }
 
