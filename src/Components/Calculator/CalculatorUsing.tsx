@@ -6,10 +6,12 @@ const CalculatorUsing = () => {
 	const { state, dispatch } = useContext(CalculatorContext)
 
 	const renderPreviousOperand = () => {
-		if (state.previousOperand == null || state.operation == null) return ''
-		if (state.currentOperand == null) return `${state.previousOperand} ${state.operation}`
+		if (state.previousOperand === null || state.operation === null) return ''
+		if (state.currentOperand === null) return `${state.previousOperand} ${state.operation}`
 		return `${state.previousOperand} ${state.operation} ${state.currentOperand}`
 	}
+
+	console.log(state.currentOperand?.length)
 
 	return (
 		<section className={styles.wrapper}>
@@ -17,7 +19,7 @@ const CalculatorUsing = () => {
 				<div className={styles.output}>
 					<span className={styles.previous_operand}>{renderPreviousOperand()}</span>
 					<span className={styles.current_operand}>
-						{state.currentOperand != null ? state.currentOperand : state.previousOperand}
+						{state.currentOperand !== null ? state.currentOperand : state.previousOperand}
 					</span>
 				</div>
 				<button className={styles.span_one} onClick={() => dispatch({ type: 'CLEAR' })}>
