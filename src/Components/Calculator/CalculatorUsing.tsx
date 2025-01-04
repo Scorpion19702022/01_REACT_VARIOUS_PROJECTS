@@ -11,8 +11,6 @@ const CalculatorUsing = () => {
 		return `${state.previousOperand} ${state.operation} ${state.currentOperand}`
 	}
 
-	console.log(state.currentOperand?.length)
-
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_calculator}>

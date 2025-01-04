@@ -92,6 +92,8 @@ export const reducer = (state: CalculatorState, action: Action): CalculatorState
 export const CalculatorProvider = ({ children }: CalculatorProviderType) => {
 	const [state, dispatch] = useReducer(reducer, InitialState)
 
+	console.log(state.currentOperand?.length)
+
 	return <CalculatorContext.Provider value={{ state, dispatch }}>{children}</CalculatorContext.Provider>
 }
 

@@ -57,9 +57,11 @@
 .previous_operand {
 	width: 100%;
 	height: 40%;
-	text-align: right;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 	color: var(--color-color03);
-	font-size: 1.4em;
+	font-size: 1.2em;
 	font-weight: 100;
 	padding-bottom: 0.4em;
 	border-bottom: 0.04em dotted var(--color-dark04);
@@ -68,7 +70,9 @@
 .current_operand {
 	width: 100%;
 	height: 60%;
-	text-align: right;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 	color: var(--color-color01);
 	font-size: 2.4em;
 	font-weight: 400;
@@ -97,6 +101,10 @@ button {
 	.box_calculator {
 		width: 50%;
 	}
+
+	.current_operand {
+		font-size: 2em;
+	}
 }
 
 @media (min-width: 992px) {
@@ -107,11 +115,11 @@ button {
 	}
 
 	.previous_operand {
-		font-size: 1.8em;
+		font-size: 1.4em;
 	}
 
 	.current_operand {
-		font-size: 4em;
+		font-size: 2.6em;
 	}
 }
 
