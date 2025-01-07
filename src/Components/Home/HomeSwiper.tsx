@@ -16,6 +16,7 @@ import imgSlider09 from './assets/imgSwiper09.jpg'
 import imgSlider10 from './assets/imgSwiper10.jpg'
 import imgSlider11 from './assets/imgSwiper11.jpg'
 import imgSlider12 from './assets/imgSwiper12.jpg'
+import imgSlider13 from './assets/imgSwiper13.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -200,6 +201,16 @@ const HomeSwiper = () => {
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider12} alt='photoSlider' />
+				</SwiperSlide>
+				<SwiperSlide className={styles.box_swiper}>
+					<NavLink to='./Calculator'>
+						<button className={styles.btn_link}>LINK</button>
+					</NavLink>
+					<div className={styles.card_box_text}>
+						<h4 className={styles.card_heading}>Kalkulator</h4>
+						<p className={styles.card_text}>Tradycyjny kalkulator. Wykorzystanie w projekcie reducera.</p>
+					</div>
+					<img className={styles.card_img} src={imgSlider13} alt='photoSlider' />
 				</SwiperSlide>
 			</Swiper>
 		</section>
