@@ -148,8 +148,12 @@ button {
 		height: 600px;
 	}
 
+	.main_box_calculator {
+		width: 50%;
+	}
+
 	.box_calculator {
-		width: 40%;
+		width: 100%;
 	}
 
 	button {
