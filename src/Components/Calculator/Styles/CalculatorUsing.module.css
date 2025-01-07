@@ -40,6 +40,7 @@
 	border: 0.2em solid var(--color-dark09);
 	background-color: var(--color-color09);
 	border-radius: 25px;
+	box-shadow: 0.6em 0.6em 2em var(--color-dark09);
 }
 
 .box_calculator {
@@ -48,7 +49,6 @@
 	display: grid;
 	grid-template-columns: repeat(4, 4fr);
 	grid-template-rows: repeat(7, 4fr);
-	box-shadow: 0.6em 0.6em 2em var(--color-dark09);
 }
 
 .output {
@@ -109,8 +109,12 @@ button {
 		margin-bottom: 2em;
 	}
 
-	.box_calculator {
+	.main_box_calculator {
 		width: 50%;
+	}
+
+	.box_calculator {
+		width: 100%;
 	}
 
 	.previous_operand {
