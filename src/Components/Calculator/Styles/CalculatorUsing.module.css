@@ -33,6 +33,15 @@
 	z-index: 1;
 }
 
+.main_box_calculator {
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+	border: 0.2em solid var(--color-dark09);
+	background-color: var(--color-color09);
+	border-radius: 25px;
+}
+
 .box_calculator {
 	width: 100%;
 	height: 100%;
