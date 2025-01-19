@@ -12,7 +12,7 @@ const InvestmentHeader = () => {
 			</div>
 			<div className={styles.back}></div>
 			<div className={styles.header_text}>
-				<h1 className={styles.header}>Zaiwestuj oszczędności</h1>
+				<h1 className={styles.header}>Zainwestuj oszczędności</h1>
 				<span className={styles.text}>pokaż przyrost oprocentowania wkładu</span>
 			</div>
 		</section>

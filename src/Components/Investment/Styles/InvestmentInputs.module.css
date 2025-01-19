@@ -24,12 +24,23 @@
 .wrapper {
 	position: relative;
 	width: 90%;
-	height: 20vh;
 	padding: 1em;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	background-color: var(--color-dark07);
 	border: 0.04em solid var(--color-color07);
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
+}
+
+.box_inputs {
+	display: flex;
+	flex-direction: column;
+}
+
+.inputs {
+	display: flex;
+	flex-direction: column;
 }
 
 @media (min-width: 660px) {
@@ -41,7 +52,6 @@
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 60%;
-		height: 120px;
 		padding: 1em;
 		display: flex;
 		justify-content: center;
