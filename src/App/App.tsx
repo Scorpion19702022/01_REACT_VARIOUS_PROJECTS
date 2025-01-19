@@ -25,6 +25,7 @@ import Demography from '../Components/Demography/Demography'
 import Converter from '../Components/Conventer/Converter'
 import ExchangeRate from '../Components/ExchangeRate/ExchangeRate'
 import Calculator from '../Components/Calculator/Calculator'
+import Investment from '../Components/Investment/Investment'
 
 function App() {
 	return (
@@ -53,6 +54,7 @@ function App() {
 					<Route path='/Demography' Component={Demography} />
 					<Route path='/ExchangeRate' Component={ExchangeRate} />
 					<Route path='/Calculator' Component={Calculator} />
+					<Route path='/Investmet' Component={Investment} />
 				</Routes>
 			</section>
 		</Router>

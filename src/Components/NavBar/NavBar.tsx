@@ -99,6 +99,11 @@ const NavBar = () => {
 							Kalkulator
 						</li>
 					</NavLink>
+					<NavLink to='./Investment'>
+						<li className={styles.link} onClick={handleNavView}>
+							Oprocetowanie bankowe
+						</li>
+					</NavLink>
 				</ul>
 			</div>
 		</nav>
