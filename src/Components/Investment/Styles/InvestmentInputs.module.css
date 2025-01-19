@@ -33,6 +33,15 @@
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
 }
 
+.heading {
+	padding-bottom: 0.6em;
+	margin-bottom: 0.8em;
+	text-align: center;
+	font-weight: 100;
+	color: var(--color-color01);
+	border-bottom: 0.04em dotted var(--color-color07);
+}
+
 .box_inputs {
 	display: flex;
 	flex-direction: column;
@@ -41,6 +50,29 @@
 .inputs {
 	display: flex;
 	flex-direction: column;
+	padding: 0em 0em 1em 0em;
+}
+
+.label {
+	color: var(--color-color03);
+	padding-bottom: 0.2em;
+}
+
+.input {
+	width: 100%;
+	padding: 0.2em;
+	font-size: 1.2em;
+	background: none;
+	border: none;
+	border-bottom: 0.04em solid var(--color-color04);
+	color: var(--color-dark01);
+}
+
+.box_btns {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 1em 0em 0em 0em;
 }
 
 @media (min-width: 660px) {
