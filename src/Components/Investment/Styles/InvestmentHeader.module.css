@@ -25,7 +25,7 @@
 	position: relative;
 	width: 90%;
 	height: 80px;
-	margin: 5em 0em 4em 0em;
+	margin: 5em 0em 3em 0em;
 	padding: 1em;
 	display: flex;
 	justify-content: center;
@@ -37,8 +37,8 @@
 	position: absolute;
 	top: -15%;
 	left: -2%;
-	width: 35%;
-	height: 35%;
+	width: 32%;
+	height: 32%;
 	z-index: 1;
 }
 
@@ -81,8 +81,8 @@
 	.header_img {
 		top: -30%;
 		left: 0%;
-		width: 30%;
-		height: 30%;
+		width: 28%;
+		height: 28%;
 	}
 
 	.img {
