@@ -1,10 +1,12 @@
 import React from 'react'
 
+import styles from './Styles/Investment.module.css'
+
 const Investment = () => {
 	return (
-		<div>
+		<main className={styles.wrapper}>
 			<div>Inwestycja</div>
-		</div>
+		</main>
 	)
 }
 

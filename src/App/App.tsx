@@ -54,7 +54,7 @@ function App() {
 					<Route path='/Demography' Component={Demography} />
 					<Route path='/ExchangeRate' Component={ExchangeRate} />
 					<Route path='/Calculator' Component={Calculator} />
-					<Route path='/Investmet' Component={Investment} />
+					<Route path='/Investment' Component={Investment} />
 				</Routes>
 			</section>
 		</Router>

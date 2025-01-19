@@ -44,7 +44,7 @@
 
 .line {
 	width: 0%;
-	height: 0.1em;
+	height: 0.08em;
 	background-color: var(--color-dark02);
 }
 
@@ -112,9 +112,9 @@
 }
 
 a {
-	padding: 0.2em 0em;
+	padding: 0.3em 0em;
 	text-decoration: none;
-	margin-bottom: 0.3em;
+	margin-bottom: 0.2em;
 	font-size: 0.9em;
 	color: var(--color-dark03);
 }
