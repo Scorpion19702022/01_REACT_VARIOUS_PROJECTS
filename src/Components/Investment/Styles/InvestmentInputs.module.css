@@ -66,6 +66,7 @@
 	border: none;
 	border-bottom: 0.04em solid var(--color-color04);
 	color: var(--color-dark01);
+	outline: none;
 }
 
 .box_btns {
@@ -73,6 +74,15 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 1em 0em 0em 0em;
+}
+
+.btn {
+	width: 40%;
+	padding: 0.4em;
+	font-size: 0.8em;
+	color: var(--color-color03);
+	background: none;
+	border: 0.04em solid var(--color-color07);
 }
 
 @media (min-width: 660px) {
