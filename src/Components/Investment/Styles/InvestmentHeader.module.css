@@ -1,0 +1,141 @@
+:root {
+	--color-dark01: #ffffff;
+	--color-dark02: #c4c4c2;
+	--color-dark03: #898a86;
+	--color-dark04: #62625e;
+	--color-dark05: #2f302b;
+	--color-dark06: #2f302b;
+	--color-dark07: #1d1e1b;
+	--color-dark08: #121311;
+	--color-dark09: #050605;
+	--color-color01: #d6ecf3;
+	--color-color02: #add9e7;
+	--color-color03: #85c6db;
+	--color-color04: #5cb3cf;
+	--color-color05: #34a0c4;
+	--color-color06: #29809c;
+	--color-color07: #1f6075;
+	--color-color08: #14404e;
+	--color-color09: #0a2027;
+
+	--color-error: #ff0000;
+}
+
+.wrapper {
+	position: relative;
+	width: 90%;
+	height: 80px;
+	margin: 5em 0em 4em 0em;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+	border: 0.04em solid var(--color-color07);
+	box-shadow: 0.4em 0.4em 0.8em var(--color-dark09);
+}
+
+.header_img {
+	position: absolute;
+	top: -30%;
+	left: 7%;
+	width: 50%;
+	height: 50%;
+	z-index: 1;
+}
+
+.img {
+	width: 50%;
+	transform: rotate(-15deg);
+	object-fit: cover;
+}
+
+.back {
+	position: absolute;
+	top: -20%;
+	left: -6em;
+	width: 70%;
+	height: 120px;
+	background-color: var(--color-dark08);
+	filter: blur(0.6em);
+	transform: rotate(4deg);
+}
+
+.header_text {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.header {
+	color: var(--color-color01);
+	font-family: 'Tilt Warp', sans-serif;
+	font-size: 2em;
+}
+
+@media (min-width: 660px) {
+	.header_img {
+		top: -30%;
+		left: 6%;
+		width: 30%;
+		height: 30%;
+	}
+
+	.img {
+		width: 50%;
+		object-fit: cover;
+	}
+	.back {
+		top: -20%;
+		left: -12em;
+		width: 60%;
+		height: 180px;
+		transform: rotate(2deg);
+	}
+}
+
+@media (min-width: 992px) {
+	.header_img {
+		width: 20%;
+		height: 20%;
+	}
+
+	.back {
+		left: -12em;
+		width: 40%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.wrapper {
+		width: 60%;
+		height: 120px;
+		margin: 5em 0em 3em 0em;
+		padding: 1em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.header_img {
+		width: 40%;
+		height: 30%;
+		top: -20%;
+		left: 0%;
+	}
+
+	.img {
+		width: 30%;
+	}
+
+	.back {
+		width: 60%;
+		height: 200px;
+		top: -15%;
+		left: -45%;
+		transform: rotate(2deg);
+	}
+
+	.header {
+		font-size: 4em;
+	}
+}
