@@ -117,14 +117,17 @@
 
 	.box_img {
 		width: 35%;
+		height: 50px;
+		padding: 0.4em;
+		background-color: var(--color-dark01);
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 
 	.img {
 		display: block;
-		width: 12%;
-		height: 70px;
+		height: 60%;
 		object-fit: cover;
 	}
 }
