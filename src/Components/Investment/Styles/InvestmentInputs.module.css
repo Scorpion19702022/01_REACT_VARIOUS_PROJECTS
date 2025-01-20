@@ -98,9 +98,11 @@
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 90%;
+		align-items: center;
 	}
 
 	.heading {
+		width: 100%;
 		font-size: 1.2em;
 	}
 
@@ -131,5 +133,9 @@
 		display: block;
 		height: 75%;
 		object-fit: cover;
+	}
+
+	.box_btns {
+		width: 50%;
 	}
 }
