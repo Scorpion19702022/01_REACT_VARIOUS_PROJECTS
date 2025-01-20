@@ -8,7 +8,7 @@ const InvestmentInputs = () => {
 			<h4 className={styles.heading}>
 				Podając wartości swojego wkładu początkowego i deklarację corrocznej wpłaty oraz okres jaki przwidujesz a
 				oszczędości sprawdzisz ile zarobisz a corocznych odsetkach w 5 najpopularniejszych bankach w Polsce. Maksymalny
-				okres to 10 lat
+				okres to 10 lat.
 			</h4>
 			<div className={styles.box_inputs}>
 				<div className={styles.inputs}>
