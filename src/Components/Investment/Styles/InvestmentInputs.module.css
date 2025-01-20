@@ -138,4 +138,15 @@
 	.box_btns {
 		width: 50%;
 	}
+
+	.btn {
+		width: 47%;
+		padding: 0.8em;
+		cursor: pointer;
+		transition: background-color 0.3s ease-in-out;
+	}
+
+	.btn:hover {
+		background-color: var(--color-dark09);
+	}
 }
