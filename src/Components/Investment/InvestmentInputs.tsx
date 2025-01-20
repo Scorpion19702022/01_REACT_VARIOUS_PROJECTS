@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Styles/InvestmentInputs.module.css'
 
@@ -7,8 +7,13 @@ import bank02 from './assets/bank02.jpg'
 import bank03 from './assets/bank03.jpg'
 import bank04 from './assets/bank04.jpg'
 import bank05 from './assets/bank05.jpg'
+import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentInputs = () => {
+	const { invest } = useContext(InvestmentContext)
+
+	console.log(invest)
+
 	return (
 		<section className={styles.wrapper}>
 			<h4 className={styles.heading}>
