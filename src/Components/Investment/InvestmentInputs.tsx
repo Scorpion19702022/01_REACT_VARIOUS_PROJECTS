@@ -2,6 +2,12 @@ import React from 'react'
 
 import styles from './Styles/InvestmentInputs.module.css'
 
+import bank01 from './assets/bank01.jpg'
+import bank02 from './assets/bank02.jpg'
+import bank03 from './assets/bank03.jpg'
+import bank04 from './assets/bank04.jpg'
+import bank05 from './assets/bank05.jpg'
+
 const InvestmentInputs = () => {
 	return (
 		<section className={styles.wrapper}>
@@ -22,6 +28,13 @@ const InvestmentInputs = () => {
 				<div className={styles.inputs}>
 					<label className={styles.label}>Podaj okres w latach:</label>
 					<input className={styles.input} type='number' />
+				</div>
+				<div className={styles.box_img}>
+					<img className={styles.img} src={bank01} alt='logo_bank' />
+					<img className={styles.img} src={bank02} alt='logo_bank' />
+					<img className={styles.img} src={bank03} alt='logo_bank' />
+					<img className={styles.img} src={bank04} alt='logo_bank' />
+					<img className={styles.img} src={bank05} alt='logo_bank' />
 				</div>
 			</div>
 			<div className={styles.box_btns}>
