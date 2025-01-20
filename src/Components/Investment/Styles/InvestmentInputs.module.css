@@ -120,6 +120,8 @@
 		height: 50px;
 		padding: 0.4em;
 		background-color: var(--color-dark01);
+		border: 0.2em solid var(--color-dark09);
+		box-shadow: 0.6em 0.6em 0.8em var(--color-dark09);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -127,7 +129,7 @@
 
 	.img {
 		display: block;
-		height: 60%;
+		height: 75%;
 		object-fit: cover;
 	}
 }
