@@ -72,6 +72,17 @@
 	background-color: var(--color-dark09);
 }
 
+th {
+	border: 0.04em solid var(--color-color07);
+	color: var(--color-color04);
+	padding: 0.4em;
+	width: 17%;
+}
+
+th:nth-child(1) {
+	width: 6%;
+}
+
 @media (min-width: 660px) {
 }
 
