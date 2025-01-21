@@ -64,20 +64,19 @@
 }
 
 @media (min-width: 660px) {
-	.wrapper {
-		margin-bottom: 2em;
-	}
 }
 
 @media (min-width: 992px) {
-	.wrapper {
-		height: 600px;
-	}
 }
 
 @media (min-width: 1200px) {
 	.wrapper {
-		width: 60%;
-		height: 600px;
+		width: 90%;
+		height: 400px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		background-color: #85c6db;
 	}
 }
