@@ -4,6 +4,7 @@ import styles from './Styles/Investment.module.css'
 import InvestmentHeader from './InvestmentHeader'
 import InvestmentInputs from './InvestmentInputs'
 import { InvestmentProvider } from './Context/InvestmentContext'
+import InvestmentResult from './InvestmentResult'
 
 const Investment = () => {
 	return (
@@ -11,6 +12,7 @@ const Investment = () => {
 			<InvestmentHeader />
 			<InvestmentProvider>
 				<InvestmentInputs />
+				<InvestmentResult />
 			</InvestmentProvider>
 		</main>
 	)
