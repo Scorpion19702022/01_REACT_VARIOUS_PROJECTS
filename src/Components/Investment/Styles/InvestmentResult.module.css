@@ -63,6 +63,15 @@
 	color: var(--color-color03);
 }
 
+.box_table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.name_bank {
+	background-color: var(--color-dark09);
+}
+
 @media (min-width: 660px) {
 }
 
@@ -75,8 +84,12 @@
 		height: 400px;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: space-around;
 		align-items: flex-start;
 		background-color: #85c6db;
+	}
+
+	.box_your_invest {
+		width: 30%;
 	}
 }

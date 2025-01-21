@@ -11,9 +11,9 @@ const InvestmentResult = () => {
 				</h2>
 				<button className={styles.btn}>Zobacz wykres</button>
 			</div>
-			<table className={styles.box_name_bank}>
-				<thead className={styles.name_bank}>
-					<tr>
+			<table className={styles.box_table}>
+				<thead>
+					<tr className={styles.name_bank}>
 						<th>Rok</th>
 						<th>PKO BP</th>
 						<th>PKO SA</th>
