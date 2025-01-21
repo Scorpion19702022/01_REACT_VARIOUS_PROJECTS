@@ -117,6 +117,10 @@
 		width: 20%;
 	}
 
+	.input {
+		font-size: 1.4em;
+	}
+
 	.box_img {
 		width: 35%;
 		height: 50px;
