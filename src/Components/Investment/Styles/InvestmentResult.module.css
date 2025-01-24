@@ -114,6 +114,10 @@ th:nth-child(1) {
 		width: 65%;
 	}
 
+	th {
+		font-size: 1.2em;
+	}
+
 	.btn {
 		padding: 0.4em;
 		font-size: 1.2em;
