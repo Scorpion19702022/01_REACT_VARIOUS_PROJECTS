@@ -97,11 +97,25 @@ th:nth-child(1) {
 		height: 400px;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: flex-start;
 	}
 
 	.box_your_invest {
 		width: 30%;
+		height: 140px;
+	}
+
+	.your_invest {
+		font-size: 1.6em;
+	}
+
+	.box_table {
+		width: 65%;
+	}
+
+	.btn {
+		padding: 0.4em;
+		font-size: 1.2em;
 	}
 }
