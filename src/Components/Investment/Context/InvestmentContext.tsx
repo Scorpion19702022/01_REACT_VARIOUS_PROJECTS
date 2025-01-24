@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 
 type InitialStateType = {
-	invest: string
+	inputInvest: string | number | null
 }
 
 type InvestmentProviderType = {
@@ -11,16 +11,16 @@ type InvestmentProviderType = {
 }
 
 const InitialState: InitialStateType = {
-	invest: '',
+	inputInvest: null,
 }
 
 const InvestmentContext = createContext(InitialState)
 
 export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
-	const [invest, setInvest] = useState<string>('test')
+	const [inputInvest, setInputInvest] = useState<string | number | null>(null)
 
 	return (
-		<InvestmentContext.Provider value={{ invest }}>
+		<InvestmentContext.Provider value={{ inputInvest }}>
 			{children}
 			<Analytics />
 		</InvestmentContext.Provider>

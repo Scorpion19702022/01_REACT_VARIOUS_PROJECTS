@@ -9,9 +9,9 @@ import bank04 from './assets/bank05.jpg'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentInputs = () => {
-	const { invest } = useContext(InvestmentContext)
+	const { inputInvest } = useContext(InvestmentContext)
 
-	console.log(invest)
+	console.log(inputInvest)
 
 	return (
 		<section className={styles.wrapper}>
