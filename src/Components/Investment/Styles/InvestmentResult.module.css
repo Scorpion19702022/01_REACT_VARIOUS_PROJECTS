@@ -74,13 +74,15 @@
 
 th {
 	border: 0.04em solid var(--color-color07);
-	color: var(--color-color04);
+	color: var(--color-color03);
 	padding: 0.4em;
-	width: 17%;
+	font-size: 0.8em;
+	font-weight: 300;
+	width: 22%;
 }
 
 th:nth-child(1) {
-	width: 6%;
+	width: 12%;
 }
 
 @media (min-width: 660px) {
@@ -97,7 +99,6 @@ th:nth-child(1) {
 		flex-direction: row;
 		justify-content: space-around;
 		align-items: flex-start;
-		background-color: #85c6db;
 	}
 
 	.box_your_invest {
