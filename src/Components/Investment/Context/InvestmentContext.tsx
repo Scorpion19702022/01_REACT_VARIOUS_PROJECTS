@@ -3,9 +3,9 @@ import React, { createContext, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 
 type InitialStateType = {
-	inputInvest: string | null
-	inputYearInvest: string | null
-	inputTime: string | null
+	inputInvest: string | number | null
+	inputYearInvest: string | number | null
+	inputTime: string | number | null
 	allInvest: number
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
@@ -29,21 +29,21 @@ const InitialState: InitialStateType = {
 const InvestmentContext = createContext(InitialState)
 
 export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
-	const [inputInvest, setInputInvest] = useState<string | null>('')
-	const [inputYearInvest, setInputYearInvest] = useState<string | null>('')
-	const [inputTime, setInputTime] = useState<string | null>('')
+	const [inputInvest, setInputInvest] = useState<string | number | null>('')
+	const [inputYearInvest, setInputYearInvest] = useState<string | number | null>('')
+	const [inputTime, setInputTime] = useState<string | number | null>('')
 
 	const [allInvest, setAllInvest] = useState<number>(0)
 
-	const handleChangeInvest = (e: string) => {
+	const handleChangeInvest = (e: string | number | null) => {
 		setInputInvest(e)
 	}
 
-	const handleChangeYearInvest = (e: string) => {
+	const handleChangeYearInvest = (e: string | number | null) => {
 		setInputYearInvest(e)
 	}
 
-	const handleChangeTime = (e: string) => {
+	const handleChangeTime = (e: string | number | null) => {
 		setInputTime(e)
 	}
 

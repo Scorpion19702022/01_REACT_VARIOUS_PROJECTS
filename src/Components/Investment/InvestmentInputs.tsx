@@ -12,6 +12,10 @@ const InvestmentInputs = () => {
 	const { inputInvest, inputYearInvest, inputTime, handleChangeInvest, handleChangeYearInvest, handleChangeTime } =
 		useContext(InvestmentContext)
 
+	if (Number(inputInvest) > 0 && inputInvest !== '') {
+		console.log(inputInvest)
+	}
+
 	return (
 		<section className={styles.wrapper}>
 			<h4 className={styles.heading}>
