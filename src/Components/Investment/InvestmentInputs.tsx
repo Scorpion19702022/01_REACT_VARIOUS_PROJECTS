@@ -9,7 +9,8 @@ import bank04 from './assets/bank05.jpg'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentInputs = () => {
-	const { inputInvest, inputYearInvest, inputTime } = useContext(InvestmentContext)
+	const { inputInvest, inputYearInvest, inputTime, handleChangeInvest, handleChangeYearInvest, handleChangeTime } =
+		useContext(InvestmentContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -21,15 +22,34 @@ const InvestmentInputs = () => {
 			<div className={styles.box_inputs}>
 				<div className={styles.inputs}>
 					<label className={styles.label}>Podaj kwotę wpłaty bazowej:</label>
-					<input className={styles.input} type='number' value={Number(inputInvest)} />
+					<input
+						className={styles.input}
+						type='number'
+						value={Number(inputInvest)}
+						min={0}
+						onChange={e => handleChangeInvest(+e.target.value)}
+					/>
 				</div>
 				<div className={styles.inputs}>
 					<label className={styles.label}>Podaj kwotę wpłaty rocznej:</label>
-					<input className={styles.input} type='number' value={Number(inputYearInvest)} />
+					<input
+						className={styles.input}
+						type='number'
+						value={Number(inputYearInvest)}
+						min={0}
+						onChange={e => handleChangeYearInvest(+e.target.value)}
+					/>
 				</div>
 				<div className={styles.inputs}>
 					<label className={styles.label}>Podaj okres w latach:</label>
-					<input className={styles.input} type='number' value={Number(inputTime)} />
+					<input
+						className={styles.input}
+						type='number'
+						value={Number(inputTime)}
+						min={1}
+						max={10}
+						onChange={e => handleChangeTime(+e.target.value)}
+					/>
 				</div>
 				<div className={styles.box_img}>
 					<img className={styles.img} src={bank01} alt='logo_bank' />
