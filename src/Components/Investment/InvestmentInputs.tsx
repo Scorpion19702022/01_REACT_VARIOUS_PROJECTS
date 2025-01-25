@@ -9,9 +9,7 @@ import bank04 from './assets/bank05.jpg'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentInputs = () => {
-	const { inputInvest } = useContext(InvestmentContext)
-
-	console.log(inputInvest)
+	const { inputInvest, inputYearInvest, inputTime } = useContext(InvestmentContext)
 
 	return (
 		<section className={styles.wrapper}>
@@ -23,15 +21,15 @@ const InvestmentInputs = () => {
 			<div className={styles.box_inputs}>
 				<div className={styles.inputs}>
 					<label className={styles.label}>Podaj kwotę wpłaty bazowej:</label>
-					<input className={styles.input} type='number' />
+					<input className={styles.input} type='number' value={Number(inputInvest)} />
 				</div>
 				<div className={styles.inputs}>
 					<label className={styles.label}>Podaj kwotę wpłaty rocznej:</label>
-					<input className={styles.input} type='number' />
+					<input className={styles.input} type='number' value={Number(inputYearInvest)} />
 				</div>
 				<div className={styles.inputs}>
 					<label className={styles.label}>Podaj okres w latach:</label>
-					<input className={styles.input} type='number' />
+					<input className={styles.input} type='number' value={Number(inputTime)} />
 				</div>
 				<div className={styles.box_img}>
 					<img className={styles.img} src={bank01} alt='logo_bank' />
