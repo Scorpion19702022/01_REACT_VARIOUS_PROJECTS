@@ -3,13 +3,13 @@ import React, { createContext, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 
 type InitialStateType = {
-	inputInvest: string | number | null
-	inputYearInvest: string | number | null
-	inputTime: string | number | null
+	inputInvest: string | null
+	inputYearInvest: string | null
+	inputTime: string | null
 	allInvest: number
-	handleChangeInvest: (e: number) => void
-	handleChangeYearInvest: (e: number) => void
-	handleChangeTime: (e: number) => void
+	handleChangeInvest: (e: string) => void
+	handleChangeYearInvest: (e: string) => void
+	handleChangeTime: (e: string) => void
 }
 
 type InvestmentProviderType = {
@@ -21,29 +21,29 @@ const InitialState: InitialStateType = {
 	inputYearInvest: '',
 	inputTime: '',
 	allInvest: 0,
-	handleChangeInvest: (e: number) => {},
-	handleChangeYearInvest: (e: number) => {},
-	handleChangeTime: (e: number) => {},
+	handleChangeInvest: (e: string) => {},
+	handleChangeYearInvest: (e: string) => {},
+	handleChangeTime: (e: string) => {},
 }
 
 const InvestmentContext = createContext(InitialState)
 
 export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
-	const [inputInvest, setInputInvest] = useState<string | number | null>(null)
-	const [inputYearInvest, setInputYearInvest] = useState<string | number | null>(null)
-	const [inputTime, setInputTime] = useState<string | number | null>(null)
+	const [inputInvest, setInputInvest] = useState<string | null>('')
+	const [inputYearInvest, setInputYearInvest] = useState<string | null>('')
+	const [inputTime, setInputTime] = useState<string | null>('')
 
 	const [allInvest, setAllInvest] = useState<number>(0)
 
-	const handleChangeInvest = (e: number) => {
+	const handleChangeInvest = (e: string) => {
 		setInputInvest(e)
 	}
 
-	const handleChangeYearInvest = (e: number) => {
+	const handleChangeYearInvest = (e: string) => {
 		setInputYearInvest(e)
 	}
 
-	const handleChangeTime = (e: number) => {
+	const handleChangeTime = (e: string) => {
 		setInputTime(e)
 	}
 

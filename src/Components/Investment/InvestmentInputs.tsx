@@ -25,9 +25,9 @@ const InvestmentInputs = () => {
 					<input
 						className={styles.input}
 						type='number'
-						value={Number(inputInvest)}
+						value={Number(inputInvest || '')}
 						min={0}
-						onChange={e => handleChangeInvest(+e.target.value)}
+						onChange={e => handleChangeInvest(e.target.value)}
 					/>
 				</div>
 				<div className={styles.inputs}>
@@ -35,9 +35,9 @@ const InvestmentInputs = () => {
 					<input
 						className={styles.input}
 						type='number'
-						value={Number(inputYearInvest)}
+						value={Number(inputYearInvest || '')}
 						min={0}
-						onChange={e => handleChangeYearInvest(+e.target.value)}
+						onChange={e => handleChangeYearInvest(e.target.value)}
 					/>
 				</div>
 				<div className={styles.inputs}>
@@ -45,10 +45,10 @@ const InvestmentInputs = () => {
 					<input
 						className={styles.input}
 						type='number'
-						value={Number(inputTime)}
+						value={Number(inputTime || '')}
 						min={1}
 						max={10}
-						onChange={e => handleChangeTime(+e.target.value)}
+						onChange={e => handleChangeTime(e.target.value)}
 					/>
 				</div>
 				<div className={styles.box_img}>
