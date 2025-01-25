@@ -122,8 +122,8 @@
 	}
 
 	.box_img {
-		width: 28%;
-		height: 50px;
+		max-width: 28%;
+		max-height: 50px;
 		padding: 0.4em;
 		background-color: var(--color-dark01);
 		border: 0.2em solid var(--color-dark09);
@@ -135,7 +135,8 @@
 
 	.img {
 		display: block;
-		height: 75%;
+		max-width: 23%;
+		max-height: 75%;
 		object-fit: cover;
 	}
 
