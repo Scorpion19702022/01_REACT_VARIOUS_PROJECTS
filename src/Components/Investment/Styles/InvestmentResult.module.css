@@ -69,6 +69,7 @@
 }
 
 .name_bank {
+	width: 100%;
 	background-color: var(--color-dark09);
 }
 
@@ -83,6 +84,15 @@ th {
 
 th:nth-child(1) {
 	width: 12%;
+}
+
+.name_information {
+	width: 100%;
+	background-color: var(--color-dark09);
+}
+
+.one_rubric {
+	width: 88%;
 }
 
 @media (min-width: 660px) {

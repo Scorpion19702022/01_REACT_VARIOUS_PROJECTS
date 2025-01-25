@@ -3,6 +3,8 @@ import React from 'react'
 import styles from './Styles/InvestmentResult.module.css'
 
 const InvestmentResult = () => {
+	const contentForTable = 'wynik twojej inwestycji'
+
 	return (
 		<section className={styles.wrapper}>
 			<div className={styles.box_your_invest}>
@@ -14,11 +16,17 @@ const InvestmentResult = () => {
 			<table className={styles.box_table}>
 				<thead>
 					<tr className={styles.name_bank}>
-						<th>Rok</th>
+						<th></th>
 						<th>PKO BP</th>
 						<th>PKO SA</th>
 						<th>Santander</th>
 						<th>mBank</th>
+					</tr>
+					<tr className={styles.name_information}>
+						<th>Rok</th>
+						<th className={styles.one_rubric} colSpan={4}>
+							{contentForTable.toLocaleUpperCase()}
+						</th>
 					</tr>
 				</thead>
 				<tbody>
