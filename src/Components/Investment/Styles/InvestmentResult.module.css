@@ -89,10 +89,15 @@ th:nth-child(1) {
 .name_information {
 	width: 100%;
 	background-color: var(--color-dark09);
+	color: var(--color-color01);
+}
+
+.year_rubric {
+	color: var(--color-color01);
 }
 
 .one_rubric {
-	width: 88%;
+	color: var(--color-color01);
 }
 
 @media (min-width: 660px) {

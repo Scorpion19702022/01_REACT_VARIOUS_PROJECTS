@@ -15,18 +15,17 @@ const InvestmentResult = () => {
 			</div>
 			<table className={styles.box_table}>
 				<thead>
+					<tr className={styles.name_information}>
+						<th className={styles.one_rubric} colSpan={5}>
+							{contentForTable.toLocaleUpperCase()}
+						</th>
+					</tr>
 					<tr className={styles.name_bank}>
-						<th></th>
+						<th>Rok</th>
 						<th>PKO BP</th>
 						<th>PKO SA</th>
 						<th>Santander</th>
 						<th>mBank</th>
-					</tr>
-					<tr className={styles.name_information}>
-						<th>Rok</th>
-						<th className={styles.one_rubric} colSpan={4}>
-							{contentForTable.toLocaleUpperCase()}
-						</th>
 					</tr>
 				</thead>
 				<tbody>
