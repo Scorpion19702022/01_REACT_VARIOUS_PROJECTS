@@ -11,6 +11,7 @@ type InitialStateType = {
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
 	handleAddInvest: () => void
+	handleCleanAllInvest: () => void
 }
 
 type InvestmentProviderType = {
@@ -26,6 +27,7 @@ const InitialState: InitialStateType = {
 	handleChangeYearInvest: (e: string) => {},
 	handleChangeTime: (e: string) => {},
 	handleAddInvest: () => {},
+	handleCleanAllInvest: () => {},
 }
 
 const InvestmentContext = createContext(InitialState)
@@ -57,7 +59,12 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		}
 	}
 
-	console.log(allInvest)
+	const handleCleanAllInvest = () => {
+		setInputInvest('')
+		setInputYearInvest('')
+		setInputTime('')
+		setAllInvest('0 zł')
+	}
 
 	return (
 		<InvestmentContext.Provider
@@ -70,6 +77,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				handleChangeYearInvest,
 				handleChangeTime,
 				handleAddInvest,
+				handleCleanAllInvest,
 			}}
 		>
 			{children}
