@@ -11,7 +11,7 @@ const InvestmentResult = () => {
 		<section className={styles.wrapper}>
 			<div className={styles.box_your_invest}>
 				<h2 className={styles.your_invest}>
-					Zainwestowałeś: <span className={styles.span}>{allInvest} zł</span>
+					Zainwestowałeś: <span className={styles.span}>{allInvest}</span>
 				</h2>
 				<button className={styles.btn}>Zobacz wykres</button>
 			</div>

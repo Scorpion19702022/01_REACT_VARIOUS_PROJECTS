@@ -35,7 +35,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [inputYearInvest, setInputYearInvest] = useState<string | number | null>('')
 	const [inputTime, setInputTime] = useState<string | number | null>('')
 
-	const [allInvest, setAllInvest] = useState<string | number>(0)
+	const [allInvest, setAllInvest] = useState<string | number>(`0 zł`)
 
 	const handleChangeInvest = (e: string | number | null) => {
 		setInputInvest(e)
@@ -51,7 +51,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 	const handleAddInvest = () => {
 		if (inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') {
-			setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
+			setAllInvest(`${Number(inputInvest)} + ${Number(inputYearInvest)} * ${Number(inputTime)} zł`)
 		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '') {
 			setAllInvest('wypełnij wszystkie pola')
 		}
