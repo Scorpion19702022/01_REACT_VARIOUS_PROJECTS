@@ -6,7 +6,7 @@ type InitialStateType = {
 	inputInvest: string | number | null
 	inputYearInvest: string | number | null
 	inputTime: string | number | null
-	allInvest: number
+	allInvest: string | number
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
@@ -35,7 +35,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [inputYearInvest, setInputYearInvest] = useState<string | number | null>('')
 	const [inputTime, setInputTime] = useState<string | number | null>('')
 
-	const [allInvest, setAllInvest] = useState<number>(0)
+	const [allInvest, setAllInvest] = useState<string | number>(0)
 
 	const handleChangeInvest = (e: string | number | null) => {
 		setInputInvest(e)
@@ -50,7 +50,11 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	}
 
 	const handleAddInvest = () => {
-		setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
+		if (inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') {
+			setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
+		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '') {
+			setAllInvest('wypełnij wszystkie pola')
+		}
 	}
 
 	console.log(allInvest)
