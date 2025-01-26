@@ -51,7 +51,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 	const handleAddInvest = () => {
 		if (inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') {
-			setAllInvest(`${Number(inputInvest)} + ${Number(inputYearInvest)} * ${Number(inputTime)} zł`)
+			setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime) + ' zł')
 		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '') {
 			setAllInvest('wypełnij wszystkie pola')
 		}
