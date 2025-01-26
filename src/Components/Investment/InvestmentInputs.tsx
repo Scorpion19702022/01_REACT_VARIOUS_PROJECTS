@@ -9,8 +9,15 @@ import bank04 from './assets/bank05.jpg'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentInputs = () => {
-	const { inputInvest, inputYearInvest, inputTime, handleChangeInvest, handleChangeYearInvest, handleChangeTime } =
-		useContext(InvestmentContext)
+	const {
+		inputInvest,
+		inputYearInvest,
+		inputTime,
+		handleChangeInvest,
+		handleChangeYearInvest,
+		handleChangeTime,
+		handleAddInvest,
+	} = useContext(InvestmentContext)
 
 	if (Number(inputInvest) > 0 && inputInvest !== '') {
 		console.log(inputInvest)
@@ -63,7 +70,9 @@ const InvestmentInputs = () => {
 				</div>
 			</div>
 			<div className={styles.box_btns}>
-				<button className={styles.btn}>wykonaj</button>
+				<button className={styles.btn} onClick={handleAddInvest}>
+					wykonaj
+				</button>
 				<button className={styles.btn}>resetuj</button>
 			</div>
 		</section>
