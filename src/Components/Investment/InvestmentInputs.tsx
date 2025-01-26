@@ -17,6 +17,7 @@ const InvestmentInputs = () => {
 		handleChangeYearInvest,
 		handleChangeTime,
 		handleAddInvest,
+		handleCleanAllInvest,
 	} = useContext(InvestmentContext)
 
 	if (Number(inputInvest) > 0 && inputInvest !== '') {
@@ -73,7 +74,9 @@ const InvestmentInputs = () => {
 				<button className={styles.btn} onClick={handleAddInvest}>
 					wykonaj
 				</button>
-				<button className={styles.btn}>resetuj</button>
+				<button className={styles.btn} onClick={handleCleanAllInvest}>
+					resetuj
+				</button>
 			</div>
 		</section>
 	)
