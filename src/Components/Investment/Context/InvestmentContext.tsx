@@ -49,7 +49,11 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setInputTime(e)
 	}
 
-	const handleAddInvest = () => {}
+	const handleAddInvest = () => {
+		setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
+	}
+
+	console.log(allInvest)
 
 	return (
 		<InvestmentContext.Provider
