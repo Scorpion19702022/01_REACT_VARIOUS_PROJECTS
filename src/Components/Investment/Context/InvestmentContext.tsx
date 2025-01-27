@@ -67,6 +67,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setInputYearInvest('')
 		setInputTime('')
 		setAllInvest('0 zł')
+		setPeriodInvest('0 lat')
 	}
 
 	return (

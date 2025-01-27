@@ -4,7 +4,7 @@ import styles from './Styles/InvestmentResult.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentResult = () => {
-	const { allInvest } = useContext(InvestmentContext)
+	const { allInvest, periodInvest } = useContext(InvestmentContext)
 	const contentForTable = 'wynik twojej inwestycji'
 
 	return (
@@ -14,7 +14,7 @@ const InvestmentResult = () => {
 					Zainwestowałeś: <span className={styles.span}>{allInvest}</span>
 				</span>
 				<span className={styles.your_period}>
-					Czas inwestycji: <span className={styles.span}></span>
+					Czas inwestycji: <span className={styles.span}>{periodInvest}</span>
 				</span>
 
 				<button className={styles.btn}>Zobacz wykres</button>
