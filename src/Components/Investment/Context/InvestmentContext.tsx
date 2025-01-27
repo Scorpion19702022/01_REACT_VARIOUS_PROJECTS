@@ -7,6 +7,7 @@ type InitialStateType = {
 	inputYearInvest: string | number | null
 	inputTime: string | number | null
 	allInvest: string | number
+	periodInvest: string | number
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
@@ -23,6 +24,7 @@ const InitialState: InitialStateType = {
 	inputYearInvest: '',
 	inputTime: '',
 	allInvest: 0,
+	periodInvest: 0,
 	handleChangeInvest: (e: string) => {},
 	handleChangeYearInvest: (e: string) => {},
 	handleChangeTime: (e: string) => {},
@@ -38,6 +40,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [inputTime, setInputTime] = useState<string | number | null>('')
 
 	const [allInvest, setAllInvest] = useState<string | number>(`0 zł`)
+	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
 
 	const handleChangeInvest = (e: string | number | null) => {
 		setInputInvest(e)
@@ -73,6 +76,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				inputYearInvest,
 				inputTime,
 				allInvest,
+				periodInvest,
 				handleChangeInvest,
 				handleChangeYearInvest,
 				handleChangeTime,
