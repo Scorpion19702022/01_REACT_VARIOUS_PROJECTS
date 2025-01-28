@@ -43,7 +43,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
 
 	const handleChangeInvest = (e: string | number | null) => {
-		if (Number(e) > 0) {
+		if (Number(e) >= 0) {
 			setInputInvest(e)
 		}
 	}
@@ -55,7 +55,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	}
 
 	const handleChangeTime = (e: string | number | null) => {
-		if (Number(e) <= 10 && Number(e) >= 1) {
+		if (Number(e) <= 10 && Number(e) >= 1 && e !== '') {
 			setInputTime(e)
 		}
 	}
@@ -74,6 +74,8 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 			setPeriodInvest(`${inputTime} lata`)
 		} else if (Number(inputTime) > 2) {
 			setPeriodInvest(`${inputTime} lat`)
+		} else if (String(inputTime) === '') {
+			setPeriodInvest(`musisz podać okres`)
 		}
 	}
 
