@@ -70,6 +70,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 		if (Number(inputTime) === 1) {
 			setPeriodInvest(`${inputTime} rok`)
+		} else if (Number(inputTime) > 1 && Number(inputTime) <= 3) {
+			setPeriodInvest(`${inputTime} lata`)
+		} else if (Number(inputTime) > 2) {
+			setPeriodInvest(`${inputTime} lat`)
 		}
 	}
 
