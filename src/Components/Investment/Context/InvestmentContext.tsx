@@ -51,14 +51,22 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	}
 
 	const handleChangeTime = (e: string | number | null) => {
-		setInputTime(e)
+		if (Number(e) <= 10 || Number(e) > 0) {
+			setInputTime(e)
+		}
 	}
 
 	const handleAddInvest = () => {
 		if (inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') {
 			setAllInvest((Number(inputInvest) + Number(inputYearInvest) * Number(inputTime)).toLocaleString(`pl-PL`) + ' zł')
-		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '') {
-			setAllInvest('wypełnij wszystkie pola')
+		} else if (
+			inputInvest === '' ||
+			inputYearInvest === '' ||
+			inputTime === '' ||
+			Number(inputTime) > 10 ||
+			Number(inputTime) <= 0
+		) {
+			setAllInvest('wypełnij poprawnie wszystkie pola')
 		}
 	}
 
