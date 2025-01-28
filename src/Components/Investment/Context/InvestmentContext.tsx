@@ -63,14 +63,13 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const handleAddInvest = () => {
 		if (inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') {
 			setAllInvest((Number(inputInvest) + Number(inputYearInvest) * Number(inputTime)).toLocaleString(`pl-PL`) + ' zł')
-		} else if (
-			inputInvest === '' ||
-			inputYearInvest === '' ||
-			inputTime === '' ||
-			Number(inputTime) > 10 ||
-			Number(inputTime) <= 0
-		) {
+		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '') {
 			setAllInvest('wypełnij wszystkie pola')
+			setPeriodInvest('0 lat')
+		}
+
+		if (Number(inputTime) === 1) {
+			setPeriodInvest(`${inputTime} rok`)
 		}
 	}
 
