@@ -37,7 +37,7 @@ const InvestmentInputs = () => {
 					<input
 						className={styles.input}
 						type='number'
-						value={Number(inputInvest) || ''}
+						value={Number(inputInvest) || '' || 0}
 						min={0}
 						onChange={e => handleChangeInvest(e.target.value)}
 					/>
@@ -47,7 +47,7 @@ const InvestmentInputs = () => {
 					<input
 						className={styles.input}
 						type='number'
-						value={Number(inputYearInvest) || ''}
+						value={Number(inputYearInvest) || '' || 0}
 						min={0}
 						onChange={e => handleChangeYearInvest(e.target.value)}
 					/>
@@ -57,7 +57,7 @@ const InvestmentInputs = () => {
 					<input
 						className={styles.input}
 						type='number'
-						value={Number(inputTime) || ''}
+						value={Number(inputTime) || '' || 0}
 						min={1}
 						max={10}
 						onChange={e => handleChangeTime(e.target.value)}

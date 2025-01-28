@@ -35,9 +35,9 @@ const InitialState: InitialStateType = {
 const InvestmentContext = createContext(InitialState)
 
 export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
-	const [inputInvest, setInputInvest] = useState<string | number | null>('')
-	const [inputYearInvest, setInputYearInvest] = useState<string | number | null>('')
-	const [inputTime, setInputTime] = useState<string | number | null>('')
+	const [inputInvest, setInputInvest] = useState<string | number | null>('0')
+	const [inputYearInvest, setInputYearInvest] = useState<string | number | null>('0')
+	const [inputTime, setInputTime] = useState<string | number | null>('0')
 
 	const [allInvest, setAllInvest] = useState<string | number>(`0 zł`)
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
@@ -61,7 +61,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	}
 
 	const handleAddInvest = () => {
-		if (inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') {
+		if (inputInvest !== '' && inputYearInvest !== '' && inputTime !== '' && Number(inputTime) > 0) {
 			setAllInvest((Number(inputInvest) + Number(inputYearInvest) * Number(inputTime)).toLocaleString(`pl-PL`) + ' zł')
 		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '') {
 			setAllInvest('wypełnij wszystkie pola')
@@ -74,7 +74,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 			setPeriodInvest(`${inputTime} lata`)
 		} else if (Number(inputTime) > 2) {
 			setPeriodInvest(`${inputTime} lat`)
-		} else if (String(inputTime) === '') {
+		} else if (String(inputTime) === '' || Number(inputTime) === 0) {
 			setPeriodInvest(`musisz podać okres`)
 		}
 	}
