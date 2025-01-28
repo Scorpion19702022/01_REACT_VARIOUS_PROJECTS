@@ -43,15 +43,19 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
 
 	const handleChangeInvest = (e: string | number | null) => {
-		setInputInvest(e)
+		if (Number(e) > 0) {
+			setInputInvest(e)
+		}
 	}
 
 	const handleChangeYearInvest = (e: string | number | null) => {
-		setInputYearInvest(e)
+		if (Number(e) >= 0) {
+			setInputYearInvest(e)
+		}
 	}
 
 	const handleChangeTime = (e: string | number | null) => {
-		if (Number(e) <= 10 || Number(e) > 0) {
+		if (Number(e) <= 10 || Number(e) >= 1) {
 			setInputTime(e)
 		}
 	}
@@ -66,7 +70,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 			Number(inputTime) > 10 ||
 			Number(inputTime) <= 0
 		) {
-			setAllInvest('wypełnij poprawnie wszystkie pola')
+			setAllInvest('wypełnij wszystkie pola')
 		}
 	}
 
