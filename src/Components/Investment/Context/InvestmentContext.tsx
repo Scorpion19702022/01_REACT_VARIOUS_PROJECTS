@@ -61,7 +61,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	}
 
 	const handleAddInvest = () => {
-		if (inputInvest !== '' && inputYearInvest !== '' && inputTime !== '' && Number(inputTime) > 0) {
+		if ((inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') || Number(inputTime) > 0) {
 			setAllInvest((Number(inputInvest) + Number(inputYearInvest) * Number(inputTime)).toLocaleString(`pl-PL`) + ' zł')
 		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '' || Number(inputTime) <= 0) {
 			setAllInvest('wypełnij wszystkie pola')
