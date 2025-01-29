@@ -49,6 +49,11 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
 
+	let percentPkoBp = 2.5
+	let percentPkoSa = 3.25
+	let percentSantarder = 2
+	let percentMbank = 4.5
+
 	const handleChangeInvest = (e: string | number | null) => {
 		if (Number(e) >= 0) {
 			setInputInvest(e)
