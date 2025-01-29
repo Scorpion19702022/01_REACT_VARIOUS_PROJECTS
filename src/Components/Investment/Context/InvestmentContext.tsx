@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
+import { TypeForInvestment } from '../Types/TypeForInvestment'
 
 type InitialStateType = {
 	inputInvest: string | number | null
@@ -8,6 +9,7 @@ type InitialStateType = {
 	inputTime: string | number | null
 	allInvest: string | number
 	periodInvest: string | number
+	yourInvest: TypeForInvestment[]
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
@@ -26,6 +28,7 @@ const InitialState: InitialStateType = {
 	inputTime: '',
 	allInvest: 0,
 	periodInvest: 0,
+	yourInvest: [],
 	handleChangeInvest: (e: string) => {},
 	handleChangeYearInvest: (e: string) => {},
 	handleChangeTime: (e: string) => {},
@@ -43,6 +46,8 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 	const [allInvest, setAllInvest] = useState<string | number>(`0 zł`)
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
+
+	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
 
 	const handleChangeInvest = (e: string | number | null) => {
 		if (Number(e) >= 0) {
@@ -65,6 +70,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const handleAddInvest = () => {
 		if ((inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') || Number(inputTime) > 0) {
 			setAllInvest((Number(inputInvest) + Number(inputYearInvest) * Number(inputTime)).toLocaleString(`pl-PL`) + ' zł')
+			console.log(yourInvest)
 		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '' || Number(inputTime) <= 0) {
 			setAllInvest('musisz podać okres')
 			setPeriodInvest('0 lat')
@@ -104,6 +110,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				inputTime,
 				allInvest,
 				periodInvest,
+				yourInvest,
 				handleChangeInvest,
 				handleChangeYearInvest,
 				handleChangeTime,

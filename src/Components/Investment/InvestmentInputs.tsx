@@ -21,10 +21,6 @@ const InvestmentInputs = () => {
 		handleUseEnter,
 	} = useContext(InvestmentContext)
 
-	if (Number(inputInvest) > 0 && inputInvest !== '') {
-		console.log(inputInvest)
-	}
-
 	return (
 		<section className={styles.wrapper} onKeyDown={handleUseEnter}>
 			<h4 className={styles.heading}>
