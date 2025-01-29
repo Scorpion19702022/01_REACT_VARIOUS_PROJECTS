@@ -55,13 +55,23 @@
 	color: var(--color-color02);
 }
 
-.btn {
+.btn_chart {
 	width: 70%;
 	padding: 0.4em;
 	font-size: 0.8em;
 	border: 0.04em solid var(--color-color07);
 	background-color: var(--color-dark08);
 	color: var(--color-color03);
+}
+
+.btn_chart:disabled {
+	width: 70%;
+	padding: 0.4em;
+	font-size: 0.8em;
+	border: 0.04em solid var(--color-color06);
+	background-color: var(--color-dark06);
+	color: var(--color-dark04);
+	cursor: auto;
 }
 
 .box_table {
@@ -135,8 +145,23 @@ th:nth-child(1) {
 		font-size: 1.2em;
 	}
 
-	.btn {
+	.btn_chart {
 		padding: 0.4em;
 		font-size: 1.2em;
+		cursor: pointer;
+		transition: background-color 0.3s ease-in-out;
+	}
+
+	.btn_chart:disabled {
+		padding: 0.4em;
+		font-size: 1.2em;
+		border: 0.04em solid var(--color-color06);
+		background-color: var(--color-dark06);
+		color: var(--color-dark04);
+		cursor: auto;
+	}
+
+	.btn_chart:hover {
+		background-color: var(--color-dark09);
 	}
 }

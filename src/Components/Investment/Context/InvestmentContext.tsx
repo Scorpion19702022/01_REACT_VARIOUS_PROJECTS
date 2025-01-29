@@ -10,7 +10,7 @@ type InitialStateType = {
 	allInvest: string | number
 	periodInvest: string | number
 	yourInvest: TypeForInvestment[]
-	resultInvest: number | string[]
+	resultInvest: any[]
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
@@ -50,7 +50,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
-	const [resultInvest, setResultInvest] = useState<number | string[]>([])
+	const [resultInvest, setResultInvest] = useState<any[]>([])
 
 	let percentPkoBp = 2.5
 	let percentPkoSa = 3.25
@@ -78,7 +78,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const handleAddInvest = () => {
 		if ((inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') || Number(inputTime) > 0) {
 			setAllInvest((Number(inputInvest) + Number(inputYearInvest) * Number(inputTime)).toLocaleString(`pl-PL`) + ' zł')
-			console.log(resultInvest)
+			console.log(resultInvest.length)
 		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '' || Number(inputTime) <= 0) {
 			setAllInvest('musisz podać okres')
 			setPeriodInvest('0 lat')
