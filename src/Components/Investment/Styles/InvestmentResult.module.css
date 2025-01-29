@@ -68,7 +68,7 @@
 	width: 70%;
 	padding: 0.4em;
 	font-size: 0.8em;
-	border: 0.04em solid var(--color-color06);
+	border: 0.04em solid var(--color-dark06);
 	background-color: var(--color-dark06);
 	color: var(--color-dark04);
 	cursor: auto;
@@ -152,16 +152,16 @@ th:nth-child(1) {
 		transition: background-color 0.3s ease-in-out;
 	}
 
+	.btn_chart:hover {
+		background-color: var(--color-dark09);
+	}
+
 	.btn_chart:disabled {
 		padding: 0.4em;
 		font-size: 1.2em;
-		border: 0.04em solid var(--color-color06);
+		border: 0.04em solid var(--color-dark06);
 		background-color: var(--color-dark06);
 		color: var(--color-dark04);
 		cursor: auto;
-	}
-
-	.btn_chart:hover {
-		background-color: var(--color-dark09);
 	}
 }
