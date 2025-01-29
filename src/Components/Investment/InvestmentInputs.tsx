@@ -18,6 +18,7 @@ const InvestmentInputs = () => {
 		handleChangeTime,
 		handleAddInvest,
 		handleCleanAllInvest,
+		handleUseEnter,
 	} = useContext(InvestmentContext)
 
 	if (Number(inputInvest) > 0 && inputInvest !== '') {
@@ -25,7 +26,7 @@ const InvestmentInputs = () => {
 	}
 
 	return (
-		<section className={styles.wrapper}>
+		<section className={styles.wrapper} onKeyDown={handleUseEnter}>
 			<h4 className={styles.heading}>
 				Podając wartości swojego wkładu początkowego i deklarację corrocznej wpłaty oraz okres jaki przwidujesz a
 				oszczędości sprawdzisz ile zarobisz a corocznych odsetkach w 5 najpopularniejszych bankach w Polsce. Maksymalny

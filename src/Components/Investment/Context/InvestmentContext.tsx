@@ -13,6 +13,7 @@ type InitialStateType = {
 	handleChangeTime: (e: string) => void
 	handleAddInvest: () => void
 	handleCleanAllInvest: () => void
+	handleUseEnter: (e: any) => void
 }
 
 type InvestmentProviderType = {
@@ -30,6 +31,7 @@ const InitialState: InitialStateType = {
 	handleChangeTime: (e: string) => {},
 	handleAddInvest: () => {},
 	handleCleanAllInvest: () => {},
+	handleUseEnter: (e: any) => {},
 }
 
 const InvestmentContext = createContext(InitialState)
@@ -87,6 +89,13 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setPeriodInvest('0 lat')
 	}
 
+	const handleUseEnter = (e: any) => {
+		if (e.key === 'Enter') {
+			handleAddInvest()
+			e.preventDefault()
+		}
+	}
+
 	return (
 		<InvestmentContext.Provider
 			value={{
@@ -100,6 +109,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				handleChangeTime,
 				handleAddInvest,
 				handleCleanAllInvest,
+				handleUseEnter,
 			}}
 		>
 			{children}
