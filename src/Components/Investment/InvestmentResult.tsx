@@ -20,13 +20,13 @@ const InvestmentResult = () => {
 
 				<button
 					className={styles.btn_chart}
-					disabled={resultInvest.length > 0 && Number(inputTime) !== 0 ? false : true}
+					disabled={resultInvest.length === 0 && Number(inputTime) > 0 ? false : true}
 				>
 					Zobacz wykres
 				</button>
 				<span
 					className={
-						Number(inputInvest) > 0 && Number(inputYearInvest) > 0 && Number(inputTime) > 0
+						String(inputInvest) !== '0' && String(inputYearInvest) !== '0' && Number(inputTime) > 0
 							? styles.chart_available
 							: styles.no_chart_available
 					}
