@@ -102,8 +102,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		}
 
 		if (Number(inputInvest) === 0 && Number(inputYearInvest) === 0 && Number(inputTime) === 0) {
+			setChartAvailable(false)
 			setChartInfo('wykres będzie dostępny gdy podasz wszędzie wartości większe od 0')
 		} else if (Number(inputInvest) > 0 && Number(inputYearInvest) > 0 && Number(inputTime) > 0) {
+			setChartAvailable(true)
 			setChartInfo('wykres dostępny')
 		}
 	}
@@ -115,6 +117,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setAllInvest('0 zł')
 		setPeriodInvest('0 lat')
 		setChartInfo('wykres niedostępny')
+		setChartAvailable(false)
 	}
 
 	const handleUseEnter = (e: any) => {
