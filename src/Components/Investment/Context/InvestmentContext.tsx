@@ -11,6 +11,7 @@ type InitialStateType = {
 	periodInvest: string | number
 	yourInvest: TypeForInvestment[]
 	resultInvest: any[]
+	chartInfo: string
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
@@ -31,6 +32,7 @@ const InitialState: InitialStateType = {
 	periodInvest: 0,
 	yourInvest: [],
 	resultInvest: [],
+	chartInfo: '',
 	handleChangeInvest: (e: string) => {},
 	handleChangeYearInvest: (e: string) => {},
 	handleChangeTime: (e: string) => {},
@@ -48,6 +50,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 	const [allInvest, setAllInvest] = useState<string | number>(`0 zł`)
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
+	const [chartInfo, setChartInfo] = useState<string>('')
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
 	const [resultInvest, setResultInvest] = useState<any[]>([])
@@ -86,12 +89,18 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 		if (Number(inputTime) === 1) {
 			setPeriodInvest(`${inputTime} rok`)
-		} else if (Number(inputTime) > 1 && Number(inputTime) <= 3) {
+		} else if (Number(inputTime) > 1 && Number(inputTime) <= 4) {
 			setPeriodInvest(`${inputTime} lata`)
 		} else if (Number(inputTime) > 2) {
 			setPeriodInvest(`${inputTime} lat`)
 		} else if (String(inputTime) === '' || Number(inputTime) === 0) {
 			setPeriodInvest(`musisz podać okres`)
+		}
+
+		if (Number(inputInvest) > 0 && Number(inputYearInvest) > 0 && Number(inputTime) > 0) {
+			setChartInfo('wykres będzie dostępny gdy podasz wszędzie wartości większe od 0')
+		} else {
+			setChartInfo('')
 		}
 	}
 
@@ -101,6 +110,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setInputTime('')
 		setAllInvest('0 zł')
 		setPeriodInvest('0 lat')
+		setChartInfo('')
 	}
 
 	const handleUseEnter = (e: any) => {
@@ -120,6 +130,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				periodInvest,
 				yourInvest,
 				resultInvest,
+				chartInfo,
 				handleChangeInvest,
 				handleChangeYearInvest,
 				handleChangeTime,
