@@ -32,7 +32,7 @@
 
 .box_your_invest {
 	width: 100%;
-	height: 120px;
+	height: 170px;
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
@@ -72,6 +72,11 @@
 	background-color: var(--color-dark06);
 	color: var(--color-dark04);
 	cursor: auto;
+}
+
+.chart_info {
+	color: var(--color-color03);
+	text-align: center;
 }
 
 .box_table {

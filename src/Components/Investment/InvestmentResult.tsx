@@ -4,7 +4,7 @@ import styles from './Styles/InvestmentResult.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentResult = () => {
-	const { allInvest, periodInvest, inputTime, resultInvest } = useContext(InvestmentContext)
+	const { allInvest, periodInvest, inputTime, resultInvest, chartInfo } = useContext(InvestmentContext)
 	const contentForTable = 'wynik twojej inwestycji'
 
 	return (
@@ -23,6 +23,7 @@ const InvestmentResult = () => {
 				>
 					Zobacz wykres
 				</button>
+				<span className={styles.chart_info}>{chartInfo}</span>
 			</div>
 			<table className={styles.box_table}>
 				<thead>
