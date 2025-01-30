@@ -74,8 +74,13 @@
 	cursor: auto;
 }
 
-.chart_info {
+.chart_available {
 	color: var(--color-color03);
+	text-align: center;
+}
+
+.no_chart_available {
+	color: var(--color-error);
 	text-align: center;
 }
 
