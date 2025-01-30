@@ -50,7 +50,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 	const [allInvest, setAllInvest] = useState<string | number>(`0 zł`)
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
-	const [chartInfo, setChartInfo] = useState<string>('')
+	const [chartInfo, setChartInfo] = useState<string>('wykres niedostępny')
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
 	const [resultInvest, setResultInvest] = useState<any[]>([])
@@ -97,10 +97,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 			setPeriodInvest(`musisz podać okres`)
 		}
 
-		if (Number(inputInvest) > 0 && Number(inputYearInvest) > 0 && Number(inputTime) > 0) {
+		if (Number(inputInvest) === 0 && Number(inputYearInvest) === 0 && Number(inputTime) === 0) {
 			setChartInfo('wykres będzie dostępny gdy podasz wszędzie wartości większe od 0')
-		} else {
-			setChartInfo('')
+		} else if (Number(inputInvest) > 0 && Number(inputYearInvest) > 0 && Number(inputTime) > 0) {
+			setChartInfo('wykres dostępny')
 		}
 	}
 
@@ -110,7 +110,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setInputTime('')
 		setAllInvest('0 zł')
 		setPeriodInvest('0 lat')
-		setChartInfo('')
+		setChartInfo('wykres niedostępny')
 	}
 
 	const handleUseEnter = (e: any) => {
