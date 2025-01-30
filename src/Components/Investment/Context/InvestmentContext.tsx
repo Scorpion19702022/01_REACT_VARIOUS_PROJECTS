@@ -12,6 +12,7 @@ type InitialStateType = {
 	yourInvest: TypeForInvestment[]
 	resultInvest: any[]
 	chartInfo: string
+	chartAvailable: boolean
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
@@ -33,6 +34,7 @@ const InitialState: InitialStateType = {
 	yourInvest: [],
 	resultInvest: [],
 	chartInfo: '',
+	chartAvailable: false,
 	handleChangeInvest: (e: string) => {},
 	handleChangeYearInvest: (e: string) => {},
 	handleChangeTime: (e: string) => {},
@@ -51,6 +53,8 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [allInvest, setAllInvest] = useState<string | number>(`0 zł`)
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
 	const [chartInfo, setChartInfo] = useState<string>('wykres niedostępny')
+
+	const [chartAvailable, setChartAvailable] = useState<boolean>(false)
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
 	const [resultInvest, setResultInvest] = useState<any[]>([])
@@ -131,6 +135,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				yourInvest,
 				resultInvest,
 				chartInfo,
+				chartAvailable,
 				handleChangeInvest,
 				handleChangeYearInvest,
 				handleChangeTime,

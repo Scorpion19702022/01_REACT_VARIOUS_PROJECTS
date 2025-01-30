@@ -4,7 +4,7 @@ import styles from './Styles/InvestmentResult.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentResult = () => {
-	const { allInvest, periodInvest, inputInvest, inputYearInvest, inputTime, resultInvest, chartInfo } =
+	const { allInvest, periodInvest, inputInvest, inputYearInvest, inputTime, resultInvest, chartInfo, chartAvailable } =
 		useContext(InvestmentContext)
 	const contentForTable = 'wynik twojej inwestycji'
 
@@ -18,25 +18,10 @@ const InvestmentResult = () => {
 					Czas inwestycji: <span className={styles.span}>{periodInvest}</span>
 				</span>
 
-				<button
-					className={styles.btn_chart}
-					disabled={resultInvest.length === 0 && Number(inputTime) > 0 ? false : true}
-				>
+				<button className={styles.btn_chart} disabled={chartAvailable ? false : true}>
 					Zobacz wykres
 				</button>
-				<span
-					className={
-						String(inputInvest) !== '0' &&
-						Number(inputInvest) > 0 &&
-						String(inputYearInvest) !== '0' &&
-						Number(inputYearInvest) > 0 &&
-						Number(inputTime) > 0
-							? styles.chart_available
-							: styles.no_chart_available
-					}
-				>
-					{chartInfo}
-				</span>
+				<span className={chartAvailable ? styles.chart_available : styles.no_chart_available}>{chartInfo}</span>
 			</div>
 			<table className={styles.box_table}>
 				<thead>
