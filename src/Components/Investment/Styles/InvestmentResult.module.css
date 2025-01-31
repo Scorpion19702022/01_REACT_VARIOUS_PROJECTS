@@ -94,6 +94,11 @@
 	background-color: var(--color-dark09);
 }
 
+.result_invest {
+	width: 100%;
+	background-color: var(--color-dark07);
+}
+
 th {
 	border: 0.04em solid var(--color-color07);
 	color: var(--color-color03);

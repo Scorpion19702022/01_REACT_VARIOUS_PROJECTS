@@ -9,7 +9,7 @@ const InvestmentResult = () => {
 
 	const resultInvestArray = yourInvest.map(item => {
 		return (
-			<tr key={item.year}>
+			<tr key={item.year} className={styles.result_invest}>
 				<td>{item.year}</td>
 				<td>{item.investPkoBp}</td>
 				<td>{item.investPkoSa}</td>
