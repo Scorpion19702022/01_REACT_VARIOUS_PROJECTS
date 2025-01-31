@@ -86,6 +86,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 			setAllInvest((Number(inputInvest) + Number(inputYearInvest) * Number(inputTime)).toLocaleString(`pl-PL`) + ' zł')
 
 			let currentInvestment = Number(inputInvest)
+			let newYourInvest = []
 
 			for (let i = 0; i < Number(inputTime); i++) {
 				currentInvestment += Number(inputYearInvest)
@@ -93,8 +94,6 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				const pkoSa = (currentInvestment * percentPkoSa) / 100
 				const santander = (currentInvestment * percentSantarder) / 100
 				const mBank = (currentInvestment * percentMbank) / 100
-
-				let newYourInvest = []
 
 				newYourInvest.push({
 					id: uuidv4(),
