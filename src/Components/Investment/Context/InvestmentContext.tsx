@@ -10,7 +10,7 @@ type InitialStateType = {
 	allInvest: string | number
 	periodInvest: string | number
 	yourInvest: TypeForInvestment[]
-	resultInvest: any[]
+	// resultInvest: any[]
 	chartInfo: string
 	chartAvailable: boolean
 	handleChangeInvest: (e: string) => void
@@ -32,7 +32,7 @@ const InitialState: InitialStateType = {
 	allInvest: 0,
 	periodInvest: 0,
 	yourInvest: [],
-	resultInvest: [],
+	// resultInvest: [],
 	chartInfo: '',
 	chartAvailable: false,
 	handleChangeInvest: (e: string) => {},
@@ -57,7 +57,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [chartAvailable, setChartAvailable] = useState<boolean>(false)
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
-	const [resultInvest, setResultInvest] = useState<any[]>([])
+	// const [resultInvest, setResultInvest] = useState<any[]>([])
 
 	let percentPkoBp = 2.5
 	let percentPkoSa = 3.25
@@ -90,7 +90,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 			for (let i = 0; i < Number(inputTime); i++) {
 				currentInvestment += Number(inputYearInvest)
-				console.log(currentInvestment)
+				const pkoBp = (currentInvestment * percentPkoBp) / 100
+				const pkoSa = (currentInvestment * percentPkoSa) / 100
+				const santander = (currentInvestment * percentSantarder) / 100
+				const mBank = (currentInvestment * percentMbank) / 100
 			}
 		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '' || Number(inputTime) <= 0) {
 			setAllInvest('musisz podać okres')
@@ -142,7 +145,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				allInvest,
 				periodInvest,
 				yourInvest,
-				resultInvest,
+				// resultInvest,
 				chartInfo,
 				chartAvailable,
 				handleChangeInvest,
