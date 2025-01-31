@@ -138,13 +138,21 @@ th:nth-child(1) {
 	}
 
 	.box_your_invest {
-		width: 30%;
-		height: 170px;
+		width: 32%;
+		height: 240px;
 	}
 
 	.your_invest,
 	.your_period {
 		font-size: 1.6em;
+	}
+
+	.chart_available {
+		font-size: 1.2em;
+	}
+
+	.no_chart_available {
+		font-size: 1.2em;
 	}
 
 	.box_table {
