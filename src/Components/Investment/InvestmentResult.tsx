@@ -4,8 +4,7 @@ import styles from './Styles/InvestmentResult.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentResult = () => {
-	const { allInvest, periodInvest, inputInvest, inputYearInvest, inputTime, resultInvest, chartInfo, chartAvailable } =
-		useContext(InvestmentContext)
+	const { allInvest, periodInvest, chartInfo, chartAvailable } = useContext(InvestmentContext)
 	const contentForTable = 'wynik twojej inwestycji'
 
 	return (
