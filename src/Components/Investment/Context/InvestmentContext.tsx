@@ -138,6 +138,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setPeriodInvest('0 lat')
 		setChartInfo('wykres niedostępny')
 		setChartAvailable(false)
+		setYourInvest([])
 	}
 
 	const handleUseEnter = (e: any) => {
