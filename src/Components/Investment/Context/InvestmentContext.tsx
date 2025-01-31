@@ -130,8 +130,6 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		}
 	}
 
-	console.log(yourInvest)
-
 	const handleCleanAllInvest = () => {
 		setInputInvest('')
 		setInputYearInvest('')

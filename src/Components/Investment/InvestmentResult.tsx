@@ -4,8 +4,22 @@ import styles from './Styles/InvestmentResult.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentResult = () => {
-	const { allInvest, periodInvest, chartInfo, chartAvailable } = useContext(InvestmentContext)
+	const { allInvest, periodInvest, chartInfo, chartAvailable, yourInvest } = useContext(InvestmentContext)
 	const contentForTable = 'wynik twojej inwestycji'
+
+	const resultInvestArray = yourInvest.map(item => {
+		return (
+			<tr key={item.year}>
+				<td>{item.year}</td>
+				<td>{item.investPkoBp}</td>
+				<td>{item.investPkoSa}</td>
+				<td>{item.investSantander}</td>
+				<td>{item.investMbank}</td>
+			</tr>
+		)
+	})
+
+	console.log(resultInvestArray)
 
 	return (
 		<section className={styles.wrapper}>
@@ -37,15 +51,7 @@ const InvestmentResult = () => {
 						<th>mBank</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</tbody>
+				<tbody>{resultInvestArray}</tbody>
 			</table>
 		</section>
 	)
