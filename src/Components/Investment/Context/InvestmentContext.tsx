@@ -3,6 +3,8 @@ import React, { createContext, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import { TypeForInvestment } from '../Types/TypeForInvestment'
 
+import { v4 as uuidv4 } from 'uuid'
+
 type InitialStateType = {
 	inputInvest: string | number | null
 	inputYearInvest: string | number | null
@@ -10,7 +12,6 @@ type InitialStateType = {
 	allInvest: string | number
 	periodInvest: string | number
 	yourInvest: TypeForInvestment[]
-	// resultInvest: any[]
 	chartInfo: string
 	chartAvailable: boolean
 	handleChangeInvest: (e: string) => void
@@ -32,7 +33,6 @@ const InitialState: InitialStateType = {
 	allInvest: 0,
 	periodInvest: 0,
 	yourInvest: [],
-	// resultInvest: [],
 	chartInfo: '',
 	chartAvailable: false,
 	handleChangeInvest: (e: string) => {},
@@ -57,7 +57,6 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [chartAvailable, setChartAvailable] = useState<boolean>(false)
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
-	// const [resultInvest, setResultInvest] = useState<any[]>([])
 
 	let percentPkoBp = 2.5
 	let percentPkoSa = 3.25
@@ -94,6 +93,19 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				const pkoSa = (currentInvestment * percentPkoSa) / 100
 				const santander = (currentInvestment * percentSantarder) / 100
 				const mBank = (currentInvestment * percentMbank) / 100
+
+				let newYourInvest = []
+
+				newYourInvest.push({
+					id: uuidv4(),
+					year: i + 1,
+					investPkoBp: pkoBp,
+					investPkoSa: pkoSa,
+					investSantander: santander,
+					investMbank: mBank,
+				})
+
+				setYourInvest(newYourInvest)
 			}
 		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '' || Number(inputTime) <= 0) {
 			setAllInvest('musisz podać okres')
@@ -118,6 +130,8 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 			setChartInfo('wykres dostępny')
 		}
 	}
+
+	console.log(yourInvest)
 
 	const handleCleanAllInvest = () => {
 		setInputInvest('')
@@ -145,7 +159,6 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				allInvest,
 				periodInvest,
 				yourInvest,
-				// resultInvest,
 				chartInfo,
 				chartAvailable,
 				handleChangeInvest,
