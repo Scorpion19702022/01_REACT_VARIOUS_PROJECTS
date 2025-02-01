@@ -11,10 +11,10 @@ const InvestmentResult = () => {
 		return (
 			<tr key={item.year} className={styles.result_invest}>
 				<td>{item.year}</td>
-				<td>{item.investPkoBp}</td>
-				<td>{item.investPkoSa}</td>
-				<td>{item.investSantander}</td>
-				<td>{item.investMbank}</td>
+				<td>{item.investPkoBp} zł</td>
+				<td>{item.investPkoSa} zł</td>
+				<td>{item.investSantander} zł</td>
+				<td>{item.investMbank} zł</td>
 			</tr>
 		)
 	})
