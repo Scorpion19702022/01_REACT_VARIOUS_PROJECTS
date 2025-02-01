@@ -64,13 +64,13 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	let percentMbank = 4.5
 
 	const handleChangeInvest = (e: string | number | null) => {
-		if (Number(e) >= 0) {
+		if (Number(e) >= 0 && Number(e) <= 10000000) {
 			setInputInvest(e)
 		}
 	}
 
 	const handleChangeYearInvest = (e: string | number | null) => {
-		if (Number(e) >= 0) {
+		if (Number(e) >= 0 && Number(e) <= 10000000) {
 			setInputYearInvest(e)
 		}
 	}

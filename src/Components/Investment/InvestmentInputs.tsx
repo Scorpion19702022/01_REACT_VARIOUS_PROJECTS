@@ -25,8 +25,8 @@ const InvestmentInputs = () => {
 		<section className={styles.wrapper} onKeyDown={handleUseEnter}>
 			<h4 className={styles.heading}>
 				Podając wartości swojego wkładu początkowego i deklarację corrocznej wpłaty oraz okres jaki przwidujesz a
-				oszczędości sprawdzisz ile zarobisz a corocznych odsetkach w 5 najpopularniejszych bankach w Polsce. Maksymalny
-				okres to 10 lat.
+				oszczędości sprawdzisz ile zarobisz a corocznych odsetkach w 4 najpopularniejszych bankach w Polsce. Maksymalny
+				okres to 10 lat. Maksymalne wartości to 10 000 000 zł
 			</h4>
 			<div className={styles.box_inputs}>
 				<div className={styles.inputs}>
@@ -36,6 +36,7 @@ const InvestmentInputs = () => {
 						type='number'
 						value={inputInvest || ''}
 						min={0}
+						max={10000000}
 						onChange={e => handleChangeInvest(e.target.value)}
 					/>
 				</div>
@@ -46,6 +47,7 @@ const InvestmentInputs = () => {
 						type='number'
 						value={inputYearInvest || ''}
 						min={0}
+						max={10000000}
 						onChange={e => handleChangeYearInvest(e.target.value)}
 					/>
 				</div>
