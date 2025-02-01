@@ -4,17 +4,19 @@ import styles from './Styles/InvestmentResult.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentResult = () => {
-	const { allInvest, periodInvest, chartInfo, chartAvailable, yourInvest } = useContext(InvestmentContext)
+	const { allInvest, inputTime, periodInvest, chartInfo, chartAvailable, yourInvest } = useContext(InvestmentContext)
+
 	const contentForTable = 'wynik twojej inwestycji'
+	const formatter = new Intl.NumberFormat('pl-PL', { useGrouping: true })
 
 	const resultInvestArray = yourInvest.map(item => {
 		return (
 			<tr key={item.year} className={styles.result_invest}>
 				<td>{item.year}</td>
-				<td>{new Intl.NumberFormat('pl-PL', { useGrouping: true }).format(item.investPkoBp)} zł</td>
-				<td>{new Intl.NumberFormat('pl-PL', { useGrouping: true }).format(item.investPkoSa)} zł</td>
-				<td>{new Intl.NumberFormat('pl-PL', { useGrouping: true }).format(item.investSantander)} zł</td>
-				<td>{new Intl.NumberFormat('pl-PL', { useGrouping: true }).format(item.investMbank)} zł</td>
+				<td>{formatter.format(item.investPkoBp)} zł</td>
+				<td>{formatter.format(item.investPkoSa)} zł</td>
+				<td>{formatter.format(item.investSantander)} zł</td>
+				<td>{formatter.format(item.investMbank)} zł</td>
 			</tr>
 		)
 	})
@@ -23,7 +25,10 @@ const InvestmentResult = () => {
 		<section className={styles.wrapper}>
 			<div className={styles.box_your_invest}>
 				<span className={styles.your_invest}>
-					Zainwestowałeś: <span className={styles.span}>{allInvest}</span>
+					Zainwestowałeś:{' '}
+					<span className={styles.span}>
+						{Number(inputTime) > 0 ? formatter.format(allInvest) : 'musisz podać okres'} zł
+					</span>
 				</span>
 				<span className={styles.your_period}>
 					Czas inwestycji: <span className={styles.span}>{periodInvest}</span>

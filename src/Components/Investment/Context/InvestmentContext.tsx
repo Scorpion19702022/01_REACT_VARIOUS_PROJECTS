@@ -9,7 +9,7 @@ type InitialStateType = {
 	inputInvest: string | number | null
 	inputYearInvest: string | number | null
 	inputTime: string | number | null
-	allInvest: string | number
+	allInvest: number
 	periodInvest: string | number
 	yourInvest: TypeForInvestment[]
 	chartInfo: string
@@ -50,7 +50,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [inputYearInvest, setInputYearInvest] = useState<string | number | null>('')
 	const [inputTime, setInputTime] = useState<string | number | null>('')
 
-	const [allInvest, setAllInvest] = useState<string | number>(`0 zł`)
+	const [allInvest, setAllInvest] = useState<number>(0)
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
 	const [chartInfo, setChartInfo] = useState<string>('wykres niedostępny')
 
@@ -83,7 +83,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 	const handleAddInvest = () => {
 		if ((inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') || Number(inputTime) > 0) {
-			setAllInvest((Number(inputInvest) + Number(inputYearInvest) * Number(inputTime)).toLocaleString(`pl-PL`) + ' zł')
+			setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
 
 			let currentInvestment = Number(inputInvest)
 			let newYourInvest = []
@@ -107,7 +107,6 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				setYourInvest(newYourInvest)
 			}
 		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '' || Number(inputTime) <= 0) {
-			setAllInvest('musisz podać okres')
 			setPeriodInvest('0 lat')
 		}
 
@@ -134,7 +133,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setInputInvest('')
 		setInputYearInvest('')
 		setInputTime('')
-		setAllInvest('0 zł')
+		setAllInvest(0)
 		setPeriodInvest('0 lat')
 		setChartInfo('wykres niedostępny')
 		setChartAvailable(false)
