@@ -100,6 +100,10 @@
 	background-color: var(--color-dark07);
 }
 
+.result_invest:nth-child(even) {
+	background-color: var(--color-dark08);
+}
+
 th {
 	border: 0.04em solid var(--color-color07);
 	color: var(--color-color03);
