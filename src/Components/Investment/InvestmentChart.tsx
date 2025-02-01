@@ -5,7 +5,8 @@ import styles from './Styles/InvestmentChart.module.css'
 const InvestmentChart = () => {
 	return (
 		<section className={styles.wrapper}>
-			<button>X</button>
+			<button className={styles.btn_close}>X</button>
+			<h2 className={styles.heading}>Tu będzie wykres</h2>
 		</section>
 	)
 }
