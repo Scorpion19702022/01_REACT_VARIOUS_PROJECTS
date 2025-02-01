@@ -11,15 +11,13 @@ const InvestmentResult = () => {
 		return (
 			<tr key={item.year} className={styles.result_invest}>
 				<td>{item.year}</td>
-				<td>{item.investPkoBp} zł</td>
-				<td>{item.investPkoSa} zł</td>
-				<td>{item.investSantander} zł</td>
-				<td>{item.investMbank} zł</td>
+				<td>{new Intl.NumberFormat('pl-PL', { useGrouping: true }).format(item.investPkoBp)} zł</td>
+				<td>{new Intl.NumberFormat('pl-PL', { useGrouping: true }).format(item.investPkoSa)} zł</td>
+				<td>{new Intl.NumberFormat('pl-PL', { useGrouping: true }).format(item.investSantander)} zł</td>
+				<td>{new Intl.NumberFormat('pl-PL', { useGrouping: true }).format(item.investMbank)} zł</td>
 			</tr>
 		)
 	})
-
-	console.log(resultInvestArray)
 
 	return (
 		<section className={styles.wrapper}>
