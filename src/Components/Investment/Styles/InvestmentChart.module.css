@@ -17,18 +17,17 @@
 	--color-color07: #1f6075;
 	--color-color08: #14404e;
 	--color-color09: #0a2027;
+
+	--color-error: #ff0000;
 }
 
 .wrapper {
-	position: relative;
-	width: 100%;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	overflow: hidden;
-	justify-content: flex-start;
-	background-color: var(--color-dark08);
+	position: absolute;
+	width: 90%;
+	min-height: 440px;
+	top: 58%;
+	background-color: var(--color-dark09);
+	z-index: 1;
 }
 
 @media (min-width: 660px) {
@@ -39,8 +38,8 @@
 
 @media (min-width: 1200px) {
 	.wrapper {
-		width: 100%;
-		min-height: 100vh;
-		padding-left: 10em;
+		width: 95%;
+		height: 400px;
+		display: flex;
 	}
 }

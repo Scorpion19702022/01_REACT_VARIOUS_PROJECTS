@@ -4,8 +4,7 @@ import styles from './Styles/InvestmentResult.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentResult = () => {
-	const { allInvest, inputInvest, inputTime, periodInvest, chartInfo, chartAvailable, yourInvest } =
-		useContext(InvestmentContext)
+	const { allInvest, inputTime, periodInvest, chartInfo, chartAvailable, yourInvest } = useContext(InvestmentContext)
 
 	const contentForTable = 'wynik twojej inwestycji'
 	const formatter = new Intl.NumberFormat('pl-PL', { useGrouping: true })

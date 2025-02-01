@@ -5,6 +5,7 @@ import InvestmentHeader from './InvestmentHeader'
 import InvestmentInputs from './InvestmentInputs'
 import { InvestmentProvider } from './Context/InvestmentContext'
 import InvestmentResult from './InvestmentResult'
+import InvestmentChart from './InvestmentChart'
 
 const Investment = () => {
 	return (
@@ -13,6 +14,7 @@ const Investment = () => {
 			<InvestmentProvider>
 				<InvestmentInputs />
 				<InvestmentResult />
+				<InvestmentChart />
 			</InvestmentProvider>
 		</main>
 	)
