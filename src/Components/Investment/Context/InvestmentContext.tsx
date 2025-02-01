@@ -90,18 +90,18 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 			for (let i = 0; i < Number(inputTime); i++) {
 				currentInvestment += Number(inputYearInvest)
-				const pkoBp = (currentInvestment * percentPkoBp) / 100
-				const pkoSa = (currentInvestment * percentPkoSa) / 100
-				const santander = (currentInvestment * percentSantarder) / 100
-				const mBank = (currentInvestment * percentMbank) / 100
+				const pkoBp = (currentInvestment * percentPkoBp * (i + 1)) / 100
+				const pkoSa = (currentInvestment * percentPkoSa * (i + 1)) / 100
+				const santander = (currentInvestment * percentSantarder * (i + 1)) / 100
+				const mBank = (currentInvestment * percentMbank * (i + 1)) / 100
 
 				newYourInvest.push({
 					id: uuidv4(),
 					year: i + 1,
-					investPkoBp: pkoBp,
-					investPkoSa: pkoSa,
-					investSantander: santander,
-					investMbank: mBank,
+					investPkoBp: currentInvestment + pkoBp,
+					investPkoSa: currentInvestment + pkoSa,
+					investSantander: currentInvestment + santander,
+					investMbank: currentInvestment + mBank,
 				})
 
 				setYourInvest(newYourInvest)
