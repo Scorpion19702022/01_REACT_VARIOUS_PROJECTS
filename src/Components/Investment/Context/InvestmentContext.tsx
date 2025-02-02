@@ -92,23 +92,29 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		if ((inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') || Number(inputTime) > 0) {
 			setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
 
-			let currentInvestment = Number(inputInvest)
+			let currentInvestmentPkoBp = (Number(inputInvest) * percentPkoBp) / 100
+			let currentInvestmentPkoSa = (Number(inputInvest) * percentPkoSa) / 100
+			let currentInvestmentSantander = (Number(inputInvest) * percentSantarder) / 100
+			let currentInvestmentMbank = (Number(inputInvest) * percentMbank) / 100
 			let newYourInvest = []
 
-			for (let i = 0; i < Number(inputTime); i++) {
-				currentInvestment += Number(inputYearInvest)
-				const pkoBp = (currentInvestment * percentPkoBp * (i + 1)) / 100
-				const pkoSa = (currentInvestment * percentPkoSa * (i + 1)) / 100
-				const santander = (currentInvestment * percentSantarder * (i + 1)) / 100
-				const mBank = (currentInvestment * percentMbank * (i + 1)) / 100
+			for (let i = 1; i < Number(inputTime); i++) {
+				currentInvestmentPkoBp += Number(inputYearInvest)
+				currentInvestmentPkoSa += Number(inputYearInvest)
+				currentInvestmentSantander += Number(inputYearInvest)
+				currentInvestmentMbank += Number(inputYearInvest)
+				const pkoBp = (currentInvestmentPkoBp * percentPkoBp * (i + 1)) / 100
+				const pkoSa = (currentInvestmentPkoSa * percentPkoSa * (i + 1)) / 100
+				const santander = (currentInvestmentSantander * percentSantarder * (i + 1)) / 100
+				const mBank = (currentInvestmentMbank * percentMbank * (i + 1)) / 100
 
 				newYourInvest.push({
 					id: uuidv4(),
 					year: i + 1,
-					investPkoBp: currentInvestment + pkoBp,
-					investPkoSa: currentInvestment + pkoSa,
-					investSantander: currentInvestment + santander,
-					investMbank: currentInvestment + mBank,
+					investPkoBp: currentInvestmentPkoBp + pkoBp,
+					investPkoSa: currentInvestmentPkoSa + pkoSa,
+					investSantander: currentInvestmentSantander + santander,
+					investMbank: currentInvestmentMbank + mBank,
 				})
 
 				setYourInvest(newYourInvest)
