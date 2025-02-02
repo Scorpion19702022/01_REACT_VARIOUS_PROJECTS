@@ -41,7 +41,7 @@ const InvestmentInputs = () => {
 					/>
 				</div>
 				<div className={styles.inputs}>
-					<label className={styles.label}>Podaj kwotę wpłaty rocznej:</label>
+					<label className={styles.label}>Kwota wpłaty w następnym roku:</label>
 					<input
 						className={styles.input}
 						type='number'

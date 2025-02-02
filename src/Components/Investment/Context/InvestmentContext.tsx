@@ -13,7 +13,7 @@ type InitialStateType = {
 	periodInvest: string | number
 	startInvestPkoBp: number
 	startInvestPkoSa: number
-	startInvestPkoSantander: number
+	startInvestSantander: number
 	startInvestMbank: number
 	yourInvest: TypeForInvestment[]
 	chartInfo: string
@@ -41,7 +41,7 @@ const InitialState: InitialStateType = {
 	periodInvest: 0,
 	startInvestPkoBp: 0,
 	startInvestPkoSa: 0,
-	startInvestPkoSantander: 0,
+	startInvestSantander: 0,
 	startInvestMbank: 0,
 	yourInvest: [],
 	chartInfo: '',
@@ -66,7 +66,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 	const [startInvestPkoBp, setStartInvestPkoBp] = useState<number>(0)
 	const [startInvestPkoSa, setStartInvestPkoSa] = useState<number>(0)
-	const [startInvestPkoSantander, setStartInvestPkoSantander] = useState<number>(0)
+	const [startInvestSantander, setStartInvestSantander] = useState<number>(0)
 	const [startInvestMbank, setStartInvestMbank] = useState<number>(0)
 
 	const [allInvest, setAllInvest] = useState<number>(0)
@@ -107,6 +107,11 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 			// let test = Number(inputInvest) * (percentPkoBp / 100) + Number(inputInvest)
 			// console.log(test)
+
+			setStartInvestPkoBp(Number(inputInvest) * (percentPkoBp / 100) + Number(inputInvest))
+			setStartInvestPkoSa(Number(inputInvest) * (percentPkoSa / 100) + Number(inputInvest))
+			setStartInvestSantander(Number(inputInvest) * (percentSantarder / 100) + Number(inputInvest))
+			setStartInvestMbank(Number(inputInvest) * (percentMbank / 100) + Number(inputInvest))
 
 			let currentInvestment = Number(inputInvest)
 			let newYourInvest = []
@@ -188,7 +193,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				periodInvest,
 				startInvestPkoBp,
 				startInvestPkoSa,
-				startInvestPkoSantander,
+				startInvestSantander,
 				startInvestMbank,
 				yourInvest,
 				chartInfo,

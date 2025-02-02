@@ -9,7 +9,7 @@ const InvestmentResult = () => {
 		inputTime,
 		startInvestPkoBp,
 		startInvestPkoSa,
-		startInvestPkoSantander,
+		startInvestSantander,
 		startInvestMbank,
 		periodInvest,
 		chartInfo,
@@ -69,7 +69,7 @@ const InvestmentResult = () => {
 						<td>1</td>
 						<td>{startInvestPkoBp}</td>
 						<td>{startInvestPkoSa}</td>
-						<td>{startInvestPkoSantander}</td>
+						<td>{startInvestSantander}</td>
 						<td>{startInvestMbank}</td>
 					</tr>
 				</thead>
