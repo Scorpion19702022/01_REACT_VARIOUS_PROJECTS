@@ -15,7 +15,6 @@ type InitialStateType = {
 	chartInfo: string
 	chartButtonAvailable: boolean
 	chartView: boolean
-	chartClose: boolean
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
@@ -40,7 +39,6 @@ const InitialState: InitialStateType = {
 	chartInfo: '',
 	chartButtonAvailable: false,
 	chartView: false,
-	chartClose: false,
 	handleChangeInvest: (e: string) => {},
 	handleChangeYearInvest: (e: string) => {},
 	handleChangeTime: (e: string) => {},
@@ -64,7 +62,6 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 	const [chartButtonAvailable, setChartButtonAvailable] = useState<boolean>(false)
 	const [chartView, setChartView] = useState<boolean>(false)
-	const [chartClose, setChartClose] = useState<boolean>(false)
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
 
@@ -162,7 +159,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	}
 
 	const handleCloseChart = () => {
-		setChartClose(true)
+		setChartView(false)
 	}
 
 	return (
@@ -177,7 +174,6 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				chartInfo,
 				chartButtonAvailable,
 				chartView,
-				chartClose,
 				handleChangeInvest,
 				handleChangeYearInvest,
 				handleChangeTime,
