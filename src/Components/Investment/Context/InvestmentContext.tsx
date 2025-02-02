@@ -11,6 +11,10 @@ type InitialStateType = {
 	inputTime: string | number | null
 	allInvest: number
 	periodInvest: string | number
+	startInvestPkoBp: number
+	startInvestPkoSa: number
+	startInvestPkoSantander: number
+	startInvestMbank: number
 	yourInvest: TypeForInvestment[]
 	chartInfo: string
 	chartButtonAvailable: boolean
@@ -35,6 +39,10 @@ const InitialState: InitialStateType = {
 	inputTime: '',
 	allInvest: 0,
 	periodInvest: 0,
+	startInvestPkoBp: 0,
+	startInvestPkoSa: 0,
+	startInvestPkoSantander: 0,
+	startInvestMbank: 0,
 	yourInvest: [],
 	chartInfo: '',
 	chartButtonAvailable: false,
@@ -55,6 +63,11 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [inputInvest, setInputInvest] = useState<string | number | null>('')
 	const [inputYearInvest, setInputYearInvest] = useState<string | number | null>('')
 	const [inputTime, setInputTime] = useState<string | number | null>('')
+
+	const [startInvestPkoBp, setStartInvestPkoBp] = useState<number>(0)
+	const [startInvestPkoSa, setStartInvestPkoSa] = useState<number>(0)
+	const [startInvestPkoSantander, setStartInvestPkoSantander] = useState<number>(0)
+	const [startInvestMbank, setStartInvestMbank] = useState<number>(0)
 
 	const [allInvest, setAllInvest] = useState<number>(0)
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
@@ -173,6 +186,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				inputTime,
 				allInvest,
 				periodInvest,
+				startInvestPkoBp,
+				startInvestPkoSa,
+				startInvestPkoSantander,
+				startInvestMbank,
 				yourInvest,
 				chartInfo,
 				chartButtonAvailable,
