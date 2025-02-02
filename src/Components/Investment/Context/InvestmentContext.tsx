@@ -23,6 +23,7 @@ type InitialStateType = {
 	handleCleanAllInvest: () => void
 	handleUseEnter: (e: any) => void
 	handleViewChart: () => void
+	handleCloseChart: () => void
 }
 
 type InvestmentProviderType = {
@@ -47,6 +48,7 @@ const InitialState: InitialStateType = {
 	handleCleanAllInvest: () => {},
 	handleUseEnter: (e: any) => {},
 	handleViewChart: () => {},
+	handleCloseChart: () => {},
 }
 
 const InvestmentContext = createContext(InitialState)
@@ -159,6 +161,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setChartView(true)
 	}
 
+	const handleCloseChart = () => {
+		setChartClose(true)
+	}
+
 	return (
 		<InvestmentContext.Provider
 			value={{
@@ -179,6 +185,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				handleCleanAllInvest,
 				handleUseEnter,
 				handleViewChart,
+				handleCloseChart,
 			}}
 		>
 			{children}
