@@ -4,7 +4,8 @@ import styles from './Styles/InvestmentResult.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentResult = () => {
-	const { allInvest, inputTime, periodInvest, chartInfo, chartAvailable, yourInvest } = useContext(InvestmentContext)
+	const { allInvest, inputTime, periodInvest, chartInfo, chartButtonAvailable, yourInvest } =
+		useContext(InvestmentContext)
 
 	const contentForTable = 'wynik twojej inwestycji'
 	const formatter = new Intl.NumberFormat('pl-PL', { useGrouping: true })
@@ -34,10 +35,10 @@ const InvestmentResult = () => {
 					Czas inwestycji: <span className={styles.span}>{periodInvest}</span>
 				</span>
 
-				<button className={styles.btn_chart} disabled={chartAvailable ? false : true}>
+				<button className={styles.btn_chart} disabled={chartButtonAvailable ? false : true}>
 					Zobacz wykres
 				</button>
-				<span className={chartAvailable ? styles.chart_available : styles.no_chart_available}>{chartInfo}</span>
+				<span className={chartButtonAvailable ? styles.chart_available : styles.no_chart_available}>{chartInfo}</span>
 			</div>
 			<table className={styles.box_table}>
 				<thead>

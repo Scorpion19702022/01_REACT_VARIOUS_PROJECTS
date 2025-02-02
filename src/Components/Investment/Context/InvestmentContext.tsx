@@ -13,13 +13,15 @@ type InitialStateType = {
 	periodInvest: string | number
 	yourInvest: TypeForInvestment[]
 	chartInfo: string
-	chartAvailable: boolean
+	chartButtonAvailable: boolean
+	chartView: boolean
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
 	handleAddInvest: () => void
 	handleCleanAllInvest: () => void
 	handleUseEnter: (e: any) => void
+	handleViewChart: () => void
 }
 
 type InvestmentProviderType = {
@@ -34,13 +36,15 @@ const InitialState: InitialStateType = {
 	periodInvest: 0,
 	yourInvest: [],
 	chartInfo: '',
-	chartAvailable: false,
+	chartButtonAvailable: false,
+	chartView: false,
 	handleChangeInvest: (e: string) => {},
 	handleChangeYearInvest: (e: string) => {},
 	handleChangeTime: (e: string) => {},
 	handleAddInvest: () => {},
 	handleCleanAllInvest: () => {},
 	handleUseEnter: (e: any) => {},
+	handleViewChart: () => void
 }
 
 const InvestmentContext = createContext(InitialState)
@@ -54,7 +58,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
 	const [chartInfo, setChartInfo] = useState<string>('wykres niedostępny')
 
-	const [chartAvailable, setChartAvailable] = useState<boolean>(false)
+	const [chartButtonAvailable, setChartButtonAvailable] = useState<boolean>(false)
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
 
@@ -121,10 +125,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		}
 
 		if (Number(inputInvest) === 0 && Number(inputYearInvest) === 0 && Number(inputTime) === 0) {
-			setChartAvailable(false)
+			setChartButtonAvailable(false)
 			setChartInfo('wykres będzie dostępny gdy podasz wszędzie wartości większe od 0')
 		} else if (Number(inputInvest) > 0 && Number(inputYearInvest) > 0 && Number(inputTime) > 0) {
-			setChartAvailable(true)
+			setChartButtonAvailable(true)
 			setChartInfo('wykres dostępny')
 		}
 	}
@@ -136,7 +140,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setAllInvest(0)
 		setPeriodInvest('0 lat')
 		setChartInfo('wykres niedostępny')
-		setChartAvailable(false)
+		setChartButtonAvailable(false)
 		setYourInvest([])
 	}
 
@@ -157,7 +161,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				periodInvest,
 				yourInvest,
 				chartInfo,
-				chartAvailable,
+				chartButtonAvailable,
 				handleChangeInvest,
 				handleChangeYearInvest,
 				handleChangeTime,

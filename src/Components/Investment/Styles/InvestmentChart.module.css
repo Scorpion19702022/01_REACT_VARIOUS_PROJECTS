@@ -23,6 +23,23 @@
 
 .wrapper {
 	position: fixed;
+	visibility: visible;
+	width: 90%;
+	min-height: 400px;
+	top: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--color-dark09);
+	border: 0.04em solid var(--color-color07);
+	box-shadow: 0.4em 0.4em 1em var(--color-dark09);
+	z-index: 1;
+}
+
+.no_wrapper {
+	position: fixed;
+	visibility: hidden;
 	width: 90%;
 	min-height: 400px;
 	top: 30%;
