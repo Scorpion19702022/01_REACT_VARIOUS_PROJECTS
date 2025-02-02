@@ -92,6 +92,9 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		if ((inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') || Number(inputTime) > 0) {
 			setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
 
+			// let test = Number(inputInvest) * (percentPkoBp / 100) + Number(inputInvest)
+			// console.log(test)
+
 			let currentInvestment = Number(inputInvest)
 			let newYourInvest = []
 
