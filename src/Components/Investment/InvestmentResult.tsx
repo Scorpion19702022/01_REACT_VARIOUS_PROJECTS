@@ -67,10 +67,10 @@ const InvestmentResult = () => {
 					</tr>
 					<tr>
 						<td>1</td>
-						<td>{startInvestPkoBp}</td>
-						<td>{startInvestPkoSa}</td>
-						<td>{startInvestSantander}</td>
-						<td>{startInvestMbank}</td>
+						<td>{startInvestPkoBp} zł</td>
+						<td>{startInvestPkoSa} zł</td>
+						<td>{startInvestSantander} zł</td>
+						<td>{startInvestMbank} zł</td>
 					</tr>
 				</thead>
 				<tbody>{resultInvestArray}</tbody>

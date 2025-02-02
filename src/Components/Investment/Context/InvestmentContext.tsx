@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
 import { TypeForInvestment } from '../Types/TypeForInvestment'
@@ -11,10 +11,10 @@ type InitialStateType = {
 	inputTime: string | number | null
 	allInvest: number
 	periodInvest: string | number
-	startInvestPkoBp: number
-	startInvestPkoSa: number
-	startInvestSantander: number
-	startInvestMbank: number
+	startInvestPkoBp: string | number
+	startInvestPkoSa: string | number
+	startInvestSantander: string | number
+	startInvestMbank: string | number
 	yourInvest: TypeForInvestment[]
 	chartInfo: string
 	chartButtonAvailable: boolean
@@ -64,10 +64,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [inputYearInvest, setInputYearInvest] = useState<string | number | null>('')
 	const [inputTime, setInputTime] = useState<string | number | null>('')
 
-	const [startInvestPkoBp, setStartInvestPkoBp] = useState<number>(0)
-	const [startInvestPkoSa, setStartInvestPkoSa] = useState<number>(0)
-	const [startInvestSantander, setStartInvestSantander] = useState<number>(0)
-	const [startInvestMbank, setStartInvestMbank] = useState<number>(0)
+	const [startInvestPkoBp, setStartInvestPkoBp] = useState<string | number>(0)
+	const [startInvestPkoSa, setStartInvestPkoSa] = useState<string | number>(0)
+	const [startInvestSantander, setStartInvestSantander] = useState<string | number>(0)
+	const [startInvestMbank, setStartInvestMbank] = useState<string | number>(0)
 
 	const [allInvest, setAllInvest] = useState<number>(0)
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
@@ -101,35 +101,51 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		}
 	}
 
-	const handleAddInvest = () => {
-		if ((inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') || Number(inputTime) > 0) {
-			setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
-
-			// let test = Number(inputInvest) * (percentPkoBp / 100) + Number(inputInvest)
-			// console.log(test)
-
+	useEffect(() => {
+		if (Number(inputInvest) > 0) {
 			setStartInvestPkoBp(Number(inputInvest) * (percentPkoBp / 100) + Number(inputInvest))
 			setStartInvestPkoSa(Number(inputInvest) * (percentPkoSa / 100) + Number(inputInvest))
 			setStartInvestSantander(Number(inputInvest) * (percentSantarder / 100) + Number(inputInvest))
 			setStartInvestMbank(Number(inputInvest) * (percentMbank / 100) + Number(inputInvest))
+		}
+	}, [inputInvest])
 
-			let currentInvestment = Number(inputInvest)
+	useEffect(() => {
+		if (yourInvest.length === 0) {
+			setChartButtonAvailable(false)
+			setChartInfo('wykres będzie dostępny gdy podasz okres w latach')
+		} else if (yourInvest.length > 0) {
+			setChartButtonAvailable(true)
+			setChartInfo('wykres dostępny')
+		}
+	}, [yourInvest.length])
+
+	const handleAddInvest = () => {
+		setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
+		if ((inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') || Number(inputTime) > 0) {
+			let currentInvestmentPkoBp = Number(startInvestPkoBp)
+			let currentInvestmentPkoSa = Number(startInvestPkoSa)
+			let currentInvestmentSantander = Number(startInvestSantander)
+			let currentInvestmentMbank = Number(startInvestMbank)
 			let newYourInvest = []
 
 			for (let i = 1; i < Number(inputTime); i++) {
-				currentInvestment += Number(inputYearInvest)
-				const pkoBp = (currentInvestment * percentPkoBp * (i + 1)) / 100
-				const pkoSa = (currentInvestment * percentPkoSa * (i + 1)) / 100
-				const santander = (currentInvestment * percentSantarder * (i + 1)) / 100
-				const mBank = (currentInvestment * percentMbank * (i + 1)) / 100
+				currentInvestmentPkoBp += Number(inputYearInvest)
+				currentInvestmentPkoSa += Number(inputYearInvest)
+				currentInvestmentSantander += Number(inputYearInvest)
+				currentInvestmentMbank += Number(inputYearInvest)
+				const pkoBp = (currentInvestmentPkoBp * percentPkoBp * i) / 100
+				const pkoSa = (currentInvestmentPkoSa * percentPkoSa * i) / 100
+				const santander = (currentInvestmentSantander * percentSantarder * (i + 1)) / 100
+				const mBank = (currentInvestmentMbank * percentMbank * i) / 100
 
 				newYourInvest.push({
 					id: uuidv4(),
 					year: i + 1,
-					investPkoBp: currentInvestment + pkoBp,
-					investPkoSa: currentInvestment + pkoSa,
-					investSantander: currentInvestment + santander,
-					investMbank: currentInvestment + mBank,
+					investPkoBp: currentInvestmentPkoBp + pkoBp,
+					investPkoSa: currentInvestmentPkoSa + pkoSa,
+					investSantander: currentInvestmentSantander + santander,
+					investMbank: currentInvestmentMbank + mBank,
 				})
 
 				setYourInvest(newYourInvest)
@@ -148,13 +164,13 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 			setPeriodInvest(`musisz podać okres`)
 		}
 
-		if (Number(inputInvest) === 0 && Number(inputYearInvest) === 0 && Number(inputTime) === 0) {
-			setChartButtonAvailable(false)
-			setChartInfo('wykres będzie dostępny gdy podasz wszędzie wartości większe od 0')
-		} else if (Number(inputInvest) > 0 && Number(inputYearInvest) > 0 && Number(inputTime) > 0) {
-			setChartButtonAvailable(true)
-			setChartInfo('wykres dostępny')
-		}
+		// if (yourInvest.length === 0) {
+		// 	setChartButtonAvailable(false)
+		// 	setChartInfo('wykres będzie dostępny gdy podasz okres w latach')
+		// } else if (yourInvest.length > 0) {
+		// 	setChartButtonAvailable(true)
+		// 	setChartInfo('wykres dostępny')
+		// }
 	}
 
 	const handleCleanAllInvest = () => {
@@ -162,6 +178,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setInputYearInvest('')
 		setInputTime('')
 		setAllInvest(0)
+		setStartInvestPkoBp(0)
+		setStartInvestPkoSa(0)
+		setStartInvestSantander(0)
+		setStartInvestMbank(0)
 		setPeriodInvest('0 lat')
 		setChartInfo('wykres niedostępny')
 		setChartButtonAvailable(false)
