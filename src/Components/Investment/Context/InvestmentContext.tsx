@@ -15,6 +15,7 @@ type InitialStateType = {
 	chartInfo: string
 	chartButtonAvailable: boolean
 	chartView: boolean
+	chartClose: boolean
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
@@ -38,13 +39,14 @@ const InitialState: InitialStateType = {
 	chartInfo: '',
 	chartButtonAvailable: false,
 	chartView: false,
+	chartClose: false,
 	handleChangeInvest: (e: string) => {},
 	handleChangeYearInvest: (e: string) => {},
 	handleChangeTime: (e: string) => {},
 	handleAddInvest: () => {},
 	handleCleanAllInvest: () => {},
 	handleUseEnter: (e: any) => {},
-	handleViewChart: () => void
+	handleViewChart: () => {},
 }
 
 const InvestmentContext = createContext(InitialState)
@@ -59,6 +61,8 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [chartInfo, setChartInfo] = useState<string>('wykres niedostępny')
 
 	const [chartButtonAvailable, setChartButtonAvailable] = useState<boolean>(false)
+	const [chartView, setChartView] = useState<boolean>(false)
+	const [chartClose, setChartClose] = useState<boolean>(false)
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
 
@@ -151,6 +155,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		}
 	}
 
+	const handleViewChart = () => {
+		setChartView(true)
+	}
+
 	return (
 		<InvestmentContext.Provider
 			value={{
@@ -162,12 +170,15 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				yourInvest,
 				chartInfo,
 				chartButtonAvailable,
+				chartView,
+				chartClose,
 				handleChangeInvest,
 				handleChangeYearInvest,
 				handleChangeTime,
 				handleAddInvest,
 				handleCleanAllInvest,
 				handleUseEnter,
+				handleViewChart,
 			}}
 		>
 			{children}
