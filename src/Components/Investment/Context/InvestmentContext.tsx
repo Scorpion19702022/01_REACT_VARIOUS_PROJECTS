@@ -19,6 +19,7 @@ type InitialStateType = {
 	chartInfo: string
 	chartButtonAvailable: boolean
 	chartView: boolean
+	startAllInvest: boolean
 	handleChangeInvest: (e: string) => void
 	handleChangeYearInvest: (e: string) => void
 	handleChangeTime: (e: string) => void
@@ -47,6 +48,7 @@ const InitialState: InitialStateType = {
 	chartInfo: '',
 	chartButtonAvailable: false,
 	chartView: false,
+	startAllInvest: false,
 	handleChangeInvest: (e: string) => {},
 	handleChangeYearInvest: (e: string) => {},
 	handleChangeTime: (e: string) => {},
@@ -75,6 +77,8 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 
 	const [chartButtonAvailable, setChartButtonAvailable] = useState<boolean>(false)
 	const [chartView, setChartView] = useState<boolean>(false)
+
+	const [startAllInvest, setStartAllInvest] = useState<boolean>(false)
 
 	const [yourInvest, setYourInvest] = useState<TypeForInvestment[]>([])
 
@@ -120,16 +124,24 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		}
 	}, [yourInvest.length])
 
+	useEffect(() => {
+		if (startAllInvest) {
+			setYourInvest([{ id: uuidv4(), year: 1, investPkoBp: 2, investPkoSa: 3, investSantander: 4, investMbank: 5 }])
+		}
+	}, [startAllInvest])
+
 	const handleAddInvest = () => {
 		setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
 		if ((inputInvest !== '' && inputYearInvest !== '' && inputTime !== '') || Number(inputTime) > 0) {
+			setStartAllInvest(true)
+
 			let currentInvestmentPkoBp = Number(startInvestPkoBp)
 			let currentInvestmentPkoSa = Number(startInvestPkoSa)
 			let currentInvestmentSantander = Number(startInvestSantander)
 			let currentInvestmentMbank = Number(startInvestMbank)
 			let newYourInvest = []
 
-			setYourInvest([{ id: uuidv4(), year: 1, investPkoBp: 2, investPkoSa: 3, investSantander: 4, investMbank: 5 }])
+			// setYourInvest([{ id: uuidv4(), year: 1, investPkoBp: 2, investPkoSa: 3, investSantander: 4, investMbank: 5 }])
 
 			for (let i = 1; i < Number(inputTime); i++) {
 				currentInvestmentPkoBp += Number(inputYearInvest)
@@ -188,6 +200,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setPeriodInvest('0 lat')
 		setChartInfo('wykres niedostępny')
 		setChartButtonAvailable(false)
+		setStartAllInvest(false)
 		setYourInvest([])
 	}
 
@@ -222,6 +235,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				chartInfo,
 				chartButtonAvailable,
 				chartView,
+				startAllInvest,
 				handleChangeInvest,
 				handleChangeYearInvest,
 				handleChangeTime,
