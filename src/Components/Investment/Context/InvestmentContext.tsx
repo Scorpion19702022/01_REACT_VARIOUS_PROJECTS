@@ -162,7 +162,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 					investMbank: currentInvestmentMbank + mBank,
 				})
 
-				setYourInvest(newYourInvest)
+				setYourInvest([...yourInvest, ...newYourInvest])
 			}
 		} else if (inputInvest === '' || inputYearInvest === '' || inputTime === '' || Number(inputTime) <= 0) {
 			setPeriodInvest('0 lat')
