@@ -129,6 +129,8 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 			let currentInvestmentMbank = Number(startInvestMbank)
 			let newYourInvest = []
 
+			setYourInvest([{ id: uuidv4(), year: 1, investPkoBp: 2, investPkoSa: 3, investSantander: 4, investMbank: 5 }])
+
 			for (let i = 1; i < Number(inputTime); i++) {
 				currentInvestmentPkoBp += Number(inputYearInvest)
 				currentInvestmentPkoSa += Number(inputYearInvest)
@@ -172,6 +174,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		// 	setChartInfo('wykres dostępny')
 		// }
 	}
+	console.log(yourInvest)
 
 	const handleCleanAllInvest = () => {
 		setInputInvest('')

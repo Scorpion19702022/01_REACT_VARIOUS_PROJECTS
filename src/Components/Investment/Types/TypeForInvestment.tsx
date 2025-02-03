@@ -1,5 +1,5 @@
 export type TypeForInvestment = {
-	id: number | string
+	id: string | number
 	year: number
 	investPkoBp: number
 	investPkoSa: number

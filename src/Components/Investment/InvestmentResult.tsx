@@ -7,10 +7,10 @@ const InvestmentResult = () => {
 	const {
 		allInvest,
 		inputTime,
-		startInvestPkoBp,
-		startInvestPkoSa,
-		startInvestSantander,
-		startInvestMbank,
+		// startInvestPkoBp,
+		// startInvestPkoSa,
+		// startInvestSantander,
+		// startInvestMbank,
 		periodInvest,
 		chartInfo,
 		chartButtonAvailable,
@@ -21,7 +21,7 @@ const InvestmentResult = () => {
 	const contentForTable = 'wynik twojej inwestycji'
 	const formatter = new Intl.NumberFormat('pl-PL', { useGrouping: true })
 
-	const resultInvestArray = yourInvest.map(item => {
+	const resultInvestArray = yourInvest.map((item: any) => {
 		return (
 			<tr key={item.year} className={styles.result_invest}>
 				<td>{item.year}</td>
@@ -65,13 +65,13 @@ const InvestmentResult = () => {
 						<th>Santander</th>
 						<th>mBank</th>
 					</tr>
-					<tr>
+					{/* <tr>
 						<td>1</td>
 						<td>{startInvestPkoBp} zł</td>
 						<td>{startInvestPkoSa} zł</td>
 						<td>{startInvestSantander} zł</td>
 						<td>{startInvestMbank} zł</td>
-					</tr>
+					</tr> */}
 				</thead>
 				<tbody>{resultInvestArray}</tbody>
 			</table>
