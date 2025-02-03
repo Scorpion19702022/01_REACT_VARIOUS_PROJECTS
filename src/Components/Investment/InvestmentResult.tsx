@@ -4,24 +4,13 @@ import styles from './Styles/InvestmentResult.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentResult = () => {
-	const {
-		allInvest,
-		inputTime,
-		// startInvestPkoBp,
-		// startInvestPkoSa,
-		// startInvestSantander,
-		// startInvestMbank,
-		periodInvest,
-		chartInfo,
-		chartButtonAvailable,
-		yourInvest,
-		handleViewChart,
-	} = useContext(InvestmentContext)
+	const { allInvest, inputTime, periodInvest, chartInfo, chartButtonAvailable, yourInvest, handleViewChart } =
+		useContext(InvestmentContext)
 
 	const contentForTable = 'wynik twojej inwestycji'
 	const formatter = new Intl.NumberFormat('pl-PL', { useGrouping: true })
 
-	const resultInvestArray = yourInvest.map((item: any) => {
+	const resultInvestArray = yourInvest.map(item => {
 		return (
 			<tr key={item.year} className={styles.result_invest}>
 				<td>{item.year}</td>
@@ -65,13 +54,6 @@ const InvestmentResult = () => {
 						<th>Santander</th>
 						<th>mBank</th>
 					</tr>
-					{/* <tr>
-						<td>1</td>
-						<td>{startInvestPkoBp} zł</td>
-						<td>{startInvestPkoSa} zł</td>
-						<td>{startInvestSantander} zł</td>
-						<td>{startInvestMbank} zł</td>
-					</tr> */}
 				</thead>
 				<tbody>{resultInvestArray}</tbody>
 			</table>
