@@ -24,6 +24,7 @@ type InitialStateType = {
 	handleChangeTime: (e: string) => void
 	handleAddInvest: () => void
 	handleCleanAllInvest: () => void
+	handleKeyDown: (e: any) => void
 	handleUseEnter: (e: any) => void
 	handleViewChart: () => void
 	handleCloseChart: () => void
@@ -52,6 +53,7 @@ const InitialState: InitialStateType = {
 	handleChangeTime: (e: string) => {},
 	handleAddInvest: () => {},
 	handleCleanAllInvest: () => {},
+	handleKeyDown: (e: any) => {},
 	handleUseEnter: (e: any) => {},
 	handleViewChart: () => {},
 	handleCloseChart: () => {},
@@ -98,6 +100,21 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const handleChangeTime = (e: string | number | null) => {
 		if (Number(e) <= 10 && Number(e) >= 0) {
 			setInputTime(e)
+		}
+	}
+
+	const handleKeyDown = (e: any) => {
+		const invalidChars = [' ', '.', ',']
+
+		if (invalidChars.includes(e.key)) {
+			e.preventDefault()
+		}
+	}
+
+	const handleUseEnter = (e: any) => {
+		if (e.key === 'Enter') {
+			handleAddInvest()
+			e.preventDefault()
 		}
 	}
 
@@ -176,16 +193,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		} else if (String(inputTime) === '' || Number(inputTime) === 0) {
 			setPeriodInvest(`musisz podać okres`)
 		}
-
-		// if (yourInvest.length === 0) {
-		// 	setChartButtonAvailable(false)
-		// 	setChartInfo('wykres będzie dostępny gdy podasz okres w latach')
-		// } else if (yourInvest.length > 0) {
-		// 	setChartButtonAvailable(true)
-		// 	setChartInfo('wykres dostępny')
-		// }
 	}
-	console.log(yourInvest)
 
 	const handleCleanAllInvest = () => {
 		setInputInvest('')
@@ -200,13 +208,6 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 		setChartInfo('wykres niedostępny')
 		setChartButtonAvailable(false)
 		setYourInvest([])
-	}
-
-	const handleUseEnter = (e: any) => {
-		if (e.key === 'Enter') {
-			handleAddInvest()
-			e.preventDefault()
-		}
 	}
 
 	const handleViewChart = () => {
@@ -238,6 +239,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				handleChangeTime,
 				handleAddInvest,
 				handleCleanAllInvest,
+				handleKeyDown,
 				handleUseEnter,
 				handleViewChart,
 				handleCloseChart,
