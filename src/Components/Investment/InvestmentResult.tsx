@@ -36,9 +36,9 @@ const InvestmentResult = () => {
 				<span className={styles.your_invest}>
 					Zainwestowałeś:{' '}
 					<span className={styles.span}>
-						{Number(inputTime) > 0 || inputTime !== ''
+						{Number(inputInvest) >= 0 || inputInvest !== '' || Number(inputTime) > 0
 							? `${formatter.format(+allInvest)} zł`
-							: 'musisz podać okres inwestycji'}
+							: 'musisz podać okres'}
 					</span>
 				</span>
 				<span className={styles.your_period}>
