@@ -18,6 +18,7 @@ const InvestmentInputs = () => {
 		handleChangeTime,
 		handleAddInvest,
 		handleCleanAllInvest,
+		handleKeyDown,
 		handleUseEnter,
 	} = useContext(InvestmentContext)
 
@@ -37,6 +38,7 @@ const InvestmentInputs = () => {
 						value={inputInvest || ''}
 						min={0}
 						max={10000000}
+						onKeyDown={handleKeyDown}
 						onChange={e => handleChangeInvest(e.target.value)}
 					/>
 				</div>
@@ -48,6 +50,7 @@ const InvestmentInputs = () => {
 						value={inputYearInvest || ''}
 						min={0}
 						max={10000000}
+						onKeyDown={handleKeyDown}
 						onChange={e => handleChangeYearInvest(e.target.value)}
 					/>
 				</div>
@@ -59,6 +62,7 @@ const InvestmentInputs = () => {
 						value={inputTime || ''}
 						min={1}
 						max={10}
+						onKeyDown={handleKeyDown}
 						onChange={e => handleChangeTime(e.target.value)}
 					/>
 				</div>
