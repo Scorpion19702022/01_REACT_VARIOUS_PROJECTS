@@ -121,7 +121,12 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	}, [yourInvest.length])
 
 	const handleAddInvest = () => {
-		setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime))
+		if (Number(inputTime) <= 1) {
+			setAllInvest(Number(inputInvest))
+		} else {
+			setAllInvest(Number(inputInvest) + Number(inputYearInvest) * Number(inputTime) - Number(inputYearInvest))
+		}
+
 		if (inputInvest !== '' && inputTime !== '' && Number(inputTime) > 0) {
 			let currentInvestmentPkoBp = Number(startInvestPkoBp)
 			let currentInvestmentPkoSa = Number(startInvestPkoSa)
