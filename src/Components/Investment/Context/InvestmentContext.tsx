@@ -111,10 +111,10 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	}, [inputInvest])
 
 	useEffect(() => {
-		if (yourInvest.length === 0) {
+		if (yourInvest.length === 1) {
 			setChartButtonAvailable(false)
-			setChartInfo('wykres będzie dostępny gdy podasz okres w latach')
-		} else if (yourInvest.length > 0) {
+			setChartInfo('wykres będzie dostępny gdy okres inwestycji będzie większy niż jeden rok')
+		} else if (yourInvest.length > 1) {
 			setChartButtonAvailable(true)
 			setChartInfo('wykres dostępny')
 		}
