@@ -96,7 +96,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	}
 
 	const handleChangeTime = (e: string | number | null) => {
-		if (Number(e) <= 10 && Number(e) >= 1 && e !== '') {
+		if (Number(e) <= 10 && Number(e) >= 0) {
 			setInputTime(e)
 		}
 	}

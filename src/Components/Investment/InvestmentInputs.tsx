@@ -52,7 +52,7 @@ const InvestmentInputs = () => {
 					/>
 				</div>
 				<div className={styles.inputs}>
-					<label className={styles.label}>Podaj okres w latach:</label>
+					<label className={styles.label}>Podaj okres w latach. Maksymalnie 10 lat:</label>
 					<input
 						className={styles.input}
 						type='number'
