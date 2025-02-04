@@ -4,8 +4,16 @@ import styles from './Styles/InvestmentResult.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
 const InvestmentResult = () => {
-	const { allInvest, inputTime, periodInvest, chartInfo, chartButtonAvailable, yourInvest, handleViewChart } =
-		useContext(InvestmentContext)
+	const {
+		allInvest,
+		inputInvest,
+		inputTime,
+		periodInvest,
+		chartInfo,
+		chartButtonAvailable,
+		yourInvest,
+		handleViewChart,
+	} = useContext(InvestmentContext)
 
 	const contentForTable = 'wynik twojej inwestycji'
 	const formatter = new Intl.NumberFormat('pl-PL', { useGrouping: true })
@@ -28,7 +36,9 @@ const InvestmentResult = () => {
 				<span className={styles.your_invest}>
 					Zainwestowałeś:{' '}
 					<span className={styles.span}>
-						{Number(inputTime) >= 0 ? formatter.format(allInvest) + ' zł' : 'musisz podać okres'}
+						{Number(inputInvest) >= 0 || inputInvest !== '' || Number(inputTime) > 0 || inputTime !== ''
+							? formatter.format(+allInvest) + ' zł'
+							: 'musisz podać okres'}
 					</span>
 				</span>
 				<span className={styles.your_period}>

@@ -9,7 +9,7 @@ type InitialStateType = {
 	inputInvest: string | number | null
 	inputYearInvest: string | number | null
 	inputTime: string | number | null
-	allInvest: number
+	allInvest: string | number
 	periodInvest: string | number
 	startInvestPkoBp: string | number
 	startInvestPkoSa: string | number
@@ -69,7 +69,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 	const [startInvestSantander, setStartInvestSantander] = useState<string | number>(0)
 	const [startInvestMbank, setStartInvestMbank] = useState<string | number>(0)
 
-	const [allInvest, setAllInvest] = useState<number>(0)
+	const [allInvest, setAllInvest] = useState<string | number>(0)
 	const [periodInvest, setPeriodInvest] = useState<string | number>('0 lat')
 	const [chartInfo, setChartInfo] = useState<string>('wykres niedostępny')
 
