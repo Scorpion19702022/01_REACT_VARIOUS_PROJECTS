@@ -34,13 +34,13 @@ const InvestmentResult = () => {
 		<section className={styles.wrapper}>
 			<div className={styles.box_your_invest}>
 				<span className={styles.your_invest}>
-					Zainwestowałeś:{' '}
+					Całkowita wpłata:{' '}
 					<span className={styles.span}>
 						{Number(inputInvest) >= 0 || inputTime !== '' ? `${formatter.format(+allInvest)} zł` : 'musisz podać okres'}
 					</span>
 				</span>
 				<span className={styles.your_period}>
-					Czas inwestycji: <span className={styles.span}>{periodInvest}</span>
+					Czas oszczędości: <span className={styles.span}>{periodInvest}</span>
 				</span>
 
 				<button className={styles.btn_chart} disabled={chartButtonAvailable ? false : true} onClick={handleViewChart}>
