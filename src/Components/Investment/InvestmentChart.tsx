@@ -3,8 +3,25 @@ import React, { useContext } from 'react'
 import styles from './Styles/InvestmentChart.module.css'
 import InvestmentContext from './Context/InvestmentContext'
 
+import { Line } from 'react-chartjs-2'
+import { Filler } from 'chart.js'
+import {
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend,
+} from 'chart.js'
+
+ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
+
 const InvestmentChart = () => {
-	const { chartView, handleCloseChart } = useContext(InvestmentContext)
+	const { yourInvest, chartView, handleCloseChart } = useContext(InvestmentContext)
+
+	console.log(yourInvest)
 
 	return (
 		<section className={!chartView ? styles.no_wrapper : styles.wrapper}>
