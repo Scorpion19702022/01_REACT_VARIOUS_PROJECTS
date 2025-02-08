@@ -21,7 +21,9 @@ ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, 
 const InvestmentChart = () => {
 	const { yourInvest, chartView, handleCloseChart } = useContext(InvestmentContext)
 
-	console.log(yourInvest)
+	let labels = yourInvest.map(item => item.investMbank)
+
+	console.log(labels)
 
 	return (
 		<section className={!chartView ? styles.no_wrapper : styles.wrapper}>
