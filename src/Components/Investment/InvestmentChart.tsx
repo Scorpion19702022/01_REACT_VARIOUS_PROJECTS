@@ -23,24 +23,50 @@ const InvestmentChart = () => {
 
 	console.log(yourInvest)
 
+	let labels = yourInvest.map(item => item.year)
+
 	const chartData = {
-		labels: yourInvest.length,
-		datesets: [
+		labels,
+		datasets: [
 			{
 				label: 'PkoBp',
 				data: yourInvest.map(item => item.investPkoBp),
+				borderColor: '#006b3c',
+				backgroundColor: '#cce1d8',
+				pointBackgroundColor: '#cce1d8',
+				fill: false,
+				tension: 0,
+				borderWidth: 3,
 			},
 			{
 				label: 'PkoSa',
 				data: yourInvest.map(item => item.investPkoSa),
+				borderColor: '#006b3c',
+				backgroundColor: '#cce1d8',
+				pointBackgroundColor: '#cce1d8',
+				fill: false,
+				tension: 0,
+				borderWidth: 3,
 			},
 			{
 				label: 'Santander',
 				data: yourInvest.map(item => item.investSantander),
+				borderColor: '#006b3c',
+				backgroundColor: '#cce1d8',
+				pointBackgroundColor: '#cce1d8',
+				fill: false,
+				tension: 0,
+				borderWidth: 3,
 			},
 			{
 				label: 'Mbank',
 				data: yourInvest.map(item => item.investMbank),
+				borderColor: '#006b3c',
+				backgroundColor: '#cce1d8',
+				pointBackgroundColor: '#cce1d8',
+				fill: false,
+				tension: 0,
+				borderWidth: 3,
 			},
 		],
 	}
