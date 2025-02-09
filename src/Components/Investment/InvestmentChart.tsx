@@ -21,9 +21,29 @@ ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, 
 const InvestmentChart = () => {
 	const { yourInvest, chartView, handleCloseChart } = useContext(InvestmentContext)
 
-	let labels = yourInvest.map(item => item.investMbank)
+	console.log(yourInvest)
 
-	console.log(labels)
+	const chartData = {
+		labels: yourInvest.length,
+		datesets: [
+			{
+				label: 'PkoBp',
+				data: yourInvest.map(item => item.investPkoBp),
+			},
+			{
+				label: 'PkoSa',
+				data: yourInvest.map(item => item.investPkoSa),
+			},
+			{
+				label: 'Santander',
+				data: yourInvest.map(item => item.investSantander),
+			},
+			{
+				label: 'Mbank',
+				data: yourInvest.map(item => item.investMbank),
+			},
+		],
+	}
 
 	return (
 		<section className={!chartView ? styles.no_wrapper : styles.wrapper}>
@@ -31,6 +51,9 @@ const InvestmentChart = () => {
 				X
 			</button>
 			<h2 className={styles.heading}>Tu będzie wykres</h2>
+			<div>
+				<Line data={chartData} />
+			</div>
 		</section>
 	)
 }
