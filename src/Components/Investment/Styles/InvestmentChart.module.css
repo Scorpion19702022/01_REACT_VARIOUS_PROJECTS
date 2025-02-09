@@ -69,8 +69,8 @@
 }
 
 .box_chart {
-	width: 80%;
-	height: 80%;
+	width: 90%;
+	min-height: 70%;
 }
 
 @media (min-width: 660px) {
