@@ -19,9 +19,9 @@ import {
 ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 const InvestmentChart = () => {
-	const { yourInvest, chartView, handleCloseChart } = useContext(InvestmentContext)
+	const { inputInvest, yourInvest, chartView, handleCloseChart } = useContext(InvestmentContext)
 
-	console.log(yourInvest)
+	console.log(inputInvest)
 
 	let labels = yourInvest.map(item => item.year)
 
@@ -71,14 +71,70 @@ const InvestmentChart = () => {
 		],
 	}
 
+	const chartOptions = {
+		responsive: true,
+		maintainAspectRatio: false,
+		plugins: {
+			title: {
+				display: true,
+				text: `Trend kursów`,
+				color: 'white',
+			},
+			tooltip: {
+				callbacks: {
+					label: (context: any) => {
+						return `${context.dataset.label}: ${context.raw.toFixed(2)}`
+					},
+				},
+			},
+			legend: {
+				labels: {
+					color: '#c4c4c2',
+				},
+			},
+		},
+		scales: {
+			x: {
+				title: {
+					display: true,
+					text: 'Lata',
+					color: '#898a86',
+				},
+				ticks: {
+					color: '#85c6db',
+				},
+				grid: {
+					color: '#2f302b',
+				},
+			},
+			y: {
+				title: {
+					display: true,
+					text: 'Wartość w zł',
+					color: '#898a86',
+				},
+				ticks: {
+					color: '#85c6db',
+					stepSize: 1000,
+				},
+				grid: {
+					color: '#2f302b',
+				},
+				beginAtZero: false,
+				min: 0,
+				max: Number(inputInvest),
+			},
+		},
+	}
+
 	return (
 		<section className={!chartView ? styles.no_wrapper : styles.wrapper}>
 			<button className={styles.btn_close} onClick={handleCloseChart}>
 				X
 			</button>
 			<h2 className={styles.heading}>Tu będzie wykres</h2>
-			<div>
-				<Line data={chartData} />
+			<div className={styles.box_chart}>
+				<Line data={chartData} options={chartOptions} />
 			</div>
 		</section>
 	)

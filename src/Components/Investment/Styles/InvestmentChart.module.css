@@ -68,6 +68,11 @@
 	color: var(--color-dark01);
 }
 
+.box_chart {
+	width: 80%;
+	height: 80%;
+}
+
 @media (min-width: 660px) {
 	.wrapper {
 		top: 17%;

@@ -27,7 +27,7 @@ const InvestmentInputs = () => {
 			<h4 className={styles.heading}>
 				Podając wartości swojego wkładu początkowego i deklarację corrocznej wpłaty oraz okres jaki przwidujesz a
 				oszczędości sprawdzisz ile zarobisz a corocznych odsetkach w 4 najpopularniejszych bankach w Polsce. Maksymalny
-				okres to 10 lat. Maksymalne wartości to 10 000 000 zł
+				okres to 10 lat. Maksymalne wartości to 1 000 000 zł
 			</h4>
 			<div className={styles.box_inputs}>
 				<div className={styles.inputs}>
