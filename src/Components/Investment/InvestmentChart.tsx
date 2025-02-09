@@ -41,7 +41,7 @@ const InvestmentChart = () => {
 			{
 				label: 'PkoSa',
 				data: yourInvest.map(item => item.investPkoSa),
-				borderColor: '#006b3c',
+				borderColor: '#a50b5e',
 				backgroundColor: '#fdee00',
 				pointBackgroundColor: '#fdee00',
 				fill: false,
@@ -51,7 +51,7 @@ const InvestmentChart = () => {
 			{
 				label: 'Santander',
 				data: yourInvest.map(item => item.investSantander),
-				borderColor: '#006b3c',
+				borderColor: '#e30022',
 				backgroundColor: '#fdee00',
 				pointBackgroundColor: '#fdee00',
 				fill: false,
@@ -61,9 +61,9 @@ const InvestmentChart = () => {
 			{
 				label: 'Mbank',
 				data: yourInvest.map(item => item.investMbank),
-				borderColor: '#006b3c',
-				backgroundColor: '#cce1d8',
-				pointBackgroundColor: '#cce1d8',
+				borderColor: '#006400',
+				backgroundColor: '#fdee00',
+				pointBackgroundColor: '#fdee00',
 				fill: false,
 				tension: 0,
 				borderWidth: 3,
