@@ -19,7 +19,8 @@ import {
 ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 const InvestmentChart = () => {
-	const { inputInvest, yourInvest, chartView, handleCloseChart } = useContext(InvestmentContext)
+	const { inputInvest, inputYearInvest, inputTime, yourInvest, chartView, handleCloseChart } =
+		useContext(InvestmentContext)
 
 	console.log(inputInvest)
 
@@ -115,14 +116,14 @@ const InvestmentChart = () => {
 				},
 				ticks: {
 					color: '#85c6db',
-					stepSize: Number(inputInvest) / 300,
+					stepSize: Number(inputInvest) / 100,
 				},
 				grid: {
 					color: '#2f302b',
 				},
 				beginAtZero: false,
 				min: Number(inputInvest),
-				max: Number(inputInvest) * 3,
+				max: Number(inputInvest) + Number(inputYearInvest) * 20,
 			},
 		},
 	}
