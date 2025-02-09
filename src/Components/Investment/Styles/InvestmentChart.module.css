@@ -70,7 +70,7 @@
 
 .box_chart {
 	width: 90%;
-	min-height: 70%;
+	height: 500px;
 }
 
 @media (min-width: 660px) {
