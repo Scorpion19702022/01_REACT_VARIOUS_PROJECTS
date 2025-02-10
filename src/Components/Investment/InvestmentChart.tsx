@@ -122,8 +122,8 @@ const InvestmentChart = () => {
 					color: '#2f302b',
 				},
 				beginAtZero: false,
-				min: Number(inputInvest),
-				max: Number(inputInvest) + Number(inputYearInvest) * 15 + Number(inputInvest),
+				min: formatter.format(Number(inputInvest)),
+				max: formatter.format(Number(inputInvest) + Number(inputYearInvest) * 15 + Number(inputInvest)),
 			},
 		},
 	}
