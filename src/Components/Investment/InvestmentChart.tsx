@@ -37,7 +37,7 @@ const InvestmentChart = () => {
 				pointBackgroundColor: '#fdee00',
 				fill: false,
 				tension: 0,
-				borderWidth: 3,
+				borderWidth: 1.8,
 			},
 			{
 				label: 'PkoSa',
@@ -47,7 +47,7 @@ const InvestmentChart = () => {
 				pointBackgroundColor: '#fdee00',
 				fill: false,
 				tension: 0,
-				borderWidth: 3,
+				borderWidth: 1.8,
 			},
 			{
 				label: 'Santander',
@@ -57,7 +57,7 @@ const InvestmentChart = () => {
 				pointBackgroundColor: '#fdee00',
 				fill: false,
 				tension: 0,
-				borderWidth: 3,
+				borderWidth: 1.8,
 			},
 			{
 				label: 'Mbank',
@@ -67,7 +67,7 @@ const InvestmentChart = () => {
 				pointBackgroundColor: '#fdee00',
 				fill: false,
 				tension: 0,
-				borderWidth: 3,
+				borderWidth: 1.8,
 			},
 		],
 	}
@@ -78,7 +78,7 @@ const InvestmentChart = () => {
 		plugins: {
 			title: {
 				display: true,
-				text: `Trend kursów`,
+				text: `Przyrost oprocentowania`,
 				color: 'white',
 			},
 			tooltip: {
