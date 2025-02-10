@@ -22,9 +22,9 @@ const InvestmentChart = () => {
 	const { inputInvest, inputYearInvest, inputTime, yourInvest, chartView, handleCloseChart } =
 		useContext(InvestmentContext)
 
-	console.log(inputInvest)
-
 	let labels = yourInvest.map(item => item.year)
+
+	const formatter = new Intl.NumberFormat('pl-PL', { useGrouping: true })
 
 	const chartData = {
 		labels,
@@ -84,7 +84,7 @@ const InvestmentChart = () => {
 			tooltip: {
 				callbacks: {
 					label: (context: any) => {
-						return `${context.dataset.label}: ${context.raw.toFixed(2)}`
+						return `${context.dataset.label}: ${formatter.format(context.raw.toFixed(2))} zł`
 					},
 				},
 			},
