@@ -98,6 +98,14 @@
 }
 
 @media (min-width: 992px) {
+	.wrapper {
+		top: 21%;
+		min-height: 660px;
+	}
+
+	.box_chart {
+		height: 540px;
+	}
 }
 
 @media (min-width: 1200px) {
