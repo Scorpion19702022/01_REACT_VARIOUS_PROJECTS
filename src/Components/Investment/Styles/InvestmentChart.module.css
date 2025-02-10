@@ -118,5 +118,8 @@
 	.btn_close {
 		top: 5%;
 		right: 2%;
+		width: 42px;
+		height: 42px;
+		font-size: 1em;
 	}
 }
