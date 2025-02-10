@@ -123,7 +123,7 @@ const InvestmentChart = () => {
 				},
 				beginAtZero: false,
 				min: 0,
-				max: Number(inputInvest) + Number(inputYearInvest) * 16,
+				max: Number(inputInvest) + Number(inputYearInvest) * 10,
 			},
 		},
 	}

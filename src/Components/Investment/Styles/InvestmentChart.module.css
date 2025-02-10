@@ -91,6 +91,10 @@
 		top: 5%;
 		right: 3%;
 	}
+
+	.box_chart {
+		height: 220px;
+	}
 }
 
 @media (min-width: 992px) {
