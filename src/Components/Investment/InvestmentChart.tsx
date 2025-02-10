@@ -116,14 +116,14 @@ const InvestmentChart = () => {
 				},
 				ticks: {
 					color: '#85c6db',
-					stepSize: Number(inputInvest) / 10,
+					stepSize: 100,
 				},
 				grid: {
 					color: '#2f302b',
 				},
 				beginAtZero: false,
 				min: Number(inputInvest),
-				max: Number(inputInvest) * 2,
+				max: Number(inputInvest) + Number(inputYearInvest) * 15 + Number(inputInvest),
 			},
 		},
 	}
