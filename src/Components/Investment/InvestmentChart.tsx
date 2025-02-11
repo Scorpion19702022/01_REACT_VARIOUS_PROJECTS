@@ -19,7 +19,7 @@ import {
 ChartJS.register(Filler, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 const InvestmentChart = () => {
-	const { inputInvest, inputYearInvest, inputTime, yourInvest, chartView, handleCloseChart } =
+	const { inputInvest, inputYearInvest, inputTime, allInvest, yourInvest, chartView, handleCloseChart } =
 		useContext(InvestmentContext)
 
 	let labels = yourInvest.map(item => `${item.year} rok`)
@@ -27,7 +27,7 @@ const InvestmentChart = () => {
 	const formatter = new Intl.NumberFormat('pl-PL', { useGrouping: true })
 
 	const minValue = formatter.format(Number(inputInvest))
-	const maxValue = formatter.format(Number(inputInvest) + Number(inputYearInvest) * 15 + Number(inputInvest))
+	const maxValue = formatter.format(Number(inputInvest) + Number(inputYearInvest) + Number(inputInvest))
 
 	const chartData = {
 		labels,
@@ -119,13 +119,13 @@ const InvestmentChart = () => {
 				},
 				ticks: {
 					color: '#85c6db',
-					stepSize: 100,
+					stepSize: Number(inputInvest).toFixed(2),
 				},
 				grid: {
 					color: '#2f302b',
 				},
 				beginAtZero: false,
-				min: minValue,
+				min: Number(minValue).toFixed(2),
 				max: maxValue,
 			},
 		},
