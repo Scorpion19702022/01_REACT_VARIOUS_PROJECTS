@@ -28,6 +28,7 @@ const InvestmentChart = () => {
 
 	const minValue = formatter.format(Number(inputInvest))
 	const maxValue = formatter.format(Number(inputInvest) + Number(inputYearInvest) + Number(inputInvest))
+	const step = 100
 
 	const chartData = {
 		labels,
@@ -119,14 +120,14 @@ const InvestmentChart = () => {
 				},
 				ticks: {
 					color: '#85c6db',
-					stepSize: Number(inputInvest).toFixed(2),
+					stepSize: step.toFixed(2),
 				},
 				grid: {
 					color: '#2f302b',
 				},
 				beginAtZero: false,
 				min: Number(minValue).toFixed(2),
-				max: maxValue,
+				max: Number(maxValue),
 			},
 		},
 	}
