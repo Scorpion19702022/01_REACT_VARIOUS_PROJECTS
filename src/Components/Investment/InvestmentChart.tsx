@@ -22,7 +22,7 @@ const InvestmentChart = () => {
 	const { inputInvest, inputYearInvest, inputTime, yourInvest, chartView, handleCloseChart } =
 		useContext(InvestmentContext)
 
-	let labels = yourInvest.map(item => item.year)
+	let labels = yourInvest.map(item => `${item.year} rok`)
 
 	const formatter = new Intl.NumberFormat('pl-PL', { useGrouping: true })
 
