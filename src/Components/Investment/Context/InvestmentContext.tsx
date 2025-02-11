@@ -167,7 +167,7 @@ export const InvestmentProvider = ({ children }: InvestmentProviderType) => {
 				currentInvestmentMbank += Number(inputYearInvest)
 				const pkoBp = (currentInvestmentPkoBp * percentPkoBp * i) / 100
 				const pkoSa = (currentInvestmentPkoSa * percentPkoSa * i) / 100
-				const santander = (currentInvestmentSantander * percentSantarder * (i + 1)) / 100
+				const santander = (currentInvestmentSantander * percentSantarder * i) / 100
 				const mBank = (currentInvestmentMbank * percentMbank * i) / 100
 
 				newYourInvest.push({
