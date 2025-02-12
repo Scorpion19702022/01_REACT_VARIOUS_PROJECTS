@@ -26,10 +26,6 @@ const InvestmentChart = () => {
 
 	const formatter = new Intl.NumberFormat('pl-PL', { useGrouping: true })
 
-	const maxValue = formatter.format(Number(inputInvest) + Number(inputYearInvest) * Number(allInvest))
-
-	console.log(inputInvest)
-
 	const chartData = {
 		labels,
 		datasets: [
@@ -120,14 +116,14 @@ const InvestmentChart = () => {
 				},
 				ticks: {
 					color: '#85c6db',
-					stepSize: 10,
+					// stepSize: 10,
 				},
 				grid: {
 					color: '#2f302b',
 				},
 				beginAtZero: false,
 				min: 0,
-				max: Number(maxValue).toFixed(2),
+				// max: Number(inputInvest) * 10,
 			},
 		},
 	}
