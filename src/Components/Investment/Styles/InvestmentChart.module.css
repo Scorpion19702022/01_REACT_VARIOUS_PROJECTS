@@ -68,15 +68,27 @@
 }
 
 .box_heading {
-	width: 100%;
-	margin: 2em 0em 0.4em 0em;
+	width: 90%;
+	margin: 3em 0em 0.4em 0em;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 0.4em;
+	border-bottom: 0.04em solid var(--color-color04);
 }
 
 .heading {
 	text-align: center;
 	color: var(--color-color04);
-	padding-bottom: 0.4em;
-	border-bottom: 0.04em solid var(--color-color04);
+}
+
+.box_info {
+	display: flex;
+	justify-content: space-between;
+}
+
+.all_invest,
+.time_invest {
+	color: var(--color-color04);
 }
 
 .box_chart {
