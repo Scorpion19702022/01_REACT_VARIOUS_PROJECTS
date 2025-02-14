@@ -138,13 +138,11 @@ const InvestmentChart = () => {
 				<h2 className={styles.heading}>Wykres wzrostu oszczędności:</h2>
 				<div className={styles.box_info}>
 					<p className={styles.all_invest}>
-						Twoja inwestycja: <span className={styles.span}>{allInvest} zł</span>
+						Całkowita inwestycja: <span className={styles.span}>{formatter.format(Number(allInvest))}</span> zł
 					</p>
 					<p className={styles.time_invest}>
-						Czas wkładu:{' '}
-						<span className={styles.span}>
-							{inputTime} {Number(inputTime) > 1 && Number(inputTime) <= 4 ? 'lata' : 'lat'}
-						</span>
+						Czas wkładu: <span className={styles.span}>{inputTime}</span>{' '}
+						{Number(inputTime) > 1 && Number(inputTime) <= 4 ? 'lata' : 'lat'}
 					</p>
 				</div>
 			</div>

@@ -78,7 +78,8 @@
 
 .heading {
 	text-align: center;
-	color: var(--color-color04);
+	font-size: 1.2em;
+	color: var(--color-color03);
 }
 
 .box_info {
@@ -89,10 +90,17 @@
 .all_invest,
 .time_invest {
 	color: var(--color-color04);
+	font-size: 0.9em;
+	padding: 0.4em 0em;
+}
+
+.span {
+	font-weight: 700;
+	color: var(--color-color02);
 }
 
 .box_chart {
-	width: 90%;
+	width: 98%;
 	height: 300px;
 }
 
