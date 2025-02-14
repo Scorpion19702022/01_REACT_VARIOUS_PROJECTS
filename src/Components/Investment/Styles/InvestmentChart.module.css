@@ -106,7 +106,7 @@
 
 @media (min-width: 660px) {
 	.wrapper {
-		top: 17%;
+		top: 16%;
 		min-height: 300px;
 	}
 
@@ -115,8 +115,26 @@
 		right: 3%;
 	}
 
+	.box_heading {
+		margin: 1em 0em 0.2em 0em;
+		align-items: center;
+	}
+
+	.box_info {
+		width: 70%;
+	}
+
+	.all_invest,
+	.time_invest {
+		width: 48%;
+		color: var(--color-color04);
+		font-size: 0.9em;
+		padding: 0.4em 0em;
+		text-align: center;
+	}
+
 	.box_chart {
-		height: 220px;
+		height: 200px;
 	}
 }
 
