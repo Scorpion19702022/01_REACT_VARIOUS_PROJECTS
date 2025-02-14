@@ -134,7 +134,9 @@ const InvestmentChart = () => {
 			<button className={styles.btn_close} onClick={handleCloseChart}>
 				X
 			</button>
-			<h2 className={styles.heading}>Wykres wzrostu oszczędności:</h2>
+			<div className={styles.box_heading}>
+				<h2 className={styles.heading}>Wykres wzrostu oszczędności:</h2>
+			</div>
 			<div className={styles.box_chart}>
 				<Line data={chartData} options={chartOptions} />
 			</div>

@@ -67,12 +67,15 @@
 	border: 0.04em solid var(--color-color06);
 }
 
+.box_heading {
+	width: 100%;
+	margin: 2em 0em 0.4em 0em;
+}
+
 .heading {
-	width: 70%;
 	text-align: center;
 	color: var(--color-color04);
 	padding-bottom: 0.4em;
-	margin-bottom: 1em;
 	border-bottom: 0.04em solid var(--color-color04);
 }
 
