@@ -14,11 +14,17 @@ https://variousprojects.vercel.app/
 
 ### cp .env.example .env
 
+### 2. Enter the API key into the .env file.
+
+### 3. Install and run the project locally.
+
 # -------------------
 
 Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# -------------------
 
 ## Available Scripts
 
