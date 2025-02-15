@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Home.module.css'
 
@@ -25,8 +25,11 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 import { Autoplay, Navigation } from 'swiper/modules'
+import HomeContext from './Context/HomeContext'
 
 const HomeSwiper = () => {
+	const { isActiveEN } = useContext(HomeContext)
+
 	return (
 		<section className={styles.wrapper_card}>
 			<Swiper
@@ -56,10 +59,11 @@ const HomeSwiper = () => {
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>Aplikacja pogodowa</h4>
+						<h4 className={styles.card_heading}>{isActiveEN ? 'Weather App' : 'Aplikacja pogodowa'}</h4>
 						<p className={styles.card_text}>
-							Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10
-							minut.
+							{isActiveEN
+								? 'Current weather for Polish cities and major cities on individual continents. Updated every 10 minutes.'
+								: 'Aktualna pogoda dla miast Polski i ważniejszych miast na poszczególnych kontyentach. Aktualizacja co 10 minut.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider01} alt='photoSlider' />
