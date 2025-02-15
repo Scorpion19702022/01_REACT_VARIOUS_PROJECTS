@@ -1,8 +1,20 @@
-# Project in progress
+# The project contains 14 smaller projects
 
 ## live:
 
 https://variousprojects.vercel.app/
+
+### The technology used is:
+
+- React
+- TypeScript
+- module.css
+
+---
+
+<h1 align="center">
+Pages/Topics in the project:
+</h1>
 
 ## Environment setup
 
