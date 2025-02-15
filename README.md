@@ -10,8 +10,6 @@ https://variousprojects.vercel.app/
 - TypeScript
 - module.css
 
----
-
 <h1 align="center">
 Pages/Topics in the project:
 </h1>
