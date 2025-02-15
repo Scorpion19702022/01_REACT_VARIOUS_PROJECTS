@@ -73,9 +73,11 @@ const HomeSwiper = () => {
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>Konwerter stopni</h4>
+						<h4 className={styles.card_heading}>{isActiveEN ? 'Degree conventer' : 'Konwerter stopni'}</h4>
 						<p className={styles.card_text}>
-							Konwerter stopni. Sprawdż ile stopni ℃ to stopni ℉. Zmień i sprawdż ile ℉ to ℃.
+							{isActiveEN
+								? 'Degree Converter. Check how many degrees ℃ is degrees ℉. Change and check how many ℉ is ℃.'
+								: 'Konwerter stopni. Sprawdż ile stopni ℃ to stopni ℉. Zmień i sprawdż ile ℉ to ℃.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider02} alt='photoSlider' />
@@ -87,8 +89,9 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>ToDoList</h4>
 						<p className={styles.card_text}>
-							Zaawansowana lista zadań do zrobienia. Dane zapisywane są w LocalStorage i można je przetrzymywać na danym
-							urządzeiu.
+							{isActiveEN
+								? 'Advanced To-Do List. Data is saved in LocalStorage and can be stored on a given device.'
+								: 'Zaawansowana lista zadań do zrobienia. Dane zapisywane są w LocalStorage i można je przetrzymywać na danym urządzeniu.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider03} alt='photoSlider' />
@@ -99,10 +102,11 @@ const HomeSwiper = () => {
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>Kalkulator BMI</h4>
+						<h4 className={styles.card_heading}>{isActiveEN ? 'BMI calculator' : 'Kalkulator BMI'}</h4>
 						<p className={styles.card_text}>
-							Kalkulator pokazuje nie tylko wskaźnik BMI, ale także wyświetli poradę i pokaże sylwetkę ciała adekwatną
-							do wskaźnika.
+							{isActiveEN
+								? 'The calculator not only shows the BMI, but also provides advice and shows the body shape appropriate to the index.'
+								: 'Kalkulator pokazuje nie tylko wskaźnik BMI, ale także wyświetli poradę i pokaże sylwetkę ciała adekwatną do wskaźnika.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider04} alt='photoSlider' />
@@ -113,10 +117,11 @@ const HomeSwiper = () => {
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>Kalkulator wynagrodzeń</h4>
+						<h4 className={styles.card_heading}>{isActiveEN ? 'Salary calculator' : 'Kalkulator wynagrodzeń'}</h4>
 						<p className={styles.card_text}>
-							Umożliwia obliczenie wartości wynagrodzenia netto z brutto dla poszczególych typów umowy, wysokość składek
-							i podatek.
+							{isActiveEN
+								? 'Calculate the net salary value from the gross salary for individual contract types, the amount of contributions and tax.'
+								: 'Obliczenie wartości wynagrodzenia netto z brutto dla poszczególnych typów umowy, wysokość składek i podatek.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider05} alt='photoSlider' />
@@ -129,7 +134,9 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>SnackBar</h4>
 						<p className={styles.card_text}>
-							Zamawiaie produktów. Sprawdzenie ilości zamówienia i ceny. Wysłanie zamówienia i czas oczekiwania.
+							{isActiveEN
+								? 'Ordering products. Checking order quantity and price. Sending order.'
+								: 'Zamawianie produktów. Sprawdzenie ilości zamówienia i ceny. Wysłanie zamówienia.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider06} alt='photoSlider' />
@@ -142,7 +149,9 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>TicTacToe</h4>
 						<p className={styles.card_text}>
-							Popularna gra w kółko i krzyżyk. Edycja nazwy graczy, lista wykonanych ruchów i info o wyniku gry.
+							{isActiveEN
+								? 'Popular game of tic-tac-toe. Edit player names, list of moves made and info about the game result.'
+								: 'Popularna gra w kółko i krzyżyk. Edycja nazwy graczy, lista wykonanych ruchów i info o wyniku gry.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider07} alt='photoSlider' />
@@ -154,7 +163,9 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Quiz</h4>
 						<p className={styles.card_text}>
-							10 pytań o stolice europejskie. Pokazuje poszczególne wyniki oraz wynik końcowy.
+							{isActiveEN
+								? '10 Questions about European Capitals. Shows individual results and the final score.'
+								: '10 pytań o stolice europejskie. Pokazuje poszczególne wyniki oraz wynik końcowy.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider08} alt='photoSlider' />
@@ -166,8 +177,9 @@ const HomeSwiper = () => {
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Stopwatch/Stoper</h4>
 						<p className={styles.card_text}>
-							Zaawansoway stoper z zapisem sortowanej listy zmierzonych czasów od najszybszego. Można zmienić kolor
-							layoutu.
+							{isActiveEN
+								? 'Stopwatch with a sorted list of measured times from the fastest. You can change the layout color.'
+								: 'Stoper z zapisem posortowanej listy zmierzonych czasów od najszybszego. Można zmienić kolor layoutu.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider09} alt='photoSlider' />
@@ -177,9 +189,11 @@ const HomeSwiper = () => {
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>Odliczanie czasu do ...</h4>
+						<h4 className={styles.card_heading}>{isActiveEN ? 'Countdown to ...' : 'Odliczanie czasu do ...'}</h4>
 						<p className={styles.card_text}>
-							Pokazuje czas w godzinach i dniach jaki został do zdarzenia w przyszłości.
+							{isActiveEN
+								? 'Shows the time in hours and days left until a future event.'
+								: 'Pokazuje czas w godzinach i dniach jaki został do zdarzenia w przyszłości.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider10} alt='photoSlider' />
