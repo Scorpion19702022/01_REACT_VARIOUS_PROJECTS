@@ -203,8 +203,14 @@ const HomeSwiper = () => {
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>Demografia miast Polski</h4>
-						<p className={styles.card_text}>Przedstawia liczbowo i na wykresie przyrost mieszkańców miast w Polsce.</p>
+						<h4 className={styles.card_heading}>
+							{isActiveEN ? 'Demographics of Polish cities' : 'Demografia miast Polski'}
+						</h4>
+						<p className={styles.card_text}>
+							{isActiveEN
+								? 'It presents numerically and on a graph the growth of the urban population in Poland.'
+								: 'Przedstawia liczbowo i na wykresie przyrost mieszkańców miast w Polsce.'}
+						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider11} alt='photoSlider' />
 				</SwiperSlide>
@@ -213,10 +219,11 @@ const HomeSwiper = () => {
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>Kurs walut NBP</h4>
+						<h4 className={styles.card_heading}>{isActiveEN ? 'NBP exchange rate' : 'Kurs walut NBP'}</h4>
 						<p className={styles.card_text}>
-							Aktualny kurs walut NBP. Kurs poprzedni z wyborem innego dnia i wykres z trendem kursów z wyborem daty
-							początkowej.
+							{isActiveEN
+								? 'Current NBP exchange rate. Selection of the rate from another day and a chart of rates with the selection of the starting date.'
+								: 'Aktualny kurs walut NBP. Wybór kursu z innego dnia i wykres  kursów z wyborem daty początkowej.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider12} alt='photoSlider' />
@@ -226,8 +233,12 @@ const HomeSwiper = () => {
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>Kalkulator</h4>
-						<p className={styles.card_text}>Tradycyjny kalkulator. Wykorzystanie w projekcie reducera.</p>
+						<h4 className={styles.card_heading}>{isActiveEN ? 'Calculator' : 'Kalkulator'}</h4>
+						<p className={styles.card_text}>
+							{isActiveEN
+								? 'Traditional calculator. Using a reducer in the project.'
+								: 'Tradycyjny kalkulator. Wykorzystanie w projekcie reducera.'}
+						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider13} alt='photoSlider' />
 				</SwiperSlide>
@@ -236,9 +247,13 @@ const HomeSwiper = () => {
 						<button className={styles.btn_link}>LINK</button>
 					</NavLink>
 					<div className={styles.card_box_text}>
-						<h4 className={styles.card_heading}>Oprocentowanie wkładu</h4>
+						<h4 className={styles.card_heading}>
+							{isActiveEN ? 'Contribution interest rate' : 'Oprocentowanie wkładu'}
+						</h4>
 						<p className={styles.card_text}>
-							Oprocentowanie wkładu bankowego w najpopularniejszych bankach. Tabela i wykres.
+							{isActiveEN
+								? 'Bank deposit interest rates in the most popular banks. Table and chart.'
+								: 'Oprocentowanie wkładu bankowego w najpopularniejszych bankach. Tabela i wykres.'}
 						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider14} alt='photoSlider' />
