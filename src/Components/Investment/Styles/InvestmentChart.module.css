@@ -152,8 +152,22 @@
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 88%;
-		min-height: 640px;
-		top: 23%;
+		min-height: 680px;
+		top: 22%;
+	}
+
+	.box_heading {
+		width: 50%;
+		margin: 1em 0em 0.4em 0em;
+	}
+
+	.heading {
+		font-size: 2em;
+	}
+
+	.all_invest,
+	.time_invest {
+		font-size: 1.2em;
 	}
 
 	.btn_close {
@@ -162,5 +176,9 @@
 		width: 42px;
 		height: 42px;
 		font-size: 1em;
+	}
+
+	.box_chart {
+		height: 560px;
 	}
 }
