@@ -219,7 +219,9 @@ const HomeSwiper = () => {
 					</NavLink>
 					<div className={styles.card_box_text}>
 						<h4 className={styles.card_heading}>Oprocentowanie wkładu</h4>
-						<p className={styles.card_text}>Tradycyjny kalkulator. Wykorzystanie w projekcie reducera.</p>
+						<p className={styles.card_text}>
+							Oprocentowanie wkładu bankowego w najpopularniejszych bankach. Tabela i wykres.
+						</p>
 					</div>
 					<img className={styles.card_img} src={imgSlider14} alt='photoSlider' />
 				</SwiperSlide>
