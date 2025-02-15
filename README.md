@@ -10,9 +10,16 @@ https://variousprojects.vercel.app/
 - TypeScript
 - module.css
 
+---
+
 <h1 align="center">
 Pages/Topics in the project:
 </h1>
+
+<h3>Project 1: Weather App</h3>
+<p>Current weather for Polish cities and major cities on individual continents. Updated every 10 minutes.</p>
+
+<img src="/my-app/src/Components/Home/assets/imgSwiper01.jpg" alt="screen_project">
 
 ## Environment setup
 
