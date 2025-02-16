@@ -16,18 +16,12 @@ https://variousprojects.vercel.app/
 Pages/Topics in the project:
 </h1>
 
-<h3>Project 1: Weather App</h3>
+<h2>Project 1: Weather App</h2>
 <p>Current weather for Polish cities and major cities on individual continents. Updated every 10 minutes.</p>
 
 <img src="./src/Components/Home/assets/imgSwiper01.jpg" alt="screen_project" width="50%">
 
 ## Environment setup
-
-<p>1. Copy the `.env.example` file to `.env`:</p>
-<p>```bash</p>
-<p>cp .env.example .env</p>
-<p>2. Enter the API key into the .env file.</p>
-<p>3. Install and run the project locally.</p>
 
 ### To run the project locally, you need to setup the `.env` file. Here are the steps:
 
@@ -41,7 +35,14 @@ Pages/Topics in the project:
 
 ### 3. Install and run the project locally.
 
-# ------------------------------------------------------------------------------------
+# --------------------
+
+<h2>Project 2: Degree conventer</h2>
+<p>Degree Converter. Check how many degrees ℃ is degrees ℉. Change and check how many ℉ is ℃.</p>
+
+<img src="./src/Components/Home/assets/imgSwiper02.jpg" alt="screen_project" width="50%">
+
+# --------------------
 
 Getting Started with Create React App
 
