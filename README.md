@@ -23,6 +23,12 @@ Pages/Topics in the project:
 
 ## Environment setup
 
+<p>1. Copy the `.env.example` file to `.env`:</p>
+<p>```bash</p>
+<p>cp .env.example .env</p>
+<p>2. Enter the API key into the .env file.</p>
+<p>3. Install and run the project locally.</p>
+
 ### To run the project locally, you need to setup the `.env` file. Here are the steps:
 
 ### 1. Copy the `.env.example` file to `.env`:
@@ -35,7 +41,7 @@ Pages/Topics in the project:
 
 ### 3. Install and run the project locally.
 
-<div width="100%" height="20px" background= "black"></div>
+# ------------------------------------------------------------------------------------
 
 Getting Started with Create React App
 
