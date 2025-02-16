@@ -35,7 +35,7 @@ Pages/Topics in the project:
 
 ### 3. Install and run the project locally.
 
-<div width="100%" hight="4px" backgroundColor= "black"></div>
+<div width="100%" height="4px" backgroundColor= "black"></div>
 
 Getting Started with Create React App
 
