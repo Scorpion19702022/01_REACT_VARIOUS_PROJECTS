@@ -126,13 +126,13 @@ Pages/Topics in the project:
 
 <img src="./src/Components/Home/assets/imgSwiper14.jpg" alt="screen_project" width="80%">
 
-# --------------------
+---
 
 Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# -------------------
+---
 
 ## How to run
 
