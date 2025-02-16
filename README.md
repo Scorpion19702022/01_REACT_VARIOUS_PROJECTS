@@ -44,6 +44,41 @@ Pages/Topics in the project:
 
 # --------------------
 
+<h2>Project 3: ToDoList</h2>
+<p>Advanced To-Do List. Data is saved in LocalStorage and can be stored on a given device.</p>
+
+<img src="./src/Components/Home/assets/imgSwiper03.jpg" alt="screen_project" width="50%">
+
+# --------------------
+
+<h2>Project 4: BMI calculator</h2>
+<p>The calculator not only shows the BMI, but also provides advice and shows the body shape appropriate to the index.</p>
+
+<img src="./src/Components/Home/assets/imgSwiper04.jpg" alt="screen_project" width="50%">
+
+# --------------------
+
+<h2>Project 5: Salary calculator</h2>
+<p>Calculate the net salary value from the gross salary for individual contract types, the amount of contributions and tax.</p>
+
+<img src="./src/Components/Home/assets/imgSwiper05.jpg" alt="screen_project" width="50%">
+
+# --------------------
+
+<h2>Project 6: SnackBar</h2>
+<p>Ordering products. Checking order quantity and price. Sending order.</p>
+
+<img src="./src/Components/Home/assets/imgSwiper06.jpg" alt="screen_project" width="50%">
+
+# --------------------
+
+<h2>Project 7: TicTacToe</h2>
+<p>Popular game of tic-tac-toe. Edit player names, list of moves made and info about the game result.</p>
+
+<img src="./src/Components/Home/assets/imgSwiper07.jpg" alt="screen_project" width="50%">
+
+# --------------------
+
 Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
