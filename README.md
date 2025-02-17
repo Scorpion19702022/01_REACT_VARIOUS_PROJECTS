@@ -19,7 +19,7 @@ Pages/Topics in the project:
 <h2>Project 1: Weather App</h2>
 <p>Current weather for Polish cities and major cities on individual continents. Updated every 10 minutes.</p>
 
-<img src="./src/Components/Home/assets/imgSwiper01.jpg" alt="screen_project" width="80%">
+<img src="./src/Components/Home/assets/imgSwiper01.jpg" alt="screen_project" width="100%">
 
 ## Environment setup
 
